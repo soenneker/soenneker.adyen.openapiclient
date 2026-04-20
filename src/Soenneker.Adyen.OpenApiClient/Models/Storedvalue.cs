@@ -8,49 +8,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public enum Storedvalue
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Contactless")]
+        [EnumMember(Value = "Both")]
         #pragma warning disable CS1591
-        Contactless,
+        Both,
         #pragma warning restore CS1591
-        [EnumMember(Value = "File")]
+        [EnumMember(Value = "Closed")]
         #pragma warning disable CS1591
-        File,
+        Closed,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ICC")]
+        [EnumMember(Value = "Open")]
         #pragma warning disable CS1591
-        ICC,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Keyed")]
-        #pragma warning disable CS1591
-        Keyed,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MagStripe")]
-        #pragma warning disable CS1591
-        MagStripe,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Manual")]
-        #pragma warning disable CS1591
-        Manual,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Mobile")]
-        #pragma warning disable CS1591
-        Mobile,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "RFID")]
-        #pragma warning disable CS1591
-        RFID,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Scanned")]
-        #pragma warning disable CS1591
-        Scanned,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SynchronousICC")]
-        #pragma warning disable CS1591
-        SynchronousICC,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Tapped")]
-        #pragma warning disable CS1591
-        Tapped,
+        Open,
         #pragma warning restore CS1591
     }
 }
