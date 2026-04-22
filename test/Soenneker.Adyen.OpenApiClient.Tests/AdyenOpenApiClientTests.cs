@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Adyen.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class AdyenOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class AdyenOpenApiClientTests : HostedUnitTest
 {
-    public AdyenOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public AdyenOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
