@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?>? EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment>? EntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?> EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment> EntryMode { get; set; }
 #endif
         /// <summary>Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY.</summary>
         public int? ExpiryDate { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>()?.AsList(); } },
+                { "EntryMode", n => { EntryMode = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ExpiryDate", n => { ExpiryDate = n.GetIntValue(); } },
                 { "IdentificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>(); } },
                 { "OwnerName", n => { OwnerName = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>("EntryMode", EntryMode);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("EntryMode", EntryMode);
             writer.WriteIntValue("ExpiryDate", ExpiryDate);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>("IdentificationType", IdentificationType);
             writer.WriteStringValue("OwnerName", OwnerName);

@@ -20,10 +20,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?>? EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment>? EntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?> EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment> EntryMode { get; set; }
 #endif
         /// <summary>Masked Primary Account NumberPart of the PAN is replaced by a string of * characters, to identify a customer account or relationship. Presence of this data element, which replace the PAN when SensitiveCardData is protected and replaced by ProtectedCardData. Alternatively the MaskedPAN can be used as a token to identify a customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "CardCountryCode", n => { CardCountryCode = n.GetIntValue(); } },
-                { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>()?.AsList(); } },
+                { "EntryMode", n => { EntryMode = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MaskedPan", n => { MaskedPan = n.GetStringValue(); } },
                 { "PaymentAccountRef", n => { PaymentAccountRef = n.GetStringValue(); } },
                 { "PaymentBrand", n => { PaymentBrand = n.GetStringValue(); } },
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("CardCountryCode", CardCountryCode);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>("EntryMode", EntryMode);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("EntryMode", EntryMode);
             writer.WriteStringValue("MaskedPan", MaskedPan);
             writer.WriteStringValue("PaymentAccountRef", PaymentAccountRef);
             writer.WriteStringValue("PaymentBrand", PaymentBrand);
