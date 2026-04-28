@@ -52,10 +52,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ForceEntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment>? ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?>? ForceEntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment> ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?> ForceEntryMode { get; set; }
 #endif
         /// <summary>Indicates if the Cashier requires POI forces online access to the Acquirer.Go online if data sent.</summary>
         public bool? ForceOnlineFlag { get; set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "AllowedPaymentBrand", n => { AllowedPaymentBrand = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
                 { "DebitPreferredFlag", n => { DebitPreferredFlag = n.GetBoolValue(); } },
-                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>()?.AsList(); } },
                 { "ForceOnlineFlag", n => { ForceOnlineFlag = n.GetBoolValue(); } },
                 { "LoyaltyHandling", n => { LoyaltyHandling = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyHandling>(); } },
                 { "MerchantCategoryCode", n => { MerchantCategoryCode = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("AllowedPaymentBrand", AllowedPaymentBrand);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);
             writer.WriteBoolValue("DebitPreferredFlag", DebitPreferredFlag);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("ForceEntryMode", ForceEntryMode);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("ForceEntryMode", ForceEntryMode);
             writer.WriteBoolValue("ForceOnlineFlag", ForceOnlineFlag);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
             writer.WriteStringValue("MerchantCategoryCode", MerchantCategoryCode);
