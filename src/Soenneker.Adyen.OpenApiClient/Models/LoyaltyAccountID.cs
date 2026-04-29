@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?>? EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?>? EntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?> EntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?> EntryMode { get; set; }
 #endif
         /// <summary>Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.Possible values:* **HybridCard*** **LinkedCard*** **LoyaltyCard*** **NoCard**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.IdentificationSupport? IdentificationSupport { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>()?.AsList(); } },
+                { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>()?.AsList(); } },
                 { "IdentificationSupport", n => { IdentificationSupport = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationSupport>(); } },
                 { "IdentificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>(); } },
                 { "LoyaltyID", n => { LoyaltyID = n.GetStringValue(); } },
@@ -73,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("EntryMode", EntryMode);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>("EntryMode", EntryMode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationSupport>("IdentificationSupport", IdentificationSupport);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>("IdentificationType", IdentificationType);
             writer.WriteStringValue("LoyaltyID", LoyaltyID);
