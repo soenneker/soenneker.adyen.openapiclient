@@ -36,21 +36,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Declaration { get; set; }
 #endif
         /// <summary>Markup of a currency conversion amount as a percentage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Markup { get; set; }
-#nullable restore
-#else
-        public string Markup { get; set; }
-#endif
+        public double? Markup { get; set; }
         /// <summary>Rate of currency conversion.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Rate { get; set; }
-#nullable restore
-#else
-        public string Rate { get; set; }
-#endif
+        public double? Rate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion"/> and sets the default values.
         /// </summary>
@@ -80,8 +68,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "ConvertedAmount", n => { ConvertedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount>(global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount.CreateFromDiscriminatorValue); } },
                 { "CustomerApprovedFlag", n => { CustomerApprovedFlag = n.GetBoolValue(); } },
                 { "Declaration", n => { Declaration = n.GetStringValue(); } },
-                { "Markup", n => { Markup = n.GetStringValue(); } },
-                { "Rate", n => { Rate = n.GetStringValue(); } },
+                { "Markup", n => { Markup = n.GetDoubleValue(); } },
+                { "Rate", n => { Rate = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -95,8 +83,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount>("ConvertedAmount", ConvertedAmount);
             writer.WriteBoolValue("CustomerApprovedFlag", CustomerApprovedFlag);
             writer.WriteStringValue("Declaration", Declaration);
-            writer.WriteStringValue("Markup", Markup);
-            writer.WriteStringValue("Rate", Rate);
+            writer.WriteDoubleValue("Markup", Markup);
+            writer.WriteDoubleValue("Rate", Rate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

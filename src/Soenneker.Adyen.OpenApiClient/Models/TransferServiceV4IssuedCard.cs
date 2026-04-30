@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>&quot;Indicates the method used for entering the PAN to initiate a transaction.Possible values: **manual**, **chip**, **magstripe**, **contactless**, **cof**, **ecommerce**, **token**.&quot;</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard_panEntryMode? PanEntryMode { get; set; }
-        /// <summary>Contains information about how the payment was processed. For example, **ecommerce** for online or **pos** for in-person payments.</summary>
+        /// <summary>&quot;Contains information about how the payment was processed.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **purchaseWithCashback**, **recurring**, **token**.&quot;</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard_processingType? ProcessingType { get; set; }
         /// <summary>The relayedAuthorisationData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

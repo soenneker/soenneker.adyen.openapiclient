@@ -12,17 +12,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         LegalEntity,
         #pragma warning restore CS1591
-        [EnumMember(Value = "balanceAccount")]
-        #pragma warning disable CS1591
-        BalanceAccount,
-        #pragma warning restore CS1591
         [EnumMember(Value = "accountHolder")]
         #pragma warning disable CS1591
         AccountHolder,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "merchantAccount")]
-        #pragma warning disable CS1591
-        MerchantAccount,
         #pragma warning restore CS1591
         [EnumMember(Value = "paymentInstrument")]
         #pragma warning disable CS1591

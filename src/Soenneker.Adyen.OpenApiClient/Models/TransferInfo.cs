@@ -101,10 +101,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ultimateParty property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UltimatePartyIdentification? UltimateParty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification? UltimateParty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UltimatePartyIdentification UltimateParty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification UltimateParty { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -137,7 +137,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview>(global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo_type>(); } },
-                { "ultimateParty", n => { UltimateParty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimatePartyIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.UltimatePartyIdentification.CreateFromDiscriminatorValue); } },
+                { "ultimateParty", n => { UltimateParty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -160,7 +160,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview>("review", Review);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimatePartyIdentification>("ultimateParty", UltimateParty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>("ultimateParty", UltimateParty);
         }
     }
 }

@@ -27,7 +27,7 @@ using Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1;
 using Soenneker.Adyen.OpenApiClient.PayoutServiceV68;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68;
 using Soenneker.Adyen.OpenApiClient.SessionAuthenticationServiceV1;
-using Soenneker.Adyen.OpenApiClient.SessionServiceV68;
+using Soenneker.Adyen.OpenApiClient.SoftPOSConfigurationServiceV3;
 using Soenneker.Adyen.OpenApiClient.StoredValueServiceV46;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1;
 using Soenneker.Adyen.OpenApiClient.TestCardServiceV1;
@@ -150,10 +150,10 @@ namespace Soenneker.Adyen.OpenApiClient
         {
             get => new global::Soenneker.Adyen.OpenApiClient.SessionAuthenticationServiceV1.SessionAuthenticationServiceV1RequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The SessionServiceV68 property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.SessionServiceV68.SessionServiceV68RequestBuilder SessionServiceV68
+        /// <summary>The SoftPOSConfigurationServiceV3 property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.SoftPOSConfigurationServiceV3.SoftPOSConfigurationServiceV3RequestBuilder SoftPOSConfigurationServiceV3
         {
-            get => new global::Soenneker.Adyen.OpenApiClient.SessionServiceV68.SessionServiceV68RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Adyen.OpenApiClient.SoftPOSConfigurationServiceV3.SoftPOSConfigurationServiceV3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The StoredValueServiceV46 property</summary>
         public global::Soenneker.Adyen.OpenApiClient.StoredValueServiceV46.StoredValueServiceV46RequestBuilder StoredValueServiceV46

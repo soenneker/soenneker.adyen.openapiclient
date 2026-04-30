@@ -12,6 +12,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TransferServiceV4IbanAccountIdentification : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The bank&apos;s 8- or 11-character BIC or SWIFT code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Bic { get; set; }
+#nullable restore
+#else
+        public string Bic { get; set; }
+#endif
         /// <summary>The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bic", n => { Bic = n.GetStringValue(); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IbanAccountIdentification_type>(); } },
             };
@@ -51,6 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("bic", Bic);
             writer.WriteStringValue("iban", Iban);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IbanAccountIdentification_type>("type", Type);
         }

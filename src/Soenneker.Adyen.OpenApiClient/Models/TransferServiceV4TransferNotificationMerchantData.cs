@@ -36,6 +36,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
+        /// <summary>The two-character country code of the merchant&apos;s location, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CountryCode { get; set; }
+#nullable restore
+#else
+        public string CountryCode { get; set; }
+#endif
         /// <summary>The merchant category code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "acquirerId", n => { AcquirerId = n.GetStringValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
+                { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "mcc", n => { Mcc = n.GetStringValue(); } },
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -105,6 +114,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("acquirerId", AcquirerId);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
+            writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteStringValue("mcc", Mcc);
             writer.WriteStringValue("merchantId", MerchantId);
             writer.WriteStringValue("name", Name);

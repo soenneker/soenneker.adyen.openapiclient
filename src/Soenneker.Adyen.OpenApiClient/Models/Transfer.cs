@@ -131,6 +131,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.Transfer_status? Status { get; set; }
         /// <summary>The type of transfer or transaction. For example, **refund**, **payment**, **internalTransfer**, **bankTransfer**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.Transfer_type? Type { get; set; }
+        /// <summary>The ultimateParty property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification? UltimateParty { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification UltimateParty { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -169,6 +177,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReview>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReview.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Transfer_status>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Transfer_type>(); } },
+                { "ultimateParty", n => { UltimateParty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -198,6 +207,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReview>("review", Review);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Transfer_status>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Transfer_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>("ultimateParty", UltimateParty);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment"/>

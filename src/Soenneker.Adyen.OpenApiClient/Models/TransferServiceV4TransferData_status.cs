@@ -215,6 +215,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         PaymentCostPending,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
+        Pending,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pendingApproval")]
         #pragma warning disable CS1591
         PendingApproval,
@@ -266,6 +270,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "returned")]
         #pragma warning disable CS1591
         Returned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "reversed")]
+        #pragma warning disable CS1591
+        Reversed,
         #pragma warning restore CS1591
         [EnumMember(Value = "secondChargeback")]
         #pragma warning disable CS1591

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Contains information about how the payment was processed. For example, **ecommerce** for online or **pos** for in-person payments.</summary>
+    /// <summary>&quot;Contains information about how the payment was processed.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **purchaseWithCashback**, **recurring**, **token**.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4IssuedCard_processingType
     {

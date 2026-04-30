@@ -35,9 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return mappingValue switch
             {
                 "accountHolder" => new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderResource(),
-                "balanceAccount" => new global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountResource(),
                 "legalEntity" => new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityResource(),
-                "merchantAccount" => new global::Soenneker.Adyen.OpenApiClient.Models.MerchantAccountResource(),
                 "paymentInstrument" => new global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentResource(),
                 _ => new global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource(),
             };

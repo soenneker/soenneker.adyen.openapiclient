@@ -189,6 +189,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The type of transfer or transaction. For example, **refund**, **payment**, **internalTransfer**, **bankTransfer**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferData_type? Type { get; set; }
+        /// <summary>The ultimateParty property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification? UltimateParty { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification UltimateParty { get; set; }
+#endif
         /// <summary>The date and time when the event was triggered, in ISO 8601 extended format. For example, **2020-12-18T10:15:30+01:00**.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -237,6 +245,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "tracking", n => { Tracking = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferData.TransferServiceV4TransferData_tracking>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferData.TransferServiceV4TransferData_tracking.CreateFromDiscriminatorValue); } },
                 { "transactionRulesResult", n => { TransactionRulesResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionRulesResult>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionRulesResult.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferData_type>(); } },
+                { "ultimateParty", n => { UltimateParty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -275,6 +284,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferData.TransferServiceV4TransferData_tracking>("tracking", Tracking);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionRulesResult>("transactionRulesResult", TransactionRulesResult);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferData_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>("ultimateParty", UltimateParty);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
         }
         /// <summary>
