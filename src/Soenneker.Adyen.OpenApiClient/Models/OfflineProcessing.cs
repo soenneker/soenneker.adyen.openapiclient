@@ -14,7 +14,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>The maximum offline transaction amount for chip cards, in the processing currency and specified in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
         public int? ChipFloorLimit { get; set; }
-        /// <summary>The maximum offline transaction amount for swiped cards, in the specified currency.</summary>
+        /// <summary>The maximum offline transaction amount for swiped cards, in the specified currency. Updating this field is forbidden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>? OfflineSwipeLimits { get; set; }

@@ -12,9 +12,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class AffirmInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Merchant price plan</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo_pricePlan? PricePlan { get; set; }
-        /// <summary>Merchant support email</summary>
+        /// <summary>Selected Affirm financing package. Choose from **core**, **standard**, or **signature**. Defaults to **core** if no selection made.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PricePlan { get; set; }
+#nullable restore
+#else
+        public string PricePlan { get; set; }
+#endif
+        /// <summary>Merchant support email used to manage disputes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SupportEmail { get; set; }
@@ -40,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pricePlan", n => { PricePlan = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo_pricePlan>(); } },
+                { "pricePlan", n => { PricePlan = n.GetStringValue(); } },
                 { "supportEmail", n => { SupportEmail = n.GetStringValue(); } },
             };
         }
@@ -51,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo_pricePlan>("pricePlan", PricePlan);
+            writer.WriteStringValue("pricePlan", PricePlan);
             writer.WriteStringValue("supportEmail", SupportEmail);
         }
     }

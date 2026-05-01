@@ -20,6 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment Assignment { get; set; }
 #endif
+        /// <summary>The [regional base URL](https://docs.adyen.com/api-explorer/terminal-api/1/overview#endpoints-for-cloud-communications) to use for sending Terminal API requests when using cloud communications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CloudDeviceApiEndpoint { get; set; }
+#nullable restore
+#else
+        public string CloudDeviceApiEndpoint { get; set; }
+#endif
         /// <summary>The connectivity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +35,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity Connectivity { get; set; }
+#endif
+        /// <summary>The country code of the country where the terminal is located.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CountryCode { get; set; }
+#nullable restore
+#else
+        public string CountryCode { get; set; }
 #endif
         /// <summary>The software release currently in use on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +115,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignment", n => { Assignment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment.CreateFromDiscriminatorValue); } },
+                { "cloudDeviceApiEndpoint", n => { CloudDeviceApiEndpoint = n.GetStringValue(); } },
                 { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity.CreateFromDiscriminatorValue); } },
+                { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "firmwareVersion", n => { FirmwareVersion = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "installedAPKs", n => { InstalledAPKs = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs>(global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -118,7 +136,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment>("assignment", Assignment);
+            writer.WriteStringValue("cloudDeviceApiEndpoint", CloudDeviceApiEndpoint);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity>("connectivity", Connectivity);
+            writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteStringValue("firmwareVersion", FirmwareVersion);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs>("installedAPKs", InstalledAPKs);

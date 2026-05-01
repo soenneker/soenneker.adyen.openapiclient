@@ -116,6 +116,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PinMailer { get; set; }
 #endif
+        /// <summary>Print Line.Text printed on the physical card below the cardholder name. You provide the value, which can be up to 26 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrintLine { get; set; }
+#nullable restore
+#else
+        public string PrintLine { get; set; }
+#endif
         /// <summary>The logistics company that ships the card.This field overrides the logistics company defined in the card configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +163,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "logoImageId", n => { LogoImageId = n.GetStringValue(); } },
                 { "pinMailer", n => { PinMailer = n.GetStringValue(); } },
+                { "printLine", n => { PrintLine = n.GetStringValue(); } },
                 { "shipmentMethod", n => { ShipmentMethod = n.GetStringValue(); } },
             };
         }
@@ -178,6 +187,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("logoImageId", LogoImageId);
             writer.WriteStringValue("pinMailer", PinMailer);
+            writer.WriteStringValue("printLine", PrintLine);
             writer.WriteStringValue("shipmentMethod", ShipmentMethod);
         }
     }

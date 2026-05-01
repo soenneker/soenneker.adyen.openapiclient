@@ -208,7 +208,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
             [QueryParameter("entityId")]
             public string EntityId { get; set; }
 #endif
-            /// <summary>&quot;The type of entity you want to retrieve a list of associations for. Possible values: **accountHolder** or **paymentInstrument**.&quot;</summary>
+            /// <summary>&quot;The type of entity you want to retrieve a list of associations for. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.&quot;</summary>
             [QueryParameter("entityType")]
             public global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType? EntityType { get; set; }
             /// <summary>&quot;The index of the page to retrieve. The index of the first page is **0** (zero). Default:  **0**.&quot;</summary>

@@ -40,9 +40,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Iban,
         #pragma warning restore CS1591
+        [EnumMember(Value = "inLocal")]
+        #pragma warning disable CS1591
+        InLocal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "jpLocal")]
+        #pragma warning disable CS1591
+        JpLocal,
+        #pragma warning restore CS1591
         [EnumMember(Value = "legacy")]
         #pragma warning disable CS1591
         Legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mxLocal")]
+        #pragma warning disable CS1591
+        MxLocal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "myLocal")]
+        #pragma warning disable CS1591
+        MyLocal,
         #pragma warning restore CS1591
         [EnumMember(Value = "noLocal")]
         #pragma warning disable CS1591

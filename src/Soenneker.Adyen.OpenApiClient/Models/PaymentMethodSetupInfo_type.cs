@@ -55,6 +55,50 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Alipay_plus,
         #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_alipay_cn")]
+        #pragma warning disable CS1591
+        Alipay_plus_alipay_cn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_alipay_hk")]
+        #pragma warning disable CS1591
+        Alipay_plus_alipay_hk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_dana")]
+        #pragma warning disable CS1591
+        Alipay_plus_dana,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_gcash")]
+        #pragma warning disable CS1591
+        Alipay_plus_gcash,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_kakaopay")]
+        #pragma warning disable CS1591
+        Alipay_plus_kakaopay,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_kplus")]
+        #pragma warning disable CS1591
+        Alipay_plus_kplus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_naverpay")]
+        #pragma warning disable CS1591
+        Alipay_plus_naverpay,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_rabbitlinepay")]
+        #pragma warning disable CS1591
+        Alipay_plus_rabbitlinepay,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_tosspay")]
+        #pragma warning disable CS1591
+        Alipay_plus_tosspay,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_touchngo")]
+        #pragma warning disable CS1591
+        Alipay_plus_touchngo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "alipay_plus_truemoney")]
+        #pragma warning disable CS1591
+        Alipay_plus_truemoney,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alipay_wap")]
         #pragma warning disable CS1591
         Alipay_wap,
@@ -110,6 +154,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "br_schemes")]
         #pragma warning disable CS1591
         Br_schemes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "carnet")]
+        #pragma warning disable CS1591
+        Carnet,
         #pragma warning restore CS1591
         [EnumMember(Value = "cartebancaire")]
         #pragma warning disable CS1591

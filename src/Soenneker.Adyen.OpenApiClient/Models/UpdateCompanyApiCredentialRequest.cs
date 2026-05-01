@@ -46,6 +46,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> Roles { get; set; }
 #endif
+        /// <summary>The subject DN of the certificate issued by Adyen.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubjectDN { get; set; }
+#nullable restore
+#else
+        public string SubjectDN { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "associatedMerchantAccounts", n => { AssociatedMerchantAccounts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "subjectDN", n => { SubjectDN = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("associatedMerchantAccounts", AssociatedMerchantAccounts);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
+            writer.WriteStringValue("subjectDN", SubjectDN);
         }
     }
 }

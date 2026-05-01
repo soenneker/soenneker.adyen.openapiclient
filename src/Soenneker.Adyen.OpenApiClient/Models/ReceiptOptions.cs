@@ -12,6 +12,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class ReceiptOptions : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The text of the first header line to be shown on the receipt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HeaderLine1 { get; set; }
+#nullable restore
+#else
+        public string HeaderLine1 { get; set; }
+#endif
+        /// <summary>The text of the second header line to be shown on the receipt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HeaderLine2 { get; set; }
+#nullable restore
+#else
+        public string HeaderLine2 { get; set; }
+#endif
         /// <summary>The receipt logo converted to a Base64-encoded string. The image must be a .bmp file of &lt; 256 KB, dimensions 240 (H) x 384 (W) px.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +64,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "headerLine1", n => { HeaderLine1 = n.GetStringValue(); } },
+                { "headerLine2", n => { HeaderLine2 = n.GetStringValue(); } },
                 { "logo", n => { Logo = n.GetStringValue(); } },
                 { "promptBeforePrinting", n => { PromptBeforePrinting = n.GetBoolValue(); } },
                 { "qrCodeData", n => { QrCodeData = n.GetStringValue(); } },
@@ -60,6 +78,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("headerLine1", HeaderLine1);
+            writer.WriteStringValue("headerLine2", HeaderLine2);
             writer.WriteStringValue("logo", Logo);
             writer.WriteBoolValue("promptBeforePrinting", PromptBeforePrinting);
             writer.WriteStringValue("qrCodeData", QrCodeData);

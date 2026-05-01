@@ -9,35 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PatchableMandate : IAdditionalDataHolder, IParsable
+    public partial class PulseUpdateInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unique identifier of the payment instrument linked to the mandate.</summary>
+        /// <summary>The transactionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentInstrumentId { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo? TransactionDescription { get; set; }
 #nullable restore
 #else
-        public string PaymentInstrumentId { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo TransactionDescription { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableMandate"/> and sets the default values.
-        /// </summary>
-        public PatchableMandate()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableMandate"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PulseUpdateInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.PatchableMandate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.PulseUpdateInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PatchableMandate();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.PulseUpdateInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
+                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,8 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo>("transactionDescription", TransactionDescription);
         }
     }
 }

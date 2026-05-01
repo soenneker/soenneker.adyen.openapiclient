@@ -28,6 +28,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.Connectivity Connectivity { get; set; }
 #endif
+        /// <summary>The dcc property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.Dcc? Dcc { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.Dcc Dcc { get; set; }
+#endif
         /// <summary>Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,6 +240,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "cardholderReceipt", n => { CardholderReceipt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardholderReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.CardholderReceipt.CreateFromDiscriminatorValue); } },
                 { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Connectivity>(global::Soenneker.Adyen.OpenApiClient.Models.Connectivity.CreateFromDiscriminatorValue); } },
+                { "dcc", n => { Dcc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Dcc>(global::Soenneker.Adyen.OpenApiClient.Models.Dcc.CreateFromDiscriminatorValue); } },
                 { "gratuities", n => { Gratuities = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Gratuity>(global::Soenneker.Adyen.OpenApiClient.Models.Gratuity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hardware", n => { Hardware = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Hardware>(global::Soenneker.Adyen.OpenApiClient.Models.Hardware.CreateFromDiscriminatorValue); } },
                 { "homeScreen", n => { HomeScreen = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.HomeScreenSettings>(global::Soenneker.Adyen.OpenApiClient.Models.HomeScreenSettings.CreateFromDiscriminatorValue); } },
@@ -266,6 +275,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardholderReceipt>("cardholderReceipt", CardholderReceipt);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Connectivity>("connectivity", Connectivity);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Dcc>("dcc", Dcc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Gratuity>("gratuities", Gratuities);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Hardware>("hardware", Hardware);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.HomeScreenSettings>("homeScreen", HomeScreen);

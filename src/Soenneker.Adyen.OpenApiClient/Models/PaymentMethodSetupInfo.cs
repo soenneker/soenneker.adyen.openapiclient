@@ -76,6 +76,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BusinessLineId { get; set; }
 #endif
+        /// <summary>The carnet property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Carnet { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Carnet { get; set; }
+#endif
         /// <summary>The cartesBancaires property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -308,7 +316,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo Sepadirectdebit { get; set; }
 #endif
-        /// <summary>&quot;The sales channel. Required if the merchant account does not have a sales channel. When you provide this field, it overrides the default sales channel set on the merchant account.Possible values: **eCommerce**, **pos**, **contAuth**, and **moto**. &quot;</summary>
+        /// <summary>&quot;The sales channel. Required if:- The merchant account does not have a sales channel.- `type` is **alipay**.When you provide this field, it overrides the default sales channel set on the merchant account.Possible values: **eCommerce**, **pos**, **contAuth**, and **moto**. &quot;</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfo_shopperInteraction? ShopperInteraction { get; set; }
         /// <summary>The sodexo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -442,6 +450,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "applePay", n => { ApplePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo.CreateFromDiscriminatorValue); } },
                 { "bcmc", n => { Bcmc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo.CreateFromDiscriminatorValue); } },
                 { "businessLineId", n => { BusinessLineId = n.GetStringValue(); } },
+                { "carnet", n => { Carnet = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
                 { "cartesBancaires", n => { CartesBancaires = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo.CreateFromDiscriminatorValue); } },
                 { "clearpay", n => { Clearpay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo.CreateFromDiscriminatorValue); } },
                 { "countries", n => { Countries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -503,6 +512,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo>("applePay", ApplePay);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo>("bcmc", Bcmc);
             writer.WriteStringValue("businessLineId", BusinessLineId);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("carnet", Carnet);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo>("cartesBancaires", CartesBancaires);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo>("clearpay", Clearpay);
             writer.WriteCollectionOfPrimitiveValues<string>("countries", Countries);

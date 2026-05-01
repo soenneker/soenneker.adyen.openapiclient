@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The bankAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount? BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccount? BankAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccount BankAccount { get; set; }
 #endif
         /// <summary>The unique identifier of the [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments__resParam_id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.CreateFromDiscriminatorValue); } },
+                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.CreateFromDiscriminatorValue); } },
                 { "transferInstrumentId", n => { TransferInstrumentId = n.GetStringValue(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount>("bankAccount", BankAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccount>("bankAccount", BankAccount);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
         }
     }

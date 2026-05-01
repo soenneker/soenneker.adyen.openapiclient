@@ -9,26 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BalancePlatformServiceV2BankAccount : IParsable
+    public partial class BankAccount : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification? AccountIdentification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification? AccountIdentification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification AccountIdentification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification AccountIdentification { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccount"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.BankAccount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.BankAccount();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountIdentification", n => { AccountIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification.CreateFromDiscriminatorValue); } },
+                { "accountIdentification", n => { AccountIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,13 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification>("accountIdentification", AccountIdentification);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification>("accountIdentification", AccountIdentification);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AULocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BRLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CALocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CZLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DKLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2HULocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2IbanAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NOLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PLLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SELocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SGLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UKLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2USLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.HKLocalAccountIdentification"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NZLocalAccountIdentification"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BalancePlatformServiceV2BankAccount_accountIdentification : IComposedTypeWrapper, IParsable
+        public partial class BankAccount_accountIdentification : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AULocalAccountIdentification"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,13 +187,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification"/></returns>
+            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BankAccount.BalancePlatformServiceV2BankAccount_accountIdentification();
+                var result = new global::Soenneker.Adyen.OpenApiClient.Models.BankAccount.BankAccount_accountIdentification();
                 if("BalancePlatformServiceV2AULocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.BalancePlatformServiceV2AULocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AULocalAccountIdentification();

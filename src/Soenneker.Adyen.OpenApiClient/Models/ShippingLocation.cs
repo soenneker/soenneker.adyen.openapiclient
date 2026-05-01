@@ -23,10 +23,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The contact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Contact? Contact { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Contact? Contact { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Contact Contact { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Contact Contact { get; set; }
 #endif
         /// <summary>The unique identifier of the shipping location, for use as `shippingLocationId` when creating an order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Address>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Address.CreateFromDiscriminatorValue); } },
-                { "contact", n => { Contact = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Contact>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Contact.CreateFromDiscriminatorValue); } },
+                { "contact", n => { Contact = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Contact>(global::Soenneker.Adyen.OpenApiClient.Models.Contact.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Address>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Contact>("contact", Contact);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Contact>("contact", Contact);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
         }

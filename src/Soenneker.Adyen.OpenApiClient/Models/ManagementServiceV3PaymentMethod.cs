@@ -15,60 +15,60 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The accel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccelInfo? Accel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfo? Accel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccelInfo Accel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfo Accel { get; set; }
 #endif
         /// <summary>The affirm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo? Affirm { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AffirmResponseInfo? Affirm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo Affirm { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AffirmResponseInfo Affirm { get; set; }
 #endif
         /// <summary>The afterpayTouch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchInfo? AfterpayTouch { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchResponseInfo? AfterpayTouch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchInfo AfterpayTouch { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchResponseInfo AfterpayTouch { get; set; }
 #endif
         /// <summary>The alipayPlus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusInfo? AlipayPlus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusResponseInfo? AlipayPlus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusInfo AlipayPlus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusResponseInfo AlipayPlus { get; set; }
 #endif
         /// <summary>Indicates whether receiving payments is allowed. This value is set to **true** by Adyen after screening your merchant account.</summary>
         public bool? Allowed { get; set; }
         /// <summary>The amex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo? Amex { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo? Amex { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo Amex { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo Amex { get; set; }
 #endif
         /// <summary>The applePay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo? ApplePay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo? ApplePay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo ApplePay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo ApplePay { get; set; }
 #endif
         /// <summary>The bcmc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo? Bcmc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo? Bcmc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo Bcmc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo Bcmc { get; set; }
 #endif
         /// <summary>The unique identifier of the business line. Required if you are a [platform model](https://docs.adyen.com/platforms).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,21 +78,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BusinessLineId { get; set; }
 #endif
+        /// <summary>The carnet property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo? Carnet { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo Carnet { get; set; }
+#endif
         /// <summary>The cartesBancaires property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo? CartesBancaires { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesResponseInfo? CartesBancaires { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo CartesBancaires { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesResponseInfo CartesBancaires { get; set; }
 #endif
         /// <summary>The clearpay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo? Clearpay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ClearpayResponseInfo? Clearpay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo Clearpay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ClearpayResponseInfo Clearpay { get; set; }
 #endif
         /// <summary>The list of countries where a payment method is available. By default, all countries supported by the payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,10 +113,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The cup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Cup { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CupResponseInfo? Cup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Cup { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CupResponseInfo Cup { get; set; }
 #endif
         /// <summary>The list of currencies that a payment method supports. By default, all currencies supported by the payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,60 +137,60 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The diners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo? Diners { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DinersResponseInfo? Diners { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo Diners { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DinersResponseInfo Diners { get; set; }
 #endif
         /// <summary>The discover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Discover { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DiscoverResponseInfo? Discover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Discover { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DiscoverResponseInfo Discover { get; set; }
 #endif
         /// <summary>The eft_directdebit_CA property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? EftDirectdebitCA { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EFTDirectDebitCAResponseInfo? EftDirectdebitCA { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo EftDirectdebitCA { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EFTDirectDebitCAResponseInfo EftDirectdebitCA { get; set; }
 #endif
         /// <summary>The eftpos_australia property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? EftposAustralia { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftPosAustraliaResponseInfo? EftposAustralia { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo EftposAustralia { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftPosAustraliaResponseInfo EftposAustralia { get; set; }
 #endif
         /// <summary>Indicates whether the payment method is enabled (**true**) or disabled (**false**).</summary>
         public bool? Enabled { get; set; }
         /// <summary>The girocard property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Girocard { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GirocardResponseInfo? Girocard { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Girocard { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GirocardResponseInfo Girocard { get; set; }
 #endif
         /// <summary>The givex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo? Givex { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GivexResponseInfo? Givex { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo Givex { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GivexResponseInfo Givex { get; set; }
 #endif
         /// <summary>The googlePay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayInfo? GooglePay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayResponseInfo? GooglePay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayInfo GooglePay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayResponseInfo GooglePay { get; set; }
 #endif
         /// <summary>The identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,114 +203,114 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ideal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Ideal { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdealResponseInfo? Ideal { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Ideal { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdealResponseInfo Ideal { get; set; }
 #endif
         /// <summary>The interac_card property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? InteracCard { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InteracCardResponseInfo? InteracCard { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo InteracCard { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InteracCardResponseInfo InteracCard { get; set; }
 #endif
         /// <summary>The jcb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.JCBInfo? Jcb { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.JCBResponseInfo? Jcb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.JCBInfo Jcb { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.JCBResponseInfo Jcb { get; set; }
 #endif
         /// <summary>The klarna property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo? Klarna { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfo? Klarna { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo Klarna { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfo Klarna { get; set; }
 #endif
         /// <summary>The maestro property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Maestro { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MaestroResponseInfo? Maestro { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Maestro { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MaestroResponseInfo Maestro { get; set; }
 #endif
         /// <summary>The maestro_usa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? MaestroUsa { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MaestroUSAResponseInfo? MaestroUsa { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo MaestroUsa { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MaestroUSAResponseInfo MaestroUsa { get; set; }
 #endif
         /// <summary>The mc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Mc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MCResponseInfo? Mc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Mc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MCResponseInfo Mc { get; set; }
 #endif
         /// <summary>The mealVoucher_FR property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRInfo? MealVoucherFR { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRResponseInfo? MealVoucherFR { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRInfo MealVoucherFR { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRResponseInfo MealVoucherFR { get; set; }
 #endif
         /// <summary>The nyce property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfo? Nyce { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo? Nyce { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfo Nyce { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo Nyce { get; set; }
 #endif
         /// <summary>The paybybank_plaid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidInfo? PaybybankPlaid { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfo? PaybybankPlaid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidInfo PaybybankPlaid { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfo PaybybankPlaid { get; set; }
 #endif
         /// <summary>The payme property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayMeInfo? Payme { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayMeResponseInfo? Payme { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayMeInfo Payme { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayMeResponseInfo Payme { get; set; }
 #endif
         /// <summary>The paypal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalInfo? Paypal { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalResponseInfo? Paypal { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalInfo Paypal { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalResponseInfo Paypal { get; set; }
 #endif
         /// <summary>The payto property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayToInfo? Payto { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayToResponseInfo? Payto { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayToInfo Payto { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayToResponseInfo Payto { get; set; }
 #endif
         /// <summary>The pulse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PulseInfo? Pulse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PulseResponseInfo? Pulse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PulseInfo Pulse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PulseResponseInfo Pulse { get; set; }
 #endif
         /// <summary>Your reference for the payment method. Supported characters a-z, A-Z, 0-9.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -315,10 +323,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The sepadirectdebit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo? Sepadirectdebit { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitResponseInfo? Sepadirectdebit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo Sepadirectdebit { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitResponseInfo Sepadirectdebit { get; set; }
 #endif
         /// <summary>The sales channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -331,26 +339,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The sodexo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SodexoInfo? Sodexo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SodexoResponseInfo? Sodexo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SodexoInfo Sodexo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SodexoResponseInfo Sodexo { get; set; }
 #endif
         /// <summary>The sofort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SofortInfo? Sofort { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SofortResponseInfo? Sofort { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SofortInfo Sofort { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SofortResponseInfo Sofort { get; set; }
 #endif
         /// <summary>The star property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StarInfo? Star { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StarResponseInfo? Star { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StarInfo Star { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StarResponseInfo Star { get; set; }
 #endif
         /// <summary>The unique identifier of the store for which to configure the payment method, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -363,34 +371,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The svs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SvsInfo? Svs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SvsResponseInfo? Svs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SvsInfo Svs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SvsResponseInfo Svs { get; set; }
 #endif
         /// <summary>The swish property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SwishInfo? Swish { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SwishResponseInfo? Swish { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SwishInfo Swish { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SwishResponseInfo Swish { get; set; }
 #endif
         /// <summary>The ticket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TicketInfo? Ticket { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TicketResponseInfo? Ticket { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TicketInfo Ticket { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TicketResponseInfo Ticket { get; set; }
 #endif
         /// <summary>The twint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TwintInfo? Twint { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TwintResponseInfo? Twint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TwintInfo Twint { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TwintResponseInfo Twint { get; set; }
 #endif
         /// <summary>Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -403,44 +411,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The valuelink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfo? Valuelink { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo? Valuelink { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfo Valuelink { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo Valuelink { get; set; }
 #endif
         /// <summary>Payment method status. Possible values:* **valid*** **pending*** **invalid*** **rejected**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod_verificationStatus? VerificationStatus { get; set; }
         /// <summary>The vipps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.VippsInfo? Vipps { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VippsResponseInfo? Vipps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.VippsInfo Vipps { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VippsResponseInfo Vipps { get; set; }
 #endif
         /// <summary>The visa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Visa { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VisaResponseInfo? Visa { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Visa { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VisaResponseInfo Visa { get; set; }
 #endif
         /// <summary>The wechatpay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayInfo? Wechatpay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayResponseInfo? Wechatpay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayInfo Wechatpay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayResponseInfo Wechatpay { get; set; }
 #endif
         /// <summary>The wechatpay_pos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosInfo? WechatpayPos { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosResponseInfo? WechatpayPos { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosInfo WechatpayPos { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosResponseInfo WechatpayPos { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -460,62 +468,63 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accel", n => { Accel = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AccelInfo.CreateFromDiscriminatorValue); } },
-                { "affirm", n => { Affirm = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo.CreateFromDiscriminatorValue); } },
-                { "afterpayTouch", n => { AfterpayTouch = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchInfo.CreateFromDiscriminatorValue); } },
-                { "alipayPlus", n => { AlipayPlus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusInfo.CreateFromDiscriminatorValue); } },
+                { "accel", n => { Accel = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfo.CreateFromDiscriminatorValue); } },
+                { "affirm", n => { Affirm = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AffirmResponseInfo.CreateFromDiscriminatorValue); } },
+                { "afterpayTouch", n => { AfterpayTouch = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchResponseInfo.CreateFromDiscriminatorValue); } },
+                { "alipayPlus", n => { AlipayPlus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusResponseInfo.CreateFromDiscriminatorValue); } },
                 { "allowed", n => { Allowed = n.GetBoolValue(); } },
-                { "amex", n => { Amex = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo.CreateFromDiscriminatorValue); } },
-                { "applePay", n => { ApplePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo.CreateFromDiscriminatorValue); } },
-                { "bcmc", n => { Bcmc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo.CreateFromDiscriminatorValue); } },
+                { "amex", n => { Amex = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo.CreateFromDiscriminatorValue); } },
+                { "applePay", n => { ApplePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo.CreateFromDiscriminatorValue); } },
+                { "bcmc", n => { Bcmc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo.CreateFromDiscriminatorValue); } },
                 { "businessLineId", n => { BusinessLineId = n.GetStringValue(); } },
-                { "cartesBancaires", n => { CartesBancaires = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo.CreateFromDiscriminatorValue); } },
-                { "clearpay", n => { Clearpay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo.CreateFromDiscriminatorValue); } },
+                { "carnet", n => { Carnet = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo.CreateFromDiscriminatorValue); } },
+                { "cartesBancaires", n => { CartesBancaires = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesResponseInfo.CreateFromDiscriminatorValue); } },
+                { "clearpay", n => { Clearpay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ClearpayResponseInfo.CreateFromDiscriminatorValue); } },
                 { "countries", n => { Countries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "cup", n => { Cup = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
+                { "cup", n => { Cup = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CupResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CupResponseInfo.CreateFromDiscriminatorValue); } },
                 { "currencies", n => { Currencies = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "customRoutingFlags", n => { CustomRoutingFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "diners", n => { Diners = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo.CreateFromDiscriminatorValue); } },
-                { "discover", n => { Discover = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "eft_directdebit_CA", n => { EftDirectdebitCA = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "eftpos_australia", n => { EftposAustralia = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
+                { "diners", n => { Diners = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DinersResponseInfo.CreateFromDiscriminatorValue); } },
+                { "discover", n => { Discover = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DiscoverResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DiscoverResponseInfo.CreateFromDiscriminatorValue); } },
+                { "eft_directdebit_CA", n => { EftDirectdebitCA = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EFTDirectDebitCAResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.EFTDirectDebitCAResponseInfo.CreateFromDiscriminatorValue); } },
+                { "eftpos_australia", n => { EftposAustralia = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EftPosAustraliaResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.EftPosAustraliaResponseInfo.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "girocard", n => { Girocard = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "givex", n => { Givex = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo.CreateFromDiscriminatorValue); } },
-                { "googlePay", n => { GooglePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GooglePayInfo.CreateFromDiscriminatorValue); } },
+                { "girocard", n => { Girocard = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GirocardResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GirocardResponseInfo.CreateFromDiscriminatorValue); } },
+                { "givex", n => { Givex = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GivexResponseInfo.CreateFromDiscriminatorValue); } },
+                { "googlePay", n => { GooglePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GooglePayResponseInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "ideal", n => { Ideal = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "interac_card", n => { InteracCard = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "jcb", n => { Jcb = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JCBInfo>(global::Soenneker.Adyen.OpenApiClient.Models.JCBInfo.CreateFromDiscriminatorValue); } },
-                { "klarna", n => { Klarna = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo>(global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo.CreateFromDiscriminatorValue); } },
-                { "maestro", n => { Maestro = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "maestro_usa", n => { MaestroUsa = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "mc", n => { Mc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "mealVoucher_FR", n => { MealVoucherFR = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRInfo>(global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRInfo.CreateFromDiscriminatorValue); } },
-                { "nyce", n => { Nyce = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceInfo>(global::Soenneker.Adyen.OpenApiClient.Models.NyceInfo.CreateFromDiscriminatorValue); } },
-                { "paybybank_plaid", n => { PaybybankPlaid = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidInfo.CreateFromDiscriminatorValue); } },
-                { "payme", n => { Payme = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayMeInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayMeInfo.CreateFromDiscriminatorValue); } },
-                { "paypal", n => { Paypal = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayPalInfo.CreateFromDiscriminatorValue); } },
-                { "payto", n => { Payto = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayToInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayToInfo.CreateFromDiscriminatorValue); } },
-                { "pulse", n => { Pulse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PulseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PulseInfo.CreateFromDiscriminatorValue); } },
+                { "ideal", n => { Ideal = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.IdealResponseInfo.CreateFromDiscriminatorValue); } },
+                { "interac_card", n => { InteracCard = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InteracCardResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.InteracCardResponseInfo.CreateFromDiscriminatorValue); } },
+                { "jcb", n => { Jcb = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JCBResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.JCBResponseInfo.CreateFromDiscriminatorValue); } },
+                { "klarna", n => { Klarna = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfo.CreateFromDiscriminatorValue); } },
+                { "maestro", n => { Maestro = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MaestroResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.MaestroResponseInfo.CreateFromDiscriminatorValue); } },
+                { "maestro_usa", n => { MaestroUsa = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MaestroUSAResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.MaestroUSAResponseInfo.CreateFromDiscriminatorValue); } },
+                { "mc", n => { Mc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MCResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.MCResponseInfo.CreateFromDiscriminatorValue); } },
+                { "mealVoucher_FR", n => { MealVoucherFR = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRResponseInfo.CreateFromDiscriminatorValue); } },
+                { "nyce", n => { Nyce = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo.CreateFromDiscriminatorValue); } },
+                { "paybybank_plaid", n => { PaybybankPlaid = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfo.CreateFromDiscriminatorValue); } },
+                { "payme", n => { Payme = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayMeResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayMeResponseInfo.CreateFromDiscriminatorValue); } },
+                { "paypal", n => { Paypal = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayPalResponseInfo.CreateFromDiscriminatorValue); } },
+                { "payto", n => { Payto = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayToResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PayToResponseInfo.CreateFromDiscriminatorValue); } },
+                { "pulse", n => { Pulse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PulseResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PulseResponseInfo.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "sepadirectdebit", n => { Sepadirectdebit = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo.CreateFromDiscriminatorValue); } },
+                { "sepadirectdebit", n => { Sepadirectdebit = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitResponseInfo.CreateFromDiscriminatorValue); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetStringValue(); } },
-                { "sodexo", n => { Sodexo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SodexoInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SodexoInfo.CreateFromDiscriminatorValue); } },
-                { "sofort", n => { Sofort = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SofortInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SofortInfo.CreateFromDiscriminatorValue); } },
-                { "star", n => { Star = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StarInfo>(global::Soenneker.Adyen.OpenApiClient.Models.StarInfo.CreateFromDiscriminatorValue); } },
+                { "sodexo", n => { Sodexo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SodexoResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SodexoResponseInfo.CreateFromDiscriminatorValue); } },
+                { "sofort", n => { Sofort = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SofortResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SofortResponseInfo.CreateFromDiscriminatorValue); } },
+                { "star", n => { Star = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StarResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.StarResponseInfo.CreateFromDiscriminatorValue); } },
                 { "storeIds", n => { StoreIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "svs", n => { Svs = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SvsInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SvsInfo.CreateFromDiscriminatorValue); } },
-                { "swish", n => { Swish = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SwishInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SwishInfo.CreateFromDiscriminatorValue); } },
-                { "ticket", n => { Ticket = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TicketInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TicketInfo.CreateFromDiscriminatorValue); } },
-                { "twint", n => { Twint = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TwintInfo.CreateFromDiscriminatorValue); } },
+                { "svs", n => { Svs = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SvsResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SvsResponseInfo.CreateFromDiscriminatorValue); } },
+                { "swish", n => { Swish = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SwishResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SwishResponseInfo.CreateFromDiscriminatorValue); } },
+                { "ticket", n => { Ticket = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TicketResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TicketResponseInfo.CreateFromDiscriminatorValue); } },
+                { "twint", n => { Twint = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TwintResponseInfo.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "valuelink", n => { Valuelink = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfo.CreateFromDiscriminatorValue); } },
+                { "valuelink", n => { Valuelink = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo.CreateFromDiscriminatorValue); } },
                 { "verificationStatus", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod_verificationStatus>(); } },
-                { "vipps", n => { Vipps = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsInfo>(global::Soenneker.Adyen.OpenApiClient.Models.VippsInfo.CreateFromDiscriminatorValue); } },
-                { "visa", n => { Visa = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
-                { "wechatpay", n => { Wechatpay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayInfo.CreateFromDiscriminatorValue); } },
-                { "wechatpay_pos", n => { WechatpayPos = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosInfo>(global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosInfo.CreateFromDiscriminatorValue); } },
+                { "vipps", n => { Vipps = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.VippsResponseInfo.CreateFromDiscriminatorValue); } },
+                { "visa", n => { Visa = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.VisaResponseInfo.CreateFromDiscriminatorValue); } },
+                { "wechatpay", n => { Wechatpay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayResponseInfo.CreateFromDiscriminatorValue); } },
+                { "wechatpay_pos", n => { WechatpayPos = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosResponseInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -525,62 +534,63 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelInfo>("accel", Accel);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmInfo>("affirm", Affirm);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchInfo>("afterpayTouch", AfterpayTouch);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusInfo>("alipayPlus", AlipayPlus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccelResponseInfo>("accel", Accel);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmResponseInfo>("affirm", Affirm);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AfterpayTouchResponseInfo>("afterpayTouch", AfterpayTouch);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AlipayPlusResponseInfo>("alipayPlus", AlipayPlus);
             writer.WriteBoolValue("allowed", Allowed);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo>("amex", Amex);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo>("applePay", ApplePay);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo>("bcmc", Bcmc);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo>("amex", Amex);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo>("applePay", ApplePay);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo>("bcmc", Bcmc);
             writer.WriteStringValue("businessLineId", BusinessLineId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo>("cartesBancaires", CartesBancaires);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo>("clearpay", Clearpay);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo>("carnet", Carnet);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesResponseInfo>("cartesBancaires", CartesBancaires);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayResponseInfo>("clearpay", Clearpay);
             writer.WriteCollectionOfPrimitiveValues<string>("countries", Countries);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("cup", Cup);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CupResponseInfo>("cup", Cup);
             writer.WriteCollectionOfPrimitiveValues<string>("currencies", Currencies);
             writer.WriteCollectionOfPrimitiveValues<string>("customRoutingFlags", CustomRoutingFlags);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo>("diners", Diners);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("discover", Discover);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("eft_directdebit_CA", EftDirectdebitCA);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("eftpos_australia", EftposAustralia);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersResponseInfo>("diners", Diners);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DiscoverResponseInfo>("discover", Discover);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EFTDirectDebitCAResponseInfo>("eft_directdebit_CA", EftDirectdebitCA);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EftPosAustraliaResponseInfo>("eftpos_australia", EftposAustralia);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("girocard", Girocard);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo>("givex", Givex);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayInfo>("googlePay", GooglePay);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GirocardResponseInfo>("girocard", Girocard);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexResponseInfo>("givex", Givex);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayResponseInfo>("googlePay", GooglePay);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("ideal", Ideal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("interac_card", InteracCard);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JCBInfo>("jcb", Jcb);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo>("klarna", Klarna);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("maestro", Maestro);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("maestro_usa", MaestroUsa);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("mc", Mc);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRInfo>("mealVoucher_FR", MealVoucherFR);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceInfo>("nyce", Nyce);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidInfo>("paybybank_plaid", PaybybankPlaid);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayMeInfo>("payme", Payme);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalInfo>("paypal", Paypal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayToInfo>("payto", Payto);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PulseInfo>("pulse", Pulse);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealResponseInfo>("ideal", Ideal);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InteracCardResponseInfo>("interac_card", InteracCard);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JCBResponseInfo>("jcb", Jcb);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfo>("klarna", Klarna);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MaestroResponseInfo>("maestro", Maestro);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MaestroUSAResponseInfo>("maestro_usa", MaestroUsa);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MCResponseInfo>("mc", Mc);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MealVoucherFRResponseInfo>("mealVoucher_FR", MealVoucherFR);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo>("nyce", Nyce);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfo>("paybybank_plaid", PaybybankPlaid);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayMeResponseInfo>("payme", Payme);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalResponseInfo>("paypal", Paypal);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayToResponseInfo>("payto", Payto);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PulseResponseInfo>("pulse", Pulse);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo>("sepadirectdebit", Sepadirectdebit);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitResponseInfo>("sepadirectdebit", Sepadirectdebit);
             writer.WriteStringValue("shopperInteraction", ShopperInteraction);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SodexoInfo>("sodexo", Sodexo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SofortInfo>("sofort", Sofort);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StarInfo>("star", Star);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SodexoResponseInfo>("sodexo", Sodexo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SofortResponseInfo>("sofort", Sofort);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StarResponseInfo>("star", Star);
             writer.WriteCollectionOfPrimitiveValues<string>("storeIds", StoreIds);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SvsInfo>("svs", Svs);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SwishInfo>("swish", Swish);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TicketInfo>("ticket", Ticket);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintInfo>("twint", Twint);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SvsResponseInfo>("svs", Svs);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SwishResponseInfo>("swish", Swish);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TicketResponseInfo>("ticket", Ticket);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintResponseInfo>("twint", Twint);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfo>("valuelink", Valuelink);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo>("valuelink", Valuelink);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod_verificationStatus>("verificationStatus", VerificationStatus);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsInfo>("vipps", Vipps);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("visa", Visa);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayInfo>("wechatpay", Wechatpay);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosInfo>("wechatpay_pos", WechatpayPos);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsResponseInfo>("vipps", Vipps);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaResponseInfo>("visa", Visa);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayResponseInfo>("wechatpay", Wechatpay);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayPosResponseInfo>("wechatpay_pos", WechatpayPos);
         }
     }
 }

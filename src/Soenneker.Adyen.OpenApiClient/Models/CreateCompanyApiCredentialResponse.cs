@@ -94,6 +94,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> Roles { get; set; }
 #endif
+        /// <summary>The subject DN of the certificate issued by Adyen.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubjectDN { get; set; }
+#nullable restore
+#else
+        public string SubjectDN { get; set; }
+#endif
         /// <summary>The name of the [API credential](https://docs.adyen.com/development-resources/api-credentials), for example **ws@Company.TestCompany**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks.CreateFromDiscriminatorValue); } },
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "subjectDN", n => { SubjectDN = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -152,6 +161,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks>("_links", Links);
             writer.WriteStringValue("password", Password);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
+            writer.WriteStringValue("subjectDN", SubjectDN);
             writer.WriteStringValue("username", Username);
         }
     }

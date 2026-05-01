@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>&quot;The requested login method for the user. To use SSO, you must already have SSO configured with Adyen before creating the user.Possible values: **Username &amp; account**, **Email**, or **SSO** &quot;</summary>
+        /// <summary>&quot;The requested login method for the user. To use SSO, you must already have SSO configured with Adyen before creating the user.Possible values: **Email** or **SSO** &quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LoginMethod { get; set; }

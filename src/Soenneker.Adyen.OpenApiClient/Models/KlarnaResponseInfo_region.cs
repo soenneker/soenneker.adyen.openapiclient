@@ -3,21 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Merchant price plan</summary>
+    /// <summary>The region of operation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum AffirmInfo_pricePlan
+    public enum KlarnaResponseInfo_region
     {
-        [EnumMember(Value = "BRONZE")]
+        [EnumMember(Value = "AU")]
         #pragma warning disable CS1591
-        BRONZE,
+        AU,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SILVER")]
+        [EnumMember(Value = "CH")]
         #pragma warning disable CS1591
-        SILVER,
+        CH,
         #pragma warning restore CS1591
-        [EnumMember(Value = "GOLD")]
+        [EnumMember(Value = "EU")]
         #pragma warning disable CS1591
-        GOLD,
+        EU,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NA")]
+        #pragma warning disable CS1591
+        NA,
         #pragma warning restore CS1591
     }
 }

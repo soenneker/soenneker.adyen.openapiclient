@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Method for customer authentication. Allows the Sale System informed about customer authentication for the payment transaction.Possible values:* **Bypass*** **ManualVerification*** **MerchantAuthentication*** **OfflinePIN*** **OnlinePIN*** **PaperSignature*** **SecureCertificate*** **SecureNoCertificate*** **SecuredChannel*** **SignatureCapture*** **UnknownMethod**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment>? AuthenticationMethod { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?>? AuthenticationMethod { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment> AuthenticationMethod { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?> AuthenticationMethod { get; set; }
 #endif
         /// <summary>The CapturedSignature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AmountsResp", n => { AmountsResp = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountsResp>(global::Soenneker.Adyen.OpenApiClient.Models.AmountsResp.CreateFromDiscriminatorValue); } },
-                { "AuthenticationMethod", n => { AuthenticationMethod = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "AuthenticationMethod", n => { AuthenticationMethod = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>()?.AsList(); } },
                 { "CapturedSignature", n => { CapturedSignature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignature>(global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignature.CreateFromDiscriminatorValue); } },
                 { "CurrencyConversion", n => { CurrencyConversion = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>(global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
@@ -143,7 +143,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountsResp>("AmountsResp", AmountsResp);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("AuthenticationMethod", AuthenticationMethod);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("AuthenticationMethod", AuthenticationMethod);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignature>("CapturedSignature", CapturedSignature);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>("CurrencyConversion", CurrencyConversion);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);
