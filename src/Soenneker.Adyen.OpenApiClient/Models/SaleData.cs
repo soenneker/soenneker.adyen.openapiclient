@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of customer order open, closed or both to be sent in the response messages.Possible values:* **Both*** **Closed*** **Open**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?>? CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment>? CustomerOrderReq { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?> CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment> CustomerOrderReq { get; set; }
 #endif
         /// <summary>Identification of the Cashier or Operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "CustomerOrderID", n => { CustomerOrderID = n.GetStringValue(); } },
-                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>()?.AsList(); } },
+                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "OperatorID", n => { OperatorID = n.GetStringValue(); } },
                 { "OperatorLanguage", n => { OperatorLanguage = n.GetStringValue(); } },
                 { "SaleReferenceID", n => { SaleReferenceID = n.GetStringValue(); } },
@@ -152,7 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("CustomerOrderID", CustomerOrderID);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("CustomerOrderReq", CustomerOrderReq);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("CustomerOrderReq", CustomerOrderReq);
             writer.WriteStringValue("OperatorID", OperatorID);
             writer.WriteStringValue("OperatorLanguage", OperatorLanguage);
             writer.WriteStringValue("SaleReferenceID", SaleReferenceID);
