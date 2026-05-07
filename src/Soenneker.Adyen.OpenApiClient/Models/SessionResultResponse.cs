@@ -31,10 +31,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of all authorised payments done for this session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment>? Payments { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?>? Payments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment> Payments { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Payment?> Payments { get; set; }
 #endif
         /// <summary>The unique reference that you provided in the original `/sessions` request. This identifies the payment and is used in all communication with you about the payment status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse_additionalData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "payments", n => { Payments = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>()?.AsList(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse_status>(); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse_additionalData>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("payments", Payments);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("payments", Payments);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse_status>("status", Status);
         }
