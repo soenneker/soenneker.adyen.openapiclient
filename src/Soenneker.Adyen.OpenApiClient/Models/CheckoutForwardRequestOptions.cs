@@ -34,6 +34,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Set to **true**, the payment details are [tokenized](https://docs.adyen.com/online-payments/tokenization).</summary>
         public bool? Tokenize { get; set; }
+        /// <summary>Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of transactionLinkId in the incoming 3rd party response</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TransactionLinkIdPaths { get; set; }
+#nullable restore
+#else
+        public List<string> TransactionLinkIdPaths { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "networkToken", n => { NetworkToken = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNetworkTokenOption>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNetworkTokenOption.CreateFromDiscriminatorValue); } },
                 { "networkTxReferencePaths", n => { NetworkTxReferencePaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tokenize", n => { Tokenize = n.GetBoolValue(); } },
+                { "transactionLinkIdPaths", n => { TransactionLinkIdPaths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNetworkTokenOption>("networkToken", NetworkToken);
             writer.WriteCollectionOfPrimitiveValues<string>("networkTxReferencePaths", NetworkTxReferencePaths);
             writer.WriteBoolValue("tokenize", Tokenize);
+            writer.WriteCollectionOfPrimitiveValues<string>("transactionLinkIdPaths", TransactionLinkIdPaths);
         }
     }
 }
