@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Detailed list of payment methods required to generate payment forms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethod>? PaymentMethods { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod>? PaymentMethods { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethod> PaymentMethods { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod> PaymentMethods { get; set; }
 #endif
         /// <summary>List of all stored payment methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "paymentMethods", n => { PaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "paymentMethods", n => { PaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "storedPaymentMethods", n => { StoredPaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethod>("paymentMethods", PaymentMethods);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod>("paymentMethods", PaymentMethods);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethod>("storedPaymentMethods", StoredPaymentMethods);
         }
     }

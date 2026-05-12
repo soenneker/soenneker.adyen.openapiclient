@@ -677,7 +677,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("trustedShopper", TrustedShopper);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AfterpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AncvDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AndroidPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BacsDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BillDeskDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BlikDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CashAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DragonpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EBankingFinlandDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EftDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FastlaneDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GenericIssuerPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MbwayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobilePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MolPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OpenInvoiceDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankAISDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayToDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PseDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RakutenPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RatepayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RivertyDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TwintDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiCollectDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiIntentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiQrDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VippsDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayMiniProgramDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ZipDetails"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AfterpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AncvDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AndroidPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BacsDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BillDeskDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BlikDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CashAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DragonpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EBankingFinlandDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EftDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FastlaneDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GenericIssuerPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MbwayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobilePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MolPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OpenInvoiceDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankAISDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayToDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PseDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RakutenPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RatepayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RivertyDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TwintDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiCollectDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiIntentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiQrDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VippsDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayMiniProgramDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ZipDetails"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PaymentRequest_paymentMethod : IComposedTypeWrapper, IParsable
@@ -793,6 +793,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails CellulantDetails { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails? CheckoutServiceV72PaymentDetails { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails CheckoutServiceV72PaymentDetails { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -953,14 +961,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails PayByBankDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails? PaymentDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails PaymentDetails { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1212,6 +1212,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 {
                     result.CellulantDetails = new global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails();
                 }
+                else if("CheckoutServiceV72PaymentDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CheckoutServiceV72PaymentDetails = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails();
+                }
                 else if("DirectDebitAuDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.DirectDebitAuDetails = new global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails();
@@ -1311,10 +1315,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 else if("PayWithGoogleDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PayWithGoogleDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDetails();
-                }
-                else if("PaymentDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PaymentDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails();
                 }
                 else if("PixDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -1452,6 +1452,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 {
                     return CellulantDetails.GetFieldDeserializers();
                 }
+                else if(CheckoutServiceV72PaymentDetails != null)
+                {
+                    return CheckoutServiceV72PaymentDetails.GetFieldDeserializers();
+                }
                 else if(DirectDebitAuDetails != null)
                 {
                     return DirectDebitAuDetails.GetFieldDeserializers();
@@ -1531,10 +1535,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 else if(PayByBankDetails != null)
                 {
                     return PayByBankDetails.GetFieldDeserializers();
-                }
-                else if(PaymentDetails != null)
-                {
-                    return PaymentDetails.GetFieldDeserializers();
                 }
                 else if(PayPalDetails != null)
                 {
@@ -1693,6 +1693,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails>(null, CellulantDetails);
                 }
+                else if(CheckoutServiceV72PaymentDetails != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails>(null, CheckoutServiceV72PaymentDetails);
+                }
                 else if(DirectDebitAuDetails != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails>(null, DirectDebitAuDetails);
@@ -1772,10 +1776,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 else if(PayByBankDetails != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails>(null, PayByBankDetails);
-                }
-                else if(PaymentDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails>(null, PaymentDetails);
                 }
                 else if(PayPalDetails != null)
                 {

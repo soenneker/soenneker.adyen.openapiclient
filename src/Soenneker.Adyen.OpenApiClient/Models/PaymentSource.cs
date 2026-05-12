@@ -3,21 +3,22 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The funding source of the payment method.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PaymentMethod_fundingSource
+    #pragma warning disable CS1591
+    public enum PaymentSource
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "credit")]
+        [EnumMember(Value = "redirect")]
         #pragma warning disable CS1591
-        Credit,
+        Redirect,
         #pragma warning restore CS1591
-        [EnumMember(Value = "debit")]
+        [EnumMember(Value = "qr")]
         #pragma warning disable CS1591
-        Debit,
+        Qr,
         #pragma warning restore CS1591
-        [EnumMember(Value = "prepaid")]
+        [EnumMember(Value = "pushNotification")]
         #pragma warning disable CS1591
-        Prepaid,
+        PushNotification,
         #pragma warning restore CS1591
     }
 }

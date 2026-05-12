@@ -35,10 +35,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The payoutLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amount? PayoutLimit { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount? PayoutLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amount PayoutLimit { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount PayoutLimit { get; set; }
 #endif
         /// <summary>The payout tier that the account holder occupies.</summary>
         public int? TierNumber { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "disableReason", n => { DisableReason = n.GetStringValue(); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "notAllowedReason", n => { NotAllowedReason = n.GetStringValue(); } },
-                { "payoutLimit", n => { PayoutLimit = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amount>(global::Soenneker.Adyen.OpenApiClient.Models.Amount.CreateFromDiscriminatorValue); } },
+                { "payoutLimit", n => { PayoutLimit = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount>(global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount.CreateFromDiscriminatorValue); } },
                 { "tierNumber", n => { TierNumber = n.GetIntValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("disableReason", DisableReason);
             writer.WriteStringValue("notAllowedReason", NotAllowedReason);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amount>("payoutLimit", PayoutLimit);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount>("payoutLimit", PayoutLimit);
             writer.WriteIntValue("tierNumber", TierNumber);
         }
     }

@@ -9,10 +9,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Amount : IParsable
+    public partial class Amount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The three-character [ISO 4217 currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -20,8 +22,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
+        /// <summary>The amount of the transaction in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units) (cents).</summary>
         public long? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Amount"/> and sets the default values.
+        /// </summary>
+        public Amount()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("currency", Currency);
             writer.WriteLongValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

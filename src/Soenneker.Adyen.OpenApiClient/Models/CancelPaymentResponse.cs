@@ -7,30 +7,37 @@ using System.IO;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>
-    /// &quot;Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.&quot;
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PaymentDetailsResponse_additionalData : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class CancelPaymentResponse : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The links property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.Links? Links { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.Links Links { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetailsResponse_additionalData"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancelPaymentResponse"/> and sets the default values.
         /// </summary>
-        public PaymentDetailsResponse_additionalData()
+        public CancelPaymentResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetailsResponse_additionalData"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancelPaymentResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetailsResponse_additionalData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.CancelPaymentResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetailsResponse_additionalData();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.CancelPaymentResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Links>(global::Soenneker.Adyen.OpenApiClient.Models.Links.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Links>("links", Links);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -6,6 +6,14 @@
   },
   "servers": [
     {
+      "url": "https://balanceplatform-api-test.adyen.com/a2aissuer-api/v1",
+      "description": "Test Environment"
+    },
+    {
+      "url": "https://balanceplatform-api-live.adyen.com/a2aissuer-api/v1",
+      "description": "Live Environment"
+    },
+    {
       "url": "https://cal-test.adyen.com/cal/services/Account/v6"
     },
     {
@@ -176,6 +184,1144 @@
     }
   ],
   "paths": {
+    "/A2APaymentsService-v1/ideal/profile/auth-link": {
+      "post": {
+        "tags": [
+          "iDEAL profiles"
+        ],
+        "summary": "Manage an iDEAL profile",
+        "description": "Manage an already registered iDEAL profile. Generates a redirection URL to manage the iDEAL profile linked to the account holder from the request.",
+        "operationId": "A2APaymentsService_v1_post_ideal_profile_auth_link",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdealAuthLinkRequest"
+              },
+              "examples": {
+                "Manage iDEAL profile request": {
+                  "summary": "Requests generating a link to manage the iDEAL profile linked to an account holder.",
+                  "description": "Specifies the account holder linked to the iDEAL profile to be managed.",
+                  "value": {
+                    "accountHolderId": "AH00000000000000000000000"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdealAuthLinkResponse"
+                },
+                "examples": {
+                  "Manage iDEAL profile response": {
+                    "summary": "Redirect URL to manage the iDEAL profile.",
+                    "description": "Specifies the redirect URL the user must be redirected to, to manage their iDEAL profile.",
+                    "value": {
+                      "redirectUrl": {
+                        "href": "https://ideal.auth/someUrl"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_400": {
+                    "summary": "00_400 - Bad request",
+                    "description": "Bad request, tunable to map the request body",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad request",
+                      "detail": "Unable to map request body",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_008": {
+                    "summary": "1069_008 - iDEAL profile not found",
+                    "description": "Unprocessable entity, the received account holder does not have an iDEAL profile registered.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_008",
+                      "title": "No iDEAL profile is registered. Register a profile before continuing",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "29_001": {
+                    "summary": "29_001 - Request has missing or invalid fields.",
+                    "description": "Unprocessable entity, request has missing or invalid fields.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422,
+                      "invalidFields": [
+                        {
+                          "name": "payload",
+                          "value": "null",
+                          "message": "must not be null"
+                        }
+                      ]
+                    }
+                  },
+                  "30_012": {
+                    "summary": "30_012 - Account holder not found",
+                    "description": "Not found, the requested account holder could not be not found.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unprocessable-entity/",
+                      "errorCode": "30_012",
+                      "title": "Account holder not found",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_001": {
+                    "summary": "1069_001 - Internal error.",
+                    "description": "Internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_001",
+                      "title": "An unexpected internal error has occurred",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_002": {
+                    "summary": "1069_002 - Internal error in the payment method.",
+                    "description": "Internal error, payment method returned an internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_002",
+                      "title": "The payment method returned an error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "authLink",
+        "x-sortIndex": 2
+      }
+    },
+    "/A2APaymentsService-v1/ideal/profile/authenticate": {
+      "post": {
+        "tags": [
+          "iDEAL profiles"
+        ],
+        "summary": "Authenticate iDEAL profile",
+        "description": "Generates an redirection URL to finish the authentication flow when requested by iDEAL. Before calling this endpoint, make sure that your user has completed multi-factor authentication.",
+        "operationId": "A2APaymentsService_v1_post_ideal_profile_authenticate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdealAuthenticateRequest"
+              },
+              "examples": {
+                "Authenticate iDEAL profile request": {
+                  "summary": "Requests completing an iDEAL profile authentication.",
+                  "description": "Specifies the account holder that has authenticated and the payload this authentication is for.",
+                  "value": {
+                    "accountHolderId": "AH00000000000000000000000",
+                    "payload": "https://ideal.auth/somePayload"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdealAuthenticateResponse"
+                },
+                "examples": {
+                  "Authenticate iDEAL profile response": {
+                    "summary": "Redirect URL to finish iDEAL profile authentication",
+                    "description": "Specifies the redirect URL the user must be redirected to, to complete the iDEAL authentication flow.",
+                    "value": {
+                      "redirectUrl": {
+                        "href": "https://ideal.auth/someUrl"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_400": {
+                    "summary": "00_400 - Bad request",
+                    "description": "Bad request, tunable to map the request body",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad request",
+                      "detail": "Unable to map request body",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_008": {
+                    "summary": "1069_008 - iDEAL profile not found",
+                    "description": "Unprocessable entity, the received account holder does not have an iDEAL profile registered.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_008",
+                      "title": "No iDEAL profile is registered. Register a profile before continuing",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_009": {
+                    "summary": "1069_009 - iDEAL authenticate payload expired",
+                    "description": "Unprocessable entity, the iDEAL authenticate payload has expired and is no longer available.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_009",
+                      "title": "iDEAL authenticate payload has expired and is no longer available",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "30_012": {
+                    "summary": "30_012 - Account holder not found",
+                    "description": "Not found, the requested account holder could not be not found.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unprocessable-entity/",
+                      "errorCode": "30_012",
+                      "title": "Account holder not found",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_001": {
+                    "summary": "1069_001 - Internal error.",
+                    "description": "Internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_001",
+                      "title": "An unexpected internal error has occurred",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_002": {
+                    "summary": "1069_002 - Internal error in the payment method.",
+                    "description": "Internal error, payment method returned an internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_002",
+                      "title": "The payment method returned an error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "authenticateUser",
+        "x-sortIndex": 3
+      }
+    },
+    "/A2APaymentsService-v1/ideal/profile/register": {
+      "post": {
+        "tags": [
+          "iDEAL profiles"
+        ],
+        "summary": "Register an iDEAL profile",
+        "description": "Register a new iDEAL profile. The profile is linked to the account holder and payment instruments included in the request. The user must be redirected to the URL in the response to finish their IDEAL profile registration.",
+        "operationId": "A2APaymentsService_v1_post_ideal_profile_register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileRegistrationRequest"
+              },
+              "examples": {
+                "Register iDEAL profile request": {
+                  "summary": "Request registering an iDEAL profile linked to an account holder and payment instruments.",
+                  "description": "Specifies the account holder and payment instruments for registering an iDEAL profile.",
+                  "value": {
+                    "accountHolderId": "AH00000000000000000000000",
+                    "paymentInstrumentIds": [
+                      "PI00000000000000000000000",
+                      "PI11111111111111111111111"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileRegistrationResponse"
+                },
+                "examples": {
+                  "Register iDEAL profile response": {
+                    "summary": "Redirect URL to finish iDEAL profile registration.",
+                    "description": "Specifies the redirect URL the user must be redirected to, to finish the iDEAL profile registration.",
+                    "value": {
+                      "redirectUrl": {
+                        "href": "https://ideal.auth/someUrl"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_400": {
+                    "summary": "00_400 - Bad request",
+                    "description": "Bad request, tunable to map the request body",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad request",
+                      "detail": "Unable to map request body",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_007": {
+                    "summary": "1069_007 - iDEAL profile already registered",
+                    "description": "Unprocessable entity, the received account holder already has an iDEAL profile registered.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_007",
+                      "title": "A iDEAL profile is already registered",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "29_001": {
+                    "summary": "29_001 - Request has missing or invalid fields.",
+                    "description": "Unprocessable entity, request has missing or invalid fields.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422,
+                      "invalidFields": [
+                        {
+                          "name": "payload",
+                          "value": "null",
+                          "message": "must not be null"
+                        }
+                      ]
+                    }
+                  },
+                  "30_012": {
+                    "summary": "30_012 - Account holder not found",
+                    "description": "Not found, the requested account holder could not be not found.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unprocessable-entity/",
+                      "errorCode": "30_012",
+                      "title": "Account holder not found",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "30_032": {
+                    "summary": "30_032 - Payment instrument not found",
+                    "description": "Not found, the requested payment instrument could not be not found.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unprocessable-entity/",
+                      "errorCode": "30_032",
+                      "title": "Payment instrument not found",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_001": {
+                    "summary": "1069_001 - Internal error.",
+                    "description": "Internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_001",
+                      "title": "An unexpected internal error has occurred",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_002": {
+                    "summary": "1069_002 - Internal error in the payment method.",
+                    "description": "Internal error, payment method returned an internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_002",
+                      "title": "The payment method returned an error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "registerProfile",
+        "x-sortIndex": 1
+      }
+    },
+    "/A2APaymentsService-v1/payments/cancel": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Cancel payment",
+        "description": "Cancels the payment. Returns a URL for user redirection.",
+        "operationId": "A2APaymentsService_v1_post_payments_cancel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelPaymentRequest"
+              },
+              "examples": {
+                "Cancel payment request.": {
+                  "summary": "Cancel payment request.",
+                  "description": "Specifies the token for the payment to be canceled.",
+                  "value": {
+                    "token": "TOKEN_PLACEHOLDER"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CancelPaymentResponse"
+                },
+                "examples": {
+                  "Cancel payment response.": {
+                    "summary": "Cancel payment response.",
+                    "description": "Specifies the link to where the user should be redirected to. Will always only contain a `cancel` link.",
+                    "value": {
+                      "links": {
+                        "cancel": {
+                          "href": "https://cancelUrl.com"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_400": {
+                    "summary": "00_400 - Bad request",
+                    "description": "Bad request, tunable to map the request body",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad request",
+                      "detail": "Unable to map request body",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_003": {
+                    "summary": "1069_003 - Token invalid.",
+                    "description": "Unprocessable entity, token is invalid.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_003",
+                      "title": "The payment token provided in the request is invalid",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_004": {
+                    "summary": "1069_004 - Payment expired.",
+                    "description": "Unprocessable entity, payment has expired.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_004",
+                      "title": "Payment has expired and is no longer available",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_005": {
+                    "summary": "1069_005 - Payment in final state.",
+                    "description": "Unprocessable entity, payment is in final state.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_005",
+                      "title": "The payment is in a final state and cannot be processed.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_006": {
+                    "summary": "1069_006 - Payment method returned unprocessable entity error",
+                    "description": "Unprocessable entity, payment method returned an unprocessable entity error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_006",
+                      "title": "he payment method returned an unprocessable entity error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "29_001": {
+                    "summary": "29_001 - Request has missing or invalid fields.",
+                    "description": "Unprocessable entity, request has missing or invalid fields.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422,
+                      "invalidFields": [
+                        {
+                          "name": "payload",
+                          "value": "null",
+                          "message": "must not be null"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_001": {
+                    "summary": "1069_001 - Internal error.",
+                    "description": "Internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_001",
+                      "title": "An unexpected internal error has occurred",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_002": {
+                    "summary": "1069_002 - Internal error in the payment method.",
+                    "description": "Internal error, payment method returned an internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_002",
+                      "title": "The payment method returned an error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "cancelPayment",
+        "x-sortIndex": 3
+      }
+    },
+    "/A2APaymentsService-v1/payments/confirm": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Confirm payment",
+        "description": "    Confirms the payment using Strong Customer Authentication (SCA).\n\n    To confirm a payment you must make this request two times:\n\n    1. Make this request to initiate SCA and receive the WWW-Authenticate header.\n    2. After the user completes the SCA challenge, make this request again, including the updated WWW-Authenticate header.\n\n    The second response provides a redirection URL that guides the user to a payment success or failure page.\nFor more information, see our [documentation](https://docs.adyen.com/business-accounts/send-funds-ideal-integration).",
+        "operationId": "A2APaymentsService_v1_post_payments_confirm",
+        "parameters": [
+          {
+            "name": "WWW-Authenticate",
+            "in": "header",
+            "description": "Header for authenticating through SCA: Contains information for an SCA challenge for A2A payments.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "SCA realm=\"Transfer\" auth-param1=\"eyJjaGFsbGVuZ2UiOiJiVlV6ZW5wek0waFNl...\""
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmPaymentRequest"
+              },
+              "examples": {
+                "Confirm payment request.": {
+                  "summary": "Confirm payment request.",
+                  "description": "Specifies the token for the payment to be confirmed, and a balanceAccountid to pay with.",
+                  "value": {
+                    "token": "TOKEN_PLACEHOLDER",
+                    "balanceAccountId": "BA00000000000000000000000"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfirmPaymentResponse"
+                },
+                "examples": {
+                  "Confirm payment response.": {
+                    "summary": "Confirm payment response.",
+                    "description": "Specifies the link to where the user should be redirected to. Will contain a `success` link if payment was made succesfully, and a `cancel` if it failed.",
+                    "value": {
+                      "links": {
+                        "success": {
+                          "href": "https://successUrl.com"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_400": {
+                    "summary": "00_400 - Bad request",
+                    "description": "Bad request, tunable to map the request body",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad request",
+                      "detail": "Unable to map request body",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - The API credential used in the request is invalid or does not have the right permissions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_401": {
+                    "summary": "00_401 - Unauthorized",
+                    "description": "User needs to perform SCA before continuing with this operation. There will be a WWW-Authenticate header included with this response with the SCA challenge. For more info on SCA check this documentation: https://docs.adyen.com/business-accounts/implement-sca/",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unauthorized",
+                      "errorCode": "00_401",
+                      "title": "Unauthorized",
+                      "detail": "User needs to perform SCA",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_422": {
+                    "summary": "00_422 - Unprocessable entity.",
+                    "description": "Unprocessable entity.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unprocessable-entity/",
+                      "errorCode": "00_422",
+                      "title": "SCA Challenge invalid.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_003": {
+                    "summary": "1069_003 - Token invalid.",
+                    "description": "Unprocessable entity, token is invalid.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_003",
+                      "title": "The payment token provided in the request is invalid",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_004": {
+                    "summary": "1069_004 - Payment expired.",
+                    "description": "Unprocessable entity, payment has expired.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_004",
+                      "title": "Payment has expired and is no longer available",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_005": {
+                    "summary": "1069_005 - Payment in final state.",
+                    "description": "Unprocessable entity, payment is in final state.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_005",
+                      "title": "The payment is in a final state and cannot be processed.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_006": {
+                    "summary": "1069_006 - Payment method returned unprocessable entity error",
+                    "description": "Unprocessable entity, payment method returned an unprocessable entity error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_006",
+                      "title": "he payment method returned an unprocessable entity error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "29_001": {
+                    "summary": "29_001 - Request has missing or invalid fields.",
+                    "description": "Unprocessable entity, request has missing or invalid fields.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422,
+                      "invalidFields": [
+                        {
+                          "name": "payload",
+                          "value": "null",
+                          "message": "must not be null"
+                        }
+                      ]
+                    }
+                  },
+                  "30_013": {
+                    "summary": "30_013 - Balance account not found",
+                    "description": "Not found, the requested balance account could not be not found.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unprocessable-entity/",
+                      "errorCode": "30_013",
+                      "title": "Balance account not found",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_500": {
+                    "summary": "00_500 - Internal error.",
+                    "description": "Internal error (generic).",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/internal",
+                      "errorCode": "00_500",
+                      "title": "An internal error happened",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_001": {
+                    "summary": "1069_001 - Internal error.",
+                    "description": "Internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_001",
+                      "title": "An unexpected internal error has occurred",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_002": {
+                    "summary": "1069_002 - Internal error in the payment method.",
+                    "description": "Internal error, payment method returned an internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_002",
+                      "title": "The payment method returned an error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "confirmPayment",
+        "x-sortIndex": 2
+      }
+    },
+    "/A2APaymentsService-v1/payments/details": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Retrieve payment details",
+        "description": "Returns the details of an open payment, which you must show to the user. Also provides a token required to [confirm](https://docs.adyen.com/api-explorer/a2a-payments/latest/post/payments/confirm) or [cancel](https://docs.adyen.com/api-explorer/a2a-payments/latest/post/payments/cancel) the payment.",
+        "operationId": "A2APaymentsService_v1_post_payments_details",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdealPaymentDetailsRequest"
+              },
+              "examples": {
+                "Retrieve payment details request - iDEAL": {
+                  "summary": "Retrieve payment details request for a payment with iDEAL.",
+                  "description": "Specifies the method, source and payload to retrieve payment details for a payment with iDEAL.",
+                  "value": {
+                    "method": "ideal",
+                    "source": "redirect",
+                    "payload": "https://ext.tx.ideal.nl/2/AXE4R72TLPRCRN6Y4FDZX7MZHJQ?sig=BGBCQEIIA2F3CF7KR2SVLSJEDUJABL62V7TI4Y2LJPJIJBZEP6HXCHXPQCLTAEIB2FNUD3COVRNIT27TT7NFKYD5UJCUY4NMPS4NUCTKA6KIBHSRXWI"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentDetailsResponse"
+                },
+                "examples": {
+                  "Retrieve payment details response.": {
+                    "summary": "Open payment details and token.",
+                    "description": "Returns a details object with the amount, counterparty, description and expiration of the payment, and a token required for the requests to confirm or cancel the payment.",
+                    "value": {
+                      "details": {
+                        "amount": {
+                          "currency": "EUR",
+                          "value": 200
+                        },
+                        "counterparty": {
+                          "accountHolder": {
+                            "fullName": "Test company"
+                          },
+                          "accountIdentification": {
+                            "iban": "NL29ADYX0000000000",
+                            "type": "iban"
+                          }
+                        },
+                        "description": "MyStoreDemo-Donation-1754056596388",
+                        "expiresAt": "2025-08-01T14:16:42.887Z"
+                      },
+                      "token": "TOKEN_PLACEHOLDER"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "00_400": {
+                    "summary": "00_400 - Bad request",
+                    "description": "Bad request, tunable to map the request body",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad request",
+                      "detail": "Unable to map request body",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_004": {
+                    "summary": "1069_004 - Payment expired.",
+                    "description": "Unprocessable entity, payment has expired.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_004",
+                      "title": "Payment has expired and is no longer available",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_005": {
+                    "summary": "1069_005 - Payment in final state.",
+                    "description": "Unprocessable entity, payment is in final state.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_005",
+                      "title": "The payment is in a final state and cannot be processed.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "1069_006": {
+                    "summary": "1069_006 - Payment method returned unprocessable entity error",
+                    "description": "Unprocessable entity, payment method returned an unprocessable entity error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_006",
+                      "title": "he payment method returned an unprocessable entity error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422
+                    }
+                  },
+                  "29_001": {
+                    "summary": "29_001 - Request has missing or invalid fields.",
+                    "description": "Unprocessable entity, request has missing or invalid fields.",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 422,
+                      "invalidFields": [
+                        {
+                          "name": "payload",
+                          "value": "null",
+                          "message": "must not be null"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "1069_001": {
+                    "summary": "1069_001 - Internal error.",
+                    "description": "Internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_001",
+                      "title": "An unexpected internal error has occurred",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  },
+                  "1069_002": {
+                    "summary": "1069_002 - Internal error in the payment method.",
+                    "description": "Internal error, payment method returned an internal error.",
+                    "value": {
+                      "type": "https://docs.adyen.com/development-resources/error-codes",
+                      "errorCode": "1069_002",
+                      "title": "The payment method returned an error",
+                      "requestId": "ba5e16ca1ac7e15abcdef01234567890",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "retrievePaymentDetails",
+        "x-sortIndex": 1
+      }
+    },
     "/AccountService-v6/checkAccountHolder": {
       "post": {
         "tags": [
@@ -282,10 +1428,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-addedInVersion": "5",
@@ -399,10 +1545,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 3,
@@ -515,10 +1661,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 7,
@@ -616,10 +1762,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-addedInVersion": "5",
@@ -733,10 +1879,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 1,
@@ -850,10 +1996,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 1,
@@ -966,10 +2112,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 4,
@@ -1099,10 +2245,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 6,
@@ -1215,10 +2361,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-addedInVersion": "5",
@@ -1332,10 +2478,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 7,
@@ -1443,10 +2589,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 8,
@@ -1562,10 +2708,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 2,
@@ -1668,10 +2814,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 8,
@@ -1774,10 +2920,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 2,
@@ -1890,10 +3036,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 5,
@@ -2006,10 +3152,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 6,
@@ -2122,10 +3268,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 2,
@@ -2261,10 +3407,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 3,
@@ -2377,10 +3523,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 4,
@@ -2493,10 +3639,10 @@
         },
         "security": [
           {
-            "BasicAuth": [ ]
+            "AccountService_v6_BasicAuth": [ ]
           },
           {
-            "ApiKeyAuth": [ ]
+            "AccountService_v6_ApiKeyAuth": [ ]
           }
         ],
         "x-sortIndex": 1,
@@ -2555,7 +3701,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2565,7 +3711,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2575,7 +3721,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2638,7 +3784,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2648,7 +3794,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2658,7 +3804,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2729,7 +3875,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -2739,7 +3885,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/BalanceControlService_v2_DefaultErrorResponseEntity"
                 }
               }
             }
@@ -15986,7 +17132,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PaymentDetailsRequest"
+                "$ref": "#/components/schemas/CheckoutService_v72_PaymentDetailsRequest"
               },
               "examples": {
                 "00.redirect": {
@@ -16010,7 +17156,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaymentDetailsResponse"
+                  "$ref": "#/components/schemas/CheckoutService_v72_PaymentDetailsResponse"
                 },
                 "examples": {
                   "00.redirect": {
@@ -46736,6 +47882,444 @@
   },
   "components": {
     "schemas": {
+      "AccountHolder": {
+        "required": [
+          "fullName"
+        ],
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Full name of the account holder.",
+            "example": "John Doe"
+          }
+        }
+      },
+      "AccountIdentification": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "iban": "#/components/schemas/IbanAccountIdentification"
+          }
+        }
+      },
+      "Amount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The three-character [ISO 4217 currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes).",
+            "example": "EUR"
+          },
+          "value": {
+            "type": "integer",
+            "description": "The amount of the transaction in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units) (cents).",
+            "format": "int64",
+            "example": 499
+          }
+        }
+      },
+      "CancelPaymentRequest": {
+        "required": [
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "type": "string",
+            "description": "The payment token is an identifier for the payment. It is generated by Adyen on the response of the payment details.",
+            "example": "ewoJIlNvbWVUb2tlbiIgOiAiU29tZUluZm8iCn0="
+          }
+        }
+      },
+      "CancelPaymentResponse": {
+        "required": [
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "ConfirmPaymentRequest": {
+        "required": [
+          "balanceAccountId",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "balanceAccountId": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "description": "The balance account ID of the account where the funds should be subtracted.",
+            "example": "BA00000000000000000000000"
+          },
+          "token": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "type": "string",
+            "description": "The payment token is an identifier for the payment. It is generated by Adyen on the response of the payment details.",
+            "example": "ewoJIlNvbWVUb2tlbiIgOiAiU29tZUluZm8iCn0="
+          }
+        }
+      },
+      "ConfirmPaymentResponse": {
+        "required": [
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "links": {
+            "$ref": "#/components/schemas/Links"
+          }
+        }
+      },
+      "Counterparty": {
+        "required": [
+          "accountHolder",
+          "accountIdentification"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolder": {
+            "$ref": "#/components/schemas/AccountHolder"
+          },
+          "accountIdentification": {
+            "$ref": "#/components/schemas/AccountIdentification"
+          }
+        }
+      },
+      "DefaultErrorResponseEntity": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Unique business error code."
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem if applicable."
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvalidField"
+            },
+            "description": "Array of fields with validation errors when applicable."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The unique reference for the request."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          }
+        },
+        "description": "Standardized error response following RFC-7807 format",
+        "externalDocs": {
+          "url": "https://www.rfc-editor.org/rfc/rfc7807"
+        }
+      },
+      "Href": {
+        "required": [
+          "href"
+        ],
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "description": "The full URL for the redirection.",
+            "example": "https://someUrl"
+          }
+        }
+      },
+      "IbanAccountIdentification": {
+        "required": [
+          "iban"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AccountIdentification"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "iban": {
+                "minLength": 1,
+                "type": "string",
+                "description": "The IBAN of the bank account.",
+                "example": "NL00AAAA0000000000"
+              }
+            }
+          }
+        ]
+      },
+      "IdealAuthLinkRequest": {
+        "required": [
+          "accountHolderId"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique identifier of the account holder.",
+            "example": "AH00000000000000000000000"
+          }
+        }
+      },
+      "IdealAuthLinkResponse": {
+        "type": "object",
+        "properties": {
+          "redirectUrl": {
+            "$ref": "#/components/schemas/Href"
+          }
+        }
+      },
+      "IdealAuthenticateRequest": {
+        "required": [
+          "accountHolderId",
+          "payload"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique identifier for an account holder.",
+            "example": "AH00000000000000000000000"
+          },
+          "payload": {
+            "maxLength": 400,
+            "minLength": 1,
+            "type": "string",
+            "description": "A payload provided by iDEAL to complete the authentication process.",
+            "example": "https://ideal.auth/somePayload"
+          }
+        }
+      },
+      "IdealAuthenticateResponse": {
+        "type": "object",
+        "properties": {
+          "redirectUrl": {
+            "$ref": "#/components/schemas/Href"
+          }
+        }
+      },
+      "IdealPaymentDetailsRequest": {
+        "required": [
+          "method",
+          "payload",
+          "source"
+        ],
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PaymentDetailsRequest"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "payload": {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string",
+                "description": "An identifier for the payment, generated by the payment method, such as iDEAL. This is obtained from the specified `source`.",
+                "example": "https://somePayload"
+              },
+              "source": {
+                "$ref": "#/components/schemas/PaymentSource"
+              }
+            }
+          }
+        ]
+      },
+      "InvalidField": {
+        "required": [
+          "message",
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Description of the validation error."
+          },
+          "name": {
+            "type": "string",
+            "description": "The field that has an invalid value."
+          },
+          "value": {
+            "type": "string",
+            "description": "The invalid value."
+          }
+        }
+      },
+      "Links": {
+        "type": "object",
+        "properties": {
+          "cancel": {
+            "$ref": "#/components/schemas/Href"
+          },
+          "success": {
+            "$ref": "#/components/schemas/Href"
+          }
+        }
+      },
+      "PaymentDetails": {
+        "required": [
+          "amount",
+          "counterparty",
+          "description",
+          "expiresAt"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "$ref": "#/components/schemas/Amount"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/Counterparty"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description for the payment. It is generated by the payment method, such as iDEAL, and should be shown to the user.",
+            "example": "Payment at MyShop. ref:12345678"
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "The expiration date of the payment in ISO DateTime format, as described on ISO 20022 (YYYY-MM-DDThh:mm:ss.sss+/-hh:mm).\n\nExample: **2025-12-30T14:15:30+01:00**",
+            "format": "date-time",
+            "example": "2025-12-30T14:15:30+01:00"
+          }
+        }
+      },
+      "PaymentDetailsRequest": {
+        "required": [
+          "method"
+        ],
+        "type": "object",
+        "properties": {
+          "method": {
+            "$ref": "#/components/schemas/PaymentMethod"
+          }
+        },
+        "discriminator": {
+          "propertyName": "method",
+          "mapping": {
+            "ideal": "#/components/schemas/IdealPaymentDetailsRequest"
+          }
+        }
+      },
+      "PaymentDetailsResponse": {
+        "required": [
+          "details",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "details": {
+            "$ref": "#/components/schemas/PaymentDetails"
+          },
+          "token": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The token that identifies the payment. It is generated by Adyen and is needed to confirm or cancel the payment.",
+            "example": "ewoJIlNvbWVUb2tlbiIgOiAiU29tZUluZm8iCn0="
+          }
+        }
+      },
+      "PaymentMethod": {
+        "enum": [
+          "ideal"
+        ],
+        "type": "string"
+      },
+      "PaymentSource": {
+        "enum": [
+          "redirect",
+          "qr",
+          "pushNotification"
+        ],
+        "type": "string"
+      },
+      "ProfileRegistrationRequest": {
+        "required": [
+          "accountHolderId",
+          "paymentInstrumentIds"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique identifier of the account holder.",
+            "example": "AH00000000000000000000000"
+          },
+          "paymentInstrumentIds": {
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "maxLength": 150,
+              "minLength": 1,
+              "type": "string"
+            },
+            "description": "The unique identifiers of the payment instruments to be associated with the iDEAL profile.",
+            "example": [
+              "PI00000000000000000000000",
+              "PI11111111111111111111111"
+            ]
+          }
+        }
+      },
+      "ProfileRegistrationResponse": {
+        "type": "object",
+        "properties": {
+          "redirectUrl": {
+            "$ref": "#/components/schemas/Href"
+          }
+        }
+      },
       "Account": {
         "type": "object",
         "properties": {
@@ -46962,7 +48546,7 @@
             "x-addedInVersion": "5"
           },
           "payoutLimit": {
-            "$ref": "#/components/schemas/Amount"
+            "$ref": "#/components/schemas/AccountService_v6_Amount"
           },
           "tierNumber": {
             "type": "integer",
@@ -46985,10 +48569,10 @@
             "description": "Indicates whether the processing of payments is allowed."
           },
           "processedFrom": {
-            "$ref": "#/components/schemas/Amount"
+            "$ref": "#/components/schemas/AccountService_v6_Amount"
           },
           "processedTo": {
-            "$ref": "#/components/schemas/Amount"
+            "$ref": "#/components/schemas/AccountService_v6_Amount"
           },
           "tierNumber": {
             "type": "integer",
@@ -46999,7 +48583,7 @@
         },
         "additionalProperties": false
       },
-      "Amount": {
+      "AccountService_v6_Amount": {
         "required": [
           "value",
           "currency"
@@ -49699,7 +51283,7 @@
           }
         }
       },
-      "DefaultErrorResponseEntity": {
+      "BalanceControlService_v2_DefaultErrorResponseEntity": {
         "type": "object",
         "properties": {
           "detail": {
@@ -49717,7 +51301,7 @@
           "invalidFields": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/InvalidField"
+              "$ref": "#/components/schemas/BalanceControlService_v2_InvalidField"
             },
             "description": "Array of fields with validation errors when applicable."
           },
@@ -49744,7 +51328,7 @@
           "url": "https://www.rfc-editor.org/rfc/rfc7807"
         }
       },
-      "InvalidField": {
+      "BalanceControlService_v2_InvalidField": {
         "required": [
           "message",
           "name",
@@ -50011,7 +51595,7 @@
                 "$ref": "#/components/schemas/HULocalAccountIdentification"
               },
               {
-                "$ref": "#/components/schemas/IbanAccountIdentification"
+                "$ref": "#/components/schemas/BalancePlatformAccountingNotification_v3_IbanAccountIdentification"
               },
               {
                 "$ref": "#/components/schemas/NOLocalAccountIdentification"
@@ -50177,7 +51761,7 @@
         },
         "additionalProperties": false
       },
-      "IbanAccountIdentification": {
+      "BalancePlatformAccountingNotification_v3_IbanAccountIdentification": {
         "required": [
           "type",
           "iban"
@@ -51815,7 +53399,7 @@
           }
         }
       },
-      "AccountHolder": {
+      "BalancePlatformConfigurationNotification_v2_AccountHolder": {
         "required": [
           "legalEntityId",
           "id"
@@ -51964,7 +53548,7 @@
         "type": "object",
         "properties": {
           "accountHolder": {
-            "$ref": "#/components/schemas/AccountHolder"
+            "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_AccountHolder"
           },
           "balancePlatform": {
             "type": "string",
@@ -54906,7 +56490,7 @@
         },
         "additionalProperties": false
       },
-      "Counterparty": {
+      "BalancePlatformPaymentNotification_v1_Counterparty": {
         "type": "object",
         "properties": {
           "balanceAccountId": {
@@ -54943,7 +56527,7 @@
             "description": "The unique identifier of the balance platform."
           },
           "counterparty": {
-            "$ref": "#/components/schemas/Counterparty"
+            "$ref": "#/components/schemas/BalancePlatformPaymentNotification_v1_Counterparty"
           },
           "creationDate": {
             "type": "string",
@@ -55140,7 +56724,7 @@
             "description": "The unique identifier of the balance platform."
           },
           "counterparty": {
-            "$ref": "#/components/schemas/Counterparty"
+            "$ref": "#/components/schemas/BalancePlatformPaymentNotification_v1_Counterparty"
           },
           "creationDate": {
             "type": "string",
@@ -55560,7 +57144,7 @@
             "description": "The unique identifier of the balance platform."
           },
           "counterparty": {
-            "$ref": "#/components/schemas/Counterparty"
+            "$ref": "#/components/schemas/BalancePlatformPaymentNotification_v1_Counterparty"
           },
           "creationDate": {
             "type": "string",
@@ -59462,7 +61046,7 @@
         },
         "additionalProperties": false
       },
-      "Href": {
+      "BalancePlatformService_v2_Href": {
         "type": "object",
         "properties": {
           "href": {
@@ -59570,19 +61154,19 @@
         "type": "object",
         "properties": {
           "first": {
-            "$ref": "#/components/schemas/Href"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_Href"
           },
           "last": {
-            "$ref": "#/components/schemas/Href"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_Href"
           },
           "next": {
-            "$ref": "#/components/schemas/Href"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_Href"
           },
           "previous": {
-            "$ref": "#/components/schemas/Href"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_Href"
           },
           "self": {
-            "$ref": "#/components/schemas/Href"
+            "$ref": "#/components/schemas/BalancePlatformService_v2_Href"
           }
         }
       },
@@ -75989,7 +77573,7 @@
         },
         "additionalProperties": false
       },
-      "PaymentDetails": {
+      "CheckoutService_v72_PaymentDetails": {
         "title": "Payment Details",
         "type": "object",
         "properties": {
@@ -76099,7 +77683,7 @@
         },
         "additionalProperties": false
       },
-      "PaymentDetailsRequest": {
+      "CheckoutService_v72_PaymentDetailsRequest": {
         "required": [
           "details"
         ],
@@ -76127,7 +77711,7 @@
         },
         "additionalProperties": false
       },
-      "PaymentDetailsResponse": {
+      "CheckoutService_v72_PaymentDetailsResponse": {
         "type": "object",
         "properties": {
           "action": {
@@ -76758,7 +78342,7 @@
         },
         "additionalProperties": false
       },
-      "PaymentMethod": {
+      "CheckoutService_v72_PaymentMethod": {
         "type": "object",
         "properties": {
           "apps": {
@@ -77113,7 +78697,7 @@
           "paymentMethods": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PaymentMethod"
+              "$ref": "#/components/schemas/CheckoutService_v72_PaymentMethod"
             },
             "description": "Detailed list of payment methods required to generate payment forms."
           },
@@ -77635,7 +79219,7 @@
                 "$ref": "#/components/schemas/PayWithGoogleDetails"
               },
               {
-                "$ref": "#/components/schemas/PaymentDetails"
+                "$ref": "#/components/schemas/CheckoutService_v72_PaymentDetails"
               },
               {
                 "$ref": "#/components/schemas/PixDetails"
@@ -88254,7 +89838,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "domain": {
             "type": "string",
@@ -88917,7 +90501,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "accountGroups": {
             "type": "array",
@@ -89064,7 +90648,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "domain": {
             "type": "string",
@@ -89327,7 +90911,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "accountGroups": {
             "type": "array",
@@ -89732,7 +91316,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "accountGroups": {
             "type": "array",
@@ -90526,7 +92110,7 @@
         },
         "additionalProperties": false
       },
-      "Links": {
+      "ManagementService_v3_Links": {
         "required": [
           "self"
         ],
@@ -93417,7 +95001,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "address": {
             "$ref": "#/components/schemas/StoreLocation"
@@ -95295,7 +96879,7 @@
         "type": "object",
         "properties": {
           "_links": {
-            "$ref": "#/components/schemas/Links"
+            "$ref": "#/components/schemas/ManagementService_v3_Links"
           },
           "accountGroups": {
             "type": "array",
@@ -149908,6 +151492,15 @@
         "type": "http",
         "scheme": "basic"
       },
+      "AccountService_v6_ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      },
+      "AccountService_v6_BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
       "BalanceControlService_v2_ApiKeyAuth": {
         "type": "apiKey",
         "name": "X-API-Key",
@@ -150248,6 +151841,14 @@
   },
   "tags": [
     {
+      "name": "Payments",
+      "x-groupIndex": 1
+    },
+    {
+      "name": "iDEAL profiles",
+      "x-groupIndex": 2
+    },
+    {
       "name": "Account holders"
     },
     {
@@ -150365,9 +151966,6 @@
     },
     {
       "name": "SCA association management"
-    },
-    {
-      "name": "Payments"
     },
     {
       "name": "Donations"

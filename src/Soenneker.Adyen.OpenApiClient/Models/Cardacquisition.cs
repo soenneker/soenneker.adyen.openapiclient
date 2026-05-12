@@ -8,10 +8,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public enum Cardacquisition
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "CheckReader")]
-        #pragma warning disable CS1591
-        CheckReader,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Contactless")]
         #pragma warning disable CS1591
         Contactless,
@@ -35,6 +31,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Manual")]
         #pragma warning disable CS1591
         Manual,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Mobile")]
+        #pragma warning disable CS1591
+        Mobile,
         #pragma warning restore CS1591
         [EnumMember(Value = "RFID")]
         #pragma warning disable CS1591

@@ -39,9 +39,9 @@ namespace Soenneker.Adyen.OpenApiClient.BalanceControlServiceV2.BalanceOverview.
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MerchantBalance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.DefaultErrorResponseEntity">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.DefaultErrorResponseEntity">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.DefaultErrorResponseEntity">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Adyen.OpenApiClient.Models.MerchantBalance?> GetAsync(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.BalanceControlServiceV2.BalanceOverview.Merchants.Item.Balances.BalancesRequestBuilder.BalancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,9 +54,9 @@ namespace Soenneker.Adyen.OpenApiClient.BalanceControlServiceV2.BalanceOverview.
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Adyen.OpenApiClient.Models.DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Adyen.OpenApiClient.Models.DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Adyen.OpenApiClient.Models.DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.MerchantBalance>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.MerchantBalance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

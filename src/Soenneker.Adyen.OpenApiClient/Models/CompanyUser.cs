@@ -57,10 +57,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Links? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Links Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links Links { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "associatedMerchantAccounts", n => { AssociatedMerchantAccounts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Links>(global::Soenneker.Adyen.OpenApiClient.Models.Links.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name.CreateFromDiscriminatorValue); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "timeZoneCode", n => { TimeZoneCode = n.GetStringValue(); } },
@@ -138,7 +138,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("associatedMerchantAccounts", AssociatedMerchantAccounts);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Links>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links>("_links", Links);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name>("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteStringValue("timeZoneCode", TimeZoneCode);

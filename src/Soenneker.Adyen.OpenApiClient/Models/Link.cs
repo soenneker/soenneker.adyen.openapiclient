@@ -17,42 +17,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The first property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href? First { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href? First { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href First { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href First { get; set; }
 #endif
         /// <summary>The last property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href? Last { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href? Last { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href Last { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href Last { get; set; }
 #endif
         /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href? Next { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href? Next { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href Next { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href Next { get; set; }
 #endif
         /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href? Previous { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href? Previous { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href Previous { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href Previous { get; set; }
 #endif
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href? Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href? Self { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href Self { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Link"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "first", n => { First = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
-                { "last", n => { Last = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
-                { "self", n => { Self = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
+                { "first", n => { First = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href.CreateFromDiscriminatorValue); } },
+                { "last", n => { Last = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href.CreateFromDiscriminatorValue); } },
+                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href.CreateFromDiscriminatorValue); } },
+                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href.CreateFromDiscriminatorValue); } },
+                { "self", n => { Self = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("first", First);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("last", Last);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("previous", Previous);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("self", Self);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>("first", First);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>("last", Last);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>("next", Next);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>("previous", Previous);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Href>("self", Self);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

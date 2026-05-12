@@ -9,17 +9,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Links : IParsable
+    public partial class Links : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The self property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cancel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinksElement? Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Href? Cancel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinksElement Self { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Href Cancel { get; set; }
 #endif
+        /// <summary>The success property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.Href? Success { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.Href Success { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Links"/> and sets the default values.
+        /// </summary>
+        public Links()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +55,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "self", n => { Self = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LinksElement>(global::Soenneker.Adyen.OpenApiClient.Models.LinksElement.CreateFromDiscriminatorValue); } },
+                { "cancel", n => { Cancel = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
+                { "success", n => { Success = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +66,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LinksElement>("self", Self);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("cancel", Cancel);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("success", Success);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

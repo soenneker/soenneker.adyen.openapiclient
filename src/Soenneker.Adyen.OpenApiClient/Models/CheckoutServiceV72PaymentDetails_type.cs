@@ -5,7 +5,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>The payment method type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PaymentDetails_type
+    public enum CheckoutServiceV72PaymentDetails_type
     {
         [EnumMember(Value = "alipay")]
         #pragma warning disable CS1591

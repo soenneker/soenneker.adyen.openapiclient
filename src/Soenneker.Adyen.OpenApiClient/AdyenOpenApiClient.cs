@@ -6,6 +6,7 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
+using Soenneker.Adyen.OpenApiClient.A2APaymentsServiceV1;
 using Soenneker.Adyen.OpenApiClient.AccountServiceV6;
 using Soenneker.Adyen.OpenApiClient.BalanceControlServiceV2;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2;
@@ -45,6 +46,11 @@ namespace Soenneker.Adyen.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdyenOpenApiClient : BaseRequestBuilder
     {
+        /// <summary>The A2APaymentsServiceV1 property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.A2APaymentsServiceV1.A2APaymentsServiceV1RequestBuilder A2APaymentsServiceV1
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.A2APaymentsServiceV1.A2APaymentsServiceV1RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The AccountServiceV6 property</summary>
         public global::Soenneker.Adyen.OpenApiClient.AccountServiceV6.AccountServiceV6RequestBuilder AccountServiceV6
         {
@@ -195,7 +201,7 @@ namespace Soenneker.Adyen.OpenApiClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "https://cal-test.adyen.com/cal/services/Account/v6";
+                RequestAdapter.BaseUrl = "https://balanceplatform-api-test.adyen.com/a2aissuer-api/v1";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

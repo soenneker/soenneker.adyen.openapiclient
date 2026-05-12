@@ -25,18 +25,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The processedFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amount? ProcessedFrom { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount? ProcessedFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amount ProcessedFrom { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount ProcessedFrom { get; set; }
 #endif
         /// <summary>The processedTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amount? ProcessedTo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount? ProcessedTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amount ProcessedTo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount ProcessedTo { get; set; }
 #endif
         /// <summary>The processing tier that the account holder occupies.</summary>
         public int? TierNumber { get; set; }
@@ -60,8 +60,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "disableReason", n => { DisableReason = n.GetStringValue(); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
-                { "processedFrom", n => { ProcessedFrom = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amount>(global::Soenneker.Adyen.OpenApiClient.Models.Amount.CreateFromDiscriminatorValue); } },
-                { "processedTo", n => { ProcessedTo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amount>(global::Soenneker.Adyen.OpenApiClient.Models.Amount.CreateFromDiscriminatorValue); } },
+                { "processedFrom", n => { ProcessedFrom = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount>(global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount.CreateFromDiscriminatorValue); } },
+                { "processedTo", n => { ProcessedTo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount>(global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount.CreateFromDiscriminatorValue); } },
                 { "tierNumber", n => { TierNumber = n.GetIntValue(); } },
             };
         }
@@ -74,8 +74,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("disableReason", DisableReason);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amount>("processedFrom", ProcessedFrom);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amount>("processedTo", ProcessedTo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount>("processedFrom", ProcessedFrom);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountServiceV6Amount>("processedTo", ProcessedTo);
             writer.WriteIntValue("tierNumber", TierNumber);
         }
     }
