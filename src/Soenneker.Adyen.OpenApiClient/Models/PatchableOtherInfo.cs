@@ -25,7 +25,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The subType property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SubType? SubType { get; set; }
         /// <summary>The whatWasPurchased property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType? WhatWasPurchased { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProductType? WhatWasPurchased { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "descriptionOfIssue", n => { DescriptionOfIssue = n.GetStringValue(); } },
                 { "subType", n => { SubType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubType>(); } },
-                { "whatWasPurchased", n => { WhatWasPurchased = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>(); } },
+                { "whatWasPurchased", n => { WhatWasPurchased = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubType>("subType", SubType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>("whatWasPurchased", WhatWasPurchased);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>("whatWasPurchased", WhatWasPurchased);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

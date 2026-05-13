@@ -26,6 +26,7 @@ using Soenneker.Adyen.OpenApiClient.OpenBankingServiceV1;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68;
 using Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1;
 using Soenneker.Adyen.OpenApiClient.PayoutServiceV68;
+using Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68;
 using Soenneker.Adyen.OpenApiClient.SessionAuthenticationServiceV1;
 using Soenneker.Adyen.OpenApiClient.SoftPOSConfigurationServiceV3;
@@ -145,6 +146,11 @@ namespace Soenneker.Adyen.OpenApiClient
         public global::Soenneker.Adyen.OpenApiClient.PayoutServiceV68.PayoutServiceV68RequestBuilder PayoutServiceV68
         {
             get => new global::Soenneker.Adyen.OpenApiClient.PayoutServiceV68.PayoutServiceV68RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The RaiseDisputesServiceV4 property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.RaiseDisputesServiceV4RequestBuilder RaiseDisputesServiceV4
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.RaiseDisputesServiceV4RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The RecurringServiceV68 property</summary>
         public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.RecurringServiceV68RequestBuilder RecurringServiceV68

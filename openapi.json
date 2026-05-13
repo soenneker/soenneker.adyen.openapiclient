@@ -113,6 +113,14 @@
       "url": "https://pal-test.adyen.com/pal/servlet/Payout/v68"
     },
     {
+      "url": "https://balanceplatform-api-test.adyen.com/btl/api/v4",
+      "description": "Test Environment"
+    },
+    {
+      "url": "https://balanceplatform-api-live.adyen.com/btl/api/v4",
+      "description": "Live Environment"
+    },
+    {
       "url": "https://pal-test.adyen.com/pal/servlet/Recurring/v68"
     },
     {
@@ -170,14 +178,6 @@
     },
     {
       "url": "https://postfmapi-test.adyen.com/postfmapi/terminal/v1"
-    },
-    {
-      "url": "https://balanceplatform-api-live.adyen.com/btl/api/v4",
-      "description": "Live Environment"
-    },
-    {
-      "url": "https://balanceplatform-api-test.adyen.com/btl/api/v4",
-      "description": "Test Environment"
     },
     {
       "url": "https://balanceplatform-api-test.adyen.com/btl/v4"
@@ -42976,6 +42976,596 @@
         "x-methodName": "submitThirdParty"
       }
     },
+    "/RaiseDisputesService-v4/disputes": {
+      "get": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Get a list of raised disputes",
+        "description": "Returns a list of raised disputes that match the query parameters.\n\nThis endpoint supports cursor-based pagination. The response returns the first page of results, and returns links to the next page when applicable. You can use the links to page through the results. The response also returns links to the previous page when applicable.",
+        "operationId": "RaiseDisputesService_v4_get_disputes",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "The current status of the dispute.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentInstrument",
+            "in": "query",
+            "description": "The unique identifier of the payment instrument.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdSince",
+            "in": "query",
+            "description": "Only include disputes that have been created on or after this point in time. The value must be in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601\\)  format. For example, 2021-05-30T15:07:40Z.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdUntil",
+            "in": "query",
+            "description": "Only include disputes that have been created on or before this point in time. The value must be in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601\\) format. For example, **2021-05-30T15:07:40Z**.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of items that you want to skip.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of items returned per page, maximum of 500 items. By default, the response returns 100 items per page.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/DisputeResponse"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-group-parameters": "false",
+        "x-methodName": "getAllDisputes",
+        "x-sortIndex": 1
+      },
+      "post": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Raise a dispute",
+        "description": "Raise a dispute for an underlying transaction, providing a dispute type and the amount you want to dispute.\n\nRaising a dispute returns a dispute ID, which you can use to update details about the dispute, provide supporting documentation, close the dispute, or submit the dispute for a chargeback. You can also use the dispute ID to view the status of the dispute.",
+        "operationId": "RaiseDisputesService_v4_post_disputes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "createDispute",
+        "x-sortIndex": 1
+      }
+    },
+    "/RaiseDisputesService-v4/disputes/{disputeId}/attachments": {
+      "get": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Get all attachments linked to a raised dispute",
+        "description": "Get a list of attachments associated with a dispute ID.",
+        "operationId": "RaiseDisputesService_v4_get_disputes_disputeId_attachments",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DisputeAttachment"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "getAllAttachments",
+        "x-sortIndex": 2
+      },
+      "post": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Add an attachment to a dispute",
+        "description": "Add supporting information as an attachment for the raised dispute. Upload receipts, communication, or any other documentation to support the dispute.",
+        "operationId": "RaiseDisputesService_v4_post_disputes_disputeId_attachments",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeAttachment"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttachDocumentResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "createAttachment",
+        "x-sortIndex": 2
+      }
+    },
+    "/RaiseDisputesService-v4/disputes/{disputeId}/attachments/{attachmentId}": {
+      "delete": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Delete attachment from a dispute",
+        "description": "Removes the attachment from the raised dispute. Adyen may keep this file for compliance purposes.",
+        "operationId": "RaiseDisputesService_v4_delete_disputes_disputeId_attachments_attachmentId",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attachmentId",
+            "in": "path",
+            "description": "The unique identifier of the attachment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The attachment was successfully removed"
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "deleteAttachment",
+        "x-sortIndex": 2
+      },
+      "get": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Get an attachment",
+        "description": "Search for a single attachment, providing the specific dispute ID and attachment ID.",
+        "operationId": "RaiseDisputesService_v4_get_disputes_disputeId_attachments_attachmentId",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attachmentId",
+            "in": "path",
+            "description": "The unique identifier of the attachment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeAttachment"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "getAttachment",
+        "x-sortIndex": 2
+      }
+    },
+    "/RaiseDisputesService-v4/disputes/{id}": {
+      "get": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Get dispute by ID",
+        "description": "Get a raised dispute by ID.",
+        "operationId": "RaiseDisputesService_v4_get_disputes_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "getDispute",
+        "x-sortIndex": 1
+      },
+      "patch": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Update a raised dispute",
+        "description": "Update information related to a raised dispute, or change a dispute's status from **draft** to **submitted** or **closed**.\n\n**Note:** Changing the status of a dispute to **submitted** or **closed** is a final action. You cannot make updates to a **submitted** or **closed** dispute. Make sure to upload all supporting attachments using the `POST /disputes/{id}/attachments` endpoint before you submit a dispute. When you update a dispute to **submitted**, Adyen sends the raised dispute to the card scheme for review and acquirer defense. When you update a raised dispute to **closed**, Adyen closes the dispute, and the dispute is no longer eligible for review by the card scheme.",
+        "operationId": "RaiseDisputesService_v4_patch_disputes_id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchableDisputeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "updateDispute",
+        "x-sortIndex": 1
+      }
+    },
     "/RecurringService-v68/createPermit": {
       "post": {
         "tags": [
@@ -45893,7 +46483,7 @@
                   "items": {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/DisputeResponse"
+                      "$ref": "#/components/schemas/TransactionService_v4_DisputeResponse"
                     }
                   }
                 }
@@ -45946,7 +46536,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisputeRequest"
+                "$ref": "#/components/schemas/TransactionService_v4_DisputeRequest"
               }
             }
           },
@@ -45958,7 +46548,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeResponse"
+                  "$ref": "#/components/schemas/TransactionService_v4_DisputeResponse"
                 }
               }
             }
@@ -46025,7 +46615,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DisputeAttachment"
+                    "$ref": "#/components/schemas/TransactionService_v4_DisputeAttachment"
                   }
                 }
               }
@@ -46087,7 +46677,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisputeAttachment"
+                "$ref": "#/components/schemas/TransactionService_v4_DisputeAttachment"
               }
             }
           },
@@ -46099,7 +46689,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AttachDocumentResponse"
+                  "$ref": "#/components/schemas/TransactionService_v4_AttachDocumentResponse"
                 }
               }
             }
@@ -46238,7 +46828,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeAttachment"
+                  "$ref": "#/components/schemas/TransactionService_v4_DisputeAttachment"
                 }
               }
             }
@@ -46303,7 +46893,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeResponse"
+                  "$ref": "#/components/schemas/TransactionService_v4_DisputeResponse"
                 }
               }
             }
@@ -46364,7 +46954,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchableDisputeRequest"
+                "$ref": "#/components/schemas/TransactionService_v4_PatchableDisputeRequest"
               }
             }
           }
@@ -46375,7 +46965,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeResponse"
+                  "$ref": "#/components/schemas/TransactionService_v4_DisputeResponse"
                 }
               }
             }
@@ -108404,6 +108994,585 @@
         },
         "additionalProperties": false
       },
+      "RaiseDisputesService_v4_Amount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        }
+      },
+      "AttachDocumentResponse": {
+        "type": "object",
+        "properties": {
+          "attachmentId": {
+            "type": "string",
+            "description": "The unique identifier of the attachment.",
+            "readOnly": true
+          }
+        }
+      },
+      "AttachmentType": {
+        "enum": [
+          "receipt",
+          "correspondence",
+          "other"
+        ],
+        "type": "string"
+      },
+      "CancellingEntity": {
+        "enum": [
+          "merchant",
+          "cardholder"
+        ],
+        "type": "string"
+      },
+      "RaiseDisputesService_v4_DefaultErrorResponseEntity": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Unique business error code."
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem if applicable."
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RaiseDisputesService_v4_InvalidField"
+            },
+            "description": "Array of fields with validation errors when applicable."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The unique reference for the request."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          }
+        },
+        "description": "Standardized error response following RFC-7807 format",
+        "externalDocs": {
+          "url": "https://www.rfc-editor.org/rfc/rfc7807"
+        }
+      },
+      "DisputeAttachment": {
+        "required": [
+          "attachmentType",
+          "content",
+          "fileName"
+        ],
+        "type": "object",
+        "properties": {
+          "attachmentType": {
+            "$ref": "#/components/schemas/AttachmentType"
+          },
+          "content": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The content of the image. An attachment must be base64-encoded data. Make sure that all base64-encoded data strings are generated without line breaks or \"wrapping\". For example, do not use `Base64.NO_WRAP` in Java, or its equivalent in other languages. Newline characters at the end of the base64-encoded data string will also result in a malformed input error."
+          },
+          "fileName": {
+            "maxLength": 17,
+            "minLength": 4,
+            "pattern": "([^\\s]+(\\.(?i)(jpeg|tiff|pdf))$)",
+            "type": "string",
+            "description": "The name of the attachment, including its filename extension. Supported filename extensions: **jpeg**, **pdf**, **tiff**."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the attachment.",
+            "readOnly": true
+          }
+        }
+      },
+      "DisputeRequest": {
+        "required": [
+          "transactionId",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description for the dispute."
+          },
+          "disputedAmount": {
+            "$ref": "#/components/schemas/RaiseDisputesService_v4_Amount"
+          },
+          "duplicateInfo": {
+            "$ref": "#/components/schemas/DuplicateInfo"
+          },
+          "fraudInfo": {
+            "$ref": "#/components/schemas/FraudInfo"
+          },
+          "notDeliveredInfo": {
+            "$ref": "#/components/schemas/NotDeliveredInfo"
+          },
+          "otherInfo": {
+            "$ref": "#/components/schemas/OtherInfo"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DisputeStatus"
+          },
+          "transactionId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique reference of the transaction for which you are raising the dispute."
+          },
+          "type": {
+            "$ref": "#/components/schemas/DisputeType"
+          }
+        }
+      },
+      "DisputeResponse": {
+        "required": [
+          "transactionId",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "arn": {
+            "type": "string",
+            "description": "The unique Acquirer Reference Number (arn) generated by the card scheme for each capture. You can use the `arn` to trace the transaction through its lifecycle.",
+            "readOnly": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Your description for the dispute."
+          },
+          "disputedAmount": {
+            "$ref": "#/components/schemas/RaiseDisputesService_v4_Amount"
+          },
+          "duplicateInfo": {
+            "$ref": "#/components/schemas/DuplicateInfo"
+          },
+          "fraudInfo": {
+            "$ref": "#/components/schemas/FraudInfo"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the raised dispute.",
+            "readOnly": true
+          },
+          "notDeliveredInfo": {
+            "$ref": "#/components/schemas/NotDeliveredInfo"
+          },
+          "otherInfo": {
+            "$ref": "#/components/schemas/OtherInfo"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DisputeStatus"
+          },
+          "transactionId": {
+            "type": "string",
+            "description": "The unique reference of the transaction for which you are raising the dispute."
+          },
+          "type": {
+            "$ref": "#/components/schemas/DisputeType"
+          }
+        }
+      },
+      "DisputeStatus": {
+        "enum": [
+          "draft",
+          "submitted",
+          "chargeback",
+          "secondPresentment",
+          "won",
+          "closed"
+        ],
+        "type": "string"
+      },
+      "DisputeType": {
+        "type": "string",
+        "x-extensible-enum": [
+          "notDelivered",
+          "fraud",
+          "duplicate",
+          "other"
+        ]
+      },
+      "DuplicateInfo": {
+        "required": [
+          "duplicateTransactionId",
+          "sameCard"
+        ],
+        "type": "object",
+        "properties": {
+          "duplicateTransactionId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The transaction id associated with the duplicate charge for which you are disputing. The disputed transaction must be in the same amount as the duplicate transaction."
+          },
+          "sameCard": {
+            "type": "boolean",
+            "description": "The duplicate charge was made on the same card. Possible values: **true**, **false**."
+          },
+          "sameIssuer": {
+            "type": "boolean",
+            "description": "The issuer associated with each charge is the same. Possible values: **true**, **false**."
+          }
+        }
+      },
+      "FraudInfo": {
+        "required": [
+          "cardDoesNotBelongToCardholder",
+          "cardWasCounterfeited",
+          "descriptionOfIssue"
+        ],
+        "type": "object",
+        "properties": {
+          "cardDoesNotBelongToCardholder": {
+            "type": "boolean",
+            "description": "The card is no longer in the cardholder's possession. Set to **true** if the card is lost or stolen."
+          },
+          "cardWasCounterfeited": {
+            "type": "boolean",
+            "description": "The card was counterfeited."
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **fraud**."
+          },
+          "reportOnly": {
+            "type": "boolean",
+            "description": "Set to **true** to report fraud to Adyen with no further action, such as a request for a chargeback or fee reversal. The default value is **false**."
+          }
+        }
+      },
+      "RaiseDisputesService_v4_InvalidField": {
+        "required": [
+          "message",
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Description of the validation error."
+          },
+          "name": {
+            "type": "string",
+            "description": "The field that has an invalid value."
+          },
+          "value": {
+            "type": "string",
+            "description": "The invalid value."
+          }
+        }
+      },
+      "NotDeliveredInfo": {
+        "required": [
+          "descriptionOfIssue",
+          "lastExpectedDate",
+          "whatWasNotDelivered"
+        ],
+        "type": "object",
+        "properties": {
+          "agreedDeliveryLocation": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "description": "The delivery location specified by the cardholder. Required if **deliveredToWrongLocation** is **true**."
+          },
+          "dateOfCancellation": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were cancelled in YYYY-MM-DD format.",
+            "format": "date"
+          },
+          "deliveredToWrongLocation": {
+            "type": "boolean",
+            "description": "Indicates goods were delivered to the wrong location.\n\nPossible values: **true**, **false**."
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **notDelivered**."
+          },
+          "didCardholderReturn": {
+            "type": "boolean",
+            "description": "Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.\n\nPossible values: **true**, **false**."
+          },
+          "isDeliveryLate": {
+            "type": "boolean",
+            "description": "Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.\n\nPossible values: **true**, **false**."
+          },
+          "isMerchantBankrupt": {
+            "type": "boolean",
+            "description": "Indicates if the transaction was processed by a bankrupt merchant.\n\nPossible values: **true**, **false**."
+          },
+          "isNonFiatOrNft": {
+            "type": "boolean",
+            "description": "Indicates if the transaction is non-fiat or non-fungible token (NFT) related.\n\nPossible values: **true**, **false**."
+          },
+          "lastExpectedDate": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.",
+            "format": "date"
+          },
+          "whatWasNotDelivered": {
+            "$ref": "#/components/schemas/ProductType"
+          },
+          "whoCancelled": {
+            "$ref": "#/components/schemas/CancellingEntity"
+          }
+        }
+      },
+      "OtherInfo": {
+        "required": [
+          "descriptionOfIssue",
+          "subType",
+          "whatWasPurchased"
+        ],
+        "type": "object",
+        "properties": {
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **other**."
+          },
+          "subType": {
+            "$ref": "#/components/schemas/SubType"
+          },
+          "whatWasPurchased": {
+            "$ref": "#/components/schemas/ProductType"
+          }
+        }
+      },
+      "PatchableDisputeRequest": {
+        "type": "object",
+        "properties": {
+          "duplicateInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableDuplicateInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.",
+            "nullable": true
+          },
+          "fraudInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableFraudInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.",
+            "nullable": true
+          },
+          "notDeliveredInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.",
+            "nullable": true
+          },
+          "otherInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableOtherInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.",
+            "nullable": true
+          },
+          "status": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DisputeStatus"
+              }
+            ],
+            "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableDuplicateInfo": {
+        "type": "object",
+        "properties": {
+          "duplicateTransactionId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The transaction id associated with the duplicate charge for which you are disputing. The disputed transaction must be in the same amount as the duplicate transaction."
+          },
+          "sameCard": {
+            "type": "boolean",
+            "description": "The duplicate charge was made on the same card. Possible values: **true**, **false**."
+          },
+          "sameIssuer": {
+            "type": "boolean",
+            "description": "The issuer associated with each charge is the same. Possible values: **true**, **false**.",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableFraudInfo": {
+        "type": "object",
+        "properties": {
+          "cardDoesNotBelongToCardholder": {
+            "type": "boolean",
+            "description": "The card is no longer in the cardholder's possession. Set to **true** if the card is lost or stolen."
+          },
+          "cardWasCounterfeited": {
+            "type": "boolean",
+            "description": "The card was counterfeited."
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **fraud**."
+          },
+          "reportOnly": {
+            "type": "boolean",
+            "description": "Set to **true** to report fraud to Adyen with no further action, such as a request for a chargeback or fee reversal. The default value is **false**.",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableNotDeliveredInfo": {
+        "type": "object",
+        "properties": {
+          "agreedDeliveryLocation": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "description": "The delivery location specified by the cardholder. Required if **deliveredToWrongLocation** is **true**.",
+            "nullable": true
+          },
+          "dateOfCancellation": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were cancelled in YYYY-MM-DD format.",
+            "format": "date",
+            "nullable": true
+          },
+          "deliveredToWrongLocation": {
+            "type": "boolean",
+            "description": "Indicates goods were delivered to the wrong location.\n\nPossible values: **true**, **false**.",
+            "nullable": true
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **notDelivered**."
+          },
+          "didCardholderReturn": {
+            "type": "boolean",
+            "description": "Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.\n\nPossible values: **true**, **false**.",
+            "nullable": true
+          },
+          "isDeliveryLate": {
+            "type": "boolean",
+            "description": "Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.\n\nPossible values: **true**, **false**.",
+            "nullable": true
+          },
+          "isMerchantBankrupt": {
+            "type": "boolean",
+            "description": "Indicates if the transaction was processed by a bankrupt merchant.\n\nPossible values: **true**, **false**.",
+            "nullable": true
+          },
+          "isNonFiatOrNft": {
+            "type": "boolean",
+            "description": "Indicates if the transaction is non-fiat or non-fungible token (NFT) related.\n\nPossible values: **true**, **false**.",
+            "nullable": true
+          },
+          "lastExpectedDate": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.",
+            "format": "date"
+          },
+          "whatWasNotDelivered": {
+            "$ref": "#/components/schemas/ProductType"
+          },
+          "whoCancelled": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CancellingEntity"
+              }
+            ],
+            "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableOtherInfo": {
+        "type": "object",
+        "properties": {
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **other**."
+          },
+          "subType": {
+            "$ref": "#/components/schemas/SubType"
+          },
+          "whatWasPurchased": {
+            "$ref": "#/components/schemas/ProductType"
+          }
+        }
+      },
+      "ProductType": {
+        "enum": [
+          "goods",
+          "services"
+        ],
+        "type": "string"
+      },
+      "SubType": {
+        "enum": [
+          "atmDispute",
+          "cancelledGoodsServices",
+          "cancelledRecurring",
+          "creditNotProcessed",
+          "counterfeit",
+          "notAsDescribed"
+        ],
+        "type": "string"
+      },
       "RecurringService_v68_Address": {
         "required": [
           "street",
@@ -109165,7 +110334,7 @@
             "$ref": "#/components/schemas/Policy"
           },
           "product": {
-            "$ref": "#/components/schemas/ProductType"
+            "$ref": "#/components/schemas/SessionAuthenticationService_v1_ProductType"
           }
         }
       },
@@ -109311,7 +110480,7 @@
           }
         }
       },
-      "ProductType": {
+      "SessionAuthenticationService_v1_ProductType": {
         "enum": [
           "onboarding",
           "platform",
@@ -114810,7 +115979,7 @@
           }
         }
       },
-      "AttachDocumentResponse": {
+      "TransactionService_v4_AttachDocumentResponse": {
         "type": "object",
         "properties": {
           "attachmentId": {
@@ -114820,7 +115989,7 @@
           }
         }
       },
-      "AttachmentType": {
+      "TransactionService_v4_AttachmentType": {
         "enum": [
           "receipt",
           "correspondence",
@@ -114828,7 +115997,7 @@
         ],
         "type": "string"
       },
-      "CancellingEntity": {
+      "TransactionService_v4_CancellingEntity": {
         "enum": [
           "merchant",
           "cardholder"
@@ -114880,7 +116049,7 @@
           "url": "https://www.rfc-editor.org/rfc/rfc7807"
         }
       },
-      "DisputeAttachment": {
+      "TransactionService_v4_DisputeAttachment": {
         "required": [
           "attachmentType",
           "content",
@@ -114889,7 +116058,7 @@
         "type": "object",
         "properties": {
           "attachmentType": {
-            "$ref": "#/components/schemas/AttachmentType"
+            "$ref": "#/components/schemas/TransactionService_v4_AttachmentType"
           },
           "content": {
             "minLength": 1,
@@ -114910,7 +116079,7 @@
           }
         }
       },
-      "DisputeRequest": {
+      "TransactionService_v4_DisputeRequest": {
         "required": [
           "transactionId",
           "type"
@@ -114927,19 +116096,19 @@
             "$ref": "#/components/schemas/TransactionService_v4_Amount"
           },
           "duplicateInfo": {
-            "$ref": "#/components/schemas/DuplicateInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_DuplicateInfo"
           },
           "fraudInfo": {
-            "$ref": "#/components/schemas/FraudInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_FraudInfo"
           },
           "notDeliveredInfo": {
-            "$ref": "#/components/schemas/NotDeliveredInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_NotDeliveredInfo"
           },
           "otherInfo": {
-            "$ref": "#/components/schemas/OtherInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_OtherInfo"
           },
           "status": {
-            "$ref": "#/components/schemas/DisputeStatus"
+            "$ref": "#/components/schemas/TransactionService_v4_DisputeStatus"
           },
           "transactionId": {
             "minLength": 1,
@@ -114947,11 +116116,11 @@
             "description": "The unique reference of the transaction for which you are raising the dispute."
           },
           "type": {
-            "$ref": "#/components/schemas/DisputeType"
+            "$ref": "#/components/schemas/TransactionService_v4_DisputeType"
           }
         }
       },
-      "DisputeResponse": {
+      "TransactionService_v4_DisputeResponse": {
         "required": [
           "transactionId",
           "type"
@@ -114971,10 +116140,10 @@
             "$ref": "#/components/schemas/TransactionService_v4_Amount"
           },
           "duplicateInfo": {
-            "$ref": "#/components/schemas/DuplicateInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_DuplicateInfo"
           },
           "fraudInfo": {
-            "$ref": "#/components/schemas/FraudInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_FraudInfo"
           },
           "id": {
             "type": "string",
@@ -114982,24 +116151,24 @@
             "readOnly": true
           },
           "notDeliveredInfo": {
-            "$ref": "#/components/schemas/NotDeliveredInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_NotDeliveredInfo"
           },
           "otherInfo": {
-            "$ref": "#/components/schemas/OtherInfo"
+            "$ref": "#/components/schemas/TransactionService_v4_OtherInfo"
           },
           "status": {
-            "$ref": "#/components/schemas/DisputeStatus"
+            "$ref": "#/components/schemas/TransactionService_v4_DisputeStatus"
           },
           "transactionId": {
             "type": "string",
             "description": "The unique reference of the transaction for which you are raising the dispute."
           },
           "type": {
-            "$ref": "#/components/schemas/DisputeType"
+            "$ref": "#/components/schemas/TransactionService_v4_DisputeType"
           }
         }
       },
-      "DisputeStatus": {
+      "TransactionService_v4_DisputeStatus": {
         "enum": [
           "draft",
           "submitted",
@@ -115010,7 +116179,7 @@
         ],
         "type": "string"
       },
-      "DisputeType": {
+      "TransactionService_v4_DisputeType": {
         "type": "string",
         "x-extensible-enum": [
           "notDelivered",
@@ -115019,7 +116188,7 @@
           "other"
         ]
       },
-      "DuplicateInfo": {
+      "TransactionService_v4_DuplicateInfo": {
         "required": [
           "duplicateTransactionId",
           "sameCard"
@@ -115041,7 +116210,7 @@
           }
         }
       },
-      "FraudInfo": {
+      "TransactionService_v4_FraudInfo": {
         "required": [
           "cardDoesNotBelongToCardholder",
           "cardWasCounterfeited",
@@ -115091,7 +116260,7 @@
           }
         }
       },
-      "NotDeliveredInfo": {
+      "TransactionService_v4_NotDeliveredInfo": {
         "required": [
           "descriptionOfIssue",
           "lastExpectedDate",
@@ -115145,11 +116314,11 @@
             "$ref": "#/components/schemas/TransactionService_v4_ProductType"
           },
           "whoCancelled": {
-            "$ref": "#/components/schemas/CancellingEntity"
+            "$ref": "#/components/schemas/TransactionService_v4_CancellingEntity"
           }
         }
       },
-      "OtherInfo": {
+      "TransactionService_v4_OtherInfo": {
         "required": [
           "descriptionOfIssue",
           "subType",
@@ -115164,21 +116333,21 @@
             "description": "Your description of the issue for raising a dispute of `type` **other**."
           },
           "subType": {
-            "$ref": "#/components/schemas/SubType"
+            "$ref": "#/components/schemas/TransactionService_v4_SubType"
           },
           "whatWasPurchased": {
             "$ref": "#/components/schemas/TransactionService_v4_ProductType"
           }
         }
       },
-      "PatchableDisputeRequest": {
+      "TransactionService_v4_PatchableDisputeRequest": {
         "type": "object",
         "properties": {
           "duplicateInfo": {
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableDuplicateInfo"
+                "$ref": "#/components/schemas/TransactionService_v4_PatchableDuplicateInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.",
@@ -115188,7 +116357,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableFraudInfo"
+                "$ref": "#/components/schemas/TransactionService_v4_PatchableFraudInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.",
@@ -115198,7 +116367,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
+                "$ref": "#/components/schemas/TransactionService_v4_PatchableNotDeliveredInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.",
@@ -115208,7 +116377,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableOtherInfo"
+                "$ref": "#/components/schemas/TransactionService_v4_PatchableOtherInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.",
@@ -115218,7 +116387,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/DisputeStatus"
+                "$ref": "#/components/schemas/TransactionService_v4_DisputeStatus"
               }
             ],
             "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.",
@@ -115226,7 +116395,7 @@
           }
         }
       },
-      "PatchableDuplicateInfo": {
+      "TransactionService_v4_PatchableDuplicateInfo": {
         "type": "object",
         "properties": {
           "duplicateTransactionId": {
@@ -115245,7 +116414,7 @@
           }
         }
       },
-      "PatchableFraudInfo": {
+      "TransactionService_v4_PatchableFraudInfo": {
         "type": "object",
         "properties": {
           "cardDoesNotBelongToCardholder": {
@@ -115269,7 +116438,7 @@
           }
         }
       },
-      "PatchableNotDeliveredInfo": {
+      "TransactionService_v4_PatchableNotDeliveredInfo": {
         "type": "object",
         "properties": {
           "agreedDeliveryLocation": {
@@ -115328,7 +116497,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/CancellingEntity"
+                "$ref": "#/components/schemas/TransactionService_v4_CancellingEntity"
               }
             ],
             "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.",
@@ -115336,7 +116505,7 @@
           }
         }
       },
-      "PatchableOtherInfo": {
+      "TransactionService_v4_PatchableOtherInfo": {
         "type": "object",
         "properties": {
           "descriptionOfIssue": {
@@ -115346,7 +116515,7 @@
             "description": "Your description of the issue for raising a dispute of `type` **other**."
           },
           "subType": {
-            "$ref": "#/components/schemas/SubType"
+            "$ref": "#/components/schemas/TransactionService_v4_SubType"
           },
           "whatWasPurchased": {
             "$ref": "#/components/schemas/TransactionService_v4_ProductType"
@@ -115360,7 +116529,7 @@
         ],
         "type": "string"
       },
-      "SubType": {
+      "TransactionService_v4_SubType": {
         "enum": [
           "atmDispute",
           "cancelledGoodsServices",
@@ -151734,6 +152903,15 @@
         "type": "http",
         "scheme": "basic"
       },
+      "RaiseDisputesService_v4_ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      },
+      "RaiseDisputesService_v4_BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
       "RecurringService_v68_ApiKeyAuth": {
         "type": "apiKey",
         "name": "X-API-Key",
@@ -152143,13 +153321,13 @@
       "name": "Instant payouts"
     },
     {
-      "name": "Session authentication"
-    },
-    {
       "name": "Dispute Attachments"
     },
     {
       "name": "Raise Disputes"
+    },
+    {
+      "name": "Session authentication"
     },
     {
       "name": "Transfers"

@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of customer order open, closed or both to be sent in the response messages.Possible values:* **Both*** **Closed*** **Open**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Login?>? CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest_CustomerOrderReq?>? CustomerOrderReq { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Login?> CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest_CustomerOrderReq?> CustomerOrderReq { get; set; }
 #endif
         /// <summary>Date and Time. In the Login request message, the Sale System gives its date and time to the POI System. In the Login response, the POI System gives its date and time to the Sale System.</summary>
         public DateTimeOffset? DateTime { get; set; }
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Login>()?.AsList(); } },
+                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest_CustomerOrderReq>()?.AsList(); } },
                 { "DateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
                 { "OperatorID", n => { OperatorID = n.GetStringValue(); } },
                 { "OperatorLanguage", n => { OperatorLanguage = n.GetStringValue(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Login>("CustomerOrderReq", CustomerOrderReq);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequest_CustomerOrderReq>("CustomerOrderReq", CustomerOrderReq);
             writer.WriteDateTimeOffsetValue("DateTime", DateTime);
             writer.WriteStringValue("OperatorID", OperatorID);
             writer.WriteStringValue("OperatorLanguage", OperatorLanguage);

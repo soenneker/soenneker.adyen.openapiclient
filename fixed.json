@@ -113,6 +113,14 @@
       "url": "https://pal-test.adyen.com/pal/servlet/Payout/v68"
     },
     {
+      "url": "https://balanceplatform-api-test.adyen.com/btl/api/v4",
+      "description": "Test Environment"
+    },
+    {
+      "url": "https://balanceplatform-api-live.adyen.com/btl/api/v4",
+      "description": "Live Environment"
+    },
+    {
       "url": "https://pal-test.adyen.com/pal/servlet/Recurring/v68"
     },
     {
@@ -170,14 +178,6 @@
     },
     {
       "url": "https://postfmapi-test.adyen.com/postfmapi/terminal/v1"
-    },
-    {
-      "url": "https://balanceplatform-api-live.adyen.com/btl/api/v4",
-      "description": "Live Environment"
-    },
-    {
-      "url": "https://balanceplatform-api-test.adyen.com/btl/api/v4",
-      "description": "Test Environment"
     },
     {
       "url": "https://balanceplatform-api-test.adyen.com/btl/v4"
@@ -40973,6 +40973,574 @@
         ]
       }
     },
+    "/RaiseDisputesService-v4/disputes": {
+      "get": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Get a list of raised disputes",
+        "description": "Returns a list of raised disputes that match the query parameters.\n\nThis endpoint supports cursor-based pagination. The response returns the first page of results, and returns links to the next page when applicable. You can use the links to page through the results. The response also returns links to the previous page when applicable.",
+        "operationId": "RaiseDisputesService-v4-get-disputes",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "\"The current status of the dispute.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentInstrument",
+            "in": "query",
+            "description": "The unique identifier of the payment instrument.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdSince",
+            "in": "query",
+            "description": "Only include disputes that have been created on or after this point in time. The value must be in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601\\)  format. For example, 2021-05-30T15:07:40Z.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdUntil",
+            "in": "query",
+            "description": "Only include disputes that have been created on or before this point in time. The value must be in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601\\) format. For example, **2021-05-30T15:07:40Z**.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of items that you want to skip.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of items returned per page, maximum of 500 items. By default, the response returns 100 items per page.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/DisputeResponse"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Raise a dispute",
+        "description": "Raise a dispute for an underlying transaction, providing a dispute type and the amount you want to dispute.\n\nRaising a dispute returns a dispute ID, which you can use to update details about the dispute, provide supporting documentation, close the dispute, or submit the dispute for a chargeback. You can also use the dispute ID to view the status of the dispute.",
+        "operationId": "RaiseDisputesService-v4-post-disputes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RaiseDisputesService-v4/disputes/{disputeId}/attachments": {
+      "get": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Get all attachments linked to a raised dispute",
+        "description": "Get a list of attachments associated with a dispute ID.",
+        "operationId": "RaiseDisputesService-v4-get-disputes-disputeId-attachments",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DisputeAttachment"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Add an attachment to a dispute",
+        "description": "Add supporting information as an attachment for the raised dispute. Upload receipts, communication, or any other documentation to support the dispute.",
+        "operationId": "RaiseDisputesService-v4-post-disputes-disputeId-attachments",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeAttachment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttachDocumentResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RaiseDisputesService-v4/disputes/{disputeId}/attachments/{attachmentId}": {
+      "delete": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Delete attachment from a dispute",
+        "description": "Removes the attachment from the raised dispute. Adyen may keep this file for compliance purposes.",
+        "operationId": "RaiseDisputesService-v4-delete-disputes-disputeId-attachments-attachmentId",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attachmentId",
+            "in": "path",
+            "description": "The unique identifier of the attachment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Dispute Attachments"
+        ],
+        "summary": "Get an attachment",
+        "description": "Search for a single attachment, providing the specific dispute ID and attachment ID.",
+        "operationId": "RaiseDisputesService-v4-get-disputes-disputeId-attachments-attachmentId",
+        "parameters": [
+          {
+            "name": "disputeId",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attachmentId",
+            "in": "path",
+            "description": "The unique identifier of the attachment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeAttachment"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RaiseDisputesService-v4/disputes/{id}": {
+      "get": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Get dispute by ID",
+        "description": "Get a raised dispute by ID.",
+        "operationId": "RaiseDisputesService-v4-get-disputes-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Raise Disputes"
+        ],
+        "summary": "Update a raised dispute",
+        "description": "Update information related to a raised dispute, or change a dispute's status from **draft** to **submitted** or **closed**.\n\n**Note:** Changing the status of a dispute to **submitted** or **closed** is a final action. You cannot make updates to a **submitted** or **closed** dispute. Make sure to upload all supporting attachments using the `POST /disputes/{id}/attachments` endpoint before you submit a dispute. When you update a dispute to **submitted**, Adyen sends the raised dispute to the card scheme for review and acquirer defense. When you update a raised dispute to **closed**, Adyen closes the dispute, and the dispute is no longer eligible for review by the card scheme.",
+        "operationId": "RaiseDisputesService-v4-patch-disputes-id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the raised dispute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchableDisputeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisputeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/RecurringService-v68/disable": {
       "post": {
         "tags": [
@@ -42966,7 +43534,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionServiceV4GetDisputes200"
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/TransactionServiceV4DisputeResponse"
+                    }
+                  }
                 }
               }
             }
@@ -43014,7 +43588,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisputeRequest"
+                "$ref": "#/components/schemas/TransactionServiceV4DisputeRequest"
               }
             }
           }
@@ -43025,7 +43599,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeResponse"
+                  "$ref": "#/components/schemas/TransactionServiceV4DisputeResponse"
                 }
               }
             }
@@ -43088,7 +43662,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionServiceV4GetDisputesDisputeIdAttachments200"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransactionServiceV4DisputeAttachment"
+                  }
                 }
               }
             }
@@ -43147,7 +43724,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisputeAttachment"
+                "$ref": "#/components/schemas/TransactionServiceV4DisputeAttachment"
               }
             }
           }
@@ -43158,7 +43735,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AttachDocumentResponse"
+                  "$ref": "#/components/schemas/TransactionServiceV4AttachDocumentResponse"
                 }
               }
             }
@@ -43290,7 +43867,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeAttachment"
+                  "$ref": "#/components/schemas/TransactionServiceV4DisputeAttachment"
                 }
               }
             }
@@ -43353,7 +43930,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeResponse"
+                  "$ref": "#/components/schemas/TransactionServiceV4DisputeResponse"
                 }
               }
             }
@@ -43412,7 +43989,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchableDisputeRequest"
+                "$ref": "#/components/schemas/TransactionServiceV4PatchableDisputeRequest"
               }
             }
           }
@@ -43423,7 +44000,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisputeResponse"
+                  "$ref": "#/components/schemas/TransactionServiceV4DisputeResponse"
                 }
               }
             }
@@ -44671,19 +45248,16 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/AccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "iban": {
-                "minLength": 1,
-                "type": "string",
-                "description": "The IBAN of the bank account.",
-                "example": "NL00AAAA0000000000"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "iban": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The IBAN of the bank account.",
+            "example": "NL00AAAA0000000000"
+          }
+        }
       },
       "IdealAuthLinkRequest": {
         "required": [
@@ -44749,23 +45323,20 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/PaymentDetailsRequest"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "payload": {
-                "maxLength": 200,
-                "minLength": 1,
-                "type": "string",
-                "description": "An identifier for the payment, generated by the payment method, such as iDEAL. This is obtained from the specified `source`.",
-                "example": "https://somePayload"
-              },
-              "source": {
-                "$ref": "#/components/schemas/PaymentSource"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "payload": {
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string",
+            "description": "An identifier for the payment, generated by the payment method, such as iDEAL. This is obtained from the specified `source`.",
+            "example": "https://somePayload"
+          },
+          "source": {
+            "$ref": "#/components/schemas/PaymentSource"
+          }
+        }
       },
       "InvalidField": {
         "required": [
@@ -61078,20 +61649,17 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/WebhookSetting"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "conditions": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Condition"
-                },
-                "description": "The list of settings and criteria for triggering the [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Condition"
+            },
+            "description": "The list of settings and criteria for triggering the [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
+          }
+        }
       },
       "BalanceWebhookSettingInfo": {
         "required": [
@@ -61474,7 +62042,10 @@
           }
         },
         "discriminator": {
-          "propertyName": "type"
+          "propertyName": "type",
+          "mapping": {
+            "ukLocal": "#/components/schemas/BalancePlatformServiceV2UKLocalMandateAccountIdentification"
+          }
         }
       },
       "BalancePlatformServiceV2MandateBankAccount": {
@@ -61663,12 +62234,12 @@
         "additionalProperties": false,
         "description": "\"The scope to which the transfer limit applies. Possible values:\n* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.\n* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.\""
       },
-      "CreateAccountResponseMetadata": {
+      "UpdateAccountRequestMetadata": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         },
-        "description": "A set of key and value pairs containing metadata.",
+        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
         "x-addedInVersion": "5"
       },
       "SettingType": {
@@ -61872,30 +62443,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/MandateAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 8,
-                "minLength": 8,
-                "type": "string",
-                "description": "The 8-digit bank account number, without separators or whitespace."
-              },
-              "sortCode": {
-                "maxLength": 6,
-                "minLength": 6,
-                "type": "string",
-                "description": "The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**ukLocal**",
-                "default": "ukLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 8,
+            "minLength": 8,
+            "type": "string",
+            "description": "The 8-digit bank account number, without separators or whitespace."
+          },
+          "sortCode": {
+            "maxLength": 6,
+            "minLength": 6,
+            "type": "string",
+            "description": "The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**ukLocal**",
+            "default": "ukLocal"
+          }
+        }
       },
       "WebhookSetting": {
         "required": [
@@ -65371,30 +65939,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 9,
-                "minLength": 5,
-                "type": "string",
-                "description": "The bank account number, without separators or whitespace."
-              },
-              "bsbCode": {
-                "maxLength": 6,
-                "minLength": 6,
-                "type": "string",
-                "description": "The 6-digit [Bank State Branch (BSB) code](https://en.wikipedia.org/wiki/Bank_state_branch), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**auLocal**",
-                "default": "auLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 9,
+            "minLength": 5,
+            "type": "string",
+            "description": "The bank account number, without separators or whitespace."
+          },
+          "bsbCode": {
+            "maxLength": 6,
+            "minLength": 6,
+            "type": "string",
+            "description": "The 6-digit [Bank State Branch (BSB) code](https://en.wikipedia.org/wiki/Bank_state_branch), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**auLocal**",
+            "default": "auLocal"
+          }
+        }
       },
       "CapitalServiceV1Action": {
         "required": [
@@ -65462,42 +66027,39 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 10,
-                "minLength": 1,
-                "type": "string",
-                "description": "The bank account number, without separators or whitespace."
-              },
-              "bankCode": {
-                "maxLength": 3,
-                "minLength": 3,
-                "type": "string",
-                "description": "The 3-digit bank code, with leading zeros."
-              },
-              "branchNumber": {
-                "maxLength": 4,
-                "minLength": 1,
-                "type": "string",
-                "description": "The bank account branch number, without separators or whitespace."
-              },
-              "ispb": {
-                "maxLength": 8,
-                "minLength": 8,
-                "type": "string",
-                "description": "The 8-digit ISPB, with leading zeros."
-              },
-              "type": {
-                "type": "string",
-                "description": "**brLocal**",
-                "default": "brLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string",
+            "description": "The bank account number, without separators or whitespace."
+          },
+          "bankCode": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The 3-digit bank code, with leading zeros."
+          },
+          "branchNumber": {
+            "maxLength": 4,
+            "minLength": 1,
+            "type": "string",
+            "description": "The bank account branch number, without separators or whitespace."
+          },
+          "ispb": {
+            "maxLength": 8,
+            "minLength": 8,
+            "type": "string",
+            "description": "The 8-digit ISPB, with leading zeros."
+          },
+          "type": {
+            "type": "string",
+            "description": "**brLocal**",
+            "default": "brLocal"
+          }
+        }
       },
       "CapitalServiceV1Balance": {
         "required": [
@@ -65541,7 +66103,25 @@
           }
         },
         "discriminator": {
-          "propertyName": "type"
+          "propertyName": "type",
+          "mapping": {
+            "auLocal": "#/components/schemas/CapitalServiceV1AULocalAccountIdentification",
+            "brLocal": "#/components/schemas/CapitalServiceV1BRLocalAccountIdentification",
+            "caLocal": "#/components/schemas/CapitalServiceV1CALocalAccountIdentification",
+            "czLocal": "#/components/schemas/CapitalServiceV1CZLocalAccountIdentification",
+            "dkLocal": "#/components/schemas/CapitalServiceV1DKLocalAccountIdentification",
+            "hkLocal": "#/components/schemas/CapitalServiceV1HKLocalAccountIdentification",
+            "huLocal": "#/components/schemas/CapitalServiceV1HULocalAccountIdentification",
+            "iban": "#/components/schemas/CapitalServiceV1IbanAccountIdentification",
+            "noLocal": "#/components/schemas/CapitalServiceV1NOLocalAccountIdentification",
+            "numberAndBic": "#/components/schemas/CapitalServiceV1NumberAndBicAccountIdentification",
+            "nzLocal": "#/components/schemas/CapitalServiceV1NZLocalAccountIdentification",
+            "plLocal": "#/components/schemas/CapitalServiceV1PLLocalAccountIdentification",
+            "seLocal": "#/components/schemas/CapitalServiceV1SELocalAccountIdentification",
+            "sgLocal": "#/components/schemas/CapitalServiceV1SGLocalAccountIdentification",
+            "ukLocal": "#/components/schemas/CapitalServiceV1UKLocalAccountIdentification",
+            "usLocal": "#/components/schemas/CapitalServiceV1USLocalAccountIdentification"
+          }
         }
       },
       "CapitalServiceV1CALocalAccountIdentification": {
@@ -65555,39 +66135,36 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 12,
-                "minLength": 5,
-                "type": "string",
-                "description": "The 5- to 12-digit bank account number, without separators or whitespace."
-              },
-              "accountType": {
-                "$ref": "#/components/schemas/CALocalBankAccountType"
-              },
-              "institutionNumber": {
-                "maxLength": 3,
-                "minLength": 3,
-                "type": "string",
-                "description": "The 3-digit institution number, without separators or whitespace."
-              },
-              "transitNumber": {
-                "maxLength": 5,
-                "minLength": 5,
-                "type": "string",
-                "description": "The 5-digit transit number, without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**caLocal**",
-                "default": "caLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 12,
+            "minLength": 5,
+            "type": "string",
+            "description": "The 5- to 12-digit bank account number, without separators or whitespace."
+          },
+          "accountType": {
+            "$ref": "#/components/schemas/CALocalBankAccountType"
+          },
+          "institutionNumber": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The 3-digit institution number, without separators or whitespace."
+          },
+          "transitNumber": {
+            "maxLength": 5,
+            "minLength": 5,
+            "type": "string",
+            "description": "The 5-digit transit number, without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**caLocal**",
+            "default": "caLocal"
+          }
+        }
       },
       "CALocalBankAccountType": {
         "enum": [
@@ -65607,30 +66184,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 17,
-                "minLength": 2,
-                "type": "string",
-                "description": "The 2- to 16-digit bank account number (Číslo účtu) in the following format:\n\n- The optional prefix (předčíslí).\n\n- The required second part (základní část) which must be at least two non-zero digits.\n\nExamples:\n\n- **19-123457** (with prefix)\n\n- **123457** (without prefix)\n\n- **000019-0000123457** (with prefix, normalized)\n\n- **000000-0000123457** (without prefix, normalized)"
-              },
-              "bankCode": {
-                "maxLength": 4,
-                "minLength": 4,
-                "type": "string",
-                "description": "The 4-digit bank code (Kód banky), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**czLocal**",
-                "default": "czLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 17,
+            "minLength": 2,
+            "type": "string",
+            "description": "The 2- to 16-digit bank account number (Číslo účtu) in the following format:\n\n- The optional prefix (předčíslí).\n\n- The required second part (základní část) which must be at least two non-zero digits.\n\nExamples:\n\n- **19-123457** (with prefix)\n\n- **123457** (without prefix)\n\n- **000019-0000123457** (with prefix, normalized)\n\n- **000000-0000123457** (without prefix, normalized)"
+          },
+          "bankCode": {
+            "maxLength": 4,
+            "minLength": 4,
+            "type": "string",
+            "description": "The 4-digit bank code (Kód banky), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**czLocal**",
+            "default": "czLocal"
+          }
+        }
       },
       "CalculateGrantOfferRequest": {
         "required": [
@@ -65710,30 +66284,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 10,
-                "minLength": 4,
-                "type": "string",
-                "description": "The 4-10 digits bank account number (Kontonummer) (without separators or whitespace)."
-              },
-              "bankCode": {
-                "maxLength": 4,
-                "minLength": 4,
-                "type": "string",
-                "description": "The 4-digit bank code (Registreringsnummer) (without separators or whitespace)."
-              },
-              "type": {
-                "type": "string",
-                "description": "**dkLocal**",
-                "default": "dkLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 10,
+            "minLength": 4,
+            "type": "string",
+            "description": "The 4-10 digits bank account number (Kontonummer) (without separators or whitespace)."
+          },
+          "bankCode": {
+            "maxLength": 4,
+            "minLength": 4,
+            "type": "string",
+            "description": "The 4-digit bank code (Registreringsnummer) (without separators or whitespace)."
+          },
+          "type": {
+            "type": "string",
+            "description": "**dkLocal**",
+            "default": "dkLocal"
+          }
+        }
       },
       "CapitalServiceV1DefaultErrorResponseEntity": {
         "type": "object",
@@ -66230,30 +66801,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 17,
-                "minLength": 9,
-                "type": "string",
-                "description": "The 9- to 17-digit bank account number, without separators or whitespace. Starts with the 3-digit branch code."
-              },
-              "clearingCode": {
-                "maxLength": 3,
-                "minLength": 3,
-                "type": "string",
-                "description": "The 3-digit clearing code, without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**hkLocal**",
-                "default": "hkLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 17,
+            "minLength": 9,
+            "type": "string",
+            "description": "The 9- to 17-digit bank account number, without separators or whitespace. Starts with the 3-digit branch code."
+          },
+          "clearingCode": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The 3-digit clearing code, without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**hkLocal**",
+            "default": "hkLocal"
+          }
+        }
       },
       "CapitalServiceV1HULocalAccountIdentification": {
         "required": [
@@ -66264,24 +66832,21 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 24,
-                "minLength": 24,
-                "type": "string",
-                "description": "The 24-digit bank account number, without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**huLocal**",
-                "default": "huLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 24,
+            "minLength": 24,
+            "type": "string",
+            "description": "The 24-digit bank account number, without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**huLocal**",
+            "default": "huLocal"
+          }
+        }
       },
       "CapitalServiceV1IbanAccountIdentification": {
         "required": [
@@ -66292,26 +66857,23 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "bic": {
-                "type": "string",
-                "description": "The bank's 8- or 11-character BIC or SWIFT code."
-              },
-              "iban": {
-                "type": "string",
-                "description": "The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard."
-              },
-              "type": {
-                "type": "string",
-                "description": "**iban**",
-                "default": "iban"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "bic": {
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "iban": {
+            "type": "string",
+            "description": "The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard."
+          },
+          "type": {
+            "type": "string",
+            "description": "**iban**",
+            "default": "iban"
+          }
+        }
       },
       "CapitalServiceV1InvalidField": {
         "required": [
@@ -66344,24 +66906,21 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 11,
-                "minLength": 11,
-                "type": "string",
-                "description": "The 11-digit bank account number, without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**noLocal**",
-                "default": "noLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 11,
+            "minLength": 11,
+            "type": "string",
+            "description": "The 11-digit bank account number, without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**noLocal**",
+            "default": "noLocal"
+          }
+        }
       },
       "CapitalServiceV1NZLocalAccountIdentification": {
         "required": [
@@ -66372,24 +66931,21 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 16,
-                "minLength": 15,
-                "type": "string",
-                "description": "The 15-16 digit bank account number. The first 2 digits are the bank number, the next 4 digits are the branch number, the next 7 digits are the account number, and the final 2-3 digits are the suffix."
-              },
-              "type": {
-                "type": "string",
-                "description": "**nzLocal**",
-                "default": "nzLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 16,
+            "minLength": 15,
+            "type": "string",
+            "description": "The 15-16 digit bank account number. The first 2 digits are the bank number, the next 4 digits are the branch number, the next 7 digits are the account number, and the final 2-3 digits are the suffix."
+          },
+          "type": {
+            "type": "string",
+            "description": "**nzLocal**",
+            "default": "nzLocal"
+          }
+        }
       },
       "CapitalServiceV1NumberAndBicAccountIdentification": {
         "required": [
@@ -66401,32 +66957,29 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 34,
-                "type": "string",
-                "description": "The bank account number, without separators or whitespace. The length and format depends on the bank or country."
-              },
-              "additionalBankIdentification": {
-                "$ref": "#/components/schemas/CapitalServiceV1AdditionalBankIdentification"
-              },
-              "bic": {
-                "maxLength": 11,
-                "minLength": 8,
-                "type": "string",
-                "description": "The bank's 8- or 11-character BIC or SWIFT code."
-              },
-              "type": {
-                "type": "string",
-                "description": "**numberAndBic**",
-                "default": "numberAndBic"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 34,
+            "type": "string",
+            "description": "The bank account number, without separators or whitespace. The length and format depends on the bank or country."
+          },
+          "additionalBankIdentification": {
+            "$ref": "#/components/schemas/CapitalServiceV1AdditionalBankIdentification"
+          },
+          "bic": {
+            "maxLength": 11,
+            "minLength": 8,
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "type": {
+            "type": "string",
+            "description": "**numberAndBic**",
+            "default": "numberAndBic"
+          }
+        }
       },
       "CapitalServiceV1PLLocalAccountIdentification": {
         "required": [
@@ -66437,24 +66990,21 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 26,
-                "minLength": 26,
-                "type": "string",
-                "description": "The 26-digit bank account number ([Numer rachunku](https://pl.wikipedia.org/wiki/Numer_Rachunku_Bankowego)), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**plLocal**",
-                "default": "plLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 26,
+            "minLength": 26,
+            "type": "string",
+            "description": "The 26-digit bank account number ([Numer rachunku](https://pl.wikipedia.org/wiki/Numer_Rachunku_Bankowego)), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**plLocal**",
+            "default": "plLocal"
+          }
+        }
       },
       "CapitalServiceV1Repayment": {
         "required": [
@@ -66503,30 +67053,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 10,
-                "minLength": 7,
-                "type": "string",
-                "description": "The 7- to 10-digit bank account number ([Bankkontonummer](https://sv.wikipedia.org/wiki/Bankkonto)), without the clearing number, separators, or whitespace."
-              },
-              "clearingNumber": {
-                "maxLength": 5,
-                "minLength": 4,
-                "type": "string",
-                "description": "The 4- to 5-digit clearing number ([Clearingnummer](https://sv.wikipedia.org/wiki/Clearingnummer)), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**seLocal**",
-                "default": "seLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 10,
+            "minLength": 7,
+            "type": "string",
+            "description": "The 7- to 10-digit bank account number ([Bankkontonummer](https://sv.wikipedia.org/wiki/Bankkonto)), without the clearing number, separators, or whitespace."
+          },
+          "clearingNumber": {
+            "maxLength": 5,
+            "minLength": 4,
+            "type": "string",
+            "description": "The 4- to 5-digit clearing number ([Clearingnummer](https://sv.wikipedia.org/wiki/Clearingnummer)), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**seLocal**",
+            "default": "seLocal"
+          }
+        }
       },
       "CapitalServiceV1SGLocalAccountIdentification": {
         "required": [
@@ -66537,30 +67084,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 19,
-                "minLength": 4,
-                "type": "string",
-                "description": "The 4- to 19-digit bank account number, without separators or whitespace."
-              },
-              "bic": {
-                "maxLength": 11,
-                "minLength": 8,
-                "type": "string",
-                "description": "The bank's 8- or 11-character BIC or SWIFT code."
-              },
-              "type": {
-                "type": "string",
-                "description": "**sgLocal**",
-                "default": "sgLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 19,
+            "minLength": 4,
+            "type": "string",
+            "description": "The 4- to 19-digit bank account number, without separators or whitespace."
+          },
+          "bic": {
+            "maxLength": 11,
+            "minLength": 8,
+            "type": "string",
+            "description": "The bank's 8- or 11-character BIC or SWIFT code."
+          },
+          "type": {
+            "type": "string",
+            "description": "**sgLocal**",
+            "default": "sgLocal"
+          }
+        }
       },
       "CapitalServiceV1Status": {
         "required": [
@@ -66616,30 +67160,27 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 8,
-                "minLength": 8,
-                "type": "string",
-                "description": "The 8-digit bank account number, without separators or whitespace."
-              },
-              "sortCode": {
-                "maxLength": 6,
-                "minLength": 6,
-                "type": "string",
-                "description": "The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**ukLocal**",
-                "default": "ukLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 8,
+            "minLength": 8,
+            "type": "string",
+            "description": "The 8-digit bank account number, without separators or whitespace."
+          },
+          "sortCode": {
+            "maxLength": 6,
+            "minLength": 6,
+            "type": "string",
+            "description": "The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**ukLocal**",
+            "default": "ukLocal"
+          }
+        }
       },
       "CapitalServiceV1USLocalAccountIdentification": {
         "required": [
@@ -66651,33 +67192,30 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/BankAccountIdentification"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountNumber": {
-                "maxLength": 18,
-                "minLength": 2,
-                "type": "string",
-                "description": "The bank account number, without separators or whitespace."
-              },
-              "accountType": {
-                "$ref": "#/components/schemas/USLocalBankAccountType"
-              },
-              "routingNumber": {
-                "maxLength": 9,
-                "minLength": 9,
-                "type": "string",
-                "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
-              },
-              "type": {
-                "type": "string",
-                "description": "**usLocal**",
-                "default": "usLocal"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountNumber": {
+            "maxLength": 18,
+            "minLength": 2,
+            "type": "string",
+            "description": "The bank account number, without separators or whitespace."
+          },
+          "accountType": {
+            "$ref": "#/components/schemas/USLocalBankAccountType"
+          },
+          "routingNumber": {
+            "maxLength": 9,
+            "minLength": 9,
+            "type": "string",
+            "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
+          },
+          "type": {
+            "type": "string",
+            "description": "**usLocal**",
+            "default": "usLocal"
+          }
+        }
       },
       "USLocalBankAccountType": {
         "enum": [
@@ -79796,18 +80334,15 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/ShopperIdPaymentMethod"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "shopperReference": {
-                "maxLength": 256,
-                "minLength": 0,
-                "type": "string"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "shopperReference": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
       },
       "Result": {
         "enum": [
@@ -79848,18 +80383,15 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/ShopperIdPaymentMethod"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "virtualPaymentAddress": {
-                "maxLength": 256,
-                "minLength": 1,
-                "type": "string"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "virtualPaymentAddress": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          }
+        }
       },
       "ValidateShopperIdRequest": {
         "required": [
@@ -104731,6 +105263,589 @@
         },
         "additionalProperties": false
       },
+      "RaiseDisputesServiceV4Amount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        }
+      },
+      "AttachDocumentResponse": {
+        "type": "object",
+        "properties": {
+          "attachmentId": {
+            "type": "string",
+            "description": "The unique identifier of the attachment.",
+            "readOnly": true
+          }
+        }
+      },
+      "AttachmentType": {
+        "enum": [
+          "receipt",
+          "correspondence",
+          "other"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "CancellingEntity": {
+        "enum": [
+          "merchant",
+          "cardholder"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "RaiseDisputesServiceV4DefaultErrorResponseEntity": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Unique business error code."
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem if applicable."
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RaiseDisputesServiceV4InvalidField"
+            },
+            "description": "Array of fields with validation errors when applicable."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The unique reference for the request."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          }
+        },
+        "description": "Standardized error response following RFC-7807 format",
+        "externalDocs": {
+          "url": "https://www.rfc-editor.org/rfc/rfc7807"
+        }
+      },
+      "DisputeAttachment": {
+        "required": [
+          "attachmentType",
+          "content",
+          "fileName"
+        ],
+        "type": "object",
+        "properties": {
+          "attachmentType": {
+            "$ref": "#/components/schemas/AttachmentType"
+          },
+          "content": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The content of the image. An attachment must be base64-encoded data. Make sure that all base64-encoded data strings are generated without line breaks or \"wrapping\". For example, do not use `Base64.NO_WRAP` in Java, or its equivalent in other languages. Newline characters at the end of the base64-encoded data string will also result in a malformed input error."
+          },
+          "fileName": {
+            "maxLength": 17,
+            "minLength": 4,
+            "pattern": "([^\\s]+(\\.(?i)(jpeg|tiff|pdf))$)",
+            "type": "string",
+            "description": "\"The name of the attachment, including its filename extension. Supported filename extensions: **jpeg**, **pdf**, **tiff**.\""
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the attachment.",
+            "readOnly": true
+          }
+        }
+      },
+      "DisputeRequest": {
+        "required": [
+          "transactionId",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description for the dispute."
+          },
+          "disputedAmount": {
+            "$ref": "#/components/schemas/RaiseDisputesServiceV4Amount"
+          },
+          "duplicateInfo": {
+            "$ref": "#/components/schemas/DuplicateInfo"
+          },
+          "fraudInfo": {
+            "$ref": "#/components/schemas/FraudInfo"
+          },
+          "notDeliveredInfo": {
+            "$ref": "#/components/schemas/NotDeliveredInfo"
+          },
+          "otherInfo": {
+            "$ref": "#/components/schemas/OtherInfo"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DisputeStatus"
+          },
+          "transactionId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique reference of the transaction for which you are raising the dispute."
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "DisputeResponse": {
+        "required": [
+          "transactionId",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "arn": {
+            "type": "string",
+            "description": "The unique Acquirer Reference Number (arn) generated by the card scheme for each capture. You can use the `arn` to trace the transaction through its lifecycle.",
+            "readOnly": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Your description for the dispute."
+          },
+          "disputedAmount": {
+            "$ref": "#/components/schemas/RaiseDisputesServiceV4Amount"
+          },
+          "duplicateInfo": {
+            "$ref": "#/components/schemas/DuplicateInfo"
+          },
+          "fraudInfo": {
+            "$ref": "#/components/schemas/FraudInfo"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the raised dispute.",
+            "readOnly": true
+          },
+          "notDeliveredInfo": {
+            "$ref": "#/components/schemas/NotDeliveredInfo"
+          },
+          "otherInfo": {
+            "$ref": "#/components/schemas/OtherInfo"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DisputeStatus"
+          },
+          "transactionId": {
+            "type": "string",
+            "description": "The unique reference of the transaction for which you are raising the dispute."
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "DisputeStatus": {
+        "enum": [
+          "draft",
+          "submitted",
+          "chargeback",
+          "secondPresentment",
+          "won",
+          "closed"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "CreateAccountResponseMetadata": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "A set of key and value pairs containing metadata.",
+        "x-addedInVersion": "5"
+      },
+      "DuplicateInfo": {
+        "required": [
+          "duplicateTransactionId",
+          "sameCard"
+        ],
+        "type": "object",
+        "properties": {
+          "duplicateTransactionId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The transaction id associated with the duplicate charge for which you are disputing. The disputed transaction must be in the same amount as the duplicate transaction."
+          },
+          "sameCard": {
+            "type": "boolean",
+            "description": "\"The duplicate charge was made on the same card. Possible values: **true**, **false**.\""
+          },
+          "sameIssuer": {
+            "type": "boolean",
+            "description": "\"The issuer associated with each charge is the same. Possible values: **true**, **false**.\""
+          }
+        }
+      },
+      "FraudInfo": {
+        "required": [
+          "cardDoesNotBelongToCardholder",
+          "cardWasCounterfeited",
+          "descriptionOfIssue"
+        ],
+        "type": "object",
+        "properties": {
+          "cardDoesNotBelongToCardholder": {
+            "type": "boolean",
+            "description": "The card is no longer in the cardholder's possession. Set to **true** if the card is lost or stolen."
+          },
+          "cardWasCounterfeited": {
+            "type": "boolean",
+            "description": "The card was counterfeited."
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **fraud**."
+          },
+          "reportOnly": {
+            "type": "boolean",
+            "description": "Set to **true** to report fraud to Adyen with no further action, such as a request for a chargeback or fee reversal. The default value is **false**."
+          }
+        }
+      },
+      "RaiseDisputesServiceV4InvalidField": {
+        "required": [
+          "message",
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Description of the validation error."
+          },
+          "name": {
+            "type": "string",
+            "description": "The field that has an invalid value."
+          },
+          "value": {
+            "type": "string",
+            "description": "The invalid value."
+          }
+        }
+      },
+      "NotDeliveredInfo": {
+        "required": [
+          "descriptionOfIssue",
+          "lastExpectedDate",
+          "whatWasNotDelivered"
+        ],
+        "type": "object",
+        "properties": {
+          "agreedDeliveryLocation": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "description": "The delivery location specified by the cardholder. Required if **deliveredToWrongLocation** is **true**."
+          },
+          "dateOfCancellation": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were cancelled in YYYY-MM-DD format.",
+            "format": "date"
+          },
+          "deliveredToWrongLocation": {
+            "type": "boolean",
+            "description": "\"Indicates goods were delivered to the wrong location.\n\nPossible values: **true**, **false**.\""
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **notDelivered**."
+          },
+          "didCardholderReturn": {
+            "type": "boolean",
+            "description": "\"Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.\n\nPossible values: **true**, **false**.\""
+          },
+          "isDeliveryLate": {
+            "type": "boolean",
+            "description": "\"Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.\n\nPossible values: **true**, **false**.\""
+          },
+          "isMerchantBankrupt": {
+            "type": "boolean",
+            "description": "\"Indicates if the transaction was processed by a bankrupt merchant.\n\nPossible values: **true**, **false**.\""
+          },
+          "isNonFiatOrNft": {
+            "type": "boolean",
+            "description": "\"Indicates if the transaction is non-fiat or non-fungible token (NFT) related.\n\nPossible values: **true**, **false**.\""
+          },
+          "lastExpectedDate": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.",
+            "format": "date"
+          },
+          "whatWasNotDelivered": {
+            "$ref": "#/components/schemas/ProductType"
+          },
+          "whoCancelled": {
+            "$ref": "#/components/schemas/CancellingEntity"
+          }
+        }
+      },
+      "OtherInfo": {
+        "required": [
+          "descriptionOfIssue",
+          "subType",
+          "whatWasPurchased"
+        ],
+        "type": "object",
+        "properties": {
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **other**."
+          },
+          "subType": {
+            "$ref": "#/components/schemas/SubType"
+          },
+          "whatWasPurchased": {
+            "$ref": "#/components/schemas/ProductType"
+          }
+        }
+      },
+      "PatchableDisputeRequest": {
+        "type": "object",
+        "properties": {
+          "duplicateInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableDuplicateInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.",
+            "nullable": true
+          },
+          "fraudInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableFraudInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.",
+            "nullable": true
+          },
+          "notDeliveredInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.",
+            "nullable": true
+          },
+          "otherInfo": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PatchableOtherInfo"
+              }
+            ],
+            "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.",
+            "nullable": true
+          },
+          "status": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DisputeStatus_Wrapper"
+              }
+            ],
+            "description": "\"The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\"",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableDuplicateInfo": {
+        "type": "object",
+        "properties": {
+          "duplicateTransactionId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The transaction id associated with the duplicate charge for which you are disputing. The disputed transaction must be in the same amount as the duplicate transaction."
+          },
+          "sameCard": {
+            "type": "boolean",
+            "description": "\"The duplicate charge was made on the same card. Possible values: **true**, **false**.\""
+          },
+          "sameIssuer": {
+            "type": "boolean",
+            "description": "\"The issuer associated with each charge is the same. Possible values: **true**, **false**.\"",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableFraudInfo": {
+        "type": "object",
+        "properties": {
+          "cardDoesNotBelongToCardholder": {
+            "type": "boolean",
+            "description": "The card is no longer in the cardholder's possession. Set to **true** if the card is lost or stolen."
+          },
+          "cardWasCounterfeited": {
+            "type": "boolean",
+            "description": "The card was counterfeited."
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **fraud**."
+          },
+          "reportOnly": {
+            "type": "boolean",
+            "description": "Set to **true** to report fraud to Adyen with no further action, such as a request for a chargeback or fee reversal. The default value is **false**.",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableNotDeliveredInfo": {
+        "type": "object",
+        "properties": {
+          "agreedDeliveryLocation": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "description": "The delivery location specified by the cardholder. Required if **deliveredToWrongLocation** is **true**.",
+            "nullable": true
+          },
+          "dateOfCancellation": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were cancelled in YYYY-MM-DD format.",
+            "format": "date",
+            "nullable": true
+          },
+          "deliveredToWrongLocation": {
+            "type": "boolean",
+            "description": "\"Indicates goods were delivered to the wrong location.\n\nPossible values: **true**, **false**.\"",
+            "nullable": true
+          },
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **notDelivered**."
+          },
+          "didCardholderReturn": {
+            "type": "boolean",
+            "description": "\"Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.\n\nPossible values: **true**, **false**.\"",
+            "nullable": true
+          },
+          "isDeliveryLate": {
+            "type": "boolean",
+            "description": "\"Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.\n\nPossible values: **true**, **false**.\"",
+            "nullable": true
+          },
+          "isMerchantBankrupt": {
+            "type": "boolean",
+            "description": "\"Indicates if the transaction was processed by a bankrupt merchant.\n\nPossible values: **true**, **false**.\"",
+            "nullable": true
+          },
+          "isNonFiatOrNft": {
+            "type": "boolean",
+            "description": "\"Indicates if the transaction is non-fiat or non-fungible token (NFT) related.\n\nPossible values: **true**, **false**.\"",
+            "nullable": true
+          },
+          "lastExpectedDate": {
+            "type": "string",
+            "description": "The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.",
+            "format": "date"
+          },
+          "whatWasNotDelivered": {
+            "$ref": "#/components/schemas/ProductType"
+          },
+          "whoCancelled": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CancellingEntity_Wrapper"
+              }
+            ],
+            "description": "\"The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\"",
+            "nullable": true
+          }
+        }
+      },
+      "PatchableOtherInfo": {
+        "type": "object",
+        "properties": {
+          "descriptionOfIssue": {
+            "maxLength": 2500,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description of the issue for raising a dispute of `type` **other**."
+          },
+          "subType": {
+            "$ref": "#/components/schemas/SubType"
+          },
+          "whatWasPurchased": {
+            "$ref": "#/components/schemas/ProductType"
+          }
+        }
+      },
+      "ProductType": {
+        "enum": [
+          "goods",
+          "services"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "SubType": {
+        "enum": [
+          "atmDispute",
+          "cancelledGoodsServices",
+          "cancelledRecurring",
+          "creditNotProcessed",
+          "counterfeit",
+          "notAsDescribed"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "RecurringServiceV68Address": {
         "required": [
           "street",
@@ -105464,18 +106579,15 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/SessionAuthenticationServiceV1Resource"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "accountHolderId": {
-                "minLength": 1,
-                "type": "string",
-                "description": "The unique identifier of the resource connected to the component. For [Platform Experience components](https://docs.adyen.com/platforms/build-user-dashboards), this is the account holder linked to the balance account shown in the component."
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "accountHolderId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique identifier of the resource connected to the component. For [Platform Experience components](https://docs.adyen.com/platforms/build-user-dashboards), this is the account holder linked to the balance account shown in the component."
+          }
+        }
       },
       "AuthenticationSessionRequest": {
         "required": [
@@ -105493,7 +106605,7 @@
             "$ref": "#/components/schemas/Policy"
           },
           "product": {
-            "$ref": "#/components/schemas/ProductType"
+            "$ref": "#/components/schemas/SessionAuthenticationServiceV1ProductType"
           }
         }
       },
@@ -105585,18 +106697,15 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/SessionAuthenticationServiceV1Resource"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "legalEntityId": {
-                "minLength": 1,
-                "type": "string",
-                "description": "The unique identifier of the resource connected to the component.\nFor [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), this is the legal entity that has a contractual relationship with your platform and owns the [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments). For sole proprietorships, this is the legal entity of the individual owner."
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "legalEntityId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique identifier of the resource connected to the component.\nFor [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), this is the legal entity that has a contractual relationship with your platform and owns the [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments). For sole proprietorships, this is the legal entity of the individual owner."
+          }
+        }
       },
       "PaymentInstrumentResource": {
         "required": [
@@ -105606,17 +106715,14 @@
         "allOf": [
           {
             "$ref": "#/components/schemas/SessionAuthenticationServiceV1Resource"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "paymentInstrumentId": {
-                "minLength": 1,
-                "type": "string"
-              }
-            }
           }
-        ]
+        ],
+        "properties": {
+          "paymentInstrumentId": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
       },
       "Policy": {
         "type": "object",
@@ -105639,7 +106745,7 @@
           }
         }
       },
-      "ProductType": {
+      "SessionAuthenticationServiceV1ProductType": {
         "enum": [
           "onboarding",
           "platform",
@@ -107213,7 +108319,24 @@
             "description": "Reference of the PAN, which identifies the PAN or the card uniquely, named also PAR (Payment Account Reference). This reference may be defined by the card issuer or by a token service provider under the control of the card issuer, and cannot be used for a payment transaction."
           },
           "EntryMode": {
-            "$ref": "#/components/schemas/EntryMode"
+            "type": "array",
+            "items": {
+              "enum": [
+                "Contactless",
+                "File",
+                "ICC",
+                "Keyed",
+                "MagStripe",
+                "Manual",
+                "Mobile",
+                "RFID",
+                "Scanned",
+                "SynchronousICC",
+                "Tapped"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
           },
           "CardCountryCode": {
             "maximum": 3,
@@ -107306,7 +108429,17 @@
             "description": "Additional and optional identification of a customer order."
           },
           "CustomerOrderReq": {
-            "$ref": "#/components/schemas/CustomerOrderReq"
+            "type": "array",
+            "items": {
+              "enum": [
+                "Both",
+                "Closed",
+                "Open"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            },
+            "description": "List of customer order open, closed or both to be sent in the response messages.\nPossible values:\n* **Both**\n* **Closed**\n* **Open**"
           },
           "SaleToPOIData": {
             "pattern": "^.+$",
@@ -107678,7 +108811,24 @@
         "type": "object",
         "properties": {
           "EntryMode": {
-            "$ref": "#/components/schemas/EntryMode"
+            "type": "array",
+            "items": {
+              "enum": [
+                "Contactless",
+                "File",
+                "ICC",
+                "Keyed",
+                "MagStripe",
+                "Manual",
+                "Mobile",
+                "RFID",
+                "Scanned",
+                "SynchronousICC",
+                "Tapped"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
           },
           "IdentificationType": {
             "$ref": "#/components/schemas/IdentificationType"
@@ -107929,7 +109079,24 @@
             "description": "Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY."
           },
           "EntryMode": {
-            "$ref": "#/components/schemas/EntryMode"
+            "type": "array",
+            "items": {
+              "enum": [
+                "Contactless",
+                "File",
+                "ICC",
+                "Keyed",
+                "MagStripe",
+                "Manual",
+                "Mobile",
+                "RFID",
+                "Scanned",
+                "SynchronousICC",
+                "Tapped"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
           },
           "IdentificationType": {
             "$ref": "#/components/schemas/IdentificationType"
@@ -108059,7 +109226,24 @@
             "default": false
           },
           "ForceEntryMode": {
-            "$ref": "#/components/schemas/ForceEntryMode"
+            "type": "array",
+            "items": {
+              "enum": [
+                "CheckReader",
+                "Contactless",
+                "File",
+                "ICC",
+                "Keyed",
+                "MagStripe",
+                "Manual",
+                "RFID",
+                "Scanned",
+                "SynchronousICC",
+                "Tapped"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
           },
           "MerchantCategoryCode": {
             "pattern": "^.{3,4}$",
@@ -108486,7 +109670,25 @@
             "default": true
           },
           "AuthenticationMethod": {
-            "$ref": "#/components/schemas/AuthenticationMethod"
+            "type": "array",
+            "items": {
+              "enum": [
+                "Bypass",
+                "ManualVerification",
+                "MerchantAuthentication",
+                "OfflinePIN",
+                "OnlinePIN",
+                "PaperSignature",
+                "SecureCertificate",
+                "SecureNoCertificate",
+                "SecuredChannel",
+                "SignatureCapture",
+                "UnknownMethod"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            },
+            "description": "Method for customer authentication. Allows the Sale System informed about customer authentication for the payment transaction.\nPossible values:\n* **Bypass**\n* **ManualVerification**\n* **MerchantAuthentication**\n* **OfflinePIN**\n* **OnlinePIN**\n* **PaperSignature**\n* **SecureCertificate**\n* **SecureNoCertificate**\n* **SecuredChannel**\n* **SignatureCapture**\n* **UnknownMethod**"
           },
           "ValidityDate": {
             "type": "string",
@@ -108528,7 +109730,24 @@
             "description": "\"The language used on the terminal screen or in text printed by the terminal.\n  Typical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.\""
           },
           "ForceEntryMode": {
-            "$ref": "#/components/schemas/ForceEntryMode"
+            "type": "array",
+            "items": {
+              "enum": [
+                "CheckReader",
+                "Contactless",
+                "File",
+                "ICC",
+                "Keyed",
+                "MagStripe",
+                "Manual",
+                "RFID",
+                "Scanned",
+                "SynchronousICC",
+                "Tapped"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
           },
           "ForceCustomerSelectionFlag": {
             "type": "boolean",
@@ -109485,7 +110704,17 @@
             "$ref": "#/components/schemas/TokenRequestedType"
           },
           "CustomerOrderReq": {
-            "$ref": "#/components/schemas/CustomerOrderReq"
+            "type": "array",
+            "items": {
+              "enum": [
+                "Both",
+                "Closed",
+                "Open"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            },
+            "description": "List of customer order open, closed or both to be sent in the response messages.\nPossible values:\n* **Both**\n* **Closed**\n* **Open**"
           },
           "POISerialNumber": {
             "pattern": "^.+$",
@@ -109516,7 +110745,17 @@
             "$ref": "#/components/schemas/TransactionAction"
           },
           "ServicesEnabled": {
-            "$ref": "#/components/schemas/ServicesEnabled"
+            "type": "array",
+            "items": {
+              "enum": [
+                "CardAcquisition",
+                "Loyalty",
+                "Payment"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            },
+            "description": "Services which are enabled before the start-up of a transaction.\nMandatory if `TransactionAction` is `StartTransaction`, absent if not.\nPossible values:\n* **CardAcquisition**\n* **Loyalty**\n* **Payment**"
           },
           "DisplayOutput": {
             "$ref": "#/components/schemas/DisplayOutput"
@@ -109650,7 +110889,19 @@
         "type": "object",
         "properties": {
           "TotalDetails": {
-            "$ref": "#/components/schemas/TotalDetails"
+            "type": "array",
+            "items": {
+              "enum": [
+                "OperatorID",
+                "POIID",
+                "SaleID",
+                "ShiftNumber",
+                "TotalsGroupID"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            },
+            "description": "Indicates the hierarchical structure of the reconciliation result of the Sale to POI reconciliation.\nRequired to present totals per value of element included in this cluster (POI Terminal, Sale Terminal, Cashier, Shift, TotalsGroupID).\nPossible values:\n* **OperatorID**\n* **POIID**\n* **SaleID**\n* **ShiftNumber**\n* **TotalsGroupID**"
           },
           "TotalFilter": {
             "$ref": "#/components/schemas/TotalFilter"
@@ -111220,7 +112471,7 @@
           }
         }
       },
-      "AttachDocumentResponse": {
+      "TransactionServiceV4AttachDocumentResponse": {
         "type": "object",
         "properties": {
           "attachmentId": {
@@ -111230,7 +112481,7 @@
           }
         }
       },
-      "AttachmentType": {
+      "TransactionServiceV4AttachmentType": {
         "enum": [
           "receipt",
           "correspondence",
@@ -111239,7 +112490,7 @@
         "type": "string",
         "additionalProperties": false
       },
-      "CancellingEntity": {
+      "TransactionServiceV4CancellingEntity": {
         "enum": [
           "merchant",
           "cardholder"
@@ -111292,7 +112543,7 @@
           "url": "https://www.rfc-editor.org/rfc/rfc7807"
         }
       },
-      "DisputeAttachment": {
+      "TransactionServiceV4DisputeAttachment": {
         "required": [
           "attachmentType",
           "content",
@@ -111301,7 +112552,7 @@
         "type": "object",
         "properties": {
           "attachmentType": {
-            "$ref": "#/components/schemas/AttachmentType"
+            "$ref": "#/components/schemas/TransactionServiceV4AttachmentType"
           },
           "content": {
             "minLength": 1,
@@ -111322,7 +112573,7 @@
           }
         }
       },
-      "DisputeRequest": {
+      "TransactionServiceV4DisputeRequest": {
         "required": [
           "transactionId",
           "type"
@@ -111339,19 +112590,19 @@
             "$ref": "#/components/schemas/TransactionServiceV4Amount"
           },
           "duplicateInfo": {
-            "$ref": "#/components/schemas/DuplicateInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4DuplicateInfo"
           },
           "fraudInfo": {
-            "$ref": "#/components/schemas/FraudInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4FraudInfo"
           },
           "notDeliveredInfo": {
-            "$ref": "#/components/schemas/NotDeliveredInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4NotDeliveredInfo"
           },
           "otherInfo": {
-            "$ref": "#/components/schemas/OtherInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4OtherInfo"
           },
           "status": {
-            "$ref": "#/components/schemas/DisputeStatus"
+            "$ref": "#/components/schemas/TransactionServiceV4DisputeStatus"
           },
           "transactionId": {
             "minLength": 1,
@@ -111363,7 +112614,7 @@
           }
         }
       },
-      "DisputeResponse": {
+      "TransactionServiceV4DisputeResponse": {
         "required": [
           "transactionId",
           "type"
@@ -111383,10 +112634,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4Amount"
           },
           "duplicateInfo": {
-            "$ref": "#/components/schemas/DuplicateInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4DuplicateInfo"
           },
           "fraudInfo": {
-            "$ref": "#/components/schemas/FraudInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4FraudInfo"
           },
           "id": {
             "type": "string",
@@ -111394,13 +112645,13 @@
             "readOnly": true
           },
           "notDeliveredInfo": {
-            "$ref": "#/components/schemas/NotDeliveredInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4NotDeliveredInfo"
           },
           "otherInfo": {
-            "$ref": "#/components/schemas/OtherInfo"
+            "$ref": "#/components/schemas/TransactionServiceV4OtherInfo"
           },
           "status": {
-            "$ref": "#/components/schemas/DisputeStatus"
+            "$ref": "#/components/schemas/TransactionServiceV4DisputeStatus"
           },
           "transactionId": {
             "type": "string",
@@ -111411,7 +112662,7 @@
           }
         }
       },
-      "DisputeStatus": {
+      "TransactionServiceV4DisputeStatus": {
         "enum": [
           "draft",
           "submitted",
@@ -111431,7 +112682,7 @@
         "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
         "x-addedInVersion": "5"
       },
-      "DuplicateInfo": {
+      "TransactionServiceV4DuplicateInfo": {
         "required": [
           "duplicateTransactionId",
           "sameCard"
@@ -111453,7 +112704,7 @@
           }
         }
       },
-      "FraudInfo": {
+      "TransactionServiceV4FraudInfo": {
         "required": [
           "cardDoesNotBelongToCardholder",
           "cardWasCounterfeited",
@@ -111503,7 +112754,7 @@
           }
         }
       },
-      "NotDeliveredInfo": {
+      "TransactionServiceV4NotDeliveredInfo": {
         "required": [
           "descriptionOfIssue",
           "lastExpectedDate",
@@ -111557,11 +112808,11 @@
             "$ref": "#/components/schemas/TransactionServiceV4ProductType"
           },
           "whoCancelled": {
-            "$ref": "#/components/schemas/CancellingEntity"
+            "$ref": "#/components/schemas/TransactionServiceV4CancellingEntity"
           }
         }
       },
-      "OtherInfo": {
+      "TransactionServiceV4OtherInfo": {
         "required": [
           "descriptionOfIssue",
           "subType",
@@ -111576,21 +112827,21 @@
             "description": "Your description of the issue for raising a dispute of `type` **other**."
           },
           "subType": {
-            "$ref": "#/components/schemas/SubType"
+            "$ref": "#/components/schemas/TransactionServiceV4SubType"
           },
           "whatWasPurchased": {
             "$ref": "#/components/schemas/TransactionServiceV4ProductType"
           }
         }
       },
-      "PatchableDisputeRequest": {
+      "TransactionServiceV4PatchableDisputeRequest": {
         "type": "object",
         "properties": {
           "duplicateInfo": {
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableDuplicateInfo"
+                "$ref": "#/components/schemas/TransactionServiceV4PatchableDuplicateInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.",
@@ -111600,7 +112851,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableFraudInfo"
+                "$ref": "#/components/schemas/TransactionServiceV4PatchableFraudInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.",
@@ -111610,7 +112861,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
+                "$ref": "#/components/schemas/TransactionServiceV4PatchableNotDeliveredInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.",
@@ -111620,7 +112871,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/PatchableOtherInfo"
+                "$ref": "#/components/schemas/TransactionServiceV4PatchableOtherInfo"
               }
             ],
             "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.",
@@ -111630,7 +112881,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/DisputeStatus_Wrapper"
+                "$ref": "#/components/schemas/TransactionServiceV4DisputeStatus_Wrapper"
               }
             ],
             "description": "\"The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\"",
@@ -111638,7 +112889,7 @@
           }
         }
       },
-      "PatchableDuplicateInfo": {
+      "TransactionServiceV4PatchableDuplicateInfo": {
         "type": "object",
         "properties": {
           "duplicateTransactionId": {
@@ -111657,7 +112908,7 @@
           }
         }
       },
-      "PatchableFraudInfo": {
+      "TransactionServiceV4PatchableFraudInfo": {
         "type": "object",
         "properties": {
           "cardDoesNotBelongToCardholder": {
@@ -111681,7 +112932,7 @@
           }
         }
       },
-      "PatchableNotDeliveredInfo": {
+      "TransactionServiceV4PatchableNotDeliveredInfo": {
         "type": "object",
         "properties": {
           "agreedDeliveryLocation": {
@@ -111740,7 +112991,7 @@
             "type": "object",
             "oneOf": [
               {
-                "$ref": "#/components/schemas/CancellingEntity_Wrapper"
+                "$ref": "#/components/schemas/TransactionServiceV4CancellingEntity_Wrapper"
               }
             ],
             "description": "\"The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\"",
@@ -111748,7 +112999,7 @@
           }
         }
       },
-      "PatchableOtherInfo": {
+      "TransactionServiceV4PatchableOtherInfo": {
         "type": "object",
         "properties": {
           "descriptionOfIssue": {
@@ -111758,7 +113009,7 @@
             "description": "Your description of the issue for raising a dispute of `type` **other**."
           },
           "subType": {
-            "$ref": "#/components/schemas/SubType"
+            "$ref": "#/components/schemas/TransactionServiceV4SubType"
           },
           "whatWasPurchased": {
             "$ref": "#/components/schemas/TransactionServiceV4ProductType"
@@ -111773,7 +113024,7 @@
         "type": "string",
         "additionalProperties": false
       },
-      "SubType": {
+      "TransactionServiceV4SubType": {
         "enum": [
           "atmDispute",
           "cancelledGoodsServices",
@@ -122616,14 +123867,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateAccountRequestMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
-        "x-addedInVersion": "5"
-      },
       "UpdateAccountResponseMetadata": {
         "type": "object",
         "additionalProperties": {
@@ -124373,7 +125616,7 @@
       "CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdSync200": {
         "type": "string"
       },
-      "TransactionServiceV4GetDisputes200": {
+      "RaiseDisputesServiceV4GetDisputes200": {
         "type": "array",
         "items": {
           "type": "array",
@@ -124382,10 +125625,25 @@
           }
         }
       },
-      "TransactionServiceV4GetDisputesDisputeIdAttachments200": {
+      "RaiseDisputesServiceV4GetDisputesDisputeIdAttachments200": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DisputeAttachment"
+        }
+      },
+      "TransactionServiceV4GetDisputes200": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/TransactionServiceV4DisputeResponse"
+          }
+        }
+      },
+      "TransactionServiceV4GetDisputesDisputeIdAttachments200": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TransactionServiceV4DisputeAttachment"
         }
       },
       "ExamplePayload": {
@@ -124411,6 +125669,28 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/CancellingEntity"
+          }
+        }
+      },
+      "TransactionServiceV4DisputeStatus_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TransactionServiceV4DisputeStatus"
+          }
+        }
+      },
+      "TransactionServiceV4CancellingEntity_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TransactionServiceV4CancellingEntity"
           }
         }
       }
@@ -150059,6 +151339,15 @@
         "type": "http",
         "scheme": "basic"
       },
+      "RaiseDisputesService_v4_ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      },
+      "RaiseDisputesService_v4_BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
       "RecurringService_v68_ApiKeyAuth": {
         "type": "apiKey",
         "name": "X-API-Key",
@@ -150474,13 +151763,13 @@
       "name": "Instant payouts"
     },
     {
-      "name": "Session authentication"
-    },
-    {
       "name": "Dispute Attachments"
     },
     {
       "name": "Raise Disputes"
+    },
+    {
+      "name": "Session authentication"
     },
     {
       "name": "Transfers"

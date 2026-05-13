@@ -8,17 +8,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public enum ProductType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "onboarding")]
+        [EnumMember(Value = "goods")]
         #pragma warning disable CS1591
-        Onboarding,
+        Goods,
         #pragma warning restore CS1591
-        [EnumMember(Value = "platform")]
+        [EnumMember(Value = "services")]
         #pragma warning disable CS1591
-        Platform,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "bank")]
-        #pragma warning disable CS1591
-        Bank,
+        Services,
         #pragma warning restore CS1591
     }
 }

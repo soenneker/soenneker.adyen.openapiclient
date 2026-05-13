@@ -5,20 +5,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Enableservice
+    public enum TransactionServiceV4AttachmentType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "CardAcquisition")]
+        [EnumMember(Value = "receipt")]
         #pragma warning disable CS1591
-        CardAcquisition,
+        Receipt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Loyalty")]
+        [EnumMember(Value = "correspondence")]
         #pragma warning disable CS1591
-        Loyalty,
+        Correspondence,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Payment")]
+        [EnumMember(Value = "other")]
         #pragma warning disable CS1591
-        Payment,
+        Other,
         #pragma warning restore CS1591
     }
 }

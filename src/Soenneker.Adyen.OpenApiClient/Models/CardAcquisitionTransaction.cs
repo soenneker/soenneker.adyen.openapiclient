@@ -45,10 +45,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ForceEntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?>? ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction_ForceEntryMode?>? ForceEntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition?> ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction_ForceEntryMode?> ForceEntryMode { get; set; }
 #endif
         /// <summary>The LoyaltyHandling property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyHandling? LoyaltyHandling { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CashBackFlag", n => { CashBackFlag = n.GetBoolValue(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
                 { "ForceCustomerSelectionFlag", n => { ForceCustomerSelectionFlag = n.GetBoolValue(); } },
-                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>()?.AsList(); } },
+                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction_ForceEntryMode>()?.AsList(); } },
                 { "LoyaltyHandling", n => { LoyaltyHandling = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyHandling>(); } },
                 { "PaymentType", n => { PaymentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentType>(); } },
                 { "TotalAmount", n => { TotalAmount = n.GetDoubleValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("CashBackFlag", CashBackFlag);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);
             writer.WriteBoolValue("ForceCustomerSelectionFlag", ForceCustomerSelectionFlag);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.Cardacquisition>("ForceEntryMode", ForceEntryMode);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction_ForceEntryMode>("ForceEntryMode", ForceEntryMode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentType>("PaymentType", PaymentType);
             writer.WriteDoubleValue("TotalAmount", TotalAmount);

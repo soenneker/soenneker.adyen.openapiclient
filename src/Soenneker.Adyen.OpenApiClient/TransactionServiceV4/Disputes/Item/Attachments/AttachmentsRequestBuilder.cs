@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// <summary>
         /// Get a list of attachments associated with a dispute ID.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity">When receiving a 401 status code</exception>
@@ -57,11 +57,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -71,13 +71,13 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Add supporting information as an attachment for the raised dispute. Upload receipts, communication, or any other documentation to support the dispute.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AttachDocumentResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,11 +86,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.AttachDocumentResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.AttachDocumentResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -101,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.AttachDocumentResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.AttachDocumentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachDocumentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of attachments associated with a dispute ID.
@@ -130,11 +130,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

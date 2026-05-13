@@ -5,20 +5,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Login
+    public enum TransactionServiceV4CancellingEntity
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Both")]
+        [EnumMember(Value = "merchant")]
         #pragma warning disable CS1591
-        Both,
+        Merchant,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Closed")]
+        [EnumMember(Value = "cardholder")]
         #pragma warning disable CS1591
-        Closed,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Open")]
-        #pragma warning disable CS1591
-        Open,
+        Cardholder,
         #pragma warning restore CS1591
     }
 }

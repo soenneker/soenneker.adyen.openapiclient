@@ -33,10 +33,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The disputedAmount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount? DisputedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4Amount? DisputedAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount DisputedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4Amount DisputedAmount { get; set; }
 #endif
         /// <summary>The duplicateInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "arn", n => { Arn = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "disputedAmount", n => { DisputedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount.CreateFromDiscriminatorValue); } },
+                { "disputedAmount", n => { DisputedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4Amount.CreateFromDiscriminatorValue); } },
                 { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DuplicateInfo.CreateFromDiscriminatorValue); } },
                 { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.FraudInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -142,7 +142,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount>("disputedAmount", DisputedAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RaiseDisputesServiceV4Amount>("disputedAmount", DisputedAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DuplicateInfo>("duplicateInfo", DuplicateInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudInfo>("fraudInfo", FraudInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);

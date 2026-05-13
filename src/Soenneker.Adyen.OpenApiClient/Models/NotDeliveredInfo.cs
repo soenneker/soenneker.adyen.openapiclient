@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.</summary>
         public Date? LastExpectedDate { get; set; }
         /// <summary>The whatWasNotDelivered property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType? WhatWasNotDelivered { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProductType? WhatWasNotDelivered { get; set; }
         /// <summary>The whoCancelled property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity? WhoCancelled { get; set; }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "isMerchantBankrupt", n => { IsMerchantBankrupt = n.GetBoolValue(); } },
                 { "isNonFiatOrNft", n => { IsNonFiatOrNft = n.GetBoolValue(); } },
                 { "lastExpectedDate", n => { LastExpectedDate = n.GetDateValue(); } },
-                { "whatWasNotDelivered", n => { WhatWasNotDelivered = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>(); } },
+                { "whatWasNotDelivered", n => { WhatWasNotDelivered = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>(); } },
                 { "whoCancelled", n => { WhoCancelled = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>(); } },
             };
         }
@@ -103,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("isMerchantBankrupt", IsMerchantBankrupt);
             writer.WriteBoolValue("isNonFiatOrNft", IsNonFiatOrNft);
             writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>("whatWasNotDelivered", WhatWasNotDelivered);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>("whatWasNotDelivered", WhatWasNotDelivered);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>("whoCancelled", WhoCancelled);
             writer.WriteAdditionalData(AdditionalData);
         }

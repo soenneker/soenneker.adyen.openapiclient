@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes
         /// <summary>
         /// Raise a dispute for an underlying transaction, providing a dispute type and the amount you want to dispute.Raising a dispute returns a dispute ID, which you can use to update details about the dispute, provide supporting documentation, close the dispute, or submit the dispute for a chargeback. You can also use the dispute ID to view the status of the dispute.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,11 +85,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -100,7 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of raised disputes that match the query parameters.This endpoint supports cursor-based pagination. The response returns the first page of results, and returns links to the next page when applicable. You can use the links to page through the results. The response also returns links to the previous page when applicable.
@@ -129,11 +129,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

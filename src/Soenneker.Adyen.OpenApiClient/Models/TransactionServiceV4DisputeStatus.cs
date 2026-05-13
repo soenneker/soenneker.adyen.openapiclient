@@ -5,28 +5,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Gettotals
+    public enum TransactionServiceV4DisputeStatus
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "OperatorID")]
+        [EnumMember(Value = "draft")]
         #pragma warning disable CS1591
-        OperatorID,
+        Draft,
         #pragma warning restore CS1591
-        [EnumMember(Value = "POIID")]
+        [EnumMember(Value = "submitted")]
         #pragma warning disable CS1591
-        POIID,
+        Submitted,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SaleID")]
+        [EnumMember(Value = "chargeback")]
         #pragma warning disable CS1591
-        SaleID,
+        Chargeback,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ShiftNumber")]
+        [EnumMember(Value = "secondPresentment")]
         #pragma warning disable CS1591
-        ShiftNumber,
+        SecondPresentment,
         #pragma warning restore CS1591
-        [EnumMember(Value = "TotalsGroupID")]
+        [EnumMember(Value = "won")]
         #pragma warning disable CS1591
-        TotalsGroupID,
+        Won,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "closed")]
+        #pragma warning disable CS1591
+        Closed,
         #pragma warning restore CS1591
     }
 }
