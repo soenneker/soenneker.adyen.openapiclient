@@ -134,6 +134,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetails TokenDetails { get; set; }
 #endif
+        /// <summary>The unique identifier for the transaction link, used for Mastercard recurring transactions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransactionLinkId { get; set; }
+#nullable restore
+#else
+        public string TransactionLinkId { get; set; }
+#endif
         /// <summary>The payment method, such as “mc&quot;, &quot;visa&quot;, &quot;ideal&quot;, &quot;paypal&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,6 +184,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Name>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Name.CreateFromDiscriminatorValue); } },
                 { "socialSecurityNumber", n => { SocialSecurityNumber = n.GetStringValue(); } },
                 { "tokenDetails", n => { TokenDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetails>(global::Soenneker.Adyen.OpenApiClient.Models.TokenDetails.CreateFromDiscriminatorValue); } },
+                { "transactionLinkId", n => { TransactionLinkId = n.GetStringValue(); } },
                 { "variant", n => { Variant = n.GetStringValue(); } },
             };
         }
@@ -202,6 +211,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Name>("shopperName", ShopperName);
             writer.WriteStringValue("socialSecurityNumber", SocialSecurityNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetails>("tokenDetails", TokenDetails);
+            writer.WriteStringValue("transactionLinkId", TransactionLinkId);
             writer.WriteStringValue("variant", Variant);
         }
     }
