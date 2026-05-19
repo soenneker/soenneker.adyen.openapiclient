@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.AccountHolders;
+using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.PayoutSchedules;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.TransactionRules;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.TransferLimits;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.Webhooks;
@@ -25,6 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.AccountHolders.AccountHoldersRequestBuilder AccountHolders
         {
             get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.AccountHolders.AccountHoldersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The payoutSchedules property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.PayoutSchedules.PayoutSchedulesRequestBuilder PayoutSchedules
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.PayoutSchedules.PayoutSchedulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transactionRules property</summary>
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.TransactionRules.TransactionRulesRequestBuilder TransactionRules

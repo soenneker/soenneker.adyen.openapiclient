@@ -14,14 +14,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>The maximum offline transaction amount for chip cards, in the processing currency and specified in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
         public int? ChipFloorLimit { get; set; }
-        /// <summary>The maximum offline transaction amount for swiped cards, in the specified currency. Updating this field is forbidden.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>? OfflineSwipeLimits { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue> OfflineSwipeLimits { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +33,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chipFloorLimit", n => { ChipFloorLimit = n.GetIntValue(); } },
-                { "offlineSwipeLimits", n => { OfflineSwipeLimits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>(global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -52,7 +43,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("chipFloorLimit", ChipFloorLimit);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>("offlineSwipeLimits", OfflineSwipeLimits);
         }
     }
 }

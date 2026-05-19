@@ -25,6 +25,9 @@
       "description": "Live Environment"
     },
     {
+      "url": "/"
+    },
+    {
       "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
     },
     {
@@ -4806,7 +4809,7 @@
     "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/sweeps": {
       "get": {
         "tags": [
-          "Balance accounts"
+          "Custom payout schedules (sweeps)"
         ],
         "summary": "Get all sweeps for a balance account",
         "description": "Returns a list of the sweeps configured for a balance account.\n\nTo fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`.",
@@ -4946,7 +4949,7 @@
       },
       "post": {
         "tags": [
-          "Balance accounts"
+          "Custom payout schedules (sweeps)"
         ],
         "summary": "Create a sweep",
         "description": "Creates a sweep that results in moving funds from or to a balance account.\n\nA sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination.",
@@ -5096,7 +5099,7 @@
     "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/sweeps/{sweepId}": {
       "get": {
         "tags": [
-          "Balance accounts"
+          "Custom payout schedules (sweeps)"
         ],
         "summary": "Get a sweep",
         "description": "Returns a sweep.",
@@ -5227,7 +5230,7 @@
       },
       "delete": {
         "tags": [
-          "Balance accounts"
+          "Custom payout schedules (sweeps)"
         ],
         "summary": "Delete a sweep",
         "description": "Deletes a sweep for a balance account.",
@@ -5343,7 +5346,7 @@
       },
       "patch": {
         "tags": [
-          "Balance accounts"
+          "Custom payout schedules (sweeps)"
         ],
         "summary": "Update a sweep",
         "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged.",
@@ -10360,6 +10363,764 @@
         }
       }
     },
+    "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/payoutSchedules": {
+      "get": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Get all managed payout schedules on a balance account",
+        "description": "Returns a list of all managed payout schedules that are configured on a balance account. You can use query parameters to filter the elements that are returned in the list.",
+        "operationId": "BalancePlatformService-v2-get-balanceAccounts-balanceAccountId-payoutSchedules",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes) of the currency used in the payout schedule.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The `cursor` returned in the links of the previous response.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceAccountConfigurations"
+                },
+                "examples": {
+                  "list-payout-schedules": {
+                    "summary": "List of managed payout schedules",
+                    "description": "The response returned when you get all managed payout schedules on a balance account.",
+                    "value": {
+                      "balanceAccountPayoutSchedules": [
+                        {
+                          "id": "PSAC00000000000000000000000001",
+                          "balancePlatformPayoutScheduleId": "PSPC00000000000000000000000001",
+                          "balanceAccountId": "BA000000000000000000001",
+                          "transferInstrumentId": "SE00000000000000000000001",
+                          "currency": "EUR",
+                          "reference": "Monthly payout",
+                          "description": "Scheduled payout to merchant bank account",
+                          "referenceForBeneficiary": "PAYOUT-REF-001",
+                          "retainedAmount": 10000,
+                          "minPayoutAmount": 1000,
+                          "maxPayoutAmount": 100000000,
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "enabled": true,
+                          "frequency": "monthly",
+                          "frequencyValue": 1
+                        }
+                      ],
+                      "link": {
+                        "next": {
+                          "href": "/balanceAccounts/BA000000000000000000001/payoutSchedules?limit=10"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Apply a managed payout schedule to a balance account",
+        "description": "Apply a managed payout schedule to a balance account. This payout schedule is based on an existing payout schedule in your balance platform.",
+        "operationId": "BalancePlatformService-v2-post-balanceAccounts-balanceAccountId-payoutSchedules",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceAccountConfigurationRequest"
+              },
+              "examples": {
+                "create-payout-schedule": {
+                  "summary": "Apply a managed payout schedule to a balance account",
+                  "description": "The request to apply a managed payout schedule to a balance account.",
+                  "value": {
+                    "balancePlatformPayoutScheduleId": "PSPC00000000000000000000000001",
+                    "transferInstrumentId": "SE00000000000000000000001",
+                    "currency": "EUR",
+                    "reference": "Monthly payout",
+                    "description": "Scheduled payout to merchant bank account",
+                    "referenceForBeneficiary": "PAYOUT-REF-001",
+                    "retainedAmount": 10000,
+                    "minPayoutAmount": 1000,
+                    "maxPayoutAmount": 100000000,
+                    "enabled": true,
+                    "frequency": "monthly",
+                    "frequencyValue": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceAccountConfiguration"
+                },
+                "examples": {
+                  "create-payout-schedule": {
+                    "summary": "Managed payout schedule applied",
+                    "description": "The response returned when you apply a managed payout schedule to a balance account.",
+                    "value": {
+                      "id": "PSAC00000000000000000000000001",
+                      "balancePlatformPayoutScheduleId": "PSPC00000000000000000000000001",
+                      "balanceAccountId": "BA000000000000000000001",
+                      "transferInstrumentId": "SE00000000000000000000001",
+                      "currency": "EUR",
+                      "reference": "Monthly payout",
+                      "description": "Scheduled payout to merchant bank account",
+                      "referenceForBeneficiary": "PAYOUT-REF-001",
+                      "retainedAmount": 10000,
+                      "minPayoutAmount": 1000,
+                      "maxPayoutAmount": 100000000,
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "enabled": true,
+                      "frequency": "monthly",
+                      "frequencyValue": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/payoutSchedules/{id}": {
+      "get": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Get a specific managed payout schedule on a balance account",
+        "description": "Returns the specified payout schedule.",
+        "operationId": "BalancePlatformService-v2-get-balanceAccounts-balanceAccountId-payoutSchedules-id",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the payout schedule for the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceAccountConfiguration"
+                },
+                "examples": {
+                  "get-payout-schedule": {
+                    "summary": "Managed payout schedule details",
+                    "description": "The response returned when you get a specific managed payout schedule.",
+                    "value": {
+                      "id": "PSAC00000000000000000000000001",
+                      "balancePlatformPayoutScheduleId": "PSPC00000000000000000000000001",
+                      "balanceAccountId": "BA000000000000000000001",
+                      "transferInstrumentId": "SE00000000000000000000001",
+                      "currency": "EUR",
+                      "reference": "Monthly payout",
+                      "description": "Scheduled payout to merchant bank account",
+                      "referenceForBeneficiary": "PAYOUT-REF-001",
+                      "retainedAmount": 10000,
+                      "minPayoutAmount": 1000,
+                      "maxPayoutAmount": 100000000,
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "enabled": true,
+                      "frequency": "monthly",
+                      "frequencyValue": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Delete a managed payout schedule on a balance account",
+        "description": "Delete a payout schedule applied to a balance account.",
+        "operationId": "BalancePlatformService-v2-delete-balanceAccounts-balanceAccountId-payoutSchedules-id",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the payout schedule applied to the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Update a managed payout schedule on a balance account",
+        "description": "Update a managed payout schedule applied to a balance account. If an optional parameter is not included in the request, it remains unchanged.",
+        "operationId": "BalancePlatformService-v2-patch-balanceAccounts-balanceAccountId-payoutSchedules-id",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the payout schedule applied to the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchableBalanceAccountConfigurationRequest"
+              },
+              "examples": {
+                "update-payout-schedule": {
+                  "summary": "Update a managed payout schedule on a balance account",
+                  "description": "The request to update a managed payout schedule on a balance account.",
+                  "value": {
+                    "description": "Updated payout description",
+                    "enabled": false,
+                    "retainedAmount": 20000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceAccountConfiguration"
+                },
+                "examples": {
+                  "update-payout-schedule": {
+                    "summary": "Managed payout schedule updated",
+                    "description": "The response returned when you update a managed payout schedule.",
+                    "value": {
+                      "id": "PSAC00000000000000000000000001",
+                      "balancePlatformPayoutScheduleId": "PSPC00000000000000000000000001",
+                      "balanceAccountId": "BA000000000000000000001",
+                      "transferInstrumentId": "SE00000000000000000000001",
+                      "currency": "EUR",
+                      "reference": "Monthly payout",
+                      "description": "Updated payout description",
+                      "referenceForBeneficiary": "PAYOUT-REF-001",
+                      "retainedAmount": 20000,
+                      "minPayoutAmount": 1000,
+                      "maxPayoutAmount": 100000000,
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "updatedAt": "2024-01-16T14:00:00Z",
+                      "enabled": false,
+                      "frequency": "monthly",
+                      "frequencyValue": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/payoutSchedules/{id}/executions": {
+      "get": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "View executions of a managed payout schedule",
+        "description": "View information about the executions of a managed payout schedule on the specified balance account. An execution is an attempt to make a payout according to the payout schedule. ",
+        "operationId": "BalancePlatformService-v2-get-balanceAccounts-balanceAccountId-payoutSchedules-id-executions",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the payout schedule on the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "results",
+            "in": "query",
+            "description": "\"Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.\n\nPossible statuses:\n- **succeeded**: The payout was sent successfully.\n- **failed**: The payout was not sent due to an error.\n- **skipped**: The payout was not triggered as expected.\"",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ExecutionResult"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "\"The number of items returned per page.\n\nDefault: **10**\"",
+            "schema": {
+              "minimum": 10,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "\"The page number to be returned.\n\nDefault: **1**\"",
+            "required": true,
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayoutScheduleExecutions"
+                },
+                "examples": {
+                  "list-payout-schedule-executions": {
+                    "summary": "List of payout executions",
+                    "description": "The response returned when you view payout schedule executions.",
+                    "value": {
+                      "payoutScheduleExecutions": [
+                        {
+                          "id": "PS0000000000001",
+                          "result": "skipped",
+                          "triggeredAt": "2026-03-11T08:00:00Z",
+                          "resultDetails": {
+                            "reasonCode": "noBalanceToPayOut",
+                            "reason": "No balance to pay out"
+                          }
+                        },
+                        {
+                          "id": "PS0000000000002",
+                          "result": "succeeded",
+                          "triggeredAt": "2026-03-12T08:00:00Z",
+                          "resultDetails": {
+                            "transferId": "A0A0A0A0A0A0A0A0"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/BalancePlatformService-v2/balanceAccounts/{id}/transferLimits": {
       "get": {
         "tags": [
@@ -10905,6 +11666,197 @@
           },
           "422": {
             "description": "Unprocessable Content - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BalancePlatformService-v2/balancePlatforms/{balancePlatformId}/payoutSchedules": {
+      "get": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Get all managed payout schedules on your balance platform",
+        "description": "Returns a list of all the payout schedules that are configured for your balance platform. You can use query parameters to filter the elements that are returned in the list.",
+        "operationId": "BalancePlatformService-v2-get-balancePlatforms-balancePlatformId-payoutSchedules",
+        "parameters": [
+          {
+            "name": "balancePlatformId",
+            "in": "path",
+            "description": "The unique identifier of the balance platform.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "description": "The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country to which the payout configuration applies.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes) of the currency used in the payout configuration.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformConfigurations"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BalancePlatformService-v2/balancePlatforms/{balancePlatformId}/payoutSchedules/{id}": {
+      "get": {
+        "tags": [
+          "Managed payout schedules"
+        ],
+        "summary": "Get a specific managed payout schedule on your balance platform",
+        "description": "Returns the specified managed payout schedule configured on your balance platform.",
+        "operationId": "BalancePlatformService-v2-get-balancePlatforms-balancePlatformId-payoutSchedules-id",
+        "parameters": [
+          {
+            "name": "balancePlatformId",
+            "in": "path",
+            "description": "The unique identifier of the balance platform.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the payout configuration for your balance platform.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformConfiguration"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -50638,8 +51590,8 @@
       },
       "BalancePlatformConfigurationNotificationV2AccountHolder": {
         "required": [
-          "legalEntityId",
-          "id"
+          "id",
+          "legalEntityId"
         ],
         "type": "object",
         "properties": {
@@ -50800,9 +51752,9 @@
       },
       "AccountHolderNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -50826,6 +51778,135 @@
             "type": "string",
             "additionalProperties": false,
             "description": "Type of webhook."
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountPayoutAutoApplicationNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AccountPayoutAutoApplicationWebhookData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\"The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\""
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.balanceAccountPayoutScheduleAutoApplication.failed"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Type of webhook."
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountPayoutAutoApplicationWebhookData": {
+        "type": "object",
+        "properties": {
+          "balanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account to which the payout schedule was unsuccessfully applied."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "balancePlatformPayoutScheduleId": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform payout schedule that was unsuccessfully applied to the balance account."
+          },
+          "reason": {
+            "type": "string",
+            "description": "The reason why the payout schedule could not be applied."
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument linked to the balance account. This transfer instrument is the counterparty account for the payout schedule that was unsuccessfully applied."
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountPayoutConfigWebhookData": {
+        "type": "object",
+        "properties": {
+          "balanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account to which the payout schedule was applied."
+          },
+          "balanceAccountPayoutScheduleId": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform payout schedule that was applied to the balance account."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for this schedule."
+          },
+          "description": {
+            "type": "string",
+            "description": "\"The description used for all payouts initiated by this payout schedule.\n\nMaximum length: 140 characters. If your description is longer, it may be truncated.\""
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the payout schedule is active."
+          },
+          "frequency": {
+            "type": "string",
+            "description": "The frequency of payouts initiated by this payout schedule.\n\nPossible values:\n* daily\n* weekdays\n* weekly\n* monthly\n\n"
+          },
+          "frequencyValue": {
+            "type": "integer",
+            "description": "\"The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.\n\nPossible values if `frequency` is **weekly**: **[1 - 5]**.\"",
+            "format": "int32"
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "The maximum amount that can be paid out from balance accounts that use this payout schedule.",
+            "format": "int64"
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "The minimum amount that can be paid out from balance accounts that use this payout schedule.",
+            "format": "int64"
+          },
+          "reference": {
+            "type": "string",
+            "description": "Your internal reference of the payout schedule."
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "\"The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.\n\nSupported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.\""
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.",
+            "format": "int64"
+          },
+          "salesDayClosingTime": {
+            "pattern": "HH:mm:SS",
+            "type": "string",
+            "description": "\"The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.\n\nFormat: **HH:mm:SS**\"",
+            "format": "time"
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument to which the funds are paid out."
           }
         },
         "additionalProperties": false
@@ -50887,11 +51968,11 @@
       },
       "Address": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -50927,8 +52008,8 @@
       },
       "BalancePlatformConfigurationNotificationV2Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -50967,10 +52048,10 @@
       },
       "Balance": {
         "required": [
-          "currency",
+          "available",
           "balance",
-          "reserved",
-          "available"
+          "currency",
+          "reserved"
         ],
         "type": "object",
         "properties": {
@@ -51084,9 +52165,9 @@
       },
       "BalanceAccountNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -51403,10 +52484,10 @@
       },
       "Card": {
         "required": [
-          "formFactor",
-          "cardholderName",
           "brand",
-          "brandVariant"
+          "brandVariant",
+          "cardholderName",
+          "formFactor"
         ],
         "type": "object",
         "properties": {
@@ -51609,9 +52690,9 @@
       },
       "CardOrderNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -51685,8 +52766,8 @@
       },
       "DeliveryContact": {
         "required": [
-          "name",
-          "address"
+          "address",
+          "name"
         ],
         "type": "object",
         "properties": {
@@ -51754,8 +52835,8 @@
       },
       "BalancePlatformConfigurationNotificationV2IbanAccountIdentification": {
         "required": [
-          "type",
-          "iban"
+          "iban",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -51863,9 +52944,9 @@
       },
       "MandateNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -51987,9 +53068,9 @@
       },
       "NetworkTokenNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -52117,9 +53198,9 @@
       "BalancePlatformConfigurationNotificationV2PaymentInstrument": {
         "required": [
           "balanceAccountId",
+          "id",
           "issuingCountryCode",
-          "type",
-          "id"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -52238,9 +53319,9 @@
       },
       "PaymentNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -52264,6 +53345,141 @@
             "type": "string",
             "additionalProperties": false,
             "description": "Type of webhook."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayoutScheduleBANotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AccountPayoutConfigWebhookData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\"The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\""
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.balanceAccountPayoutSchedule.created",
+              "balancePlatform.balanceAccountPayoutSchedule.updated",
+              "balancePlatform.balanceAccountPayoutSchedule.deleted"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Type of webhook."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayoutScheduleBPNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PlatformPayoutConfigWebhookData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\"The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\""
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.balancePlatformPayoutSchedule.created",
+              "balancePlatform.balancePlatformPayoutSchedule.updated",
+              "balancePlatform.balancePlatformPayoutSchedule.deleted"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Type of webhook."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayoutScheduleStateNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PayoutStateWebhookData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\"The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\""
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.balanceAccountPayoutScheduleExecution.succeeded",
+              "balancePlatform.balanceAccountPayoutScheduleExecution.failed",
+              "balancePlatform.balanceAccountPayoutScheduleExecution.skipped"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Type of webhook."
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayoutStateWebhookData": {
+        "type": "object",
+        "properties": {
+          "balanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account from which the payout is initiated."
+          },
+          "balanceAccountPayoutScheduleId": {
+            "type": "string",
+            "description": "The unique identifier of the managed payout schedule."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "result": {
+            "enum": [
+              "failed",
+              "skipped",
+              "succeeded"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "The result of the execution."
+          },
+          "resultDetails": {
+            "$ref": "#/components/schemas/ResultDetails"
+          },
+          "triggeredAt": {
+            "type": "string",
+            "description": "The timestamp of the moment when the execution was triggered.",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -52332,6 +53548,64 @@
         },
         "additionalProperties": false
       },
+      "PlatformPayoutConfigWebhookData": {
+        "type": "object",
+        "properties": {
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "balancePlatformPayoutScheduleId": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform payout schedule that is applied to the balance account."
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the country to which the payout schedule applies."
+          },
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for the payout schedule."
+          },
+          "defaultDescription": {
+            "type": "string",
+            "description": "The default description for payouts initiated by this payout schedule."
+          },
+          "defaultFrequency": {
+            "type": "string",
+            "description": "The default frequency of payouts initiated by this payout schedule."
+          },
+          "defaultFrequencyValue": {
+            "type": "integer",
+            "description": "\"The default value for date of the month or day of the week when payouts are initiated. Allowed only if `defaultFrequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.\n\nPossible values if `defaultFrequency` is **weekly**: **[1 - 5]**.\"",
+            "format": "int32"
+          },
+          "defaultReference": {
+            "type": "string",
+            "description": "Your internal default reference for the payout schedule.\n\nWhen the payout schedule is applied to a balance account, this reference is also used for that payout schedule, unless you specify a new reference."
+          },
+          "defaultReferenceForBeneficiary": {
+            "type": "string",
+            "description": "The default reference for beneficiary for payouts initiated by this payout schedule."
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "The maximum amount that can be paid out from balance accounts that use this payout schedule.",
+            "format": "int64"
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "The minimum amount that can be paid out from balance accounts that use this payout schedule.",
+            "format": "int64"
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "The amount of funds that must remain available in a balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
       "RemediatingAction": {
         "type": "object",
         "properties": {
@@ -52385,9 +53659,9 @@
       },
       "ScoreNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -52433,9 +53707,9 @@
       },
       "SweepConfigurationNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -52466,10 +53740,10 @@
       },
       "SweepConfigurationV2": {
         "required": [
-          "id",
-          "schedule",
+          "counterparty",
           "currency",
-          "counterparty"
+          "id",
+          "schedule"
         ],
         "type": "object",
         "properties": {
@@ -52645,9 +53919,9 @@
       },
       "UKLocalMandateAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "sortCode"
+          "sortCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -52704,8 +53978,8 @@
       },
       "VerificationDeadline": {
         "required": [
-          "expiresAt",
-          "capabilities"
+          "capabilities",
+          "expiresAt"
         ],
         "type": "object",
         "properties": {
@@ -53065,6 +54339,24 @@
             "deprecated": true,
             "x-deprecatedInVersion": "2",
             "x-deprecatedMessage": "Use name of the `tokenRequestor` instead."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResultDetails": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The reason why the execution was not successful."
+          },
+          "reasonCode": {
+            "type": "string",
+            "description": "The numeric code of the reason."
+          },
+          "transferId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer created for this execution."
           }
         },
         "additionalProperties": false
@@ -61610,6 +62902,297 @@
           }
         }
       },
+      "BalanceAccountConfiguration": {
+        "required": [
+          "balanceAccountId",
+          "balancePlatformPayoutScheduleId",
+          "createdAt",
+          "transferInstrumentId"
+        ],
+        "type": "object",
+        "properties": {
+          "balanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account to which you apply the payout schedule."
+          },
+          "balancePlatformPayoutScheduleId": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform payout schedule that is applied to the balance account."
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "The date and time when the payout schedule was created.",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for this schedule."
+          },
+          "description": {
+            "type": "string",
+            "description": "\"The description used for all payouts initiated by this payout schedule.\n\nMaximum length: 140 characters. If your description is longer, it may be truncated.\n\nDefault value: The `defaultDescription` from the balance platform schedule that you are applying.\""
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the payout schedule is active."
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "frequencyValue": {
+            "type": "integer",
+            "description": "\"The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.\n\nPossible values if `frequency` is **weekly**: **[1 - 5]**.\n\nDefault value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.\"",
+            "format": "int32"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the payout schedule for the balance account."
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "\"The maximum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "\"The minimum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "reference": {
+            "type": "string",
+            "description": "Your reference for the payout schedule. This reference does not appear on statements of payouts initiated by the payout schedule."
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "\"The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the payout and is included in all webhooks related to the payout.\n\nSupported characters: **a-z**, **A-Z**, **0-9**.\n\nDefault value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.\""
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "\"The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "salesDayClosingTime": {
+            "type": "string",
+            "description": "\"The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.\n\nFormat: **HH:mm:ss**\"",
+            "deprecated": true
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument to which the funds are paid out."
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "The date and time when the payout schedule was updated.",
+            "format": "date-time"
+          }
+        }
+      },
+      "BalanceAccountConfigurationRequest": {
+        "required": [
+          "balancePlatformPayoutScheduleId",
+          "frequency",
+          "transferInstrumentId"
+        ],
+        "type": "object",
+        "properties": {
+          "balancePlatformPayoutScheduleId": {
+            "type": "string",
+            "description": "The unique identifier of the payout schedule that is applied to the balance account."
+          },
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for this schedule."
+          },
+          "description": {
+            "type": "string",
+            "description": "\"The description used for all payouts initiated by this payout schedule.\n\nMaximum length: 140 characters. If your description is longer, it may be truncated.\n\nDefault value: The `defaultDescription` from the balance platform schedule that you are applying.\""
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the payout schedule is enabled immediately after it is created."
+          },
+          "frequency": {
+            "enum": [
+              "daily",
+              "weekly",
+              "weekdays",
+              "monthly"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "\"The frequency of payouts initiated by this payout schedule.\n\nPossible values:\n* daily\n* weekdays\n* weekly\n* monthly\n\nDefault value: The `defaultFrequency` from the balance platform schedule that you are applying.\""
+          },
+          "frequencyValue": {
+            "type": "integer",
+            "description": "\"The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.\n\nPossible values if `frequency` is **weekly**: **[1 - 5]**.\n\nDefault value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.\"",
+            "format": "int32"
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "\"The maximum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "\"The minimum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "reference": {
+            "type": "string",
+            "description": "The merchant reference that will be shown only in the schedule."
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "\"The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.\n\nSupported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.\n\nDefault value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.\""
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "\"The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "salesDayClosingTime": {
+            "type": "string",
+            "description": "\"The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.\n\nFormat: **HH:mm:ss**\"",
+            "deprecated": true
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument to which the funds are paid out."
+          }
+        }
+      },
+      "BalanceAccountConfigurations": {
+        "required": [
+          "balanceAccountPayoutSchedules",
+          "link"
+        ],
+        "type": "object",
+        "properties": {
+          "balanceAccountPayoutSchedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BalanceAccountConfiguration"
+            },
+            "description": "Contains a list of the Balance Account payout schedules."
+          },
+          "link": {
+            "$ref": "#/components/schemas/Link"
+          }
+        }
+      },
+      "BalancePlatformConfiguration": {
+        "required": [
+          "balancePlatformId",
+          "createdAt",
+          "payoutScheduleDescription",
+          "userSettlementDelay",
+          "userSettlementTime",
+          "userSettlementTimeZone"
+        ],
+        "type": "object",
+        "properties": {
+          "automaticApplication": {
+            "type": "boolean",
+            "description": "Specifies whether this payout schedule is automatically applied to new balance accounts."
+          },
+          "balancePlatformId": {
+            "type": "string",
+            "description": "The balance platform to which the payout schedule applies."
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the country to which the payout schedule applies."
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "The date when the payout schedule was created.",
+            "format": "date-time"
+          },
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for the payout schedule."
+          },
+          "defaultDescription": {
+            "type": "string",
+            "description": "The default description for payouts initiated by this payout schedule."
+          },
+          "defaultFrequency": {
+            "type": "string"
+          },
+          "defaultFrequencyValue": {
+            "type": "integer",
+            "description": "\"The default value for date of the month or day of the week when payouts are initiated. Allowed only if `defaultFrequency` is **monthly** or **weekly**.\n\nPossible values if `defaultFrequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.\n\nPossible values if `defaultFrequency` is **weekly**: **[1 - 5]**.\"",
+            "format": "int32"
+          },
+          "defaultReference": {
+            "type": "string",
+            "description": "Your internal default reference for the payout schedule.When the payout schedule is applied to a balance account, this reference is also used for that payout schedule."
+          },
+          "defaultReferenceForBeneficiary": {
+            "type": "string",
+            "description": "The default reference for beneficiary for payouts initiated by this payout schedule."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the payout schedule is enabled immediately after it is created."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the payout schedule for your balance platform."
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "\"The maximum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**, which means that there is no maximum limit.\"",
+            "format": "int64"
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "\"The minimum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**.\"",
+            "format": "int64"
+          },
+          "payoutScheduleDescription": {
+            "type": "string",
+            "description": "\"The type of payout schedule. This type indicates how fast funds are paid out to your user.\n\nPossible values:\n- **Standard**: The funds arrive in your user's transfer instrument two days after the funds are settled.\n- **Accelerated**: The funds arrive to your user's transfer instrument the day after the funds are settled.\""
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "\"The amount of funds that must remain available in a balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.\n\nDefault value: **0**\"",
+            "format": "int64"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "The date when the payout schedule was updated.",
+            "format": "date-time"
+          },
+          "userSettlementDelay": {
+            "type": "integer",
+            "description": "The default [settlement delay](https://docs.adyen.com/platforms/settle-funds/#settlement-delay) for this payout schedule.",
+            "format": "int32"
+          },
+          "userSettlementTime": {
+            "$ref": "#/components/schemas/LocalTime"
+          },
+          "userSettlementTimeZone": {
+            "type": "string",
+            "description": "The timezone of the `userSettlementTime`."
+          }
+        }
+      },
+      "BalancePlatformConfigurations": {
+        "required": [
+          "balancePlatformPayoutSchedules"
+        ],
+        "type": "object",
+        "properties": {
+          "balancePlatformPayoutSchedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BalancePlatformConfiguration"
+            },
+            "description": "Contains a list of the payout schedules configured in your balance platform."
+          }
+        }
+      },
       "BalanceWebhookSetting": {
         "required": [
           "currency",
@@ -61883,6 +63466,15 @@
           "url": "https://www.rfc-editor.org/rfc/rfc7807"
         }
       },
+      "ExecutionResult": {
+        "enum": [
+          "failed",
+          "succeeded",
+          "skipped"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "FinishScaDeviceRegistrationRequest": {
         "required": [
           "sdkOutput"
@@ -61965,6 +63557,27 @@
               "$ref": "#/components/schemas/BalancePlatformServiceV2Mandate"
             },
             "description": "Contains a list of the mandates."
+          }
+        }
+      },
+      "LocalTime": {
+        "type": "object",
+        "properties": {
+          "hour": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minute": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nano": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "second": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
@@ -62068,6 +63681,127 @@
             "type": "string",
             "description": "The unique identifier of the payment instrument linked to the mandate.",
             "nullable": true
+          }
+        }
+      },
+      "PatchableBalanceAccountConfigurationRequest": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "\"The description used for all payouts initiated by this payout schedule.\n\nMaximum length: 140 characters. If your description is longer, it may be truncated.\n\nDefault value: The `defaultDescription` from the balance platform schedule that you are applying.\"",
+            "nullable": true
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the payout schedule is enabled immediately after it is created.",
+            "nullable": true
+          },
+          "frequency": {
+            "enum": [
+              "daily",
+              "weekly",
+              "weekdays",
+              "monthly"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "\"The frequency of payouts initiated by this payout schedule.\n\nPossible values:\n* daily\n* weekdays\n* weekly\n* monthly\n\nDefault value: The `defaultFrequency` from the balance platform schedule that you are applying.\""
+          },
+          "frequencyValue": {
+            "type": "integer",
+            "description": "\"The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.\n\nPossible values if `frequency` is **weekly**: **[1 - 5]**.\n\nDefault value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.\"",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "\"The maximum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**\"",
+            "format": "int64",
+            "nullable": true
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "\"The minimum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**\"",
+            "format": "int64",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "description": "The merchant reference that will be shown only in the schedule.",
+            "nullable": true
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "\"The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.\n\nSupported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.\n\nDefault value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.\"",
+            "nullable": true
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "\"The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.\n\nDefault value: **0**\"",
+            "format": "int64",
+            "nullable": true
+          },
+          "salesDayClosingTime": {
+            "type": "string",
+            "description": "\"The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.\n\nFormat: **HH:mm:ss**\"",
+            "deprecated": true
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument to which the funds are paid out."
+          }
+        }
+      },
+      "PayoutScheduleExecution": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the payout execution."
+          },
+          "result": {
+            "$ref": "#/components/schemas/ExecutionResult"
+          },
+          "resultDetails": {
+            "$ref": "#/components/schemas/PayoutScheduleExecutionDetails"
+          },
+          "triggeredAt": {
+            "type": "string",
+            "description": "The date and time when the payout execution was initiated.",
+            "format": "date-time"
+          }
+        }
+      },
+      "PayoutScheduleExecutionDetails": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Human readable reason for why execution was not successful if applicable."
+          },
+          "reasonCode": {
+            "type": "string",
+            "description": "Reason Code for why execution was not successful if applicable."
+          },
+          "transferId": {
+            "type": "string",
+            "description": "The id of the transfer from executing the payout."
+          }
+        }
+      },
+      "PayoutScheduleExecutions": {
+        "required": [
+          "payoutScheduleExecutions"
+        ],
+        "type": "object",
+        "properties": {
+          "payoutScheduleExecutions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PayoutScheduleExecution"
+            },
+            "description": "Contains a list of executions of the payout schedule."
           }
         }
       },
@@ -62197,6 +63931,14 @@
         "type": "string",
         "additionalProperties": false,
         "description": "\"The status of Strong Customer Authentication (SCA). Possible values:\n* **notPerformed**: the requester was unable to successfully authenticate the request using SCA, or has an SCA exemption.\n* **pending**: the request is pending SCA authentication.\n* **performed**: the request is successfully authenticated using SCA.\""
+      },
+      "UpdateAccountResponseMetadata": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "A set of key and value pairs containing metadata.",
+        "x-addedInVersion": "5"
       },
       "Scope": {
         "enum": [
@@ -90140,13 +91882,6 @@
             "type": "integer",
             "description": "The maximum offline transaction amount for chip cards, in the processing currency and specified in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
             "format": "int32"
-          },
-          "offlineSwipeLimits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MinorUnitsMonetaryValue"
-            },
-            "description": "The maximum offline transaction amount for swiped cards, in the specified currency. Updating this field is forbidden."
           }
         },
         "additionalProperties": false
@@ -123825,14 +125560,6 @@
         },
         "additionalProperties": false
       },
-      "UpdateAccountResponseMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "A set of key and value pairs containing metadata.",
-        "x-addedInVersion": "5"
-      },
       "RelayedAuthorisationData2Metadata": {
         "type": "object",
         "additionalProperties": {
@@ -151264,6 +152991,9 @@
       "name": "Network token"
     },
     {
+      "name": "Payout schedules"
+    },
+    {
       "name": "Score"
     },
     {
@@ -151291,13 +153021,19 @@
       "name": "Balance accounts"
     },
     {
+      "name": "Managed payout schedules"
+    },
+    {
+      "name": "Custom payout schedules (sweeps)"
+    },
+    {
+      "name": "Authorized card users"
+    },
+    {
       "name": "Payment instruments"
     },
     {
       "name": "Payment instrument groups"
-    },
-    {
-      "name": "Authorized card users"
     },
     {
       "name": "Transaction rules"
