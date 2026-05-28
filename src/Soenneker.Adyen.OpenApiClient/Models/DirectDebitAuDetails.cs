@@ -36,6 +36,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CheckoutAttemptId { get; set; }
 #endif
+        /// <summary>The name of the bank account holder.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HolderName { get; set; }
+#nullable restore
+#else
+        public string HolderName { get; set; }
+#endif
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,6 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "bankAccountNumber", n => { BankAccountNumber = n.GetStringValue(); } },
                 { "bankBranchCode", n => { BankBranchCode = n.GetStringValue(); } },
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
+                { "holderName", n => { HolderName = n.GetStringValue(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
@@ -100,6 +109,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("bankAccountNumber", BankAccountNumber);
             writer.WriteStringValue("bankBranchCode", BankBranchCode);
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
+            writer.WriteStringValue("holderName", HolderName);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);

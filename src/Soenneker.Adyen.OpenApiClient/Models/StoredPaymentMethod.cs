@@ -36,6 +36,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Brand { get; set; }
 #endif
+        /// <summary>The shopper’s Cash App Pay Cashtag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cashtag { get; set; }
+#nullable restore
+#else
+        public string Cashtag { get; set; }
+#endif
         /// <summary>The two-digit month when the card expires</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "bankAccountNumber", n => { BankAccountNumber = n.GetStringValue(); } },
                 { "bankLocationId", n => { BankLocationId = n.GetStringValue(); } },
                 { "brand", n => { Brand = n.GetStringValue(); } },
+                { "cashtag", n => { Cashtag = n.GetStringValue(); } },
                 { "expiryMonth", n => { ExpiryMonth = n.GetStringValue(); } },
                 { "expiryYear", n => { ExpiryYear = n.GetStringValue(); } },
                 { "holderName", n => { HolderName = n.GetStringValue(); } },
@@ -195,6 +204,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("bankAccountNumber", BankAccountNumber);
             writer.WriteStringValue("bankLocationId", BankLocationId);
             writer.WriteStringValue("brand", Brand);
+            writer.WriteStringValue("cashtag", Cashtag);
             writer.WriteStringValue("expiryMonth", ExpiryMonth);
             writer.WriteStringValue("expiryYear", ExpiryYear);
             writer.WriteStringValue("holderName", HolderName);

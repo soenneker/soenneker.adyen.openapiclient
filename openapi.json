@@ -72848,6 +72848,10 @@
           "subMerchantTaxId": {
             "type": "string",
             "description": "This field is required if the transaction is performed by a registered payment facilitator. This field must contain the tax ID of the actual merchant.\n* Format: alpha-numeric.\n* Fixed length: 11 or 14 characters."
+          },
+          "transactionLinkId": {
+            "type": "string",
+            "description": "Allows you to link the transaction to the original or previous one in a subscription/card-on-file chain For Mastercard payments. This field is required for token-based transactions where Adyen does not tokenize the card.\n\nTransaction identifier from Mastercard.\n\nSubmit the original transaction ID of the contract in your payment request if you are not tokenizing card details with Adyen and are making a merchant-initiated transaction (MIT) for subsequent charges.\n\nMake sure you are sending `shopperInteraction` **ContAuth** and `recurringProcessingModel` **Subscription** or **UnscheduledCardOnFile** to ensure that the transaction is classified as MIT."
           }
         },
         "additionalProperties": false
@@ -74475,11 +74479,12 @@
             "description": "The number or name of the house. Maximum length: 3000 characters."
           },
           "postalCode": {
+            "maxLength": 10,
             "type": "string",
             "description": "A maximum of five digits for an address in the US, or a maximum of ten characters for an address in all other countries."
           },
           "stateOrProvince": {
-            "maxLength": 1000,
+            "maxLength": 3,
             "type": "string",
             "description": "The two-character ISO 3166-2 state or province code. For example, **CA** in the US or **ON** in Canada.\n> Required for the US and Canada."
           },
@@ -76817,11 +76822,12 @@
             "type": "string"
           },
           "postalCode": {
+            "maxLength": 10,
             "type": "string",
             "description": "A maximum of five digits for an address in the US, or a maximum of ten characters for an address in all other countries."
           },
           "stateOrProvince": {
-            "maxLength": 1000,
+            "maxLength": 3,
             "type": "string",
             "description": "The two-character ISO 3166-2 state or province code. For example, **CA** in the US or **ON** in Canada.\n> Required for the US and Canada."
           },
@@ -76923,6 +76929,9 @@
       },
       "DirectDebitAuDetails": {
         "title": "DirectDebitAu",
+        "required": [
+          "holderName"
+        ],
         "type": "object",
         "properties": {
           "bankAccountNumber": {
@@ -76936,6 +76945,10 @@
           "checkoutAttemptId": {
             "type": "string",
             "description": "The checkout attempt identifier."
+          },
+          "holderName": {
+            "type": "string",
+            "description": "The name of the bank account holder."
           },
           "recurringDetailReference": {
             "type": "string",
@@ -82894,6 +82907,10 @@
             "type": "string",
             "description": "The reference that uniquely identifies tokenized payment details."
           },
+          "transactionLinkId": {
+            "type": "string",
+            "description": "Returned in the response for Mastercard payments.\n\nThis contains the Mastercard Transaction Link Identifier (TLID)."
+          },
           "visaTransactionId": {
             "type": "string",
             "description": "The `visaTransactionId`, has a fixed length of 15 numeric characters.\n\n> Contact Support Team to enable this field."
@@ -83603,6 +83620,11 @@
           "brand": {
             "type": "string",
             "description": "The brand of the card."
+          },
+          "cashtag": {
+            "type": "string",
+            "description": "The shopper’s Cash App Pay Cashtag.",
+            "x-addedInVersion": "70"
           },
           "expiryMonth": {
             "type": "string",
@@ -93779,7 +93801,7 @@
         "properties": {
           "enableDcc": {
             "type": "boolean",
-            "description": "Enable Dynamic Currency Conversion (DCC)."
+            "description": "Enable Dynamic Currency Conversion (DCC). When you enable DCC, you are responsible for complying with [DCC receipt requirements and terms of use](https://help.adyen.com/en_US/knowledge/in-person-payments/terminal-features/dynamic-currency-conversion-dcc-rules-regulations)."
           }
         },
         "additionalProperties": false
