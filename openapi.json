@@ -95376,7 +95376,8 @@
               "Card"
             ],
             "type": "string",
-            "description": "Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options."
+            "description": "Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -98163,7 +98164,8 @@
             "items": {
               "$ref": "#/components/schemas/Gratuity"
             },
-            "description": "Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip."
+            "description": "Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip.",
+            "nullable": true
           },
           "hardware": {
             "$ref": "#/components/schemas/Hardware"
@@ -117200,15 +117202,18 @@
           },
           "displayLabel": {
             "type": "string",
-            "description": "The label shown on the status bar of the display. This label (if any) is specified in your Customer Area."
+            "description": "The label shown on the status bar of the display. This label (if any) is specified in your Customer Area.",
+            "nullable": true
           },
           "ethernetIp": {
             "type": "string",
-            "description": "The terminal's IP address in your Ethernet network."
+            "description": "The terminal's IP address in your Ethernet network.",
+            "nullable": true
           },
           "ethernetMac": {
             "type": "string",
-            "description": "The terminal's MAC address in your Ethernet network."
+            "description": "The terminal's MAC address in your Ethernet network.",
+            "nullable": true
           },
           "firmwareVersion": {
             "type": "string",
@@ -117216,21 +117221,25 @@
           },
           "iccid": {
             "type": "string",
-            "description": "The integrated circuit card identifier (ICCID) of the SIM card in the terminal."
+            "description": "The integrated circuit card identifier (ICCID) of the SIM card in the terminal.",
+            "nullable": true
           },
           "lastActivityDateTime": {
             "type": "string",
             "description": "Date and time of the last activity on the terminal. Not included when the last activity was more than 14 days ago.",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "lastTransactionDateTime": {
             "type": "string",
             "description": "Date and time of the last transaction on the terminal. Not included when the last transaction was more than 14 days ago.",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "linkNegotiation": {
             "type": "string",
-            "description": "The Ethernet link negotiation that the terminal uses: \n\n- `auto`: Auto-negotiation\n\n- `100full`: 100 Mbps full duplex"
+            "description": "The Ethernet link negotiation that the terminal uses: \n\n- `auto`: Auto-negotiation\n\n- `100full`: 100 Mbps full duplex",
+            "nullable": true
           },
           "merchantAccount": {
             "type": "string",
@@ -117250,7 +117259,8 @@
           },
           "simStatus": {
             "type": "string",
-            "description": "On a terminal that supports 3G or 4G connectivity, indicates the status of the SIM card in the terminal: ACTIVE or INVENTORY."
+            "description": "On a terminal that supports 3G or 4G connectivity, indicates the status of the SIM card in the terminal: ACTIVE or INVENTORY.",
+            "nullable": true
           },
           "store": {
             "type": "string",
