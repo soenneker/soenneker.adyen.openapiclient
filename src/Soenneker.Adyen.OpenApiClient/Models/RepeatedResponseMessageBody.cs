@@ -25,10 +25,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Content of the Card Reader APDU Response message.It contains the result of the requested service, APDU response sent by the chip of the card in response to the APDU request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse? CardReaderAPDUResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse? CardReaderAPDUResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse CardReaderAPDUResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse CardReaderAPDUResponse { get; set; }
 #endif
         /// <summary>It conveys Information related to the Loyalty transaction processed by the POI System.Content of the Loyalty Response message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>It conveys Information related to the Payment transaction processed by the POI System.Content of the Payment Response message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse? PaymentResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse? PaymentResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse PaymentResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse PaymentResponse { get; set; }
 #endif
         /// <summary>It conveys Information related to the reversal processed by the POI System.Content of the Reversal Response message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,9 +88,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "CardAcquisitionResponse", n => { CardAcquisitionResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponse>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponse.CreateFromDiscriminatorValue); } },
-                { "CardReaderAPDUResponse", n => { CardReaderAPDUResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse>(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse.CreateFromDiscriminatorValue); } },
+                { "CardReaderAPDUResponse", n => { CardReaderAPDUResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse>(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse.CreateFromDiscriminatorValue); } },
                 { "LoyaltyResponse", n => { LoyaltyResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResponse>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResponse.CreateFromDiscriminatorValue); } },
-                { "PaymentResponse", n => { PaymentResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse.CreateFromDiscriminatorValue); } },
+                { "PaymentResponse", n => { PaymentResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse.CreateFromDiscriminatorValue); } },
                 { "ReversalResponse", n => { ReversalResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse>(global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse.CreateFromDiscriminatorValue); } },
                 { "StoredValueResponse", n => { StoredValueResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResponse>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResponse.CreateFromDiscriminatorValue); } },
             };
@@ -103,9 +103,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponse>("CardAcquisitionResponse", CardAcquisitionResponse);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse>("CardReaderAPDUResponse", CardReaderAPDUResponse);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse>("CardReaderAPDUResponse", CardReaderAPDUResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResponse>("LoyaltyResponse", LoyaltyResponse);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse>("PaymentResponse", PaymentResponse);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse>("PaymentResponse", PaymentResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalResponse>("ReversalResponse", ReversalResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResponse>("StoredValueResponse", StoredValueResponse);
             writer.WriteAdditionalData(AdditionalData);

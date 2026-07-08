@@ -15,7 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **AAMVA*** **ISO**</summary>
+        /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **ISO*** **JIS-I*** **JIS-II*** **AAMVA*** **CMC-7*** **E-13B**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TrackFormat? TrackFormat { get; set; }
         /// <summary>Card track number.</summary>
         public int? TrackNumb { get; set; }
@@ -33,6 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public TrackData()
         {
             AdditionalData = new Dictionary<string, object>();
+            TrackNumb = 2;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

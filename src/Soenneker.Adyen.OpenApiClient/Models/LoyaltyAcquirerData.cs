@@ -41,10 +41,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType? LoyaltyTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? LoyaltyTransactionID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType LoyaltyTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType LoyaltyTransactionID { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAcquirerData"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "ApprovalCode", n => { ApprovalCode = n.GetStringValue(); } },
                 { "HostReconciliationID", n => { HostReconciliationID = n.GetStringValue(); } },
                 { "LoyaltyAcquirerID", n => { LoyaltyAcquirerID = n.GetStringValue(); } },
-                { "LoyaltyTransactionID", n => { LoyaltyTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType.CreateFromDiscriminatorValue); } },
+                { "LoyaltyTransactionID", n => { LoyaltyTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("ApprovalCode", ApprovalCode);
             writer.WriteStringValue("HostReconciliationID", HostReconciliationID);
             writer.WriteStringValue("LoyaltyAcquirerID", LoyaltyAcquirerID);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>("LoyaltyTransactionID", LoyaltyTransactionID);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("LoyaltyTransactionID", LoyaltyTransactionID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

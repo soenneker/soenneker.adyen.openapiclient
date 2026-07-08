@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string LegalEntityId { get; set; }
 #endif
         /// <summary>&quot;The type of transfer instrument.Possible value: **bankAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfo_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfoType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo.CreateFromDiscriminatorValue); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfo_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfoType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo>("bankAccount", BankAccount);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfo_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfoType>("type", Type);
         }
     }
 }

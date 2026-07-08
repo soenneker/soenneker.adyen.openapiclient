@@ -15,9 +15,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Device property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1Device? Device { get; set; }
-        /// <summary>The InfoQualify property</summary>
+        /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device? Device { get; set; }
+        /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify? InfoQualify { get; set; }
         /// <summary>An entry of the menu to present to the Cashier. It conveys the message text and parameters of the menu entry. This output data could be only provided for an input command, in order to choose an entryof the menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +53,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public DisplayOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            MinimumDisplayTime = 0;
+            ResponseRequiredFlag = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1Device>(); } },
+                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device>(); } },
                 { "InfoQualify", n => { InfoQualify = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify>(); } },
                 { "MenuEntry", n => { MenuEntry = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>(global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MinimumDisplayTime", n => { MinimumDisplayTime = n.GetIntValue(); } },
@@ -88,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1Device>("Device", Device);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device>("Device", Device);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify>("InfoQualify", InfoQualify);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>("MenuEntry", MenuEntry);
             writer.WriteIntValue("MinimumDisplayTime", MinimumDisplayTime);

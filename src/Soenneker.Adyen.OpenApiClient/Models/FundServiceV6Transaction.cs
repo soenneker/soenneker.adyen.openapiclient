@@ -119,7 +119,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SourceAccountCode { get; set; }
 #endif
         /// <summary>&quot;The status of the transaction.&gt;Permitted values: `PendingCredit`, `CreditFailed`, `CreditClosed`, `CreditSuspended`, `Credited`, `Converted`, `PendingDebit`, `DebitFailed`, `Debited`, `DebitReversedReceived`, `DebitedReversed`, `ChargebackReceived`, `Chargeback`, `ChargebackReversedReceived`, `ChargebackReversed`, `Payout`, `PayoutReversed`, `FundTransfer`, `PendingFundTransfer`, `ManualCorrected`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Transaction_transactionStatus? TransactionStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus? TransactionStatus { get; set; }
         /// <summary>The transfer code of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,7 +160,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "payoutPspReference", n => { PayoutPspReference = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "sourceAccountCode", n => { SourceAccountCode = n.GetStringValue(); } },
-                { "transactionStatus", n => { TransactionStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Transaction_transactionStatus>(); } },
+                { "transactionStatus", n => { TransactionStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus>(); } },
                 { "transferCode", n => { TransferCode = n.GetStringValue(); } },
             };
         }
@@ -185,7 +185,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("payoutPspReference", PayoutPspReference);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("sourceAccountCode", SourceAccountCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Transaction_transactionStatus>("transactionStatus", TransactionStatus);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus>("transactionStatus", TransactionStatus);
             writer.WriteStringValue("transferCode", TransferCode);
         }
     }

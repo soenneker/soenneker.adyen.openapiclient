@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>In 3D Secure 2, this is the `transStatus` from the challenge result. If the transaction was frictionless, omit this parameter.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_authenticationResponse? AuthenticationResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataAuthenticationResponse? AuthenticationResponse { get; set; }
         /// <summary>The cardholder authentication value (base64 encoded, 20 bytes in a decoded form).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,9 +31,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CavvAlgorithm { get; set; }
 #endif
         /// <summary>Indicator informing the Access Control Server (ACS) and the Directory Server (DS) that the authentication has been cancelled. For possible values, refer to [3D Secure API reference](https://docs.adyen.com/online-payments/3d-secure/api-reference#mpidata).</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_challengeCancel? ChallengeCancel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataChallengeCancel? ChallengeCancel { get; set; }
         /// <summary>In 3D Secure 2, this is the `transStatus` from the `ARes`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_directoryResponse? DirectoryResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataDirectoryResponse? DirectoryResponse { get; set; }
         /// <summary>Supported for 3D Secure 2. The unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,11 +108,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationResponse", n => { AuthenticationResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_authenticationResponse>(); } },
+                { "authenticationResponse", n => { AuthenticationResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataAuthenticationResponse>(); } },
                 { "cavv", n => { Cavv = n.GetByteArrayValue(); } },
                 { "cavvAlgorithm", n => { CavvAlgorithm = n.GetStringValue(); } },
-                { "challengeCancel", n => { ChallengeCancel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_challengeCancel>(); } },
-                { "directoryResponse", n => { DirectoryResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_directoryResponse>(); } },
+                { "challengeCancel", n => { ChallengeCancel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataChallengeCancel>(); } },
+                { "directoryResponse", n => { DirectoryResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataDirectoryResponse>(); } },
                 { "dsTransID", n => { DsTransID = n.GetStringValue(); } },
                 { "eci", n => { Eci = n.GetStringValue(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
@@ -129,11 +129,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_authenticationResponse>("authenticationResponse", AuthenticationResponse);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataAuthenticationResponse>("authenticationResponse", AuthenticationResponse);
             writer.WriteByteArrayValue("cavv", Cavv);
             writer.WriteStringValue("cavvAlgorithm", CavvAlgorithm);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_challengeCancel>("challengeCancel", ChallengeCancel);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData_directoryResponse>("directoryResponse", DirectoryResponse);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataChallengeCancel>("challengeCancel", ChallengeCancel);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureDataDirectoryResponse>("directoryResponse", DirectoryResponse);
             writer.WriteStringValue("dsTransID", DsTransID);
             writer.WriteStringValue("eci", Eci);
             writer.WriteStringValue("riskScore", RiskScore);

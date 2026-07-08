@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
 #endif
         /// <summary>&quot;The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment_amountAdjustmentType? AmountAdjustmentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get; set; }
         /// <summary>The basepoints associated with the applied markup.</summary>
         public int? Basepoints { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
-                { "amountAdjustmentType", n => { AmountAdjustmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment_amountAdjustmentType>(); } },
+                { "amountAdjustmentType", n => { AmountAdjustmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType>(); } },
                 { "basepoints", n => { Basepoints = n.GetIntValue(); } },
             };
         }
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment_amountAdjustmentType>("amountAdjustmentType", AmountAdjustmentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType>("amountAdjustmentType", AmountAdjustmentType);
             writer.WriteIntValue("basepoints", Basepoints);
         }
     }

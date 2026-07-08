@@ -3,22 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **GiftCard*** **PhoneCard*** **Other**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum StoredValueAccountType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "GiftCard")]
         #pragma warning disable CS1591
         GiftCard,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Other")]
-        #pragma warning disable CS1591
-        Other,
-        #pragma warning restore CS1591
         [EnumMember(Value = "PhoneCard")]
         #pragma warning disable CS1591
         PhoneCard,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Other")]
+        #pragma warning disable CS1591
+        Other,
         #pragma warning restore CS1591
     }
 }

@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The type of event notification sent when you select the notification button.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Notification_category? Category { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationCategory? Category { get; set; }
         /// <summary>The text shown in the prompt which opens when you select the notification button. For example, the description of the input box for pay-at-table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Notification_category>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationCategory>(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "showButton", n => { ShowButton = n.GetBoolValue(); } },
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Notification_category>("category", Category);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationCategory>("category", Category);
             writer.WriteStringValue("details", Details);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("showButton", ShowButton);

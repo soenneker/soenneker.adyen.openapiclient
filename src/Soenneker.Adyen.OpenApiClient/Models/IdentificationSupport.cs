@@ -3,10 +3,18 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.Possible values:* **HybridCard*** **LinkedCard*** **LoyaltyCard*** **NoCard**</summary>
+    /// <summary>Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.Possible values:* **NoCard*** **LoyaltyCard*** **HybridCard*** **LinkedCard**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IdentificationSupport
     {
+        [EnumMember(Value = "NoCard")]
+        #pragma warning disable CS1591
+        NoCard,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LoyaltyCard")]
+        #pragma warning disable CS1591
+        LoyaltyCard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "HybridCard")]
         #pragma warning disable CS1591
         HybridCard,
@@ -14,14 +22,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "LinkedCard")]
         #pragma warning disable CS1591
         LinkedCard,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "LoyaltyCard")]
-        #pragma warning disable CS1591
-        LoyaltyCard,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NoCard")]
-        #pragma warning disable CS1591
-        NoCard,
         #pragma warning restore CS1591
     }
 }

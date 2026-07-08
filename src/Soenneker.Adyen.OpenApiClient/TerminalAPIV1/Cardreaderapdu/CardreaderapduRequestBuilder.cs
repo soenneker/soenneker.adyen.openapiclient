@@ -36,22 +36,22 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardreaderapdu
         /// <summary>
         /// It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.Content of the Card Reader APDU Request message.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse"/></returns>
         /// <param name="body">It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.Content of the Card Reader APDU Request message.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDURequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDURequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDUResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.Content of the Card Reader APDU Request message.
@@ -61,11 +61,11 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Cardreaderapdu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDURequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderAPDURequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.CardReaderApduRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

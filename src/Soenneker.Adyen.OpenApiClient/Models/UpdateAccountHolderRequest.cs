@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>&quot;The legal entity type of the account holder. This determines the information that should be provided in the request.Possible values: **Business**, **Individual**, or **NonProfit**.* If set to **Business** or **NonProfit**, then `accountHolderDetails.businessDetails` must be provided, with at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.* If set to **Individual**, then `accountHolderDetails.individualDetails` must be provided.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequest_legalEntity? LegalEntity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestLegalEntity? LegalEntity { get; set; }
         /// <summary>The primary three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes), to which the account holder should be updated.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
                 { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequest_legalEntity>(); } },
+                { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestLegalEntity>(); } },
                 { "primaryCurrency", n => { PrimaryCurrency = n.GetStringValue(); } },
                 { "processingTier", n => { ProcessingTier = n.GetIntValue(); } },
                 { "verificationProfile", n => { VerificationProfile = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequest_legalEntity>("legalEntity", LegalEntity);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestLegalEntity>("legalEntity", LegalEntity);
             writer.WriteStringValue("primaryCurrency", PrimaryCurrency);
             writer.WriteIntValue("processingTier", ProcessingTier);
             writer.WriteStringValue("verificationProfile", VerificationProfile);

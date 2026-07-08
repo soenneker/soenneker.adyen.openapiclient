@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType? CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get; set; }
 #endif
         /// <summary>The Instalment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData PaymentInstrumentData { get; set; }
 #endif
-        /// <summary>The PaymentType property</summary>
+        /// <summary>Possible values:* **Normal*** **Refund*** **OneTimeReservation*** **FirstReservation*** **UpdateReservation*** **Completion*** **CashAdvance*** **CashDeposit*** **Recurring*** **Instalment*** **IssuerInstalment*** **PaidOut**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentType? PaymentType { get; set; }
         /// <summary>Requested validity date for the reservation. Allows a specific period for the reservation according to the need of the Merchant for the first reservation and the reservation updates as well.</summary>
         public Date? RequestedValidityDate { get; set; }
@@ -51,6 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public PaymentData()
         {
             AdditionalData = new Dictionary<string, object>();
+            SplitPaymentFlag = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CardAcquisitionReference", n => { CardAcquisitionReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType.CreateFromDiscriminatorValue); } },
+                { "CardAcquisitionReference", n => { CardAcquisitionReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "Instalment", n => { Instalment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Instalment>(global::Soenneker.Adyen.OpenApiClient.Models.Instalment.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData.CreateFromDiscriminatorValue); } },
                 { "PaymentType", n => { PaymentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentType>(); } },
@@ -85,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>("CardAcquisitionReference", CardAcquisitionReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("CardAcquisitionReference", CardAcquisitionReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Instalment>("Instalment", Instalment);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentType>("PaymentType", PaymentType);

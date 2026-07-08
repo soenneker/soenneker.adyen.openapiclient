@@ -10,87 +10,87 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         [EnumMember(Value = "SE")]
         #pragma warning disable CS1591
-        SE,
+        Se,
         #pragma warning restore CS1591
         [EnumMember(Value = "FI")]
         #pragma warning disable CS1591
-        FI,
+        Fi,
         #pragma warning restore CS1591
         [EnumMember(Value = "NO")]
         #pragma warning disable CS1591
-        NO,
+        No,
         #pragma warning restore CS1591
         [EnumMember(Value = "DK")]
         #pragma warning disable CS1591
-        DK,
+        Dk,
         #pragma warning restore CS1591
         [EnumMember(Value = "NL")]
         #pragma warning disable CS1591
-        NL,
+        Nl,
         #pragma warning restore CS1591
         [EnumMember(Value = "IT")]
         #pragma warning disable CS1591
-        IT,
+        It,
         #pragma warning restore CS1591
         [EnumMember(Value = "DE")]
         #pragma warning disable CS1591
-        DE,
+        De,
         #pragma warning restore CS1591
         [EnumMember(Value = "AT")]
         #pragma warning disable CS1591
-        AT,
+        At,
         #pragma warning restore CS1591
         [EnumMember(Value = "ES")]
         #pragma warning disable CS1591
-        ES,
+        Es,
         #pragma warning restore CS1591
         [EnumMember(Value = "PT")]
         #pragma warning disable CS1591
-        PT,
+        Pt,
         #pragma warning restore CS1591
         [EnumMember(Value = "FR")]
         #pragma warning disable CS1591
-        FR,
+        Fr,
         #pragma warning restore CS1591
         [EnumMember(Value = "GB")]
         #pragma warning disable CS1591
-        GB,
+        Gb,
         #pragma warning restore CS1591
         [EnumMember(Value = "BE")]
         #pragma warning disable CS1591
-        BE,
+        Be,
         #pragma warning restore CS1591
         [EnumMember(Value = "LV")]
         #pragma warning disable CS1591
-        LV,
+        Lv,
         #pragma warning restore CS1591
         [EnumMember(Value = "LT")]
         #pragma warning disable CS1591
-        LT,
+        Lt,
         #pragma warning restore CS1591
         [EnumMember(Value = "PL")]
         #pragma warning disable CS1591
-        PL,
+        Pl,
         #pragma warning restore CS1591
         [EnumMember(Value = "EE")]
         #pragma warning disable CS1591
-        EE,
+        Ee,
         #pragma warning restore CS1591
         [EnumMember(Value = "IE")]
         #pragma warning disable CS1591
-        IE,
+        Ie,
         #pragma warning restore CS1591
         [EnumMember(Value = "US")]
         #pragma warning disable CS1591
-        US,
+        Us,
         #pragma warning restore CS1591
         [EnumMember(Value = "CA")]
         #pragma warning disable CS1591
-        CA,
+        Ca,
         #pragma warning restore CS1591
         [EnumMember(Value = "AU")]
         #pragma warning disable CS1591
-        AU,
+        Au,
         #pragma warning restore CS1591
     }
 }

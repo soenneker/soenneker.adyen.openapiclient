@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentInstrumentId { get; set; }
 #endif
         /// <summary>&quot;The status of the network token. Possible values: **active**, **inactive**, **suspended**, **closed**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenStatus? Status { get; set; }
         /// <summary>The last four digits of the network token `id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenStatus>(); } },
                 { "tokenLastFour", n => { TokenLastFour = n.GetStringValue(); } },
                 { "tokenRequestor", n => { TokenRequestor = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo>("device", Device);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenStatus>("status", Status);
             writer.WriteStringValue("tokenLastFour", TokenLastFour);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor>("tokenRequestor", TokenRequestor);
             writer.WriteStringValue("type", Type);

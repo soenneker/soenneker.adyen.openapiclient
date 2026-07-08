@@ -39,9 +39,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Specifies if the requirement only applies to transfers to another balance platform.</summary>
         public bool? OnlyForCrossBalancePlatform { get; set; }
         /// <summary>The type of the payment instrument. For example, &quot;BankAccount&quot; or &quot;Card&quot;.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirement_paymentInstrumentType? PaymentInstrumentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirementPaymentInstrumentType? PaymentInstrumentType { get; set; }
         /// <summary>**paymentInstrumentRequirement**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirement_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirementType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,8 +64,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "issuingCountryCode", n => { IssuingCountryCode = n.GetStringValue(); } },
                 { "issuingCountryCodes", n => { IssuingCountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "onlyForCrossBalancePlatform", n => { OnlyForCrossBalancePlatform = n.GetBoolValue(); } },
-                { "paymentInstrumentType", n => { PaymentInstrumentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirement_paymentInstrumentType>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirement_type>(); } },
+                { "paymentInstrumentType", n => { PaymentInstrumentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirementPaymentInstrumentType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirementType>(); } },
             };
         }
         /// <summary>
@@ -79,8 +79,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("issuingCountryCode", IssuingCountryCode);
             writer.WriteCollectionOfPrimitiveValues<string>("issuingCountryCodes", IssuingCountryCodes);
             writer.WriteBoolValue("onlyForCrossBalancePlatform", OnlyForCrossBalancePlatform);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirement_paymentInstrumentType>("paymentInstrumentType", PaymentInstrumentType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirement_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirementPaymentInstrumentType>("paymentInstrumentType", PaymentInstrumentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRequirementType>("type", Type);
         }
     }
 }

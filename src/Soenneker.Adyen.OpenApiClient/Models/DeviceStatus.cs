@@ -10,11 +10,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         [EnumMember(Value = "ONLINE")]
         #pragma warning disable CS1591
-        ONLINE,
+        Online,
         #pragma warning restore CS1591
         [EnumMember(Value = "OFFLINE")]
         #pragma warning disable CS1591
-        OFFLINE,
+        Offline,
         #pragma warning restore CS1591
     }
 }

@@ -15,6 +15,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.&quot;</summary>
         public bool? AuthenticationOnly { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData"/> and sets the default values.
+        /// </summary>
+        public DetailsRequestAuthenticationData()
+        {
+            AuthenticationOnly = false;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData"/></returns>

@@ -3,34 +3,53 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Debit*** **Credit*** **ReverseDebit*** **ReverseCredit*** **OneTimeReservation*** **CompletedDeffered*** **FirstReservation*** **UpdateReservation*** **CompletedReservation*** **CashAdvance*** **IssuerInstalment*** **Declined*** **Failed*** **Award*** **ReverseAward*** **Redemption*** **ReverseRedemption*** **Rebate*** **ReverseRebate**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum TransactionType
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Award")]
+        [EnumMember(Value = "Debit")]
         #pragma warning disable CS1591
-        Award,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CashAdvance")]
-        #pragma warning disable CS1591
-        CashAdvance,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CompletedDeffered")]
-        #pragma warning disable CS1591
-        CompletedDeffered,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CompletedReservation")]
-        #pragma warning disable CS1591
-        CompletedReservation,
+        Debit,
         #pragma warning restore CS1591
         [EnumMember(Value = "Credit")]
         #pragma warning disable CS1591
         Credit,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Debit")]
+        [EnumMember(Value = "ReverseDebit")]
         #pragma warning disable CS1591
-        Debit,
+        ReverseDebit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ReverseCredit")]
+        #pragma warning disable CS1591
+        ReverseCredit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OneTimeReservation")]
+        #pragma warning disable CS1591
+        OneTimeReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CompletedDeffered")]
+        #pragma warning disable CS1591
+        CompletedDeffered,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FirstReservation")]
+        #pragma warning disable CS1591
+        FirstReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UpdateReservation")]
+        #pragma warning disable CS1591
+        UpdateReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CompletedReservation")]
+        #pragma warning disable CS1591
+        CompletedReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CashAdvance")]
+        #pragma warning disable CS1591
+        CashAdvance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IssuerInstalment")]
+        #pragma warning disable CS1591
+        IssuerInstalment,
         #pragma warning restore CS1591
         [EnumMember(Value = "Declined")]
         #pragma warning disable CS1591
@@ -40,49 +59,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Failed,
         #pragma warning restore CS1591
-        [EnumMember(Value = "FirstReservation")]
+        [EnumMember(Value = "Award")]
         #pragma warning disable CS1591
-        FirstReservation,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "IssuerInstalment")]
-        #pragma warning disable CS1591
-        IssuerInstalment,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OneTimeReservation")]
-        #pragma warning disable CS1591
-        OneTimeReservation,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Rebate")]
-        #pragma warning disable CS1591
-        Rebate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Redemption")]
-        #pragma warning disable CS1591
-        Redemption,
+        Award,
         #pragma warning restore CS1591
         [EnumMember(Value = "ReverseAward")]
         #pragma warning disable CS1591
         ReverseAward,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ReverseCredit")]
+        [EnumMember(Value = "Redemption")]
         #pragma warning disable CS1591
-        ReverseCredit,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ReverseDebit")]
-        #pragma warning disable CS1591
-        ReverseDebit,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ReverseRebate")]
-        #pragma warning disable CS1591
-        ReverseRebate,
+        Redemption,
         #pragma warning restore CS1591
         [EnumMember(Value = "ReverseRedemption")]
         #pragma warning disable CS1591
         ReverseRedemption,
         #pragma warning restore CS1591
-        [EnumMember(Value = "UpdateReservation")]
+        [EnumMember(Value = "Rebate")]
         #pragma warning disable CS1591
-        UpdateReservation,
+        Rebate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ReverseRebate")]
+        #pragma warning disable CS1591
+        ReverseRebate,
         #pragma warning restore CS1591
     }
 }

@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **SingleHeight*** **DoubleHeight*** **HalfHeight**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CharacterHeight
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "SingleHeight")]
+        #pragma warning disable CS1591
+        SingleHeight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DoubleHeight")]
         #pragma warning disable CS1591
         DoubleHeight,
@@ -15,10 +18,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "HalfHeight")]
         #pragma warning disable CS1591
         HalfHeight,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SingleHeight")]
-        #pragma warning disable CS1591
-        SingleHeight,
         #pragma warning restore CS1591
     }
 }

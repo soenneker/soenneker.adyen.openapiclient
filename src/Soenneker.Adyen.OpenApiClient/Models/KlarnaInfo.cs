@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string DisputeEmail { get; set; }
 #endif
         /// <summary>The region of operation. For example, **NA**, **EU**, **CH**, **AU**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo_region? Region { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfoRegion? Region { get; set; }
         /// <summary>The email address of merchant support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "autoCapture", n => { AutoCapture = n.GetBoolValue(); } },
                 { "disputeEmail", n => { DisputeEmail = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo_region>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfoRegion>(); } },
                 { "supportEmail", n => { SupportEmail = n.GetStringValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autoCapture", AutoCapture);
             writer.WriteStringValue("disputeEmail", DisputeEmail);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfo_region>("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaInfoRegion>("region", Region);
             writer.WriteStringValue("supportEmail", SupportEmail);
         }
     }

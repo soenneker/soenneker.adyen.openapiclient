@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be returned in a particular modification response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PspReference { get; set; }
 #endif
         /// <summary>Indicates if the modification request has been received for processing.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_response? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse? Response { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_response>(); } },
+                { "response", n => { Response = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse>(); } },
             };
         }
         /// <summary>
@@ -60,9 +60,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("pspReference", PspReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult_response>("response", Response);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse>("response", Response);
         }
     }
 }

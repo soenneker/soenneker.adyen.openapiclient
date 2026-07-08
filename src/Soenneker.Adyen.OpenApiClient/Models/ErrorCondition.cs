@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Aborted*** **Busy*** **Cancel*** **DeviceOut*** **InsertedCard*** **InProgress*** **LoggedOut*** **MessageFormat*** **NotAllowed*** **NotFound*** **PaymentRestriction*** **Refusal*** **UnavailableDevice*** **UnavailableService*** **InvalidCard*** **UnreachableHost*** **WrongPIN**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ErrorCondition
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Aborted")]
         #pragma warning disable CS1591
@@ -24,17 +23,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         DeviceOut,
         #pragma warning restore CS1591
-        [EnumMember(Value = "InProgress")]
-        #pragma warning disable CS1591
-        InProgress,
-        #pragma warning restore CS1591
         [EnumMember(Value = "InsertedCard")]
         #pragma warning disable CS1591
         InsertedCard,
         #pragma warning restore CS1591
-        [EnumMember(Value = "InvalidCard")]
+        [EnumMember(Value = "InProgress")]
         #pragma warning disable CS1591
-        InvalidCard,
+        InProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "LoggedOut")]
         #pragma warning disable CS1591
@@ -68,13 +63,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         UnavailableService,
         #pragma warning restore CS1591
+        [EnumMember(Value = "InvalidCard")]
+        #pragma warning disable CS1591
+        InvalidCard,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UnreachableHost")]
         #pragma warning disable CS1591
         UnreachableHost,
         #pragma warning restore CS1591
         [EnumMember(Value = "WrongPIN")]
         #pragma warning disable CS1591
-        WrongPIN,
+        WrongPin,
         #pragma warning restore CS1591
     }
 }

@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>The status of the transfer event.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ModificationStatus? Status { get; set; }
         /// <summary>The type of transfer modification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "direction", n => { Direction = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ModificationStatus>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("direction", Direction);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ModificationStatus>("status", Status);
             writer.WriteStringValue("type", Type);
         }
     }

@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A map of name-value pairs for passing additional or industry-specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSource_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSourceAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSource_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSourceAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The billingAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSource_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSource_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSourceAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSourceAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Address>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Address.CreateFromDiscriminatorValue); } },
                 { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card.CreateFromDiscriminatorValue); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
@@ -93,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSource_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FundSourceAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Address>("billingAddress", BillingAddress);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card>("card", Card);
             writer.WriteStringValue("shopperEmail", ShopperEmail);

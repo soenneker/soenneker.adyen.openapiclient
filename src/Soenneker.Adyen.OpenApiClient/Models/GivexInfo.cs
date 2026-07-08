@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Password { get; set; }
 #endif
         /// <summary>The sales channel used for the payment.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo_paymentFlow? PaymentFlow { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GivexInfoPaymentFlow? PaymentFlow { get; set; }
         /// <summary>The username provided by the acquirer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
-                { "paymentFlow", n => { PaymentFlow = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo_paymentFlow>(); } },
+                { "paymentFlow", n => { PaymentFlow = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexInfoPaymentFlow>(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteStringValue("password", Password);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexInfo_paymentFlow>("paymentFlow", PaymentFlow);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GivexInfoPaymentFlow>("paymentFlow", PaymentFlow);
             writer.WriteStringValue("username", Username);
         }
     }

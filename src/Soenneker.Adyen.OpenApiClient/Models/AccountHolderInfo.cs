@@ -23,18 +23,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs that specify the actions that an account holder can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_capabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoCapabilitiesProperty? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_capabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoCapabilitiesProperty Capabilities { get; set; }
 #endif
         /// <summary>The contactDetails property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails? ContactDetails { get; set; }
 #nullable restore
 #else
-        public string ContactDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails ContactDetails { get; set; }
 #endif
         /// <summary>Your description for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,10 +56,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_metadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_metadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The unique identifier of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,11 +104,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_capabilities>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_capabilities.CreateFromDiscriminatorValue); } },
-                { "contactDetails", n => { ContactDetails = n.GetStringValue(); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoCapabilitiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoCapabilitiesProperty.CreateFromDiscriminatorValue); } },
+                { "contactDetails", n => { ContactDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_metadata>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "migratedAccountHolderCode", n => { MigratedAccountHolderCode = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
@@ -121,11 +122,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_capabilities>("capabilities", Capabilities);
-            writer.WriteStringValue("contactDetails", ContactDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoCapabilitiesProperty>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails>("contactDetails", ContactDetails);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfo_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderInfoMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("timeZone", TimeZone);
         }

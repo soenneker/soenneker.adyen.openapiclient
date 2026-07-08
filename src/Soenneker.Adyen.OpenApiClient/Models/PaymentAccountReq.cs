@@ -12,17 +12,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PaymentAccountReq : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.Possible values:* **CardTotals*** **Checking*** **CreditCard*** **Default*** **EpurseCard*** **Investment*** **Savings*** **Universal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1AccountType? AccountType { get; set; }
+        /// <summary>Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.Possible values:* **Default*** **Savings*** **Checking*** **CreditCard*** **Universal*** **Investment*** **CardTotals*** **EpurseCard**</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1AccountType? AccountType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType? CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType CardAcquisitionReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get; set; }
 #endif
         /// <summary>Data related to the instrument of payment for the transaction.Sent in the result of the payment transaction. For a card, it could also be sent in the `CardAcquisition` response, to be processed by the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,8 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AccountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1AccountType>(); } },
-                { "CardAcquisitionReference", n => { CardAcquisitionReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType.CreateFromDiscriminatorValue); } },
+                { "AccountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1AccountType>(); } },
+                { "CardAcquisitionReference", n => { CardAcquisitionReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData.CreateFromDiscriminatorValue); } },
             };
         }
@@ -69,8 +69,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1AccountType>("AccountType", AccountType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>("CardAcquisitionReference", CardAcquisitionReference);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1AccountType>("AccountType", AccountType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("CardAcquisitionReference", CardAcquisitionReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
             writer.WriteAdditionalData(AdditionalData);
         }

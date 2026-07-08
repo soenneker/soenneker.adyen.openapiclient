@@ -87,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperEmail { get; set; }
 #endif
         /// <summary>Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.For the web service API, Adyen assumes Ecommerce shopper interaction by default.This field has the following possible values:* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutRequest_shopperInteraction? ShopperInteraction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutRequestShopperInteraction? ShopperInteraction { get; set; }
         /// <summary>The shopperName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,7 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "selectedRecurringDetailReference", n => { SelectedRecurringDetailReference = n.GetStringValue(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
-                { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutRequest_shopperInteraction>(); } },
+                { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutRequestShopperInteraction>(); } },
                 { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Name>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Name.CreateFromDiscriminatorValue); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
@@ -163,7 +163,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("selectedRecurringDetailReference", SelectedRecurringDetailReference);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutRequest_shopperInteraction>("shopperInteraction", ShopperInteraction);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutRequestShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Name>("shopperName", ShopperName);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);

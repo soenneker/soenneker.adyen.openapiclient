@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;Direction on how to handle any payouts that have already been scheduled.Possible values:* `CLOSE`: close the existing batch of payouts.* `UPDATE`: reschedule the existing batch to the new schedule.* `NOTHING` (**default**): allow the payout to proceed.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest_action? Action { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction? Action { get; set; }
         /// <summary>The reason for the payout schedule update.&gt; This field is required when the `schedule` parameter is set to `HOLD`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reason { get; set; }
 #endif
         /// <summary>&quot;The new payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest_schedule? Schedule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule? Schedule { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +42,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest_action>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction>(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest_schedule>(); } },
+                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule>(); } },
             };
         }
         /// <summary>
@@ -54,9 +54,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest_action>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction>("action", Action);
             writer.WriteStringValue("reason", Reason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest_schedule>("schedule", Schedule);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule>("schedule", Schedule);
         }
     }
 }

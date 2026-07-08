@@ -23,7 +23,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates whether the Amex Merchant ID is reused from a previously setup Amex payment method. This is only applicable for `gatewayContract` and `paymentDesignatorContract` service levels. The default value is **false**.</summary>
         public bool? ReuseMidNumber { get; set; }
         /// <summary>&quot;Specifies the service level (settlement type) of this payment method. Possible values:* **noContract**: Adyen holds the contract with American Express.* **gatewayContract**: American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Adyen receives the settlement, and handles disputes and payouts.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo_serviceLevel? ServiceLevel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel? ServiceLevel { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo"/> and sets the default values.
+        /// </summary>
+        public AmexInfo()
+        {
+            ReuseMidNumber = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "midNumber", n => { MidNumber = n.GetStringValue(); } },
                 { "reuseMidNumber", n => { ReuseMidNumber = n.GetBoolValue(); } },
-                { "serviceLevel", n => { ServiceLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo_serviceLevel>(); } },
+                { "serviceLevel", n => { ServiceLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel>(); } },
             };
         }
         /// <summary>
@@ -56,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("midNumber", MidNumber);
             writer.WriteBoolValue("reuseMidNumber", ReuseMidNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfo_serviceLevel>("serviceLevel", ServiceLevel);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel>("serviceLevel", ServiceLevel);
         }
     }
 }

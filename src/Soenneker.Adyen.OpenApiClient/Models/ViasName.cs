@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string FirstName { get; set; }
 #endif
         /// <summary>&quot;The gender.&gt;The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasName_gender? Gender { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ViasNameGender? Gender { get; set; }
         /// <summary>The name&apos;s infix, if applicable.&gt;A maximum length of twenty (20) characters is imposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasName_gender>(); } },
+                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasNameGender>(); } },
                 { "infix", n => { Infix = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("firstName", FirstName);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasName_gender>("gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasNameGender>("gender", Gender);
             writer.WriteStringValue("infix", Infix);
             writer.WriteStringValue("lastName", LastName);
         }

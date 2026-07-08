@@ -41,10 +41,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The subMerchantData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SoftPOSConfigurationServiceV3SubMerchantData? SubMerchantData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SoftPosConfigurationServiceV3SubMerchantData? SubMerchantData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SoftPOSConfigurationServiceV3SubMerchantData SubMerchantData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SoftPosConfigurationServiceV3SubMerchantData SubMerchantData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CertificateLoadingRequest"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "setupToken", n => { SetupToken = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
-                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SoftPOSConfigurationServiceV3SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.SoftPOSConfigurationServiceV3SubMerchantData.CreateFromDiscriminatorValue); } },
+                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SoftPosConfigurationServiceV3SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.SoftPosConfigurationServiceV3SubMerchantData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("setupToken", SetupToken);
             writer.WriteStringValue("store", Store);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SoftPOSConfigurationServiceV3SubMerchantData>("subMerchantData", SubMerchantData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SoftPosConfigurationServiceV3SubMerchantData>("subMerchantData", SubMerchantData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

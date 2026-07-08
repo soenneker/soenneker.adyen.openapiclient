@@ -3,25 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Type of instalment transaction.Possible values:* **Annual*** **Daily*** **Monthly*** **Weekly**</summary>
+    /// <summary>Type of instalment transaction.Possible values:* **Daily*** **Weekly*** **Monthly*** **Annual**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PeriodUnit
     {
-        [EnumMember(Value = "Annual")]
-        #pragma warning disable CS1591
-        Annual,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Daily")]
         #pragma warning disable CS1591
         Daily,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Weekly")]
+        #pragma warning disable CS1591
+        Weekly,
         #pragma warning restore CS1591
         [EnumMember(Value = "Monthly")]
         #pragma warning disable CS1591
         Monthly,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Weekly")]
+        [EnumMember(Value = "Annual")]
         #pragma warning disable CS1591
-        Weekly,
+        Annual,
         #pragma warning restore CS1591
     }
 }

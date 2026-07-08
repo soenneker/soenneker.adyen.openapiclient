@@ -58,10 +58,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError_response? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError_response Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse Response { get; set; }
 #endif
         /// <summary>Detailed explanation of each attempt to route the transfer with the priorities from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "instance", n => { Instance = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError_response>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError_response.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse.CreateFromDiscriminatorValue); } },
                 { "routingDetails", n => { RoutingDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails>(global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -131,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("instance", Instance);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField>("invalidFields", InvalidFields);
             writer.WriteStringValue("requestId", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError_response>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse>("response", Response);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails>("routingDetails", RoutingDetails);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);

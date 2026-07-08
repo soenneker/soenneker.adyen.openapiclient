@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The event types to test.  If left blank, then all of the configured event types will be tested.&gt;Permitted values: `ACCOUNT_HOLDER_CREATED`, `ACCOUNT_CREATED`, `ACCOUNT_UPDATED`, `ACCOUNT_HOLDER_UPDATED`, `ACCOUNT_HOLDER_STATUS_CHANGE`, `ACCOUNT_HOLDER_STORE_STATUS_CHANGE` `ACCOUNT_HOLDER_VERIFICATION`, `ACCOUNT_HOLDER_LIMIT_REACHED`, `ACCOUNT_HOLDER_PAYOUT`, `PAYMENT_FAILURE`, `SCHEDULED_REFUNDS`, `REPORT_AVAILABLE`, `TRANSFER_FUNDS`, `BENEFICIARY_SETUP`, `COMPENSATE_NEGATIVE_BALANCE`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequest_eventTypes?>? EventTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequestEventTypesItem?>? EventTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequest_eventTypes?> EventTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequestEventTypesItem?> EventTypes { get; set; }
 #endif
         /// <summary>The ID of the notification subscription configuration to be tested.</summary>
         public long? NotificationId { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequest_eventTypes>()?.AsList(); } },
+                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequestEventTypesItem>()?.AsList(); } },
                 { "notificationId", n => { NotificationId = n.GetLongValue(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequest_eventTypes>("eventTypes", EventTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationRequestEventTypesItem>("eventTypes", EventTypes);
             writer.WriteLongValue("notificationId", NotificationId);
         }
     }

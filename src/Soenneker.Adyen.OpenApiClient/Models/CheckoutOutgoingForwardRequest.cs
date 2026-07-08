@@ -31,13 +31,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The request headers that will be included in the request Adyen makes to the third party on your behalf. Supports the `{{credentials}}` [placeholder](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#placeholders).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_headers? Headers { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_headers Headers { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty Headers { get; set; }
 #endif
         /// <summary>The HTTP method to use for the request Adyen makes on your behalf to the third party.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_httpMethod? HttpMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod? HttpMethod { get; set; }
         /// <summary>The suffix that Adyen needs to append to the `baseUrl` to construct the destination URL that belongs to the third party. This is usually the endpoint name for the request, for example, **/payments**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,8 +66,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "credentials", n => { Credentials = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_headers>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_headers.CreateFromDiscriminatorValue); } },
-                { "httpMethod", n => { HttpMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_httpMethod>(); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty.CreateFromDiscriminatorValue); } },
+                { "httpMethod", n => { HttpMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod>(); } },
                 { "urlSuffix", n => { UrlSuffix = n.GetStringValue(); } },
             };
         }
@@ -80,8 +80,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("credentials", Credentials);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_headers>("headers", Headers);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest_httpMethod>("httpMethod", HttpMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty>("headers", Headers);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod>("httpMethod", HttpMethod);
             writer.WriteStringValue("urlSuffix", UrlSuffix);
         }
     }

@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TrackData TrackData { get; set; }
 #endif
-        /// <summary>The TypeCode property</summary>
+        /// <summary>Possible values:* **Personal*** **Company**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TypeCodeObject? TypeCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckData"/> and sets the default values.

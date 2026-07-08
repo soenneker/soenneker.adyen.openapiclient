@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> Ids { get; set; }
 #endif
         /// <summary>&quot;The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequest_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequestType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequestType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequestType>("type", Type);
         }
     }
 }

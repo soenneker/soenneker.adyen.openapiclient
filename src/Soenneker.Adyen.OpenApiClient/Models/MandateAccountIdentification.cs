@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "ukLocal" => new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UKLocalMandateAccountIdentification(),
+                "ukLocal" => new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UkLocalMandateAccountIdentification(),
                 _ => new global::Soenneker.Adyen.OpenApiClient.Models.MandateAccountIdentification(),
             };
         }

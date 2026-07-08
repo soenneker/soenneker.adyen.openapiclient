@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CheckoutAttemptId { get; set; }
 #endif
         /// <summary>The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails_fundingSource? FundingSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsFundingSource? FundingSource { get; set; }
         /// <summary>Base64-encoded JSON object containing SDK related parameters required by the SDK</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>**visacheckout**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsType? Type { get; set; }
         /// <summary>The Visa Click to Pay Call ID value. When your shopper selects a payment and/or a shipping address from Visa Click to Pay, you will receive a Visa Click to Pay Call ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,9 +59,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails_fundingSource>(); } },
+                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsFundingSource>(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsType>(); } },
                 { "visaCheckoutCallId", n => { VisaCheckoutCallId = n.GetStringValue(); } },
             };
         }
@@ -73,9 +73,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails_fundingSource>("fundingSource", FundingSource);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsType>("type", Type);
             writer.WriteStringValue("visaCheckoutCallId", VisaCheckoutCallId);
         }
     }

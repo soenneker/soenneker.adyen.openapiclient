@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string InterchangeRateIndicator { get; set; }
 #endif
         /// <summary>&quot;The type of events data. Possible values:  - **interchangeData**: information about the interchange fee applied to a transaction.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "interchangeAmount", n => { InterchangeAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
                 { "interchangeRateIndicator", n => { InterchangeRateIndicator = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("interchangeAmount", InterchangeAmount);
             writer.WriteStringValue("interchangeRateIndicator", InterchangeRateIndicator);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataType>("type", Type);
         }
     }
 }

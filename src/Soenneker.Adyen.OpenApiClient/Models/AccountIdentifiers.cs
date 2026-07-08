@@ -15,52 +15,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ach property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ACHAccountIdentifier? Ach { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier? Ach { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ACHAccountIdentifier Ach { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier Ach { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bacs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BACSAccountIdentifier? Bacs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier? Bacs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BACSAccountIdentifier Bacs { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier Bacs { get; set; }
 #endif
         /// <summary>The bsb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BSBAccountIdentifier? Bsb { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier? Bsb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BSBAccountIdentifier Bsb { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier Bsb { get; set; }
 #endif
         /// <summary>The eft property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EFTAccountIdentifier? Eft { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier? Eft { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EFTAccountIdentifier Eft { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier Eft { get; set; }
 #endif
         /// <summary>The iban property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.IBANAccountIdentifier? Iban { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier? Iban { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.IBANAccountIdentifier Iban { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier Iban { get; set; }
 #endif
         /// <summary>The rix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RIXAccountIdentifier? Rix { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier? Rix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RIXAccountIdentifier Rix { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier Rix { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountIdentifiers"/> and sets the default values.
@@ -87,12 +87,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ach", n => { Ach = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ACHAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.ACHAccountIdentifier.CreateFromDiscriminatorValue); } },
-                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BACSAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.BACSAccountIdentifier.CreateFromDiscriminatorValue); } },
-                { "bsb", n => { Bsb = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BSBAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.BSBAccountIdentifier.CreateFromDiscriminatorValue); } },
-                { "eft", n => { Eft = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EFTAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.EFTAccountIdentifier.CreateFromDiscriminatorValue); } },
-                { "iban", n => { Iban = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IBANAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.IBANAccountIdentifier.CreateFromDiscriminatorValue); } },
-                { "rix", n => { Rix = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RIXAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.RIXAccountIdentifier.CreateFromDiscriminatorValue); } },
+                { "ach", n => { Ach = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier.CreateFromDiscriminatorValue); } },
+                { "bacs", n => { Bacs = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier.CreateFromDiscriminatorValue); } },
+                { "bsb", n => { Bsb = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier.CreateFromDiscriminatorValue); } },
+                { "eft", n => { Eft = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier.CreateFromDiscriminatorValue); } },
+                { "iban", n => { Iban = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier.CreateFromDiscriminatorValue); } },
+                { "rix", n => { Rix = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier>(global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,12 +102,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ACHAccountIdentifier>("ach", Ach);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BACSAccountIdentifier>("bacs", Bacs);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BSBAccountIdentifier>("bsb", Bsb);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EFTAccountIdentifier>("eft", Eft);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IBANAccountIdentifier>("iban", Iban);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RIXAccountIdentifier>("rix", Rix);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AchAccountIdentifier>("ach", Ach);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BacsAccountIdentifier>("bacs", Bacs);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BsbAccountIdentifier>("bsb", Bsb);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EftAccountIdentifier>("eft", Eft);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentifier>("iban", Iban);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RixAccountIdentifier>("rix", Rix);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

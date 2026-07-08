@@ -3,29 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Indicates if the printer is working and usable.Possible values:* **NoPaper*** **OK*** **OutOfOrder*** **PaperJam*** **PaperLow**</summary>
+    /// <summary>Indicates if the printer is working and usable.Possible values:* **OK*** **PaperLow*** **NoPaper*** **PaperJam*** **OutOfOrder**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PrinterStatus
     {
+        [EnumMember(Value = "OK")]
+        #pragma warning disable CS1591
+        Ok,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PaperLow")]
+        #pragma warning disable CS1591
+        PaperLow,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NoPaper")]
         #pragma warning disable CS1591
         NoPaper,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OK")]
-        #pragma warning disable CS1591
-        OK,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OutOfOrder")]
-        #pragma warning disable CS1591
-        OutOfOrder,
         #pragma warning restore CS1591
         [EnumMember(Value = "PaperJam")]
         #pragma warning disable CS1591
         PaperJam,
         #pragma warning restore CS1591
-        [EnumMember(Value = "PaperLow")]
+        [EnumMember(Value = "OutOfOrder")]
         #pragma warning disable CS1591
-        PaperLow,
+        OutOfOrder,
         #pragma warning restore CS1591
     }
 }

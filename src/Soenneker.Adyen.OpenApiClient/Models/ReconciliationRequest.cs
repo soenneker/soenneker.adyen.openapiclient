@@ -25,7 +25,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.Absent if ReconciliationType is not PreviousReconciliation.</summary>
         public int? POIReconciliationID { get; set; }
-        /// <summary>The ReconciliationType property</summary>
+        /// <summary>Possible values:* **SaleReconciliation*** **AcquirerSynchronisation*** **AcquirerReconciliation*** **PreviousReconciliation**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationType? ReconciliationType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequest"/> and sets the default values.

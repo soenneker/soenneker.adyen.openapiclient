@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType? AcquirerTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? AcquirerTransactionID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType AcquirerTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType AcquirerTransactionID { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "AcquirerID", n => { AcquirerID = n.GetIntValue(); } },
                 { "AcquirerPOIID", n => { AcquirerPOIID = n.GetStringValue(); } },
-                { "AcquirerTransactionID", n => { AcquirerTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType.CreateFromDiscriminatorValue); } },
+                { "AcquirerTransactionID", n => { AcquirerTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "ApprovalCode", n => { ApprovalCode = n.GetStringValue(); } },
                 { "HostReconciliationID", n => { HostReconciliationID = n.GetStringValue(); } },
                 { "MerchantID", n => { MerchantID = n.GetStringValue(); } },
@@ -99,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("AcquirerID", AcquirerID);
             writer.WriteStringValue("AcquirerPOIID", AcquirerPOIID);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>("AcquirerTransactionID", AcquirerTransactionID);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("AcquirerTransactionID", AcquirerTransactionID);
             writer.WriteStringValue("ApprovalCode", ApprovalCode);
             writer.WriteStringValue("HostReconciliationID", HostReconciliationID);
             writer.WriteStringValue("MerchantID", MerchantID);

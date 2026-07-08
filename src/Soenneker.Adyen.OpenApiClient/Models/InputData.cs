@@ -32,8 +32,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DefaultLayoutString { get; set; }
 #endif
-        /// <summary>The Device property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1Device? Device { get; set; }
+        /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device? Device { get; set; }
         /// <summary>Indicates if the Cancel function key has to be deactivated (value True).</summary>
         public bool? DisableCancelFlag { get; set; }
         /// <summary>Indicates if the Correct function key has to be deactivated (value True). During the processing of an Input command `GetConfirmation`, `SiteManager`, or `GetMenuEntry`.</summary>
@@ -46,9 +46,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? GlobalCorrectionFlag { get; set; }
         /// <summary>Indicates whether to request an Immediate response to the message without waiting for the completion of the command.</summary>
         public bool? ImmediateResponseFlag { get; set; }
-        /// <summary>The InfoQualify property</summary>
+        /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify? InfoQualify { get; set; }
-        /// <summary>The InputCommand property</summary>
+        /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputCommand? InputCommand { get; set; }
         /// <summary>Indicates to mask the characters entered by the user (i.e. replacing in the display of the input, the entered character by a standard character as *).</summary>
         public bool? MaskCharactersFlag { get; set; }
@@ -80,6 +80,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public InputData()
         {
             AdditionalData = new Dictionary<string, object>();
+            BeepKeyFlag = false;
+            DisableCancelFlag = false;
+            DisableCorrectFlag = false;
+            DisableValidFlag = false;
+            FromRightToLeftFlag = false;
+            GlobalCorrectionFlag = false;
+            ImmediateResponseFlag = false;
+            MaskCharactersFlag = false;
+            MenuBackFlag = false;
+            NotifyCardInputFlag = false;
+            WaitUserValidationFlag = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "BeepKeyFlag", n => { BeepKeyFlag = n.GetBoolValue(); } },
                 { "DefaultInputString", n => { DefaultInputString = n.GetStringValue(); } },
                 { "DefaultLayoutString", n => { DefaultLayoutString = n.GetStringValue(); } },
-                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1Device>(); } },
+                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device>(); } },
                 { "DisableCancelFlag", n => { DisableCancelFlag = n.GetBoolValue(); } },
                 { "DisableCorrectFlag", n => { DisableCorrectFlag = n.GetBoolValue(); } },
                 { "DisableValidFlag", n => { DisableValidFlag = n.GetBoolValue(); } },
@@ -132,7 +143,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("BeepKeyFlag", BeepKeyFlag);
             writer.WriteStringValue("DefaultInputString", DefaultInputString);
             writer.WriteStringValue("DefaultLayoutString", DefaultLayoutString);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1Device>("Device", Device);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device>("Device", Device);
             writer.WriteBoolValue("DisableCancelFlag", DisableCancelFlag);
             writer.WriteBoolValue("DisableCorrectFlag", DisableCorrectFlag);
             writer.WriteBoolValue("DisableValidFlag", DisableValidFlag);

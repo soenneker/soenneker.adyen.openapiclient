@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;Deducts the acquiring fees (the aggregated amount of interchange and scheme fee) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_acquiringFees? AcquiringFees { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees? AcquiringFees { get; set; }
         /// <summary>The additionalCommission property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,15 +23,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalCommission AdditionalCommission { get; set; }
 #endif
         /// <summary>&quot;Deducts the transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/guides/payments-training-guide/get-the-best-from-your-card-processing) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenCommission? AdyenCommission { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission? AdyenCommission { get; set; }
         /// <summary>&quot;Deducts the fees due to Adyen (markup or commission) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenFees? AdyenFees { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees? AdyenFees { get; set; }
         /// <summary>&quot;Deducts the transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/what-is-interchange) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenMarkup? AdyenMarkup { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup? AdyenMarkup { get; set; }
         /// <summary>&quot;Specifies how and from which balance account(s) to deduct the chargeback amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_chargeback? Chargeback { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback? Chargeback { get; set; }
         /// <summary>&quot;Deducts the chargeback costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_chargebackCostAllocation? ChargebackCostAllocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation? ChargebackCostAllocation { get; set; }
         /// <summary>The commission property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,17 +41,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.Commission Commission { get; set; }
 #endif
         /// <summary>&quot;Deducts the interchange fee from specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_interchange? Interchange { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange? Interchange { get; set; }
         /// <summary>&quot;Deducts all transaction fees incurred by the payment from the specified balance account. The transaction fees include the acquiring fees (interchange and scheme fee), and the fees due to Adyen (markup or commission). You can book any and all these fees to different balance account by specifying other transaction fee parameters in your split configuration profile:- [`adyenCommission`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenCommission): The transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`adyenMarkup`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenMarkup): The transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`schemeFee`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-schemeFee): The fee paid to the card scheme for using their network.- [`interchange`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-interchange): The fee paid to the issuer for each payment transaction made with the card network.- [`adyenFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenFees): The aggregated amount of Adyen&apos;s commission and markup.- [`acquiringFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-acquiringFees): The aggregated amount of the interchange and scheme fees.If you don&apos;t include at least one transaction fee type in the `splitLogic` object, Adyen updates the payment request with the `paymentFee` parameter, booking all transaction fees to your platform&apos;s liable balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_paymentFee? PaymentFee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee? PaymentFee { get; set; }
         /// <summary>&quot;Specifies how and from which balance account(s) to deduct the refund amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_refund? Refund { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund? Refund { get; set; }
         /// <summary>&quot;Deducts the refund costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_refundCostAllocation? RefundCostAllocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation? RefundCostAllocation { get; set; }
         /// <summary>&quot;Books the amount left over after currency conversion to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_remainder? Remainder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder? Remainder { get; set; }
         /// <summary>&quot;Deducts the scheme fee from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_schemeFee? SchemeFee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee? SchemeFee { get; set; }
         /// <summary>Unique identifier of the collection of split instructions that are applied when the rule conditions are met.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,9 +61,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SplitLogicId { get; private set; }
 #endif
         /// <summary>&quot;Books the surcharge amount to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_surcharge? Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge? Surcharge { get; set; }
         /// <summary>&quot;Books the tips (gratuity) to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_tip? Tip { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip? Tip { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,23 +82,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "acquiringFees", n => { AcquiringFees = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_acquiringFees>(); } },
+                { "acquiringFees", n => { AcquiringFees = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees>(); } },
                 { "additionalCommission", n => { AdditionalCommission = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalCommission>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalCommission.CreateFromDiscriminatorValue); } },
-                { "adyenCommission", n => { AdyenCommission = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenCommission>(); } },
-                { "adyenFees", n => { AdyenFees = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenFees>(); } },
-                { "adyenMarkup", n => { AdyenMarkup = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenMarkup>(); } },
-                { "chargeback", n => { Chargeback = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_chargeback>(); } },
-                { "chargebackCostAllocation", n => { ChargebackCostAllocation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_chargebackCostAllocation>(); } },
+                { "adyenCommission", n => { AdyenCommission = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission>(); } },
+                { "adyenFees", n => { AdyenFees = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees>(); } },
+                { "adyenMarkup", n => { AdyenMarkup = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup>(); } },
+                { "chargeback", n => { Chargeback = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback>(); } },
+                { "chargebackCostAllocation", n => { ChargebackCostAllocation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation>(); } },
                 { "commission", n => { Commission = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Commission>(global::Soenneker.Adyen.OpenApiClient.Models.Commission.CreateFromDiscriminatorValue); } },
-                { "interchange", n => { Interchange = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_interchange>(); } },
-                { "paymentFee", n => { PaymentFee = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_paymentFee>(); } },
-                { "refund", n => { Refund = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_refund>(); } },
-                { "refundCostAllocation", n => { RefundCostAllocation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_refundCostAllocation>(); } },
-                { "remainder", n => { Remainder = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_remainder>(); } },
-                { "schemeFee", n => { SchemeFee = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_schemeFee>(); } },
+                { "interchange", n => { Interchange = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange>(); } },
+                { "paymentFee", n => { PaymentFee = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee>(); } },
+                { "refund", n => { Refund = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund>(); } },
+                { "refundCostAllocation", n => { RefundCostAllocation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation>(); } },
+                { "remainder", n => { Remainder = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder>(); } },
+                { "schemeFee", n => { SchemeFee = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee>(); } },
                 { "splitLogicId", n => { SplitLogicId = n.GetStringValue(); } },
-                { "surcharge", n => { Surcharge = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_surcharge>(); } },
-                { "tip", n => { Tip = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_tip>(); } },
+                { "surcharge", n => { Surcharge = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge>(); } },
+                { "tip", n => { Tip = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip>(); } },
             };
         }
         /// <summary>
@@ -108,22 +108,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_acquiringFees>("acquiringFees", AcquiringFees);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees>("acquiringFees", AcquiringFees);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalCommission>("additionalCommission", AdditionalCommission);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenCommission>("adyenCommission", AdyenCommission);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenFees>("adyenFees", AdyenFees);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_adyenMarkup>("adyenMarkup", AdyenMarkup);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_chargeback>("chargeback", Chargeback);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_chargebackCostAllocation>("chargebackCostAllocation", ChargebackCostAllocation);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission>("adyenCommission", AdyenCommission);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees>("adyenFees", AdyenFees);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup>("adyenMarkup", AdyenMarkup);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback>("chargeback", Chargeback);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation>("chargebackCostAllocation", ChargebackCostAllocation);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Commission>("commission", Commission);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_interchange>("interchange", Interchange);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_paymentFee>("paymentFee", PaymentFee);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_refund>("refund", Refund);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_refundCostAllocation>("refundCostAllocation", RefundCostAllocation);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_remainder>("remainder", Remainder);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_schemeFee>("schemeFee", SchemeFee);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_surcharge>("surcharge", Surcharge);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic_tip>("tip", Tip);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange>("interchange", Interchange);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee>("paymentFee", PaymentFee);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund>("refund", Refund);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation>("refundCostAllocation", RefundCostAllocation);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder>("remainder", Remainder);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee>("schemeFee", SchemeFee);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge>("surcharge", Surcharge);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip>("tip", Tip);
         }
     }
 }

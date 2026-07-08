@@ -17,7 +17,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pendingSCA")]
         #pragma warning disable CS1591
-        PendingSCA,
+        PendingSca,
         #pragma warning restore CS1591
         [EnumMember(Value = "scheduled")]
         #pragma warning disable CS1591

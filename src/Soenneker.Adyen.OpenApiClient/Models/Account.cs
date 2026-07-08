@@ -55,10 +55,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use by the merchant.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Account_metadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Account_metadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The payout method code held by the account holder to couple the account with. Scheduled card payouts will be sent using this payout method code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse PayoutSchedule { get; set; }
 #endif
         /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Account_payoutSpeed? PayoutSpeed { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>&quot;The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,10 +109,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "beneficiaryAccount", n => { BeneficiaryAccount = n.GetStringValue(); } },
                 { "beneficiaryMerchantReference", n => { BeneficiaryMerchantReference = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Account_metadata>(global::Soenneker.Adyen.OpenApiClient.Models.Account_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AccountMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "payoutMethodCode", n => { PayoutMethodCode = n.GetStringValue(); } },
                 { "payoutSchedule", n => { PayoutSchedule = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse.CreateFromDiscriminatorValue); } },
-                { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Account_payoutSpeed>(); } },
+                { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutSpeed>(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -128,10 +128,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("beneficiaryAccount", BeneficiaryAccount);
             writer.WriteStringValue("beneficiaryMerchantReference", BeneficiaryMerchantReference);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Account_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("payoutMethodCode", PayoutMethodCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse>("payoutSchedule", PayoutSchedule);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Account_payoutSpeed>("payoutSpeed", PayoutSpeed);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutSpeed>("payoutSpeed", PayoutSpeed);
             writer.WriteStringValue("status", Status);
         }
     }

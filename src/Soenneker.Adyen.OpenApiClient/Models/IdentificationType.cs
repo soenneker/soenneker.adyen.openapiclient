@@ -3,26 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **PAN*** **ISOTrack2*** **BarCode*** **AccountNumber*** **PhoneNumber**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum IdentificationType
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "AccountNumber")]
+        [EnumMember(Value = "PAN")]
         #pragma warning disable CS1591
-        AccountNumber,
+        Pan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ISOTrack2")]
+        #pragma warning disable CS1591
+        IsoTrack2,
         #pragma warning restore CS1591
         [EnumMember(Value = "BarCode")]
         #pragma warning disable CS1591
         BarCode,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ISOTrack2")]
+        [EnumMember(Value = "AccountNumber")]
         #pragma warning disable CS1591
-        ISOTrack2,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "PAN")]
-        #pragma warning disable CS1591
-        PAN,
+        AccountNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "PhoneNumber")]
         #pragma warning disable CS1591

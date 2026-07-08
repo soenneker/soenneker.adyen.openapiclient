@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PackageName { get; set; }
 #endif
         /// <summary>&quot;The status of the app. Possible values: * `processing`: the app is being signed and converted to a format that the terminal can handle.* `error`: something went wrong. Check that the app matches the [requirements](https://docs.adyen.com/point-of-sale/android-terminals/app-requirements).* `invalid`: there is something wrong with the APK file of the app.* `ready`: the app has been signed and converted.* `archived`: the app is no longer available.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AndroidApp_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus? Status { get; set; }
         /// <summary>The version number of the app.</summary>
         public int? VersionCode { get; set; }
         /// <summary>The app version number that is shown on the terminal.</summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "packageName", n => { PackageName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AndroidApp_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus>(); } },
                 { "versionCode", n => { VersionCode = n.GetIntValue(); } },
                 { "versionName", n => { VersionName = n.GetStringValue(); } },
             };
@@ -115,7 +115,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("packageName", PackageName);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AndroidApp_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus>("status", Status);
             writer.WriteIntValue("versionCode", VersionCode);
             writer.WriteStringValue("versionName", VersionName);
         }

@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegisteredDevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/registeredDevices?paymentInstrumentId={paymentInstrumentId}{&pageNumber*,pageSize*}", pathParameters)
+        public RegisteredDevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/registeredDevices{?pageNumber*,pageSize*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegisteredDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/registeredDevices?paymentInstrumentId={paymentInstrumentId}{&pageNumber*,pageSize*}", rawUrl)
+        public RegisteredDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/registeredDevices{?pageNumber*,pageSize*}", rawUrl)
         {
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         /// <summary>
         /// Initiates the registration of a user&apos;s device for Strong Customer Authentication (SCA). You can register SCA devices for [business accounts](https://docs.adyen.com/platforms/business-accounts/sca/register-devices) or [Adyen-issued cards](https://docs.adyen.com/issuing/3d-secure/oob-auth-sdk/register-devices).For a successful request, the device must be eligible for SCA.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCAResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,11 +91,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCAResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCARequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCAResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCARequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -108,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCAResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCAResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a paginated list of the SCA devices you have currently registered for a specific payment instrument.
@@ -124,7 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/BalancePlatformService-v2/registeredDevices?paymentInstrumentId={paymentInstrumentId}{&pageNumber*,pageSize*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -137,15 +137,15 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCARequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.RegisterSCARequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/BalancePlatformService-v2/registeredDevices", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contract type of the offer.Possible values:* **loan*** **cashAdvance**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOffer_contractType? ContractType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType? ContractType { get; set; }
         /// <summary>The expiration date and time of the offer validity period.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The financingType property</summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
-                { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOffer_contractType>(); } },
+                { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "financingType", n => { FinancingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FinancingType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderId", AccountHolderId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOffer_contractType>("contractType", ContractType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>("contractType", ContractType);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FinancingType>("financingType", FinancingType);
             writer.WriteStringValue("id", Id);

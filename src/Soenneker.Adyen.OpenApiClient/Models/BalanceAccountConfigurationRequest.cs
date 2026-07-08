@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Specifies whether the payout schedule is enabled immediately after it is created.</summary>
         public bool? Enabled { get; set; }
         /// <summary>&quot;The frequency of payouts initiated by this payout schedule.Possible values:* daily* weekdays* weekly* monthlyDefault value: The `defaultFrequency` from the balance platform schedule that you are applying.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationRequest_frequency? Frequency { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationRequestFrequency? Frequency { get; set; }
         /// <summary>&quot;The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.Possible values if `frequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.Possible values if `frequency` is **weekly**: **[1 - 5]**.Default value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.&quot;</summary>
         public int? FrequencyValue { get; set; }
         /// <summary>&quot;The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**&quot;</summary>
@@ -112,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationRequest_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationRequestFrequency>(); } },
                 { "frequencyValue", n => { FrequencyValue = n.GetIntValue(); } },
                 { "maxPayoutAmount", n => { MaxPayoutAmount = n.GetLongValue(); } },
                 { "minPayoutAmount", n => { MinPayoutAmount = n.GetLongValue(); } },
@@ -134,7 +134,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationRequest_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationRequestFrequency>("frequency", Frequency);
             writer.WriteIntValue("frequencyValue", FrequencyValue);
             writer.WriteLongValue("maxPayoutAmount", MaxPayoutAmount);
             writer.WriteLongValue("minPayoutAmount", MinPayoutAmount);

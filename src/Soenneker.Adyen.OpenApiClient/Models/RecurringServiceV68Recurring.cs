@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The type of recurring contract to be used.Possible values:* `ONECLICK` – Payment details can be used to initiate a one-click payment, where the shopper enters the [card security code (CVC/CVV)](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-security-code-cvc-cvv-cid).* `RECURRING` – Payment details can be used without the card security code to initiate [card-not-present transactions](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-not-present-cnp).* `ONECLICK,RECURRING` – Payment details can be used regardless of whether the shopper is on your site or not.* `PAYOUT` – Payment details can be used to [make a payout](https://docs.adyen.com/online-payments/online-payouts).* `EXTERNAL` - Use this when you store payment details and send the raw card number or network token directly in your API request.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring_contract? Contract { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68RecurringContract? Contract { get; set; }
         /// <summary>A descriptive name for this detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RecurringFrequency { get; set; }
 #endif
         /// <summary>The name of the token service.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring_tokenService? TokenService { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68RecurringTokenService? TokenService { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,11 +52,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contract", n => { Contract = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring_contract>(); } },
+                { "contract", n => { Contract = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68RecurringContract>(); } },
                 { "recurringDetailName", n => { RecurringDetailName = n.GetStringValue(); } },
                 { "recurringExpiry", n => { RecurringExpiry = n.GetDateTimeOffsetValue(); } },
                 { "recurringFrequency", n => { RecurringFrequency = n.GetStringValue(); } },
-                { "tokenService", n => { TokenService = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring_tokenService>(); } },
+                { "tokenService", n => { TokenService = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68RecurringTokenService>(); } },
             };
         }
         /// <summary>
@@ -66,11 +66,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring_contract>("contract", Contract);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68RecurringContract>("contract", Contract);
             writer.WriteStringValue("recurringDetailName", RecurringDetailName);
             writer.WriteDateTimeOffsetValue("recurringExpiry", RecurringExpiry);
             writer.WriteStringValue("recurringFrequency", RecurringFrequency);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring_tokenService>("tokenService", TokenService);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68RecurringTokenService>("tokenService", TokenService);
         }
     }
 }

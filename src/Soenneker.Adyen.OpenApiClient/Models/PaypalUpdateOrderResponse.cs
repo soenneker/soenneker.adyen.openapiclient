@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentData { get; set; }
 #endif
         /// <summary>The status of the request. This indicates whether the order was successfully updated with PayPal.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("paymentData", PaymentData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalUpdateOrderResponseStatus>("status", Status);
         }
     }
 }

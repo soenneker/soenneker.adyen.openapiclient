@@ -3,18 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **SingleWidth*** **DoubleWidth**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CharacterWidth
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "DoubleWidth")]
-        #pragma warning disable CS1591
-        DoubleWidth,
-        #pragma warning restore CS1591
         [EnumMember(Value = "SingleWidth")]
         #pragma warning disable CS1591
         SingleWidth,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DoubleWidth")]
+        #pragma warning disable CS1591
+        DoubleWidth,
         #pragma warning restore CS1591
     }
 }

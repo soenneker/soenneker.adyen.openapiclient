@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**directdebit_AU**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetailsType>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetailsType>("type", Type);
         }
     }
 }

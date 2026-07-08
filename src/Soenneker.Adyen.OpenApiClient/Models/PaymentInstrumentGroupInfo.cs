@@ -31,10 +31,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Properties of the payment instrument group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfo_properties? Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfo_properties Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty Properties { get; set; }
 #endif
         /// <summary>Your reference for the payment instrument group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfo_properties>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfo_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "txVariant", n => { TxVariant = n.GetStringValue(); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfo_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty>("properties", Properties);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("txVariant", TxVariant);
         }

@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reason { get; set; }
 #endif
         /// <summary>The result property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Result? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResultValue? Result { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ValidateShopperIdResponse"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Result>(); } },
+                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResultValue>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("reason", Reason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Result>("result", Result);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResultValue>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

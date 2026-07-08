@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ResultCode { get; set; }
 #endif
         /// <summary>&quot;The new status of the account.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType>("invalidFields", InvalidFields);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("resultCode", ResultCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponseStatus>("status", Status);
         }
     }
 }

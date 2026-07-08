@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CertificateAlias { get; set; }
 #endif
         /// <summary>Format or protocol for receiving webhooks. Possible values:* **soap*** **http*** **json** </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Webhook_communicationFormat? CommunicationFormat { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat? CommunicationFormat { get; set; }
         /// <summary>Your description for this webhook configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>&quot;SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Webhook_encryptionProtocol? EncryptionProtocol { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol? EncryptionProtocol { get; set; }
         /// <summary>&quot;A list of merchant account names that are included or excluded from receiving the webhook. Inclusion or exclusion is based on the value defined for `filterMerchantAccountType`.Required if `filterMerchantAccountType` is either:* **includeAccounts*** **excludeAccounts**Not needed for `filterMerchantAccountType`: **allAccounts**.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> FilterMerchantAccounts { get; set; }
 #endif
         /// <summary>&quot;Shows how merchant accounts are included in company-level webhooks. Possible values:* **includeAccounts*** **excludeAccounts*** **allAccounts**: Includes all merchant accounts, and does not require specifying `filterMerchantAccounts`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Webhook_filterMerchantAccountType? FilterMerchantAccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType? FilterMerchantAccountType { get; set; }
         /// <summary>Indicates if the webhook configuration has errors that need troubleshooting. If the value is **true**, troubleshoot the configuration using the [testing endpoint](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookid}/test).</summary>
         public bool? HasError { get; set; }
         /// <summary>Indicates if the webhook is password protected.</summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks Links { get; set; }
 #endif
         /// <summary>Network type for Terminal API details webhooks.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Webhook_networkType? NetworkType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType? NetworkType { get; set; }
         /// <summary>&quot;Indicates if the SOAP action header needs to be populated. Default value: **false**.Only applies if `communicationFormat`: **soap**.&quot;</summary>
         public bool? PopulateSoapActionHeader { get; set; }
         /// <summary>The type of webhook. Possible values are:- **standard**- **account-settings-notification**- **banktransfer-notification**- **boletobancario-notification**- **directdebit-notification**- **ach-notification-of-change-notification**- **direct-debit-notice-of-change-notification**- **pending-notification**- **ideal-notification**- **ideal-pending-notification**- **report-notification**- **terminal-api-notification**- **terminal-settings**- **terminal-boarding**Find out more about [standard webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#event-codes) and [other types of webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#other-webhooks).</summary>
@@ -147,17 +147,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "additionalSettings", n => { AdditionalSettings = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse.CreateFromDiscriminatorValue); } },
                 { "certificateAlias", n => { CertificateAlias = n.GetStringValue(); } },
-                { "communicationFormat", n => { CommunicationFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_communicationFormat>(); } },
+                { "communicationFormat", n => { CommunicationFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "encryptionProtocol", n => { EncryptionProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_encryptionProtocol>(); } },
-                { "filterMerchantAccountType", n => { FilterMerchantAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_filterMerchantAccountType>(); } },
+                { "encryptionProtocol", n => { EncryptionProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol>(); } },
+                { "filterMerchantAccountType", n => { FilterMerchantAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType>(); } },
                 { "filterMerchantAccounts", n => { FilterMerchantAccounts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hasError", n => { HasError = n.GetBoolValue(); } },
                 { "hasPassword", n => { HasPassword = n.GetBoolValue(); } },
                 { "hmacKeyCheckValue", n => { HmacKeyCheckValue = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks.CreateFromDiscriminatorValue); } },
-                { "networkType", n => { NetworkType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_networkType>(); } },
+                { "networkType", n => { NetworkType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType>(); } },
                 { "populateSoapActionHeader", n => { PopulateSoapActionHeader = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -178,17 +178,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse>("additionalSettings", AdditionalSettings);
             writer.WriteStringValue("certificateAlias", CertificateAlias);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_communicationFormat>("communicationFormat", CommunicationFormat);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat>("communicationFormat", CommunicationFormat);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_encryptionProtocol>("encryptionProtocol", EncryptionProtocol);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol>("encryptionProtocol", EncryptionProtocol);
             writer.WriteCollectionOfPrimitiveValues<string>("filterMerchantAccounts", FilterMerchantAccounts);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_filterMerchantAccountType>("filterMerchantAccountType", FilterMerchantAccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType>("filterMerchantAccountType", FilterMerchantAccountType);
             writer.WriteBoolValue("hasError", HasError);
             writer.WriteBoolValue("hasPassword", HasPassword);
             writer.WriteStringValue("hmacKeyCheckValue", HmacKeyCheckValue);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks>("_links", Links);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Webhook_networkType>("networkType", NetworkType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType>("networkType", NetworkType);
             writer.WriteBoolValue("populateSoapActionHeader", PopulateSoapActionHeader);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);

@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The status of the request for PIN change.Possible values: **completed**, **pending**, **unavailable**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponseStatus>("status", Status);
         }
     }
 }

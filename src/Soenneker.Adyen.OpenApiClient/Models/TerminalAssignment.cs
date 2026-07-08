@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalReassignmentTarget ReassignmentTarget { get; set; }
 #endif
         /// <summary>&quot;The status of the reassignment. Possible values:  * `reassignmentInProgress`: the terminal was boarded and is now scheduled to remove the configuration. Wait for the terminal to synchronize with the Adyen platform. * `deployed`: the terminal is deployed and reassigned.  * `inventory`: the terminal is in inventory and cannot process transactions.  * `boarded`: the terminal is boarded to a store, or a merchant account representing a store, and can process transactions. &quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentStatus? Status { get; set; }
         /// <summary>The unique identifier of the store to which terminal is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "companyId", n => { CompanyId = n.GetStringValue(); } },
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
                 { "reassignmentTarget", n => { ReassignmentTarget = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalReassignmentTarget>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalReassignmentTarget.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentStatus>(); } },
                 { "storeId", n => { StoreId = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("companyId", CompanyId);
             writer.WriteStringValue("merchantId", MerchantId);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalReassignmentTarget>("reassignmentTarget", ReassignmentTarget);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentStatus>("status", Status);
             writer.WriteStringValue("storeId", StoreId);
         }
     }

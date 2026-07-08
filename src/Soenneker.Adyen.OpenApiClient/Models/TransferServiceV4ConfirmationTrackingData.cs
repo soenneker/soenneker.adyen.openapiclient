@@ -13,9 +13,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The status of the transfer.Possible values: - **credited**: the funds are credited to your user&apos;s transfer instrument or bank account.- **accepted**: the request is accepted by the integration.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataStatus? Status { get; set; }
         /// <summary>&quot;The type of the tracking event.Possible values: - **confirmation**: the transfer passed Adyen&apos;s internal review.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,8 +34,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData_status>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData_type>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataStatus>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataType>(); } },
             };
         }
         /// <summary>
@@ -45,8 +45,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData_status>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataType>("type", Type);
         }
     }
 }

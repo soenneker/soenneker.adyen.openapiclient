@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountProcessingState ProcessingState { get; set; }
 #endif
         /// <summary>&quot;The status of the account holder.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus? Status { get; set; }
         /// <summary>The reason why the status was assigned to the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent>(global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payoutState", n => { PayoutState = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutState>(global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutState.CreateFromDiscriminatorValue); } },
                 { "processingState", n => { ProcessingState = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountProcessingState>(global::Soenneker.Adyen.OpenApiClient.Models.AccountProcessingState.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent>("events", Events);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutState>("payoutState", PayoutState);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountProcessingState>("processingState", ProcessingState);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
         }
     }

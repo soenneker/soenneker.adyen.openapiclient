@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TermsOfServiceDocumentId { get; set; }
 #endif
         /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponse_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "termsOfServiceDocumentId", n => { TermsOfServiceDocumentId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponseType>(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("termsOfServiceDocumentId", TermsOfServiceDocumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponseType>("type", Type);
         }
     }
 }

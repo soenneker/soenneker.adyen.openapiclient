@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **CardAcquisition*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **StoredValue*** **TransactionStatus*** **None**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MessageCategory
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Abort")]
         #pragma warning disable CS1591
@@ -38,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "Event")]
         #pragma warning disable CS1591
-        Event,
+        EventValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "GetTotals")]
         #pragma warning disable CS1591
@@ -64,10 +63,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Loyalty,
         #pragma warning restore CS1591
-        [EnumMember(Value = "None")]
-        #pragma warning disable CS1591
-        None,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Payment")]
         #pragma warning disable CS1591
         Payment,
@@ -91,6 +86,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "TransactionStatus")]
         #pragma warning disable CS1591
         TransactionStatus,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "None")]
+        #pragma warning disable CS1591
+        None,
         #pragma warning restore CS1591
     }
 }

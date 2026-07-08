@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentInstrumentId { get; set; }
 #endif
         /// <summary>&quot;The type of device.Possible values: **ios**, **android**, **browser**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeviceType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeviceType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeviceType>("type", Type);
         }
     }
 }

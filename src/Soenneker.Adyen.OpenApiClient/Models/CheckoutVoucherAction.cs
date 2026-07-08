@@ -165,7 +165,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount TotalAmount { get; set; }
 #endif
         /// <summary>**voucher**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionType? Type { get; set; }
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -211,7 +211,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "shopperName", n => { ShopperName = n.GetStringValue(); } },
                 { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
                 { "totalAmount", n => { TotalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -241,7 +241,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("shopperName", ShopperName);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("surcharge", Surcharge);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("totalAmount", TotalAmount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

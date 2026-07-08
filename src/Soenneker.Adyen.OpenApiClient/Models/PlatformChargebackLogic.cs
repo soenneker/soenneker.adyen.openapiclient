@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The method of handling the chargeback.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic_behavior? Behavior { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior? Behavior { get; set; }
         /// <summary>The unique identifier of the balance account to which the chargeback fees are booked. By default, the chargeback fees are booked to your liable balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behavior", n => { Behavior = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic_behavior>(); } },
+                { "behavior", n => { Behavior = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior>(); } },
                 { "costAllocationAccount", n => { CostAllocationAccount = n.GetStringValue(); } },
                 { "targetAccount", n => { TargetAccount = n.GetStringValue(); } },
             };
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic_behavior>("behavior", Behavior);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior>("behavior", Behavior);
             writer.WriteStringValue("costAllocationAccount", CostAllocationAccount);
             writer.WriteStringValue("targetAccount", TargetAccount);
         }

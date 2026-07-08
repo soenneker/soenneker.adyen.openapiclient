@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.AccountHolders.
         {
             /// <summary>The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**.</summary>
             [QueryParameter("formType")]
-            public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.AccountHolders.Item.TaxForms.GetFormTypeQueryParameterType? FormType { get; set; }
+            public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetAccountHoldersIdTaxFormsFormTypeParameter? FormType { get; set; }
             /// <summary>The legal entity reference whose tax form you want to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

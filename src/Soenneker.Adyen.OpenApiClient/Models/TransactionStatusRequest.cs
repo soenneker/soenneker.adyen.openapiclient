@@ -39,6 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public TransactionStatusRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ReceiptReprintFlag = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

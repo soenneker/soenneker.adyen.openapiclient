@@ -87,9 +87,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation> TaxInformation { get; set; }
 #endif
         /// <summary>Type of Partnership.Possible values:*  **limitedPartnership***  **generalPartnership***  **familyPartnership***  **commercialPartnership***  **publicPartnership***  **otherPartnership***  **gbr***  **gmbh***  **kgaa***  **cv***  **vof***  **maatschap***  **privateFundLimitedPartnership***  **businessTrustEntity***  **businessPartnership***  **limitedLiabilityPartnership***  **eg***  **cooperative***  **vos***  **comunidadDeBienes***  **herenciaYacente***  **comunidadDePropietarios***  **sep***  **sca***  **bt***  **kkt***  **scs***  **snc**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership_type? Type { get; private set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipType? Type { get; private set; }
         /// <summary>&quot;The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership_vatAbsenceReason? VatAbsenceReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipVatAbsenceReason? VatAbsenceReason { get; set; }
         /// <summary>The VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,8 +126,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "registeredAddress", n => { RegisteredAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4Address>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4Address.CreateFromDiscriminatorValue); } },
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
                 { "taxInformation", n => { TaxInformation = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>(global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership_type>(); } },
-                { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership_vatAbsenceReason>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipType>(); } },
+                { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipVatAbsenceReason>(); } },
                 { "vatNumber", n => { VatNumber = n.GetStringValue(); } },
             };
         }
@@ -148,7 +148,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4Address>("registeredAddress", RegisteredAddress);
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>("taxInformation", TaxInformation);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership_vatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipVatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
             writer.WriteStringValue("vatNumber", VatNumber);
         }
     }

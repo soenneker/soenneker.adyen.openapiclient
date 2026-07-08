@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ModificationPspReference { get; set; }
 #endif
         /// <summary>**internal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "modificationMerchantReference", n => { ModificationMerchantReference = n.GetStringValue(); } },
                 { "modificationPspReference", n => { ModificationPspReference = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryDataType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("modificationMerchantReference", ModificationMerchantReference);
             writer.WriteStringValue("modificationPspReference", ModificationPspReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryDataType>("type", Type);
         }
     }
 }

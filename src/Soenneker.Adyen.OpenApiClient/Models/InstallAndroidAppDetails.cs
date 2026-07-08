@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AppId { get; set; }
 #endif
         /// <summary>&quot;Type of terminal action: Install an Android app.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetailsType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetailsType>("type", Type);
         }
     }
 }

@@ -3,22 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Service*** **Device*** **Event**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MessageClass
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "Service")]
+        #pragma warning disable CS1591
+        Service,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Device")]
         #pragma warning disable CS1591
         Device,
         #pragma warning restore CS1591
         [EnumMember(Value = "Event")]
         #pragma warning disable CS1591
-        Event,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Service")]
-        #pragma warning disable CS1591
-        Service,
+        EventValue,
         #pragma warning restore CS1591
     }
 }

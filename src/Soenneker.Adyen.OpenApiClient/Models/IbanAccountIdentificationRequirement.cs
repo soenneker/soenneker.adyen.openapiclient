@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> IbanPrefixes { get; set; }
 #endif
         /// <summary>**ibanAccountIdentificationRequirement**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentificationRequirement_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentificationRequirementType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ibanPrefixes", n => { IbanPrefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentificationRequirement_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentificationRequirementType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("ibanPrefixes", IbanPrefixes);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentificationRequirement_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanAccountIdentificationRequirementType>("type", Type);
         }
     }
 }

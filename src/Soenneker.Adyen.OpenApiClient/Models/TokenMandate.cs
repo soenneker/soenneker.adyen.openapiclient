@@ -29,9 +29,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Amount { get; set; }
 #endif
         /// <summary>&quot;The limitation rule of the billing amount.Possible values: * **max**: The transaction amount can not exceed the `amount`. * **exact**: The transaction amount should be the same as the `amount`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_amountRule? AmountRule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateAmountRule? AmountRule { get; set; }
         /// <summary>&quot;The rule to specify the period, within which the recurring debit can happen, relative to the mandate recurring date.Possible values: * **on**: On a specific date. * **before**:  Before and on a specific date. * **after**: On and after a specific date.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_billingAttemptsRule? BillingAttemptsRule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateBillingAttemptsRule? BillingAttemptsRule { get; set; }
         /// <summary>&quot;The number of the day, on which the recurring debit can happen. Should be within the same calendar month as the mandate recurring date.Possible values: 1-31 based on the `frequency`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string EndsAt { get; set; }
 #endif
         /// <summary>&quot;The frequency with which a shopper should be charged.Possible values: **adhoc**, **daily**, **weekly**, **biWeekly**, **monthly**, **quarterly**, **halfYearly**, **yearly**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_frequency? Frequency { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateFrequency? Frequency { get; set; }
         /// <summary>The unique identifier of the mandate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,7 +123,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Remarks { get; set; }
 #endif
         /// <summary>When set to true, you can retry for failed recurring payments. The default value is true.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_retryPolicy? RetryPolicy { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateRetryPolicy? RetryPolicy { get; set; }
         /// <summary>Start date of the billing plan, in YYYY-MM-DD format. By default, the transaction date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,13 +168,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountIdType", n => { AccountIdType = n.GetStringValue(); } },
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "amountRule", n => { AmountRule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_amountRule>(); } },
-                { "billingAttemptsRule", n => { BillingAttemptsRule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_billingAttemptsRule>(); } },
+                { "amountRule", n => { AmountRule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateAmountRule>(); } },
+                { "billingAttemptsRule", n => { BillingAttemptsRule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateBillingAttemptsRule>(); } },
                 { "billingDay", n => { BillingDay = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "endsAt", n => { EndsAt = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateFrequency>(); } },
                 { "mandateId", n => { MandateId = n.GetStringValue(); } },
                 { "maskedAccountId", n => { MaskedAccountId = n.GetStringValue(); } },
                 { "minAmount", n => { MinAmount = n.GetStringValue(); } },
@@ -182,7 +182,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "recurringAmount", n => { RecurringAmount = n.GetStringValue(); } },
                 { "recurringStatement", n => { RecurringStatement = n.GetStringValue(); } },
                 { "remarks", n => { Remarks = n.GetStringValue(); } },
-                { "retryPolicy", n => { RetryPolicy = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_retryPolicy>(); } },
+                { "retryPolicy", n => { RetryPolicy = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateRetryPolicy>(); } },
                 { "startsAt", n => { StartsAt = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "txVariant", n => { TxVariant = n.GetStringValue(); } },
@@ -197,13 +197,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountIdType", AccountIdType);
             writer.WriteStringValue("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_amountRule>("amountRule", AmountRule);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_billingAttemptsRule>("billingAttemptsRule", BillingAttemptsRule);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateAmountRule>("amountRule", AmountRule);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateBillingAttemptsRule>("billingAttemptsRule", BillingAttemptsRule);
             writer.WriteStringValue("billingDay", BillingDay);
             writer.WriteStringValue("count", Count);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("endsAt", EndsAt);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateFrequency>("frequency", Frequency);
             writer.WriteStringValue("mandateId", MandateId);
             writer.WriteStringValue("maskedAccountId", MaskedAccountId);
             writer.WriteStringValue("minAmount", MinAmount);
@@ -211,7 +211,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("recurringAmount", RecurringAmount);
             writer.WriteStringValue("recurringStatement", RecurringStatement);
             writer.WriteStringValue("remarks", Remarks);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate_retryPolicy>("retryPolicy", RetryPolicy);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateRetryPolicy>("retryPolicy", RetryPolicy);
             writer.WriteStringValue("startsAt", StartsAt);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("txVariant", TxVariant);

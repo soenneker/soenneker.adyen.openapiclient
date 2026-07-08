@@ -19,10 +19,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of the stored value account or the stored value card and the associated product sold by the Sale System for stored value requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountID? StoredValueAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId? StoredValueAccountID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountID StoredValueAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId StoredValueAccountID { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "CurrentBalance", n => { CurrentBalance = n.GetDoubleValue(); } },
-                { "StoredValueAccountID", n => { StoredValueAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountID>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountID.CreateFromDiscriminatorValue); } },
+                { "StoredValueAccountID", n => { StoredValueAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("CurrentBalance", CurrentBalance);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountID>("StoredValueAccountID", StoredValueAccountID);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>("StoredValueAccountID", StoredValueAccountID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

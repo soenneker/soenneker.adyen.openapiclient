@@ -3,15 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Request*** **Response*** **Notification**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MessageType
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Notification")]
-        #pragma warning disable CS1591
-        Notification,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Request")]
         #pragma warning disable CS1591
         Request,
@@ -19,6 +14,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Response")]
         #pragma warning disable CS1591
         Response,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Notification")]
+        #pragma warning disable CS1591
+        Notification,
         #pragma warning restore CS1591
     }
 }

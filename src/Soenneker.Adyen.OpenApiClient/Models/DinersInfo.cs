@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates whether the JCB Merchant ID is reused from a previously configured JCB payment method.The default value is **false**.For merchants operating in Japan, this field is required and must be set to **true**.</summary>
         public bool? ReuseMidNumber { get; set; }
         /// <summary>&quot;Specifies the service level (settlement type) of this payment method. Required for merchants operating in Japan. Possible values: * **noContract**: Adyen holds the contract with JCB. * **gatewayContract**: JCB receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo_serviceLevel? ServiceLevel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel? ServiceLevel { get; set; }
         /// <summary>The transactionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo TransactionDescription { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo"/> and sets the default values.
+        /// </summary>
+        public DinersInfo()
+        {
+            ReuseMidNumber = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "midNumber", n => { MidNumber = n.GetStringValue(); } },
                 { "reuseMidNumber", n => { ReuseMidNumber = n.GetBoolValue(); } },
-                { "serviceLevel", n => { ServiceLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo_serviceLevel>(); } },
+                { "serviceLevel", n => { ServiceLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel>(); } },
                 { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -65,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("midNumber", MidNumber);
             writer.WriteBoolValue("reuseMidNumber", ReuseMidNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfo_serviceLevel>("serviceLevel", ServiceLevel);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel>("serviceLevel", ServiceLevel);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo>("transactionDescription", TransactionDescription);
         }
     }

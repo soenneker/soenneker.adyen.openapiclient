@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ErrorCode { get; set; }
 #endif
         /// <summary>&quot;The priority for the bank transfer. This sets the speed at which the transfer is sent and the fees that you have to pay. Required for transfers with `category` **bank**.Possible values:* **regular**: For normal, low-value transactions.* **fast**: A faster way to transfer funds, but the fees are higher. Recommended for high-priority, low-value transactions.* **wire**: The fastest way to transfer funds, but this has the highest fees. Recommended for high-priority, high-value transactions.* **instant**: For instant funds transfers within the United States and in [SEPA locations](https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html).* **crossBorder**: For high-value transfers to a recipient in a different country.* **internal**: For transfers to an Adyen-issued business bank account (by bank account number/IBAN).&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails_priority? Priority { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetailsPriority? Priority { get; set; }
         /// <summary>A short, human-readable summary of the problem type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "detail", n => { Detail = n.GetStringValue(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails_priority>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetailsPriority>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("errorCode", ErrorCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails_priority>("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetailsPriority>("priority", Priority);
             writer.WriteStringValue("title", Title);
         }
     }

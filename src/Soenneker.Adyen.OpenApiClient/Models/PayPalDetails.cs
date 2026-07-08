@@ -78,9 +78,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>The type of flow to initiate.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails_subtype? Subtype { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsSubtype? Subtype { get; set; }
         /// <summary>**paypal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -107,8 +107,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails_subtype>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails_type>(); } },
+                { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsSubtype>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsType>(); } },
             };
         }
         /// <summary>
@@ -126,8 +126,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails_subtype>("subtype", Subtype);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsSubtype>("subtype", Subtype);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsType>("type", Type);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The organization&apos;s business type.Possible values: **other**, **listedPublicCompany**, **subsidiaryOfListedPublicCompany**, **governmentalOrganization**, **internationalOrganization**, **financialInstitution**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_businessType? BusinessType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType? BusinessType { get; set; }
         /// <summary>The Global Intermediary Identification Number (GIIN) required for FATCA. Only required if the organization is a US financial institution and the `businessType` is **financialInstitution**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,9 +23,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string FinancialInstitutionNumber { get; set; }
 #endif
         /// <summary>&quot;The organization&apos;s main source of income. Only required if `businessType` is **other**.Possible values: **businessOperation**, **realEstateSales**, **investmentInterestOrRoyalty**, **propertyRental**, **other**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_mainSourceOfIncome? MainSourceOfIncome { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome? MainSourceOfIncome { get; set; }
         /// <summary>&quot;The tax reporting classification type.Possible values: **nonFinancialNonReportable**, **financialNonReportable**, **nonFinancialActive**, **nonFinancialPassive**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,10 +44,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "businessType", n => { BusinessType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_businessType>(); } },
+                { "businessType", n => { BusinessType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType>(); } },
                 { "financialInstitutionNumber", n => { FinancialInstitutionNumber = n.GetStringValue(); } },
-                { "mainSourceOfIncome", n => { MainSourceOfIncome = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_mainSourceOfIncome>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_type>(); } },
+                { "mainSourceOfIncome", n => { MainSourceOfIncome = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType>(); } },
             };
         }
         /// <summary>
@@ -57,10 +57,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_businessType>("businessType", BusinessType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType>("businessType", BusinessType);
             writer.WriteStringValue("financialInstitutionNumber", FinancialInstitutionNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_mainSourceOfIncome>("mainSourceOfIncome", MainSourceOfIncome);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome>("mainSourceOfIncome", MainSourceOfIncome);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType>("type", Type);
         }
     }
 }

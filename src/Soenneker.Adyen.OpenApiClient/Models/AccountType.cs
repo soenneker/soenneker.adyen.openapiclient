@@ -10,27 +10,27 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         [EnumMember(Value = "CURRENT")]
         #pragma warning disable CS1591
-        CURRENT,
+        Current,
         #pragma warning restore CS1591
         [EnumMember(Value = "SAVINGS")]
         #pragma warning disable CS1591
-        SAVINGS,
+        Savings,
         #pragma warning restore CS1591
         [EnumMember(Value = "BUSINESS")]
         #pragma warning disable CS1591
-        BUSINESS,
+        Business,
         #pragma warning restore CS1591
         [EnumMember(Value = "CREDIT_CARD")]
         #pragma warning disable CS1591
-        CREDIT_CARD,
+        CreditCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "LOAN")]
         #pragma warning disable CS1591
-        LOAN,
+        Loan,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
     }
 }

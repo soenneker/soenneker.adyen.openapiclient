@@ -25,9 +25,6 @@
       "description": "Live Environment"
     },
     {
-      "url": "/"
-    },
-    {
       "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
     },
     {
@@ -11485,7 +11482,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchableBalanceAccountConfigurationRequest"
+                "$ref": "#/components/schemas/BalanceAccountConfigurationUpdate"
               },
               "examples": {
                 "update-payout-schedule": {
@@ -48804,7 +48801,7 @@
           "Transfers"
         ],
         "summary": "Transfer funds",
-        "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.\n\nStarts a request to transfer funds to:\n- [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts)\n- [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments)\n- [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts)\n- [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)\n\nAdyen sends the outcome of the transfer request through webhooks.\n\nTo use this endpoint:\n- Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).\n- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).\n\nReach out to your Adyen contact to set up these permissions.",
+        "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.\n\nStarts a request to transfer funds to:\n- [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts)\n- [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)\n- [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts)\n- [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)\n\nAdyen sends the outcome of the transfer request through webhooks.\n\nTo use this endpoint:\n- Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).\n- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).\n\nReach out to your Adyen contact to set up these permissions.",
         "operationId": "TransferService_v4_post_transfers",
         "parameters": [
           {
@@ -48857,7 +48854,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK - the request has succeeded.",
+            "description": "OK - The request has been accepted for processing, but has not been completed.",
             "headers": {
               "Idempotency-Key": {
                 "$ref": "#/components/headers/TransferService_v4_Idempotency-Key"
@@ -48872,7 +48869,7 @@
             }
           },
           "202": {
-            "description": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+            "description": "Accepted - The request has been accepted for processing, but has not been completed.",
             "headers": {
               "Idempotency-Key": {
                 "$ref": "#/components/headers/TransferService_v4_Idempotency-Key"
@@ -49416,6 +49413,177 @@
         "x-addedInVersion": "3",
         "x-sortIndex": 4,
         "x-methodName": "returnTransfer"
+      }
+    },
+    "/TransferService-v4/cashouts": {
+      "post": {
+        "tags": [
+          "CashOut"
+        ],
+        "summary": "Initiate a cashout",
+        "description": "Initiates a [cashout](https://docs.adyen.com/platforms/cash-out-instantly) request.",
+        "operationId": "TransferService_v4_post_cashouts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CashOutInfo"
+              },
+              "examples": {
+                "initiate-cashout": {
+                  "summary": "Initiate a cashout request",
+                  "description": "Initiate a cashout for a balance account.",
+                  "value": {
+                    "instructingBalanceAccountId": "BA00000000000000000000001",
+                    "amount": {
+                      "currency": "EUR",
+                      "value": 50000
+                    },
+                    "counterparty": {
+                      "transferInstrumentId": "SE00000000000000000000001"
+                    },
+                    "description": "Cashout to bank account",
+                    "referenceForBeneficiary": "CASHOUT-REF-001",
+                    "fee": {
+                      "amount": {
+                        "currency": "EUR",
+                        "value": 500
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CashOut"
+                },
+                "examples": {
+                  "instruct-cashout": {
+                    "summary": "Cashout initiated successfully",
+                    "description": "The response returned when a cashout is successfully instructed.",
+                    "value": {
+                      "id": "CO00000000000000000000001",
+                      "instructingBalanceAccountId": "BA00000000000000000000001",
+                      "amount": {
+                        "currency": "EUR",
+                        "value": 50000
+                      },
+                      "counterparty": {
+                        "transferInstrumentId": "SE00000000000000000000001"
+                      },
+                      "description": "Cashout to bank account",
+                      "referenceForBeneficiary": "CASHOUT-REF-001",
+                      "fee": {
+                        "amount": {
+                          "currency": "EUR",
+                          "value": 500
+                        }
+                      },
+                      "transfers": [
+                        {
+                          "id": "400F6060JMB1I0AB",
+                          "type": "cashoutRepayment",
+                          "amount": {
+                            "currency": "EUR",
+                            "value": 50500
+                          }
+                        },
+                        {
+                          "id": "400F6060JMB1I0AA",
+                          "type": "cashoutFee",
+                          "amount": {
+                            "currency": "EUR",
+                            "value": 500
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - The request is malformed or is not in the expected format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - The API credential used in the request is invalid.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - The API credential does not have the right permissions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - The requested resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Request rate limit exceeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Service Error - An unrecoverable error occurred while trying to perform the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferService_v4_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "initiateCashout",
+        "x-sortIndex": 0
       }
     }
   },
@@ -54940,8 +55108,8 @@
       },
       "BalancePlatformConfigurationNotification_v2_AccountHolder": {
         "required": [
-          "id",
-          "legalEntityId"
+          "legalEntityId",
+          "id"
         ],
         "type": "object",
         "properties": {
@@ -55098,9 +55266,9 @@
       },
       "AccountHolderNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -55129,9 +55297,9 @@
       },
       "AccountPayoutAutoApplicationNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -55309,11 +55477,11 @@
       },
       "Address": {
         "required": [
-          "city",
-          "country",
+          "street",
           "houseNumberOrName",
+          "city",
           "postalCode",
-          "street"
+          "country"
         ],
         "type": "object",
         "properties": {
@@ -55349,8 +55517,8 @@
       },
       "BalancePlatformConfigurationNotification_v2_Amount": {
         "required": [
-          "currency",
-          "value"
+          "value",
+          "currency"
         ],
         "type": "object",
         "properties": {
@@ -55389,10 +55557,10 @@
       },
       "Balance": {
         "required": [
-          "available",
-          "balance",
           "currency",
-          "reserved"
+          "balance",
+          "reserved",
+          "available"
         ],
         "type": "object",
         "properties": {
@@ -55413,6 +55581,11 @@
           "pending": {
             "type": "integer",
             "description": "The sum of the transactions that will be settled in the future.",
+            "format": "int64"
+          },
+          "pendingAvailable": {
+            "type": "integer",
+            "description": "The balance that will become the available balance after the pending balance is settled.\n\nThe pending available balance is equal to the lower of the following:\n- The `pending` balance\n- The `pending` balance plus the `available` balance.",
             "format": "int64"
           },
           "reserved": {
@@ -55505,9 +55678,9 @@
       },
       "BalanceAccountNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -55819,10 +55992,10 @@
       },
       "Card": {
         "required": [
-          "brand",
-          "brandVariant",
+          "formFactor",
           "cardholderName",
-          "formFactor"
+          "brand",
+          "brandVariant"
         ],
         "type": "object",
         "properties": {
@@ -56023,9 +56196,9 @@
       },
       "CardOrderNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56054,9 +56227,9 @@
       },
       "ContactDetails": {
         "required": [
-          "address",
           "email",
-          "phone"
+          "phone",
+          "address"
         ],
         "type": "object",
         "properties": {
@@ -56117,8 +56290,8 @@
       },
       "DeliveryContact": {
         "required": [
-          "address",
-          "name"
+          "name",
+          "address"
         ],
         "type": "object",
         "properties": {
@@ -56186,8 +56359,8 @@
       },
       "BalancePlatformConfigurationNotification_v2_IbanAccountIdentification": {
         "required": [
-          "iban",
-          "type"
+          "type",
+          "iban"
         ],
         "type": "object",
         "properties": {
@@ -56210,10 +56383,6 @@
         },
         "additionalProperties": false
       },
-      "Instant": {
-        "type": "object",
-        "additionalProperties": false
-      },
       "Mandate": {
         "type": "object",
         "properties": {
@@ -56225,7 +56394,9 @@
             "$ref": "#/components/schemas/MandateBankAccount"
           },
           "createdAt": {
-            "$ref": "#/components/schemas/Instant"
+            "type": "string",
+            "description": "The date when the mandate was created.",
+            "format": "date-time"
           },
           "id": {
             "type": "string",
@@ -56252,7 +56423,9 @@
             "description": "The type of mandate. Possible value: **bacs**."
           },
           "updatedAt": {
-            "$ref": "#/components/schemas/Instant"
+            "type": "string",
+            "description": "The date when the mandate was updated.",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -56273,7 +56446,13 @@
                 "$ref": "#/components/schemas/UKLocalMandateAccountIdentification"
               }
             ],
-            "description": "Contains the bank account details of the counterparty. The fields required in this object depend on the country of the bank account and the currency of the transfer."
+            "description": "Contains the bank account details of the counterparty. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "ukLocal": "#/components/schemas/UKLocalMandateAccountIdentification"
+              }
+            }
           }
         },
         "additionalProperties": false
@@ -56293,9 +56472,9 @@
       },
       "MandateNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56416,9 +56595,9 @@
       },
       "NetworkTokenNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56545,9 +56724,9 @@
       "BalancePlatformConfigurationNotification_v2_PaymentInstrument": {
         "required": [
           "balanceAccountId",
-          "id",
           "issuingCountryCode",
-          "type"
+          "type",
+          "id"
         ],
         "type": "object",
         "properties": {
@@ -56558,7 +56737,13 @@
                 {
                   "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_IbanAccountIdentification"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "iban": "#/components/schemas/BalancePlatformConfigurationNotification_v2_IbanAccountIdentification"
+                }
+              }
             },
             "description": "Contains optional, additional business account details. Returned when you create a payment instrument with `type` **bankAccount**.",
             "deprecated": true,
@@ -56662,9 +56847,9 @@
       },
       "PaymentNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56693,9 +56878,9 @@
       },
       "PayoutScheduleBANotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56725,9 +56910,9 @@
       },
       "PayoutScheduleBPNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56757,9 +56942,9 @@
       },
       "PayoutScheduleStateNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -56995,9 +57180,9 @@
       },
       "ScoreNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -57042,9 +57227,9 @@
       },
       "SweepConfigurationNotificationRequest": {
         "required": [
-          "data",
           "environment",
-          "type"
+          "type",
+          "data"
         ],
         "type": "object",
         "properties": {
@@ -57074,10 +57259,10 @@
       },
       "SweepConfigurationV2": {
         "required": [
-          "counterparty",
-          "currency",
           "id",
-          "schedule"
+          "schedule",
+          "currency",
+          "counterparty"
         ],
         "type": "object",
         "properties": {
@@ -57248,9 +57433,9 @@
       },
       "UKLocalMandateAccountIdentification": {
         "required": [
+          "type",
           "accountNumber",
-          "sortCode",
-          "type"
+          "sortCode"
         ],
         "type": "object",
         "properties": {
@@ -57306,8 +57491,8 @@
       },
       "VerificationDeadline": {
         "required": [
-          "capabilities",
-          "expiresAt"
+          "expiresAt",
+          "capabilities"
         ],
         "type": "object",
         "properties": {
@@ -59768,7 +59953,13 @@
                 {
                   "$ref": "#/components/schemas/BalancePlatformRelayedAuthorisationNotification_v4_IbanAccountIdentification"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "iban": "#/components/schemas/BalancePlatformRelayedAuthorisationNotification_v4_IbanAccountIdentification"
+                }
+              }
             },
             "description": "Contains optional, additional business account details. Returned when you create a payment instrument with `type` **bankAccount**.",
             "deprecated": true,
@@ -61084,6 +61275,11 @@
             "description": "The sum of the transactions that will be settled in the future.",
             "format": "int64"
           },
+          "pendingAvailable": {
+            "type": "integer",
+            "description": "The balance that will become the available balance after the pending balance is settled.\n\nThe pending available balance is equal to the lower of the following:\n- The `pending` balance\n- The `pending` balance plus the `available` balance.",
+            "format": "int64"
+          },
           "reserved": {
             "type": "integer",
             "description": "The balance currently held in reserve.",
@@ -61416,7 +61612,28 @@
                 "$ref": "#/components/schemas/BalancePlatformService_v2_USLocalAccountIdentification"
               }
             ],
-            "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer."
+            "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "iban": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification",
+                "numberAndBic": "#/components/schemas/BalancePlatformService_v2_NumberAndBicAccountIdentification",
+                "auLocal": "#/components/schemas/BalancePlatformService_v2_AULocalAccountIdentification",
+                "czLocal": "#/components/schemas/BalancePlatformService_v2_CZLocalAccountIdentification",
+                "noLocal": "#/components/schemas/BalancePlatformService_v2_NOLocalAccountIdentification",
+                "plLocal": "#/components/schemas/BalancePlatformService_v2_PLLocalAccountIdentification",
+                "huLocal": "#/components/schemas/BalancePlatformService_v2_HULocalAccountIdentification",
+                "seLocal": "#/components/schemas/BalancePlatformService_v2_SELocalAccountIdentification",
+                "sgLocal": "#/components/schemas/BalancePlatformService_v2_SGLocalAccountIdentification",
+                "ukLocal": "#/components/schemas/BalancePlatformService_v2_UKLocalAccountIdentification",
+                "usLocal": "#/components/schemas/BalancePlatformService_v2_USLocalAccountIdentification",
+                "brLocal": "#/components/schemas/BalancePlatformService_v2_BRLocalAccountIdentification",
+                "dkLocal": "#/components/schemas/BalancePlatformService_v2_DKLocalAccountIdentification",
+                "caLocal": "#/components/schemas/BalancePlatformService_v2_CALocalAccountIdentification",
+                "nzLocal": "#/components/schemas/NZLocalAccountIdentification",
+                "hkLocal": "#/components/schemas/HKLocalAccountIdentification"
+              }
+            }
           }
         },
         "additionalProperties": false
@@ -61573,7 +61790,28 @@
                 "$ref": "#/components/schemas/BalancePlatformService_v2_USLocalAccountIdentification"
               }
             ],
-            "description": "Bank account identification."
+            "description": "Bank account identification.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "iban": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification",
+                "numberAndBic": "#/components/schemas/BalancePlatformService_v2_NumberAndBicAccountIdentification",
+                "auLocal": "#/components/schemas/BalancePlatformService_v2_AULocalAccountIdentification",
+                "czLocal": "#/components/schemas/BalancePlatformService_v2_CZLocalAccountIdentification",
+                "noLocal": "#/components/schemas/BalancePlatformService_v2_NOLocalAccountIdentification",
+                "plLocal": "#/components/schemas/BalancePlatformService_v2_PLLocalAccountIdentification",
+                "huLocal": "#/components/schemas/BalancePlatformService_v2_HULocalAccountIdentification",
+                "seLocal": "#/components/schemas/BalancePlatformService_v2_SELocalAccountIdentification",
+                "sgLocal": "#/components/schemas/BalancePlatformService_v2_SGLocalAccountIdentification",
+                "ukLocal": "#/components/schemas/BalancePlatformService_v2_UKLocalAccountIdentification",
+                "usLocal": "#/components/schemas/BalancePlatformService_v2_USLocalAccountIdentification",
+                "brLocal": "#/components/schemas/BalancePlatformService_v2_BRLocalAccountIdentification",
+                "dkLocal": "#/components/schemas/BalancePlatformService_v2_DKLocalAccountIdentification",
+                "caLocal": "#/components/schemas/BalancePlatformService_v2_CALocalAccountIdentification",
+                "nzLocal": "#/components/schemas/NZLocalAccountIdentification",
+                "hkLocal": "#/components/schemas/HKLocalAccountIdentification"
+              }
+            }
           }
         },
         "additionalProperties": false
@@ -63525,7 +63763,13 @@
                 {
                   "$ref": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "iban": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
+                }
+              }
             },
             "description": "Contains optional, additional business account details. Returned when you create a payment instrument with `type` **bankAccount**.",
             "deprecated": true,
@@ -65167,7 +65411,22 @@
                 {
                   "$ref": "#/components/schemas/USInternationalAchPriorityRequirement"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "amountMinMaxRequirement": "#/components/schemas/AmountMinMaxRequirement",
+                  "additionalBankIdentificationRequirement": "#/components/schemas/AdditionalBankIdentificationRequirement",
+                  "addressRequirement": "#/components/schemas/AddressRequirement",
+                  "amountNonZeroDecimalsRequirement": "#/components/schemas/AmountNonZeroDecimalsRequirement",
+                  "bankAccountIdentificationTypeRequirement": "#/components/schemas/BankAccountIdentificationTypeRequirement",
+                  "ibanAccountIdentificationRequirement": "#/components/schemas/IbanAccountIdentificationRequirement",
+                  "paymentInstrumentRequirement": "#/components/schemas/PaymentInstrumentRequirement",
+                  "usInternationalAchAddressRequirement": "#/components/schemas/USInternationalAchAddressRequirement",
+                  "usInstantPayoutAddressRequirement": "#/components/schemas/USInstantPayoutAddressRequirement",
+                  "usInternationalAchPriorityRequirement": "#/components/schemas/USInternationalAchPriorityRequirement"
+                }
+              }
             },
             "description": "A set of rules defined by clearing houses and banking partners. Your transfer request must adhere to these rules to ensure successful initiation of transfer. Based on the priority, one or more requirements may be returned. Each requirement is defined with a `type` and `description`."
           }
@@ -65404,7 +65663,13 @@
                 {
                   "$ref": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "iban": "#/components/schemas/BalancePlatformService_v2_IbanAccountIdentification"
+                }
+              }
             },
             "description": "Contains optional, additional business account details. Returned when you create a payment instrument with `type` **bankAccount**.",
             "deprecated": true,
@@ -66277,6 +66542,74 @@
           }
         }
       },
+      "BalanceAccountConfigurationUpdate": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "The description used for all payouts initiated by this payout schedule.\n\nMaximum length: 140 characters. If your description is longer, it may be truncated.\n\nDefault value: The `defaultDescription` from the balance platform schedule that you are applying.",
+            "nullable": true
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Specifies whether the payout schedule is enabled immediately after it is created.",
+            "nullable": true
+          },
+          "frequency": {
+            "enum": [
+              "daily",
+              "weekly",
+              "weekdays",
+              "monthly"
+            ],
+            "type": "string",
+            "description": "The frequency of payouts initiated by this payout schedule.\n\nPossible values:\n* daily\n* weekdays\n* weekly\n* monthly\n\nDefault value: The `defaultFrequency` from the balance platform schedule that you are applying."
+          },
+          "frequencyValue": {
+            "type": "integer",
+            "description": "The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.\n\nPossible values if `frequency` is **weekly**: **[1 - 5]**.\n\nDefault value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxPayoutAmount": {
+            "type": "integer",
+            "description": "The maximum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**",
+            "format": "int64",
+            "nullable": true
+          },
+          "minPayoutAmount": {
+            "type": "integer",
+            "description": "The minimum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**",
+            "format": "int64",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "description": "The merchant reference that will be shown only in the schedule.",
+            "nullable": true
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.\n\nSupported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.\n\nDefault value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.",
+            "nullable": true
+          },
+          "retainedAmount": {
+            "type": "integer",
+            "description": "The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.\n\nDefault value: **0**",
+            "format": "int64",
+            "nullable": true
+          },
+          "salesDayClosingTime": {
+            "type": "string",
+            "description": "The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.\n\nFormat: **HH:mm:ss**",
+            "deprecated": true
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument to which the funds are paid out."
+          }
+        }
+      },
       "BalanceAccountConfigurations": {
         "required": [
           "balanceAccountPayoutSchedules",
@@ -66890,74 +67223,6 @@
             "type": "string",
             "description": "The unique identifier of the payment instrument linked to the mandate.",
             "nullable": true
-          }
-        }
-      },
-      "PatchableBalanceAccountConfigurationRequest": {
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string",
-            "description": "The description used for all payouts initiated by this payout schedule.\n\nMaximum length: 140 characters. If your description is longer, it may be truncated.\n\nDefault value: The `defaultDescription` from the balance platform schedule that you are applying.",
-            "nullable": true
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Specifies whether the payout schedule is enabled immediately after it is created.",
-            "nullable": true
-          },
-          "frequency": {
-            "enum": [
-              "daily",
-              "weekly",
-              "weekdays",
-              "monthly"
-            ],
-            "type": "string",
-            "description": "The frequency of payouts initiated by this payout schedule.\n\nPossible values:\n* daily\n* weekdays\n* weekly\n* monthly\n\nDefault value: The `defaultFrequency` from the balance platform schedule that you are applying."
-          },
-          "frequencyValue": {
-            "type": "integer",
-            "description": "The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.\n\nPossible values if `frequency` is **monthly**: **[1 - 31]**.\n* If your specified date happens on a weekend, the payout is initiated on the next business day.\n* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.\n\nPossible values if `frequency` is **weekly**: **[1 - 5]**.\n\nDefault value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.",
-            "format": "int32",
-            "nullable": true
-          },
-          "maxPayoutAmount": {
-            "type": "integer",
-            "description": "The maximum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**",
-            "format": "int64",
-            "nullable": true
-          },
-          "minPayoutAmount": {
-            "type": "integer",
-            "description": "The minimum amount that can be paid out from balance accounts that use this payout schedule.\n\nDefault value: **0**",
-            "format": "int64",
-            "nullable": true
-          },
-          "reference": {
-            "type": "string",
-            "description": "The merchant reference that will be shown only in the schedule.",
-            "nullable": true
-          },
-          "referenceForBeneficiary": {
-            "type": "string",
-            "description": "The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.\n\nSupported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.\n\nDefault value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.",
-            "nullable": true
-          },
-          "retainedAmount": {
-            "type": "integer",
-            "description": "The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.\n\nDefault value: **0**",
-            "format": "int64",
-            "nullable": true
-          },
-          "salesDayClosingTime": {
-            "type": "string",
-            "description": "The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.\n\nFormat: **HH:mm:ss**",
-            "deprecated": true
-          },
-          "transferInstrumentId": {
-            "type": "string",
-            "description": "The unique identifier of the transfer instrument to which the funds are paid out."
           }
         }
       },
@@ -67875,6 +68140,15 @@
               }
             ],
             "description": "The relevant data according to the transfer category.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "issuedCard": "#/components/schemas/IssuedCard",
+                "platformPayment": "#/components/schemas/BalancePlatformTransactionNotification_v4_PlatformPayment",
+                "bank": "#/components/schemas/BankCategoryData",
+                "internal": "#/components/schemas/InternalCategoryData"
+              }
+            },
             "x-addedInVersion": "4"
           },
           "id": {
@@ -68183,7 +68457,28 @@
                 "$ref": "#/components/schemas/BalancePlatformTransferNotification_v4_USLocalAccountIdentification"
               }
             ],
-            "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer."
+            "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "iban": "#/components/schemas/BalancePlatformTransferNotification_v4_IbanAccountIdentification",
+                "numberAndBic": "#/components/schemas/BalancePlatformTransferNotification_v4_NumberAndBicAccountIdentification",
+                "auLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_AULocalAccountIdentification",
+                "czLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_CZLocalAccountIdentification",
+                "noLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_NOLocalAccountIdentification",
+                "plLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_PLLocalAccountIdentification",
+                "huLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_HULocalAccountIdentification",
+                "seLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_SELocalAccountIdentification",
+                "sgLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_SGLocalAccountIdentification",
+                "ukLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_UKLocalAccountIdentification",
+                "usLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_USLocalAccountIdentification",
+                "brLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_BRLocalAccountIdentification",
+                "dkLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_DKLocalAccountIdentification",
+                "caLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_CALocalAccountIdentification",
+                "nzLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_NZLocalAccountIdentification",
+                "hkLocal": "#/components/schemas/BalancePlatformTransferNotification_v4_HKLocalAccountIdentification"
+              }
+            }
           },
           "storedPaymentMethodId": {
             "type": "string",
@@ -69077,6 +69372,30 @@
         },
         "additionalProperties": false
       },
+      "NetworkReason": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The reason code provided by the network."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the reason code."
+          },
+          "namespace": {
+            "enum": [
+              "iso8583ResponseCode",
+              "ukFpsRejectionCode",
+              "ukFpsReturnReasonCode",
+              "usAchReturnReasonCode"
+            ],
+            "type": "string",
+            "description": "The namespace that corresponds to the reason code.\n\nPossible values:\n*  **ukFpsRejectionCode**\n*  **ukFpsReturnReasonCode**\n*  **usAchReturnReasonCode**\n*  **iso8583ResponseCode**\n\n"
+          }
+        },
+        "additionalProperties": false
+      },
       "BalancePlatformTransferNotification_v4_NumberAndBicAccountIdentification": {
         "required": [
           "type",
@@ -69540,6 +69859,15 @@
               }
             ],
             "description": "The relevant data according to the transfer category.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "issuedCard": "#/components/schemas/BalancePlatformTransferNotification_v4_IssuedCard",
+                "platformPayment": "#/components/schemas/BalancePlatformTransferNotification_v4_PlatformPayment",
+                "bank": "#/components/schemas/BalancePlatformTransferNotification_v4_BankCategoryData",
+                "internal": "#/components/schemas/BalancePlatformTransferNotification_v4_InternalCategoryData"
+              }
+            },
             "x-addedInVersion": "4"
           },
           "counterparty": {
@@ -69599,6 +69927,9 @@
           "id": {
             "type": "string",
             "description": "The ID of the resource."
+          },
+          "networkReason": {
+            "$ref": "#/components/schemas/NetworkReason"
           },
           "paymentInstrument": {
             "$ref": "#/components/schemas/BalancePlatformTransferNotification_v4_PaymentInstrument"
@@ -69789,8 +70120,27 @@
               "undefined"
             ],
             "type": "string",
-            "description": "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Lack of funds in the balance account.\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
+            "description": "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
             "x-addedInVersion": "2"
+          },
+          "tracing": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UKFpsTracingData"
+              },
+              {
+                "$ref": "#/components/schemas/USAchTracingData"
+              }
+            ],
+            "description": "Contains information for tracing the transfer after Adyen forwards it to the network.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "usAch": "#/components/schemas/USAchTracingData",
+                "ukFps": "#/components/schemas/UKFpsTracingData"
+              }
+            },
+            "x-addedInVersion": "4"
           },
           "tracking": {
             "oneOf": [
@@ -69805,6 +70155,14 @@
               }
             ],
             "description": "The latest tracking information of the transfer.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "estimation": "#/components/schemas/EstimationTrackingData",
+                "confirmation": "#/components/schemas/ConfirmationTrackingData",
+                "internalReview": "#/components/schemas/InternalReviewTrackingData"
+              }
+            },
             "x-addedInVersion": "3"
           },
           "transactionRulesResult": {
@@ -69911,7 +70269,15 @@
                 {
                   "$ref": "#/components/schemas/MerchantPurchaseData"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "merchantPurchaseData": "#/components/schemas/MerchantPurchaseData",
+                  "issuingTransactionData": "#/components/schemas/IssuingTransactionData",
+                  "interchangeData": "#/components/schemas/InterchangeData"
+                }
+              }
             },
             "description": "A list of event data.",
             "x-addedInVersion": "4"
@@ -70107,6 +70473,25 @@
             "description": "The status of the transfer event.",
             "x-addedInVersion": "3"
           },
+          "tracingData": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/UKFpsTracingData"
+              },
+              {
+                "$ref": "#/components/schemas/USAchTracingData"
+              }
+            ],
+            "description": "Additional tracing information for the tracing event.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "usAch": "#/components/schemas/USAchTracingData",
+                "ukFps": "#/components/schemas/UKFpsTracingData"
+              }
+            },
+            "x-addedInVersion": "4"
+          },
           "trackingData": {
             "oneOf": [
               {
@@ -70120,6 +70505,14 @@
               }
             ],
             "description": "Additional information for the tracking event.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "estimation": "#/components/schemas/EstimationTrackingData",
+                "confirmation": "#/components/schemas/ConfirmationTrackingData",
+                "internalReview": "#/components/schemas/InternalReviewTrackingData"
+              }
+            },
             "x-addedInVersion": "3"
           },
           "transactionId": {
@@ -70277,6 +70670,28 @@
         },
         "additionalProperties": false
       },
+      "UKFpsTracingData": {
+        "required": [
+          "type",
+          "fpid"
+        ],
+        "type": "object",
+        "properties": {
+          "fpid": {
+            "type": "string",
+            "description": "The FPS trace number. This is a unique identifier assigned to transfers processed by [FPS](https://www.bankofengland.co.uk/payment-systems/services/faster-payments-service)."
+          },
+          "type": {
+            "enum": [
+              "ukFps"
+            ],
+            "type": "string",
+            "description": "**ukFps**",
+            "default": "ukFps"
+          }
+        },
+        "additionalProperties": false
+      },
       "BalancePlatformTransferNotification_v4_UKLocalAccountIdentification": {
         "required": [
           "type",
@@ -70304,6 +70719,28 @@
             "type": "string",
             "description": "**ukLocal**",
             "default": "ukLocal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "USAchTracingData": {
+        "required": [
+          "type",
+          "traceNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "traceNumber": {
+            "type": "string",
+            "description": "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach)."
+          },
+          "type": {
+            "enum": [
+              "usAch"
+            ],
+            "type": "string",
+            "description": "**usAch**",
+            "default": "usAch"
           }
         },
         "additionalProperties": false
@@ -110183,6 +110620,10 @@
             "type": "string",
             "description": "The reference that uniquely identifies tokenized payment details."
           },
+          "transactionLinkId": {
+            "type": "string",
+            "description": "Returned in the response for Mastercard payments.\n\nThis contains the Mastercard Transaction Link Identifier (TLID)."
+          },
           "visaTransactionId": {
             "type": "string",
             "description": "The `visaTransactionId`, has a fixed length of 15 numeric characters.\n\n> Contact Support Team to enable this field."
@@ -113058,21 +113499,21 @@
         "type": "array",
         "items": {
           "enum": [
-            "CashierDisplay",
-            "CashierError",
-            "CashierInput",
             "CashierStatus",
+            "CashierError",
+            "CashierDisplay",
+            "POIReplication",
+            "CashierInput",
             "CustomerAssistance",
             "CustomerDisplay",
             "CustomerError",
             "CustomerInput",
-            "EMVContactless",
-            "ICC",
-            "MagStripe",
-            "POIReplication",
-            "PrinterDocument",
             "PrinterReceipt",
-            "PrinterVoucher"
+            "PrinterDocument",
+            "PrinterVoucher",
+            "MagStripe",
+            "ICC",
+            "EMVContactless"
           ],
           "type": "string"
         },
@@ -113080,19 +113521,19 @@
       },
       "TokenRequestedType": {
         "enum": [
-          "Customer",
-          "Transaction"
+          "Transaction",
+          "Customer"
         ],
         "type": "string",
-        "description": "Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.\nPossible values:\n* **Customer**\n* **Transaction**"
+        "description": "Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.\nPossible values:\n* **Transaction**\n* **Customer**"
       },
       "CustomerOrderReq": {
         "type": "array",
         "items": {
           "enum": [
-            "Both",
+            "Open",
             "Closed",
-            "Open"
+            "Both"
           ],
           "type": "string"
         },
@@ -113100,38 +113541,43 @@
       },
       "TrackFormat": {
         "enum": [
+          "ISO",
+          "JIS-I",
+          "JIS-II",
           "AAMVA",
-          "ISO"
+          "CMC-7",
+          "E-13B"
         ],
         "type": "string",
-        "description": "Magnetic track or magnetic ink characters line.\nPossible values:\n* **AAMVA**\n* **ISO**"
+        "description": "Magnetic track or magnetic ink characters line.\nPossible values:\n* **ISO**\n* **JIS-I**\n* **JIS-II**\n* **AAMVA**\n* **CMC-7**\n* **E-13B**"
       },
       "EntryMode": {
         "type": "array",
         "items": {
           "enum": [
-            "Contactless",
-            "File",
-            "ICC",
-            "Keyed",
-            "MagStripe",
-            "Manual",
-            "Mobile",
             "RFID",
+            "Keyed",
+            "Manual",
+            "File",
             "Scanned",
+            "MagStripe",
+            "ICC",
             "SynchronousICC",
-            "Tapped"
+            "Tapped",
+            "Contactless",
+            "Mobile"
           ],
           "type": "string"
         }
       },
       "TerminalAPI_v1_Result": {
         "enum": [
+          "Success",
           "Failure",
-          "Partial",
-          "Success"
+          "Partial"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Success**\n* **Failure**\n* **Partial**"
       },
       "ErrorCondition": {
         "enum": [
@@ -113139,9 +113585,8 @@
           "Busy",
           "Cancel",
           "DeviceOut",
-          "InProgress",
           "InsertedCard",
-          "InvalidCard",
+          "InProgress",
           "LoggedOut",
           "MessageFormat",
           "NotAllowed",
@@ -113150,123 +113595,132 @@
           "Refusal",
           "UnavailableDevice",
           "UnavailableService",
+          "InvalidCard",
           "UnreachableHost",
           "WrongPIN"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Aborted**\n* **Busy**\n* **Cancel**\n* **DeviceOut**\n* **InsertedCard**\n* **InProgress**\n* **LoggedOut**\n* **MessageFormat**\n* **NotAllowed**\n* **NotFound**\n* **PaymentRestriction**\n* **Refusal**\n* **UnavailableDevice**\n* **UnavailableService**\n* **InvalidCard**\n* **UnreachableHost**\n* **WrongPIN**"
       },
       "GlobalStatus": {
         "enum": [
+          "OK",
           "Busy",
           "Maintenance",
-          "OK",
           "Unreachable"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **OK**\n* **Busy**\n* **Maintenance**\n* **Unreachable**"
       },
       "PrinterStatus": {
         "enum": [
-          "NoPaper",
           "OK",
-          "OutOfOrder",
+          "PaperLow",
+          "NoPaper",
           "PaperJam",
-          "PaperLow"
+          "OutOfOrder"
         ],
         "type": "string",
-        "description": "Indicates if the printer is working and usable.\nPossible values:\n* **NoPaper**\n* **OK**\n* **OutOfOrder**\n* **PaperJam**\n* **PaperLow**"
+        "description": "Indicates if the printer is working and usable.\nPossible values:\n* **OK**\n* **PaperLow**\n* **NoPaper**\n* **PaperJam**\n* **OutOfOrder**"
       },
       "TerminalAPI_v1_Device": {
         "enum": [
           "CashierDisplay",
-          "CashierInput",
           "CustomerDisplay",
+          "CashierInput",
           "CustomerInput"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **CashierDisplay**\n* **CustomerDisplay**\n* **CashierInput**\n* **CustomerInput**"
       },
       "InfoQualify": {
         "enum": [
-          "CustomerAssistance",
-          "Display",
-          "Document",
+          "Status",
           "Error",
+          "Display",
+          "Sound",
           "Input",
           "POIReplication",
+          "CustomerAssistance",
           "Receipt",
-          "Sound",
-          "Status",
+          "Document",
           "Voucher"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Status**\n* **Error**\n* **Display**\n* **Sound**\n* **Input**\n* **POIReplication**\n* **CustomerAssistance**\n* **Receipt**\n* **Document**\n* **Voucher**"
       },
       "OutputFormat": {
         "enum": [
-          "BarCode",
           "MessageRef",
           "Text",
-          "XHTML"
+          "XHTML",
+          "BarCode"
         ],
         "type": "string",
-        "description": "Format of the content to display or print. Display or print device function.\nPossible values:\n* **BarCode**\n* **MessageRef**\n* **Text**\n* **XHTML**"
+        "description": "Format of the content to display or print. Display or print device function.\nPossible values:\n* **MessageRef**\n* **Text**\n* **XHTML**\n* **BarCode**"
       },
       "CharacterWidth": {
         "enum": [
-          "DoubleWidth",
-          "SingleWidth"
+          "SingleWidth",
+          "DoubleWidth"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **SingleWidth**\n* **DoubleWidth**"
       },
       "CharacterHeight": {
         "enum": [
+          "SingleHeight",
           "DoubleHeight",
-          "HalfHeight",
-          "SingleHeight"
+          "HalfHeight"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **SingleHeight**\n* **DoubleHeight**\n* **HalfHeight**"
       },
       "CharacterStyle": {
         "enum": [
+          "Normal",
           "Bold",
           "Italic",
-          "Normal",
           "Underline"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Normal**\n* **Bold**\n* **Italic**\n* **Underline**"
       },
       "Alignment": {
         "enum": [
-          "Centred",
-          "Justified",
           "Left",
-          "Right"
+          "Right",
+          "Centred",
+          "Justified"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Left**\n* **Right**\n* **Centred**\n* **Justified**"
       },
       "MenuEntryTag": {
         "enum": [
-          "NonSelectable",
-          "NonSelectableSubMenu",
           "Selectable",
-          "SubMenu"
+          "NonSelectable",
+          "SubMenu",
+          "NonSelectableSubMenu"
         ],
         "type": "string",
-        "description": "Characteristics related to the selection of a menu entry.\nPossible values:\n* **NonSelectable**\n* **NonSelectableSubMenu**\n* **Selectable**\n* **SubMenu**"
+        "description": "Characteristics related to the selection of a menu entry.\nPossible values:\n* **Selectable**\n* **NonSelectable**\n* **SubMenu**\n* **NonSelectableSubMenu**"
       },
       "TransactionAction": {
         "enum": [
-          "AbortTransaction",
-          "StartTransaction"
+          "StartTransaction",
+          "AbortTransaction"
         ],
         "type": "string",
-        "description": "Action to realise on a transaction. In an `EnableService` request message:\n  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.\n  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.\nPossible values:\n* **AbortTransaction**\n* **StartTransaction**"
+        "description": "Action to realise on a transaction. In an `EnableService` request message:\n  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.\n  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.\nPossible values:\n* **StartTransaction**\n* **AbortTransaction**"
       },
       "ServicesEnabled": {
         "type": "array",
         "items": {
           "enum": [
             "CardAcquisition",
-            "Loyalty",
-            "Payment"
+            "Payment",
+            "Loyalty"
           ],
           "type": "string"
         },
@@ -113274,65 +113728,70 @@
       },
       "PaymentType": {
         "enum": [
+          "Normal",
+          "Refund",
+          "OneTimeReservation",
+          "FirstReservation",
+          "UpdateReservation",
+          "Completion",
           "CashAdvance",
           "CashDeposit",
-          "Completion",
-          "FirstReservation",
+          "Recurring",
           "Instalment",
           "IssuerInstalment",
-          "Normal",
-          "OneTimeReservation",
-          "PaidOut",
-          "Recurring",
-          "Refund",
-          "UpdateReservation"
+          "PaidOut"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Normal**\n* **Refund**\n* **OneTimeReservation**\n* **FirstReservation**\n* **UpdateReservation**\n* **Completion**\n* **CashAdvance**\n* **CashDeposit**\n* **Recurring**\n* **Instalment**\n* **IssuerInstalment**\n* **PaidOut**"
       },
       "PaymentInstrumentType": {
         "enum": [
           "Card",
-          "Cash",
           "Check",
           "Mobile",
-          "StoredValue"
+          "StoredValue",
+          "Cash"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Card**\n* **Check**\n* **Mobile**\n* **StoredValue**\n* **Cash**"
       },
       "TypeCode": {
         "enum": [
-          "Company",
-          "Personal"
+          "Personal",
+          "Company"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Personal**\n* **Company**"
       },
       "StoredValueAccountType": {
         "enum": [
           "GiftCard",
-          "Other",
-          "PhoneCard"
+          "PhoneCard",
+          "Other"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **GiftCard**\n* **PhoneCard**\n* **Other**"
       },
       "IdentificationType": {
         "enum": [
-          "AccountNumber",
-          "BarCode",
-          "ISOTrack2",
           "PAN",
+          "ISOTrack2",
+          "BarCode",
+          "AccountNumber",
           "PhoneNumber"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **PAN**\n* **ISOTrack2**\n* **BarCode**\n* **AccountNumber**\n* **PhoneNumber**"
       },
       "IdentificationSupport": {
         "enum": [
-          "HybridCard",
-          "LinkedCard",
+          "NoCard",
           "LoyaltyCard",
-          "NoCard"
+          "HybridCard",
+          "LinkedCard"
         ],
         "type": "string",
-        "description": "Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.\nPossible values:\n* **HybridCard**\n* **LinkedCard**\n* **LoyaltyCard**\n* **NoCard**"
+        "description": "Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.\nPossible values:\n* **NoCard**\n* **LoyaltyCard**\n* **HybridCard**\n* **LinkedCard**"
       },
       "InstalmentType": {
         "enum": [
@@ -113345,53 +113804,55 @@
       },
       "PeriodUnit": {
         "enum": [
-          "Annual",
           "Daily",
+          "Weekly",
           "Monthly",
-          "Weekly"
+          "Annual"
         ],
         "type": "string",
-        "description": "Type of instalment transaction.\nPossible values:\n* **Annual**\n* **Daily**\n* **Monthly**\n* **Weekly**"
+        "description": "Type of instalment transaction.\nPossible values:\n* **Daily**\n* **Weekly**\n* **Monthly**\n* **Annual**"
       },
       "LoyaltyHandling": {
         "enum": [
-          "Allowed",
           "Forbidden",
           "Processed",
+          "Allowed",
           "Proposed",
           "Required"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Forbidden**\n* **Processed**\n* **Allowed**\n* **Proposed**\n* **Required**"
       },
       "ForceEntryMode": {
         "type": "array",
         "items": {
           "enum": [
-            "CheckReader",
-            "Contactless",
-            "File",
-            "ICC",
-            "Keyed",
-            "MagStripe",
-            "Manual",
             "RFID",
+            "Keyed",
+            "Manual",
+            "File",
             "Scanned",
+            "MagStripe",
+            "ICC",
             "SynchronousICC",
-            "Tapped"
+            "Tapped",
+            "Contactless",
+            "CheckReader"
           ],
           "type": "string"
         }
       },
       "DocumentQualifier": {
         "enum": [
+          "SaleReceipt",
           "CashierReceipt",
           "CustomerReceipt",
           "Document",
-          "Journal",
-          "SaleReceipt",
-          "Voucher"
+          "Voucher",
+          "Journal"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **SaleReceipt**\n* **CashierReceipt**\n* **CustomerReceipt**\n* **Document**\n* **Voucher**\n* **Journal**"
       },
       "AuthenticationMethod": {
         "type": "array",
@@ -113403,9 +113864,9 @@
             "OfflinePIN",
             "OnlinePIN",
             "PaperSignature",
+            "SecuredChannel",
             "SecureCertificate",
             "SecureNoCertificate",
-            "SecuredChannel",
             "SignatureCapture",
             "UnknownMethod"
           ],
@@ -113415,65 +113876,68 @@
       },
       "StoredValueTransactionType": {
         "enum": [
-          "Activate",
-          "Duplicate",
-          "Load",
           "Reserve",
+          "Activate",
+          "Load",
+          "Unload",
           "Reverse",
-          "Unload"
+          "Duplicate"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Reserve**\n* **Activate**\n* **Load**\n* **Unload**\n* **Reverse**\n* **Duplicate**"
       },
       "ReversalReason": {
         "enum": [
           "CustCancel",
-          "Malfunction",
           "MerchantCancel",
+          "Malfunction",
           "Unable2Compl"
         ],
         "type": "string",
-        "description": "Reason of the payment or loyalty reversal.\nPossible values:\n* **CustCancel**\n* **Malfunction**\n* **MerchantCancel**\n* **Unable2Compl**"
+        "description": "Reason of the payment or loyalty reversal.\nPossible values:\n* **CustCancel**\n* **MerchantCancel**\n* **Malfunction**\n* **Unable2Compl**"
       },
       "ReconciliationType": {
         "enum": [
-          "AcquirerReconciliation",
+          "SaleReconciliation",
           "AcquirerSynchronisation",
-          "PreviousReconciliation",
-          "SaleReconciliation"
+          "AcquirerReconciliation",
+          "PreviousReconciliation"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **SaleReconciliation**\n* **AcquirerSynchronisation**\n* **AcquirerReconciliation**\n* **PreviousReconciliation**"
       },
       "TransactionType": {
         "enum": [
-          "Award",
-          "CashAdvance",
-          "CompletedDeffered",
-          "CompletedReservation",
-          "Credit",
           "Debit",
+          "Credit",
+          "ReverseDebit",
+          "ReverseCredit",
+          "OneTimeReservation",
+          "CompletedDeffered",
+          "FirstReservation",
+          "UpdateReservation",
+          "CompletedReservation",
+          "CashAdvance",
+          "IssuerInstalment",
           "Declined",
           "Failed",
-          "FirstReservation",
-          "IssuerInstalment",
-          "OneTimeReservation",
-          "Rebate",
-          "Redemption",
+          "Award",
           "ReverseAward",
-          "ReverseCredit",
-          "ReverseDebit",
-          "ReverseRebate",
+          "Redemption",
           "ReverseRedemption",
-          "UpdateReservation"
+          "Rebate",
+          "ReverseRebate"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Debit**\n* **Credit**\n* **ReverseDebit**\n* **ReverseCredit**\n* **OneTimeReservation**\n* **CompletedDeffered**\n* **FirstReservation**\n* **UpdateReservation**\n* **CompletedReservation**\n* **CashAdvance**\n* **IssuerInstalment**\n* **Declined**\n* **Failed**\n* **Award**\n* **ReverseAward**\n* **Redemption**\n* **ReverseRedemption**\n* **Rebate**\n* **ReverseRebate**"
       },
       "TotalDetails": {
         "type": "array",
         "items": {
           "enum": [
-            "OperatorID",
             "POIID",
             "SaleID",
+            "OperatorID",
             "ShiftNumber",
             "TotalsGroupID"
           ],
@@ -113483,17 +113947,17 @@
       },
       "TerminalAPI_v1_AccountType": {
         "enum": [
-          "CardTotals",
+          "Default",
+          "Savings",
           "Checking",
           "CreditCard",
-          "Default",
-          "EpurseCard",
+          "Universal",
           "Investment",
-          "Savings",
-          "Universal"
+          "CardTotals",
+          "EpurseCard"
         ],
         "type": "string",
-        "description": "Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.\nPossible values:\n* **CardTotals**\n* **Checking**\n* **CreditCard**\n* **Default**\n* **EpurseCard**\n* **Investment**\n* **Savings**\n* **Universal**"
+        "description": "Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.\nPossible values:\n* **Default**\n* **Savings**\n* **Checking**\n* **CreditCard**\n* **Universal**\n* **Investment**\n* **CardTotals**\n* **EpurseCard**"
       },
       "MessageCategory": {
         "enum": [
@@ -113511,94 +113975,101 @@
           "Login",
           "Logout",
           "Loyalty",
-          "None",
           "Payment",
           "Print",
           "Reconciliation",
           "Reversal",
           "StoredValue",
-          "TransactionStatus"
+          "TransactionStatus",
+          "None"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Abort**\n* **Admin**\n* **BalanceInquiry**\n* **CardAcquisition**\n* **Diagnosis**\n* **Display**\n* **EnableService**\n* **Event**\n* **GetTotals**\n* **Input**\n* **InputUpdate**\n* **Login**\n* **Logout**\n* **Loyalty**\n* **Payment**\n* **Print**\n* **Reconciliation**\n* **Reversal**\n* **StoredValue**\n* **TransactionStatus**\n* **None**"
       },
       "MessageType": {
         "enum": [
-          "Notification",
           "Request",
-          "Response"
+          "Response",
+          "Notification"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Request**\n* **Response**\n* **Notification**"
       },
       "MessageClass": {
         "enum": [
+          "Service",
           "Device",
-          "Event",
-          "Service"
+          "Event"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **Service**\n* **Device**\n* **Event**"
       },
       "EventToNotify": {
         "enum": [
-          "Abort",
           "BeginMaintenance",
+          "EndMaintenance",
+          "Shutdown",
+          "Initialised",
+          "OutOfOrder",
+          "Completed",
+          "Abort",
+          "SaleWakeUp",
+          "SaleAdmin",
+          "CustomerLanguage",
+          "KeyPressed",
+          "SecurityAlarm",
+          "StopAssistance",
           "CardInserted",
           "CardRemoved",
-          "Completed",
-          "CustomerLanguage",
-          "EndMaintenance",
-          "Initialised",
-          "KeyPressed",
-          "OutOfOrder",
           "Reject",
-          "SaleAdmin",
-          "SaleWakeUp",
-          "ScanBarcodeResult",
-          "SecurityAlarm",
-          "Shutdown",
-          "StopAssistance",
-          "UseAnotherCardForPreauth"
+          "UseAnotherCardForPreauth",
+          "ScanBarcodeResult"
         ],
         "type": "string",
-        "description": "Event the POI notifies to the Sale System.\nPossible values:\n* **Abort**\n* **BeginMaintenance**\n* **CardInserted**\n* **CardRemoved**\n* **Completed**\n* **CustomerLanguage**\n* **EndMaintenance**\n* **Initialised**\n* **KeyPressed**\n* **OutOfOrder**\n* **Reject**\n* **SaleAdmin**\n* **SaleWakeUp**\n* **ScanBarcodeResult**\n* **SecurityAlarm**\n* **Shutdown**\n* **StopAssistance**\n* **UseAnotherCardForPreauth**"
+        "description": "Event the POI notifies to the Sale System.\nPossible values:\n* **BeginMaintenance**\n* **EndMaintenance**\n* **Shutdown**\n* **Initialised**\n* **OutOfOrder**\n* **Completed**\n* **Abort**\n* **SaleWakeUp**\n* **SaleAdmin**\n* **CustomerLanguage**\n* **KeyPressed**\n* **SecurityAlarm**\n* **StopAssistance**\n* **CardInserted**\n* **CardRemoved**\n* **Reject**\n* **UseAnotherCardForPreauth**\n* **ScanBarcodeResult**"
       },
       "InputCommand": {
         "enum": [
-          "DecimalString",
-          "DigitString",
           "GetAnyKey",
           "GetConfirmation",
+          "SiteManager",
+          "TextString",
+          "DigitString",
+          "DecimalString",
           "GetFunctionKey",
           "GetMenuEntry",
-          "Password",
-          "SiteManager",
-          "TextString"
+          "Password"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **GetAnyKey**\n* **GetConfirmation**\n* **SiteManager**\n* **TextString**\n* **DigitString**\n* **DecimalString**\n* **GetFunctionKey**\n* **GetMenuEntry**\n* **Password**"
       },
       "ResponseMode": {
         "enum": [
-          "Immediate",
           "NotRequired",
+          "Immediate",
           "PrintEnd",
           "SoundEnd"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **NotRequired**\n* **Immediate**\n* **PrintEnd**\n* **SoundEnd**"
       },
       "SoundFormat": {
         "enum": [
-          "MessageRef",
           "SoundRef",
+          "MessageRef",
           "Text"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **SoundRef**\n* **MessageRef**\n* **Text**"
       },
       "SoundAction": {
         "enum": [
-          "SetDefaultVolume",
           "StartSound",
-          "StopSound"
+          "StopSound",
+          "SetDefaultVolume"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "\nPossible values:\n* **StartSound**\n* **StopSound**\n* **SetDefaultVolume**"
       },
       "PINFormat": {
         "enum": [
@@ -113611,12 +114082,12 @@
       },
       "PINRequestType": {
         "enum": [
-          "PINEnter",
           "PINVerify",
-          "PINVerifyOnly"
+          "PINVerifyOnly",
+          "PINEnter"
         ],
         "type": "string",
-        "description": "Type of PIN Service.\nPossible values:\n* **PINEnter**\n* **PINVerify**\n* **PINVerifyOnly**"
+        "description": "Type of PIN Service.\nPossible values:\n* **PINVerify**\n* **PINVerifyOnly**\n* **PINEnter**"
       },
       "SaleToIssuerData": {
         "type": "object",
@@ -113640,7 +114111,8 @@
             "minimum": 1,
             "type": "integer",
             "description": "Card track number.",
-            "default": 2
+            "default": 2,
+            "x-nexo-kind": "integer"
           },
           "TrackFormat": {
             "$ref": "#/components/schemas/TrackFormat"
@@ -113648,7 +114120,9 @@
           "TrackValue": {
             "pattern": "^.{1,104}$",
             "type": "string",
-            "description": "Card track content."
+            "description": "Card track content.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 104
           }
         },
         "description": "Magnetic track or magnetic ink characters line.\nISO 7813 - ISO 4909.\nGeneric data structure for a card track, used when the magstripe card reader is located on the Sale Terminal, or for magstripe Card Reader device request. The data structure is also used to store the line at the bottom of a bank check."
@@ -113660,26 +114134,31 @@
             "maximum": 28,
             "minimum": 8,
             "type": "integer",
-            "description": "Primary Account Number."
+            "description": "Primary Account Number.",
+            "x-nexo-kind": "digitstring"
           },
           "CardSeqNumb": {
             "maximum": 3,
             "minimum": 2,
             "type": "integer",
-            "description": "Card Sequence Number.\nIf EntryMode is File, Keyed, or Manual."
+            "description": "Card Sequence Number.\nIf EntryMode is File, Keyed, or Manual.",
+            "x-nexo-kind": "digitstring"
           },
           "ExpiryDate": {
             "maximum": 4,
             "minimum": 4,
             "type": "integer",
-            "description": "Date after which the card cannot be used.\nIf EntryMode is File."
+            "description": "Date after which the card cannot be used.\nIf EntryMode is File.",
+            "x-nexo-kind": "digitstring"
           },
           "TrackData": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TrackData"
             },
-            "description": "Magnetic track or magnetic ink characters line.\nIf EntryMode is MagStripe or RFID ."
+            "description": "Magnetic track or magnetic ink characters line.\nIf EntryMode is MagStripe or RFID .",
+            "x-nexo-list-min": 0,
+            "x-nexo-list-max": 3
           }
         },
         "description": "This data structure could be CMS protected (EnvelopedData). In this case the data structure SensitiveCardData is replaced by the data structure ProtectedCardData of type ContentInformationType.\nWhen this data is protected, the exact content is unknown by the Sale System, and might include\nall the information which are required by an external backup POI Server to make a batch payment\ntransaction in case of problem with the POI System.\nSensitive information related to the payment card, entered or read\nby the Sale System."
@@ -113732,11 +114211,13 @@
             "maximum": 3,
             "minimum": 3,
             "type": "integer",
-            "description": "Country Code attached to the card (3 numerics).\nIf available in the card."
+            "description": "Country Code attached to the card (3 numerics).\nIf available in the card.",
+            "x-nexo-kind": "digitstring"
           },
           "ProtectedCardData": {
             "type": "string",
-            "description": "Sensitive information related to the payment card, protected by CMS.\nSensitiveCardData protected by CMS EnvelopedData."
+            "description": "Sensitive information related to the payment card, protected by CMS.\nSensitiveCardData protected by CMS EnvelopedData.",
+            "x-nexo-kind": "contentinformation"
           },
           "SensitiveCardData": {
             "$ref": "#/components/schemas/SensitiveCardData"
@@ -113773,7 +114254,9 @@
           "TotalsGroupID": {
             "pattern": "^.{1,16}$",
             "type": "string",
-            "description": "Identification of a group of transactions on a POI Terminal, having the same Sale features.\nCould be used to group POI for reconciliation or other purpose defined by the Sale System. The default value is assigned by the Login Request."
+            "description": "Identification of a group of transactions on a POI Terminal, having the same Sale features.\nCould be used to group POI for reconciliation or other purpose defined by the Sale System. The default value is assigned by the Login Request.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 16
           }
         },
         "description": "Information related to the software and hardware features of the Sale Terminal.\nSent in the Login Request if a Sale Terminal is involved in the login. In other messages, sent when a logical device is out of order (SaleCapabilities) or when other data have changed or were missing in the Login."
@@ -113835,7 +114318,8 @@
             "$ref": "#/components/schemas/SaleToIssuerData"
           }
         },
-        "description": "Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition."
+        "description": "Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.",
+        "x-nexo-exported": true
       },
       "POIData": {
         "required": [
@@ -113848,7 +114332,8 @@
           },
           "POIReconciliationID": {
             "type": "integer",
-            "description": "Identification of the reconciliation period between Sale and POI.\nIf Result is Success."
+            "description": "Identification of the reconciliation period between Sale and POI.\nIf Result is Success.",
+            "x-nexo-kind": "digitstring"
           }
         },
         "description": "Data related to the POI System.\nIn the Message Response, identification of the POI transaction."
@@ -114000,23 +114485,27 @@
         "properties": {
           "Text": {
             "type": "string",
-            "description": "Content of text message to display, print or play."
+            "description": "Content of text message to display, print or play.",
+            "x-nexo-kind": "unicode"
           },
           "CharacterSet": {
             "type": "integer",
-            "description": "Character height of the text string to display or print. Absence of this data element means the characters have normal height."
+            "description": "Character height of the text string to display or print. Absence of this data element means the characters have normal height.",
+            "x-nexo-kind": "integer"
           },
           "StartRow": {
             "maximum": 500,
             "minimum": 1,
             "type": "integer",
-            "description": "Row where the text string has to be displayed or printed."
+            "description": "Row where the text string has to be displayed or printed.",
+            "x-nexo-kind": "integer"
           },
           "StartColumn": {
             "maximum": 500,
             "minimum": 1,
             "type": "integer",
-            "description": "Column where the text string has to be displayed or printed."
+            "description": "Column where the text string has to be displayed or printed.",
+            "x-nexo-kind": "integer"
           },
           "CharacterWidth": {
             "$ref": "#/components/schemas/CharacterWidth"
@@ -114093,7 +114582,9 @@
             "pattern": "^.{0,262144}$",
             "type": "string",
             "description": "XHTML document body containing the message to display or print.\nMandatory if `OutputFormat` is XHTML, not allowed otherwise.",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 0,
+            "x-nexo-max": 262144
           },
           "OutputBarcode": {
             "$ref": "#/components/schemas/OutputBarcode"
@@ -114155,7 +114646,8 @@
             "minimum": 0,
             "type": "integer",
             "description": "Number of seconds the message has to be displayed.",
-            "default": 0
+            "default": 0,
+            "x-nexo-kind": "integer"
           },
           "Device": {
             "$ref": "#/components/schemas/TerminalAPI_v1_Device"
@@ -114201,7 +114693,8 @@
           },
           "LoyaltyID": {
             "type": "string",
-            "description": "Loyalty account identification conforming to the IdentificationType."
+            "description": "Loyalty account identification conforming to the IdentificationType.",
+            "x-nexo-kind": "unicode"
           }
         },
         "description": "Identification of a Loyalty account.\nIn the Payment Request message, it allows to identify the loyalty account by the Sale Terminal instead of the POI Terminal (e.g. because the account identification is a bar-code read by the Cashier on a scanner device)."
@@ -114250,7 +114743,8 @@
           "Country": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Country of the bank check.\nAbsent if country of the Sale system."
+            "description": "Country of the bank check.\nAbsent if country of the Sale system.",
+            "x-nexo-kind": "isocountry3a"
           }
         },
         "description": "Information related to the paper check used for the transaction.\nAllows the check information to be provided by the Sale System before requesting the payment, or stored by the Sale System after processing of the payment."
@@ -114263,15 +114757,18 @@
         "properties": {
           "MSISDN": {
             "type": "integer",
-            "description": "Mobile Subscriber Integrated Service Digital Network (i.e. mobile phone number of the SIM card). Country, National Destination Code, and Subscriber Number."
+            "description": "Mobile Subscriber Integrated Service Digital Network (i.e. mobile phone number of the SIM card). Country, National Destination Code, and Subscriber Number.",
+            "x-nexo-kind": "digitstring"
           },
           "IMSI": {
             "type": "integer",
-            "description": "International Mobile Subscriber Identity. Unique number associated with the mobile phone user, containing the Mobile Country Code (MCC), the Mobile Network Code (MNC), and the Mobile Identification Number (MSIN)"
+            "description": "International Mobile Subscriber Identity. Unique number associated with the mobile phone user, containing the Mobile Country Code (MCC), the Mobile Network Code (MNC), and the Mobile Identification Number (MSIN)",
+            "x-nexo-kind": "digitstring"
           },
           "IMEI": {
             "type": "integer",
-            "description": "International Mobile Equipment Identity. Unique number associated with the mobile phone device."
+            "description": "International Mobile Equipment Identity. Unique number associated with the mobile phone device.",
+            "x-nexo-kind": "digitstring"
           }
         }
       },
@@ -114337,24 +114834,28 @@
             "maximum": 3,
             "minimum": 3,
             "type": "integer",
-            "description": "Identifies the country of a mobile phone operator.\nIf data available."
+            "description": "Identifies the country of a mobile phone operator.\nIf data available.",
+            "x-nexo-kind": "digitstring"
           },
           "MobileNetworkCode": {
             "maximum": 3,
             "minimum": 2,
             "type": "integer",
-            "description": "Identifies the mobile phone operator inside a country.\nIf data available."
+            "description": "Identifies the mobile phone operator inside a country.\nIf data available.",
+            "x-nexo-kind": "digitstring"
           },
           "MaskedMSISDN": {
             "type": "integer",
-            "description": "Masked Mobile Subscriber Integrated Service Digital Network.\nIf data available."
+            "description": "Masked Mobile Subscriber Integrated Service Digital Network.\nIf data available.",
+            "x-nexo-kind": "digitstring"
           },
           "Geolocation": {
             "$ref": "#/components/schemas/Geolocation"
           },
           "ProtectedMobileData": {
             "type": "string",
-            "description": "Sensitive information related to the mobile phone, protected by CMS.\nSensitiveMobileData."
+            "description": "Sensitive information related to the mobile phone, protected by CMS.\nSensitiveMobileData.",
+            "x-nexo-kind": "contentinformation"
           },
           "SensitiveMobileData": {
             "$ref": "#/components/schemas/SensitiveMobileData"
@@ -114370,7 +114871,8 @@
           },
           "SequenceNumber": {
             "type": "integer",
-            "description": "Sequence number of the instalment. For an instalment payment transaction, number of the payment, from 1 to TotalNbOfPayments."
+            "description": "Sequence number of the instalment. For an instalment payment transaction, number of the payment, from 1 to TotalNbOfPayments.",
+            "x-nexo-kind": "integer"
           },
           "PlanID": {
             "pattern": "^.+$",
@@ -114379,7 +114881,8 @@
           },
           "Period": {
             "type": "integer",
-            "description": "Period of time with defined unit of time. A period between 2 payment instalments."
+            "description": "Period of time with defined unit of time. A period between 2 payment instalments.",
+            "x-nexo-kind": "integer"
           },
           "PeriodUnit": {
             "$ref": "#/components/schemas/PeriodUnit"
@@ -114391,25 +114894,29 @@
           },
           "TotalNbOfPayments": {
             "type": "integer",
-            "description": "Total number of payments. For instalment, the number of payments, including the first one."
+            "description": "Total number of payments. For instalment, the number of payments, including the first one.",
+            "x-nexo-kind": "integer"
           },
           "CumulativeAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Sum of a collection of amounts. Total amount of the payment instalments."
+            "description": "Sum of a collection of amounts. Total amount of the payment instalments.",
+            "x-nexo-kind": "simpleamount"
           },
           "FirstAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "First amount of the payment instalments."
+            "description": "First amount of the payment instalments.",
+            "x-nexo-kind": "simpleamount"
           },
           "Charges": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Charges related to a transaction. Charge related to the payment instalments."
+            "description": "Charges related to a transaction. Charge related to the payment instalments.",
+            "x-nexo-kind": "simpleamount"
           }
         }
       },
@@ -114439,7 +114946,8 @@
             "maximum": 4,
             "minimum": 4,
             "type": "integer",
-            "description": "Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY."
+            "description": "Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY.",
+            "x-nexo-kind": "digitstring"
           },
           "EntryMode": {
             "$ref": "#/components/schemas/EntryMode"
@@ -114466,7 +114974,8 @@
           },
           "ProtectedCardData": {
             "type": "string",
-            "description": "Sensitive information related to the payment card, protected by CMS.\nSensitiveCardData protected by CMS EnvelopedData."
+            "description": "Sensitive information related to the payment card, protected by CMS.\nSensitiveCardData protected by CMS EnvelopedData.",
+            "x-nexo-kind": "contentinformation"
           },
           "CardData": {
             "$ref": "#/components/schemas/CardData"
@@ -114511,13 +115020,15 @@
           },
           "AcquirerID": {
             "type": "integer",
-            "description": "Identification of the Acquirer.\nRestrict to the Acquirer if present."
+            "description": "Identification of the Acquirer.\nRestrict to the Acquirer if present.",
+            "x-nexo-kind": "digitstring"
           },
           "AmountValue": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Value of an amount."
+            "description": "Value of an amount.",
+            "x-nexo-kind": "simpleamount"
           },
           "HostTransactionID": {
             "$ref": "#/components/schemas/TransactionIDType"
@@ -114541,7 +115052,8 @@
             "type": "array",
             "items": {
               "type": "integer",
-              "description": "Identification of the Acquirer.\nRestrict to these Acquirer if present."
+              "description": "Identification of the Acquirer.\nRestrict to these Acquirer if present.",
+              "x-nexo-kind": "digitstring"
             },
             "description": "Identification of the Acquirer.\nRestrict to these Acquirer if present."
           },
@@ -114577,7 +115089,9 @@
           "MerchantCategoryCode": {
             "pattern": "^.{3,4}$",
             "type": "string",
-            "description": "The code which identifies the category of the transaction (MCC).\nThe payment implies a specific MCC."
+            "description": "The code which identifies the category of the transaction (MCC).\nThe payment implies a specific MCC.",
+            "x-nexo-min": 3,
+            "x-nexo-max": 4
           }
         },
         "description": "Conditions on which the transaction must be processed."
@@ -114619,49 +115133,57 @@
           "Currency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount."
+            "description": "Currency of a monetary amount.",
+            "x-nexo-kind": "isocurrency3a"
           },
           "RequestedAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount requested by the Sale for the payment."
+            "description": "Amount requested by the Sale for the payment.",
+            "x-nexo-kind": "simpleamount"
           },
           "CashBackAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "The cash-back part of the amount requested by the Sale for the payment."
+            "description": "The cash-back part of the amount requested by the Sale for the payment.",
+            "x-nexo-kind": "simpleamount"
           },
           "TipAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount."
+            "description": "Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount.",
+            "x-nexo-kind": "simpleamount"
           },
           "PaidAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount already paid in case of split payment. Depending on the context, a split payment is either a split amount, or a split basket (required by some payment means as fleet cards). The PaidAmount is present when the split payment is a split\n     of the amount. Split of the basket involves two Sale Transactions, and does not have to be recognised by\n     the POI."
+            "description": "Amount already paid in case of split payment. Depending on the context, a split payment is either a split amount, or a split basket (required by some payment means as fleet cards). The PaidAmount is present when the split payment is a split\n     of the amount. Split of the basket involves two Sale Transactions, and does not have to be recognised by\n     the POI.",
+            "x-nexo-kind": "simpleamount"
           },
           "MinimumAmountToDeliver": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Minimum amount the Sale System is allowed to deliver for this payment. For the OneTimeReservation, when the maximum amount is unknown, the Sale System indicates the minimum amount it allows."
+            "description": "Minimum amount the Sale System is allowed to deliver for this payment. For the OneTimeReservation, when the maximum amount is unknown, the Sale System indicates the minimum amount it allows.",
+            "x-nexo-kind": "simpleamount"
           },
           "MaximumCashBackAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Maximum amount which could be requested for cash-back to the Sale System. Allows the Cashier\n   to limit the amount value of cash-back to deliver to the Customer."
+            "description": "Maximum amount which could be requested for cash-back to the Sale System. Allows the Cashier\n   to limit the amount value of cash-back to deliver to the Customer.",
+            "x-nexo-kind": "simpleamount"
           },
           "MinimumSplitAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Minimum amount of a split, which could be requested by a Customer.Allows the Merchant to limit the number of split requested by the Customer."
+            "description": "Minimum amount of a split, which could be requested by a Customer.Allows the Merchant to limit the number of split requested by the Customer.",
+            "x-nexo-kind": "simpleamount"
           }
         },
         "description": "Various amounts related to the payment request from the Sale System."
@@ -114694,12 +115216,14 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Value of an amount."
+            "description": "Value of an amount.",
+            "x-nexo-kind": "simpleamount"
           },
           "Currency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount."
+            "description": "Currency of a monetary amount.",
+            "x-nexo-kind": "isocurrency3a"
           }
         }
       },
@@ -114719,17 +115243,20 @@
           },
           "Rate": {
             "type": "number",
-            "description": "Rate of currency conversion."
+            "description": "Rate of currency conversion.",
+            "x-nexo-kind": "decimal"
           },
           "Markup": {
             "type": "number",
-            "description": "Markup of a currency conversion amount as a percentage."
+            "description": "Markup of a currency conversion amount as a percentage.",
+            "x-nexo-kind": "decimal"
           },
           "Commission": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Commission for a currency conversion."
+            "description": "Commission for a currency conversion.",
+            "x-nexo-kind": "simpleamount"
           },
           "Declaration": {
             "pattern": "^.+$",
@@ -114748,11 +115275,17 @@
         "properties": {
           "X": {
             "type": "string",
-            "description": "The hexadecimal value of the coordinates of a point on the abscissa."
+            "description": "The hexadecimal value of the coordinates of a point on the abscissa.",
+            "x-nexo-kind": "hexstring",
+            "x-nexo-min": 1,
+            "x-nexo-max": 4
           },
           "Y": {
             "type": "string",
-            "description": "The hexadecimal value of the coordinates of a point on the ordinate."
+            "description": "The hexadecimal value of the coordinates of a point on the ordinate.",
+            "x-nexo-kind": "hexstring",
+            "x-nexo-min": 1,
+            "x-nexo-max": 4
           }
         }
       },
@@ -114809,7 +115342,8 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Balance of an account.\nIf known (provided by the card or an external host)."
+            "description": "Balance of an account.\nIf known (provided by the card or an external host).",
+            "x-nexo-kind": "simpleamount"
           },
           "LoyaltyAcquirerData": {
             "$ref": "#/components/schemas/LoyaltyAcquirerData"
@@ -114851,7 +115385,8 @@
         "properties": {
           "AcquirerID": {
             "type": "integer",
-            "description": "Identification of the Acquirer.\nIdentification of the Acquirer when the POI System is multi-acquirer."
+            "description": "Identification of the Acquirer.\nIdentification of the Acquirer when the POI System is multi-acquirer.",
+            "x-nexo-kind": "digitstring"
           },
           "MerchantID": {
             "pattern": "^.+$",
@@ -114888,11 +115423,17 @@
         "properties": {
           "X": {
             "type": "string",
-            "description": "Abscissa of a point coordinates. The hexadecimal value in text of the abscissa of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287)."
+            "description": "Abscissa of a point coordinates. The hexadecimal value in text of the abscissa of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287).",
+            "x-nexo-kind": "hexstring",
+            "x-nexo-min": 1,
+            "x-nexo-max": 4
           },
           "Y": {
             "type": "string",
-            "description": "Ordinate of a point coordinates. The hexadecimal value in text of the ordinate of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287)."
+            "description": "Ordinate of a point coordinates. The hexadecimal value in text of the ordinate of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287).",
+            "x-nexo-kind": "hexstring",
+            "x-nexo-min": 1,
+            "x-nexo-max": 4
           }
         }
       },
@@ -114920,37 +115461,43 @@
           "Currency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount."
+            "description": "Currency of a monetary amount.",
+            "x-nexo-kind": "isocurrency3a"
           },
           "AuthorizedAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount requested by the Sale for the payment."
+            "description": "Amount requested by the Sale for the payment.",
+            "x-nexo-kind": "simpleamount"
           },
           "TotalRebatesAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Sum of rebates in amount (total amount or line item amount) for all the loyalty programs."
+            "description": "Sum of rebates in amount (total amount or line item amount) for all the loyalty programs.",
+            "x-nexo-kind": "simpleamount"
           },
           "TotalFeesAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Total amount of financial fees."
+            "description": "Total amount of financial fees.",
+            "x-nexo-kind": "simpleamount"
           },
           "CashBackAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "The cash-back part of the amount requested by the Sale for the payment."
+            "description": "The cash-back part of the amount requested by the Sale for the payment.",
+            "x-nexo-kind": "simpleamount"
           },
           "TipAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount."
+            "description": "Amount paid for a tip. Allow the printing of the tip on the receipt, and to qualify the tip part of the amount.",
+            "x-nexo-kind": "simpleamount"
           }
         }
       },
@@ -114986,7 +115533,8 @@
           },
           "ProtectedSignature": {
             "type": "string",
-            "description": "Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. The format before encryption is the encoded data structure CapturedSignature. The data structure before encryption includes the start and end tags for an XML encoding, the identifier and length bytes for an ASN.1 encoding, and the complete member ProtectedSignature for a JSON encoding."
+            "description": "Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. The format before encryption is the encoded data structure CapturedSignature. The data structure before encryption includes the start and end tags for an XML encoding, the identifier and length bytes for an ASN.1 encoding, and the complete member ProtectedSignature for a JSON encoding.",
+            "x-nexo-kind": "contentinformation"
           },
           "CustomerLanguage": {
             "pattern": "^[a-z]{2,2}$",
@@ -115051,7 +115599,8 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount of a transaction. In the Card Acquisition Request message, it allows the processing of a contactless card."
+            "description": "Amount of a transaction. In the Card Acquisition Request message, it allows the processing of a contactless card.",
+            "x-nexo-kind": "simpleamount"
           },
           "PaymentType": {
             "$ref": "#/components/schemas/PaymentType"
@@ -115086,22 +115635,26 @@
             "maximum": 20,
             "minimum": 1,
             "type": "integer",
-            "description": "Product code of item purchased with the transaction."
+            "description": "Product code of item purchased with the transaction.",
+            "x-nexo-kind": "digitstring"
           },
           "EanUpc": {
             "type": "integer",
-            "description": "Standard product code of item purchased with the transaction."
+            "description": "Standard product code of item purchased with the transaction.",
+            "x-nexo-kind": "digitstring"
           },
           "ItemAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Total amount of the item line."
+            "description": "Total amount of the item line.",
+            "x-nexo-kind": "simpleamount"
           },
           "Currency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount."
+            "description": "Currency of a monetary amount.",
+            "x-nexo-kind": "isocurrency3a"
           }
         },
         "description": "It contains: - the identification of the stored value accounts or the stored value cards, if provided by the Sale System, and - the associated products sold by the Sale System.\nData related to the stored value card."
@@ -115119,7 +115672,8 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "If relevant and known."
+            "description": "If relevant and known.",
+            "x-nexo-kind": "simpleamount"
           }
         }
       },
@@ -115136,22 +115690,26 @@
             "maximum": 20,
             "minimum": 1,
             "type": "integer",
-            "description": "Product code of item purchased with the transaction.\nCopy."
+            "description": "Product code of item purchased with the transaction.\nCopy.",
+            "x-nexo-kind": "digitstring"
           },
           "EanUpc": {
             "type": "integer",
-            "description": "Standard product code of item purchased with the transaction.\nCopy."
+            "description": "Standard product code of item purchased with the transaction.\nCopy.",
+            "x-nexo-kind": "digitstring"
           },
           "ItemAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Total amount of the item line."
+            "description": "Total amount of the item line.",
+            "x-nexo-kind": "simpleamount"
           },
           "Currency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount.\nCopy."
+            "description": "Currency of a monetary amount.\nCopy.",
+            "x-nexo-kind": "isocurrency3a"
           },
           "StoredValueAccountStatus": {
             "$ref": "#/components/schemas/StoredValueAccountStatus"
@@ -115351,7 +115909,8 @@
           "ReversedAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
-            "type": "number"
+            "type": "number",
+            "x-nexo-kind": "simpleamount"
           }
         }
       },
@@ -115368,13 +115927,15 @@
           },
           "TransactionCount": {
             "type": "integer",
-            "description": "Number of processed transaction during the period."
+            "description": "Number of processed transaction during the period.",
+            "x-nexo-kind": "integer"
           },
           "TransactionAmount": {
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Sum of amount of processed transaction during the period."
+            "description": "Sum of amount of processed transaction during the period.",
+            "x-nexo-kind": "simpleamount"
           }
         },
         "description": "Totals of the payment transaction during the reconciliation period."
@@ -115390,7 +115951,8 @@
           },
           "AcquirerID": {
             "type": "integer",
-            "description": "Identification of the Acquirer."
+            "description": "Identification of the Acquirer.",
+            "x-nexo-kind": "digitstring"
           },
           "HostReconciliationID": {
             "pattern": "^.+$",
@@ -115425,19 +115987,24 @@
           "TotalsGroupID": {
             "pattern": "^.{1,16}$",
             "type": "string",
-            "description": "Identification of a group of transaction on a POI Terminal, having the same Sale features.\nSent if requested in the message request."
+            "description": "Identification of a group of transaction on a POI Terminal, having the same Sale features.\nSent if requested in the message request.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 16
           },
           "PaymentCurrency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount."
+            "description": "Currency of a monetary amount.",
+            "x-nexo-kind": "isocurrency3a"
           },
           "PaymentTotals": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PaymentTotals"
             },
-            "description": "Totals of the payment transaction during the reconciliation period.\nIf both `TransactionCount` and `TransactionAmount` are not equal to zero."
+            "description": "Totals of the payment transaction during the reconciliation period.\nIf both `TransactionCount` and `TransactionAmount` are not equal to zero.",
+            "x-nexo-list-min": 0,
+            "x-nexo-list-max": 10
           }
         },
         "description": "If Result is Success, contains all the totals, classified as required by the Sale in the message request. At least, transaction totals are provided per Acquirer, Acquirer Settlement, and Card Brand.\nResult of the Sale to POI Reconciliation processing."
@@ -115468,7 +116035,9 @@
           "TotalsGroupID": {
             "pattern": "^.{1,16}$",
             "type": "string",
-            "description": "Sent if totals in the response have to be computed only for this particular value of TotalsGroupID."
+            "description": "Sent if totals in the response have to be computed only for this particular value of TotalsGroupID.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 16
           }
         }
       },
@@ -115507,12 +116076,14 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Balance of an account after processing of the transaction."
+            "description": "Balance of an account after processing of the transaction.",
+            "x-nexo-kind": "simpleamount"
           },
           "Currency": {
             "pattern": "^[A-Z]{3,3}$",
             "type": "string",
-            "description": "Currency of a monetary amount."
+            "description": "Currency of a monetary amount.",
+            "x-nexo-kind": "isocurrency3a"
           },
           "PaymentAcquirerData": {
             "$ref": "#/components/schemas/PaymentAcquirerData"
@@ -115528,12 +116099,16 @@
           "ServiceID": {
             "pattern": "^.{1,10}$",
             "type": "string",
-            "description": "Identification of a message pair, which processes a transaction."
+            "description": "Identification of a message pair, which processes a transaction.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 10
           },
           "DeviceID": {
             "pattern": "^.{1,10}$",
             "type": "string",
-            "description": "Identification of a device message pair."
+            "description": "Identification of a device message pair.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 10
           },
           "SaleID": {
             "pattern": "^.+$",
@@ -115575,12 +116150,16 @@
           "ServiceID": {
             "pattern": "^.{1,10}$",
             "type": "string",
-            "description": "Identification of a message pair, which processes a transaction.\nRequired if Service or Event MessageClass message or if Device MessageClass and request from POI or response from Sale."
+            "description": "Identification of a message pair, which processes a transaction.\nRequired if Service or Event MessageClass message or if Device MessageClass and request from POI or response from Sale.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 10
           },
           "DeviceID": {
             "pattern": "^.{1,10}$",
             "type": "string",
-            "description": "Identification of a device message pair.\nIf Device MessageClass."
+            "description": "Identification of a device message pair.\nIf Device MessageClass.",
+            "x-nexo-min": 1,
+            "x-nexo-max": 10
           },
           "SaleID": {
             "pattern": "^.+$",
@@ -115593,7 +116172,8 @@
             "description": "Identification of a POI System or a POI Terminal for the Sale to POI protocol."
           }
         },
-        "description": "Message header of the Sale to POI protocol message.\nIt conveys Information related to the Sale to POI protocol management."
+        "description": "Message header of the Sale to POI protocol message.\nIt conveys Information related to the Sale to POI protocol management.",
+        "x-nexo-exported": true
       },
       "RepeatedResponseMessageBody": {
         "type": "object",
@@ -115616,7 +116196,8 @@
           "CardReaderAPDUResponse": {
             "$ref": "#/components/schemas/CardReaderAPDUResponse"
           }
-        }
+        },
+        "x-nexo-exported": true
       },
       "RepeatedMessageResponse": {
         "required": [
@@ -115641,7 +116222,8 @@
         "properties": {
           "AcquirerID": {
             "type": "integer",
-            "description": "Identification of the Acquirer."
+            "description": "Identification of the Acquirer.",
+            "x-nexo-kind": "digitstring"
           },
           "IsReachableFlag": {
             "type": "boolean",
@@ -115695,7 +116277,8 @@
           },
           "MaxInputTime": {
             "type": "integer",
-            "description": "Maximum input time in seconds. Limits the time to answer to an Input request message."
+            "description": "Maximum input time in seconds. Limits the time to answer to an Input request message.",
+            "x-nexo-kind": "integer"
           },
           "ImmediateResponseFlag": {
             "type": "boolean",
@@ -115704,15 +116287,18 @@
           },
           "MinLength": {
             "type": "integer",
-            "description": "Minimum length of an entered string, or minimum number of entries that can be selected in a menu."
+            "description": "Minimum length of an entered string, or minimum number of entries that can be selected in a menu.",
+            "x-nexo-kind": "integer"
           },
           "MaxLength": {
             "type": "integer",
-            "description": "Maximum length of an entered string, or maximum number of entries that can be selected in a menu."
+            "description": "Maximum length of an entered string, or maximum number of entries that can be selected in a menu.",
+            "x-nexo-kind": "integer"
           },
           "MaxDecimalLength": {
             "type": "integer",
-            "description": "Maximum input length of the decimal part (without decimal point)."
+            "description": "Maximum input length of the decimal part (without decimal point).",
+            "x-nexo-kind": "integer"
           },
           "WaitUserValidationFlag": {
             "type": "boolean",
@@ -115790,25 +116376,30 @@
           },
           "FunctionKey": {
             "type": "integer",
-            "description": "The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal."
+            "description": "The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal.",
+            "x-nexo-kind": "digitstring"
           },
           "TextInput": {
             "type": "string",
-            "description": "The text typed by the Customer on the POI or by the Cashier on the Sale Terminal."
+            "description": "The text typed by the Customer on the POI or by the Cashier on the Sale Terminal.",
+            "x-nexo-kind": "unicode"
           },
           "DigitInput": {
             "type": "integer",
-            "description": "The digits typed by the Customer on the POI or by the Cashier on the Sale Terminal."
+            "description": "The digits typed by the Customer on the POI or by the Cashier on the Sale Terminal.",
+            "x-nexo-kind": "digitstring"
           },
           "Password": {
             "type": "string",
-            "description": "The text password typed by the Customer on the POI or by the Cashier on the Sale Terminal."
+            "description": "The text password typed by the Customer on the POI or by the Cashier on the Sale Terminal.",
+            "x-nexo-kind": "contentinformation"
           },
           "MenuEntryNumber": {
             "type": "array",
             "items": {
               "type": "integer",
-              "description": "The index of the menu item (from 1 to n) which is selected by the Cashier on the Sale Terminal. The value -1 indicates that the immediate upper level of the menu is requested. The value 0 indicates that the root of the menu is requested."
+              "description": "The index of the menu item (from 1 to n) which is selected by the Cashier on the Sale Terminal. The value -1 indicates that the immediate upper level of the menu is requested. The value 0 indicates that the root of the menu is requested.",
+              "x-nexo-kind": "integer"
             },
             "description": "The index of the menu item (from 1 to n) which is selected by the Cashier on the Sale Terminal. The value -1 indicates that the immediate upper level of the menu is requested. The value 0 indicates that the root of the menu is requested."
           }
@@ -115896,7 +116487,8 @@
         "type": "object",
         "properties": {
           "EncrPINBlock": {
-            "type": "string"
+            "type": "string",
+            "x-nexo-kind": "contentinformation"
           },
           "PINFormat": {
             "$ref": "#/components/schemas/PINFormat"
@@ -115913,12 +116505,16 @@
           "ATRValue": {
             "pattern": "^.{1,100}$",
             "type": "string",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 1,
+            "x-nexo-max": 100
           },
           "CardStatusWords": {
             "pattern": "^.{2,2}$",
             "type": "string",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 2,
+            "x-nexo-max": 2
           }
         }
       },
@@ -115933,14 +116529,16 @@
         "type": "object",
         "properties": {
           "AdyenCryptoVersion": {
-            "type": "integer"
+            "type": "integer",
+            "x-nexo-kind": "integer"
           },
           "KeyIdentifier": {
             "pattern": "^.+$",
             "type": "string"
           },
           "KeyVersion": {
-            "type": "integer"
+            "type": "integer",
+            "x-nexo-kind": "integer"
           },
           "Nonce": {
             "pattern": "^.+$",
@@ -115953,7 +116551,8 @@
             "format": "byte"
           }
         },
-        "description": "It contains information related to the security of the message.\nSecurityTrailer as used by Adyen."
+        "description": "It contains information related to the security of the message.\nSecurityTrailer as used by Adyen.",
+        "x-nexo-exported": true
       },
       "LoginRequest": {
         "required": [
@@ -116006,7 +116605,8 @@
             "description": "Serial number of a POI Terminal.\nIf the login involve a POI Terminal and not the first Login to the POI System."
           }
         },
-        "description": "It conveys information related to the session (period between a Login and the following Logout) to process.\nContent of the `LoginRequest` message."
+        "description": "It conveys information related to the session (period between a Login and the following Logout) to process.\nContent of the `LoginRequest` message.",
+        "x-nexo-kind": "request"
       },
       "LogoutRequest": {
         "type": "object",
@@ -116017,7 +116617,8 @@
             "default": false
           }
         },
-        "description": "Empty.\nContent of the Logout Request message."
+        "description": "Empty.\nContent of the Logout Request message.",
+        "x-nexo-kind": "request"
       },
       "EnableServiceRequest": {
         "required": [
@@ -116035,7 +116636,8 @@
             "$ref": "#/components/schemas/DisplayOutput"
           }
         },
-        "description": "It conveys the services that will be enabled for the POI Terminal without the request of the Sale System, and a possible invitation for the Customer to start the services.\nContent of the Enable Service Request message."
+        "description": "It conveys the services that will be enabled for the POI Terminal without the request of the Sale System, and a possible invitation for the Customer to start the services.\nContent of the Enable Service Request message.",
+        "x-nexo-kind": "request"
       },
       "AdminRequest": {
         "type": "object",
@@ -116046,7 +116648,8 @@
             "description": "Identification of the administrative service to process."
           }
         },
-        "description": "Empty.\nContent of the Custom Admin Request message."
+        "description": "Empty.\nContent of the Custom Admin Request message.",
+        "x-nexo-kind": "request"
       },
       "TerminalAPI_v1_PaymentRequest": {
         "required": [
@@ -116072,7 +116675,8 @@
             "description": "Data related to a Loyalty program or account.\nLoyalty cards used with the payment transaction and read by the Sale System."
           }
         },
-        "description": "Request sent to terminal to initiate payment.\nIt conveys Information related to the Payment transaction to process.\nContent of the `PaymentRequest` message."
+        "description": "Request sent to terminal to initiate payment.\nIt conveys Information related to the Payment transaction to process.\nContent of the `PaymentRequest` message.",
+        "x-nexo-kind": "request"
       },
       "CardAcquisitionRequest": {
         "required": [
@@ -116088,7 +116692,8 @@
             "$ref": "#/components/schemas/CardAcquisitionTransaction"
           }
         },
-        "description": "It conveys Information related to the payment and loyalty cards to read and analyse. This message pair is usually followed by a message pair (e.g. payment or loyalty) which refers to this Card Acquisition message pair.\nContent of the Card Acquisition Request message."
+        "description": "It conveys Information related to the payment and loyalty cards to read and analyse. This message pair is usually followed by a message pair (e.g. payment or loyalty) which refers to this Card Acquisition message pair.\nContent of the Card Acquisition Request message.",
+        "x-nexo-kind": "request"
       },
       "StoredValueRequest": {
         "required": [
@@ -116105,10 +116710,13 @@
             "items": {
               "$ref": "#/components/schemas/StoredValueData"
             },
-            "description": "Data related to the stored value card."
+            "description": "Data related to the stored value card.",
+            "x-nexo-list-min": 1,
+            "x-nexo-list-max": 100
           }
         },
-        "description": "It conveys Information related to the Stored Value transaction to process.\nContent of the Stored Value Request message."
+        "description": "It conveys Information related to the Stored Value transaction to process.\nContent of the Stored Value Request message.",
+        "x-nexo-kind": "request"
       },
       "ReversalRequest": {
         "required": [
@@ -116127,13 +116735,15 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount of the payment or loyalty to reverse.\nReversedAmount is implicitly equal to the AuthorizedAmount if absent."
+            "description": "Amount of the payment or loyalty to reverse.\nReversedAmount is implicitly equal to the AuthorizedAmount if absent.",
+            "x-nexo-kind": "simpleamount"
           },
           "ReversalReason": {
             "$ref": "#/components/schemas/ReversalReason"
           }
         },
-        "description": "It conveys Information related to the reversal of a previous payment or a loyalty transaction.\nContent of the Reversal Request message."
+        "description": "It conveys Information related to the reversal of a previous payment or a loyalty transaction.\nContent of the Reversal Request message.",
+        "x-nexo-kind": "request"
       },
       "ReconciliationRequest": {
         "required": [
@@ -116148,16 +116758,19 @@
             "type": "array",
             "items": {
               "type": "integer",
-              "description": "Identification of the Acquirer.\nCould be present only if ReconciliationType is AcquirerReconciliation or AcquirerSynchronisation."
+              "description": "Identification of the Acquirer.\nCould be present only if ReconciliationType is AcquirerReconciliation or AcquirerSynchronisation.",
+              "x-nexo-kind": "digitstring"
             },
             "description": "Identification of the Acquirer.\nCould be present only if ReconciliationType is AcquirerReconciliation or AcquirerSynchronisation."
           },
           "POIReconciliationID": {
             "type": "integer",
-            "description": "Identification of the reconciliation period between Sale and POI.\nAbsent if ReconciliationType is not PreviousReconciliation."
+            "description": "Identification of the reconciliation period between Sale and POI.\nAbsent if ReconciliationType is not PreviousReconciliation.",
+            "x-nexo-kind": "digitstring"
           }
         },
-        "description": "Content of the Reconciliation Request message.\nIt conveys Information related to the Reconciliation requested by the Sale System."
+        "description": "Content of the Reconciliation Request message.\nIt conveys Information related to the Reconciliation requested by the Sale System.",
+        "x-nexo-kind": "request"
       },
       "GetTotalsRequest": {
         "type": "object",
@@ -116169,7 +116782,8 @@
             "$ref": "#/components/schemas/TotalFilter"
           }
         },
-        "description": "It conveys information from the Sale System related to the scope and the format of the totals to be computed by the POI System.\nContent of the Get Totals Request message."
+        "description": "It conveys information from the Sale System related to the scope and the format of the totals to be computed by the POI System.\nContent of the Get Totals Request message.",
+        "x-nexo-kind": "request"
       },
       "BalanceInquiryRequest": {
         "type": "object",
@@ -116181,7 +116795,8 @@
             "$ref": "#/components/schemas/LoyaltyAccountReq"
           }
         },
-        "description": "It conveys Information related to the account for which a Balance Inquiry is requested.\nContent of the Balance Inquiry Request message."
+        "description": "It conveys Information related to the account for which a Balance Inquiry is requested.\nContent of the Balance Inquiry Request message.",
+        "x-nexo-kind": "request"
       },
       "TransactionStatusRequest": {
         "type": "object",
@@ -116199,10 +116814,13 @@
             "items": {
               "$ref": "#/components/schemas/DocumentQualifier"
             },
-            "description": "Qualification of the document to print to the Cashier or the Customer. Allows the manager of the printer, Sale or POI Terminal, to send the information to a particular physical printer or to use the paper type accordingly.\nPossible values:\n* **CashierReceipt**\n* **CustomerReceipt**\n* **Document**\n* **Journal**\n* **SaleReceipt**\n* **Voucher**"
+            "description": "Qualification of the document to print to the Cashier or the Customer. Allows the manager of the printer, Sale or POI Terminal, to send the information to a particular physical printer or to use the paper type accordingly.\nPossible values:\n* **CashierReceipt**\n* **CustomerReceipt**\n* **Document**\n* **Journal**\n* **SaleReceipt**\n* **Voucher**",
+            "x-nexo-list-min": 0,
+            "x-nexo-list-max": 2
           }
         },
-        "description": "Content of the TransactionStatus Request message.\nIt conveys Information requested for status of the last or current Payment, Loyalty or Reversal transaction."
+        "description": "Content of the TransactionStatus Request message.\nIt conveys Information requested for status of the last or current Payment, Loyalty or Reversal transaction.",
+        "x-nexo-kind": "request"
       },
       "AbortRequest": {
         "required": [
@@ -116223,7 +116841,8 @@
             "$ref": "#/components/schemas/DisplayOutput"
           }
         },
-        "description": "Body of the Abort Request message.\nIt conveys Information requested for identification of the message request carrying the transaction to abort. A message to display on the CustomerError Device could be sent by the Sale System (DisplayOutput)."
+        "description": "Body of the Abort Request message.\nIt conveys Information requested for identification of the message request carrying the transaction to abort. A message to display on the CustomerError Device could be sent by the Sale System (DisplayOutput).",
+        "x-nexo-kind": "request"
       },
       "EventNotification": {
         "required": [
@@ -116264,7 +116883,8 @@
             "description": "Information to display and the way to process the display.\nTo display an event message."
           }
         },
-        "description": "Content of the EventNotification message.\nIt conveys Information related to the event, and possible action (maintenance, message to display)."
+        "description": "Content of the EventNotification message.\nIt conveys Information related to the event, and possible action (maintenance, message to display).",
+        "x-nexo-kind": "request"
       },
       "DiagnosisRequest": {
         "type": "object",
@@ -116283,12 +116903,14 @@
             "type": "array",
             "items": {
               "type": "integer",
-              "description": "Identification of the Acquirer.\nPresent if requesting the diagnosis of these hosts only."
+              "description": "Identification of the Acquirer.\nPresent if requesting the diagnosis of these hosts only.",
+              "x-nexo-kind": "digitstring"
             },
             "description": "Identification of the Acquirer.\nPresent if requesting the diagnosis of these hosts only."
           }
         },
-        "description": "It conveys Information related to the target POI for which the diagnosis is requested.\nContent of the Diagnosis Request message."
+        "description": "It conveys Information related to the target POI for which the diagnosis is requested.\nContent of the Diagnosis Request message.",
+        "x-nexo-kind": "request"
       },
       "DisplayRequest": {
         "required": [
@@ -116304,7 +116926,8 @@
             "description": "Information to display and the way to process the display.\nComplete display content for output devices. At most one DisplayOutput per Device/ InfoQualify pair."
           }
         },
-        "description": "It conveys the data to display and the way to process the display. It contains the complete content to display. It might contain an operation (the DisplayOutput element) per Display Device type.\nContent of the Display Request message."
+        "description": "It conveys the data to display and the way to process the display. It contains the complete content to display. It might contain an operation (the DisplayOutput element) per Display Device type.\nContent of the Display Request message.",
+        "x-nexo-kind": "request"
       },
       "InputRequest": {
         "required": [
@@ -116319,7 +116942,8 @@
             "$ref": "#/components/schemas/InputData"
           }
         },
-        "description": "Content of the `InputRequest` message. It conveys the data to display and how to process it. In addition to the display on the Input Device, it might contain an operation (the `DisplayOutput` element) per Display Device type."
+        "description": "Content of the `InputRequest` message. It conveys the data to display and how to process it. In addition to the display on the Input Device, it might contain an operation (the `DisplayOutput` element) per Display Device type.",
+        "x-nexo-kind": "request"
       },
       "InputUpdate": {
         "required": [
@@ -116346,13 +116970,16 @@
             "format": "byte"
           },
           "MinLength": {
-            "type": "integer"
+            "type": "integer",
+            "x-nexo-kind": "integer"
           },
           "MaxLength": {
-            "type": "integer"
+            "type": "integer",
+            "x-nexo-kind": "integer"
           },
           "MaxDecimalLength": {
-            "type": "integer"
+            "type": "integer",
+            "x-nexo-kind": "integer"
           }
         },
         "description": "Definition: Content of the Input Update message. : It conveys\nupdate of the display of an Input request in progress."
@@ -116367,7 +116994,8 @@
             "$ref": "#/components/schemas/PrintOutput"
           }
         },
-        "description": "Content of the Print Request message.\nIt conveys the complete data to print and how to process the print."
+        "description": "Content of the Print Request message.\nIt conveys the complete data to print and how to process the print.",
+        "x-nexo-kind": "request"
       },
       "CardReaderAPDURequest": {
         "required": [
@@ -116382,25 +117010,33 @@
             "pattern": "^.{1,1}$",
             "type": "string",
             "description": "Class field of the APDU command (CLA). APDU request for Card Reader device request. For specific card like synchronous card, a private value should be used in accordance to ISO 7816- 4 (private range D0-FE).",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 1,
+            "x-nexo-max": 1
           },
           "APDUInstruction": {
             "pattern": "^.{1,1}$",
             "type": "string",
             "description": "Instruction field of the APDU command (INS).",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 1,
+            "x-nexo-max": 1
           },
           "APDUPar1": {
             "pattern": "^.{1,1}$",
             "type": "string",
             "description": "Parameter 1 field of the APDU command (P1).",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 1,
+            "x-nexo-max": 1
           },
           "APDUPar2": {
             "pattern": "^.{1,1}$",
             "type": "string",
             "description": "Parameter 2 field of the APDU command(P2).",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 1,
+            "x-nexo-max": 1
           },
           "APDUData": {
             "pattern": "^.+$",
@@ -116412,7 +117048,9 @@
             "pattern": "^.{1,1}$",
             "type": "string",
             "description": "Expected length of the data field of the APDU response to the command (Le).",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 1,
+            "x-nexo-max": 1
           }
         },
         "description": "It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.\nContent of the Card Reader APDU Request message."
@@ -116434,7 +117072,8 @@
             "description": "If token is managed by the POI, the status of the token request."
           }
         },
-        "description": "It conveys Information related to the Login to process.\nContent of the Login Response message."
+        "description": "It conveys Information related to the Login to process.\nContent of the Login Response message.",
+        "x-nexo-kind": "response"
       },
       "LogoutResponse": {
         "required": [
@@ -116446,7 +117085,8 @@
             "$ref": "#/components/schemas/Response"
           }
         },
-        "description": "It conveys the result of the Logout.\nContent of the Logout Response message."
+        "description": "It conveys the result of the Logout.\nContent of the Logout Response message.",
+        "x-nexo-kind": "response"
       },
       "EnableServiceResponse": {
         "required": [
@@ -116458,7 +117098,8 @@
             "$ref": "#/components/schemas/Response"
           }
         },
-        "description": "It conveys the result of the Enable Service processing.\nContent of the Enable Service Response message."
+        "description": "It conveys the result of the Enable Service processing.\nContent of the Enable Service Response message.",
+        "x-nexo-kind": "response"
       },
       "AdminResponse": {
         "required": [
@@ -116470,7 +117111,8 @@
             "$ref": "#/components/schemas/Response"
           }
         },
-        "description": "It conveys the result of the Custom Admin.\nContent of the Custom Admin Response message."
+        "description": "It conveys the result of the Custom Admin.\nContent of the Custom Admin Response message.",
+        "x-nexo-kind": "response"
       },
       "TerminalAPI_v1_PaymentResponse": {
         "required": [
@@ -116507,7 +117149,8 @@
             "description": "Customer or Merchant payment receipt. If the payment receipts are printed by the Sale system and the POI or the Sale does not implement the Print exchange (Basic profile)."
           }
         },
-        "description": "It conveys Information related to the Payment transaction processed by the POI System.\nContent of the Payment Response message."
+        "description": "It conveys Information related to the Payment transaction processed by the POI System.\nContent of the Payment Response message.",
+        "x-nexo-kind": "response"
       },
       "CardAcquisitionResponse": {
         "required": [
@@ -116546,7 +117189,8 @@
             "description": "Data related to the loyalty System."
           }
         },
-        "description": "It conveys Information related to the payment and loyalty cards read and processed by the POI System and entered by the Customer.\nContent of the Card Acquisition Response message."
+        "description": "It conveys Information related to the payment and loyalty cards read and processed by the POI System and entered by the Customer.\nContent of the Card Acquisition Response message.",
+        "x-nexo-kind": "response"
       },
       "LoyaltyResponse": {
         "required": [
@@ -116579,7 +117223,8 @@
             }
           }
         },
-        "description": "It conveys Information related to the Loyalty transaction processed by the POI System.\nContent of the Loyalty Response message."
+        "description": "It conveys Information related to the Loyalty transaction processed by the POI System.\nContent of the Loyalty Response message.",
+        "x-nexo-kind": "response"
       },
       "StoredValueResponse": {
         "required": [
@@ -116612,7 +117257,8 @@
             }
           }
         },
-        "description": "It conveys Information related to the Stored Value transaction processed by the POI System.\nContent of the Stored Value Response message."
+        "description": "It conveys Information related to the Stored Value transaction processed by the POI System.\nContent of the Stored Value Response message.",
+        "x-nexo-kind": "response"
       },
       "ReversalResponse": {
         "required": [
@@ -116633,7 +117279,8 @@
             "maximum": 99999999.999999,
             "minimum": 0.0,
             "type": "number",
-            "description": "Amount of the payment or loyalty to reverse.\nCopy."
+            "description": "Amount of the payment or loyalty to reverse.\nCopy.",
+            "x-nexo-kind": "simpleamount"
           },
           "PaymentReceipt": {
             "type": "array",
@@ -116642,7 +117289,8 @@
             }
           }
         },
-        "description": "It conveys Information related to the reversal processed by the POI System.\nContent of the Reversal Response message."
+        "description": "It conveys Information related to the reversal processed by the POI System.\nContent of the Reversal Response message.",
+        "x-nexo-kind": "response"
       },
       "ReconciliationResponse": {
         "required": [
@@ -116659,7 +117307,8 @@
           },
           "POIReconciliationID": {
             "type": "integer",
-            "description": "Identification of the reconciliation period between Sale and POI.\nAbsent if ReconciliationType is `AcquirerReconciliation`."
+            "description": "Identification of the reconciliation period between Sale and POI.\nAbsent if ReconciliationType is `AcquirerReconciliation`.",
+            "x-nexo-kind": "digitstring"
           },
           "TransactionTotals": {
             "type": "array",
@@ -116669,7 +117318,8 @@
             "description": "Result of the Sale to POI Reconciliation processing.\nIf `Response.Result` is Success."
           }
         },
-        "description": "It conveys Information related to the Reconciliation transaction processed by the POI System.\nContent of the Reconciliation Response message."
+        "description": "It conveys Information related to the Reconciliation transaction processed by the POI System.\nContent of the Reconciliation Response message.",
+        "x-nexo-kind": "response"
       },
       "GetTotalsResponse": {
         "required": [
@@ -116683,7 +117333,8 @@
           },
           "POIReconciliationID": {
             "type": "integer",
-            "description": "Identification of the reconciliation period between Sale and POI."
+            "description": "Identification of the reconciliation period between Sale and POI.",
+            "x-nexo-kind": "digitstring"
           },
           "TransactionTotals": {
             "type": "array",
@@ -116693,7 +117344,8 @@
             "description": "Result of the Sale to POI Reconciliation processing.\nIf `Response.Result` is Success."
           }
         },
-        "description": "Content of the Reconciliation Response message.\nIt conveys Information related to the Reconciliation transaction processed by the POI System."
+        "description": "Content of the Reconciliation Response message.\nIt conveys Information related to the Reconciliation transaction processed by the POI System.",
+        "x-nexo-kind": "response"
       },
       "BalanceInquiryResponse": {
         "required": [
@@ -116714,7 +117366,8 @@
             }
           }
         },
-        "description": "Content of the Balance Inquiry Response message.\nIt conveys the balance and the identification of the associated payment, loyalty or stored value account."
+        "description": "Content of the Balance Inquiry Response message.\nIt conveys the balance and the identification of the associated payment, loyalty or stored value account.",
+        "x-nexo-kind": "response"
       },
       "CardReaderAPDUResponse": {
         "required": [
@@ -116736,10 +117389,13 @@
             "pattern": "^.{2,2}$",
             "type": "string",
             "description": "Status of a smartcard response to a command (SW1-SW2).",
-            "format": "byte"
+            "format": "byte",
+            "x-nexo-min": 2,
+            "x-nexo-max": 2
           }
         },
-        "description": "Content of the Card Reader APDU Response message.\nIt contains the result of the requested service, APDU response sent by the chip of the card in response to the APDU request."
+        "description": "Content of the Card Reader APDU Response message.\nIt contains the result of the requested service, APDU response sent by the chip of the card in response to the APDU request.",
+        "x-nexo-kind": "response"
       },
       "TransactionStatusResponse": {
         "required": [
@@ -116757,11 +117413,13 @@
             "$ref": "#/components/schemas/RepeatedMessageResponse"
           }
         },
-        "description": "Content of the TransactionStatus Response message.\nIt conveys Information related to the status of the last or current Payment, Loyalty or Reversal transaction."
+        "description": "Content of the TransactionStatus Response message.\nIt conveys Information related to the status of the last or current Payment, Loyalty or Reversal transaction.",
+        "x-nexo-kind": "response"
       },
       "AbortResponse": {
         "type": "object",
-        "description": "A successful `AbortRequest` returns a response with a **200 OK** HTTP status code and no body."
+        "description": "A successful `AbortRequest` returns a response with a **200 OK** HTTP status code and no body.",
+        "x-nexo-kind": "response"
       },
       "DiagnosisResponse": {
         "required": [
@@ -116783,7 +117441,8 @@
             "description": "State of a Host."
           }
         },
-        "description": "It conveys the result of the requested diagnosis and a possible message to display on a logical device.\nContent of the Diagnosis Response message."
+        "description": "It conveys the result of the requested diagnosis and a possible message to display on a logical device.\nContent of the Diagnosis Response message.",
+        "x-nexo-kind": "response"
       },
       "DisplayResponse": {
         "required": [
@@ -116799,7 +117458,8 @@
             "description": "Information related to the result the output (display, print, input).\nOne per DisplayOutput item of the request, and in the same order."
           }
         },
-        "description": "It conveys the result of the display, parallel to the message request, except if response not required and absent.\nContent of the Display Response message."
+        "description": "It conveys the result of the display, parallel to the message request, except if response not required and absent.\nContent of the Display Response message.",
+        "x-nexo-kind": "response"
       },
       "InputResponse": {
         "required": [
@@ -116814,7 +117474,8 @@
             "$ref": "#/components/schemas/InputResult"
           }
         },
-        "description": "It conveys the result of the input or the result of the outputs, parallel to the message request, except if response not required and absent.\nContent of the Input Response message."
+        "description": "It conveys the result of the input or the result of the outputs, parallel to the message request, except if response not required and absent.\nContent of the Input Response message.",
+        "x-nexo-kind": "response"
       },
       "PrintResponse": {
         "required": [
@@ -116830,7 +117491,8 @@
             "$ref": "#/components/schemas/Response"
           }
         },
-        "description": "It conveys the result of the print, parallel to the message request, except if response not required and absent.\nContent of the Print Response message."
+        "description": "It conveys the result of the print, parallel to the message request, except if response not required and absent.\nContent of the Print Response message.",
+        "x-nexo-kind": "response"
       },
       "AvsAddress": {
         "required": [
@@ -118286,9 +118948,9 @@
       },
       "TransferService_v4_AULocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "bsbCode"
+          "bsbCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -118389,14 +119051,12 @@
       },
       "TransferService_v4_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
           "currency": {
-            "maxLength": 3,
-            "minLength": 3,
             "type": "string",
             "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
           },
@@ -118405,8 +119065,7 @@
             "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
             "format": "int64"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "TransferService_v4_AmountAdjustment": {
         "type": "object",
@@ -118449,10 +119108,10 @@
       },
       "TransferService_v4_BRLocalAccountIdentification": {
         "required": [
-          "type",
-          "branchNumber",
           "accountNumber",
-          "bankCode"
+          "bankCode",
+          "branchNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -118522,8 +119181,8 @@
       },
       "TransferService_v4_BankAccountV3": {
         "required": [
-          "accountIdentification",
-          "accountHolder"
+          "accountHolder",
+          "accountIdentification"
         ],
         "type": "object",
         "properties": {
@@ -118581,7 +119240,28 @@
                 "$ref": "#/components/schemas/TransferService_v4_USLocalAccountIdentification"
               }
             ],
-            "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer."
+            "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "iban": "#/components/schemas/TransferService_v4_IbanAccountIdentification",
+                "numberAndBic": "#/components/schemas/TransferService_v4_NumberAndBicAccountIdentification",
+                "auLocal": "#/components/schemas/TransferService_v4_AULocalAccountIdentification",
+                "czLocal": "#/components/schemas/TransferService_v4_CZLocalAccountIdentification",
+                "noLocal": "#/components/schemas/TransferService_v4_NOLocalAccountIdentification",
+                "plLocal": "#/components/schemas/TransferService_v4_PLLocalAccountIdentification",
+                "huLocal": "#/components/schemas/TransferService_v4_HULocalAccountIdentification",
+                "seLocal": "#/components/schemas/TransferService_v4_SELocalAccountIdentification",
+                "sgLocal": "#/components/schemas/TransferService_v4_SGLocalAccountIdentification",
+                "ukLocal": "#/components/schemas/TransferService_v4_UKLocalAccountIdentification",
+                "usLocal": "#/components/schemas/TransferService_v4_USLocalAccountIdentification",
+                "brLocal": "#/components/schemas/TransferService_v4_BRLocalAccountIdentification",
+                "dkLocal": "#/components/schemas/TransferService_v4_DKLocalAccountIdentification",
+                "caLocal": "#/components/schemas/TransferService_v4_CALocalAccountIdentification",
+                "nzLocal": "#/components/schemas/TransferService_v4_NZLocalAccountIdentification",
+                "hkLocal": "#/components/schemas/TransferService_v4_HKLocalAccountIdentification"
+              }
+            }
           },
           "storedPaymentMethodId": {
             "type": "string",
@@ -118619,10 +119299,10 @@
       },
       "TransferService_v4_CALocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
           "institutionNumber",
-          "transitNumber"
+          "transitNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -118666,9 +119346,9 @@
       },
       "TransferService_v4_CZLocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "bankCode"
+          "bankCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -118710,10 +119390,10 @@
       },
       "TransferService_v4_CapitalBalance": {
         "required": [
-          "principal",
+          "currency",
           "fee",
-          "total",
-          "currency"
+          "principal",
+          "total"
         ],
         "type": "object",
         "properties": {
@@ -118741,11 +119421,11 @@
       },
       "CapitalGrant": {
         "required": [
+          "balances",
           "grantAccountId",
           "grantOfferId",
           "id",
-          "status",
-          "balances"
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -118830,8 +119510,8 @@
       },
       "TransferService_v4_Card": {
         "required": [
-          "cardIdentification",
-          "cardHolder"
+          "cardHolder",
+          "cardIdentification"
         ],
         "type": "object",
         "properties": {
@@ -118892,8 +119572,8 @@
       },
       "TransferService_v4_ConfirmationTrackingData": {
         "required": [
-          "type",
-          "status"
+          "status",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -118961,9 +119641,9 @@
       },
       "TransferService_v4_DKLocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "bankCode"
+          "bankCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119016,8 +119696,8 @@
       },
       "TransferService_v4_EstimationTrackingData": {
         "required": [
-          "type",
-          "estimatedArrivalTime"
+          "estimatedArrivalTime",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119079,8 +119759,7 @@
           "amount": {
             "$ref": "#/components/schemas/TransferService_v4_Amount"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "FindTransfersResponse": {
         "type": "object",
@@ -119157,9 +119836,9 @@
       },
       "TransferService_v4_HKLocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "clearingCode"
+          "clearingCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119188,8 +119867,8 @@
       },
       "TransferService_v4_HULocalAccountIdentification": {
         "required": [
-          "type",
-          "accountNumber"
+          "accountNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119212,8 +119891,8 @@
       },
       "TransferService_v4_IbanAccountIdentification": {
         "required": [
-          "type",
-          "iban"
+          "iban",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119286,8 +119965,8 @@
       },
       "TransferService_v4_InternalReviewTrackingData": {
         "required": [
-          "type",
-          "status"
+          "status",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119319,9 +119998,9 @@
       },
       "TransferService_v4_InvalidField": {
         "required": [
+          "message",
           "name",
-          "value",
-          "message"
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -119337,8 +120016,7 @@
             "type": "string",
             "description": "The invalid value."
           }
-        },
-        "additionalProperties": false
+        }
       },
       "TransferService_v4_IssuedCard": {
         "type": "object",
@@ -119660,8 +120338,8 @@
       },
       "TransferService_v4_NOLocalAccountIdentification": {
         "required": [
-          "type",
-          "accountNumber"
+          "accountNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119684,8 +120362,8 @@
       },
       "TransferService_v4_NZLocalAccountIdentification": {
         "required": [
-          "type",
-          "accountNumber"
+          "accountNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119736,11 +120414,35 @@
         },
         "additionalProperties": false
       },
+      "TransferService_v4_NetworkReason": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The reason code provided by the network."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the reason code."
+          },
+          "namespace": {
+            "enum": [
+              "iso8583ResponseCode",
+              "ukFpsRejectionCode",
+              "ukFpsReturnReasonCode",
+              "usAchReturnReasonCode"
+            ],
+            "type": "string",
+            "description": "The namespace that corresponds to the reason code.\n\nPossible values:\n*  **ukFpsRejectionCode**\n*  **ukFpsReturnReasonCode**\n*  **usAchReturnReasonCode**\n*  **iso8583ResponseCode**\n\n"
+          }
+        },
+        "additionalProperties": false
+      },
       "TransferService_v4_NumberAndBicAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "bic"
+          "bic",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -119771,8 +120473,8 @@
       },
       "TransferService_v4_PLLocalAccountIdentification": {
         "required": [
-          "type",
-          "accountNumber"
+          "accountNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -120004,11 +120706,11 @@
       },
       "TransferService_v4_RestServiceError": {
         "required": [
-          "type",
-          "errorCode",
-          "title",
           "detail",
-          "status"
+          "errorCode",
+          "status",
+          "title",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -120129,9 +120831,9 @@
       },
       "TransferService_v4_SELocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "clearingNumber"
+          "clearingNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -120240,14 +120942,14 @@
       },
       "TransferService_v4_Transaction": {
         "required": [
-          "id",
           "accountHolder",
-          "balanceAccount",
           "amount",
-          "status",
+          "balanceAccount",
+          "balancePlatform",
           "bookingDate",
-          "valueDate",
-          "balancePlatform"
+          "id",
+          "status",
+          "valueDate"
         ],
         "type": "object",
         "properties": {
@@ -120420,10 +121122,10 @@
       },
       "Transfer": {
         "required": [
-          "counterparty",
-          "status",
+          "amount",
           "category",
-          "amount"
+          "counterparty",
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -120465,6 +121167,15 @@
               }
             ],
             "description": "The relevant data according to the transfer category.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "issuedCard": "#/components/schemas/TransferService_v4_IssuedCard",
+                "platformPayment": "#/components/schemas/TransferService_v4_PlatformPayment",
+                "bank": "#/components/schemas/TransferService_v4_BankCategoryData",
+                "internal": "#/components/schemas/TransferService_v4_InternalCategoryData"
+              }
+            },
             "x-addedInVersion": "4"
           },
           "counterparty": {
@@ -120692,7 +121403,7 @@
               "undefined"
             ],
             "type": "string",
-            "description": "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Lack of funds in the balance account.\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
+            "description": "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
             "x-addedInVersion": "2"
           },
           "type": {
@@ -120748,9 +121459,9 @@
       },
       "TransferService_v4_TransferData": {
         "required": [
-          "status",
+          "amount",
           "category",
-          "amount"
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -120804,6 +121515,15 @@
               }
             ],
             "description": "The relevant data according to the transfer category.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "issuedCard": "#/components/schemas/TransferService_v4_IssuedCard",
+                "platformPayment": "#/components/schemas/TransferService_v4_PlatformPayment",
+                "bank": "#/components/schemas/TransferService_v4_BankCategoryData",
+                "internal": "#/components/schemas/TransferService_v4_InternalCategoryData"
+              }
+            },
             "x-addedInVersion": "4"
           },
           "counterparty": {
@@ -120863,6 +121583,9 @@
           "id": {
             "type": "string",
             "description": "The ID of the resource."
+          },
+          "networkReason": {
+            "$ref": "#/components/schemas/TransferService_v4_NetworkReason"
           },
           "paymentInstrument": {
             "$ref": "#/components/schemas/TransferService_v4_PaymentInstrument"
@@ -121053,8 +121776,27 @@
               "undefined"
             ],
             "type": "string",
-            "description": "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Lack of funds in the balance account.\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
+            "description": "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
             "x-addedInVersion": "2"
+          },
+          "tracing": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/TransferService_v4_UKFpsTracingData"
+              },
+              {
+                "$ref": "#/components/schemas/TransferService_v4_USAchTracingData"
+              }
+            ],
+            "description": "Contains information for tracing the transfer after Adyen forwards it to the network.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "usAch": "#/components/schemas/TransferService_v4_USAchTracingData",
+                "ukFps": "#/components/schemas/TransferService_v4_UKFpsTracingData"
+              }
+            },
+            "x-addedInVersion": "4"
           },
           "tracking": {
             "oneOf": [
@@ -121069,6 +121811,14 @@
               }
             ],
             "description": "The latest tracking information of the transfer.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "estimation": "#/components/schemas/TransferService_v4_EstimationTrackingData",
+                "confirmation": "#/components/schemas/TransferService_v4_ConfirmationTrackingData",
+                "internalReview": "#/components/schemas/TransferService_v4_InternalReviewTrackingData"
+              }
+            },
             "x-addedInVersion": "3"
           },
           "transactionRulesResult": {
@@ -121175,7 +121925,15 @@
                 {
                   "$ref": "#/components/schemas/TransferService_v4_MerchantPurchaseData"
                 }
-              ]
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "merchantPurchaseData": "#/components/schemas/TransferService_v4_MerchantPurchaseData",
+                  "issuingTransactionData": "#/components/schemas/TransferService_v4_IssuingTransactionData",
+                  "interchangeData": "#/components/schemas/TransferService_v4_InterchangeData"
+                }
+              }
             },
             "description": "A list of event data.",
             "x-addedInVersion": "4"
@@ -121371,6 +122129,25 @@
             "description": "The status of the transfer event.",
             "x-addedInVersion": "3"
           },
+          "tracingData": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/TransferService_v4_UKFpsTracingData"
+              },
+              {
+                "$ref": "#/components/schemas/TransferService_v4_USAchTracingData"
+              }
+            ],
+            "description": "Additional tracing information for the tracing event.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "usAch": "#/components/schemas/TransferService_v4_USAchTracingData",
+                "ukFps": "#/components/schemas/TransferService_v4_UKFpsTracingData"
+              }
+            },
+            "x-addedInVersion": "4"
+          },
           "trackingData": {
             "oneOf": [
               {
@@ -121384,6 +122161,14 @@
               }
             ],
             "description": "Additional information for the tracking event.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "estimation": "#/components/schemas/TransferService_v4_EstimationTrackingData",
+                "confirmation": "#/components/schemas/TransferService_v4_ConfirmationTrackingData",
+                "internalReview": "#/components/schemas/TransferService_v4_InternalReviewTrackingData"
+              }
+            },
             "x-addedInVersion": "3"
           },
           "transactionId": {
@@ -121418,8 +122203,8 @@
       },
       "TransferInfo": {
         "required": [
-          "category",
           "amount",
+          "category",
           "counterparty"
         ],
         "type": "object",
@@ -121631,11 +122416,11 @@
       },
       "TransferServiceRestServiceError": {
         "required": [
-          "type",
-          "errorCode",
-          "title",
           "detail",
-          "status"
+          "errorCode",
+          "status",
+          "title",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -121710,6 +122495,15 @@
               }
             ],
             "description": "The relevant data according to the transfer category.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "issuedCard": "#/components/schemas/TransferService_v4_IssuedCard",
+                "platformPayment": "#/components/schemas/TransferService_v4_PlatformPayment",
+                "bank": "#/components/schemas/TransferService_v4_BankCategoryData",
+                "internal": "#/components/schemas/TransferService_v4_InternalCategoryData"
+              }
+            },
             "x-addedInVersion": "4"
           },
           "id": {
@@ -121724,11 +122518,33 @@
         },
         "additionalProperties": false
       },
+      "TransferService_v4_UKFpsTracingData": {
+        "required": [
+          "fpid",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "fpid": {
+            "type": "string",
+            "description": "The FPS trace number. This is a unique identifier assigned to transfers processed by [FPS](https://www.bankofengland.co.uk/payment-systems/services/faster-payments-service)."
+          },
+          "type": {
+            "enum": [
+              "ukFps"
+            ],
+            "type": "string",
+            "description": "**ukFps**",
+            "default": "ukFps"
+          }
+        },
+        "additionalProperties": false
+      },
       "TransferService_v4_UKLocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "sortCode"
+          "sortCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -121755,11 +122571,33 @@
         },
         "additionalProperties": false
       },
+      "TransferService_v4_USAchTracingData": {
+        "required": [
+          "traceNumber",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "traceNumber": {
+            "type": "string",
+            "description": "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach)."
+          },
+          "type": {
+            "enum": [
+              "usAch"
+            ],
+            "type": "string",
+            "description": "**usAch**",
+            "default": "usAch"
+          }
+        },
+        "additionalProperties": false
+      },
       "TransferService_v4_USLocalAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "routingNumber"
+          "routingNumber",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -121848,6 +122686,173 @@
           }
         },
         "additionalProperties": false
+      },
+      "CashOut": {
+        "required": [
+          "amount",
+          "id",
+          "instructingBalanceAccountId",
+          "transfers"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "$ref": "#/components/schemas/TransferService_v4_Amount"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/CashOutInfoCounterparty"
+          },
+          "description": {
+            "type": "string",
+            "description": "Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.\n\nYour description of the cashout transfer. This description is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.\n\nIf you do not provide a description, Adyen generates a description automatically. This generated description is not returned in the response.\n\nSupported characters: **[a-z] [A-Z] [0-9] / - ? : ( ) . , ' + Space**."
+          },
+          "fee": {
+            "$ref": "#/components/schemas/TransferService_v4_Fee"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the cashout reference."
+          },
+          "instructingBalanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account that initiates the cashout request."
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.\n\nThe reference that is sent to the recipient of a cashout transfer. This reference is also sent in all webhooks related to the cashout transfer, so you can use it to track the status of the transfer.\n\nIf you do not provide a reference for the beneficiary, Adyen generates one automatically. This generated reference for the beneficiary is not returned in the response.\n\nSupported characters: **a-z**, **A-Z**, **0-9**."
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "**Use `counterparty.transferInstrumentId` instead.**\n\nThe unique identifier of the counterparty transfer instrument.",
+            "deprecated": true
+          },
+          "transfers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CashOutTransfer"
+            },
+            "description": "The list of transfers related to cashout."
+          }
+        }
+      },
+      "CashOutInfo": {
+        "required": [
+          "amount",
+          "instructingBalanceAccountId"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "$ref": "#/components/schemas/TransferService_v4_Amount"
+          },
+          "counterparty": {
+            "$ref": "#/components/schemas/CashOutInfoCounterparty"
+          },
+          "description": {
+            "type": "string",
+            "description": "Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.\n\nYour description of the cashout transfer. This description is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.\n\nIf you do not provide a description, Adyen generates a description automatically. This generated description is not returned in the response.\n\nSupported characters: **[a-z] [A-Z] [0-9] / - ? : ( ) . , ' + Space**."
+          },
+          "fee": {
+            "$ref": "#/components/schemas/TransferService_v4_Fee"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          },
+          "instructingBalanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account that initiates the cashout request."
+          },
+          "referenceForBeneficiary": {
+            "type": "string",
+            "description": "Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.\n\nThe reference that is sent to the recipient of a cashout transfer. This reference is also sent in all webhooks related to the cashout transfer, so you can use it to track the status of the transfer.\n\nIf you do not provide a reference for the beneficiary, Adyen generates one automatically. This generated reference for the beneficiary is not returned in the response.\n\nSupported characters: **a-z**, **A-Z**, **0-9**."
+          },
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "**Use `counterparty.transferInstrumentId` instead.**\n\nThe unique identifier of the counterparty transfer instrument.",
+            "deprecated": true
+          }
+        }
+      },
+      "CashOutInfoCounterparty": {
+        "type": "object",
+        "properties": {
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the counterparty transfer instrument.\n\nIf you do not provide this field, the cashout funds remain in the instructing balance account after the cashout transfer is settled."
+          }
+        }
+      },
+      "CashOutTransfer": {
+        "required": [
+          "amount",
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "$ref": "#/components/schemas/TransferService_v4_Amount"
+          },
+          "id": {
+            "type": "string",
+            "description": "The reference of the cashout transfer."
+          },
+          "type": {
+            "enum": [
+              "cashoutRepayment",
+              "cashoutFee"
+            ],
+            "type": "string",
+            "description": "The type of the cashout transfer.\n\nPossible values: \n- **cashoutRepayment**: Corresponds to the transfer created to deduct the cashout amount after settlement.\n- **cashoutFee**: Corresponds to the transfer created to debit the cashout fee form the user's balance account."
+          }
+        }
+      },
+      "TransferService_v4_DefaultErrorResponseEntity": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Unique business error code."
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem if applicable."
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransferService_v4_InvalidField"
+            },
+            "description": "Array of fields with validation errors when applicable."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The unique reference for the request."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          }
+        },
+        "description": "Standardized error response following RFC-7807 format",
+        "externalDocs": {
+          "url": "https://www.rfc-editor.org/rfc/rfc7807"
+        }
       },
       "AchNotificationOfChangeNotificationRequest": {
         "required": [
@@ -122684,6 +123689,10 @@
           "modifiedShopperReference": {
             "type": "string"
           },
+          "networkProcessingMode": {
+            "type": "string",
+            "description": "Indicates the processing flow.\n\nPossible values:\n* **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction. \n* **auth**: If you have not [configured automatic capture for the transaction](https://docs.adyen.com/online-payments/capture#types-of-capture), you must manually capture the funds."
+          },
           "networkToken.available": {
             "type": "string"
           },
@@ -122693,8 +123702,13 @@
           "networkToken.tokenSummary": {
             "type": "string"
           },
+          "networkTxDate": {
+            "type": "string",
+            "description": "The network transaction date for Mastercard transactions processed by Bank of America Merchant Services (BAMS)."
+          },
           "networkTxReference": {
-            "type": "string"
+            "type": "string",
+            "description": "The network transaction reference from the scheme, when available."
           },
           "nfc.expire": {
             "type": "string",
@@ -122968,6 +123982,9 @@
             "description": "Total fraud score from risk."
           },
           "transactionId": {
+            "type": "string"
+          },
+          "transactionLinkId": {
             "type": "string"
           },
           "txScreening.appliedRule": {
@@ -126275,6 +127292,10 @@
             },
             "description": "A set of key-value pairs provided in the request, prefixed with 'metadata.'. For example, 'metadata.myField: myValue'"
           },
+          "networkProcessingMode": {
+            "type": "string",
+            "description": "Indicates the processing flow.\n\nPossible values:\n* **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction. \n* **auth**: If you have not [configured automatic capture for the transaction](https://docs.adyen.com/online-payments/capture#types-of-capture), you must manually capture the funds."
+          },
           "networkToken.available": {
             "type": "string",
             "description": "Recurring related."
@@ -126286,6 +127307,14 @@
           "networkToken.tokenSummary": {
             "type": "string",
             "description": "Recurring related."
+          },
+          "networkTxDate": {
+            "type": "string",
+            "description": "The network transaction date for Mastercard transactions processed by Bank of America Merchant Services (BAMS)."
+          },
+          "networkTxReference": {
+            "type": "string",
+            "description": "The network transaction reference from the scheme, when available."
           },
           "nfc.expire": {
             "type": "string",
@@ -127200,6 +128229,23 @@
         },
         "additionalProperties": false
       },
+      "PrearbitrationSchemeArbitrationNotificationRequest": {
+        "type": "object",
+        "properties": {
+          "live": {
+            "type": "string",
+            "description": "Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment."
+          },
+          "notificationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DisputesNotificationRequestItemWrapper"
+            },
+            "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": false
+      },
       "PrearbitrationWonNotificationRequest": {
         "type": "object",
         "properties": {
@@ -127558,6 +128604,10 @@
             },
             "description": "A set of key-value pairs provided in the request, prefixed with 'metadata.'. For example, 'metadata.myField: myValue'"
           },
+          "networkProcessingMode": {
+            "type": "string",
+            "description": "Indicates the processing flow.\n\nPossible values:\n* **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction. \n* **auth**: If you have not [configured automatic capture for the transaction](https://docs.adyen.com/online-payments/capture#types-of-capture), you must manually capture the funds."
+          },
           "networkToken.available": {
             "type": "string",
             "description": "Recurring related."
@@ -127569,6 +128619,14 @@
           "networkToken.tokenSummary": {
             "type": "string",
             "description": "Recurring related."
+          },
+          "networkTxDate": {
+            "type": "string",
+            "description": "The network transaction date for Mastercard transactions processed by Bank of America Merchant Services (BAMS)."
+          },
+          "networkTxReference": {
+            "type": "string",
+            "description": "The network transaction reference from the scheme, when available."
           },
           "nfc.expire": {
             "type": "string",
@@ -127930,6 +128988,14 @@
           },
           "merchantOrderReference": {
             "type": "string"
+          },
+          "networkTxDate": {
+            "type": "string",
+            "description": "The network transaction date for Mastercard transactions processed by Bank of America Merchant Services (BAMS)."
+          },
+          "networkTxReference": {
+            "type": "string",
+            "description": "The network transaction reference from the scheme, when available."
           },
           "paymentLinkId": {
             "type": "string"
@@ -128534,6 +129600,14 @@
           "merchantOrderReference": {
             "type": "string"
           },
+          "networkTxDate": {
+            "type": "string",
+            "description": "The network transaction date for Mastercard transactions processed by Bank of America Merchant Services (BAMS)."
+          },
+          "networkTxReference": {
+            "type": "string",
+            "description": "The network transaction reference from the scheme, when available."
+          },
           "paymentLinkId": {
             "type": "string"
           },
@@ -128969,6 +130043,40 @@
         }
       },
       "RequestForInformationNotificationRequest": {
+        "type": "object",
+        "properties": {
+          "live": {
+            "type": "string",
+            "description": "Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment."
+          },
+          "notificationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DisputesNotificationRequestItemWrapper"
+            },
+            "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SchemeArbitrationLostNotificationRequest": {
+        "type": "object",
+        "properties": {
+          "live": {
+            "type": "string",
+            "description": "Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment."
+          },
+          "notificationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DisputesNotificationRequestItemWrapper"
+            },
+            "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SchemeArbitrationWonNotificationRequest": {
         "type": "object",
         "properties": {
           "live": {
@@ -130768,13 +131876,21 @@
               "description": "S.Hopper - Staff 123",
               "id": "AH00000000000000000000001"
             },
-            "riskScore": 47,
+            "accountHolderStatus": "Active",
+            "automatedActions": [
+              "bumpKYCTier"
+            ],
+            "riskScore": 67,
             "scoreSignalsTriggered": [
               "DistinctAddressUsage",
               "HighNumberOfLegalEntitiesInIdentity",
               "HighNumberOfAccountsInIdentity",
               "AccountAge",
-              "LEMCountry"
+              "LEMCountry",
+              "LegalEntityEmailReferral"
+            ],
+            "signalSourceTypes": [
+              "LegalEntityEmailReferral"
             ]
           },
           "environment": "test",
@@ -132085,7 +133201,8 @@
               "balance": 0,
               "currency": "EUR",
               "reserved": 0,
-              "pending": 0
+              "pending": 0,
+              "pendingAvailable": 0
             }
           ],
           "id": "BA3227C223222B5BLP6JQC3FD",
@@ -152486,8 +153603,8 @@
           "reference": "Your internal reference for the transfer",
           "description": "Your description for the transfer",
           "direction": "outgoing",
-          "reason": "approved",
-          "status": "authorised"
+          "reason": "pending",
+          "status": "received"
         }
       },
       "post-transfers-payout-cross-border-platforms": {
@@ -152541,8 +153658,8 @@
           "reference": "Your internal reference for the transfer",
           "description": "Your description for the transfer",
           "direction": "outgoing",
-          "reason": "approved",
-          "status": "authorised"
+          "reason": "pending",
+          "status": "received"
         }
       },
       "post-transfers-payout-local-transfer-sepa": {
@@ -152616,8 +153733,8 @@
           "reference": "Your internal reference for the transfer",
           "description": "Your description for the transfer",
           "direction": "outgoing",
-          "reason": "approved",
-          "status": "authorised"
+          "reason": "pending",
+          "status": "received"
         }
       },
       "post-transfers-payout-local-transfer-us": {
@@ -152693,8 +153810,8 @@
           "reference": "Your internal reference for the transfer",
           "description": "Your description for the transfer",
           "direction": "outgoing",
-          "reason": "approved",
-          "status": "authorised"
+          "reason": "pending",
+          "status": "received"
         }
       },
       "post-transfers-payout-to-balance-account": {
@@ -152742,8 +153859,8 @@
           "reference": "Your internal reference for the transfer",
           "description": "Your description for the transfer",
           "direction": "outgoing",
-          "reason": "approved",
-          "status": "authorised"
+          "reason": "pending",
+          "status": "received"
         }
       },
       "post-transfers-payout-to-card-raw": {
@@ -152825,9 +153942,9 @@
           },
           "description": "Your internal description of the transfer",
           "direction": "outgoing",
-          "reason": "approved",
+          "reason": "pending",
           "reference": "Your internal reference for the transfer",
-          "status": "authorised",
+          "status": "received",
           "type": "cardTransfer"
         }
       },
@@ -152908,9 +154025,9 @@
           },
           "description": "Your internal description of the transfer",
           "direction": "outgoing",
-          "reason": "approved",
+          "reason": "pending",
           "reference": "Your internal reference for the transfer",
-          "status": "authorised",
+          "status": "received",
           "type": "cardTransfer"
         }
       },
@@ -152969,8 +154086,8 @@
           "reference": "Your internal reference for the transfer",
           "description": "Your description for the transfer",
           "direction": "outgoing",
-          "reason": "approved",
-          "status": "authorised"
+          "reason": "pending",
+          "status": "received"
         }
       },
       "post-transfers-transferId-returns-transfers-return": {
@@ -154177,12 +155294,14 @@
       },
       "TransferService_v4_Idempotency-Key": {
         "description": "The idempotency key used for processing the request. Present if the key was provided in the request.",
+        "style": "simple",
         "schema": {
           "type": "string"
         }
       },
       "auth-param1": {
         "description": "Base64-encoded blob of data. You will need auth-param1 when authenticating your user using the SDK.",
+        "style": "simple",
         "schema": {
           "type": "string"
         }
@@ -154647,6 +155766,9 @@
       "name": "Authorized card users"
     },
     {
+      "name": "Recurring top ups"
+    },
+    {
       "name": "Payment instruments"
     },
     {
@@ -154883,6 +156005,9 @@
     },
     {
       "name": "Capital"
+    },
+    {
+      "name": "CashOut"
     },
     {
       "name": "Standard"

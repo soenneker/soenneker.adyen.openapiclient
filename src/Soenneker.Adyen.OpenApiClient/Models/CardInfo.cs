@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact DeliveryContact { get; set; }
 #endif
         /// <summary>&quot;The form factor of the card.Possible values: **virtual**, **physical**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardInfo_formFactor? FormFactor { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardInfoFormFactor? FormFactor { get; set; }
         /// <summary>&quot;The 3DS configuration of the physical or the virtual card. Possible values: **fullySupported**, **secureCorporate**.&gt; Reach out to your Adyen contact to get the values relevant for your integration.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "cardholderName", n => { CardholderName = n.GetStringValue(); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfiguration.CreateFromDiscriminatorValue); } },
                 { "deliveryContact", n => { DeliveryContact = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact.CreateFromDiscriminatorValue); } },
-                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfo_formFactor>(); } },
+                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfoFormFactor>(); } },
                 { "threeDSecure", n => { ThreeDSecure = n.GetStringValue(); } },
                 { "usage", n => { Usage = n.GetStringValue(); } },
             };
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("cardholderName", CardholderName);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact>("deliveryContact", DeliveryContact);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfo_formFactor>("formFactor", FormFactor);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfoFormFactor>("formFactor", FormFactor);
             writer.WriteStringValue("threeDSecure", ThreeDSecure);
             writer.WriteStringValue("usage", Usage);
         }

@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The unit of time. You can only use **minutes** and **hours** if the `interval.type` is **sliding**.Possible values: **minutes**, **hours**, **days**, **weeks**, or **months**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Duration_unit? Unit { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DurationUnit? Unit { get; set; }
         /// <summary>The length of time by the unit. For example, 5 days.The maximum duration is 90 days or an equivalent in other units. For example, 3 months.</summary>
         public int? Value { get; set; }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Duration_unit>(); } },
+                { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DurationUnit>(); } },
                 { "value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Duration_unit>("unit", Unit);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DurationUnit>("unit", Unit);
             writer.WriteIntValue("value", Value);
         }
     }

@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation> TaxInformation { get; set; }
 #endif
         /// <summary>&quot;The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship_vatAbsenceReason? VatAbsenceReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorshipVatAbsenceReason? VatAbsenceReason { get; set; }
         /// <summary>The VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
                 { "taxAbsent", n => { TaxAbsent = n.GetBoolValue(); } },
                 { "taxInformation", n => { TaxInformation = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>(global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship_vatAbsenceReason>(); } },
+                { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorshipVatAbsenceReason>(); } },
                 { "vatNumber", n => { VatNumber = n.GetStringValue(); } },
             };
         }
@@ -149,7 +149,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
             writer.WriteBoolValue("taxAbsent", TaxAbsent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>("taxInformation", TaxInformation);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship_vatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorshipVatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
             writer.WriteStringValue("vatNumber", VatNumber);
         }
     }

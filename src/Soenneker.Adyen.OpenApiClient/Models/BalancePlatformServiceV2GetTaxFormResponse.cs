@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public byte[] Content { get; set; }
 #endif
         /// <summary>The content type of the tax form.Possible values:*  **application/pdf**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponse_contentType? ContentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponseContentType? ContentType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetByteArrayValue(); } },
-                { "contentType", n => { ContentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponse_contentType>(); } },
+                { "contentType", n => { ContentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponseContentType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponse_contentType>("contentType", ContentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponseContentType>("contentType", ContentType);
         }
     }
 }

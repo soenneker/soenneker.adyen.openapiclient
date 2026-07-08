@@ -15,7 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The DocumentQualifier property</summary>
+        /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier? DocumentQualifier { get; set; }
         /// <summary>Type of the print integrated to other prints.</summary>
         public bool? IntegratedPrintFlag { get; set; }
@@ -35,6 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public PaymentReceipt()
         {
             AdditionalData = new Dictionary<string, object>();
+            RequiredSignatureFlag = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

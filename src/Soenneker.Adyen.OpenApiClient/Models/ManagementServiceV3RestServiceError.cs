@@ -58,10 +58,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError_response? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceErrorResponse? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError_response Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceErrorResponse Response { get; set; }
 #endif
         /// <summary>The HTTP status code.</summary>
         public int? Status { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "instance", n => { Instance = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3InvalidField>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3InvalidField.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError_response>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError_response.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceErrorResponse>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceErrorResponse.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("instance", Instance);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3InvalidField>("invalidFields", InvalidFields);
             writer.WriteStringValue("requestId", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceError_response>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3RestServiceErrorResponse>("response", Response);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);

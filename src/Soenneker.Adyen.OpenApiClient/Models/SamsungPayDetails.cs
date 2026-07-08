@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CheckoutAttemptId { get; set; }
 #endif
         /// <summary>The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails_fundingSource? FundingSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsFundingSource? FundingSource { get; set; }
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**samsungpay**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -76,12 +76,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails_fundingSource>(); } },
+                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsFundingSource>(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "samsungPayToken", n => { SamsungPayToken = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsType>(); } },
             };
         }
         /// <summary>
@@ -92,12 +92,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails_fundingSource>("fundingSource", FundingSource);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("samsungPayToken", SamsungPayToken);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsType>("type", Type);
         }
     }
 }

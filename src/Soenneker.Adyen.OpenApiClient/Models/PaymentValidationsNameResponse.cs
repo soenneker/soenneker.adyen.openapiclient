@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultResponse Result { get; set; }
 #endif
         /// <summary>Informs you if the name validation was performed. Possible values:**performed**, **notPerformed**, **notSupported**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "rawResponse", n => { RawResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultRawResponse>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultRawResponse.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultResponse>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultResponse.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultRawResponse>("rawResponse", RawResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResultResponse>("result", Result);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsNameResponseStatus>("status", Status);
         }
     }
 }

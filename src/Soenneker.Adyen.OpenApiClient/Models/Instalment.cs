@@ -27,7 +27,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentType? InstalmentType { get; set; }
         /// <summary>Period of time with defined unit of time. A period between 2 payment instalments.</summary>
         public int? Period { get; set; }
-        /// <summary>Type of instalment transaction.Possible values:* **Annual*** **Daily*** **Monthly*** **Weekly**</summary>
+        /// <summary>Type of instalment transaction.Possible values:* **Daily*** **Weekly*** **Monthly*** **Annual**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PeriodUnit? PeriodUnit { get; set; }
         /// <summary>Identification of an instalment plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

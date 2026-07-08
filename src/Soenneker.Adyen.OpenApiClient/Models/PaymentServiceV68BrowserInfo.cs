@@ -49,6 +49,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string UserAgent { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68BrowserInfo"/> and sets the default values.
+        /// </summary>
+        public PaymentServiceV68BrowserInfo()
+        {
+            JavaScriptEnabled = true;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68BrowserInfo"/></returns>

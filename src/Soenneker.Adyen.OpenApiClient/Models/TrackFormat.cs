@@ -3,17 +3,33 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **AAMVA*** **ISO**</summary>
+    /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **ISO*** **JIS-I*** **JIS-II*** **AAMVA*** **CMC-7*** **E-13B**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TrackFormat
     {
-        [EnumMember(Value = "AAMVA")]
-        #pragma warning disable CS1591
-        AAMVA,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ISO")]
         #pragma warning disable CS1591
-        ISO,
+        Iso,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIS-I")]
+        #pragma warning disable CS1591
+        JisI,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JIS-II")]
+        #pragma warning disable CS1591
+        JisIi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AAMVA")]
+        #pragma warning disable CS1591
+        Aamva,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CMC-7")]
+        #pragma warning disable CS1591
+        Cmc7,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "E-13B")]
+        #pragma warning disable CS1591
+        E13B,
         #pragma warning restore CS1591
     }
 }

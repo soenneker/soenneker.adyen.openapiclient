@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Relationship { get; set; }
 #endif
         /// <summary>The type of the source of funds.Possible values:*  **business***  **employment***  **donations***  **inheritance***  **financialAid***  **rentalIncome***  **dividendIncome***  **royaltyIncome***  **thirdPartyFunding***  **pensionIncome***  **insuranceSettlement***  **cryptocurrencyIncome***  **assetSale***  **loans***  **gamblingWinnings**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType? Type { get; set; }
         /// <summary>Required if `type` is **gamblingWinnings**. The location of the gambling site for the winnings.For example, if the source of funds is online gambling, provide the website of the gambling company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "originatorLegalEntityId", n => { OriginatorLegalEntityId = n.GetStringValue(); } },
                 { "purpose", n => { Purpose = n.GetStringValue(); } },
                 { "relationship", n => { Relationship = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType>(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
         }
@@ -138,7 +138,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("originatorLegalEntityId", OriginatorLegalEntityId);
             writer.WriteStringValue("purpose", Purpose);
             writer.WriteStringValue("relationship", Relationship);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFundsType>("type", Type);
             writer.WriteStringValue("website", Website);
         }
     }

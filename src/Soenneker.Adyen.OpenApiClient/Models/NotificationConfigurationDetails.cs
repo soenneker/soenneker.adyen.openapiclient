@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string NotifyUsername { get; set; }
 #endif
         /// <summary>&quot;The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails_sslProtocol? SslProtocol { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol? SslProtocol { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "notifyPassword", n => { NotifyPassword = n.GetStringValue(); } },
                 { "notifyURL", n => { NotifyURL = n.GetStringValue(); } },
                 { "notifyUsername", n => { NotifyUsername = n.GetStringValue(); } },
-                { "sslProtocol", n => { SslProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails_sslProtocol>(); } },
+                { "sslProtocol", n => { SslProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol>(); } },
             };
         }
         /// <summary>
@@ -114,7 +114,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("notifyPassword", NotifyPassword);
             writer.WriteStringValue("notifyURL", NotifyURL);
             writer.WriteStringValue("notifyUsername", NotifyUsername);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails_sslProtocol>("sslProtocol", SslProtocol);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol>("sslProtocol", SslProtocol);
         }
     }
 }

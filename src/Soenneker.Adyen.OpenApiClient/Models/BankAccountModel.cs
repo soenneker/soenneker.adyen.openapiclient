@@ -13,14 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Business accounts with a `formFactor` value of **physical** are business accounts issued under the central bank of that country. The default value is **physical** for NL, US, and UK business accounts. Adyen creates a local IBAN for business accounts when the `formFactor` value is set to **virtual**. The local IBANs that are supported are for DE and FR, which reference a physical NL account, with funds being routed through the central bank of NL.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel_formFactor? FormFactor { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel"/> and sets the default values.
-        /// </summary>
-        public BankAccountModel()
-        {
-            FormFactor = global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel_formFactor.Physical;
-        }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor? FormFactor { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel_formFactor>(); } },
+                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor>(); } },
             };
         }
         /// <summary>
@@ -49,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel_formFactor>("formFactor", FormFactor);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor>("formFactor", FormFactor);
         }
     }
 }

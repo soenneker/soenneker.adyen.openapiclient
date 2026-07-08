@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The type of the bank account.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount_accountType? AccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccountAccountType? AccountType { get; set; }
         /// <summary>The bank account number (without separators).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount_accountType>(); } },
+                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccountAccountType>(); } },
                 { "bankAccountNumber", n => { BankAccountNumber = n.GetStringValue(); } },
                 { "bankCity", n => { BankCity = n.GetStringValue(); } },
                 { "bankLocationId", n => { BankLocationId = n.GetStringValue(); } },
@@ -123,7 +123,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount_accountType>("accountType", AccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccountAccountType>("accountType", AccountType);
             writer.WriteStringValue("bankAccountNumber", BankAccountNumber);
             writer.WriteStringValue("bankCity", BankCity);
             writer.WriteStringValue("bankLocationId", BankLocationId);

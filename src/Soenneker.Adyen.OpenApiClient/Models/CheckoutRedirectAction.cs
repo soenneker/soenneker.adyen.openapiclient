@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>When the redirect URL must be accessed via POST, use this data to post to the redirect URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_data? Data { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionDataProperty? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_data Data { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionDataProperty Data { get; set; }
 #endif
         /// <summary>Specifies the HTTP method, for example GET or POST.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentMethodType { get; set; }
 #endif
         /// <summary>**redirect**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionType? Type { get; set; }
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,10 +64,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_data>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionDataProperty.CreateFromDiscriminatorValue); } },
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "paymentMethodType", n => { PaymentMethodType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -78,10 +78,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionDataProperty>("data", Data);
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("paymentMethodType", PaymentMethodType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectActionType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

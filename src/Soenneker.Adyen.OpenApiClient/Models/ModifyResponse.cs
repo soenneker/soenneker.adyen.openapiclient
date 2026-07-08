@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be returned in a particular response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponseAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponseAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction. This value is globally unique; quote it when communicating with us about this response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponseAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponseAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetStringValue(); } },
             };
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponse_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModifyResponseAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("response", Response);
         }

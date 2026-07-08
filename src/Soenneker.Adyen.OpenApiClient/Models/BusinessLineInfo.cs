@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> SalesChannels { get; set; }
 #endif
         /// <summary>The service for which you are creating the business line.Possible values:*  **paymentProcessing***  **issuing***  **banking**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfo_service? Service { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoService? Service { get; set; }
         /// <summary>The sourceOfFunds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "industryCodeDescription", n => { IndustryCodeDescription = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "salesChannels", n => { SalesChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "service", n => { Service = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfo_service>(); } },
+                { "service", n => { Service = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoService>(); } },
                 { "sourceOfFunds", n => { SourceOfFunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds>(global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds.CreateFromDiscriminatorValue); } },
                 { "webData", n => { WebData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>(global::Soenneker.Adyen.OpenApiClient.Models.WebData.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webDataExemption", n => { WebDataExemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption>(global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption.CreateFromDiscriminatorValue); } },
@@ -108,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("industryCode", IndustryCode);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteCollectionOfPrimitiveValues<string>("salesChannels", SalesChannels);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfo_service>("service", Service);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoService>("service", Service);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds>("sourceOfFunds", SourceOfFunds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>("webData", WebData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption>("webDataExemption", WebDataExemption);

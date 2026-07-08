@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PspReference { get; set; }
 #endif
         /// <summary>The result of the payment. For more information, see [Result codes](https://docs.adyen.com/online-payments/payment-result-codes).Possible values:* **Authorised** – The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.* **Received** – Indicates the payment request was successfully received by Adyen, and will be processed. This is the initial state for all payments.* **Pending** – The payment order was successfully received but the final status of the payment is not available yet. This is common for payment methods with an asynchronous flow.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Payment_resultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultCode? ResultCode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
-                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Payment_resultCode>(); } },
+                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultCode>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("pspReference", PspReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Payment_resultCode>("resultCode", ResultCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultCode>("resultCode", ResultCode);
         }
     }
 }

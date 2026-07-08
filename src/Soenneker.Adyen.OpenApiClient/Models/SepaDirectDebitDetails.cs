@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransferInstrumentId { get; set; }
 #endif
         /// <summary>**sepadirectdebit**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "transferInstrumentId", n => { TransferInstrumentId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetailsType>(); } },
             };
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetailsType>("type", Type);
         }
     }
 }

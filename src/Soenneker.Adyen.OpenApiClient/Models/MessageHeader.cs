@@ -23,11 +23,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DeviceID { get; set; }
 #endif
-        /// <summary>The MessageCategory property</summary>
+        /// <summary>Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **CardAcquisition*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **StoredValue*** **TransactionStatus*** **None**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageCategory? MessageCategory { get; set; }
-        /// <summary>The MessageClass property</summary>
+        /// <summary>Possible values:* **Service*** **Device*** **Event**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageClass? MessageClass { get; set; }
-        /// <summary>The MessageType property</summary>
+        /// <summary>Possible values:* **Request*** **Response*** **Notification**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageType? MessageType { get; set; }
         /// <summary>Identification of a POI System or a POI Terminal for the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

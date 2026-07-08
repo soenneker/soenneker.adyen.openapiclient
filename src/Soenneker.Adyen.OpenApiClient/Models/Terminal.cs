@@ -63,10 +63,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of Android apps installed on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs>? InstalledAPKs { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs>? InstalledAPKs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs> InstalledAPKs { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs> InstalledAPKs { get; set; }
 #endif
         /// <summary>Date and time of the last activity on the terminal. Not included when the last activity was more than 14 days ago.</summary>
         public DateTimeOffset? LastActivityAt { get; set; }
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "firmwareVersion", n => { FirmwareVersion = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "installedAPKs", n => { InstalledAPKs = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs>(global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "installedAPKs", n => { InstalledAPKs = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs>(global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastActivityAt", n => { LastActivityAt = n.GetDateTimeOffsetValue(); } },
                 { "lastTransactionAt", n => { LastTransactionAt = n.GetDateTimeOffsetValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -141,7 +141,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteStringValue("firmwareVersion", FirmwareVersion);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InstalledAPKs>("installedAPKs", InstalledAPKs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs>("installedAPKs", InstalledAPKs);
             writer.WriteDateTimeOffsetValue("lastActivityAt", LastActivityAt);
             writer.WriteDateTimeOffsetValue("lastTransactionAt", LastTransactionAt);
             writer.WriteStringValue("model", Model);

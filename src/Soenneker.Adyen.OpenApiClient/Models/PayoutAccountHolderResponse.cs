@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string MerchantReference { get; set; }
 #endif
         /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse_payoutSpeed? PayoutSpeed { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponsePayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>The reference of a request. Can be used to uniquely identify the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,13 +54,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ResultCode { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse"/> and sets the default values.
-        /// </summary>
-        public PayoutAccountHolderResponse()
-        {
-            PayoutSpeed = global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse_payoutSpeed.STANDARD;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "bankAccountUUID", n => { BankAccountUUID = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
-                { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse_payoutSpeed>(); } },
+                { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponsePayoutSpeed>(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetStringValue(); } },
             };
@@ -97,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("bankAccountUUID", BankAccountUUID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6ErrorFieldType>("invalidFields", InvalidFields);
             writer.WriteStringValue("merchantReference", MerchantReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponse_payoutSpeed>("payoutSpeed", PayoutSpeed);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponsePayoutSpeed>("payoutSpeed", PayoutSpeed);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("resultCode", ResultCode);
         }

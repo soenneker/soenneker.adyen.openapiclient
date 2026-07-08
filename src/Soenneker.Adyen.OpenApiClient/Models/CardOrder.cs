@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ServiceCenter { get; set; }
 #endif
         /// <summary>&quot;The status of the card order.Possible values: **Open**, **Closed**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardOrder_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lockDate", n => { LockDate = n.GetDateTimeOffsetValue(); } },
                 { "serviceCenter", n => { ServiceCenter = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus>(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("lockDate", LockDate);
             writer.WriteStringValue("serviceCenter", ServiceCenter);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus>("status", Status);
         }
     }
 }

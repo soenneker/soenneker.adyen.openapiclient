@@ -15,7 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Whether the chosen delivery address is identical to the billing address.</summary>
         public bool? AddressMatch { get; set; }
         /// <summary>Indicator regarding the delivery address.Allowed values:* `shipToBillingAddress`* `shipToVerifiedAddress`* `shipToNewAddress`* `shipToStore`* `digitalGoods`* `goodsNotShipped`* `other`</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicator_deliveryAddressIndicator? DeliveryAddressIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicatorDeliveryAddressIndicator? DeliveryAddressIndicator { get; set; }
         /// <summary>The delivery email address (for digital goods).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string DeliveryEmailAddress { get; set; }
 #endif
         /// <summary>The estimated delivery time for the shopper to receive the goods.Allowed values:* `electronicDelivery`* `sameDayShipping`* `overnightShipping`* `twoOrMoreDaysShipping`</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicator_deliveryTimeframe? DeliveryTimeframe { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicatorDeliveryTimeframe? DeliveryTimeframe { get; set; }
         /// <summary>The giftCardAmount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,10 +102,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "addressMatch", n => { AddressMatch = n.GetBoolValue(); } },
-                { "deliveryAddressIndicator", n => { DeliveryAddressIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicator_deliveryAddressIndicator>(); } },
+                { "deliveryAddressIndicator", n => { DeliveryAddressIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicatorDeliveryAddressIndicator>(); } },
                 { "deliveryEmail", n => { DeliveryEmail = n.GetStringValue(); } },
                 { "deliveryEmailAddress", n => { DeliveryEmailAddress = n.GetStringValue(); } },
-                { "deliveryTimeframe", n => { DeliveryTimeframe = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicator_deliveryTimeframe>(); } },
+                { "deliveryTimeframe", n => { DeliveryTimeframe = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicatorDeliveryTimeframe>(); } },
                 { "giftCardAmount", n => { GiftCardAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount.CreateFromDiscriminatorValue); } },
                 { "giftCardCount", n => { GiftCardCount = n.GetIntValue(); } },
                 { "giftCardCurr", n => { GiftCardCurr = n.GetStringValue(); } },
@@ -125,10 +125,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("addressMatch", AddressMatch);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicator_deliveryAddressIndicator>("deliveryAddressIndicator", DeliveryAddressIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicatorDeliveryAddressIndicator>("deliveryAddressIndicator", DeliveryAddressIndicator);
             writer.WriteStringValue("deliveryEmail", DeliveryEmail);
             writer.WriteStringValue("deliveryEmailAddress", DeliveryEmailAddress);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicator_deliveryTimeframe>("deliveryTimeframe", DeliveryTimeframe);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MerchantRiskIndicatorDeliveryTimeframe>("deliveryTimeframe", DeliveryTimeframe);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount>("giftCardAmount", GiftCardAmount);
             writer.WriteIntValue("giftCardCount", GiftCardCount);
             writer.WriteStringValue("giftCardCurr", GiftCardCurr);

@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AuthorisationMid { get; set; }
 #endif
         /// <summary>PIN Support. For ecommerce, PIN is required.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo_pinSupport? PinSupport { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfoPinSupport? PinSupport { get; set; }
         /// <summary>Submitter ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authorisationMid", n => { AuthorisationMid = n.GetStringValue(); } },
-                { "pinSupport", n => { PinSupport = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo_pinSupport>(); } },
+                { "pinSupport", n => { PinSupport = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfoPinSupport>(); } },
                 { "submitterId", n => { SubmitterId = n.GetStringValue(); } },
                 { "terminalId", n => { TerminalId = n.GetStringValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authorisationMid", AuthorisationMid);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfo_pinSupport>("pinSupport", PinSupport);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkResponseInfoPinSupport>("pinSupport", PinSupport);
             writer.WriteStringValue("submitterId", SubmitterId);
             writer.WriteStringValue("terminalId", TerminalId);
         }

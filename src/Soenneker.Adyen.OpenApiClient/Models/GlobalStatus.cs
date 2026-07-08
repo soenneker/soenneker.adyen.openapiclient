@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **OK*** **Busy*** **Maintenance*** **Unreachable**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GlobalStatus
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "OK")]
+        #pragma warning disable CS1591
+        Ok,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Busy")]
         #pragma warning disable CS1591
         Busy,
@@ -15,10 +18,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Maintenance")]
         #pragma warning disable CS1591
         Maintenance,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OK")]
-        #pragma warning disable CS1591
-        OK,
         #pragma warning restore CS1591
         [EnumMember(Value = "Unreachable")]
         #pragma warning disable CS1591

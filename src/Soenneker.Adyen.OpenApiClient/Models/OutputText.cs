@@ -15,15 +15,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Alignment property</summary>
+        /// <summary>Possible values:* **Left*** **Right*** **Centred*** **Justified**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.Alignment? Alignment { get; set; }
-        /// <summary>The CharacterHeight property</summary>
+        /// <summary>Possible values:* **SingleHeight*** **DoubleHeight*** **HalfHeight**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CharacterHeight? CharacterHeight { get; set; }
         /// <summary>Character height of the text string to display or print. Absence of this data element means the characters have normal height.</summary>
         public int? CharacterSet { get; set; }
-        /// <summary>The CharacterStyle property</summary>
+        /// <summary>Possible values:* **Normal*** **Bold*** **Italic*** **Underline**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CharacterStyle? CharacterStyle { get; set; }
-        /// <summary>The CharacterWidth property</summary>
+        /// <summary>Possible values:* **SingleWidth*** **DoubleWidth**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CharacterWidth? CharacterWidth { get; set; }
         /// <summary>Indicates if the text is at the end of a line. Allows the display or the print of a new line and a carry-over return characters after the formatted text.</summary>
         public bool? EndOfLineFlag { get; set; }
@@ -45,6 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public OutputText()
         {
             AdditionalData = new Dictionary<string, object>();
+            EndOfLineFlag = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

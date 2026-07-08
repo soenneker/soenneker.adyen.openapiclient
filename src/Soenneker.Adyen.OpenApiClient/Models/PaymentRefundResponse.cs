@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string MerchantAccount { get; set; }
 #endif
         /// <summary>Your reason for the refund request.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponse_merchantRefundReason? MerchantRefundReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponseMerchantRefundReason? MerchantRefundReason { get; set; }
         /// <summary>The [`pspReference`](https://docs.adyen.com/api-explorer/Checkout/latest/post/payments#responses-200-pspReference) of the payment to refund. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Split> Splits { get; set; }
 #endif
         /// <summary>The status of your request. This will always have the value **received**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponseStatus? Status { get; set; }
         /// <summary>The online store or [physical store](https://docs.adyen.com/point-of-sale/design-your-integration/determine-account-structure/#create-stores) that is processing the refund. This must be the same as the store name configured in your Customer Area.  Otherwise, you get an error and the refund fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,12 +110,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "capturePspReference", n => { CapturePspReference = n.GetStringValue(); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "merchantRefundReason", n => { MerchantRefundReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponse_merchantRefundReason>(); } },
+                { "merchantRefundReason", n => { MerchantRefundReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponseMerchantRefundReason>(); } },
                 { "paymentPspReference", n => { PaymentPspReference = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponseStatus>(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
             };
         }
@@ -130,12 +130,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("capturePspReference", CapturePspReference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponse_merchantRefundReason>("merchantRefundReason", MerchantRefundReason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponseMerchantRefundReason>("merchantRefundReason", MerchantRefundReason);
             writer.WriteStringValue("paymentPspReference", PaymentPspReference);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundResponseStatus>("status", Status);
             writer.WriteStringValue("store", Store);
         }
     }

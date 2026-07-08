@@ -31,10 +31,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the type of the payment method and its specific information if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_paymentMethod? PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty? PaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_paymentMethod PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty PaymentMethod { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RefusalReason { get; set; }
 #endif
         /// <summary>The result of the payment. Possible values:* **Success** – The operation has been completed successfully. * **Refused** – The operation was refused. The reason is given in the `refusalReason` field. * **Error** – There was an error when the operation was processed. The reason is given in the `refusalReason` field. * **NotEnoughBalance** – The amount on the payment method is lower than the amount given in the request. Only applicable to balance checks. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_resultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseResultCode? ResultCode { get; set; }
         /// <summary>Raw refusal reason received from the third party, where available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,10 +82,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "authCode", n => { AuthCode = n.GetStringValue(); } },
                 { "currentBalance", n => { CurrentBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount.CreateFromDiscriminatorValue); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_paymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_paymentMethod.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
-                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_resultCode>(); } },
+                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseResultCode>(); } },
                 { "thirdPartyRefusalReason", n => { ThirdPartyRefusalReason = n.GetStringValue(); } },
             };
         }
@@ -98,10 +98,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authCode", AuthCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>("currentBalance", CurrentBalance);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_paymentMethod>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponsePaymentMethodProperty>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponse_resultCode>("resultCode", ResultCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueIssueResponseResultCode>("resultCode", ResultCode);
             writer.WriteStringValue("thirdPartyRefusalReason", ThirdPartyRefusalReason);
         }
     }

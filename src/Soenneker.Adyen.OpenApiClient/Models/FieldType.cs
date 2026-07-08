@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Field { get; set; }
 #endif
         /// <summary>The type of the field.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.FieldType_fieldName? FieldName { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FieldTypeFieldName? FieldName { get; set; }
         /// <summary>The code of the shareholder that the field belongs to. If empty, the field belongs to an account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "fieldName", n => { FieldName = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FieldType_fieldName>(); } },
+                { "fieldName", n => { FieldName = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FieldTypeFieldName>(); } },
                 { "shareholderCode", n => { ShareholderCode = n.GetStringValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FieldType_fieldName>("fieldName", FieldName);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FieldTypeFieldName>("fieldName", FieldName);
             writer.WriteStringValue("shareholderCode", ShareholderCode);
         }
     }

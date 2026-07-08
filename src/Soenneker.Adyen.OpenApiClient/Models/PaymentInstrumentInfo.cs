@@ -69,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>&quot;The status of the payment instrument. If a status is not specified when creating a payment instrument, it is set to **active** by default. However, there can be exceptions for cards based on the `card.formFactor` and the `issuingCountryCode`. For example, when issuing physical cards in the US, the default status is **inactive**.Possible values:  * **active**:  The payment instrument is active and can be used to make payments.  * **inactive**: The payment instrument is inactive and cannot be used to make payments.  * **suspended**: The payment instrument is suspended, either because it was stolen or lost.  * **closed**: The payment instrument is permanently closed. This action cannot be undone. &quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatus? Status { get; set; }
         /// <summary>The status comment provides additional information for the statusReason of the payment instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,9 +79,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StatusComment { get; set; }
 #endif
         /// <summary>&quot;The reason for the status of the payment instrument.Possible values: **accountClosure**, **damaged**, **endOfLife**, **expired**, **lost**, **stolen**, **suspectedFraud**, **transactionRule**, **other**.If the reason is **other**, you must also send the `statusComment` parameter describing the status change.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_statusReason? StatusReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatusReason? StatusReason { get; set; }
         /// <summary>&quot;The type of payment instrument.Possible values: **card**, **bankAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -107,10 +107,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "issuingCountryCode", n => { IssuingCountryCode = n.GetStringValue(); } },
                 { "paymentInstrumentGroupId", n => { PaymentInstrumentGroupId = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatus>(); } },
                 { "statusComment", n => { StatusComment = n.GetStringValue(); } },
-                { "statusReason", n => { StatusReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_statusReason>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_type>(); } },
+                { "statusReason", n => { StatusReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatusReason>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoType>(); } },
             };
         }
         /// <summary>
@@ -127,10 +127,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("issuingCountryCode", IssuingCountryCode);
             writer.WriteStringValue("paymentInstrumentGroupId", PaymentInstrumentGroupId);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatus>("status", Status);
             writer.WriteStringValue("statusComment", StatusComment);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_statusReason>("statusReason", StatusReason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatusReason>("statusReason", StatusReason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoType>("type", Type);
         }
     }
 }

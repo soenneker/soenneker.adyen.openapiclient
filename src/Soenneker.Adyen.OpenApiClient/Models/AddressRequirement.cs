@@ -23,13 +23,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of address fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_requiredAddressFields?>? RequiredAddressFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementRequiredAddressFieldsItem?>? RequiredAddressFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_requiredAddressFields?> RequiredAddressFields { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementRequiredAddressFieldsItem?> RequiredAddressFields { get; set; }
 #endif
         /// <summary>**addressRequirement**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,8 +49,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "requiredAddressFields", n => { RequiredAddressFields = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_requiredAddressFields>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_type>(); } },
+                { "requiredAddressFields", n => { RequiredAddressFields = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementRequiredAddressFieldsItem>()?.AsList(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementType>(); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_requiredAddressFields>("requiredAddressFields", RequiredAddressFields);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirement_type>("type", Type);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementRequiredAddressFieldsItem>("requiredAddressFields", RequiredAddressFields);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AddressRequirementType>("type", Type);
         }
     }
 }

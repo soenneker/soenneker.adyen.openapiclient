@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.OutputBarcode OutputBarcode { get; set; }
 #endif
-        /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **BarCode*** **MessageRef*** **Text*** **XHTML**</summary>
+        /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **MessageRef*** **Text*** **XHTML*** **BarCode**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OutputFormat? OutputFormat { get; set; }
         /// <summary>Content of text message to display or print.Mandatory, if `OutputFormat` is Text, not allowed otherwise. One instance of `OutputText` per shared format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

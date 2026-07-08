@@ -10,19 +10,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         [EnumMember(Value = "HOLDER")]
         #pragma warning disable CS1591
-        HOLDER,
+        Holder,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTHORIZED_USER")]
         #pragma warning disable CS1591
-        AUTHORIZED_USER,
+        AuthorizedUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "OTHER")]
         #pragma warning disable CS1591
-        OTHER,
+        Other,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
     }
 }

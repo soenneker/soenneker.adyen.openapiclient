@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Number { get; set; }
 #endif
         /// <summary>&quot;The type of the document. Possible values: **ID**, **DRIVINGLICENSE**, **PASSPORT**, **SOCIALSECURITY**, **VISA**.To delete an existing entry for a document `type`, send only the `type` field in your request. &quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentData_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "issuerCountry", n => { IssuerCountry = n.GetStringValue(); } },
                 { "issuerState", n => { IssuerState = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentData_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("issuerCountry", IssuerCountry);
             writer.WriteStringValue("issuerState", IssuerState);
             writer.WriteStringValue("number", Number);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentData_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType>("type", Type);
         }
     }
 }

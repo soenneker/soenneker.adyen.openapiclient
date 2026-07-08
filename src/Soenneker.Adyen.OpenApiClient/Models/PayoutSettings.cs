@@ -33,7 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>&quot;Determines how long it takes for the funds to reach the bank account. Adyen pays out based on the [payout frequency](https://docs.adyen.com/account/getting-paid#payout-frequency). Depending on the currencies and banks involved in transferring the money, it may take up to three days for the payout funds to arrive in the bank account. Possible values:* **first**: same day.* **urgent**: the next day.* **normal**: between 1 and 3 days.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings_priority? Priority { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority? Priority { get; set; }
         /// <summary>The unique identifier of the [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) that contains the details of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransferInstrumentId { get; set; }
 #endif
         /// <summary>&quot;The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings_verificationStatus? VerificationStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus? VerificationStatus { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,9 +66,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "enabledFromDate", n => { EnabledFromDate = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings_priority>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority>(); } },
                 { "transferInstrumentId", n => { TransferInstrumentId = n.GetStringValue(); } },
-                { "verificationStatus", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings_verificationStatus>(); } },
+                { "verificationStatus", n => { VerificationStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus>(); } },
             };
         }
         /// <summary>
@@ -82,9 +82,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("enabledFromDate", EnabledFromDate);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings_priority>("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority>("priority", Priority);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings_verificationStatus>("verificationStatus", VerificationStatus);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus>("verificationStatus", VerificationStatus);
         }
     }
 }

@@ -15,18 +15,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Action to be taken for completing the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action? Action { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction? Action { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action Action { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction Action { get; set; }
 #endif
         /// <summary>&quot;Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,22 +109,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RefusalReasonCode { get; set; }
 #endif
         /// <summary>The result of the payment. For more information, see [Result codes](https://docs.adyen.com/online-payments/payment-result-codes).Possible values:* **AuthenticationFinished** – The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.* **AuthenticationNotRequired** – The transaction does not require 3D Secure authentication. Returned for [standalone authentication-only integrations](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only).* **Authorised** – The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.* **Cancelled** – Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.* **ChallengeShopper** – The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.* **Error** – There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.* **IdentifyShopper** – The issuer requires the shopper&apos;s device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.* **PartiallyAuthorised** – The payment has been authorised for a partial amount.This happens for card payments when the merchant supports Partial Authorisations and the cardholder has insufficient funds.* **Pending** – Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment.* **PresentToShopper** – Indicates that the response contains additional information that you need to present to a shopper, so that they can use it to complete a payment.* **Received** – Indicates the payment has successfully been received by Adyen, and will be processed. This is the initial state for all payments.* **RedirectShopper** – Indicates the shopper should be redirected to an external web page or app to complete the authorisation.* **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_resultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseResultCode? ResultCode { get; set; }
         /// <summary>The threeDS2ResponseData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2ResponseData? ThreeDS2ResponseData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData? ThreeDS2ResponseData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2ResponseData ThreeDS2ResponseData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData ThreeDS2ResponseData { get; set; }
 #endif
         /// <summary>The threeDS2Result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2Result? ThreeDS2Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Result? ThreeDS2Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2Result ThreeDS2Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Result ThreeDS2Result { get; set; }
 #endif
         /// <summary>When non-empty, contains a value that you must submit to the `/payments/details` endpoint as `paymentData`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,8 +152,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action.CreateFromDiscriminatorValue); } },
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_additionalData.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
                 { "donationToken", n => { DonationToken = n.GetStringValue(); } },
                 { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.FraudResult.CreateFromDiscriminatorValue); } },
@@ -164,9 +164,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
                 { "refusalReasonCode", n => { RefusalReasonCode = n.GetStringValue(); } },
-                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_resultCode>(); } },
-                { "threeDS2ResponseData", n => { ThreeDS2ResponseData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2ResponseData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2ResponseData.CreateFromDiscriminatorValue); } },
-                { "threeDS2Result", n => { ThreeDS2Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2Result>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2Result.CreateFromDiscriminatorValue); } },
+                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseResultCode>(); } },
+                { "threeDS2ResponseData", n => { ThreeDS2ResponseData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData.CreateFromDiscriminatorValue); } },
+                { "threeDS2Result", n => { ThreeDS2Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Result>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Result.CreateFromDiscriminatorValue); } },
                 { "threeDSPaymentData", n => { ThreeDSPaymentData = n.GetStringValue(); } },
             };
         }
@@ -177,8 +177,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
             writer.WriteStringValue("donationToken", DonationToken);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>("fraudResult", FraudResult);
@@ -189,225 +189,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
             writer.WriteStringValue("refusalReasonCode", RefusalReasonCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse_resultCode>("resultCode", ResultCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2ResponseData>("threeDS2ResponseData", ThreeDS2ResponseData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS2Result>("threeDS2Result", ThreeDS2Result);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseResultCode>("resultCode", ResultCode);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData>("threeDS2ResponseData", ThreeDS2ResponseData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Result>("threeDS2Result", ThreeDS2Result);
             writer.WriteStringValue("threeDSPaymentData", ThreeDSPaymentData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSDKAction"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDS2Action"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PaymentResponse_action : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction? CheckoutAwaitAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction CheckoutAwaitAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction? CheckoutBankTransferAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction CheckoutBankTransferAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction? CheckoutDelegatedAuthenticationAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction CheckoutDelegatedAuthenticationAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction? CheckoutNativeRedirectAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction CheckoutNativeRedirectAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction? CheckoutQrCodeAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction CheckoutQrCodeAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction? CheckoutRedirectAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction CheckoutRedirectAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSDKAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSDKAction? CheckoutSDKAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSDKAction CheckoutSDKAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDS2Action"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDS2Action? CheckoutThreeDS2Action { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDS2Action CheckoutThreeDS2Action { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction? CheckoutVoucherAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction CheckoutVoucherAction { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.PaymentResponse_action();
-                if("CheckoutAwaitAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutAwaitAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction();
-                }
-                else if("CheckoutBankTransferAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutBankTransferAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction();
-                }
-                else if("CheckoutDelegatedAuthenticationAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutDelegatedAuthenticationAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction();
-                }
-                else if("CheckoutNativeRedirectAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutNativeRedirectAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction();
-                }
-                else if("CheckoutQrCodeAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutQrCodeAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction();
-                }
-                else if("CheckoutRedirectAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutRedirectAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction();
-                }
-                else if("CheckoutSDKAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutSDKAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSDKAction();
-                }
-                else if("CheckoutThreeDS2Action".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutThreeDS2Action = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDS2Action();
-                }
-                else if("CheckoutVoucherAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CheckoutVoucherAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CheckoutAwaitAction != null)
-                {
-                    return CheckoutAwaitAction.GetFieldDeserializers();
-                }
-                else if(CheckoutBankTransferAction != null)
-                {
-                    return CheckoutBankTransferAction.GetFieldDeserializers();
-                }
-                else if(CheckoutDelegatedAuthenticationAction != null)
-                {
-                    return CheckoutDelegatedAuthenticationAction.GetFieldDeserializers();
-                }
-                else if(CheckoutNativeRedirectAction != null)
-                {
-                    return CheckoutNativeRedirectAction.GetFieldDeserializers();
-                }
-                else if(CheckoutQrCodeAction != null)
-                {
-                    return CheckoutQrCodeAction.GetFieldDeserializers();
-                }
-                else if(CheckoutRedirectAction != null)
-                {
-                    return CheckoutRedirectAction.GetFieldDeserializers();
-                }
-                else if(CheckoutSDKAction != null)
-                {
-                    return CheckoutSDKAction.GetFieldDeserializers();
-                }
-                else if(CheckoutThreeDS2Action != null)
-                {
-                    return CheckoutThreeDS2Action.GetFieldDeserializers();
-                }
-                else if(CheckoutVoucherAction != null)
-                {
-                    return CheckoutVoucherAction.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CheckoutAwaitAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction>(null, CheckoutAwaitAction);
-                }
-                else if(CheckoutBankTransferAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction>(null, CheckoutBankTransferAction);
-                }
-                else if(CheckoutDelegatedAuthenticationAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutDelegatedAuthenticationAction>(null, CheckoutDelegatedAuthenticationAction);
-                }
-                else if(CheckoutNativeRedirectAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutNativeRedirectAction>(null, CheckoutNativeRedirectAction);
-                }
-                else if(CheckoutQrCodeAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeAction>(null, CheckoutQrCodeAction);
-                }
-                else if(CheckoutRedirectAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutRedirectAction>(null, CheckoutRedirectAction);
-                }
-                else if(CheckoutSDKAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSDKAction>(null, CheckoutSDKAction);
-                }
-                else if(CheckoutThreeDS2Action != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDS2Action>(null, CheckoutThreeDS2Action);
-                }
-                else if(CheckoutVoucherAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction>(null, CheckoutVoucherAction);
-                }
-            }
         }
     }
 }

@@ -3,19 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Left*** **Right*** **Centred*** **Justified**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Alignment
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Centred")]
-        #pragma warning disable CS1591
-        Centred,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Justified")]
-        #pragma warning disable CS1591
-        Justified,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Left")]
         #pragma warning disable CS1591
         Left,
@@ -23,6 +14,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Right")]
         #pragma warning disable CS1591
         Right,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Centred")]
+        #pragma warning disable CS1591
+        Centred,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Justified")]
+        #pragma warning disable CS1591
+        Justified,
         #pragma warning restore CS1591
     }
 }

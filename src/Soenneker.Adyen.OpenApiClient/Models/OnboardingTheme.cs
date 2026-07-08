@@ -33,10 +33,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The properties of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme_properties? Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme_properties Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty Properties { get; set; }
 #endif
         /// <summary>The date when the theme was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme_properties>(global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty>("properties", Properties);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
         }
     }

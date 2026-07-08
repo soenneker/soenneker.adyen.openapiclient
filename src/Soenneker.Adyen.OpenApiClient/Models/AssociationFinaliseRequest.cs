@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.AssociationDelegatedAuthenticationData StrongCustomerAuthentication { get; set; }
 #endif
         /// <summary>&quot;The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseRequest_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseRequestType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "strongCustomerAuthentication", n => { StrongCustomerAuthentication = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationDelegatedAuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationDelegatedAuthenticationData.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseRequestType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationDelegatedAuthenticationData>("strongCustomerAuthentication", StrongCustomerAuthentication);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseRequestType>("type", Type);
         }
     }
 }

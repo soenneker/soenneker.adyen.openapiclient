@@ -28,10 +28,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType? HostTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? HostTransactionID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType HostTransactionID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType HostTransactionID { get; set; }
 #endif
         /// <summary>Total amount of the item line.</summary>
         public double? ItemAmount { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus StoredValueAccountStatus { get; set; }
 #endif
-        /// <summary>The StoredValueTransactionType property</summary>
+        /// <summary>Possible values:* **Reserve*** **Activate*** **Load*** **Unload*** **Reverse*** **Duplicate**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType? StoredValueTransactionType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResult"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "Currency", n => { Currency = n.GetStringValue(); } },
                 { "EanUpc", n => { EanUpc = n.GetIntValue(); } },
-                { "HostTransactionID", n => { HostTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType.CreateFromDiscriminatorValue); } },
+                { "HostTransactionID", n => { HostTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "ItemAmount", n => { ItemAmount = n.GetDoubleValue(); } },
                 { "ProductCode", n => { ProductCode = n.GetIntValue(); } },
                 { "StoredValueAccountStatus", n => { StoredValueAccountStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus.CreateFromDiscriminatorValue); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Currency", Currency);
             writer.WriteIntValue("EanUpc", EanUpc);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIDType>("HostTransactionID", HostTransactionID);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("HostTransactionID", HostTransactionID);
             writer.WriteDoubleValue("ItemAmount", ItemAmount);
             writer.WriteIntValue("ProductCode", ProductCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus>("StoredValueAccountStatus", StoredValueAccountStatus);

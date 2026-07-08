@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts;
 using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transactions;
 using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferServiceV4RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The cashouts property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts.CashoutsRequestBuilder Cashouts
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts.CashoutsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The transactions property</summary>
         public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transactions.TransactionsRequestBuilder Transactions
         {

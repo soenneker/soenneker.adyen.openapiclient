@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a Loyalty account.In the Payment Request message, it allows to identify the loyalty account by the Sale Terminal instead of the POI Terminal (e.g. because the account identification is a bar-code read by the Cashier on a scanner device).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountID? LoyaltyAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountID LoyaltyAccountID { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get; set; }
 #endif
         /// <summary>Identification of a Loyalty brand.If a card is analysed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "LoyaltyAccountID", n => { LoyaltyAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountID>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountID.CreateFromDiscriminatorValue); } },
+                { "LoyaltyAccountID", n => { LoyaltyAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId.CreateFromDiscriminatorValue); } },
                 { "LoyaltyBrand", n => { LoyaltyBrand = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountID>("LoyaltyAccountID", LoyaltyAccountID);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId>("LoyaltyAccountID", LoyaltyAccountID);
             writer.WriteStringValue("LoyaltyBrand", LoyaltyBrand);
             writer.WriteAdditionalData(AdditionalData);
         }

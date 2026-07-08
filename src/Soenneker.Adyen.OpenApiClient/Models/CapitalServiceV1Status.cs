@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code for the status of the grant. Possible values:- **Pending**- **Active**- **Repaid**- **WrittenOff**- **Failed**- **Revoked**- **Requested**- **Reviewing**- **Approved**- **Rejected**- **Cancelled**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status_code? Code { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1StatusCode? Code { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Action>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Action.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status_code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1StatusCode>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Action>("actions", Actions);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status_code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1StatusCode>("code", Code);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

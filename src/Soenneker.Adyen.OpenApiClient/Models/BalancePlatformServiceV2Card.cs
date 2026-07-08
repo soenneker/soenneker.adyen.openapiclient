@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry Expiration { get; set; }
 #endif
         /// <summary>&quot;The form factor of the card.Possible values: **virtual**, **physical**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Card_formFactor? FormFactor { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardFormFactor? FormFactor { get; set; }
         /// <summary>Last last four digits of the card number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,7 +145,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
                 { "deliveryContact", n => { DeliveryContact = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact.CreateFromDiscriminatorValue); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry.CreateFromDiscriminatorValue); } },
-                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Card_formFactor>(); } },
+                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardFormFactor>(); } },
                 { "lastFour", n => { LastFour = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "threeDSecure", n => { ThreeDSecure = n.GetStringValue(); } },
@@ -168,7 +168,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("cvc", Cvc);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact>("deliveryContact", DeliveryContact);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry>("expiration", Expiration);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Card_formFactor>("formFactor", FormFactor);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CardFormFactor>("formFactor", FormFactor);
             writer.WriteStringValue("lastFour", LastFour);
             writer.WriteStringValue("threeDSecure", ThreeDSecure);
             writer.WriteStringValue("usage", Usage);

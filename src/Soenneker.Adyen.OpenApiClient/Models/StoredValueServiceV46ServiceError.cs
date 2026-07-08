@@ -16,10 +16,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains additional information about the payment. Some data fields are included only if you select them first. Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceErrorAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceErrorAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The error code mapped to the error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceErrorAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceErrorAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "errorType", n => { ErrorType = n.GetStringValue(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceError_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46ServiceErrorAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorType", ErrorType);
             writer.WriteStringValue("message", MessageEscaped);

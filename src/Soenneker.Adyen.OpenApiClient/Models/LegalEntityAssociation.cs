@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> SettlorExemptionReason { get; set; }
 #endif
         /// <summary>&quot;Defines the relationship of the legal entity to the current legal entity.Possible value for individuals: **legalRepresentative**.Possible values for organizations: **director**, **signatory**, **trustOwnership**, **uboThroughOwnership**, **uboThroughControl**, **ultimateParentCompany**, or **immediateParentCompany**.Possible values for sole proprietorships: **soleProprietorship**.Possible value for trusts: **trust**.Possible values for trust members: **definedBeneficiary**, **protector**, **secondaryTrustee**, **settlor**, **uboThroughControl**, or **uboThroughOwnership**.Possible value for unincorporated partnership: **unincorporatedPartnership**.Possible values for unincorporated partnership members: **secondaryPartner**, **uboThroughControl**, **uboThroughOwnership**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -98,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "nominee", n => { Nominee = n.GetBoolValue(); } },
                 { "relationship", n => { Relationship = n.GetStringValue(); } },
                 { "settlorExemptionReason", n => { SettlorExemptionReason = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("nominee", Nominee);
             writer.WriteStringValue("relationship", Relationship);
             writer.WriteCollectionOfPrimitiveValues<string>("settlorExemptionReason", SettlorExemptionReason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType>("type", Type);
         }
     }
 }

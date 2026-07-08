@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string DigitalCardId { get; set; }
 #endif
         /// <summary>The Secure Remote Commerce scheme.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutData_scheme? Scheme { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme? Scheme { get; set; }
         /// <summary>A unique identifier that represents the token associated with a card enrolled. Required for scheme &apos;visa&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
                 { "digitalCardId", n => { DigitalCardId = n.GetStringValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutData_scheme>(); } },
+                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme>(); } },
                 { "tokenReference", n => { TokenReference = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteStringValue("cvc", Cvc);
             writer.WriteStringValue("digitalCardId", DigitalCardId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutData_scheme>("scheme", Scheme);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme>("scheme", Scheme);
             writer.WriteStringValue("tokenReference", TokenReference);
         }
     }

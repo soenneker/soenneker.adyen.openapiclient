@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**payu_IN_upi**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetailsType? Type { get; set; }
         /// <summary>The virtual payment address for UPI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "shopperNotificationReference", n => { ShopperNotificationReference = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetailsType>(); } },
                 { "virtualPaymentAddress", n => { VirtualPaymentAddress = n.GetStringValue(); } },
             };
         }
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("shopperNotificationReference", ShopperNotificationReference);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetailsType>("type", Type);
             writer.WriteStringValue("virtualPaymentAddress", VirtualPaymentAddress);
         }
     }

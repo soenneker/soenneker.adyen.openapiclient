@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The result of this operation.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponse_result? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponseResult? Result { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponse_result>(); } },
+                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponseResult>(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponse_result>("result", Result);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubjectErasureResponseResult>("result", Result);
         }
     }
 }

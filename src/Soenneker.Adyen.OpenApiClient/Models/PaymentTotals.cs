@@ -19,7 +19,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public double? TransactionAmount { get; set; }
         /// <summary>Number of processed transaction during the period.</summary>
         public int? TransactionCount { get; set; }
-        /// <summary>The TransactionType property</summary>
+        /// <summary>Possible values:* **Debit*** **Credit*** **ReverseDebit*** **ReverseCredit*** **OneTimeReservation*** **CompletedDeffered*** **FirstReservation*** **UpdateReservation*** **CompletedReservation*** **CashAdvance*** **IssuerInstalment*** **Declined*** **Failed*** **Award*** **ReverseAward*** **Redemption*** **ReverseRedemption*** **Rebate*** **ReverseRebate**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionType? TransactionType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotals"/> and sets the default values.

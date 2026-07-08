@@ -69,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber PhoneNumber { get; set; }
 #endif
         /// <summary>&quot;The sales channel. Possible values: **Ecommerce**, **POS**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail_shopperInteraction? ShopperInteraction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction? ShopperInteraction { get; set; }
         /// <summary>The unique reference for the split configuration, returned when you configure splits in your Customer Area. When this is provided, the `virtualAccount` is also required. Adyen uses the configuration and the `virtualAccount` to split funds between accounts in your platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SplitConfigurationUUID { get; set; }
 #endif
         /// <summary>&quot;The status of the store. Possible values: **Pending**, **Active**, **Inactive**, **InactiveWithModifications**, **Closed**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailStatus? Status { get; set; }
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the store, returned in the response when you create a store. Required when updating an existing store in an `/updateAccountHolder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,9 +145,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantCategoryCode", n => { MerchantCategoryCode = n.GetStringValue(); } },
                 { "merchantHouseNumber", n => { MerchantHouseNumber = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber.CreateFromDiscriminatorValue); } },
-                { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail_shopperInteraction>(); } },
+                { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction>(); } },
                 { "splitConfigurationUUID", n => { SplitConfigurationUUID = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailStatus>(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
                 { "storeName", n => { StoreName = n.GetStringValue(); } },
                 { "storeReference", n => { StoreReference = n.GetStringValue(); } },
@@ -169,9 +169,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("merchantCategoryCode", MerchantCategoryCode);
             writer.WriteStringValue("merchantHouseNumber", MerchantHouseNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>("phoneNumber", PhoneNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail_shopperInteraction>("shopperInteraction", ShopperInteraction);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("splitConfigurationUUID", SplitConfigurationUUID);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailStatus>("status", Status);
             writer.WriteStringValue("store", Store);
             writer.WriteStringValue("storeName", StoreName);
             writer.WriteStringValue("storeReference", StoreReference);

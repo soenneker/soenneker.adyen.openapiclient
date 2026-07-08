@@ -25,10 +25,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The UTMCoordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UTMCoordinates? UTMCoordinates { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? UTMCoordinates { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UTMCoordinates UTMCoordinates { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates UTMCoordinates { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Geolocation"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "GeographicCoordinates", n => { GeographicCoordinates = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates>(global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates.CreateFromDiscriminatorValue); } },
-                { "UTMCoordinates", n => { UTMCoordinates = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UTMCoordinates>(global::Soenneker.Adyen.OpenApiClient.Models.UTMCoordinates.CreateFromDiscriminatorValue); } },
+                { "UTMCoordinates", n => { UTMCoordinates = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates>(global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates>("GeographicCoordinates", GeographicCoordinates);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UTMCoordinates>("UTMCoordinates", UTMCoordinates);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates>("UTMCoordinates", UTMCoordinates);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

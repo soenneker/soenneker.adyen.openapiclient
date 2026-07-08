@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration SplitConfiguration { get; set; }
 #endif
         /// <summary>&quot;The status of the store. Possible values are:- **active**: This value is assigned automatically when a store is created. - **inactive**: The maximum [transaction limits and number of Store-and-Forward transactions](https://docs.adyen.com/point-of-sale/determine-account-structure/configure-features#payment-features) for the store are set to 0. This blocks new transactions, but captures are still possible.- **closed**: The terminals of the store are reassigned to the merchant inventory, so they can&apos;t process payments.You can change the status from **active** to **inactive**, and from **inactive** to **active** or **closed**. Once **closed**, a store can&apos;t be reopened.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequest_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestStatus? Status { get; set; }
         /// <summary>The subMerchantData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "externalReferenceId", n => { ExternalReferenceId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "splitConfiguration", n => { SplitConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequest_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestStatus>(); } },
                 { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData.CreateFromDiscriminatorValue); } },
             };
         }
@@ -111,7 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("externalReferenceId", ExternalReferenceId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>("splitConfiguration", SplitConfiguration);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequest_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>("subMerchantData", SubMerchantData);
         }
     }

@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PhoneNumber { get; set; }
 #endif
         /// <summary>&quot;The type of the phone number.Possible values: **Landline**, **Mobile**, **SIP**, **Fax**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumber_phoneType? PhoneType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumberPhoneType? PhoneType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "phoneCountryCode", n => { PhoneCountryCode = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                { "phoneType", n => { PhoneType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumber_phoneType>(); } },
+                { "phoneType", n => { PhoneType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumberPhoneType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("phoneCountryCode", PhoneCountryCode);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumber_phoneType>("phoneType", PhoneType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumberPhoneType>("phoneType", PhoneType);
         }
     }
 }

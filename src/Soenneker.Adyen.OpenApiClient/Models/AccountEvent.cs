@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The event.&gt;Permitted values: `InactivateAccount`, `RefundNotPaidOutTransfers`.For more information, refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-process).&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent_event? Event { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountEventEvent? Event { get; set; }
         /// <summary>The date on which the event will take place.</summary>
         public DateTimeOffset? ExecutionDate { get; set; }
         /// <summary>The reason why this event has been created.</summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "event", n => { Event = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent_event>(); } },
+                { "event", n => { Event = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountEventEvent>(); } },
                 { "executionDate", n => { ExecutionDate = n.GetDateTimeOffsetValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
             };
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent_event>("event", Event);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountEventEvent>("event", Event);
             writer.WriteDateTimeOffsetValue("executionDate", ExecutionDate);
             writer.WriteStringValue("reason", Reason);
         }

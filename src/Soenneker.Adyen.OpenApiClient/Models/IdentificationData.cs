@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Number { get; set; }
 #endif
         /// <summary>&quot;Type of identity data. For individuals, the following types are supported. See our [onboarding guide](https://docs.adyen.com/platforms/onboard-users/onboarding-steps/?onboarding_type=custom) for other supported countries.- Australia: **driversLicense**, **passport**- Hong Kong: **driversLicense**, **nationalIdNumber**, **passport**- New Zealand: **driversLicense**, **passport**- Singapore: **driversLicense**, **nationalIdNumber**, **passport** - All other supported countries: **nationalIdNumber**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.IdentificationData_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdentificationDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "issuerState", n => { IssuerState = n.GetStringValue(); } },
                 { "nationalIdExempt", n => { NationalIdExempt = n.GetBoolValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationData_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationDataType>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("issuerState", IssuerState);
             writer.WriteBoolValue("nationalIdExempt", NationalIdExempt);
             writer.WriteStringValue("number", Number);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationData_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationDataType>("type", Type);
         }
     }
 }

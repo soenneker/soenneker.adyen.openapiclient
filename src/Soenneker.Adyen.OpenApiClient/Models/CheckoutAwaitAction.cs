@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentMethodType { get; set; }
 #endif
         /// <summary>**await**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitActionType? Type { get; set; }
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
                 { "paymentMethodType", n => { PaymentMethodType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitActionType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("paymentData", PaymentData);
             writer.WriteStringValue("paymentMethodType", PaymentMethodType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitActionType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

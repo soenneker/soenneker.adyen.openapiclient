@@ -15,7 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The date of the next scheduled payout.</summary>
         public DateTimeOffset? NextScheduledPayout { get; set; }
         /// <summary>&quot;The payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse_schedule? Schedule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponseSchedule? Schedule { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "nextScheduledPayout", n => { NextScheduledPayout = n.GetDateTimeOffsetValue(); } },
-                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse_schedule>(); } },
+                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponseSchedule>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("nextScheduledPayout", NextScheduledPayout);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse_schedule>("schedule", Schedule);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponseSchedule>("schedule", Schedule);
         }
     }
 }

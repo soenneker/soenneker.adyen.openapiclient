@@ -15,7 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The estimated time the beneficiary should have access to the funds.</summary>
         public DateTimeOffset? EstimatedArrivalTime { get; set; }
         /// <summary>&quot;The type of tracking event. Possible values: - **estimation**: the estimated date and time of when the funds will be credited has been determined.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "estimatedArrivalTime", n => { EstimatedArrivalTime = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingDataType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("estimatedArrivalTime", EstimatedArrivalTime);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingDataType>("type", Type);
         }
     }
 }

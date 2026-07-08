@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursiveType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "documents", n => { Documents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursiveType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("documents", Documents);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursiveType>("type", Type);
         }
     }
 }

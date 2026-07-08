@@ -23,10 +23,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of source account types to be evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestriction_value?>? Value { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestrictionValueItem?>? Value { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestriction_value?> Value { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestrictionValueItem?> Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "operation", n => { Operation = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestriction_value>()?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestrictionValueItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("operation", Operation);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestriction_value>("value", Value);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.SourceAccountTypesRestrictionValueItem>("value", Value);
         }
     }
 }

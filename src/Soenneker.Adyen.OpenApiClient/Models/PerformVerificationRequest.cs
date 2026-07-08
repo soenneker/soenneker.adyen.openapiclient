@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AccountHolderCode { get; set; }
 #endif
         /// <summary>&quot;The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequest_accountStateType? AccountStateType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType? AccountStateType { get; set; }
         /// <summary>The tier required for the account holder.</summary>
         public int? Tier { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "accountStateType", n => { AccountStateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequest_accountStateType>(); } },
+                { "accountStateType", n => { AccountStateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType>(); } },
                 { "tier", n => { Tier = n.GetIntValue(); } },
             };
         }
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequest_accountStateType>("accountStateType", AccountStateType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType>("accountStateType", AccountStateType);
             writer.WriteIntValue("tier", Tier);
         }
     }

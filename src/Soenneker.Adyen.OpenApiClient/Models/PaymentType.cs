@@ -3,11 +3,34 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Normal*** **Refund*** **OneTimeReservation*** **FirstReservation*** **UpdateReservation*** **Completion*** **CashAdvance*** **CashDeposit*** **Recurring*** **Instalment*** **IssuerInstalment*** **PaidOut**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PaymentType
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "Normal")]
+        #pragma warning disable CS1591
+        Normal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Refund")]
+        #pragma warning disable CS1591
+        Refund,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OneTimeReservation")]
+        #pragma warning disable CS1591
+        OneTimeReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FirstReservation")]
+        #pragma warning disable CS1591
+        FirstReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UpdateReservation")]
+        #pragma warning disable CS1591
+        UpdateReservation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Completion")]
+        #pragma warning disable CS1591
+        Completion,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CashAdvance")]
         #pragma warning disable CS1591
         CashAdvance,
@@ -16,13 +39,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         CashDeposit,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Completion")]
+        [EnumMember(Value = "Recurring")]
         #pragma warning disable CS1591
-        Completion,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "FirstReservation")]
-        #pragma warning disable CS1591
-        FirstReservation,
+        Recurring,
         #pragma warning restore CS1591
         [EnumMember(Value = "Instalment")]
         #pragma warning disable CS1591
@@ -32,29 +51,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         IssuerInstalment,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Normal")]
-        #pragma warning disable CS1591
-        Normal,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OneTimeReservation")]
-        #pragma warning disable CS1591
-        OneTimeReservation,
-        #pragma warning restore CS1591
         [EnumMember(Value = "PaidOut")]
         #pragma warning disable CS1591
         PaidOut,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Recurring")]
-        #pragma warning disable CS1591
-        Recurring,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Refund")]
-        #pragma warning disable CS1591
-        Refund,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "UpdateReservation")]
-        #pragma warning disable CS1591
-        UpdateReservation,
         #pragma warning restore CS1591
     }
 }

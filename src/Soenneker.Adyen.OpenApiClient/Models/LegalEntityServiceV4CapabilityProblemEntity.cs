@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive Owner { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "documents", n => { Documents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("documents", Documents);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityRecursive>("owner", Owner);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntityType>("type", Type);
         }
     }
 }

@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShareholderReference { get; set; }
 #endif
         /// <summary>&quot;Specifies how the person is associated with the account holder. Possible values: * **Owner**: Individuals who directly or indirectly own 25% or more of a company.* **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContact_shareholderType? ShareholderType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContactShareholderType? ShareholderType { get; set; }
         /// <summary>The URL of the person&apos;s website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,7 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber.CreateFromDiscriminatorValue); } },
                 { "shareholderCode", n => { ShareholderCode = n.GetStringValue(); } },
                 { "shareholderReference", n => { ShareholderReference = n.GetStringValue(); } },
-                { "shareholderType", n => { ShareholderType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContact_shareholderType>(); } },
+                { "shareholderType", n => { ShareholderType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContactShareholderType>(); } },
                 { "webAddress", n => { WebAddress = n.GetStringValue(); } },
             };
         }
@@ -141,7 +141,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>("phoneNumber", PhoneNumber);
             writer.WriteStringValue("shareholderCode", ShareholderCode);
             writer.WriteStringValue("shareholderReference", ShareholderReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContact_shareholderType>("shareholderType", ShareholderType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContactShareholderType>("shareholderType", ShareholderType);
             writer.WriteStringValue("webAddress", WebAddress);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The pageNumber property</summary>
         public int? PageNumber { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentPage_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "pageName", n => { PageName = n.GetStringValue(); } },
                 { "pageNumber", n => { PageNumber = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentPage_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("pageName", PageName);
             writer.WriteIntValue("pageNumber", PageNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentPage_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType>("type", Type);
         }
     }
 }

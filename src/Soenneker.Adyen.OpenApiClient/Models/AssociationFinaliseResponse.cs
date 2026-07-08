@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> Ids { get; set; }
 #endif
         /// <summary>The type of resource that you associated with the SCA device.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseResponse_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseResponseType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationFinaliseResponseType>("type", Type);
         }
     }
 }

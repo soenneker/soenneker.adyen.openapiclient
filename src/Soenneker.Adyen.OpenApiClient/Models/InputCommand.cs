@@ -3,19 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum InputCommand
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "DecimalString")]
-        #pragma warning disable CS1591
-        DecimalString,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "DigitString")]
-        #pragma warning disable CS1591
-        DigitString,
-        #pragma warning restore CS1591
         [EnumMember(Value = "GetAnyKey")]
         #pragma warning disable CS1591
         GetAnyKey,
@@ -23,6 +14,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "GetConfirmation")]
         #pragma warning disable CS1591
         GetConfirmation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SiteManager")]
+        #pragma warning disable CS1591
+        SiteManager,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TextString")]
+        #pragma warning disable CS1591
+        TextString,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DigitString")]
+        #pragma warning disable CS1591
+        DigitString,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DecimalString")]
+        #pragma warning disable CS1591
+        DecimalString,
         #pragma warning restore CS1591
         [EnumMember(Value = "GetFunctionKey")]
         #pragma warning disable CS1591
@@ -35,14 +42,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Password")]
         #pragma warning disable CS1591
         Password,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SiteManager")]
-        #pragma warning disable CS1591
-        SiteManager,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "TextString")]
-        #pragma warning disable CS1591
-        TextString,
         #pragma warning restore CS1591
     }
 }

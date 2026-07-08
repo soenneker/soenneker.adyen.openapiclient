@@ -26,6 +26,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The sum of the transactions that will be settled in the future.</summary>
         public long? Pending { get; set; }
+        /// <summary>The balance that will become the available balance after the pending balance is settled.The pending available balance is equal to the lower of the following:- The `pending` balance- The `pending` balance plus the `available` balance.</summary>
+        public long? PendingAvailable { get; set; }
         /// <summary>The balance currently held in reserve.</summary>
         public long? Reserved { get; set; }
         /// <summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "balance", n => { Balance = n.GetLongValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "pending", n => { Pending = n.GetLongValue(); } },
+                { "pendingAvailable", n => { PendingAvailable = n.GetLongValue(); } },
                 { "reserved", n => { Reserved = n.GetLongValue(); } },
             };
         }
@@ -64,6 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("balance", Balance);
             writer.WriteStringValue("currency", Currency);
             writer.WriteLongValue("pending", Pending);
+            writer.WriteLongValue("pendingAvailable", PendingAvailable);
             writer.WriteLongValue("reserved", Reserved);
         }
     }

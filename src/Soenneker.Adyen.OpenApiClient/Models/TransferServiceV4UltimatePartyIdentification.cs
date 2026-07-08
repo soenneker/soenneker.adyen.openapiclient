@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>&quot;The type of entity that owns the bank account or card.Possible values: **individual**, **organization**, or **unknown**.Required when `category` is **card**. In this case, the value must be **individual**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentificationType? Type { get; set; }
         /// <summary>&quot;The URL of the organization or individual. Maximum length: 255 characters.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +107,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "fundingInstrument", n => { FundingInstrument = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrument>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrument.CreateFromDiscriminatorValue); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentificationType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -126,7 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrument>("fundingInstrument", FundingInstrument);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentificationType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>The status of your request. This will always have the value **received**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReversalResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReversalResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "paymentPspReference", n => { PaymentPspReference = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReversalResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReversalResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("paymentPspReference", PaymentPspReference);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReversalResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReversalResponseStatus>("status", Status);
         }
     }
 }

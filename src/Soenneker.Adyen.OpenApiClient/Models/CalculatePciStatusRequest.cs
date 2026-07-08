@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An array of additional sales channels to generate PCI questionnaires. Include the relevant sales channels if you need your user to sign PCI questionnaires. Not required if you [create stores](https://docs.adyen.com/platforms) and [add payment methods](https://docs.adyen.com/adyen-for-platforms-model) before you generate the questionnaires.Possible values:*  **eCommerce***  **pos***  **ecomMoto***  **posMoto**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequest_additionalSalesChannels?>? AdditionalSalesChannels { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?>? AdditionalSalesChannels { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequest_additionalSalesChannels?> AdditionalSalesChannels { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?> AdditionalSalesChannels { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalSalesChannels", n => { AdditionalSalesChannels = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequest_additionalSalesChannels>()?.AsList(); } },
+                { "additionalSalesChannels", n => { AdditionalSalesChannels = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequest_additionalSalesChannels>("additionalSalesChannels", AdditionalSalesChannels);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem>("additionalSalesChannels", AdditionalSalesChannels);
         }
     }
 }

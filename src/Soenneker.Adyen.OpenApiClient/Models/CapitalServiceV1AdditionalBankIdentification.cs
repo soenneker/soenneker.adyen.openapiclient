@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Code { get; set; }
 #endif
         /// <summary>&quot;The type of additional bank identification, depending on the country.Possible values: * **auBsbCode**: The 6-digit [Australian Bank State Branch (BSB) code](https://en.wikipedia.org/wiki/Bank_state_branch), without separators or spaces. * **caRoutingNumber**: The 9-digit [Canadian routing number](https://en.wikipedia.org/wiki/Routing_number_(Canada)), in EFT format, without separators or spaces. * **gbSortCode**: The 6-digit [UK sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or spaces * **usRoutingNumber**: The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or spaces.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentification_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentificationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentification"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentification_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentificationType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentification_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1AdditionalBankIdentificationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

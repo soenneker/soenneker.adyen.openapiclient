@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>Indicates where the funds used for the transfer originated. Possible values are:- **DEBIT** for card-to-card transfers.- **DEPOSIT_ACCOUNT** for wallet-to-card transfers.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrument_sourceOfFunds? SourceOfFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds? SourceOfFunds { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "cardIdentification", n => { CardIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CardIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CardIdentification.CreateFromDiscriminatorValue); } },
                 { "networkPaymentReference", n => { NetworkPaymentReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "sourceOfFunds", n => { SourceOfFunds = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrument_sourceOfFunds>(); } },
+                { "sourceOfFunds", n => { SourceOfFunds = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CardIdentification>("cardIdentification", CardIdentification);
             writer.WriteStringValue("networkPaymentReference", NetworkPaymentReference);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrument_sourceOfFunds>("sourceOfFunds", SourceOfFunds);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds>("sourceOfFunds", SourceOfFunds);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperEmail { get; set; }
 #endif
         /// <summary>**doku**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DokuDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DokuDetailsType>(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DokuDetailsType>("type", Type);
         }
     }
 }

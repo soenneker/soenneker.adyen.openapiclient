@@ -15,9 +15,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&quot;Define the type of balance about which you want to get notified. Possible values:* **available**: the balance available for use.* **balance**: the sum of transactions that have already been settled.* **pending**: the sum of transactions that will be settled in the future.* **reserved**: the balance currently held in reserve.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Condition_balanceType? BalanceType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType? BalanceType { get; set; }
         /// <summary>&quot;Define when you want to get notified about a balance change. Possible values:* **greaterThan**: the balance in the account(s) exceeds the specified `value`.* **greaterThanOrEqual**: the balance in the account(s) reaches or exceeds the specified `value`.* **lessThan**: the balance in the account(s) drops below the specified `value`.* **lessThanOrEqual**: the balance in the account(s) reaches to drops below the specified `value`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Condition_conditionType? ConditionType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType? ConditionType { get; set; }
         /// <summary>The value limit in the specified balance type and currency, in minor units.</summary>
         public long? Value { get; set; }
         /// <summary>
@@ -45,8 +45,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "balanceType", n => { BalanceType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Condition_balanceType>(); } },
-                { "conditionType", n => { ConditionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Condition_conditionType>(); } },
+                { "balanceType", n => { BalanceType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType>(); } },
+                { "conditionType", n => { ConditionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType>(); } },
                 { "value", n => { Value = n.GetLongValue(); } },
             };
         }
@@ -57,8 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Condition_balanceType>("balanceType", BalanceType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Condition_conditionType>("conditionType", ConditionType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType>("balanceType", BalanceType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType>("conditionType", ConditionType);
             writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

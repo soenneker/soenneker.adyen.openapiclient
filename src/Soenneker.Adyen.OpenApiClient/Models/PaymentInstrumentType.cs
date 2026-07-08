@@ -3,18 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Card*** **Check*** **Mobile*** **StoredValue*** **Cash**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PaymentInstrumentType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Card")]
         #pragma warning disable CS1591
         Card,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Cash")]
-        #pragma warning disable CS1591
-        Cash,
         #pragma warning restore CS1591
         [EnumMember(Value = "Check")]
         #pragma warning disable CS1591
@@ -27,6 +22,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "StoredValue")]
         #pragma warning disable CS1591
         StoredValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Cash")]
+        #pragma warning disable CS1591
+        Cash,
         #pragma warning restore CS1591
     }
 }

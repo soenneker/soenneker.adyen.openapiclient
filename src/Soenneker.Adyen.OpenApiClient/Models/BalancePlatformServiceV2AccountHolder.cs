@@ -23,18 +23,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs that specify the actions that an account holder can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_capabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderCapabilitiesProperty? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_capabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderCapabilitiesProperty Capabilities { get; set; }
 #endif
         /// <summary>The contactDetails property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails? ContactDetails { get; set; }
 #nullable restore
 #else
-        public string ContactDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails ContactDetails { get; set; }
 #endif
         /// <summary>Your description for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,10 +64,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_metadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_metadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The unique identifier of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>&quot;The status of the account holder.Possible values:  * **active**: The account holder is active and allowed to use its capabilities. This is the initial status for account holders and balance accounts. You can change this status to **suspended** or **closed**.  * **suspended**: The account holder is temporarily disabled and payouts are blocked. You can change this status to **active** or **closed**. * **closed**: The account holder and all of its capabilities are permanently disabled. This is a final status and cannot be changed.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderStatus? Status { get; set; }
         /// <summary>The time zone of the account holder. For example, **Europe/Amsterdam**.Defaults to the time zone of the balance platform if no time zone is set. For possible values, see the [list of time zone codes](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,16 +130,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_capabilities>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_capabilities.CreateFromDiscriminatorValue); } },
-                { "contactDetails", n => { ContactDetails = n.GetStringValue(); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderCapabilitiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderCapabilitiesProperty.CreateFromDiscriminatorValue); } },
+                { "contactDetails", n => { ContactDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_metadata>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "migratedAccountHolderCode", n => { MigratedAccountHolderCode = n.GetStringValue(); } },
                 { "primaryBalanceAccount", n => { PrimaryBalanceAccount = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderStatus>(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
                 { "verificationDeadlines", n => { VerificationDeadlines = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadline>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadline.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -151,14 +152,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_capabilities>("capabilities", Capabilities);
-            writer.WriteStringValue("contactDetails", ContactDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderCapabilitiesProperty>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2ContactDetails>("contactDetails", ContactDetails);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("primaryBalanceAccount", PrimaryBalanceAccount);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderStatus>("status", Status);
             writer.WriteStringValue("timeZone", TimeZone);
         }
     }

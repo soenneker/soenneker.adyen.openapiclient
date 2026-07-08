@@ -43,10 +43,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of event data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData>? EventsData { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem>? EventsData { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData> EventsData { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem> EventsData { get; set; }
 #endif
         /// <summary>The externalReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,16 +89,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount OriginalAmount { get; set; }
 #endif
         /// <summary>The reason for the transfer status.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_reason? Reason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventReason? Reason { get; set; }
         /// <summary>The status of the transfer event.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventStatus? Status { get; set; }
+        /// <summary>Additional tracing information for the tracing event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData? TracingData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData TracingData { get; set; }
+#endif
         /// <summary>Additional information for the tracking event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData? TrackingData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTrackingData? TrackingData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData TrackingData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTrackingData TrackingData { get; set; }
 #endif
         /// <summary>The id of the transaction that is related to this accounting event. Only sent for events of type **accounting** where the balance changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransactionId { get; set; }
 #endif
         /// <summary>&quot;The type of the transfer event. Possible values: **accounting**, **tracking**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventType? Type { get; set; }
         /// <summary>The date when the tracking status was updated.</summary>
         public DateTimeOffset? UpdateDate { get; set; }
         /// <summary>The date when the funds are expected to be deducted from or credited to the balance account. This date can be in either the past or future.</summary>
@@ -137,17 +145,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "arn", n => { Arn = n.GetStringValue(); } },
                 { "bookingDate", n => { BookingDate = n.GetDateTimeOffsetValue(); } },
                 { "estimatedArrivalTime", n => { EstimatedArrivalTime = n.GetDateTimeOffsetValue(); } },
-                { "eventsData", n => { EventsData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "eventsData", n => { EventsData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalReason", n => { ExternalReason = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modification", n => { Modification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification.CreateFromDiscriminatorValue); } },
                 { "mutations", n => { Mutations = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "originalAmount", n => { OriginalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_reason>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_status>(); } },
-                { "trackingData", n => { TrackingData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventReason>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventStatus>(); } },
+                { "tracingData", n => { TracingData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData.CreateFromDiscriminatorValue); } },
+                { "trackingData", n => { TrackingData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTrackingData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTrackingData.CreateFromDiscriminatorValue); } },
                 { "transactionId", n => { TransactionId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventType>(); } },
                 { "updateDate", n => { UpdateDate = n.GetDateTimeOffsetValue(); } },
                 { "valueDate", n => { ValueDate = n.GetDateTimeOffsetValue(); } },
             };
@@ -164,209 +173,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("arn", Arn);
             writer.WriteDateTimeOffsetValue("bookingDate", BookingDate);
             writer.WriteDateTimeOffsetValue("estimatedArrivalTime", EstimatedArrivalTime);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData>("eventsData", EventsData);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem>("eventsData", EventsData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason>("externalReason", ExternalReason);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification>("modification", Modification);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation>("mutations", Mutations);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("originalAmount", OriginalAmount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_reason>("reason", Reason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData>("trackingData", TrackingData);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventReason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData>("tracingData", TracingData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTrackingData>("trackingData", TrackingData);
             writer.WriteStringValue("transactionId", TransactionId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventType>("type", Type);
             writer.WriteDateTimeOffsetValue("updateDate", UpdateDate);
             writer.WriteDateTimeOffsetValue("valueDate", ValueDate);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuingTransactionData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransferServiceV4TransferEvent_eventsData : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData? TransferServiceV4InterchangeData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData TransferServiceV4InterchangeData { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuingTransactionData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuingTransactionData? TransferServiceV4IssuingTransactionData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuingTransactionData TransferServiceV4IssuingTransactionData { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData? TransferServiceV4MerchantPurchaseData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData TransferServiceV4MerchantPurchaseData { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_eventsData();
-                if("TransferServiceV4InterchangeData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4InterchangeData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData();
-                }
-                else if("TransferServiceV4IssuingTransactionData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4IssuingTransactionData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuingTransactionData();
-                }
-                else if("TransferServiceV4MerchantPurchaseData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4MerchantPurchaseData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TransferServiceV4InterchangeData != null)
-                {
-                    return TransferServiceV4InterchangeData.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4IssuingTransactionData != null)
-                {
-                    return TransferServiceV4IssuingTransactionData.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4MerchantPurchaseData != null)
-                {
-                    return TransferServiceV4MerchantPurchaseData.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TransferServiceV4InterchangeData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData>(null, TransferServiceV4InterchangeData);
-                }
-                else if(TransferServiceV4IssuingTransactionData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuingTransactionData>(null, TransferServiceV4IssuingTransactionData);
-                }
-                else if(TransferServiceV4MerchantPurchaseData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData>(null, TransferServiceV4MerchantPurchaseData);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingData"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransferServiceV4TransferEvent_trackingData : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData? TransferServiceV4ConfirmationTrackingData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData TransferServiceV4ConfirmationTrackingData { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData? TransferServiceV4EstimationTrackingData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData TransferServiceV4EstimationTrackingData { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingData? TransferServiceV4InternalReviewTrackingData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingData TransferServiceV4InternalReviewTrackingData { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent.TransferServiceV4TransferEvent_trackingData();
-                if("TransferServiceV4ConfirmationTrackingData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4ConfirmationTrackingData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData();
-                }
-                else if("TransferServiceV4EstimationTrackingData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4EstimationTrackingData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData();
-                }
-                else if("TransferServiceV4InternalReviewTrackingData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4InternalReviewTrackingData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingData();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TransferServiceV4ConfirmationTrackingData != null)
-                {
-                    return TransferServiceV4ConfirmationTrackingData.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4EstimationTrackingData != null)
-                {
-                    return TransferServiceV4EstimationTrackingData.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4InternalReviewTrackingData != null)
-                {
-                    return TransferServiceV4InternalReviewTrackingData.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TransferServiceV4ConfirmationTrackingData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData>(null, TransferServiceV4ConfirmationTrackingData);
-                }
-                else if(TransferServiceV4EstimationTrackingData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData>(null, TransferServiceV4EstimationTrackingData);
-                }
-                else if(TransferServiceV4InternalReviewTrackingData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingData>(null, TransferServiceV4InternalReviewTrackingData);
-                }
-            }
         }
     }
 }

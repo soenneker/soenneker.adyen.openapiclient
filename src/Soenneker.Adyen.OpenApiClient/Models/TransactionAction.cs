@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Action to realise on a transaction. In an `EnableService` request message:  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.Possible values:* **AbortTransaction*** **StartTransaction**</summary>
+    /// <summary>Action to realise on a transaction. In an `EnableService` request message:  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.Possible values:* **StartTransaction*** **AbortTransaction**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionAction
     {
-        [EnumMember(Value = "AbortTransaction")]
-        #pragma warning disable CS1591
-        AbortTransaction,
-        #pragma warning restore CS1591
         [EnumMember(Value = "StartTransaction")]
         #pragma warning disable CS1591
         StartTransaction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AbortTransaction")]
+        #pragma warning disable CS1591
+        AbortTransaction,
         #pragma warning restore CS1591
     }
 }

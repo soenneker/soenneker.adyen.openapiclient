@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CheckoutAttemptId { get; set; }
 #endif
         /// <summary>The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails_fundingSource? FundingSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetailsFundingSource? FundingSource { get; set; }
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**applepay**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,11 +77,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "applePayToken", n => { ApplePayToken = n.GetStringValue(); } },
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails_fundingSource>(); } },
+                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetailsFundingSource>(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetailsType>(); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("applePayToken", ApplePayToken);
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails_fundingSource>("fundingSource", FundingSource);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetailsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetailsType>("type", Type);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Cvc { get; set; }
 #endif
         /// <summary>Expiry month for the test card range.Allowed values:* JANUARY* FEBRUARY* MARCH* APRIL* MAY* JUNE* JULY* AUGUST* SEPTEMBER* OCTOBER* NOVEMBER* DECEMBER</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange_expiryMonth? ExpiryMonth { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth? ExpiryMonth { get; set; }
         /// <summary>&quot;Expiry year for the test card range.Example: 2020&quot;</summary>
         public int? ExpiryYear { get; set; }
         /// <summary>&quot;The last test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 4321&quot;</summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RangeStart { get; set; }
 #endif
         /// <summary>3D Secure server response. It notifies whether the specified card holder is enrolled in a 3D Secure service. Possible values:* Y (Authentication available)* N (Card holder not enrolled/not participating)* U (Unable to authenticate)</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange_threeDDirectoryServerResponse? ThreeDDirectoryServerResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse? ThreeDDirectoryServerResponse { get; set; }
         /// <summary>The password used for 3D Secure authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,11 +104,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress>(global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress.CreateFromDiscriminatorValue); } },
                 { "cardHolderName", n => { CardHolderName = n.GetStringValue(); } },
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
-                { "expiryMonth", n => { ExpiryMonth = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange_expiryMonth>(); } },
+                { "expiryMonth", n => { ExpiryMonth = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth>(); } },
                 { "expiryYear", n => { ExpiryYear = n.GetIntValue(); } },
                 { "rangeEnd", n => { RangeEnd = n.GetStringValue(); } },
                 { "rangeStart", n => { RangeStart = n.GetStringValue(); } },
-                { "threeDDirectoryServerResponse", n => { ThreeDDirectoryServerResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange_threeDDirectoryServerResponse>(); } },
+                { "threeDDirectoryServerResponse", n => { ThreeDDirectoryServerResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse>(); } },
                 { "threeDPassword", n => { ThreeDPassword = n.GetStringValue(); } },
                 { "threeDUsername", n => { ThreeDUsername = n.GetStringValue(); } },
             };
@@ -123,11 +123,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress>("address", Address);
             writer.WriteStringValue("cardHolderName", CardHolderName);
             writer.WriteStringValue("cvc", Cvc);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange_expiryMonth>("expiryMonth", ExpiryMonth);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth>("expiryMonth", ExpiryMonth);
             writer.WriteIntValue("expiryYear", ExpiryYear);
             writer.WriteStringValue("rangeEnd", RangeEnd);
             writer.WriteStringValue("rangeStart", RangeStart);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange_threeDDirectoryServerResponse>("threeDDirectoryServerResponse", ThreeDDirectoryServerResponse);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse>("threeDDirectoryServerResponse", ThreeDDirectoryServerResponse);
             writer.WriteStringValue("threeDPassword", ThreeDPassword);
             writer.WriteStringValue("threeDUsername", ThreeDUsername);
             writer.WriteAdditionalData(AdditionalData);

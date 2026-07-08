@@ -23,10 +23,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The HTTP headers of the response Adyen received from the third party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl_headers? Headers { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl_headers Headers { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty Headers { get; set; }
 #endif
         /// <summary>The HTTP status of the response Adyen received from the third party.</summary>
         public int? Status { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "body", n => { Body = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl_headers>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl_headers.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetIntValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl_headers>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrlHeadersProperty>("headers", Headers);
             writer.WriteIntValue("status", Status);
         }
     }

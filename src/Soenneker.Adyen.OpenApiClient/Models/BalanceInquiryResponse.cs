@@ -34,10 +34,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Response? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Response Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponse"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "PaymentAccountStatus", n => { PaymentAccountStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus.CreateFromDiscriminatorValue); } },
                 { "PaymentReceipt", n => { PaymentReceipt = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Response>(global::Soenneker.Adyen.OpenApiClient.Models.Response.CreateFromDiscriminatorValue); } },
+                { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus>("PaymentAccountStatus", PaymentAccountStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>("PaymentReceipt", PaymentReceipt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Response>("Response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

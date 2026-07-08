@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransfersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers?createdSince={createdSince}&createdUntil={createdUntil}{&accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", pathParameters)
+        public TransfersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers{?accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransfersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers?createdSince={createdSince}&createdUntil={createdUntil}{&accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", rawUrl)
+        public TransfersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers{?accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", rawUrl)
         {
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.FindTransfersResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.FindTransfersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt;Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.Starts a request to transfer funds to:- [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts)- [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments)- [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts)- [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)Adyen sends the outcome of the transfer request through webhooks.To use this endpoint:- Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).Reach out to your Adyen contact to set up these permissions.
+        /// &gt;Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.Starts a request to transfer funds to:- [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts)- [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)- [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts)- [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)Adyen sends the outcome of the transfer request through webhooks.To use this endpoint:- Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).Reach out to your Adyen contact to set up these permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Transfer"/></returns>
         /// <param name="body">The request body</param>
@@ -132,13 +132,13 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.TransfersRequestBuilder.TransfersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/TransferService-v4/transfers?createdSince={createdSince}&createdUntil={createdUntil}{&accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// &gt;Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.Starts a request to transfer funds to:- [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts)- [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments)- [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts)- [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)Adyen sends the outcome of the transfer request through webhooks.To use this endpoint:- Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).Reach out to your Adyen contact to set up these permissions.
+        /// &gt;Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.Starts a request to transfer funds to:- [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts)- [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)- [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts)- [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)Adyen sends the outcome of the transfer request through webhooks.To use this endpoint:- Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).Reach out to your Adyen contact to set up these permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +153,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/TransferService-v4/transfers", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -206,7 +206,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
 #endif
             /// <summary>&quot;The category of the transfer.Possible values: - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.- **card**: A transfer involving a third-party card.- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.- **issuedCard**: A transfer initiated by an Adyen-issued card.- **platformPayment**: Funds movements related to payments that are acquired for your users.- **topUp**: An incoming transfer initiated by your user to top up their balance account.&quot;</summary>
             [QueryParameter("category")]
-            public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.GetCategoryQueryParameterType? Category { get; set; }
+            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GetTransfersCategoryParameter? Category { get; set; }
             /// <summary>Only include transfers that have been created on or after this point in time. The value must be in ISO 8601 format and not earlier than 6 months before the `createdUntil` date. For example, **2021-05-30T15:07:40Z**.</summary>
             [QueryParameter("createdSince")]
             public DateTimeOffset? CreatedSince { get; set; }
@@ -248,7 +248,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
 #endif
             /// <summary>&quot;Determines the sort order of the returned transfers. The sort order is based on the creation date of the transfers.Possible values: - **asc**: Ascending order, from oldest to most recent.- **desc**: Descending order, from most recent to oldest.Default value: **asc**.&quot;</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.GetSortOrderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GetTransfersSortOrderParameter? SortOrder { get; set; }
         }
     }
 }

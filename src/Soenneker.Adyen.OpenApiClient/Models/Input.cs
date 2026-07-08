@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public int? DigitInput { get; set; }
         /// <summary>The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal.</summary>
         public int? FunctionKey { get; set; }
-        /// <summary>The InputCommand property</summary>
+        /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputCommand? InputCommand { get; set; }
         /// <summary>The index of the menu item (from 1 to n) which is selected by the Cashier on the Sale Terminal. The value -1 indicates that the immediate upper level of the menu is requested. The value 0 indicates that the root of the menu is requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

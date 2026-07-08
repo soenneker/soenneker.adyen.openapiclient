@@ -126,7 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string FastlaneData { get; set; }
 #endif
         /// <summary>The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardDonations_fundingSource? FundingSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardDonationsFundingSource? FundingSource { get; set; }
         /// <summary>The name of the card holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -225,7 +225,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ThreeDS2SdkVersion { get; set; }
 #endif
         /// <summary>Default payment method details. Common for scheme payment methods, and for simple payment method details.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardDonations_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardDonationsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -258,7 +258,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "expiryMonth", n => { ExpiryMonth = n.GetStringValue(); } },
                 { "expiryYear", n => { ExpiryYear = n.GetStringValue(); } },
                 { "fastlaneData", n => { FastlaneData = n.GetStringValue(); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonations_fundingSource>(); } },
+                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonationsFundingSource>(); } },
                 { "holderName", n => { HolderName = n.GetStringValue(); } },
                 { "networkPaymentReference", n => { NetworkPaymentReference = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
@@ -271,7 +271,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "srcTokenReference", n => { SrcTokenReference = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "threeDS2SdkVersion", n => { ThreeDS2SdkVersion = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonations_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonationsType>(); } },
             };
         }
         /// <summary>
@@ -295,7 +295,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("expiryMonth", ExpiryMonth);
             writer.WriteStringValue("expiryYear", ExpiryYear);
             writer.WriteStringValue("fastlaneData", FastlaneData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonations_fundingSource>("fundingSource", FundingSource);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonationsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("holderName", HolderName);
             writer.WriteStringValue("networkPaymentReference", NetworkPaymentReference);
             writer.WriteStringValue("number", Number);
@@ -308,7 +308,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("srcTokenReference", SrcTokenReference);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("threeDS2SdkVersion", ThreeDS2SdkVersion);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonations_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardDonationsType>("type", Type);
         }
     }
 }

@@ -15,18 +15,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The threeDS1Result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS1Result? ThreeDS1Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs1Result? ThreeDS1Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS1Result ThreeDS1Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs1Result ThreeDS1Result { get; set; }
 #endif
         /// <summary>The threeDS2Result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDS2Result? ThreeDS2Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2Result? ThreeDS2Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDS2Result ThreeDS2Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2Result ThreeDS2Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +46,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "threeDS1Result", n => { ThreeDS1Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS1Result>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS1Result.CreateFromDiscriminatorValue); } },
-                { "threeDS2Result", n => { ThreeDS2Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDS2Result>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDS2Result.CreateFromDiscriminatorValue); } },
+                { "threeDS1Result", n => { ThreeDS1Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs1Result>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs1Result.CreateFromDiscriminatorValue); } },
+                { "threeDS2Result", n => { ThreeDS2Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2Result>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2Result.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,8 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDS1Result>("threeDS1Result", ThreeDS1Result);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDS2Result>("threeDS2Result", ThreeDS2Result);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs1Result>("threeDS1Result", ThreeDS1Result);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2Result>("threeDS2Result", ThreeDS2Result);
         }
     }
 }

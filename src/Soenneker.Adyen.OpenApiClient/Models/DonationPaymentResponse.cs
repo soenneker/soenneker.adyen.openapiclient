@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>The status of the donation transaction.Possible values:* **completed*** **pending*** **refused**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "payment", n => { Payment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse>("payment", Payment);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentResponseStatus>("status", Status);
         }
     }
 }

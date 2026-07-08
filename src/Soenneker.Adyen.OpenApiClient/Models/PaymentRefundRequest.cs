@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string MerchantAccount { get; set; }
 #endif
         /// <summary>The reason for the refund request.Possible values:* **FRAUD*** **CUSTOMER REQUEST*** **RETURN*** **DUPLICATE*** **OTHER**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequest_merchantRefundReason? MerchantRefundReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestMerchantRefundReason? MerchantRefundReason { get; set; }
         /// <summary>&quot;Your reference for the refund request. Maximum length: 80 characters.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +110,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData.CreateFromDiscriminatorValue); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "merchantRefundReason", n => { MerchantRefundReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequest_merchantRefundReason>(); } },
+                { "merchantRefundReason", n => { MerchantRefundReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestMerchantRefundReason>(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
@@ -129,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequest_merchantRefundReason>("merchantRefundReason", MerchantRefundReason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestMerchantRefundReason>("merchantRefundReason", MerchantRefundReason);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
             writer.WriteStringValue("store", Store);

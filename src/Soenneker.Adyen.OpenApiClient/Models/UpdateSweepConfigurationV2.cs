@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The type of transfer that results from the sweep.Possible values: - **bank**: Sweep to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments__resParam_id).- **internal**: Transfer to another [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts__resParam_id) within your platform.Required when setting `priorities`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_category? Category { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Category? Category { get; set; }
         /// <summary>The counterparty property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,13 +49,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The list of priorities for the bank transfer. This sets the speed at which the transfer is sent and the fees that you have to pay. You can provide multiple priorities, ordered by your preference. Adyen will try to pay out using the priorities in the given order. If the first priority is not currently supported or enabled for your platform, the system will try the next one, and so on.The request will be accepted as long as **at least one** of the provided priorities is valid (i.e., supported by Adyen and activated for your platform). For example, if you provide `[\&quot;wire\&quot;,\&quot;regular\&quot;]`, and `wire` is not supported but `regular` is, the request will still be accepted and processed.Possible values:* **regular**: For normal, low-value transactions.* **fast**: A faster way to transfer funds, but the fees are higher. Recommended for high-priority, low-value transactions.* **wire**: The fastest way to transfer funds, but this has the highest fees. Recommended for high-priority, high-value transactions.* **instant**: For instant funds transfers within the United States and in [SEPA locations](https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html).* **crossBorder**: For high-value transfers to a recipient in a different country.* **internal**: For transfers to an Adyen-issued business bank account (by bank account number/IBAN).Set `category` to **bank**. For more details, see optional priorities setup for [marketplaces](https://docs.adyen.com/marketplaces/payout-to-users/scheduled-payouts#optional-priorities-setup) or [platforms](https://docs.adyen.com/platforms/payout-to-users/scheduled-payouts#optional-priorities-setup).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_priorities?>? Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2PrioritiesItem?>? Priorities { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_priorities?> Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2PrioritiesItem?> Priorities { get; set; }
 #endif
         /// <summary>The reason for disabling the sweep.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_reason? Reason { get; private set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Reason? Reason { get; private set; }
         /// <summary>The human readable reason for disabling the sweep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepSchedule Schedule { get; set; }
 #endif
         /// <summary>&quot;The status of the sweep. If not provided, by default, this is set to **active**.Possible values:  * **active**:  the sweep is enabled and funds will be pulled in or pushed out based on the defined configuration.  * **inactive**: the sweep is disabled and cannot be triggered. &quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Status? Status { get; set; }
         /// <summary>The sweepAmount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +115,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount TriggerAmount { get; set; }
 #endif
         /// <summary>&quot;The direction of sweep, whether pushing out or pulling in funds to the balance account. If not provided, by default, this is set to **push**.Possible values: * **push**: _push out funds_ to a destination balance account or transfer instrument. * **pull**: _pull in funds_ from a source merchant account, transfer instrument, or balance account.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -134,22 +134,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_category>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Category>(); } },
                 { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepCounterparty.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "priorities", n => { Priorities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_priorities>()?.AsList(); } },
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_reason>(); } },
+                { "priorities", n => { Priorities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2PrioritiesItem>()?.AsList(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Reason>(); } },
                 { "reasonDetail", n => { ReasonDetail = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepSchedule>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepSchedule.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Status>(); } },
                 { "sweepAmount", n => { SweepAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount.CreateFromDiscriminatorValue); } },
                 { "targetAmount", n => { TargetAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount.CreateFromDiscriminatorValue); } },
                 { "triggerAmount", n => { TriggerAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Type>(); } },
             };
         }
         /// <summary>
@@ -159,19 +159,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_category>("category", Category);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Category>("category", Category);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepCounterparty>("counterparty", Counterparty);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_priorities>("priorities", Priorities);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2PrioritiesItem>("priorities", Priorities);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepSchedule>("schedule", Schedule);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>("sweepAmount", SweepAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>("targetAmount", TargetAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>("triggerAmount", TriggerAmount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSweepConfigurationV2Type>("type", Type);
         }
     }
 }

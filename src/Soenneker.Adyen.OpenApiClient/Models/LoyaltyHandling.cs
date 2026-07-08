@@ -3,15 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Forbidden*** **Processed*** **Allowed*** **Proposed*** **Required**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum LoyaltyHandling
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Allowed")]
-        #pragma warning disable CS1591
-        Allowed,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Forbidden")]
         #pragma warning disable CS1591
         Forbidden,
@@ -19,6 +14,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Processed")]
         #pragma warning disable CS1591
         Processed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Allowed")]
+        #pragma warning disable CS1591
+        Allowed,
         #pragma warning restore CS1591
         [EnumMember(Value = "Proposed")]
         #pragma warning disable CS1591

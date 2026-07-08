@@ -23,10 +23,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of capabilities for this transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_capabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_capabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty Capabilities { get; set; }
 #endif
         /// <summary>List of documents uploaded for the transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> Problems { get; set; }
 #endif
         /// <summary>&quot;The type of transfer instrument.Possible value: **bankAccount**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,12 +81,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo.CreateFromDiscriminatorValue); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_capabilities>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_capabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty.CreateFromDiscriminatorValue); } },
                 { "documentDetails", n => { DocumentDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "problems", n => { Problems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType>(); } },
             };
         }
         /// <summary>
@@ -97,11 +97,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo>("bankAccount", BankAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_capabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty>("capabilities", Capabilities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>("documentDetails", DocumentDetails);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>("problems", Problems);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType>("type", Type);
         }
     }
 }

@@ -36,22 +36,22 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort
         /// <summary>
         /// Body of the Abort Request message.It conveys Information requested for identification of the message request carrying the transaction to abort. A message to display on the CustomerError Device could be sent by the Sale System (DisplayOutput).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort.AbortPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PostAbort200Response"/></returns>
         /// <param name="body">Body of the Abort Request message.It conveys Information requested for identification of the message request carrying the transaction to abort. A message to display on the CustomerError Device could be sent by the Sale System (DisplayOutput).</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort.AbortPostResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PostAbort200Response?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort.AbortPostResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PostAbort200Response> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort.AbortPostResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Abort.AbortPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PostAbort200Response>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PostAbort200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Body of the Abort Request message.It conveys Information requested for identification of the message request carrying the transaction to abort. A message to display on the CustomerError Device could be sent by the Sale System (DisplayOutput).

@@ -69,14 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PayoutMethodCode { get; set; }
 #endif
         /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest_payoutSpeed? PayoutSpeed { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest"/> and sets the default values.
-        /// </summary>
-        public PayoutAccountHolderRequest()
-        {
-            PayoutSpeed = global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest_payoutSpeed.STANDARD;
-        }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestPayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
                 { "payoutMethodCode", n => { PayoutMethodCode = n.GetStringValue(); } },
-                { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest_payoutSpeed>(); } },
+                { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestPayoutSpeed>(); } },
             };
         }
         /// <summary>
@@ -119,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("merchantReference", MerchantReference);
             writer.WriteStringValue("payoutMethodCode", PayoutMethodCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest_payoutSpeed>("payoutSpeed", PayoutSpeed);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestPayoutSpeed>("payoutSpeed", PayoutSpeed);
         }
     }
 }

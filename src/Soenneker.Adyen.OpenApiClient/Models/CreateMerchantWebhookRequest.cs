@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettings AdditionalSettings { get; set; }
 #endif
         /// <summary>Format or protocol for receiving webhooks. Possible values:* **soap*** **http*** **json** </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_communicationFormat? CommunicationFormat { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestCommunicationFormat? CommunicationFormat { get; set; }
         /// <summary>Your description for this webhook configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,9 +39,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>&quot;SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_encryptionProtocol? EncryptionProtocol { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestEncryptionProtocol? EncryptionProtocol { get; set; }
         /// <summary>&quot;Network type for Terminal API notification webhooks. Possible values:* **public*** **local**Default Value: **public**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_networkType? NetworkType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestNetworkType? NetworkType { get; set; }
         /// <summary>Password to access the webhook URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,10 +99,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "acceptsUntrustedRootCertificate", n => { AcceptsUntrustedRootCertificate = n.GetBoolValue(); } },
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "additionalSettings", n => { AdditionalSettings = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettings>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettings.CreateFromDiscriminatorValue); } },
-                { "communicationFormat", n => { CommunicationFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_communicationFormat>(); } },
+                { "communicationFormat", n => { CommunicationFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestCommunicationFormat>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "encryptionProtocol", n => { EncryptionProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_encryptionProtocol>(); } },
-                { "networkType", n => { NetworkType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_networkType>(); } },
+                { "encryptionProtocol", n => { EncryptionProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestEncryptionProtocol>(); } },
+                { "networkType", n => { NetworkType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestNetworkType>(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "populateSoapActionHeader", n => { PopulateSoapActionHeader = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -122,10 +122,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("acceptsUntrustedRootCertificate", AcceptsUntrustedRootCertificate);
             writer.WriteBoolValue("active", Active);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettings>("additionalSettings", AdditionalSettings);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_communicationFormat>("communicationFormat", CommunicationFormat);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestCommunicationFormat>("communicationFormat", CommunicationFormat);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_encryptionProtocol>("encryptionProtocol", EncryptionProtocol);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequest_networkType>("networkType", NetworkType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestEncryptionProtocol>("encryptionProtocol", EncryptionProtocol);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantWebhookRequestNetworkType>("networkType", NetworkType);
             writer.WriteStringValue("password", Password);
             writer.WriteBoolValue("populateSoapActionHeader", PopulateSoapActionHeader);
             writer.WriteStringValue("type", Type);

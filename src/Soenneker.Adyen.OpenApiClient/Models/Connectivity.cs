@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;Indicates the status of the SIM card in the payment terminal. Can be updated and received only at terminal level, and only for models that support cellular connectivity.Possible values:* **ACTIVATED**: the SIM card is activated. Cellular connectivity may still need to be enabled on the terminal itself, in the **Network** settings.* **INVENTORY**: the SIM card is not activated. The terminal can&apos;t use cellular connectivity.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Connectivity_simcardStatus? SimcardStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus? SimcardStatus { get; set; }
         /// <summary>The terminalIPAddressURL property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "simcardStatus", n => { SimcardStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Connectivity_simcardStatus>(); } },
+                { "simcardStatus", n => { SimcardStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus>(); } },
                 { "terminalIPAddressURL", n => { TerminalIPAddressURL = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EventUrl>(global::Soenneker.Adyen.OpenApiClient.Models.EventUrl.CreateFromDiscriminatorValue); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Connectivity_simcardStatus>("simcardStatus", SimcardStatus);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus>("simcardStatus", SimcardStatus);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EventUrl>("terminalIPAddressURL", TerminalIPAddressURL);
         }
     }

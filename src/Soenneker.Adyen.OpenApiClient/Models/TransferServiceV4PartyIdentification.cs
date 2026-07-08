@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>&quot;The type of entity that owns the bank account or card.Possible values: **individual**, **organization**, or **unknown**.Required when `category` is **card**. In this case, the value must be **individual**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentification_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentificationType? Type { get; set; }
         /// <summary>&quot;The URL of the organization or individual. Maximum length: 255 characters.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "fullName", n => { FullName = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentification_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentificationType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("fullName", FullName);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentification_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentificationType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

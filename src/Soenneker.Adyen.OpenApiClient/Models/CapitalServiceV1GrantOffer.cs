@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount Amount { get; set; }
 #endif
         /// <summary>The contract type of the offer.Possible values:* **loan*** **cashAdvance**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOffer_contractType? ContractType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferContractType? ContractType { get; set; }
         /// <summary>The expiration date and time of the offer validity period.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The fee property</summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount.CreateFromDiscriminatorValue); } },
-                { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOffer_contractType>(); } },
+                { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferContractType>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderId", AccountHolderId);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOffer_contractType>("contractType", ContractType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferContractType>("contractType", ContractType);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee>("fee", Fee);
             writer.WriteStringValue("id", Id);

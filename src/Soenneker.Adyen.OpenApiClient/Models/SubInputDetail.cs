@@ -15,18 +15,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Configuration parameters for the required input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail_configuration? Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail_configuration Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty Configuration { get; set; }
 #endif
         /// <summary>In case of a select, the items to choose from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Item>? Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Item> Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue> Items { get; set; }
 #endif
         /// <summary>The value to provide in the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,8 +72,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail_configuration>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail_configuration.CreateFromDiscriminatorValue); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Item>(global::Soenneker.Adyen.OpenApiClient.Models.Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>(global::Soenneker.Adyen.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "optional", n => { Optional = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -87,8 +87,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail_configuration>("configuration", Configuration);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Item>("items", Items);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetailConfigurationProperty>("configuration", Configuration);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>("items", Items);
             writer.WriteStringValue("key", Key);
             writer.WriteBoolValue("optional", Optional);
             writer.WriteStringValue("type", Type);

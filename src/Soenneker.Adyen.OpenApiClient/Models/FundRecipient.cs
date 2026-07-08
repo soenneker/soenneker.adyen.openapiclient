@@ -101,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string WalletOwnerTaxId { get; set; }
 #endif
         /// <summary>The purpose of a digital wallet transaction.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient_walletPurpose? WalletPurpose { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundRecipientWalletPurpose? WalletPurpose { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -131,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
                 { "walletIdentifier", n => { WalletIdentifier = n.GetStringValue(); } },
                 { "walletOwnerTaxId", n => { WalletOwnerTaxId = n.GetStringValue(); } },
-                { "walletPurpose", n => { WalletPurpose = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient_walletPurpose>(); } },
+                { "walletPurpose", n => { WalletPurpose = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundRecipientWalletPurpose>(); } },
             };
         }
         /// <summary>
@@ -152,7 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
             writer.WriteStringValue("walletIdentifier", WalletIdentifier);
             writer.WriteStringValue("walletOwnerTaxId", WalletOwnerTaxId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient_walletPurpose>("walletPurpose", WalletPurpose);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundRecipientWalletPurpose>("walletPurpose", WalletPurpose);
         }
     }
 }

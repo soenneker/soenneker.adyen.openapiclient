@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum DocumentQualifier
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "SaleReceipt")]
+        #pragma warning disable CS1591
+        SaleReceipt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CashierReceipt")]
         #pragma warning disable CS1591
         CashierReceipt,
@@ -20,17 +23,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Document,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Journal")]
-        #pragma warning disable CS1591
-        Journal,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SaleReceipt")]
-        #pragma warning disable CS1591
-        SaleReceipt,
-        #pragma warning restore CS1591
         [EnumMember(Value = "Voucher")]
         #pragma warning disable CS1591
         Voucher,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Journal")]
+        #pragma warning disable CS1591
+        Journal,
         #pragma warning restore CS1591
     }
 }

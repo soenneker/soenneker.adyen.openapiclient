@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CheckoutAttemptId { get; set; }
 #endif
         /// <summary>**Alma payment request fee type**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails_feeType? FeeType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsFeeType? FeeType { get; set; }
         /// <summary>Base64-encoded JSON object containing SDK related parameters required by the SDK</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>The payment method type.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "feeType", n => { FeeType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails_feeType>(); } },
+                { "feeType", n => { FeeType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsFeeType>(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsType>(); } },
             };
         }
         /// <summary>
@@ -64,9 +64,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails_feeType>("feeType", FeeType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsFeeType>("feeType", FeeType);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsType>("type", Type);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CardNumberRangeStart { get; set; }
 #endif
         /// <summary>Notification message. It informs about the outcome of the operation. Possible values:* CREATED* ALREADY_EXISTS* ERROR</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult_creationResultCode? CreationResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode? CreationResultCode { get; set; }
         /// <summary>An optional information message about the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "cardNumberRangeEnd", n => { CardNumberRangeEnd = n.GetStringValue(); } },
                 { "cardNumberRangeStart", n => { CardNumberRangeStart = n.GetStringValue(); } },
-                { "creationResultCode", n => { CreationResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult_creationResultCode>(); } },
+                { "creationResultCode", n => { CreationResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode>(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cardNumberRangeEnd", CardNumberRangeEnd);
             writer.WriteStringValue("cardNumberRangeStart", CardNumberRangeStart);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult_creationResultCode>("creationResultCode", CreationResultCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResultCreationResultCode>("creationResultCode", CreationResultCode);
             writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

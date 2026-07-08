@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return mappingValue switch
             {
                 "payTo" => new global::Soenneker.Adyen.OpenApiClient.Models.PayToPaymentMethod(),
-                "upi_collect" => new global::Soenneker.Adyen.OpenApiClient.Models.UPIPaymentMethod(),
+                "upi_collect" => new global::Soenneker.Adyen.OpenApiClient.Models.UpiPaymentMethod(),
                 _ => new global::Soenneker.Adyen.OpenApiClient.Models.ShopperIdPaymentMethod(),
             };
         }

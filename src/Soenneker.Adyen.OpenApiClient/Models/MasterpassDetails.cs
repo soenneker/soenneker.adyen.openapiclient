@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string CheckoutAttemptId { get; set; }
 #endif
         /// <summary>The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails_fundingSource? FundingSource { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsFundingSource? FundingSource { get; set; }
         /// <summary>The Masterpass transaction ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>**masterpass**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,10 +59,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails_fundingSource>(); } },
+                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsFundingSource>(); } },
                 { "masterpassTransactionId", n => { MasterpassTransactionId = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsType>(); } },
             };
         }
         /// <summary>
@@ -73,10 +73,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails_fundingSource>("fundingSource", FundingSource);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("masterpassTransactionId", MasterpassTransactionId);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsType>("type", Type);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.BinLookupServiceV54.Get3dsAvailability
         /// <summary>
         /// Verifies whether 3D Secure is available for the specified BIN or card brand. For 3D Secure 2, this endpoint also returns device fingerprinting keys.For more information, refer to [3D Secure 2](https://docs.adyen.com/online-payments/3d-secure/native-3ds2).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,11 +47,11 @@ namespace Soenneker.Adyen.OpenApiClient.BinLookupServiceV54.Get3dsAvailability
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54ServiceError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.BinLookupServiceV54.Get3dsAvailability
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54ServiceError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Verifies whether 3D Secure is available for the specified BIN or card brand. For 3D Secure 2, this endpoint also returns device fingerprinting keys.For more information, refer to [3D Secure 2](https://docs.adyen.com/online-payments/3d-secure/native-3ds2).
@@ -74,11 +74,11 @@ namespace Soenneker.Adyen.OpenApiClient.BinLookupServiceV54.Get3dsAvailability
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

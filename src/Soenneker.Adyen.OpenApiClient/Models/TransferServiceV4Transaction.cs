@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ReferenceForBeneficiary { get; set; }
 #endif
         /// <summary>&quot;The status of the transaction. Possible values:* **pending**: The transaction is still pending.* **booked**: The transaction has been booked to the balance account.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus? Status { get; set; }
         /// <summary>The transfer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "paymentInstrument", n => { PaymentInstrument = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument.CreateFromDiscriminatorValue); } },
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus>(); } },
                 { "transfer", n => { Transfer = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.CreateFromDiscriminatorValue); } },
                 { "valueDate", n => { ValueDate = n.GetDateTimeOffsetValue(); } },
             };
@@ -142,7 +142,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument>("paymentInstrument", PaymentInstrument);
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView>("transfer", Transfer);
             writer.WriteDateTimeOffsetValue("valueDate", ValueDate);
         }

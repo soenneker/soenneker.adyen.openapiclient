@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The relevant data according to the transfer category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData? CategoryData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData? CategoryData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData CategoryData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData CategoryData { get; set; }
 #endif
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categoryData", n => { CategoryData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData.CreateFromDiscriminatorValue); } },
+                { "categoryData", n => { CategoryData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
             };
@@ -66,124 +66,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData>("categoryData", CategoryData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferViewCategoryData>("categoryData", CategoryData);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reference", Reference);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransferServiceV4TransferView_categoryData : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData? TransferServiceV4BankCategoryData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData TransferServiceV4BankCategoryData { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData? TransferServiceV4InternalCategoryData { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData TransferServiceV4InternalCategoryData { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard? TransferServiceV4IssuedCard { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard TransferServiceV4IssuedCard { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment? TransferServiceV4PlatformPayment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment TransferServiceV4PlatformPayment { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.TransferServiceV4TransferView_categoryData();
-                if("TransferServiceV4BankCategoryData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4BankCategoryData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData();
-                }
-                else if("TransferServiceV4InternalCategoryData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4InternalCategoryData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData();
-                }
-                else if("TransferServiceV4IssuedCard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4IssuedCard = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard();
-                }
-                else if("TransferServiceV4PlatformPayment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferServiceV4PlatformPayment = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TransferServiceV4BankCategoryData != null)
-                {
-                    return TransferServiceV4BankCategoryData.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4InternalCategoryData != null)
-                {
-                    return TransferServiceV4InternalCategoryData.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4IssuedCard != null)
-                {
-                    return TransferServiceV4IssuedCard.GetFieldDeserializers();
-                }
-                else if(TransferServiceV4PlatformPayment != null)
-                {
-                    return TransferServiceV4PlatformPayment.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TransferServiceV4BankCategoryData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BankCategoryData>(null, TransferServiceV4BankCategoryData);
-                }
-                else if(TransferServiceV4InternalCategoryData != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalCategoryData>(null, TransferServiceV4InternalCategoryData);
-                }
-                else if(TransferServiceV4IssuedCard != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCard>(null, TransferServiceV4IssuedCard);
-                }
-                else if(TransferServiceV4PlatformPayment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment>(null, TransferServiceV4PlatformPayment);
-                }
-            }
         }
     }
 }

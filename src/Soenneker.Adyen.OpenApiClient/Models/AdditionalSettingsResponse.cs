@@ -31,10 +31,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;Object containing boolean key-value pairs. The key can be any [standard webhook additional setting](https://docs.adyen.com/development-resources/webhooks/additional-settings), and the value indicates if the setting is enabled.For example, `includeCaptureDelayHours`: **true** means the standard notifications you get will contain the number of hours remaining until the payment will be captured.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse_properties? Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse_properties Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty Properties { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "excludeEventCodes", n => { ExcludeEventCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "includeEventCodes", n => { IncludeEventCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse_properties>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("excludeEventCodes", ExcludeEventCodes);
             writer.WriteCollectionOfPrimitiveValues<string>("includeEventCodes", IncludeEventCodes);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponsePropertiesProperty>("properties", Properties);
         }
     }
 }

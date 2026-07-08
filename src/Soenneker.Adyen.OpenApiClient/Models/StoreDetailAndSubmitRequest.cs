@@ -16,10 +16,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be required for a particular request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The date of birth.Format: [ISO-8601](https://www.w3.org/TR/NOTE-datetime); example: YYYY-MM-DDFor Paysafecard it must be the same as used when registering the Paysafecard account.&gt; This field is mandatory for natural persons.&quot;</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>The type of the entity the payout is processed for.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_entityType? EntityType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestEntityType? EntityType { get; set; }
         /// <summary>An integer value that is added to the normal fraud score. The value can be either positive or negative.</summary>
         public int? FraudOffset { get; set; }
         /// <summary>The merchant account identifier, with which you want to process the transaction.</summary>
@@ -165,13 +165,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount.CreateFromDiscriminatorValue); } },
                 { "bank", n => { Bank = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68BankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68BankAccount.CreateFromDiscriminatorValue); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Address>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Address.CreateFromDiscriminatorValue); } },
                 { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card.CreateFromDiscriminatorValue); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateValue(); } },
-                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_entityType>(); } },
+                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestEntityType>(); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "nationality", n => { Nationality = n.GetStringValue(); } },
@@ -193,13 +193,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount>("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68BankAccount>("bank", Bank);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Address>("billingAddress", BillingAddress);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card>("card", Card);
             writer.WriteDateValue("dateOfBirth", DateOfBirth);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequest_entityType>("entityType", EntityType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAndSubmitRequestEntityType>("entityType", EntityType);
             writer.WriteIntValue("fraudOffset", FraudOffset);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("nationality", Nationality);

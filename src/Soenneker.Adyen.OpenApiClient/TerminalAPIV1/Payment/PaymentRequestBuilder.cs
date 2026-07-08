@@ -36,22 +36,22 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Payment
         /// <summary>
         /// Request sent to terminal to initiate payment.It conveys Information related to the Payment transaction to process.Content of the `PaymentRequest` message.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse"/></returns>
         /// <param name="body">Request sent to terminal to initiate payment.It conveys Information related to the Payment transaction to process.Content of the `PaymentRequest` message.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Request sent to terminal to initiate payment.It conveys Information related to the Payment transaction to process.Content of the `PaymentRequest` message.
@@ -61,11 +61,11 @@ namespace Soenneker.Adyen.OpenApiClient.TerminalAPIV1.Payment
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAPIV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Length of time that the cardholder has had the account with the 3DS Requestor. Allowed values:* **01** — No account* **02** — Created during this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccAgeInd? ChAccAgeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccAgeInd? ChAccAgeInd { get; set; }
         /// <summary>&quot;Date that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Format: **YYYYMMDD**&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ChAccChange { get; set; }
 #endif
         /// <summary>Length of time since the cardholder’s account information with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Allowed values:* **01** — Changed during this transaction* **02** — Less than 30 days* **03** — 30–60 days* **04** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccChangeInd? ChAccChangeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccChangeInd? ChAccChangeInd { get; set; }
         /// <summary>&quot;Date that cardholder’s account with the 3DS Requestor had a password change or account reset. Format: **YYYYMMDD**&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ChAccPwChange { get; set; }
 #endif
         /// <summary>Indicates the length of time since the cardholder’s account with the 3DS Requestor had a password change or account reset. Allowed values:* **01** — No change* **02** — Changed during this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccPwChangeInd? ChAccPwChangeInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccPwChangeInd? ChAccPwChangeInd { get; set; }
         /// <summary>&quot;Date that the cardholder opened the account with the 3DS Requestor. Format: **YYYYMMDD**&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentAccAge { get; set; }
 #endif
         /// <summary>Indicates the length of time that the payment account was enrolled in the cardholder’s account with the 3DS Requestor. Allowed values:* **01** — No account (guest checkout)* **02** — During this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_paymentAccInd? PaymentAccInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoPaymentAccInd? PaymentAccInd { get; set; }
         /// <summary>&quot;Number of Add Card attempts in the last 24 hours. Max length: 3 characters.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,11 +77,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShipAddressUsage { get; set; }
 #endif
         /// <summary>Indicates when the shipping address used for this transaction was first used with the 3DS Requestor. Allowed values:* **01** — This transaction* **02** — Less than 30 days* **03** — 30–60 days* **04** — More than 60 days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_shipAddressUsageInd? ShipAddressUsageInd { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipAddressUsageInd? ShipAddressUsageInd { get; set; }
         /// <summary>Indicates if the Cardholder Name on the account is identical to the shipping Name used for this transaction. Allowed values:* **01** — Account Name identical to shipping Name* **02** — Account Name different to shipping Name</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_shipNameIndicator? ShipNameIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipNameIndicator? ShipNameIndicator { get; set; }
         /// <summary>Indicates whether the 3DS Requestor has experienced suspicious activity (including previous fraud) on the cardholder account. Allowed values:* **01** — No suspicious activity has been observed* **02** — Suspicious activity has been observed</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_suspiciousAccActivity? SuspiciousAccActivity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity? SuspiciousAccActivity { get; set; }
         /// <summary>&quot;Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous 24 hours. Max length: 3 characters.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,20 +116,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chAccAgeInd", n => { ChAccAgeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccAgeInd>(); } },
+                { "chAccAgeInd", n => { ChAccAgeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccAgeInd>(); } },
                 { "chAccChange", n => { ChAccChange = n.GetStringValue(); } },
-                { "chAccChangeInd", n => { ChAccChangeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccChangeInd>(); } },
+                { "chAccChangeInd", n => { ChAccChangeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccChangeInd>(); } },
                 { "chAccPwChange", n => { ChAccPwChange = n.GetStringValue(); } },
-                { "chAccPwChangeInd", n => { ChAccPwChangeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccPwChangeInd>(); } },
+                { "chAccPwChangeInd", n => { ChAccPwChangeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccPwChangeInd>(); } },
                 { "chAccString", n => { ChAccString = n.GetStringValue(); } },
                 { "nbPurchaseAccount", n => { NbPurchaseAccount = n.GetStringValue(); } },
                 { "paymentAccAge", n => { PaymentAccAge = n.GetStringValue(); } },
-                { "paymentAccInd", n => { PaymentAccInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_paymentAccInd>(); } },
+                { "paymentAccInd", n => { PaymentAccInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoPaymentAccInd>(); } },
                 { "provisionAttemptsDay", n => { ProvisionAttemptsDay = n.GetStringValue(); } },
                 { "shipAddressUsage", n => { ShipAddressUsage = n.GetStringValue(); } },
-                { "shipAddressUsageInd", n => { ShipAddressUsageInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_shipAddressUsageInd>(); } },
-                { "shipNameIndicator", n => { ShipNameIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_shipNameIndicator>(); } },
-                { "suspiciousAccActivity", n => { SuspiciousAccActivity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_suspiciousAccActivity>(); } },
+                { "shipAddressUsageInd", n => { ShipAddressUsageInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipAddressUsageInd>(); } },
+                { "shipNameIndicator", n => { ShipNameIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipNameIndicator>(); } },
+                { "suspiciousAccActivity", n => { SuspiciousAccActivity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity>(); } },
                 { "txnActivityDay", n => { TxnActivityDay = n.GetStringValue(); } },
                 { "txnActivityYear", n => { TxnActivityYear = n.GetStringValue(); } },
             };
@@ -141,20 +141,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccAgeInd>("chAccAgeInd", ChAccAgeInd);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccAgeInd>("chAccAgeInd", ChAccAgeInd);
             writer.WriteStringValue("chAccChange", ChAccChange);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccChangeInd>("chAccChangeInd", ChAccChangeInd);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccChangeInd>("chAccChangeInd", ChAccChangeInd);
             writer.WriteStringValue("chAccPwChange", ChAccPwChange);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_chAccPwChangeInd>("chAccPwChangeInd", ChAccPwChangeInd);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoChAccPwChangeInd>("chAccPwChangeInd", ChAccPwChangeInd);
             writer.WriteStringValue("chAccString", ChAccString);
             writer.WriteStringValue("nbPurchaseAccount", NbPurchaseAccount);
             writer.WriteStringValue("paymentAccAge", PaymentAccAge);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_paymentAccInd>("paymentAccInd", PaymentAccInd);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoPaymentAccInd>("paymentAccInd", PaymentAccInd);
             writer.WriteStringValue("provisionAttemptsDay", ProvisionAttemptsDay);
             writer.WriteStringValue("shipAddressUsage", ShipAddressUsage);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_shipAddressUsageInd>("shipAddressUsageInd", ShipAddressUsageInd);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_shipNameIndicator>("shipNameIndicator", ShipNameIndicator);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo_suspiciousAccActivity>("suspiciousAccActivity", SuspiciousAccActivity);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipAddressUsageInd>("shipAddressUsageInd", ShipAddressUsageInd);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoShipNameIndicator>("shipNameIndicator", ShipNameIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfoSuspiciousAccActivity>("suspiciousAccActivity", SuspiciousAccActivity);
             writer.WriteStringValue("txnActivityDay", TxnActivityDay);
             writer.WriteStringValue("txnActivityYear", TxnActivityYear);
         }

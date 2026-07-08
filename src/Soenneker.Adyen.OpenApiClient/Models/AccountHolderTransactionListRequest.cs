@@ -31,10 +31,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of statuses to include in the transaction list. If left blank, all transactions will be included.&gt;Permitted values:&gt;* `PendingCredit` - a pending balance credit.&gt;* `CreditFailed` - a pending credit failure; the balance will not be credited.&gt;* `Credited` - a credited balance.&gt;* `PendingDebit` - a pending balance debit (e.g., a refund).&gt;* `CreditClosed` - a pending credit closed; the balance will not be credited.&gt;* `CreditSuspended` - a pending credit closed; the balance will not be credited.&gt;* `DebitFailed` - a pending debit failure; the balance will not be debited.&gt;* `Debited` - a debited balance (e.g., a refund).&gt;* `DebitReversedReceived` - a pending refund reversal.&gt;* `DebitedReversed` - a reversed refund.&gt;* `ChargebackReceived` - a received chargeback request.&gt;* `Chargeback` - a processed chargeback.&gt;* `ChargebackReversedReceived` - a pending chargeback reversal.&gt;* `ChargebackReversed` - a reversed chargeback.&gt;* `Converted` - converted.&gt;* `ManualCorrected` - manual booking/adjustment by Adyen.&gt;* `Payout` - a payout.&gt;* `PayoutReversed` - a reversed payout.&gt;* `PendingFundTransfer` - a pending transfer of funds from one account to another.&gt;* `FundTransfer` - a transfer of funds from one account to another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest_transactionStatuses?>? TransactionStatuses { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?>? TransactionStatuses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest_transactionStatuses?> TransactionStatuses { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem?> TransactionStatuses { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
                 { "transactionListsPerAccount", n => { TransactionListsPerAccount = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "transactionStatuses", n => { TransactionStatuses = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest_transactionStatuses>()?.AsList(); } },
+                { "transactionStatuses", n => { TransactionStatuses = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount>("transactionListsPerAccount", TransactionListsPerAccount);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequest_transactionStatuses>("transactionStatuses", TransactionStatuses);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderTransactionListRequestTransactionStatusesItem>("transactionStatuses", TransactionStatuses);
         }
     }
 }

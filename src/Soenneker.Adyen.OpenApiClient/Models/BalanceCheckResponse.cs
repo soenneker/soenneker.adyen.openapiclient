@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The balance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RefusalReason { get; set; }
 #endif
         /// <summary>The result of the cancellation request.Possible values:* **Success** – Indicates that the balance check was successful.* **NotEnoughBalance** – Commonly indicates that the card did not have enough balance to pay the amount in the request, or that the currency of the balance on the card did not match the currency of the requested amount.* **Failed** – Indicates that the balance check failed.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_resultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseResultCode? ResultCode { get; set; }
         /// <summary>The transactionLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,12 +80,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "balance", n => { Balance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
                 { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.FraudResult.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
-                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_resultCode>(); } },
+                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseResultCode>(); } },
                 { "transactionLimit", n => { TransactionLimit = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,12 +96,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("balance", Balance);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>("fraudResult", FraudResult);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponse_resultCode>("resultCode", ResultCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceCheckResponseResultCode>("resultCode", ResultCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("transactionLimit", TransactionLimit);
         }
     }

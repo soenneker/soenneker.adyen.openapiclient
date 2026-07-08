@@ -95,10 +95,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use by the account holder or merchant.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; The values being stored have a maximum length of eighty (80) characters and will be truncated if necessary.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails_metadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails_metadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>Array of tokenized card details associated with the account holder. For details about how you can use the tokens to pay out, refer to [Pay out to cards](https://docs.adyen.com/classic-platforms/payout-to-cards).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,7 +168,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "lastReviewDate", n => { LastReviewDate = n.GetStringValue(); } },
                 { "legalArrangements", n => { LegalArrangements = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantCategoryCode", n => { MerchantCategoryCode = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails_metadata>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "payoutMethods", n => { PayoutMethods = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber.CreateFromDiscriminatorValue); } },
                 { "principalBusinessAddress", n => { PrincipalBusinessAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>(global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress.CreateFromDiscriminatorValue); } },
@@ -193,7 +193,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("lastReviewDate", LastReviewDate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail>("legalArrangements", LegalArrangements);
             writer.WriteStringValue("merchantCategoryCode", MerchantCategoryCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod>("payoutMethods", PayoutMethods);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>("phoneNumber", PhoneNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>("principalBusinessAddress", PrincipalBusinessAddress);

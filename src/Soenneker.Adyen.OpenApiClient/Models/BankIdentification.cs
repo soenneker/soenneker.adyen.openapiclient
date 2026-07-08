@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Identification { get; set; }
 #endif
         /// <summary>&quot;The type of the identification.Possible values: **iban**, **routingNumber**, **sortCode**, **bic**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankIdentification_identificationType? IdentificationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankIdentificationIdentificationType? IdentificationType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "identification", n => { Identification = n.GetStringValue(); } },
-                { "identificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankIdentification_identificationType>(); } },
+                { "identificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankIdentificationIdentificationType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("identification", Identification);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankIdentification_identificationType>("identificationType", IdentificationType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankIdentificationIdentificationType>("identificationType", IdentificationType);
         }
     }
 }

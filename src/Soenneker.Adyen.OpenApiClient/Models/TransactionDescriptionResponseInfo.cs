@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string DoingBusinessAsName { get; set; }
 #endif
         /// <summary>&quot;The type of transaction description you want to use:- **fixed**: The transaction description set in this request is used for all payments with this payment method.- **append**: The transaction description set in this request is used as a base for all payments with this payment method. The [transaction description set in the request to process the payment](https://docs.adyen.com/api-explorer/Checkout/70/post/sessions#request-shopperStatement) is appended to this base description. Note that if the combined length exceeds 22 characters, banks may truncate the string.- **dynamic**: Only the [transaction description set in the request to process the payment](https://docs.adyen.com/api-explorer/Checkout/70/post/sessions#request-shopperStatement) is used for payments with this payment method.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "doingBusinessAsName", n => { DoingBusinessAsName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("doingBusinessAsName", DoingBusinessAsName);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType>("type", Type);
         }
     }
 }

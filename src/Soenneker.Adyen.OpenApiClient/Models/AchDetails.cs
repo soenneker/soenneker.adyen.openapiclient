@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The account holder type (personal or business).</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_accountHolderType? AccountHolderType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsAccountHolderType? AccountHolderType { get; set; }
         /// <summary>The bank account number (without separators).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string BankAccountNumber { get; set; }
 #endif
         /// <summary>The bank account type (checking, savings...).</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_bankAccountType? BankAccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsBankAccountType? BankAccountType { get; set; }
         /// <summary>The bank routing number of the account. The field value is `nil` in most cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransferInstrumentId { get; set; }
 #endif
         /// <summary>**ach**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -117,9 +117,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountHolderType", n => { AccountHolderType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_accountHolderType>(); } },
+                { "accountHolderType", n => { AccountHolderType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsAccountHolderType>(); } },
                 { "bankAccountNumber", n => { BankAccountNumber = n.GetStringValue(); } },
-                { "bankAccountType", n => { BankAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_bankAccountType>(); } },
+                { "bankAccountType", n => { BankAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsBankAccountType>(); } },
                 { "bankLocationId", n => { BankLocationId = n.GetStringValue(); } },
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "encryptedBankAccountNumber", n => { EncryptedBankAccountNumber = n.GetStringValue(); } },
@@ -129,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "transferInstrumentId", n => { TransferInstrumentId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsType>(); } },
             };
         }
         /// <summary>
@@ -139,9 +139,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_accountHolderType>("accountHolderType", AccountHolderType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsAccountHolderType>("accountHolderType", AccountHolderType);
             writer.WriteStringValue("bankAccountNumber", BankAccountNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_bankAccountType>("bankAccountType", BankAccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsBankAccountType>("bankAccountType", BankAccountType);
             writer.WriteStringValue("bankLocationId", BankLocationId);
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
             writer.WriteStringValue("encryptedBankAccountNumber", EncryptedBankAccountNumber);
@@ -151,7 +151,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsType>("type", Type);
         }
     }
 }

@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType> InvalidFields { get; set; }
 #endif
         /// <summary>The type of legal entity of the new account holder.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderResponse_legalEntity? LegalEntity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderResponseLegalEntity? LegalEntity { get; set; }
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes), with which the prospective account holder primarily deals.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,10 +90,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.KYCVerificationResult? Verification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult? Verification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.KYCVerificationResult Verification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult Verification { get; set; }
 #endif
         /// <summary>The identifier of the profile that applies to this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,11 +127,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderStatus", n => { AccountHolderStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderResponse_legalEntity>(); } },
+                { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderResponseLegalEntity>(); } },
                 { "primaryCurrency", n => { PrimaryCurrency = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetStringValue(); } },
-                { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KYCVerificationResult>(global::Soenneker.Adyen.OpenApiClient.Models.KYCVerificationResult.CreateFromDiscriminatorValue); } },
+                { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult>(global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult.CreateFromDiscriminatorValue); } },
                 { "verificationProfile", n => { VerificationProfile = n.GetStringValue(); } },
             };
         }
@@ -148,11 +148,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus>("accountHolderStatus", AccountHolderStatus);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType>("invalidFields", InvalidFields);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderResponse_legalEntity>("legalEntity", LegalEntity);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderResponseLegalEntity>("legalEntity", LegalEntity);
             writer.WriteStringValue("primaryCurrency", PrimaryCurrency);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("resultCode", ResultCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KYCVerificationResult>("verification", Verification);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult>("verification", Verification);
             writer.WriteStringValue("verificationProfile", VerificationProfile);
         }
     }

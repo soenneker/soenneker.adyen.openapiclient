@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information about the action to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails? ActionDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails? ActionDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails ActionDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails ActionDetails { get; set; }
 #endif
         /// <summary>A list containing a terminal ID and an action ID for each terminal that the action was scheduled for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,10 +47,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The validation errors that occurred in the list of terminals, and for each error the IDs of the terminals that the error applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse_terminalsWithErrors? TerminalsWithErrors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty? TerminalsWithErrors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse_terminalsWithErrors TerminalsWithErrors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty TerminalsWithErrors { get; set; }
 #endif
         /// <summary>The number of terminals for which scheduling the action failed.</summary>
         public int? TotalErrors { get; set; }
@@ -74,11 +74,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionDetails", n => { ActionDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails.CreateFromDiscriminatorValue); } },
+                { "actionDetails", n => { ActionDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetStringValue(); } },
                 { "storeId", n => { StoreId = n.GetStringValue(); } },
-                { "terminalsWithErrors", n => { TerminalsWithErrors = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse_terminalsWithErrors>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse_terminalsWithErrors.CreateFromDiscriminatorValue); } },
+                { "terminalsWithErrors", n => { TerminalsWithErrors = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty.CreateFromDiscriminatorValue); } },
                 { "totalErrors", n => { TotalErrors = n.GetIntValue(); } },
                 { "totalScheduled", n => { TotalScheduled = n.GetIntValue(); } },
             };
@@ -90,168 +90,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails>("actionDetails", ActionDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails>("actionDetails", ActionDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>("items", Items);
             writer.WriteStringValue("scheduledAt", ScheduledAt);
             writer.WriteStringValue("storeId", StoreId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse_terminalsWithErrors>("terminalsWithErrors", TerminalsWithErrors);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty>("terminalsWithErrors", TerminalsWithErrors);
             writer.WriteIntValue("totalErrors", TotalErrors);
             writer.WriteIntValue("totalScheduled", TotalScheduled);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleTerminalActionsResponse_actionDetails : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails? ForceRebootDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails ForceRebootDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails? InstallAndroidAppDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails InstallAndroidAppDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails? InstallAndroidCertificateDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails InstallAndroidCertificateDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails? ReleaseUpdateDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails ReleaseUpdateDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails? UninstallAndroidAppDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails UninstallAndroidAppDetails { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails? UninstallAndroidCertificateDetails { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails UninstallAndroidCertificateDetails { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse.ScheduleTerminalActionsResponse_actionDetails();
-                if("ForceRebootDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ForceRebootDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails();
-                }
-                else if("InstallAndroidAppDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.InstallAndroidAppDetails = new global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails();
-                }
-                else if("InstallAndroidCertificateDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.InstallAndroidCertificateDetails = new global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails();
-                }
-                else if("ReleaseUpdateDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ReleaseUpdateDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails();
-                }
-                else if("UninstallAndroidAppDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UninstallAndroidAppDetails = new global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails();
-                }
-                else if("UninstallAndroidCertificateDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UninstallAndroidCertificateDetails = new global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ForceRebootDetails != null)
-                {
-                    return ForceRebootDetails.GetFieldDeserializers();
-                }
-                else if(InstallAndroidAppDetails != null)
-                {
-                    return InstallAndroidAppDetails.GetFieldDeserializers();
-                }
-                else if(InstallAndroidCertificateDetails != null)
-                {
-                    return InstallAndroidCertificateDetails.GetFieldDeserializers();
-                }
-                else if(ReleaseUpdateDetails != null)
-                {
-                    return ReleaseUpdateDetails.GetFieldDeserializers();
-                }
-                else if(UninstallAndroidAppDetails != null)
-                {
-                    return UninstallAndroidAppDetails.GetFieldDeserializers();
-                }
-                else if(UninstallAndroidCertificateDetails != null)
-                {
-                    return UninstallAndroidCertificateDetails.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ForceRebootDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails>(null, ForceRebootDetails);
-                }
-                else if(InstallAndroidAppDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails>(null, InstallAndroidAppDetails);
-                }
-                else if(InstallAndroidCertificateDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails>(null, InstallAndroidCertificateDetails);
-                }
-                else if(ReleaseUpdateDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails>(null, ReleaseUpdateDetails);
-                }
-                else if(UninstallAndroidAppDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails>(null, UninstallAndroidAppDetails);
-                }
-                else if(UninstallAndroidCertificateDetails != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails>(null, UninstallAndroidCertificateDetails);
-                }
-            }
         }
     }
 }

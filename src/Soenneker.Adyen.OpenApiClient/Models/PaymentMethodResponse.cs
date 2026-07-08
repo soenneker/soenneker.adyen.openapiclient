@@ -35,10 +35,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The payment method types that were not successfully requested and their corresponding errors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse_typesWithErrors?>? TypesWithErrors { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?>? TypesWithErrors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse_typesWithErrors?> TypesWithErrors { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?> TypesWithErrors { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
-                { "typesWithErrors", n => { TypesWithErrors = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse_typesWithErrors>()?.AsList(); } },
+                { "typesWithErrors", n => { TypesWithErrors = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("itemsTotal", ItemsTotal);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse_typesWithErrors>("typesWithErrors", TypesWithErrors);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem>("typesWithErrors", TypesWithErrors);
         }
     }
 }

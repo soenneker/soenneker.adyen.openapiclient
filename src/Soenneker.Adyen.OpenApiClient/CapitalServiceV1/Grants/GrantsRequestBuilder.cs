@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.Grants
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GrantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CapitalService-v1/grants?counterpartyAccountHolderId={counterpartyAccountHolderId}", pathParameters)
+        public GrantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CapitalService-v1/grants", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.Grants
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CapitalService-v1/grants?counterpartyAccountHolderId={counterpartyAccountHolderId}", rawUrl)
+        public GrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CapitalService-v1/grants", rawUrl)
         {
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.Grants
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.CapitalServiceV1.Grants.GrantsRequestBuilder.GrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/CapitalService-v1/grants?counterpartyAccountHolderId={counterpartyAccountHolderId}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -131,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.Grants
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/CapitalService-v1/grants", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

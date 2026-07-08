@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Reason of the payment or loyalty reversal.Possible values:* **CustCancel*** **Malfunction*** **MerchantCancel*** **Unable2Compl**</summary>
+    /// <summary>Reason of the payment or loyalty reversal.Possible values:* **CustCancel*** **MerchantCancel*** **Malfunction*** **Unable2Compl**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ReversalReason
     {
@@ -11,13 +11,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         CustCancel,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Malfunction")]
-        #pragma warning disable CS1591
-        Malfunction,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MerchantCancel")]
         #pragma warning disable CS1591
         MerchantCancel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Malfunction")]
+        #pragma warning disable CS1591
+        Malfunction,
         #pragma warning restore CS1591
         [EnumMember(Value = "Unable2Compl")]
         #pragma warning disable CS1591

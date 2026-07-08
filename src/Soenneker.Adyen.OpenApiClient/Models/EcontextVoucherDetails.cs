@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TelephoneNumber { get; set; }
 #endif
         /// <summary>**econtextvoucher**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetailsType>(); } },
             };
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetailsType>("type", Type);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>&quot;The resource for which you want to receive notifications. Possible values:* **balancePlatform**: receive notifications about balance changes in your entire balance platform.* **accountHolder**: receive notifications about balance changes of a specific user.* **balanceAccount**: receive notifications about balance changes in a specific balance account.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdateType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

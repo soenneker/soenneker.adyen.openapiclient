@@ -17,7 +17,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Expiry date and time. Limits the validity of a payment token.</summary>
         public DateTimeOffset? ExpiryDateTime { get; set; }
-        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Customer*** **Transaction**</summary>
+        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Transaction*** **Customer**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TokenRequestedType? TokenRequestedType { get; set; }
         /// <summary>Payment token replacing the PAN of the payment card to identify the payment mean of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

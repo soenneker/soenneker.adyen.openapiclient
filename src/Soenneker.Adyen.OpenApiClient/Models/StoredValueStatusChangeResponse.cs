@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RefusalReason { get; set; }
 #endif
         /// <summary>The result of the payment. Possible values:* **Success** – The operation has been completed successfully. * **Refused** – The operation was refused. The reason is given in the `refusalReason` field. * **Error** – There was an error when the operation was processed. The reason is given in the `refusalReason` field. * **NotEnoughBalance** – The amount on the payment method is lower than the amount given in the request. Only applicable to balance checks. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponse_resultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseResultCode? ResultCode { get; set; }
         /// <summary>Raw refusal reason received from the third party, where available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "currentBalance", n => { CurrentBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
-                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponse_resultCode>(); } },
+                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseResultCode>(); } },
                 { "thirdPartyRefusalReason", n => { ThirdPartyRefusalReason = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>("currentBalance", CurrentBalance);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponse_resultCode>("resultCode", ResultCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseResultCode>("resultCode", ResultCode);
             writer.WriteStringValue("thirdPartyRefusalReason", ThirdPartyRefusalReason);
         }
     }

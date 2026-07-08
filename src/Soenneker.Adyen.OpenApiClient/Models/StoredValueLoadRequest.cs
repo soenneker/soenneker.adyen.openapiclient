@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount Amount { get; set; }
 #endif
         /// <summary>The type of load you are trying to do, when absent we default to &apos;Load&apos;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_loadType? LoadType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType? LoadType { get; set; }
         /// <summary>The merchant account identifier, with which you want to process the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,10 +33,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the type of the payment method and its specific information if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_paymentMethod? PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty? PaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_paymentMethod PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty PaymentMethod { get; set; }
 #endif
         /// <summary>The recurringDetailReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.For the web service API, Adyen assumes Ecommerce shopper interaction by default.This field has the following possible values:* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.* `ContAuth` - Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_shopperInteraction? ShopperInteraction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestShopperInteraction? ShopperInteraction { get; set; }
         /// <summary>The shopperReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,12 +91,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount.CreateFromDiscriminatorValue); } },
-                { "loadType", n => { LoadType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_loadType>(); } },
+                { "loadType", n => { LoadType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType>(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_paymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_paymentMethod.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty.CreateFromDiscriminatorValue); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_shopperInteraction>(); } },
+                { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestShopperInteraction>(); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
             };
@@ -109,12 +109,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_loadType>("loadType", LoadType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType>("loadType", LoadType);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_paymentMethod>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestPaymentMethodProperty>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequest_shopperInteraction>("shopperInteraction", ShopperInteraction);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("store", Store);
         }

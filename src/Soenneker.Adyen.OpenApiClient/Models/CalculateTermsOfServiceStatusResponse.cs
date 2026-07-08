@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of Terms of Service that the legal entity needs to accept. If empty, no Terms of Service needs to be accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponse_termsOfServiceTypes?>? TermsOfServiceTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?>? TermsOfServiceTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponse_termsOfServiceTypes?> TermsOfServiceTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?> TermsOfServiceTypes { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "termsOfServiceTypes", n => { TermsOfServiceTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponse_termsOfServiceTypes>()?.AsList(); } },
+                { "termsOfServiceTypes", n => { TermsOfServiceTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponse_termsOfServiceTypes>("termsOfServiceTypes", TermsOfServiceTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem>("termsOfServiceTypes", TermsOfServiceTypes);
         }
     }
 }

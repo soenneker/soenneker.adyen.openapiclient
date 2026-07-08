@@ -3,26 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **SaleReconciliation*** **AcquirerSynchronisation*** **AcquirerReconciliation*** **PreviousReconciliation**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ReconciliationType
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "AcquirerReconciliation")]
+        [EnumMember(Value = "SaleReconciliation")]
         #pragma warning disable CS1591
-        AcquirerReconciliation,
+        SaleReconciliation,
         #pragma warning restore CS1591
         [EnumMember(Value = "AcquirerSynchronisation")]
         #pragma warning disable CS1591
         AcquirerSynchronisation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "AcquirerReconciliation")]
+        #pragma warning disable CS1591
+        AcquirerReconciliation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PreviousReconciliation")]
         #pragma warning disable CS1591
         PreviousReconciliation,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SaleReconciliation")]
-        #pragma warning disable CS1591
-        SaleReconciliation,
         #pragma warning restore CS1591
     }
 }

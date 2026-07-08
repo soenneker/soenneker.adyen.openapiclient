@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodToStore PaymentMethod { get; set; }
 #endif
         /// <summary>Defines a recurring payment type. Required when creating a token to store payment details.Allowed values:* `Subscription` – A transaction for a fixed or variable amount, which follows a fixed schedule.* `CardOnFile` – With a card-on-file (CoF) transaction, card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.* `UnscheduledCardOnFile` – An unscheduled card-on-file (UCoF) transaction is a transaction that occurs on a non-fixed schedule and/or have variable amounts. For example, automatic top-ups when a cardholder&apos;s balance drops below a certain amount.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequest_recurringProcessingModel? RecurringProcessingModel { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestRecurringProcessingModel? RecurringProcessingModel { get; set; }
         /// <summary>The shopper&apos;s email address. We recommend that you provide this data, as it is used in velocity fraud checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodToStore>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodToStore.CreateFromDiscriminatorValue); } },
-                { "recurringProcessingModel", n => { RecurringProcessingModel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequest_recurringProcessingModel>(); } },
+                { "recurringProcessingModel", n => { RecurringProcessingModel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestRecurringProcessingModel>(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
                 { "shopperIP", n => { ShopperIP = n.GetStringValue(); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodToStore>("paymentMethod", PaymentMethod);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequest_recurringProcessingModel>("recurringProcessingModel", RecurringProcessingModel);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestRecurringProcessingModel>("recurringProcessingModel", RecurringProcessingModel);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
             writer.WriteStringValue("shopperIP", ShopperIP);
             writer.WriteStringValue("shopperReference", ShopperReference);

@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Normal*** **Bold*** **Italic*** **Underline**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CharacterStyle
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "Normal")]
+        #pragma warning disable CS1591
+        Normal,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Bold")]
         #pragma warning disable CS1591
         Bold,
@@ -15,10 +18,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "Italic")]
         #pragma warning disable CS1591
         Italic,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Normal")]
-        #pragma warning disable CS1591
-        Normal,
         #pragma warning restore CS1591
         [EnumMember(Value = "Underline")]
         #pragma warning disable CS1591

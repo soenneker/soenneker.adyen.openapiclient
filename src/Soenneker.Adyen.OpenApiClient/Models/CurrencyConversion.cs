@@ -45,6 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public CurrencyConversion()
         {
             AdditionalData = new Dictionary<string, object>();
+            CustomerApprovedFlag = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

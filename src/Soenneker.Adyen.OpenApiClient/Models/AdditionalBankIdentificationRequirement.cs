@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The type of additional bank identification, depending on the country.Possible values: * **auBsbCode**: The 6-digit [Australian Bank State Branch (BSB) code](https://en.wikipedia.org/wiki/Bank_state_branch), without separators or spaces. * **caRoutingNumber**: The 9-digit [Canadian routing number](https://en.wikipedia.org/wiki/Routing_number_(Canada)), in EFT format, without separators or spaces. * **gbSortCode**: The 6-digit [UK sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or spaces * **usRoutingNumber**: The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or spaces.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirement_additionalBankIdentificationType? AdditionalBankIdentificationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirementAdditionalBankIdentificationType? AdditionalBankIdentificationType { get; set; }
         /// <summary>The description of the additional bank identification requirement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>**additionalBankIdentificationRequirement**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirement_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirementType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +42,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalBankIdentificationType", n => { AdditionalBankIdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirement_additionalBankIdentificationType>(); } },
+                { "additionalBankIdentificationType", n => { AdditionalBankIdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirementAdditionalBankIdentificationType>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirement_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirementType>(); } },
             };
         }
         /// <summary>
@@ -54,9 +54,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirement_additionalBankIdentificationType>("additionalBankIdentificationType", AdditionalBankIdentificationType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirementAdditionalBankIdentificationType>("additionalBankIdentificationType", AdditionalBankIdentificationType);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirement_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalBankIdentificationRequirementType>("type", Type);
         }
     }
 }

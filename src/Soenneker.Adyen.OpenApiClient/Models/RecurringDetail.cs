@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be returned in a particular response.The additionalData object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The alias of the credit card number.Applies only to recurring contracts storing credit card details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,7 +168,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "aliasType", n => { AliasType = n.GetStringValue(); } },
                 { "bank", n => { Bank = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68BankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68BankAccount.CreateFromDiscriminatorValue); } },
@@ -195,7 +195,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("aliasType", AliasType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68BankAccount>("bank", Bank);

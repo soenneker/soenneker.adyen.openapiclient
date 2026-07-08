@@ -13,17 +13,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).Possible values:* **always**: Perform 3D Secure authentication.* **never**: Don&apos;t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData_attemptAuthentication? AttemptAuthentication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication? AttemptAuthentication { get; set; }
         /// <summary>&quot;Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.&quot;</summary>
         public bool? AuthenticationOnly { get; set; }
         /// <summary>The threeDSRequestData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSRequestData? ThreeDSRequestData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData? ThreeDSRequestData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSRequestData ThreeDSRequestData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData ThreeDSRequestData { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData"/> and sets the default values.
+        /// </summary>
+        public AuthenticationData()
+        {
+            AuthenticationOnly = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +49,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attemptAuthentication", n => { AttemptAuthentication = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData_attemptAuthentication>(); } },
+                { "attemptAuthentication", n => { AttemptAuthentication = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication>(); } },
                 { "authenticationOnly", n => { AuthenticationOnly = n.GetBoolValue(); } },
-                { "threeDSRequestData", n => { ThreeDSRequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSRequestData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSRequestData.CreateFromDiscriminatorValue); } },
+                { "threeDSRequestData", n => { ThreeDSRequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -54,9 +61,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData_attemptAuthentication>("attemptAuthentication", AttemptAuthentication);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication>("attemptAuthentication", AttemptAuthentication);
             writer.WriteBoolValue("authenticationOnly", AuthenticationOnly);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSRequestData>("threeDSRequestData", ThreeDSRequestData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData>("threeDSRequestData", ThreeDSRequestData);
         }
     }
 }

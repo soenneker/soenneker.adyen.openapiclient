@@ -3,18 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **NotRequired*** **Immediate*** **PrintEnd*** **SoundEnd**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ResponseMode
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Immediate")]
-        #pragma warning disable CS1591
-        Immediate,
-        #pragma warning restore CS1591
         [EnumMember(Value = "NotRequired")]
         #pragma warning disable CS1591
         NotRequired,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Immediate")]
+        #pragma warning disable CS1591
+        Immediate,
         #pragma warning restore CS1591
         [EnumMember(Value = "PrintEnd")]
         #pragma warning disable CS1591

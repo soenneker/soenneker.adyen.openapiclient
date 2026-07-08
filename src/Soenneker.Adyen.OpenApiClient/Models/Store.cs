@@ -109,7 +109,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration SplitConfiguration { get; set; }
 #endif
         /// <summary>The status of the store. Possible values are:- **active**. This value is assigned automatically when a store is created. - **inactive**. The terminals under the store are blocked from accepting new transactions, but capturing outstanding transactions is still possible.- **closed**. This status is irreversible. The terminals under the store are reassigned to the merchant inventory.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Store_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreStatus? Status { get; set; }
         /// <summary>The subMerchantData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,7 +148,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "shopperStatement", n => { ShopperStatement = n.GetStringValue(); } },
                 { "splitConfiguration", n => { SplitConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Store_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreStatus>(); } },
                 { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData.CreateFromDiscriminatorValue); } },
             };
         }
@@ -171,7 +171,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("shopperStatement", ShopperStatement);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>("splitConfiguration", SplitConfiguration);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Store_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>("subMerchantData", SubMerchantData);
         }
     }

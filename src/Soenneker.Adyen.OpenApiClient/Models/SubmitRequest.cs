@@ -16,10 +16,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be required for a particular request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_additionalData? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestAdditionalDataProperty? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_additionalData AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The date of birth.Format: ISO-8601; example: YYYY-MM-DDFor Paysafecard it must be the same as used when registering the Paysafecard account.&gt; This field is mandatory for natural persons. &gt; This field is required to update the existing `dateOfBirth` that is associated with this recurring contract.&quot;</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>The type of the entity the payout is processed for.Allowed values:* NaturalPerson* Company&gt; This field is required to update the existing `entityType` that is associated with this recurring contract.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_entityType? EntityType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestEntityType? EntityType { get; set; }
         /// <summary>An integer value that is added to the normal fraud score. The value can be either positive or negative.</summary>
         public int? FraudOffset { get; set; }
         /// <summary>The merchant account identifier you want to process the transaction request with.</summary>
@@ -133,10 +133,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_additionalData>(global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_additionalData.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestAdditionalDataProperty.CreateFromDiscriminatorValue); } },
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount.CreateFromDiscriminatorValue); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateValue(); } },
-                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_entityType>(); } },
+                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestEntityType>(); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "nationality", n => { Nationality = n.GetStringValue(); } },
@@ -157,10 +157,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_additionalData>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestAdditionalDataProperty>("additionalData", AdditionalDataProperty);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount>("amount", Amount);
             writer.WriteDateValue("dateOfBirth", DateOfBirth);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequest_entityType>("entityType", EntityType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestEntityType>("entityType", EntityType);
             writer.WriteIntValue("fraudOffset", FraudOffset);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("nationality", Nationality);

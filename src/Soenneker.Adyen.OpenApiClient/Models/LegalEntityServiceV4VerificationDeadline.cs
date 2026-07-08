@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of capabilities that will be disallowed if information is not reviewed by the time of the deadline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationDeadline_capabilities?>? Capabilities { get; private set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationDeadlineCapabilitiesItem?>? Capabilities { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationDeadline_capabilities?> Capabilities { get; private set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationDeadlineCapabilitiesItem?> Capabilities { get; private set; }
 #endif
         /// <summary>The unique identifiers of the legal entity or supporting entities that the deadline applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationDeadline_capabilities>()?.AsList(); } },
+                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationDeadlineCapabilitiesItem>()?.AsList(); } },
                 { "entityIds", n => { EntityIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
             };

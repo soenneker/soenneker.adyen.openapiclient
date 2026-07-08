@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The names of the capabilities to be disallowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadline_capabilities?>? Capabilities { get; private set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadlineCapabilitiesItem?>? Capabilities { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadline_capabilities?> Capabilities { get; private set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadlineCapabilitiesItem?> Capabilities { get; private set; }
 #endif
         /// <summary>The unique identifiers of the bank account(s) that the deadline applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadline_capabilities>()?.AsList(); } },
+                { "capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2VerificationDeadlineCapabilitiesItem>()?.AsList(); } },
                 { "entityIds", n => { EntityIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
             };

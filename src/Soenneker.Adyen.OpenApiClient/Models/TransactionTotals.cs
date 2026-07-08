@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentCurrency { get; set; }
 #endif
-        /// <summary>The PaymentInstrumentType property</summary>
+        /// <summary>Possible values:* **Card*** **Check*** **Mobile*** **StoredValue*** **Cash**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentType? PaymentInstrumentType { get; set; }
         /// <summary>Totals of the payment transaction during the reconciliation period.If both `TransactionCount` and `TransactionAmount` are not equal to zero.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -17,9 +17,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Selection of a menu entry to be displayed. In Input request message, it allows selection of one or several menu entries before any user action.</summary>
         public bool? DefaultSelectedFlag { get; set; }
-        /// <summary>Characteristics related to the selection of a menu entry.Possible values:* **NonSelectable*** **NonSelectableSubMenu*** **Selectable*** **SubMenu**</summary>
+        /// <summary>Characteristics related to the selection of a menu entry.Possible values:* **Selectable*** **NonSelectable*** **SubMenu*** **NonSelectableSubMenu**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryTag? MenuEntryTag { get; set; }
-        /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **BarCode*** **MessageRef*** **Text*** **XHTML**</summary>
+        /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **MessageRef*** **Text*** **XHTML*** **BarCode**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OutputFormat? OutputFormat { get; set; }
         /// <summary>Content of text message to display or print. It conveys Information related to the content of the text message and its format. All the data elements related to the format of the text to display or print are parameters valid for the whole Text content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,6 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public MenuEntry()
         {
             AdditionalData = new Dictionary<string, object>();
+            DefaultSelectedFlag = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

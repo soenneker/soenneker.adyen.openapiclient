@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>The payment method type.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsType>("type", Type);
         }
     }
 }

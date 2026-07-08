@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount TotalAmount { get; set; }
 #endif
         /// <summary>The type of the action.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferActionType? Type { get; set; }
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,7 +157,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
                 { "sortCode", n => { SortCode = n.GetStringValue(); } },
                 { "totalAmount", n => { TotalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferActionType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -181,7 +181,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("shopperEmail", ShopperEmail);
             writer.WriteStringValue("sortCode", SortCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("totalAmount", TotalAmount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferActionType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

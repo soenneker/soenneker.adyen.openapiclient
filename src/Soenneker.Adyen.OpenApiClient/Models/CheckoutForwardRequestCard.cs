@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Number { get; set; }
 #endif
         /// <summary>Default payment method details. Common for scheme payment methods, and for simple payment method details.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCardType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "expiryYear", n => { ExpiryYear = n.GetStringValue(); } },
                 { "holderName", n => { HolderName = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCardType>(); } },
             };
         }
         /// <summary>
@@ -132,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("expiryYear", ExpiryYear);
             writer.WriteStringValue("holderName", HolderName);
             writer.WriteStringValue("number", Number);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCardType>("type", Type);
         }
     }
 }

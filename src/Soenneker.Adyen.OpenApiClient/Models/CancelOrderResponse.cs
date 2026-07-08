@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PspReference { get; set; }
 #endif
         /// <summary>The result of the cancellation request.Possible values:* **Received** – Indicates the cancellation has successfully been received by Adyen, and will be processed.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderResponse_resultCode? ResultCode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderResponseResultCode? ResultCode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
-                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderResponse_resultCode>(); } },
+                { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderResponseResultCode>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("pspReference", PspReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderResponse_resultCode>("resultCode", ResultCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderResponseResultCode>("resultCode", ResultCode);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string LegalArrangementReference { get; set; }
 #endif
         /// <summary>&quot;The form of legal arrangement. Required if `type` is **Trust** or **Partnership**.The possible values depend on the `type`.- For `type` **Trust**:  **CashManagementTrust**, **CorporateUnitTrust**, **DeceasedEstate**, **DiscretionaryInvestmentTrust**, **DiscretionaryServicesManagementTrust**, **DiscretionaryTradingTrust**, **FirstHomeSaverAccountsTrust**, **FixedTrust**, **FixedUnitTrust**, **HybridTrust**, **ListedPublicUnitTrust**, **OtherTrust**, **PooledSuperannuationTrust**, **PublicTradingTrust**, or **UnlistedPublicUnitTrust**.- For `type` **Partnership**: **LimitedPartnership**, **FamilyPartnership**, or **OtherPartnership**&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail_legalForm? LegalForm { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm? LegalForm { get; set; }
         /// <summary>&quot;The legal name of the legal arrangement. Minimum length: 3 characters.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TaxNumber { get; set; }
 #endif
         /// <summary>The [type of legal arrangement](https://docs.adyen.com/classic-platforms/verification-process/legal-arrangements#types-of-legal-arrangements).Possible values:- **Association** - **Partnership** - **SoleProprietorship** - **Trust** </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,11 +94,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "legalArrangementCode", n => { LegalArrangementCode = n.GetStringValue(); } },
                 { "legalArrangementEntities", n => { LegalArrangementEntities = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legalArrangementReference", n => { LegalArrangementReference = n.GetStringValue(); } },
-                { "legalForm", n => { LegalForm = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail_legalForm>(); } },
+                { "legalForm", n => { LegalForm = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
                 { "taxNumber", n => { TaxNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType>(); } },
             };
         }
         /// <summary>
@@ -112,11 +112,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("legalArrangementCode", LegalArrangementCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>("legalArrangementEntities", LegalArrangementEntities);
             writer.WriteStringValue("legalArrangementReference", LegalArrangementReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail_legalForm>("legalForm", LegalForm);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm>("legalForm", LegalForm);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
             writer.WriteStringValue("taxNumber", TaxNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType>("type", Type);
         }
     }
 }

@@ -13,11 +13,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;Allowed authentication methods: Magswipe, Manual Entry.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTable_authenticationMethod? AuthenticationMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? AuthenticationMethod { get; set; }
         /// <summary>Enable Pay at table.</summary>
         public bool? EnablePayAtTable { get; set; }
         /// <summary>&quot;Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTable_paymentInstrument? PaymentInstrument { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? PaymentInstrument { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,9 +36,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTable_authenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod>(); } },
                 { "enablePayAtTable", n => { EnablePayAtTable = n.GetBoolValue(); } },
-                { "paymentInstrument", n => { PaymentInstrument = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTable_paymentInstrument>(); } },
+                { "paymentInstrument", n => { PaymentInstrument = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument>(); } },
             };
         }
         /// <summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTable_authenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteBoolValue("enablePayAtTable", EnablePayAtTable);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTable_paymentInstrument>("paymentInstrument", PaymentInstrument);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument>("paymentInstrument", PaymentInstrument);
         }
     }
 }

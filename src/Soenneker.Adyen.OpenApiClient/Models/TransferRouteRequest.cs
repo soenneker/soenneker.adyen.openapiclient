@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string BalancePlatform { get; set; }
 #endif
         /// <summary>&quot; The type of transfer. Possible values:  - **bank**: Transfer to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments__resParam_id) or a bank account.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_category? Category { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCategory? Category { get; set; }
         /// <summary>The counterparty property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,10 +57,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The list of priorities for the bank transfer. Priorities set the speed at which the transfer is sent and the fees that you have to pay. Multiple values can be provided.Possible values:* **regular**: For normal, low-value transactions.* **fast**: A faster way to transfer funds, but the fees are higher. Recommended for high-priority, low-value transactions.* **wire**: The fastest way to transfer funds, but this has the highest fees. Recommended for high-priority, high-value transactions.* **instant**: For instant funds transfers within the United States and in [SEPA locations](https://www.ecb.europa.eu/paym/integration/retail/sepa/html/index.en.html).* **crossBorder**: For high-value transfers to a recipient in a different country.* **internal**: For transfers to an Adyen-issued business bank account (by bank account number/IBAN).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_priorities?>? Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem?>? Priorities { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_priorities?> Priorities { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem?> Priorities { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,11 +82,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_category>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCategory>(); } },
                 { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty.CreateFromDiscriminatorValue); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "priorities", n => { Priorities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_priorities>()?.AsList(); } },
+                { "priorities", n => { Priorities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -98,11 +98,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
             writer.WriteStringValue("balancePlatform", BalancePlatform);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_category>("category", Category);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCategory>("category", Category);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty>("counterparty", Counterparty);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("currency", Currency);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest_priorities>("priorities", Priorities);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem>("priorities", Priorities);
         }
     }
 }

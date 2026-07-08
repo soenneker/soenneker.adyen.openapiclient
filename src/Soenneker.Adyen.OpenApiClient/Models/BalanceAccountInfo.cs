@@ -39,10 +39,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfo_metadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfoMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfo_metadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfoMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The unique identifier of the account of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
                 { "defaultCurrencyCode", n => { DefaultCurrencyCode = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfo_metadata>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfo_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfoMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfoMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "migratedAccountCode", n => { MigratedAccountCode = n.GetStringValue(); } },
                 { "platformPaymentConfiguration", n => { PlatformPaymentConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -114,7 +114,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderId", AccountHolderId);
             writer.WriteStringValue("defaultCurrencyCode", DefaultCurrencyCode);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfo_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountInfoMetadataProperty>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration>("platformPaymentConfiguration", PlatformPaymentConfiguration);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("timeZone", TimeZone);

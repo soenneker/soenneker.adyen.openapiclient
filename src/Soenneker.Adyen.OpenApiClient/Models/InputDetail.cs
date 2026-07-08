@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Configuration parameters for the required input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetail_configuration? Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetail_configuration Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty Configuration { get; set; }
 #endif
         /// <summary>Input details can also be provided recursively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,10 +40,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>In case of a select, the items to choose from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Item>? Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Item> Items { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue> Items { get; set; }
 #endif
         /// <summary>In case of a select, the URL from which to query the items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,11 +97,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetail_configuration>(global::Soenneker.Adyen.OpenApiClient.Models.InputDetail_configuration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty>(global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inputDetails", n => { InputDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemSearchUrl", n => { ItemSearchUrl = n.GetStringValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Item>(global::Soenneker.Adyen.OpenApiClient.Models.Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>(global::Soenneker.Adyen.OpenApiClient.Models.ItemValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "optional", n => { Optional = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -115,10 +115,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetail_configuration>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty>("configuration", Configuration);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>("details", Details);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>("inputDetails", InputDetails);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Item>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>("items", Items);
             writer.WriteStringValue("itemSearchUrl", ItemSearchUrl);
             writer.WriteStringValue("key", Key);
             writer.WriteBoolValue("optional", Optional);

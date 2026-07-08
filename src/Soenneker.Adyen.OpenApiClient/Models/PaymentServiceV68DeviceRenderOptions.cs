@@ -13,22 +13,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Supported SDK interface types.Allowed values:* native* html* both</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkInterface? SdkInterface { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface? SdkInterface { get; set; }
         /// <summary>UI types supported for displaying specific challenges.Allowed values:* text* singleSelect* outOfBand* otherHtml* multiSelect</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkUiType?>? SdkUiType { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?>? SdkUiType { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkUiType?> SdkUiType { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?> SdkUiType { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions"/> and sets the default values.
-        /// </summary>
-        public PaymentServiceV68DeviceRenderOptions()
-        {
-            SdkInterface = global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkInterface.Both;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,8 +40,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "sdkInterface", n => { SdkInterface = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkInterface>(); } },
-                { "sdkUiType", n => { SdkUiType = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkUiType>()?.AsList(); } },
+                { "sdkInterface", n => { SdkInterface = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface>(); } },
+                { "sdkUiType", n => { SdkUiType = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,8 +51,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkInterface>("sdkInterface", SdkInterface);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptions_sdkUiType>("sdkUiType", SdkUiType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface>("sdkInterface", SdkInterface);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem>("sdkUiType", SdkUiType);
         }
     }
 }

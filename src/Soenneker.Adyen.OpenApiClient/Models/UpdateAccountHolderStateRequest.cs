@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reason { get; set; }
 #endif
         /// <summary>&quot;The state to be updated.&gt;Permitted values are: `Processing`, `Payout`&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequest_stateType? StateType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType? StateType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
                 { "disable", n => { Disable = n.GetBoolValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "stateType", n => { StateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequest_stateType>(); } },
+                { "stateType", n => { StateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
             writer.WriteBoolValue("disable", Disable);
             writer.WriteStringValue("reason", Reason);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequest_stateType>("stateType", StateType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType>("stateType", StateType);
         }
     }
 }

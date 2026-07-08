@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs of your references and descriptions, for example, `customId`:`your-own-custom-field-12345`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationData_metadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationDataMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationData_metadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationDataMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>Your reference for the relayed authorisation data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationData_metadata>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationData_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationDataMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationDataMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationData_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4RelayedAuthorisationDataMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("reference", Reference);
         }
     }

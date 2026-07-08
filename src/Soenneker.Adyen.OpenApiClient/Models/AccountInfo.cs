@@ -13,21 +13,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Indicator for the length of time since this shopper account was created in the merchant&apos;s environment.Allowed values:* notApplicable* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountAgeIndicator? AccountAgeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountAgeIndicator? AccountAgeIndicator { get; set; }
         /// <summary>Date when the shopper&apos;s account was last changed.</summary>
         public DateTimeOffset? AccountChangeDate { get; set; }
         /// <summary>Indicator for the length of time since the shopper&apos;s account was last updated.Allowed values:* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountChangeIndicator? AccountChangeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountChangeIndicator? AccountChangeIndicator { get; set; }
         /// <summary>Date when the shopper&apos;s account was created.</summary>
         public DateTimeOffset? AccountCreationDate { get; set; }
         /// <summary>Indicates the type of account. For example, for a multi-account card product.Allowed values:* notApplicable* credit* debit</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountType? AccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountType? AccountType { get; set; }
         /// <summary>Number of attempts the shopper tried to add a card to their account in the last day.</summary>
         public int? AddCardAttemptsDay { get; set; }
         /// <summary>Date the selected delivery address was first used.</summary>
         public DateTimeOffset? DeliveryAddressUsageDate { get; set; }
         /// <summary>Indicator for the length of time since this delivery address was first used.Allowed values:* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_deliveryAddressUsageIndicator? DeliveryAddressUsageIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoDeliveryAddressUsageIndicator? DeliveryAddressUsageIndicator { get; set; }
         /// <summary>Shopper&apos;s home phone number (including the country code).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Date when the shopper last changed their password.</summary>
         public DateTimeOffset? PasswordChangeDate { get; set; }
         /// <summary>Indicator when the shopper has changed their password.Allowed values:* notApplicable* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_passwordChangeIndicator? PasswordChangeIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPasswordChangeIndicator? PasswordChangeIndicator { get; set; }
         /// <summary>Number of all transactions (successful and abandoned) from this shopper in the past 24 hours.</summary>
         public int? PastTransactionsDay { get; set; }
         /// <summary>Number of all transactions (successful and abandoned) from this shopper in the past year.</summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Date this payment method was added to the shopper&apos;s account.</summary>
         public DateTimeOffset? PaymentAccountAge { get; set; }
         /// <summary>Indicator for the length of time since this payment method was added to this shopper&apos;s account.Allowed values:* notApplicable* thisTransaction* lessThan30Days* from30To60Days* moreThan60Days</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_paymentAccountIndicator? PaymentAccountIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPaymentAccountIndicator? PaymentAccountIndicator { get; set; }
         /// <summary>Number of successful purchases in the last six months.</summary>
         public int? PurchasesLast6Months { get; set; }
         /// <summary>Whether suspicious activity was recorded on this account.</summary>
@@ -89,22 +89,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountAgeIndicator", n => { AccountAgeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountAgeIndicator>(); } },
+                { "accountAgeIndicator", n => { AccountAgeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountAgeIndicator>(); } },
                 { "accountChangeDate", n => { AccountChangeDate = n.GetDateTimeOffsetValue(); } },
-                { "accountChangeIndicator", n => { AccountChangeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountChangeIndicator>(); } },
+                { "accountChangeIndicator", n => { AccountChangeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountChangeIndicator>(); } },
                 { "accountCreationDate", n => { AccountCreationDate = n.GetDateTimeOffsetValue(); } },
-                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountType>(); } },
+                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountType>(); } },
                 { "addCardAttemptsDay", n => { AddCardAttemptsDay = n.GetIntValue(); } },
                 { "deliveryAddressUsageDate", n => { DeliveryAddressUsageDate = n.GetDateTimeOffsetValue(); } },
-                { "deliveryAddressUsageIndicator", n => { DeliveryAddressUsageIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_deliveryAddressUsageIndicator>(); } },
+                { "deliveryAddressUsageIndicator", n => { DeliveryAddressUsageIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoDeliveryAddressUsageIndicator>(); } },
                 { "homePhone", n => { HomePhone = n.GetStringValue(); } },
                 { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
                 { "passwordChangeDate", n => { PasswordChangeDate = n.GetDateTimeOffsetValue(); } },
-                { "passwordChangeIndicator", n => { PasswordChangeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_passwordChangeIndicator>(); } },
+                { "passwordChangeIndicator", n => { PasswordChangeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPasswordChangeIndicator>(); } },
                 { "pastTransactionsDay", n => { PastTransactionsDay = n.GetIntValue(); } },
                 { "pastTransactionsYear", n => { PastTransactionsYear = n.GetIntValue(); } },
                 { "paymentAccountAge", n => { PaymentAccountAge = n.GetDateTimeOffsetValue(); } },
-                { "paymentAccountIndicator", n => { PaymentAccountIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_paymentAccountIndicator>(); } },
+                { "paymentAccountIndicator", n => { PaymentAccountIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPaymentAccountIndicator>(); } },
                 { "purchasesLast6Months", n => { PurchasesLast6Months = n.GetIntValue(); } },
                 { "suspiciousActivity", n => { SuspiciousActivity = n.GetBoolValue(); } },
                 { "workPhone", n => { WorkPhone = n.GetStringValue(); } },
@@ -117,22 +117,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountAgeIndicator>("accountAgeIndicator", AccountAgeIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountAgeIndicator>("accountAgeIndicator", AccountAgeIndicator);
             writer.WriteDateTimeOffsetValue("accountChangeDate", AccountChangeDate);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountChangeIndicator>("accountChangeIndicator", AccountChangeIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountChangeIndicator>("accountChangeIndicator", AccountChangeIndicator);
             writer.WriteDateTimeOffsetValue("accountCreationDate", AccountCreationDate);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_accountType>("accountType", AccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoAccountType>("accountType", AccountType);
             writer.WriteIntValue("addCardAttemptsDay", AddCardAttemptsDay);
             writer.WriteDateTimeOffsetValue("deliveryAddressUsageDate", DeliveryAddressUsageDate);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_deliveryAddressUsageIndicator>("deliveryAddressUsageIndicator", DeliveryAddressUsageIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoDeliveryAddressUsageIndicator>("deliveryAddressUsageIndicator", DeliveryAddressUsageIndicator);
             writer.WriteStringValue("homePhone", HomePhone);
             writer.WriteStringValue("mobilePhone", MobilePhone);
             writer.WriteDateTimeOffsetValue("passwordChangeDate", PasswordChangeDate);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_passwordChangeIndicator>("passwordChangeIndicator", PasswordChangeIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPasswordChangeIndicator>("passwordChangeIndicator", PasswordChangeIndicator);
             writer.WriteIntValue("pastTransactionsDay", PastTransactionsDay);
             writer.WriteIntValue("pastTransactionsYear", PastTransactionsYear);
             writer.WriteDateTimeOffsetValue("paymentAccountAge", PaymentAccountAge);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo_paymentAccountIndicator>("paymentAccountIndicator", PaymentAccountIndicator);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfoPaymentAccountIndicator>("paymentAccountIndicator", PaymentAccountIndicator);
             writer.WriteIntValue("purchasesLast6Months", PurchasesLast6Months);
             writer.WriteBoolValue("suspiciousActivity", SuspiciousActivity);
             writer.WriteStringValue("workPhone", WorkPhone);

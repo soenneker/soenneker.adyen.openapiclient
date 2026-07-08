@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a previous POI transaction.In the Payment Request message, it allows using the card of a previous CardAcquisition or Payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPOITransaction? OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPOITransaction OriginalPOITransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get; set; }
 #endif
         /// <summary>The PaymentReceipt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,18 +34,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Data related to the POI System.In the Message Response, identification of the POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.POIData? POIData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData? POIData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.POIData POIData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData POIData { get; set; }
 #endif
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Response? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Response Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get; set; }
 #endif
         /// <summary>Amount of the payment or loyalty to reverse.Copy.</summary>
         public double? ReversedAmount { get; set; }
@@ -74,10 +74,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "OriginalPOITransaction", n => { OriginalPOITransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPOITransaction>(global::Soenneker.Adyen.OpenApiClient.Models.OriginalPOITransaction.CreateFromDiscriminatorValue); } },
-                { "POIData", n => { POIData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.POIData>(global::Soenneker.Adyen.OpenApiClient.Models.POIData.CreateFromDiscriminatorValue); } },
+                { "OriginalPOITransaction", n => { OriginalPOITransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction.CreateFromDiscriminatorValue); } },
+                { "POIData", n => { POIData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiData>(global::Soenneker.Adyen.OpenApiClient.Models.PoiData.CreateFromDiscriminatorValue); } },
                 { "PaymentReceipt", n => { PaymentReceipt = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Response>(global::Soenneker.Adyen.OpenApiClient.Models.Response.CreateFromDiscriminatorValue); } },
+                { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
                 { "ReversedAmount", n => { ReversedAmount = n.GetDoubleValue(); } },
             };
         }
@@ -88,10 +88,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPOITransaction>("OriginalPOITransaction", OriginalPOITransaction);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction>("OriginalPOITransaction", OriginalPOITransaction);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>("PaymentReceipt", PaymentReceipt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.POIData>("POIData", POIData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Response>("Response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiData>("POIData", POIData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteDoubleValue("ReversedAmount", ReversedAmount);
             writer.WriteAdditionalData(AdditionalData);
         }

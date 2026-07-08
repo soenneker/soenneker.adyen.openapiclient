@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The type of string matching operation. Possible values:  **startsWith**, **endsWith**, **isEqualTo**, **contains**,&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StringMatch_operation? Operation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StringMatchOperation? Operation { get; set; }
         /// <summary>The string to be matched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StringMatch_operation>(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StringMatchOperation>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StringMatch_operation>("operation", Operation);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StringMatchOperation>("operation", Operation);
             writer.WriteStringValue("value", Value);
         }
     }

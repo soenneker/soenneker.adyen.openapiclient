@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The type of transactions processed over this payment method. Allowed values:- **pos** for in-person payments. - **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have `recurringProcessingModel` **Subscription**. - **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with `recurringProcessingModel` **CardOnFile** or **UnscheduledCardOnFile**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo_processingType? ProcessingType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfoProcessingType? ProcessingType { get; set; }
         /// <summary>The transactionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "processingType", n => { ProcessingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo_processingType>(); } },
+                { "processingType", n => { ProcessingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfoProcessingType>(); } },
                 { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfo_processingType>("processingType", ProcessingType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceResponseInfoProcessingType>("processingType", ProcessingType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo>("transactionDescription", TransactionDescription);
         }
     }

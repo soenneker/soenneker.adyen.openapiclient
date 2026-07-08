@@ -13,9 +13,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;The type of event.Possible values: **ACCOUNT_CLOSED**, **ACCOUNT_CREATED**, **ACCOUNT_FUNDS_BELOW_THRESHOLD**, **ACCOUNT_HOLDER_CREATED**, **ACCOUNT_HOLDER_LIMIT_REACHED**, **ACCOUNT_HOLDER_PAYOUT**, **ACCOUNT_HOLDER_STATUS_CHANGE**, **ACCOUNT_HOLDER_STORE_STATUS_CHANGE**, **ACCOUNT_HOLDER_UPCOMING_DEADLINE**, **ACCOUNT_HOLDER_UPDATED**, **ACCOUNT_HOLDER_VERIFICATION**, **ACCOUNT_UPDATED**, **BENEFICIARY_SETUP**, **COMPENSATE_NEGATIVE_BALANCE**, **DIRECT_DEBIT_INITIATED**, **PAYMENT_FAILURE**, **REFUND_FUNDS_TRANSFER**, **REPORT_AVAILABLE**, **SCHEDULED_REFUNDS**, **TRANSFER_FUNDS**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration_eventType? EventType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfigurationEventType? EventType { get; set; }
         /// <summary>&quot;Indicates whether the specified `eventType` is sent to your webhook endpoint.Possible values:* **INCLUDE**: Send the specified `eventType`.* **EXCLUDE**: Send all event types except the specified `eventType` and other event types with the `includeMode` set to **EXCLUDE**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration_includeMode? IncludeMode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfigurationIncludeMode? IncludeMode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,8 +34,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration_eventType>(); } },
-                { "includeMode", n => { IncludeMode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration_includeMode>(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfigurationEventType>(); } },
+                { "includeMode", n => { IncludeMode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfigurationIncludeMode>(); } },
             };
         }
         /// <summary>
@@ -45,8 +45,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration_eventType>("eventType", EventType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration_includeMode>("includeMode", IncludeMode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfigurationEventType>("eventType", EventType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfigurationIncludeMode>("includeMode", IncludeMode);
         }
     }
 }

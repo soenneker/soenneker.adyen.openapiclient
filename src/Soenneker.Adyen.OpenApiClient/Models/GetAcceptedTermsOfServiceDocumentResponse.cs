@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TermsOfServiceAcceptanceReference { get; set; }
 #endif
         /// <summary>The format of the Terms of Service document.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse_termsOfServiceDocumentFormat? TermsOfServiceDocumentFormat { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? TermsOfServiceDocumentFormat { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "document", n => { Document = n.GetByteArrayValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "termsOfServiceAcceptanceReference", n => { TermsOfServiceAcceptanceReference = n.GetStringValue(); } },
-                { "termsOfServiceDocumentFormat", n => { TermsOfServiceDocumentFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse_termsOfServiceDocumentFormat>(); } },
+                { "termsOfServiceDocumentFormat", n => { TermsOfServiceDocumentFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteByteArrayValue("document", Document);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("termsOfServiceAcceptanceReference", TermsOfServiceAcceptanceReference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse_termsOfServiceDocumentFormat>("termsOfServiceDocumentFormat", TermsOfServiceDocumentFormat);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat>("termsOfServiceDocumentFormat", TermsOfServiceDocumentFormat);
         }
     }
 }

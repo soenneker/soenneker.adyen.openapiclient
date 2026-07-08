@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>&quot;The resulting status of the return.Possible values: **Authorised**, **Declined**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponseStatus? Status { get; set; }
         /// <summary>The unique identifier of the original transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponseStatus>(); } },
                 { "transferId", n => { TransferId = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponseStatus>("status", Status);
             writer.WriteStringValue("transferId", TransferId);
         }
     }

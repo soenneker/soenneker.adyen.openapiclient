@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>&quot;The type of the document. Refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-checks) for details on when each document type should be submitted and for the accepted file formats.Permitted values:* **BANK_STATEMENT**: A file containing a bank statement or other document proving ownership of a specific bank account.* **COMPANY_REGISTRATION_SCREENING** (Supported from v5 and later): A file containing a company registration document.* **CONSTITUTIONAL_DOCUMENT**: A file containing information about the account holder&apos;s legal arrangement.* **PASSPORT**: A file containing the identity page(s) of a passport.* **ID_CARD_FRONT**: A file containing only the front of the ID card. In order for a document to be usable, both the **ID_CARD_FRONT** and **ID_CARD_BACK** must be submitted.* **ID_CARD_BACK**: A file containing only the back of the ID card. In order for a document to be usable, both the **ID_CARD_FRONT** and **ID_CARD_BACK** must be submitted.* **DRIVING_LICENCE_FRONT**: A file containing only the front of the driving licence. In order for a document to be usable, both the **DRIVING_LICENCE_FRONT** and **DRIVING_LICENCE_BACK** must be submitted.* **DRIVING_LICENCE_BACK**: A file containing only the back of the driving licence. In order for a document to be usable, both the **DRIVING_LICENCE_FRONT** and **DRIVING_LICENCE_FRONT** must be submitted.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail_documentType? DocumentType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetailDocumentType? DocumentType { get; set; }
         /// <summary>Filename of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
                 { "bankAccountUUID", n => { BankAccountUUID = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "documentType", n => { DocumentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail_documentType>(); } },
+                { "documentType", n => { DocumentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetailDocumentType>(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "legalArrangementCode", n => { LegalArrangementCode = n.GetStringValue(); } },
                 { "legalArrangementEntityCode", n => { LegalArrangementEntityCode = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
             writer.WriteStringValue("bankAccountUUID", BankAccountUUID);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail_documentType>("documentType", DocumentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetailDocumentType>("documentType", DocumentType);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("legalArrangementCode", LegalArrangementCode);
             writer.WriteStringValue("legalArrangementEntityCode", LegalArrangementEntityCode);

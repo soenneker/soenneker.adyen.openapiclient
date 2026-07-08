@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Iccid2 { get; set; }
 #endif
         /// <summary>On a terminal that supports 3G or 4G connectivity, indicates the status of the primary SIM card in the terminal.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "iccid", n => { Iccid = n.GetStringValue(); } },
                 { "iccid2", n => { Iccid2 = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("iccid", Iccid);
             writer.WriteStringValue("iccid2", Iccid2);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellular_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityCellularStatus>("status", Status);
         }
     }
 }

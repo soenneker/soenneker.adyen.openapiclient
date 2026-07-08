@@ -3,26 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum InfoQualify
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "CustomerAssistance")]
+        [EnumMember(Value = "Status")]
         #pragma warning disable CS1591
-        CustomerAssistance,
+        Status,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Error")]
+        #pragma warning disable CS1591
+        Error,
         #pragma warning restore CS1591
         [EnumMember(Value = "Display")]
         #pragma warning disable CS1591
         Display,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Document")]
+        [EnumMember(Value = "Sound")]
         #pragma warning disable CS1591
-        Document,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Error")]
-        #pragma warning disable CS1591
-        Error,
+        Sound,
         #pragma warning restore CS1591
         [EnumMember(Value = "Input")]
         #pragma warning disable CS1591
@@ -30,19 +29,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "POIReplication")]
         #pragma warning disable CS1591
-        POIReplication,
+        PoiReplication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CustomerAssistance")]
+        #pragma warning disable CS1591
+        CustomerAssistance,
         #pragma warning restore CS1591
         [EnumMember(Value = "Receipt")]
         #pragma warning disable CS1591
         Receipt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Sound")]
+        [EnumMember(Value = "Document")]
         #pragma warning disable CS1591
-        Sound,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Status")]
-        #pragma warning disable CS1591
-        Status,
+        Document,
         #pragma warning restore CS1591
         [EnumMember(Value = "Voucher")]
         #pragma warning disable CS1591

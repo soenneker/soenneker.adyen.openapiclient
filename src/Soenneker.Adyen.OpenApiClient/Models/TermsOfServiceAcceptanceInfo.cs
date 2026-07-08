@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType? Type { get; set; }
         /// <summary>The expiration date for the Terms of Service acceptance, in ISO 8601 extended format. For example, 2022-12-18T00:00:00+01:00.</summary>
         public DateTimeOffset? ValidTo { get; set; }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "acceptedFor", n => { AcceptedFor = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType>(); } },
                 { "validTo", n => { ValidTo = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("acceptedFor", AcceptedFor);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType>("type", Type);
             writer.WriteDateTimeOffsetValue("validTo", ValidTo);
         }
     }

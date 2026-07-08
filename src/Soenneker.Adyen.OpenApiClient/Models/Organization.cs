@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates that the registered business address is also the company&apos;s headquarters.</summary>
         public bool? HeadOfficeIndicator { get; set; }
         /// <summary>The institutional sector the organization operates within.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Organization_institutionalSector? InstitutionalSector { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationInstitutionalSector? InstitutionalSector { get; set; }
         /// <summary>The type of business entity as defined in the national legal system. Use a legal form listed within the accepted legal forms compiled by the Central Bank of Europe.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +141,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Set this to **true** if the organization does not have a registration number available. Only applicable for organizations in New Zealand, and incorporated partnerships and government organizations in Australia.</summary>
         public bool? RegistrationNumberAbsent { get; set; }
         /// <summary>&quot;The status of any current or past legal action taken against the legal entity.Possible values: **noLegalActionsTaken**, **underJudicialAdministration**, **bankruptcyInsolvency**, **otherLegalMeasures**If the value of this field is **noLegalActionsTaken**, then `dateOfInitiationOfLegalProceeding` is not required. Otherwise, it is required.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Organization_statusOfLegalProceeding? StatusOfLegalProceeding { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding? StatusOfLegalProceeding { get; set; }
         /// <summary>The stockData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,9 +175,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification TaxReportingClassification { get; set; }
 #endif
         /// <summary>&quot;Type of organization.Possible values: **associationIncorporated**, **governmentalOrganization**, **listedPublicCompany**, **nonProfit**, **partnershipIncorporated**, **privateCompany**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Organization_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationType? Type { get; set; }
         /// <summary>&quot;The reason the organization has not provided a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Organization_vatAbsenceReason? VatAbsenceReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationVatAbsenceReason? VatAbsenceReason { get; set; }
         /// <summary>The organization&apos;s VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,7 +223,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "financialReports", n => { FinancialReports = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport>(global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "globalLegalEntityIdentifier", n => { GlobalLegalEntityIdentifier = n.GetStringValue(); } },
                 { "headOfficeIndicator", n => { HeadOfficeIndicator = n.GetBoolValue(); } },
-                { "institutionalSector", n => { InstitutionalSector = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_institutionalSector>(); } },
+                { "institutionalSector", n => { InstitutionalSector = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationInstitutionalSector>(); } },
                 { "legalForm", n => { LegalForm = n.GetStringValue(); } },
                 { "legalName", n => { LegalName = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4PhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4PhoneNumber.CreateFromDiscriminatorValue); } },
@@ -231,13 +231,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "registeredAddress", n => { RegisteredAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4Address>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4Address.CreateFromDiscriminatorValue); } },
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
                 { "registrationNumberAbsent", n => { RegistrationNumberAbsent = n.GetBoolValue(); } },
-                { "statusOfLegalProceeding", n => { StatusOfLegalProceeding = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_statusOfLegalProceeding>(); } },
+                { "statusOfLegalProceeding", n => { StatusOfLegalProceeding = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding>(); } },
                 { "stockData", n => { StockData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StockData>(global::Soenneker.Adyen.OpenApiClient.Models.StockData.CreateFromDiscriminatorValue); } },
                 { "support", n => { Support = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Support>(global::Soenneker.Adyen.OpenApiClient.Models.Support.CreateFromDiscriminatorValue); } },
                 { "taxInformation", n => { TaxInformation = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>(global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "taxReportingClassification", n => { TaxReportingClassification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification>(global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_type>(); } },
-                { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_vatAbsenceReason>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationType>(); } },
+                { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationVatAbsenceReason>(); } },
                 { "vatNumber", n => { VatNumber = n.GetStringValue(); } },
                 { "webData", n => { WebData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebData>(global::Soenneker.Adyen.OpenApiClient.Models.WebData.CreateFromDiscriminatorValue); } },
             };
@@ -260,7 +260,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FinancialReport>("financialReports", FinancialReports);
             writer.WriteStringValue("globalLegalEntityIdentifier", GlobalLegalEntityIdentifier);
             writer.WriteBoolValue("headOfficeIndicator", HeadOfficeIndicator);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_institutionalSector>("institutionalSector", InstitutionalSector);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationInstitutionalSector>("institutionalSector", InstitutionalSector);
             writer.WriteStringValue("legalForm", LegalForm);
             writer.WriteStringValue("legalName", LegalName);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4PhoneNumber>("phone", Phone);
@@ -268,13 +268,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4Address>("registeredAddress", RegisteredAddress);
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
             writer.WriteBoolValue("registrationNumberAbsent", RegistrationNumberAbsent);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_statusOfLegalProceeding>("statusOfLegalProceeding", StatusOfLegalProceeding);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding>("statusOfLegalProceeding", StatusOfLegalProceeding);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StockData>("stockData", StockData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Support>("support", Support);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>("taxInformation", TaxInformation);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification>("taxReportingClassification", TaxReportingClassification);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_type>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization_vatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationVatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
             writer.WriteStringValue("vatNumber", VatNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebData>("webData", WebData);
         }

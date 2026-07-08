@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Split> Splits { get; set; }
 #endif
         /// <summary>The status of your request. This will always have the value **received**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureResponse_status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureResponseStatus? Status { get; set; }
         /// <summary>List of sub-merchants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureResponseStatus>(); } },
                 { "subMerchants", n => { SubMerchants = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -131,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureResponseStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>("subMerchants", SubMerchants);
         }
     }

@@ -25,7 +25,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Minimum amount.</summary>
         public long? Min { get; set; }
         /// <summary>**amountMinMaxRequirement**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmountMinMaxRequirement_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmountMinMaxRequirementType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "max", n => { Max = n.GetLongValue(); } },
                 { "min", n => { Min = n.GetLongValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountMinMaxRequirement_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountMinMaxRequirementType>(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteLongValue("max", Max);
             writer.WriteLongValue("min", Min);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountMinMaxRequirement_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountMinMaxRequirementType>("type", Type);
         }
     }
 }

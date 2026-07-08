@@ -23,10 +23,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The event types that were tested.&gt;Permitted values: `ACCOUNT_HOLDER_CREATED`, `ACCOUNT_CREATED`, `ACCOUNT_UPDATED`, `ACCOUNT_HOLDER_UPDATED`, `ACCOUNT_HOLDER_STATUS_CHANGE`, `ACCOUNT_HOLDER_STORE_STATUS_CHANGE` `ACCOUNT_HOLDER_VERIFICATION`, `ACCOUNT_HOLDER_LIMIT_REACHED`, `ACCOUNT_HOLDER_PAYOUT`, `PAYMENT_FAILURE`, `SCHEDULED_REFUNDS`, `REPORT_AVAILABLE`, `TRANSFER_FUNDS`, `BENEFICIARY_SETUP`, `COMPENSATE_NEGATIVE_BALANCE`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse_eventTypes?>? EventTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?>? EventTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse_eventTypes?> EventTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem?> EventTypes { get; set; }
 #endif
         /// <summary>The notification message and related response messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errorMessages", n => { ErrorMessages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse_eventTypes>()?.AsList(); } },
+                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem>()?.AsList(); } },
                 { "exchangeMessages", n => { ExchangeMessages = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage>(global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "notificationId", n => { NotificationId = n.GetLongValue(); } },
@@ -106,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("errorMessages", ErrorMessages);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponse_eventTypes>("eventTypes", EventTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TestNotificationConfigurationResponseEventTypesItem>("eventTypes", EventTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeMessage>("exchangeMessages", ExchangeMessages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>("invalidFields", InvalidFields);
             writer.WriteLongValue("notificationId", NotificationId);

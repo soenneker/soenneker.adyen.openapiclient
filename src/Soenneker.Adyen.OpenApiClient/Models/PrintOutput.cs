@@ -14,7 +14,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The DocumentQualifier property</summary>
+        /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier? DocumentQualifier { get; set; }
         /// <summary>Type of the print integrated in other prints. Allows a separated printing (paper cut if available), or integration with the sale receipt or other print. If the printing is integrated, the response is always immediate, even if the `ResponseMode` is set to `PrintEnd`.</summary>
         public bool? IntegratedPrintFlag { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates that the cardholder payment receipt requires a physical signature by the Customer.</summary>
         public bool? RequiredSignatureFlag { get; set; }
-        /// <summary>The ResponseMode property</summary>
+        /// <summary>Possible values:* **NotRequired*** **Immediate*** **PrintEnd*** **SoundEnd**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ResponseMode? ResponseMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PrintOutput"/> and sets the default values.
@@ -36,6 +36,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public PrintOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            IntegratedPrintFlag = false;
+            RequiredSignatureFlag = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

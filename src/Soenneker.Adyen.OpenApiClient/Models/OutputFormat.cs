@@ -3,14 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **BarCode*** **MessageRef*** **Text*** **XHTML**</summary>
+    /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **MessageRef*** **Text*** **XHTML*** **BarCode**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OutputFormat
     {
-        [EnumMember(Value = "BarCode")]
-        #pragma warning disable CS1591
-        BarCode,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MessageRef")]
         #pragma warning disable CS1591
         MessageRef,
@@ -21,7 +17,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "XHTML")]
         #pragma warning disable CS1591
-        XHTML,
+        Xhtml,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BarCode")]
+        #pragma warning disable CS1591
+        BarCode,
         #pragma warning restore CS1591
     }
 }

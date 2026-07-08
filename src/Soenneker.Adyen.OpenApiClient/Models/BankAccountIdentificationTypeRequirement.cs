@@ -15,10 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;List of bank account identification types: eg.; [iban , numberAndBic]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_bankAccountIdentificationTypes?>? BankAccountIdentificationTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementBankAccountIdentificationTypesItem?>? BankAccountIdentificationTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_bankAccountIdentificationTypes?> BankAccountIdentificationTypes { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementBankAccountIdentificationTypesItem?> BankAccountIdentificationTypes { get; set; }
 #endif
         /// <summary>Specifies the bank account details for a particular route per required field in this object depending on the country of the bank account and the currency of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>**bankAccountIdentificationTypeRequirement**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_type? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bankAccountIdentificationTypes", n => { BankAccountIdentificationTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_bankAccountIdentificationTypes>()?.AsList(); } },
+                { "bankAccountIdentificationTypes", n => { BankAccountIdentificationTypes = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementBankAccountIdentificationTypesItem>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementType>(); } },
             };
         }
         /// <summary>
@@ -60,9 +60,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_bankAccountIdentificationTypes>("bankAccountIdentificationTypes", BankAccountIdentificationTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementBankAccountIdentificationTypesItem>("bankAccountIdentificationTypes", BankAccountIdentificationTypes);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirement_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementType>("type", Type);
         }
     }
 }
