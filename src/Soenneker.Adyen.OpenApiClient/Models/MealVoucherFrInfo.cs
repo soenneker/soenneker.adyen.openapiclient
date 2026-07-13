@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Siret { get; set; }
 #endif
-        /// <summary>&quot;The list of additional payment methods. Allowed values: **mealVoucher_FR_edenred**, **mealVoucher_FR_groupeup**, **mealVoucher_FR_natixis**, **mealVoucher_FR_sodexo**.&quot;</summary>
+        /// <summary>&quot;The list of additional payment methods. Allowed values: **mealVoucher_FR_endenred**, **mealVoucher_FR_groupeup**, **mealVoucher_FR_natixis**, **mealVoucher_FR_sodexo**.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SubTypes { get; set; }

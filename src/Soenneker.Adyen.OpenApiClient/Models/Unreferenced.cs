@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Unreferenced : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether unreferenced refunds are enabled on the terminal.</summary>
+        /// <summary>Indicates whether unreferenced refunds are enabled on the terminal.&gt; You&apos;re fully liable for losses resulting from fraudulent or duplicate unreferenced refunds. We recommend that you [set an unreferenced refund limit and a refund delay](https://docs.adyen.com/point-of-sale/basic-tapi-integration/refund-payment/unreferenced/#risk-with-unreferenced-refunds) to reduce this risk.</summary>
         public bool? EnableUnreferencedRefunds { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -164,6 +164,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Cartebancaire,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cashapp")]
+        #pragma warning disable CS1591
+        Cashapp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "clearpay")]
         #pragma warning disable CS1591
         Clearpay,

@@ -52,6 +52,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesUpdateInfo CartesBancaires { get; set; }
 #endif
+        /// <summary>The cashapp property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashAppUpdateInfo? Cashapp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashAppUpdateInfo Cashapp { get; set; }
+#endif
         /// <summary>The list of countries where a payment method is available. By default, all countries supported by the payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -262,6 +270,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "bcmc", n => { Bcmc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcUpdateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BcmcUpdateInfo.CreateFromDiscriminatorValue); } },
                 { "carnet", n => { Carnet = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiUpdateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiUpdateInfo.CreateFromDiscriminatorValue); } },
                 { "cartesBancaires", n => { CartesBancaires = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesUpdateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesUpdateInfo.CreateFromDiscriminatorValue); } },
+                { "cashapp", n => { Cashapp = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashAppUpdateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CashAppUpdateInfo.CreateFromDiscriminatorValue); } },
                 { "countries", n => { Countries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cup", n => { Cup = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiUpdateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiUpdateInfo.CreateFromDiscriminatorValue); } },
                 { "currencies", n => { Currencies = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -300,6 +309,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcUpdateInfo>("bcmc", Bcmc);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiUpdateInfo>("carnet", Carnet);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesUpdateInfo>("cartesBancaires", CartesBancaires);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashAppUpdateInfo>("cashapp", Cashapp);
             writer.WriteCollectionOfPrimitiveValues<string>("countries", Countries);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiUpdateInfo>("cup", Cup);
             writer.WriteCollectionOfPrimitiveValues<string>("currencies", Currencies);

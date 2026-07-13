@@ -79,10 +79,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The carnet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo? Carnet { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarnetInfo? Carnet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo Carnet { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarnetInfo Carnet { get; set; }
 #endif
         /// <summary>The cartesBancaires property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -450,7 +450,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "applePay", n => { ApplePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo.CreateFromDiscriminatorValue); } },
                 { "bcmc", n => { Bcmc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo.CreateFromDiscriminatorValue); } },
                 { "businessLineId", n => { BusinessLineId = n.GetStringValue(); } },
-                { "carnet", n => { Carnet = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>(global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo.CreateFromDiscriminatorValue); } },
+                { "carnet", n => { Carnet = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarnetInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CarnetInfo.CreateFromDiscriminatorValue); } },
                 { "cartesBancaires", n => { CartesBancaires = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo.CreateFromDiscriminatorValue); } },
                 { "clearpay", n => { Clearpay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo.CreateFromDiscriminatorValue); } },
                 { "countries", n => { Countries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -512,7 +512,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayInfo>("applePay", ApplePay);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcInfo>("bcmc", Bcmc);
             writer.WriteStringValue("businessLineId", BusinessLineId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GenericPmWithTdiInfo>("carnet", Carnet);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarnetInfo>("carnet", Carnet);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CartesBancairesInfo>("cartesBancaires", CartesBancaires);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ClearpayInfo>("clearpay", Clearpay);
             writer.WriteCollectionOfPrimitiveValues<string>("countries", Countries);

@@ -26805,108 +26805,6 @@
       }
     },
     "/ManagementService-v3/companies/{companyId}/apiCredentials/{apiCredentialId}/allowedOrigins/{originId}": {
-      "delete": {
-        "tags": [
-          "Allowed origins - company level"
-        ],
-        "summary": "Delete an allowed origin",
-        "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path. As soon as an allowed origin is removed, we no longer accept client-side requests from that domain.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write",
-        "operationId": "ManagementService_v3_delete_companies_companyId_apiCredentials_apiCredentialId_allowedOrigins_originId",
-        "parameters": [
-          {
-            "name": "companyId",
-            "in": "path",
-            "description": "The unique identifier of the company account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "apiCredentialId",
-            "in": "path",
-            "description": "Unique identifier of the API credential.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "originId",
-            "in": "path",
-            "description": "Unique identifier of the allowed origin.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content - look at the actual response code for the status of the request. "
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 0,
-        "x-methodName": "deleteAllowedOrigin"
-      },
       "get": {
         "tags": [
           "Allowed origins - company level"
@@ -27020,6 +26918,108 @@
         ],
         "x-sortIndex": 0,
         "x-methodName": "getAllowedOrigin"
+      },
+      "delete": {
+        "tags": [
+          "Allowed origins - company level"
+        ],
+        "summary": "Delete an allowed origin",
+        "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path. As soon as an allowed origin is removed, we no longer accept client-side requests from that domain.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write",
+        "operationId": "ManagementService_v3_delete_companies_companyId_apiCredentials_apiCredentialId_allowedOrigins_originId",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiCredentialId",
+            "in": "path",
+            "description": "Unique identifier of the API credential.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "Unique identifier of the allowed origin.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - look at the actual response code for the status of the request. "
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 0,
+        "x-methodName": "deleteAllowedOrigin"
       }
     },
     "/ManagementService-v3/companies/{companyId}/apiCredentials/{apiCredentialId}/generateApiKey": {
@@ -29846,99 +29846,6 @@
       }
     },
     "/ManagementService-v3/companies/{companyId}/webhooks/{webhookId}": {
-      "delete": {
-        "tags": [
-          "Webhooks - company level"
-        ],
-        "summary": "Remove a webhook",
-        "description": "Remove the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write",
-        "operationId": "ManagementService_v3_delete_companies_companyId_webhooks_webhookId",
-        "parameters": [
-          {
-            "name": "companyId",
-            "in": "path",
-            "description": "The unique identifier of the company account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "webhookId",
-            "in": "path",
-            "description": "Unique identifier of the webhook configuration.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content - look at the actual response code for the status of the request. "
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 5,
-        "x-methodName": "removeWebhook"
-      },
       "get": {
         "tags": [
           "Webhooks - company level"
@@ -30043,6 +29950,99 @@
         ],
         "x-sortIndex": 3,
         "x-methodName": "getWebhook"
+      },
+      "delete": {
+        "tags": [
+          "Webhooks - company level"
+        ],
+        "summary": "Remove a webhook",
+        "description": "Remove the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write",
+        "operationId": "ManagementService_v3_delete_companies_companyId_webhooks_webhookId",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "webhookId",
+            "in": "path",
+            "description": "Unique identifier of the webhook configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - look at the actual response code for the status of the request. "
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 5,
+        "x-methodName": "removeWebhook"
       },
       "patch": {
         "tags": [
@@ -30652,90 +30652,6 @@
       }
     },
     "/ManagementService-v3/me/allowedOrigins/{originId}": {
-      "delete": {
-        "tags": [
-          "My API credential"
-        ],
-        "summary": "Remove allowed origin",
-        "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) specified in the path.\nThe API key from the request is used to identify the [API credential](https://docs.adyen.com/development-resources/api-credentials).\n\nYou can make this request with any of the Management API roles.",
-        "operationId": "ManagementService_v3_delete_me_allowedOrigins_originId",
-        "parameters": [
-          {
-            "name": "originId",
-            "in": "path",
-            "description": "Unique identifier of the allowed origin.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content - look at the actual response code for the status of the request. "
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 0,
-        "x-methodName": "removeAllowedOrigin"
-      },
       "get": {
         "tags": [
           "My API credential"
@@ -30826,6 +30742,90 @@
         ],
         "x-sortIndex": 0,
         "x-methodName": "getAllowedOriginDetails"
+      },
+      "delete": {
+        "tags": [
+          "My API credential"
+        ],
+        "summary": "Remove allowed origin",
+        "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) specified in the path.\nThe API key from the request is used to identify the [API credential](https://docs.adyen.com/development-resources/api-credentials).\n\nYou can make this request with any of the Management API roles.",
+        "operationId": "ManagementService_v3_delete_me_allowedOrigins_originId",
+        "parameters": [
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "Unique identifier of the allowed origin.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - look at the actual response code for the status of the request. "
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 0,
+        "x-methodName": "removeAllowedOrigin"
       }
     },
     "/ManagementService-v3/me/generateClientKey": {
@@ -32016,108 +32016,6 @@
       }
     },
     "/ManagementService-v3/merchants/{merchantId}/apiCredentials/{apiCredentialId}/allowedOrigins/{originId}": {
-      "delete": {
-        "tags": [
-          "Allowed origins - merchant level"
-        ],
-        "summary": "Delete an allowed origin",
-        "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path. As soon as an allowed origin is removed, we no longer accept client-side requests from that domain.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write",
-        "operationId": "ManagementService_v3_delete_merchants_merchantId_apiCredentials_apiCredentialId_allowedOrigins_originId",
-        "parameters": [
-          {
-            "name": "merchantId",
-            "in": "path",
-            "description": "The unique identifier of the merchant account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "apiCredentialId",
-            "in": "path",
-            "description": "Unique identifier of the API credential.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "originId",
-            "in": "path",
-            "description": "Unique identifier of the allowed origin.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content - look at the actual response code for the status of the request. "
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 0,
-        "x-methodName": "deleteAllowedOrigin"
-      },
       "get": {
         "tags": [
           "Allowed origins - merchant level"
@@ -32234,6 +32132,108 @@
         ],
         "x-sortIndex": 0,
         "x-methodName": "getAllowedOrigin"
+      },
+      "delete": {
+        "tags": [
+          "Allowed origins - merchant level"
+        ],
+        "summary": "Delete an allowed origin",
+        "description": "Removes the [allowed origin](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) identified in the path. As soon as an allowed origin is removed, we no longer accept client-side requests from that domain.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—API credentials read and write",
+        "operationId": "ManagementService_v3_delete_merchants_merchantId_apiCredentials_apiCredentialId_allowedOrigins_originId",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "The unique identifier of the merchant account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiCredentialId",
+            "in": "path",
+            "description": "Unique identifier of the API credential.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "originId",
+            "in": "path",
+            "description": "Unique identifier of the allowed origin.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - look at the actual response code for the status of the request. "
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 0,
+        "x-methodName": "deleteAllowedOrigin"
       }
     },
     "/ManagementService-v3/merchants/{merchantId}/apiCredentials/{apiCredentialId}/generateApiKey": {
@@ -33495,99 +33495,6 @@
       }
     },
     "/ManagementService-v3/merchants/{merchantId}/payoutSettings/{payoutSettingsId}": {
-      "delete": {
-        "tags": [
-          "Payout settings - merchant level"
-        ],
-        "summary": "Delete a payout setting",
-        "description": "Deletes the payout setting identified in the path.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* Management API—Payout account settings read and write",
-        "operationId": "ManagementService_v3_delete_merchants_merchantId_payoutSettings_payoutSettingsId",
-        "parameters": [
-          {
-            "name": "merchantId",
-            "in": "path",
-            "description": "The unique identifier of the merchant account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "payoutSettingsId",
-            "in": "path",
-            "description": "The unique identifier of the payout setting.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content - look at the actual response code for the status of the request. "
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 5,
-        "x-methodName": "deletePayoutSetting"
-      },
       "get": {
         "tags": [
           "Payout settings - merchant level"
@@ -33690,6 +33597,99 @@
         ],
         "x-sortIndex": 4,
         "x-methodName": "getPayoutSetting"
+      },
+      "delete": {
+        "tags": [
+          "Payout settings - merchant level"
+        ],
+        "summary": "Delete a payout setting",
+        "description": "Deletes the payout setting identified in the path.\n\nUse this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* Management API—Payout account settings read and write",
+        "operationId": "ManagementService_v3_delete_merchants_merchantId_payoutSettings_payoutSettingsId",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "The unique identifier of the merchant account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "payoutSettingsId",
+            "in": "path",
+            "description": "The unique identifier of the payout setting.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - look at the actual response code for the status of the request. "
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 5,
+        "x-methodName": "deletePayoutSetting"
       },
       "patch": {
         "tags": [
@@ -34259,109 +34259,6 @@
       }
     },
     "/ManagementService-v3/merchants/{merchantId}/splitConfigurations/{splitConfigurationId}": {
-      "delete": {
-        "tags": [
-          "Split configuration - merchant level"
-        ],
-        "summary": "Delete a split configuration profile",
-        "description": "Deletes the split configuration profile specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API - SplitConfiguration read and write",
-        "operationId": "ManagementService_v3_delete_merchants_merchantId_splitConfigurations_splitConfigurationId",
-        "parameters": [
-          {
-            "name": "merchantId",
-            "in": "path",
-            "description": "The unique identifier of the merchant account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "splitConfigurationId",
-            "in": "path",
-            "description": "The unique identifier of the split configuration.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK - the request has succeeded.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SplitConfiguration"
-                }
-              }
-            }
-          },
-          "204": {
-            "description": "No Content - the request has been successfully processed, but there is no additional content."
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 8,
-        "x-methodName": "deleteSplitConfiguration"
-      },
       "get": {
         "tags": [
           "Split configuration - merchant level"
@@ -34469,128 +34366,6 @@
         ],
         "x-sortIndex": 4,
         "x-methodName": "getSplitConfiguration"
-      },
-      "patch": {
-        "tags": [
-          "Split configuration - merchant level"
-        ],
-        "summary": "Update the description of the split configuration profile",
-        "description": "Changes the description of the split configuration profile specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API - SplitConfiguration read and write",
-        "operationId": "ManagementService_v3_patch_merchants_merchantId_splitConfigurations_splitConfigurationId",
-        "parameters": [
-          {
-            "name": "merchantId",
-            "in": "path",
-            "description": "The unique identifier of the merchant account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "splitConfigurationId",
-            "in": "path",
-            "description": "The unique identifier of the split configuration.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateSplitConfigurationRequest"
-              },
-              "examples": {
-                "patch-splitConfiguration-description": {
-                  "$ref": "#/components/examples/patch-merchants-merchantId-splitConfigurations-splitConfigurationId-patch-splitConfiguration-description"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK - the request has succeeded.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SplitConfiguration"
-                },
-                "examples": {
-                  "patch-splitConfiguration-description": {
-                    "$ref": "#/components/examples/patch-merchants-merchantId-splitConfigurations-splitConfigurationId-patch-splitConfiguration-description-200"
-                  }
-                }
-              }
-            }
-          },
-          "204": {
-            "description": "No Content - the request has been successfully processed, but there is no additional content."
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 5,
-        "x-methodName": "updateSplitConfigurationDescription"
       },
       "post": {
         "tags": [
@@ -34713,6 +34488,231 @@
         ],
         "x-sortIndex": 2,
         "x-methodName": "createRule"
+      },
+      "delete": {
+        "tags": [
+          "Split configuration - merchant level"
+        ],
+        "summary": "Delete a split configuration profile",
+        "description": "Deletes the split configuration profile specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API - SplitConfiguration read and write",
+        "operationId": "ManagementService_v3_delete_merchants_merchantId_splitConfigurations_splitConfigurationId",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "The unique identifier of the merchant account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "splitConfigurationId",
+            "in": "path",
+            "description": "The unique identifier of the split configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitConfiguration"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content - the request has been successfully processed, but there is no additional content."
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 8,
+        "x-methodName": "deleteSplitConfiguration"
+      },
+      "patch": {
+        "tags": [
+          "Split configuration - merchant level"
+        ],
+        "summary": "Update the description of the split configuration profile",
+        "description": "Changes the description of the split configuration profile specified in the path.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API - SplitConfiguration read and write",
+        "operationId": "ManagementService_v3_patch_merchants_merchantId_splitConfigurations_splitConfigurationId",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "The unique identifier of the merchant account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "splitConfigurationId",
+            "in": "path",
+            "description": "The unique identifier of the split configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSplitConfigurationRequest"
+              },
+              "examples": {
+                "patch-splitConfiguration-description": {
+                  "$ref": "#/components/examples/patch-merchants-merchantId-splitConfigurations-splitConfigurationId-patch-splitConfiguration-description"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SplitConfiguration"
+                },
+                "examples": {
+                  "patch-splitConfiguration-description": {
+                    "$ref": "#/components/examples/patch-merchants-merchantId-splitConfigurations-splitConfigurationId-patch-splitConfiguration-description-200"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content - the request has been successfully processed, but there is no additional content."
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 5,
+        "x-methodName": "updateSplitConfigurationDescription"
       }
     },
     "/ManagementService-v3/merchants/{merchantId}/splitConfigurations/{splitConfigurationId}/rules/{ruleId}": {
@@ -38054,99 +38054,6 @@
       }
     },
     "/ManagementService-v3/merchants/{merchantId}/webhooks/{webhookId}": {
-      "delete": {
-        "tags": [
-          "Webhooks - merchant level"
-        ],
-        "summary": "Remove a webhook",
-        "description": "Remove the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write",
-        "operationId": "ManagementService_v3_delete_merchants_merchantId_webhooks_webhookId",
-        "parameters": [
-          {
-            "name": "merchantId",
-            "in": "path",
-            "description": "The unique identifier of the merchant account.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "webhookId",
-            "in": "path",
-            "description": "Unique identifier of the webhook configuration.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content - look at the actual response code for the status of the request. "
-          },
-          "400": {
-            "description": "Bad Request - a problem reading or understanding the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable Entity - a request validation error.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error - the server could not process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "ManagementService_v3_BasicAuth": [ ]
-          },
-          {
-            "ManagementService_v3_ApiKeyAuth": [ ]
-          }
-        ],
-        "x-sortIndex": 5,
-        "x-methodName": "removeWebhook"
-      },
       "get": {
         "tags": [
           "Webhooks - merchant level"
@@ -38254,6 +38161,99 @@
         ],
         "x-sortIndex": 3,
         "x-methodName": "getWebhook"
+      },
+      "delete": {
+        "tags": [
+          "Webhooks - merchant level"
+        ],
+        "summary": "Remove a webhook",
+        "description": "Remove the configuration for the webhook identified in the path.\n\nTo make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Webhooks read and write",
+        "operationId": "ManagementService_v3_delete_merchants_merchantId_webhooks_webhookId",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "The unique identifier of the merchant account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "webhookId",
+            "in": "path",
+            "description": "Unique identifier of the webhook configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - look at the actual response code for the status of the request. "
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_RestServiceError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-sortIndex": 5,
+        "x-methodName": "removeWebhook"
       },
       "patch": {
         "tags": [
@@ -40302,6 +40302,701 @@
         ],
         "x-sortIndex": 5,
         "x-methodName": "updateTerminalSettings"
+      }
+    },
+    "/ManagementService-v3/companies/{companyId}/campaignManagement": {
+      "post": {
+        "tags": [
+          "Donation campaigns"
+        ],
+        "summary": "Create a donation campaign",
+        "description": "Creates a new donation campaign, to give shoppers the option to donate to a nonprofit organization when making a payment. A campaign can be for online payments, in-person payments, or both online and in-person payments.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Campaign Management read and write",
+        "operationId": "ManagementService_v3_post_companies_companyId_campaignManagement",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonationCampaignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DonationCampaign"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-methodName": "createDonationCampaign",
+        "x-sortIndex": 0
+      }
+    },
+    "/ManagementService-v3/companies/{companyId}/campaignManagement/accountHolders/{accountHolderId}": {
+      "get": {
+        "tags": [
+          "Donation campaigns"
+        ],
+        "summary": "Get the donation campaigns for an account holder",
+        "description": "Returns a paginated list of donation campaigns associated with the account holder specified in the path. You can filter the list by campaign status.\n\nTo make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Campaign Management read\n* Management API—Campaign Management read and write",
+        "operationId": "ManagementService_v3_get_companies_companyId_campaignManagement_accountHolders_accountHolderId",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountHolderId",
+            "in": "path",
+            "description": "The unique identifier of the account holder.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "The campaign status to return campaigns that match. Allowed values: **inactive**, **active**, or **ended**.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "The number of the page to fetch.",
+            "schema": {
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "The number of items to have on a page, maximum 100. The default is 10 items on a page.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListDonationCampaignsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-methodName": "listDonationCampaignsForAccountHolder",
+        "x-sortIndex": 0
+      }
+    },
+    "/ManagementService-v3/companies/{companyId}/campaignManagement/{donationCampaignId}": {
+      "delete": {
+        "tags": [
+          "Donation campaigns"
+        ],
+        "summary": "Delete a donation campaign",
+        "description": "Removes the donation campaign specified in the path. This request is only allowed if the campaign has the status **inactive**.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Campaign Management read and write",
+        "operationId": "ManagementService_v3_delete_companies_companyId_campaignManagement_donationCampaignId",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "donationCampaignId",
+            "in": "path",
+            "description": "The unique identifier of the donation campaign to be deleted.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - the request has been successfully processed, but there is no additional content."
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-methodName": "deleteDonationCampaign",
+        "x-sortIndex": 0
+      },
+      "patch": {
+        "tags": [
+          "Donation campaigns"
+        ],
+        "summary": "Update a donation campaign",
+        "description": "Updates the properties of the donation campaign specified in the path. Note the following restrictions: \n\n* You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint.\n* You get a validation error if you add account holders that are not compatible with the nonprofit.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Campaign Management read and write",
+        "operationId": "ManagementService_v3_patch_companies_companyId_campaignManagement_donationCampaignId",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "donationCampaignId",
+            "in": "path",
+            "description": "The unique identifier of the donation campaign to be updated.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonationCampaignUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DonationCampaign"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-methodName": "updateDonationCampaign",
+        "x-sortIndex": 0
+      }
+    },
+    "/ManagementService-v3/companies/{companyId}/campaignManagement/{donationCampaignId}/status/{status}": {
+      "post": {
+        "tags": [
+          "Donation campaigns"
+        ],
+        "summary": "Activate or end a donation campaign",
+        "description": "Starts or stops the donation campaign specified in the path, by providing a path parameter. \nUse the path parameter **activate** to start an inactive campaign, or **end** to stop an active campaign. Other status transitions are not allowed.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n* Management API—Campaign Management read and write",
+        "operationId": "ManagementService_v3_post_companies_companyId_campaignManagement_donationCampaignId_status_status",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "donationCampaignId",
+            "in": "path",
+            "description": "The unique identifier of the donation campaign to activate or end.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "path",
+            "description": "The desired status change. Possible values: **activate** or **end**.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/CampaignStatusTransition"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DonationCampaign"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-methodName": "updateDonationCampaignStatus",
+        "x-sortIndex": 0
+      }
+    },
+    "/ManagementService-v3/companies/{companyId}/nonprofits": {
+      "post": {
+        "tags": [
+          "Donation campaigns"
+        ],
+        "summary": "Get a list of nonprofits",
+        "description": "Returns a list of supported nonprofit organizations to choose from when creating a donation campaign. The list only contains nonprofits that are compatible with all the account holders specified in the request.",
+        "operationId": "ManagementService_v3_post_companies_companyId_nonprofits",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "description": "The unique identifier of the company account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "searchTerm",
+            "in": "query",
+            "description": "A query to return nonprofit organizations for, maximum 100 characters. For example, `&searchTerm=clean%20water`.",
+            "schema": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "The number of the page to fetch.",
+            "schema": {
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "The number of items to have on a page, maximum 100. The default is 10 items on a page.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "goal",
+            "in": "query",
+            "description": "One or more United Nations Sustainable Development Goals to return nonprofit organizations for. Format: `unsdg_<number>`, for example, `&goal=unsdg_6&goal=unsdg_2`.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListNonprofitsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListNonprofitsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManagementService_v3_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ManagementService_v3_BasicAuth": [ ]
+          },
+          {
+            "ManagementService_v3_ApiKeyAuth": [ ]
+          }
+        ],
+        "x-methodName": "listNonprofits",
+        "x-sortIndex": 0
       }
     },
     "/NotificationConfigurationService-v6/createNotificationConfiguration": {
@@ -92394,9 +93089,6 @@
         "additionalProperties": false
       },
       "AccelResponseInfo": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
@@ -92694,8 +93386,8 @@
       },
       "ManagementService_v3_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -92858,12 +93550,12 @@
       },
       "ApiCredential": {
         "required": [
-          "id",
-          "username",
-          "clientKey",
+          "active",
           "allowedIpAddresses",
+          "clientKey",
+          "id",
           "roles",
-          "active"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -92963,9 +93655,6 @@
         "additionalProperties": false
       },
       "ApplePayResponseInfo": {
-        "required": [
-          "domains"
-        ],
         "type": "object",
         "properties": {
           "domains": {
@@ -92974,6 +93663,29 @@
               "type": "string"
             },
             "description": "The list of merchant domains.\n\nFor more information, see [Apple Pay documentation](https://docs.adyen.com/payment-methods/apple-pay/web-drop-in?tab=adyen-certificate-live_1#going-live)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssociatedPaymentMethod": {
+        "required": [
+          "enabled",
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Indicates whether the payment method is enabled (**true**) or disabled (**false**)."
+          },
+          "id": {
+            "type": "string",
+            "description": "The identifier of the payment method."
+          },
+          "type": {
+            "type": "string",
+            "description": "Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api)."
           }
         },
         "additionalProperties": false
@@ -93058,6 +93770,19 @@
         },
         "additionalProperties": false
       },
+      "CarnetInfo": {
+        "type": "object",
+        "properties": {
+          "addMccAcronym": {
+            "type": "boolean",
+            "description": "Indicates whether to add the MCC acronym to the merchant name for Prosa acquirer in Mexico.\nWhen set to **true**, the MCC acronym is automatically appended to the merchant name.\nDefault: **false**."
+          },
+          "transactionDescription": {
+            "$ref": "#/components/schemas/TransactionDescriptionInfo"
+          }
+        },
+        "additionalProperties": false
+      },
       "CarnetResponseInfo": {
         "type": "object",
         "properties": {
@@ -93101,6 +93826,20 @@
         "properties": {
           "transactionDescription": {
             "$ref": "#/components/schemas/TransactionDescriptionInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CashAppUpdateInfo": {
+        "type": "object",
+        "properties": {
+          "logoUrl": {
+            "type": "string",
+            "description": "The URL of the logo image shown in Cash App checkout next to payments."
+          },
+          "merchantName": {
+            "type": "string",
+            "description": "The merchant display name shown in Cash App checkout."
           }
         },
         "additionalProperties": false
@@ -93182,12 +93921,12 @@
       },
       "CompanyApiCredential": {
         "required": [
-          "id",
-          "username",
-          "clientKey",
+          "active",
           "allowedIpAddresses",
+          "clientKey",
+          "id",
           "roles",
-          "active"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -93273,11 +94012,11 @@
       },
       "CompanyUser": {
         "required": [
-          "id",
           "email",
+          "id",
+          "roles",
           "timeZoneCode",
-          "username",
-          "roles"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -93445,14 +94184,14 @@
       },
       "CreateApiCredentialResponse": {
         "required": [
-          "id",
-          "username",
-          "clientKey",
-          "allowedIpAddresses",
-          "roles",
           "active",
+          "allowedIpAddresses",
+          "apiKey",
+          "clientKey",
+          "id",
           "password",
-          "apiKey"
+          "roles",
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -93549,15 +94288,15 @@
       },
       "CreateCompanyApiCredentialResponse": {
         "required": [
-          "id",
-          "username",
-          "clientKey",
-          "allowedIpAddresses",
-          "roles",
           "active",
-          "password",
+          "allowedIpAddresses",
           "apiKey",
-          "associatedMerchantAccounts"
+          "associatedMerchantAccounts",
+          "clientKey",
+          "id",
+          "password",
+          "roles",
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -93630,8 +94369,8 @@
       },
       "CreateCompanyUserRequest": {
         "required": [
-          "name",
           "email",
+          "name",
           "username"
         ],
         "type": "object",
@@ -93683,11 +94422,11 @@
       },
       "CreateCompanyUserResponse": {
         "required": [
-          "id",
           "email",
+          "id",
+          "roles",
           "timeZoneCode",
-          "username",
-          "roles"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -93752,12 +94491,12 @@
       },
       "CreateCompanyWebhookRequest": {
         "required": [
-          "url",
           "active",
           "communicationFormat",
-          "type",
           "filterMerchantAccountType",
-          "filterMerchantAccounts"
+          "filterMerchantAccounts",
+          "type",
+          "url"
         ],
         "type": "object",
         "properties": {
@@ -93956,8 +94695,8 @@
       },
       "CreateMerchantUserRequest": {
         "required": [
-          "name",
           "email",
+          "name",
           "username"
         ],
         "type": "object",
@@ -94002,10 +94741,10 @@
       },
       "CreateMerchantWebhookRequest": {
         "required": [
-          "url",
           "active",
           "communicationFormat",
-          "type"
+          "type",
+          "url"
         ],
         "type": "object",
         "properties": {
@@ -94088,11 +94827,11 @@
       },
       "CreateUserResponse": {
         "required": [
-          "id",
           "email",
+          "id",
+          "roles",
           "timeZoneCode",
-          "username",
-          "roles"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -94383,8 +95122,8 @@
       },
       "File": {
         "required": [
-          "name",
-          "data"
+          "data",
+          "name"
         ],
         "type": "object",
         "properties": {
@@ -94481,10 +95220,10 @@
       },
       "GivexInfo": {
         "required": [
-          "password",
-          "username",
           "currencyCode",
-          "paymentFlow"
+          "password",
+          "paymentFlow",
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -94719,9 +95458,9 @@
       },
       "ManagementService_v3_InvalidField": {
         "required": [
+          "message",
           "name",
-          "value",
-          "message"
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -94737,8 +95476,7 @@
             "type": "string",
             "description": "The invalid value."
           }
-        },
-        "additionalProperties": false
+        }
       },
       "JCBInfo": {
         "type": "object",
@@ -94830,9 +95568,9 @@
       },
       "KlarnaInfo": {
         "required": [
+          "disputeEmail",
           "region",
-          "supportEmail",
-          "disputeEmail"
+          "supportEmail"
         ],
         "type": "object",
         "properties": {
@@ -94909,8 +95647,7 @@
           "href": {
             "type": "string"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "ListCompanyApiCredentialsResponse": {
         "required": [
@@ -95291,12 +96028,12 @@
       },
       "MeApiCredential": {
         "required": [
-          "id",
-          "username",
-          "clientKey",
+          "active",
           "allowedIpAddresses",
+          "clientKey",
+          "id",
           "roles",
-          "active"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -95358,8 +96095,8 @@
       },
       "MealVoucherFRInfo": {
         "required": [
-          "siret",
           "conecsId",
+          "siret",
           "subTypes"
         ],
         "type": "object",
@@ -95379,7 +96116,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The list of additional payment methods. Allowed values: **mealVoucher_FR_edenred**, **mealVoucher_FR_groupeup**, **mealVoucher_FR_natixis**, **mealVoucher_FR_sodexo**."
+            "description": "The list of additional payment methods. Allowed values: **mealVoucher_FR_endenred**, **mealVoucher_FR_groupeup**, **mealVoucher_FR_natixis**, **mealVoucher_FR_sodexo**."
           }
         },
         "additionalProperties": false
@@ -95657,9 +96394,6 @@
         "additionalProperties": false
       },
       "NyceResponseInfo": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
@@ -95741,9 +96475,9 @@
       },
       "PaginationLinks": {
         "required": [
-          "self",
           "first",
-          "last"
+          "last",
+          "self"
         ],
         "type": "object",
         "properties": {
@@ -95762,8 +96496,7 @@
           "self": {
             "$ref": "#/components/schemas/LinksElement"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "Passcodes": {
         "type": "object",
@@ -95859,8 +96592,8 @@
       "PayMeInfo": {
         "required": [
           "displayName",
-          "supportEmail",
-          "logo"
+          "logo",
+          "supportEmail"
         ],
         "type": "object",
         "properties": {
@@ -95880,11 +96613,6 @@
         "additionalProperties": false
       },
       "PayMeResponseInfo": {
-        "required": [
-          "displayName",
-          "supportEmail",
-          "logo"
-        ],
         "type": "object",
         "properties": {
           "displayName": {
@@ -95904,8 +96632,8 @@
       },
       "PayPalInfo": {
         "required": [
-          "subject",
-          "payerId"
+          "payerId",
+          "subject"
         ],
         "type": "object",
         "properties": {
@@ -95927,10 +96655,6 @@
         "additionalProperties": false
       },
       "PayPalResponseInfo": {
-        "required": [
-          "subject",
-          "payerId"
-        ],
         "type": "object",
         "properties": {
           "directCapture": {
@@ -95969,10 +96693,6 @@
         "additionalProperties": false
       },
       "PayToResponseInfo": {
-        "required": [
-          "merchantName",
-          "payToPurpose"
-        ],
         "type": "object",
         "properties": {
           "merchantName": {
@@ -96032,6 +96752,13 @@
           },
           "applePay": {
             "$ref": "#/components/schemas/ApplePayResponseInfo"
+          },
+          "associatedPaymentMethods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssociatedPaymentMethod"
+            },
+            "description": "Payment methods that were also updated as part of an associated transition."
           },
           "bcmc": {
             "$ref": "#/components/schemas/BcmcResponseInfo"
@@ -96287,6 +97014,7 @@
                 "br_schemes",
                 "carnet",
                 "cartebancaire",
+                "cashapp",
                 "clearpay",
                 "clicktopay",
                 "cooper",
@@ -96435,7 +97163,7 @@
             "description": "The unique identifier of the business line. Required if you are a [platform model](https://docs.adyen.com/platforms)."
           },
           "carnet": {
-            "$ref": "#/components/schemas/GenericPmWithTdiInfo"
+            "$ref": "#/components/schemas/CarnetInfo"
           },
           "cartesBancaires": {
             "$ref": "#/components/schemas/CartesBancairesInfo"
@@ -96618,6 +97346,7 @@
               "br_schemes",
               "carnet",
               "cartebancaire",
+              "cashapp",
               "clearpay",
               "clicktopay",
               "cooper",
@@ -96750,8 +97479,8 @@
       },
       "PayoutSettings": {
         "required": [
-          "transferInstrumentId",
-          "id"
+          "id",
+          "transferInstrumentId"
         ],
         "type": "object",
         "properties": {
@@ -96833,9 +97562,9 @@
       },
       "Profile": {
         "required": [
-          "ssid",
-          "bssType",
           "authType",
+          "bssType",
+          "ssid",
           "wsec"
         ],
         "type": "object",
@@ -96938,9 +97667,6 @@
         "additionalProperties": false
       },
       "PulseResponseInfo": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
@@ -97132,11 +97858,11 @@
       },
       "ManagementService_v3_RestServiceError": {
         "required": [
-          "type",
-          "errorCode",
-          "title",
           "detail",
-          "status"
+          "errorCode",
+          "status",
+          "title",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -97206,7 +97932,18 @@
                 "$ref": "#/components/schemas/UninstallAndroidCertificateDetails"
               }
             ],
-            "description": "Information about the action to take."
+            "description": "Information about the action to take.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "InstallAndroidApp": "#/components/schemas/InstallAndroidAppDetails",
+                "InstallAndroidCertificate": "#/components/schemas/InstallAndroidCertificateDetails",
+                "ReleaseUpdate": "#/components/schemas/ReleaseUpdateDetails",
+                "UninstallAndroidApp": "#/components/schemas/UninstallAndroidAppDetails",
+                "UninstallAndroidCertificate": "#/components/schemas/UninstallAndroidCertificateDetails",
+                "ForceReboot": "#/components/schemas/ForceRebootDetails"
+              }
+            }
           },
           "scheduledAt": {
             "type": "string",
@@ -97250,7 +97987,18 @@
                 "$ref": "#/components/schemas/UninstallAndroidCertificateDetails"
               }
             ],
-            "description": "Information about the action to take."
+            "description": "Information about the action to take.",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "InstallAndroidApp": "#/components/schemas/InstallAndroidAppDetails",
+                "InstallAndroidCertificate": "#/components/schemas/InstallAndroidCertificateDetails",
+                "ReleaseUpdate": "#/components/schemas/ReleaseUpdateDetails",
+                "UninstallAndroidApp": "#/components/schemas/UninstallAndroidAppDetails",
+                "UninstallAndroidCertificate": "#/components/schemas/UninstallAndroidCertificateDetails",
+                "ForceReboot": "#/components/schemas/ForceRebootDetails"
+              }
+            }
           },
           "items": {
             "type": "array",
@@ -97415,9 +98163,6 @@
         "additionalProperties": false
       },
       "SodexoResponseInfo": {
-        "required": [
-          "merchantContactPhone"
-        ],
         "type": "object",
         "properties": {
           "merchantContactPhone": {
@@ -97429,8 +98174,8 @@
       },
       "SofortInfo": {
         "required": [
-          "logo",
-          "currencyCode"
+          "currencyCode",
+          "logo"
         ],
         "type": "object",
         "properties": {
@@ -97446,10 +98191,6 @@
         "additionalProperties": false
       },
       "SofortResponseInfo": {
-        "required": [
-          "logo",
-          "currencyCode"
-        ],
         "type": "object",
         "properties": {
           "currencyCode": {
@@ -97564,6 +98305,9 @@
           "commission": {
             "$ref": "#/components/schemas/Commission"
           },
+          "dcc": {
+            "$ref": "#/components/schemas/SplitDcc"
+          },
           "interchange": {
             "enum": [
               "deductFromLiableAccount",
@@ -97639,10 +98383,10 @@
       },
       "SplitConfigurationRule": {
         "required": [
-          "paymentMethod",
-          "shopperInteraction",
           "currency",
           "fundingSource",
+          "paymentMethod",
+          "shopperInteraction",
           "splitLogic"
         ],
         "type": "object",
@@ -97701,6 +98445,16 @@
         },
         "additionalProperties": false
       },
+      "SplitDcc": {
+        "type": "object",
+        "properties": {
+          "accountHolderPercentage": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
       "Standalone": {
         "type": "object",
         "properties": {
@@ -97743,9 +98497,6 @@
         "additionalProperties": false
       },
       "StarResponseInfo": {
-        "required": [
-          "processingType"
-        ],
         "type": "object",
         "properties": {
           "processingType": {
@@ -97860,10 +98611,10 @@
       },
       "StoreCreationRequest": {
         "required": [
+          "address",
           "description",
-          "shopperStatement",
           "phoneNumber",
-          "address"
+          "shopperStatement"
         ],
         "type": "object",
         "properties": {
@@ -97911,11 +98662,11 @@
       },
       "StoreCreationWithMerchantCodeRequest": {
         "required": [
-          "description",
-          "shopperStatement",
-          "phoneNumber",
           "address",
-          "merchantId"
+          "description",
+          "merchantId",
+          "phoneNumber",
+          "shopperStatement"
         ],
         "type": "object",
         "properties": {
@@ -98018,10 +98769,10 @@
       },
       "SubMerchantData": {
         "required": [
+          "email",
           "id",
-          "name",
           "mcc",
-          "email"
+          "name"
         ],
         "type": "object",
         "properties": {
@@ -98085,6 +98836,10 @@
             },
             "description": "Surcharge fees or percentages for specific cards, funding sources (credit or debit), and currencies."
           },
+          "disclosureOnPresentCard": {
+            "type": "boolean",
+            "description": "Show the maximum surcharge rate to the shopper on the present card screen before they tap."
+          },
           "excludeGratuityFromSurcharge": {
             "type": "boolean",
             "description": "Exclude the tip amount from the surcharge calculation."
@@ -98111,10 +98866,6 @@
         "additionalProperties": false
       },
       "SvsResponseInfo": {
-        "required": [
-          "authorisationMid",
-          "currencyCode"
-        ],
         "type": "object",
         "properties": {
           "authorisationMid": {
@@ -98144,9 +98895,6 @@
         "additionalProperties": false
       },
       "SwishResponseInfo": {
-        "required": [
-          "swishNumber"
-        ],
         "type": "object",
         "properties": {
           "swishNumber": {
@@ -98846,9 +99594,6 @@
         "additionalProperties": false
       },
       "TwintResponseInfo": {
-        "required": [
-          "logo"
-        ],
         "type": "object",
         "properties": {
           "logo": {
@@ -98899,7 +99644,7 @@
         "properties": {
           "enableUnreferencedRefunds": {
             "type": "boolean",
-            "description": "Indicates whether unreferenced refunds are enabled on the terminal."
+            "description": "Indicates whether unreferenced refunds are enabled on the terminal.\n\n> You're fully liable for losses resulting from fraudulent or duplicate unreferenced refunds. We recommend that you [set an unreferenced refund limit and a refund delay](https://docs.adyen.com/point-of-sale/basic-tapi-integration/refund-payment/unreferenced/#risk-with-unreferenced-refunds) to reduce this risk."
           }
         },
         "additionalProperties": false
@@ -99276,6 +100021,9 @@
           "cartesBancaires": {
             "$ref": "#/components/schemas/CartesBancairesUpdateInfo"
           },
+          "cashapp": {
+            "$ref": "#/components/schemas/CashAppUpdateInfo"
+          },
           "countries": {
             "type": "array",
             "items": {
@@ -99444,6 +100192,9 @@
           "commission": {
             "$ref": "#/components/schemas/Commission"
           },
+          "dcc": {
+            "$ref": "#/components/schemas/SplitDcc"
+          },
           "interchange": {
             "enum": [
               "deductFromLiableAccount",
@@ -99533,10 +100284,10 @@
       },
       "UpdateSplitConfigurationRuleRequest": {
         "required": [
-          "paymentMethod",
-          "shopperInteraction",
           "currency",
-          "fundingSource"
+          "fundingSource",
+          "paymentMethod",
+          "shopperInteraction"
         ],
         "type": "object",
         "properties": {
@@ -99646,11 +100397,11 @@
       },
       "User": {
         "required": [
-          "id",
           "email",
+          "id",
+          "roles",
           "timeZoneCode",
-          "username",
-          "roles"
+          "username"
         ],
         "type": "object",
         "properties": {
@@ -99737,10 +100488,6 @@
         "additionalProperties": false
       },
       "ValuelinkResponseInfo": {
-        "required": [
-          "authorisationMid",
-          "pinSupport"
-        ],
         "type": "object",
         "properties": {
           "authorisationMid": {
@@ -99784,9 +100531,6 @@
         "additionalProperties": false
       },
       "VippsResponseInfo": {
-        "required": [
-          "logo"
-        ],
         "type": "object",
         "properties": {
           "logo": {
@@ -99811,8 +100555,8 @@
       },
       "WeChatPayInfo": {
         "required": [
-          "email",
-          "contactPersonName"
+          "contactPersonName",
+          "email"
         ],
         "type": "object",
         "properties": {
@@ -99829,8 +100573,8 @@
       },
       "WeChatPayPosInfo": {
         "required": [
-          "email",
-          "contactPersonName"
+          "contactPersonName",
+          "email"
         ],
         "type": "object",
         "properties": {
@@ -99846,10 +100590,6 @@
         "additionalProperties": false
       },
       "WeChatPayPosResponseInfo": {
-        "required": [
-          "email",
-          "contactPersonName"
-        ],
         "type": "object",
         "properties": {
           "contactPersonName": {
@@ -99864,10 +100604,6 @@
         "additionalProperties": false
       },
       "WeChatPayResponseInfo": {
-        "required": [
-          "email",
-          "contactPersonName"
-        ],
         "type": "object",
         "properties": {
           "contactPersonName": {
@@ -99883,10 +100619,10 @@
       },
       "Webhook": {
         "required": [
-          "type",
-          "url",
           "active",
-          "communicationFormat"
+          "communicationFormat",
+          "type",
+          "url"
         ],
         "type": "object",
         "properties": {
@@ -100007,9 +100743,9 @@
       },
       "WebhookLinks": {
         "required": [
+          "generateHmac",
           "self",
-          "testWebhook",
-          "generateHmac"
+          "testWebhook"
         ],
         "type": "object",
         "properties": {
@@ -100046,6 +100782,783 @@
           }
         },
         "additionalProperties": false
+      },
+      "CampaignStatusTransition": {
+        "enum": [
+          "activate",
+          "end"
+        ],
+        "type": "string",
+        "x-enum": [
+          {
+            "description": "Stops the donation campaign.",
+            "value": "end"
+          },
+          {
+            "description": "Starts the donation campaign.",
+            "value": "activate"
+          }
+        ]
+      },
+      "ManagementService_v3_DefaultErrorResponseEntity": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Unique business error code."
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem if applicable."
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManagementService_v3_InvalidField"
+            },
+            "description": "Array of fields with validation errors when applicable."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The unique reference for the request."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          }
+        },
+        "description": "Standardized error response following RFC-7807 format",
+        "externalDocs": {
+          "url": "https://www.rfc-editor.org/rfc/rfc7807"
+        }
+      },
+      "DisplayTextField": {
+        "enum": [
+          "causeName",
+          "nonprofitName"
+        ],
+        "type": "string",
+        "x-enum": [
+          {
+            "description": "The donation screen shows the cause that the nonprofit supports.",
+            "value": "causeName"
+          },
+          {
+            "description": "The donation screen shows the name of the nonprofit.",
+            "value": "nonprofitName"
+          }
+        ]
+      },
+      "DonationAmount": {
+        "required": [
+          "amounts",
+          "currencyCode"
+        ],
+        "type": "object",
+        "properties": {
+          "amounts": {
+            "maxItems": 3,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "The donation amounts in minor units. The list must contain at least one amount and no more than three amounts."
+          },
+          "currencyCode": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes)."
+          }
+        }
+      },
+      "DonationAmountUpdate": {
+        "type": "object",
+        "properties": {
+          "amounts": {
+            "maxItems": 3,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "description": "The donation amounts in minor units. The list must contain at least one amount and no more than three amounts."
+          },
+          "currencyCode": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes)."
+          }
+        }
+      },
+      "ManagementService_v3_DonationCampaign": {
+        "required": [
+          "id",
+          "name",
+          "nonprofitCause",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The unique identifiers of the account holders associated with the donation campaign."
+          },
+          "activatedAt": {
+            "type": "string",
+            "description": "The date and time when the campaign started, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. For example, 2026-06-18T10:28:59.820+00:00",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "endedAt": {
+            "type": "string",
+            "description": "The date and time when the campaign stopped, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.  For example, 2026-06-18T10:28:59.820+00:00.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the donation campaign. This value is generated by Adyen.",
+            "readOnly": true
+          },
+          "inPerson": {
+            "$ref": "#/components/schemas/InPersonDonationSettingsResponse"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the donation campaign."
+          },
+          "nonprofitCause": {
+            "$ref": "#/components/schemas/DonationCampaignNonprofitCause"
+          },
+          "online": {
+            "$ref": "#/components/schemas/OnlineDonationSettingsResponse"
+          },
+          "status": {
+            "$ref": "#/components/schemas/DonationCampaignStatus"
+          }
+        }
+      },
+      "DonationCampaignNonprofitCause": {
+        "type": "object",
+        "properties": {
+          "bannerUrl": {
+            "type": "string",
+            "description": "The URL to the banner showing the cause that the nonprofit organization supports."
+          },
+          "causeId": {
+            "type": "string",
+            "description": "The unique identifier of the nonprofit cause. This value is generated by Adyen."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the cause that the nonprofit supports."
+          },
+          "globalWebsiteUrl": {
+            "type": "string",
+            "description": "The URL to the website of the nonprofit organization."
+          },
+          "goals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The United Nations Sustainable Development Goals (UN SDGs) supported by the nonprofit organization, specified in the format `unsdg_<number>`, where the number is the number of the UN SDG. For example, **unsdg_1**."
+          },
+          "logoUrl": {
+            "type": "string",
+            "description": "The URL to the logo of the nonprofit organization."
+          },
+          "nonprofitName": {
+            "type": "string",
+            "description": "The name of the nonprofit organization."
+          },
+          "termsAndConditionsUrl": {
+            "type": "string",
+            "description": "The URL to the terms and conditions of the nonprofit organization."
+          }
+        }
+      },
+      "DonationCampaignRequest": {
+        "required": [
+          "name",
+          "nonprofitCauseId"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The unique identifiers of the account holders associated with the donation campaign."
+          },
+          "inPerson": {
+            "$ref": "#/components/schemas/InPersonDonationSettings"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The name of the donation campaign."
+          },
+          "nonprofitCauseId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The unique identifier of the nonprofit cause that the campaign supports."
+          },
+          "online": {
+            "$ref": "#/components/schemas/OnlineDonationSettings"
+          }
+        }
+      },
+      "DonationCampaignStatus": {
+        "enum": [
+          "active",
+          "inactive",
+          "ended"
+        ],
+        "type": "string",
+        "x-enum": [
+          {
+            "description": "The donation campaign did not start yet.",
+            "value": "inactive"
+          },
+          {
+            "description": "The donation campaign has started.",
+            "value": "active"
+          },
+          {
+            "description": "The donation campaign has stopped.",
+            "value": "ended"
+          }
+        ]
+      },
+      "DonationCampaignUpdate": {
+        "type": "object",
+        "properties": {
+          "accountHolderIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The unique identifiers of the account holders associated with the donation campaign.",
+            "nullable": true
+          },
+          "inPerson": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/InPersonDonationSettingsUpdate"
+              }
+            ],
+            "description": "The settings for in-person donations collected as part of the campaign.",
+            "nullable": true
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The name of the donation campaign."
+          },
+          "online": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/OnlineDonationSettingsUpdate"
+              }
+            ],
+            "description": "The settings for online donations collected as part of the campaign.",
+            "nullable": true
+          }
+        }
+      },
+      "DonationFlow": {
+        "enum": [
+          "oneStep",
+          "twoStep"
+        ],
+        "type": "string",
+        "x-enum": [
+          {
+            "description": "The shopper presents their payment method twice: after the payment and after the donation.",
+            "value": "twoStep"
+          },
+          {
+            "description": "The shopper presents their payment method for the payment and the donation in one go, after the donation.",
+            "value": "oneStep"
+          }
+        ]
+      },
+      "DonationType": {
+        "enum": [
+          "roundup",
+          "fixedAmounts",
+          "fixedAmountsRoundup"
+        ],
+        "type": "string",
+        "x-enum": [
+          {
+            "description": "Donate by choosing a fixed amount.",
+            "value": "fixedAmounts"
+          },
+          {
+            "description": "Donate by rounding up the transaction amount.",
+            "value": "roundup"
+          },
+          {
+            "description": "Donate by choosing rounding up, or a fixed amount.",
+            "value": "fixedAmountsRoundup"
+          }
+        ]
+      },
+      "InPersonDonationSettings": {
+        "required": [
+          "displayTextField",
+          "donationFlow"
+        ],
+        "type": "object",
+        "properties": {
+          "defaultAmount": {
+            "$ref": "#/components/schemas/DonationAmount"
+          },
+          "displayTextField": {
+            "$ref": "#/components/schemas/DisplayTextField"
+          },
+          "donationFlow": {
+            "$ref": "#/components/schemas/DonationFlow"
+          },
+          "donationType": {
+            "$ref": "#/components/schemas/DonationType"
+          },
+          "merchantAccounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The merchant accounts for this sales channel that are associated with the donation campaign."
+          },
+          "presentCardTimeoutMs": {
+            "type": "integer",
+            "description": "Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.",
+            "format": "int64"
+          },
+          "promptTimeoutMs": {
+            "type": "integer",
+            "description": "The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.",
+            "format": "int64"
+          },
+          "storeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign."
+          }
+        }
+      },
+      "InPersonDonationSettingsResponse": {
+        "type": "object",
+        "properties": {
+          "amounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DonationAmount"
+            },
+            "description": "The currency and fixed amounts for donations. We automatically add calculated amounts in other currencies for participating stores that use a different currency than the default."
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "The currency that was used in the request to set fixed donation amounts. Format: three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes)."
+          },
+          "displayTextField": {
+            "$ref": "#/components/schemas/DisplayTextField"
+          },
+          "donationFlow": {
+            "$ref": "#/components/schemas/DonationFlow"
+          },
+          "donationType": {
+            "$ref": "#/components/schemas/DonationType"
+          },
+          "merchantAccounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The merchant accounts for this sales channel that are associated with the donation campaign."
+          },
+          "presentCardTimeoutMs": {
+            "type": "integer",
+            "description": "The time, in milliseconds, that the terminal waits for the shopper to present their card.",
+            "format": "int64"
+          },
+          "promptTimeoutMs": {
+            "type": "integer",
+            "description": "The time, in milliseconds, that the terminal waits for the shopper to respond to the text asking for a donation.",
+            "format": "int64"
+          },
+          "storeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign."
+          }
+        }
+      },
+      "InPersonDonationSettingsUpdate": {
+        "type": "object",
+        "properties": {
+          "defaultAmount": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DonationAmountUpdate"
+              }
+            ],
+            "description": "The default amount for donations.",
+            "nullable": true
+          },
+          "displayTextField": {
+            "$ref": "#/components/schemas/DisplayTextField"
+          },
+          "donationFlow": {
+            "$ref": "#/components/schemas/DonationFlow"
+          },
+          "donationType": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DonationType"
+              }
+            ],
+            "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.",
+            "nullable": true
+          },
+          "merchantAccounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The merchant accounts for this sales channel that are associated with the donation campaign.",
+            "nullable": true
+          },
+          "presentCardTimeoutMs": {
+            "type": "integer",
+            "description": "Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.",
+            "format": "int64",
+            "nullable": true
+          },
+          "promptTimeoutMs": {
+            "type": "integer",
+            "description": "The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.",
+            "format": "int64",
+            "nullable": true
+          },
+          "storeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign.",
+            "nullable": true
+          }
+        }
+      },
+      "ListDonationCampaignsResponse": {
+        "required": [
+          "itemsTotal",
+          "pagesTotal"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/PaginationLinks"
+          },
+          "campaigns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ManagementService_v3_DonationCampaign"
+            },
+            "description": "The list of donation campaigns."
+          },
+          "itemsTotal": {
+            "type": "integer",
+            "description": "Total number of items.",
+            "format": "int32"
+          },
+          "pagesTotal": {
+            "type": "integer",
+            "description": "Total number of pages.",
+            "format": "int32"
+          }
+        }
+      },
+      "ListNonprofitsRequest": {
+        "required": [
+          "accountHolderIds"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderIds": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The unique identifiers of the account holders to be included in a donation campaign."
+          }
+        }
+      },
+      "ListNonprofitsResponse": {
+        "required": [
+          "itemsTotal",
+          "pagesTotal"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/PaginationLinks"
+          },
+          "itemsTotal": {
+            "type": "integer",
+            "description": "Total number of items.",
+            "format": "int32"
+          },
+          "nonprofits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Nonprofit"
+            },
+            "description": "The supported nonprofit organizations."
+          },
+          "pagesTotal": {
+            "type": "integer",
+            "description": "Total number of pages.",
+            "format": "int32"
+          }
+        }
+      },
+      "Nonprofit": {
+        "required": [
+          "causes",
+          "description",
+          "goals",
+          "locales",
+          "logoUrl",
+          "name",
+          "regions",
+          "termsAndConditionsUrl",
+          "website"
+        ],
+        "type": "object",
+        "properties": {
+          "causes": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NonprofitCause"
+            },
+            "description": "The causes that the nonprofit supports."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the nonprofit."
+          },
+          "goals": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The goals of the nonprofit."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the nonprofit organization. This value is generated by Adyen."
+          },
+          "locales": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The locales that the nonprofit supports, in [IETF BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) format."
+          },
+          "logoUrl": {
+            "type": "string",
+            "description": "The URL to the logo of the nonprofit."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the nonprofit."
+          },
+          "regions": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The regions where the nonprofit operates, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format."
+          },
+          "termsAndConditionsUrl": {
+            "type": "string",
+            "description": "The URL to the terms and conditions of the nonprofit."
+          },
+          "website": {
+            "type": "string",
+            "description": "The URL to the website of the nonprofit."
+          }
+        }
+      },
+      "NonprofitCause": {
+        "required": [
+          "bannerUrl",
+          "description",
+          "locales",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "bannerUrl": {
+            "type": "string",
+            "description": "The URL to the banner of the cause."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the cause."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the cause. This value is generated by Adyen."
+          },
+          "locales": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The locales that the cause supports, in [IETF BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) format."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the cause."
+          }
+        }
+      },
+      "OnlineDonationSettings": {
+        "type": "object",
+        "properties": {
+          "defaultAmount": {
+            "$ref": "#/components/schemas/DonationAmount"
+          },
+          "donationType": {
+            "$ref": "#/components/schemas/DonationType"
+          },
+          "merchantAccounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The merchant accounts for this sales channel that are associated with the donation campaign."
+          },
+          "storeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign."
+          }
+        }
+      },
+      "OnlineDonationSettingsResponse": {
+        "type": "object",
+        "properties": {
+          "amounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DonationAmount"
+            },
+            "description": "The currency and fixed amounts for donations. We automatically add calculated amounts in other currencies for participating stores that use a different currency than the default."
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "The currency that was used in the request to set fixed donation amounts. Format: three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes)."
+          },
+          "donationType": {
+            "$ref": "#/components/schemas/DonationType"
+          },
+          "merchantAccounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The merchant accounts for this sales channel that are associated with the donation campaign."
+          },
+          "storeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign."
+          }
+        }
+      },
+      "OnlineDonationSettingsUpdate": {
+        "type": "object",
+        "properties": {
+          "defaultAmount": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DonationAmountUpdate"
+              }
+            ],
+            "description": "The default amount for donations.",
+            "nullable": true
+          },
+          "donationType": {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DonationType"
+              }
+            ],
+            "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.",
+            "nullable": true
+          },
+          "merchantAccounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The merchant accounts for this sales channel that are associated with the donation campaign.",
+            "nullable": true
+          },
+          "storeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign.",
+            "nullable": true
+          }
+        }
       },
       "AccountCloseNotification": {
         "required": [
@@ -143695,7 +145208,7 @@
               "name": "Receipt Roll",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -143703,7 +145216,7 @@
               "name": "Adyen Test Card",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -143711,7 +145224,7 @@
               "name": "Battery - V400m",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -143719,7 +145232,7 @@
               "name": "Bluetooth Charging Base - V400m",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -143727,7 +145240,7 @@
               "name": "Power Supply EU - V400m",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -143736,7 +145249,7 @@
               "description": "Includes an EU Power Supply, SIM Card and battery",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               },
               "itemsIncluded": [
                 "Receipt Roll",
@@ -145306,7 +146819,7 @@
               "name": "Receipt Roll",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -145314,7 +146827,7 @@
               "name": "Adyen Test Card",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -145322,7 +146835,7 @@
               "name": "Battery - V400m",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -145330,7 +146843,7 @@
               "name": "Bluetooth Charging Base - V400m",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -145338,7 +146851,7 @@
               "name": "Power Supply EU - V400m",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               }
             },
             {
@@ -145347,7 +146860,7 @@
               "description": "Includes an EU Power Supply, SIM Card and battery",
               "price": {
                 "currency": "EUR",
-                "value": 0.00
+                "value": 0.0
               },
               "itemsIncluded": [
                 "Receipt Roll",
@@ -155965,6 +157478,9 @@
     },
     {
       "name": "Split configuration - merchant level"
+    },
+    {
+      "name": "Donation campaigns"
     },
     {
       "name": "Fund management"

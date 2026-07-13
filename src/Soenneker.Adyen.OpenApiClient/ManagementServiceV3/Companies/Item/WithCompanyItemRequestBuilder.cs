@@ -7,7 +7,9 @@ using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.AndroidAp
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.AndroidCertificates;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ApiCredentials;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.BillingEntities;
+using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Merchants;
+using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Nonprofits;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ShippingLocations;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalActions;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalLogos;
@@ -51,10 +53,20 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item
         {
             get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.BillingEntities.BillingEntitiesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The campaignManagement property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement.CampaignManagementRequestBuilder CampaignManagement
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement.CampaignManagementRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The merchants property</summary>
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Merchants.MerchantsRequestBuilder Merchants
         {
             get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Merchants.MerchantsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The nonprofits property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Nonprofits.NonprofitsRequestBuilder Nonprofits
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Nonprofits.NonprofitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The shippingLocations property</summary>
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ShippingLocations.ShippingLocationsRequestBuilder ShippingLocations

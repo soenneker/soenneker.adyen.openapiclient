@@ -62,6 +62,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo ApplePay { get; set; }
 #endif
+        /// <summary>Payment methods that were also updated as part of an associated transition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AssociatedPaymentMethod>? AssociatedPaymentMethods { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AssociatedPaymentMethod> AssociatedPaymentMethods { get; set; }
+#endif
         /// <summary>The bcmc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -475,6 +483,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "allowed", n => { Allowed = n.GetBoolValue(); } },
                 { "amex", n => { Amex = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo.CreateFromDiscriminatorValue); } },
                 { "applePay", n => { ApplePay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo.CreateFromDiscriminatorValue); } },
+                { "associatedPaymentMethods", n => { AssociatedPaymentMethods = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AssociatedPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.AssociatedPaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bcmc", n => { Bcmc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo.CreateFromDiscriminatorValue); } },
                 { "businessLineId", n => { BusinessLineId = n.GetStringValue(); } },
                 { "carnet", n => { Carnet = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo.CreateFromDiscriminatorValue); } },
@@ -541,6 +550,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("allowed", Allowed);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexResponseInfo>("amex", Amex);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayResponseInfo>("applePay", ApplePay);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AssociatedPaymentMethod>("associatedPaymentMethods", AssociatedPaymentMethods);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfo>("bcmc", Bcmc);
             writer.WriteStringValue("businessLineId", BusinessLineId);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarnetResponseInfo>("carnet", Carnet);

@@ -22,6 +22,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration> Configurations { get; set; }
 #endif
+        /// <summary>Show the maximum surcharge rate to the shopper on the present card screen before they tap.</summary>
+        public bool? DisclosureOnPresentCard { get; set; }
         /// <summary>Exclude the tip amount from the surcharge calculation.</summary>
         public bool? ExcludeGratuityFromSurcharge { get; set; }
         /// <summary>
@@ -44,6 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "askConfirmation", n => { AskConfirmation = n.GetBoolValue(); } },
                 { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Configuration>(global::Soenneker.Adyen.OpenApiClient.Models.Configuration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "disclosureOnPresentCard", n => { DisclosureOnPresentCard = n.GetBoolValue(); } },
                 { "excludeGratuityFromSurcharge", n => { ExcludeGratuityFromSurcharge = n.GetBoolValue(); } },
             };
         }
@@ -56,6 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("askConfirmation", AskConfirmation);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Configuration>("configurations", Configurations);
+            writer.WriteBoolValue("disclosureOnPresentCard", DisclosureOnPresentCard);
             writer.WriteBoolValue("excludeGratuityFromSurcharge", ExcludeGratuityFromSurcharge);
         }
     }

@@ -71,27 +71,27 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails();
-            if("ForceRebootDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ForceReboot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ForceRebootDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ForceRebootDetails();
             }
-            else if("InstallAndroidAppDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("InstallAndroidApp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InstallAndroidAppDetails = new global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidAppDetails();
             }
-            else if("InstallAndroidCertificateDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("InstallAndroidCertificate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InstallAndroidCertificateDetails = new global::Soenneker.Adyen.OpenApiClient.Models.InstallAndroidCertificateDetails();
             }
-            else if("ReleaseUpdateDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ReleaseUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ReleaseUpdateDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails();
             }
-            else if("UninstallAndroidAppDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UninstallAndroidApp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UninstallAndroidAppDetails = new global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails();
             }
-            else if("UninstallAndroidCertificateDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UninstallAndroidCertificate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UninstallAndroidCertificateDetails = new global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidCertificateDetails();
             }
