@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount Amount { get; set; }
 #endif
-        /// <summary>The type of load you are trying to do, when absent we default to &apos;Load&apos;</summary>
+        /// <summary>The type of load you are trying to do, when absent we default to &apos;load&apos;</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueLoadRequestLoadType? LoadType { get; set; }
         /// <summary>The merchant account identifier, with which you want to process the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

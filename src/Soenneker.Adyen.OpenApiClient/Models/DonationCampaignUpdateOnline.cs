@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper2? DonationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType? DonationType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper2 DonationType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType DonationType { get; set; }
 #endif
         /// <summary>The merchant accounts for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "defaultAmount", n => { DefaultAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDefaultAmount>(global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDefaultAmount.CreateFromDiscriminatorValue); } },
-                { "donationType", n => { DonationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper2>(global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper2.CreateFromDiscriminatorValue); } },
+                { "donationType", n => { DonationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType>(global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType.CreateFromDiscriminatorValue); } },
                 { "merchantAccounts", n => { MerchantAccounts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "storeIds", n => { StoreIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDefaultAmount>("defaultAmount", DefaultAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper2>("donationType", DonationType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType>("donationType", DonationType);
             writer.WriteCollectionOfPrimitiveValues<string>("merchantAccounts", MerchantAccounts);
             writer.WriteCollectionOfPrimitiveValues<string>("storeIds", StoreIds);
             writer.WriteStringValue("type", Type);

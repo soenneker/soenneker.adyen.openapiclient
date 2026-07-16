@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The type of load you are trying to do, when absent we default to &apos;Load&apos;</summary>
+    /// <summary>The type of load you are trying to do, when absent we default to &apos;load&apos;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum StoredValueLoadRequestLoadType
     {

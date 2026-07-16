@@ -62522,8 +62522,7 @@
             ],
             "type": "string",
             "description": "Business accounts with a `formFactor` value of **physical** are business accounts issued under the central bank of that country. The default value is **physical** for NL, US, and UK business accounts. \n\nAdyen creates a local IBAN for business accounts when the `formFactor` value is set to **virtual**. The local IBANs that are supported are for DE and FR, which reference a physical NL account, with funds being routed through the central bank of NL.",
-            "default": "physical",
-            "nullable": true
+            "default": "physical"
           }
         },
         "additionalProperties": false
@@ -82219,8 +82218,7 @@
               "OTHER"
             ],
             "type": "string",
-            "description": "The reason for the refund request.\n\nPossible values:\n\n* **FRAUD**\n\n* **CUSTOMER REQUEST**\n\n* **RETURN**\n\n* **DUPLICATE**\n\n* **OTHER**\n\n",
-            "nullable": true
+            "description": "The reason for the refund request.\n\nPossible values:\n\n* **FRAUD**\n\n* **CUSTOMER REQUEST**\n\n* **RETURN**\n\n* **DUPLICATE**\n\n* **OTHER**\n\n"
           },
           "reference": {
             "type": "string",
@@ -82277,8 +82275,7 @@
               "OTHER"
             ],
             "type": "string",
-            "description": "Your reason for the refund request.",
-            "nullable": true
+            "description": "Your reason for the refund request."
           },
           "paymentPspReference": {
             "type": "string",
@@ -90926,7 +90923,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the organization or legal arrangement does not have a `Doing business as` name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "economicSector": {
@@ -91005,7 +91001,6 @@
           "registrationNumberAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the organization does not have a registration number available. Only applicable for organizations in New Zealand, and incorporated partnerships and government organizations in Australia.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "statusOfLegalProceeding": {
@@ -91325,7 +91320,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the legal arrangement does not have a `Doing business as` name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "financialReports": {
@@ -91353,7 +91347,6 @@
           "taxAbsent": {
             "type": "boolean",
             "description": "The tax information is absent.",
-            "nullable": true,
             "x-addedInVersion": "2"
           },
           "taxInformation": {
@@ -91780,7 +91773,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the legal arrangement does not have a `Doing business as` name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "name": {
@@ -91968,7 +91960,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the legal arrangement does not have a `Doing business as` name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "name": {
@@ -96546,8 +96537,7 @@
               "Card"
             ],
             "type": "string",
-            "description": "Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.",
-            "nullable": true
+            "description": "Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options."
           }
         },
         "additionalProperties": false
@@ -99349,8 +99339,7 @@
             "items": {
               "$ref": "#/components/schemas/Gratuity"
             },
-            "description": "Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip.",
-            "nullable": true
+            "description": "Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip."
           },
           "hardware": {
             "$ref": "#/components/schemas/Hardware"
@@ -101067,10 +101056,10 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/InPersonDonationSettingsUpdate"
-              }
+              },
+              { }
             ],
-            "description": "The settings for in-person donations collected as part of the campaign.",
-            "nullable": true
+            "description": "The settings for in-person donations collected as part of the campaign."
           },
           "name": {
             "minLength": 1,
@@ -101082,10 +101071,10 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/OnlineDonationSettingsUpdate"
-              }
+              },
+              { }
             ],
-            "description": "The settings for online donations collected as part of the campaign.",
-            "nullable": true
+            "description": "The settings for online donations collected as part of the campaign."
           }
         }
       },
@@ -101230,10 +101219,10 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/DonationAmountUpdate"
-              }
+              },
+              { }
             ],
-            "description": "The default amount for donations.",
-            "nullable": true
+            "description": "The default amount for donations."
           },
           "displayTextField": {
             "$ref": "#/components/schemas/DisplayTextField"
@@ -101246,10 +101235,10 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/DonationType"
-              }
+              },
+              { }
             ],
-            "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.",
-            "nullable": true
+            "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount."
           },
           "merchantAccounts": {
             "type": "array",
@@ -101527,20 +101516,20 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/DonationAmountUpdate"
-              }
+              },
+              { }
             ],
-            "description": "The default amount for donations.",
-            "nullable": true
+            "description": "The default amount for donations."
           },
           "donationType": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/DonationType"
-              }
+              },
+              { }
             ],
-            "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.",
-            "nullable": true
+            "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount."
           },
           "merchantAccounts": {
             "type": "array",
@@ -113066,50 +113055,50 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/PatchableDuplicateInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**."
           },
           "fraudInfo": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/PatchableFraudInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**."
           },
           "notDeliveredInfo": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**."
           },
           "otherInfo": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/PatchableOtherInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time."
           },
           "status": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/DisputeStatus"
-              }
+              },
+              { }
             ],
-            "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.",
-            "nullable": true
+            "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**."
           }
         }
       },
@@ -113216,10 +113205,10 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/CancellingEntity"
-              }
+              },
+              { }
             ],
-            "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.",
-            "nullable": true
+            "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**."
           }
         }
       },
@@ -114769,7 +114758,7 @@
               "load"
             ],
             "type": "string",
-            "description": "The type of load you are trying to do, when absent we default to 'Load'"
+            "description": "The type of load you are trying to do, when absent we default to 'load'"
           },
           "merchantAccount": {
             "type": "string",
@@ -119377,18 +119366,15 @@
           },
           "displayLabel": {
             "type": "string",
-            "description": "The label shown on the status bar of the display. This label (if any) is specified in your Customer Area.",
-            "nullable": true
+            "description": "The label shown on the status bar of the display. This label (if any) is specified in your Customer Area."
           },
           "ethernetIp": {
             "type": "string",
-            "description": "The terminal's IP address in your Ethernet network.",
-            "nullable": true
+            "description": "The terminal's IP address in your Ethernet network."
           },
           "ethernetMac": {
             "type": "string",
-            "description": "The terminal's MAC address in your Ethernet network.",
-            "nullable": true
+            "description": "The terminal's MAC address in your Ethernet network."
           },
           "firmwareVersion": {
             "type": "string",
@@ -119396,25 +119382,21 @@
           },
           "iccid": {
             "type": "string",
-            "description": "The integrated circuit card identifier (ICCID) of the SIM card in the terminal.",
-            "nullable": true
+            "description": "The integrated circuit card identifier (ICCID) of the SIM card in the terminal."
           },
           "lastActivityDateTime": {
             "type": "string",
             "description": "Date and time of the last activity on the terminal. Not included when the last activity was more than 14 days ago.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "lastTransactionDateTime": {
             "type": "string",
             "description": "Date and time of the last transaction on the terminal. Not included when the last transaction was more than 14 days ago.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "linkNegotiation": {
             "type": "string",
-            "description": "The Ethernet link negotiation that the terminal uses: \n\n- `auto`: Auto-negotiation\n\n- `100full`: 100 Mbps full duplex",
-            "nullable": true
+            "description": "The Ethernet link negotiation that the terminal uses: \n\n- `auto`: Auto-negotiation\n\n- `100full`: 100 Mbps full duplex"
           },
           "merchantAccount": {
             "type": "string",
@@ -119434,8 +119416,7 @@
           },
           "simStatus": {
             "type": "string",
-            "description": "On a terminal that supports 3G or 4G connectivity, indicates the status of the SIM card in the terminal: ACTIVE or INVENTORY.",
-            "nullable": true
+            "description": "On a terminal that supports 3G or 4G connectivity, indicates the status of the SIM card in the terminal: ACTIVE or INVENTORY."
           },
           "store": {
             "type": "string",
@@ -120267,50 +120248,50 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableDuplicateInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**."
           },
           "fraudInfo": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableFraudInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**."
           },
           "notDeliveredInfo": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableNotDeliveredInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**."
           },
           "otherInfo": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableOtherInfo"
-              }
+              },
+              { }
             ],
-            "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.",
-            "nullable": true
+            "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time."
           },
           "status": {
             "type": "object",
             "oneOf": [
               {
                 "$ref": "#/components/schemas/TransactionService_v4_DisputeStatus"
-              }
+              },
+              { }
             ],
-            "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.",
-            "nullable": true
+            "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**."
           }
         }
       },
@@ -120417,10 +120398,10 @@
             "oneOf": [
               {
                 "$ref": "#/components/schemas/TransactionService_v4_CancellingEntity"
-              }
+              },
+              { }
             ],
-            "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.",
-            "nullable": true
+            "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**."
           }
         }
       },

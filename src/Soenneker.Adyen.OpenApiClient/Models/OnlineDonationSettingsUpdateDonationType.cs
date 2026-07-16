@@ -7,31 +7,32 @@ using System.IO;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>
+    /// &quot;The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.&quot;
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CancellingEntityWrapper : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class OnlineDonationSettingsUpdateDonationType : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity? Value { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationType? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType"/> and sets the default values.
         /// </summary>
-        public CancellingEntityWrapper()
+        public OnlineDonationSettingsUpdateDonationType()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdateDonationType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationType>(); } },
             };
         }
         /// <summary>
@@ -51,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationType>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

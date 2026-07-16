@@ -59,10 +59,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>&quot;The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper? WhoCancelled { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled? WhoCancelled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper WhoCancelled { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled WhoCancelled { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo"/> and sets the default values.
@@ -100,7 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "lastExpectedDate", n => { LastExpectedDate = n.GetDateValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "whatWasNotDelivered", n => { WhatWasNotDelivered = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>(); } },
-                { "whoCancelled", n => { WhoCancelled = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper.CreateFromDiscriminatorValue); } },
+                { "whoCancelled", n => { WhoCancelled = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
             writer.WriteStringValue("type", Type);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>("whatWasNotDelivered", WhatWasNotDelivered);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper>("whoCancelled", WhoCancelled);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled>("whoCancelled", WhoCancelled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

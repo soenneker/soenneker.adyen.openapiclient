@@ -80452,7 +80452,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the organization or legal arrangement does not have a \u0060Doing business as\u0060 name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "economicSector": {
@@ -80510,7 +80509,6 @@
           "registrationNumberAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the organization does not have a registration number available. Only applicable for organizations in New Zealand, and incorporated partnerships and government organizations in Australia.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "statusOfLegalProceeding": {
@@ -80792,7 +80790,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the legal arrangement does not have a \u0060Doing business as\u0060 name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "financialReports": {
@@ -80820,7 +80817,6 @@
           "taxAbsent": {
             "type": "boolean",
             "description": "The tax information is absent.",
-            "nullable": true,
             "x-addedInVersion": "2"
           },
           "taxInformation": {
@@ -81172,7 +81168,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the legal arrangement does not have a \u0060Doing business as\u0060 name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "name": {
@@ -81317,7 +81312,6 @@
           "doingBusinessAsAbsent": {
             "type": "boolean",
             "description": "Set this to **true** if the legal arrangement does not have a \u0060Doing business as\u0060 name.",
-            "nullable": true,
             "x-addedInVersion": "4"
           },
           "name": {
@@ -87680,8 +87674,7 @@
             "items": {
               "$ref": "#/components/schemas/Gratuity"
             },
-            "description": "Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip.",
-            "nullable": true
+            "description": "Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip."
           },
           "hardware": {
             "$ref": "#/components/schemas/Hardware"
@@ -105798,18 +105791,15 @@
           },
           "displayLabel": {
             "type": "string",
-            "description": "The label shown on the status bar of the display. This label (if any) is specified in your Customer Area.",
-            "nullable": true
+            "description": "The label shown on the status bar of the display. This label (if any) is specified in your Customer Area."
           },
           "ethernetIp": {
             "type": "string",
-            "description": "The terminal\u0027s IP address in your Ethernet network.",
-            "nullable": true
+            "description": "The terminal\u0027s IP address in your Ethernet network."
           },
           "ethernetMac": {
             "type": "string",
-            "description": "The terminal\u0027s MAC address in your Ethernet network.",
-            "nullable": true
+            "description": "The terminal\u0027s MAC address in your Ethernet network."
           },
           "firmwareVersion": {
             "type": "string",
@@ -105817,25 +105807,21 @@
           },
           "iccid": {
             "type": "string",
-            "description": "The integrated circuit card identifier (ICCID) of the SIM card in the terminal.",
-            "nullable": true
+            "description": "The integrated circuit card identifier (ICCID) of the SIM card in the terminal."
           },
           "lastActivityDateTime": {
             "type": "string",
             "description": "Date and time of the last activity on the terminal. Not included when the last activity was more than 14 days ago.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "lastTransactionDateTime": {
             "type": "string",
             "description": "Date and time of the last transaction on the terminal. Not included when the last transaction was more than 14 days ago.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "linkNegotiation": {
             "type": "string",
-            "description": "\u0022The Ethernet link negotiation that the terminal uses: \n\n- \u0060auto\u0060: Auto-negotiation\n\n- \u0060100full\u0060: 100 Mbps full duplex\u0022",
-            "nullable": true
+            "description": "\u0022The Ethernet link negotiation that the terminal uses: \n\n- \u0060auto\u0060: Auto-negotiation\n\n- \u0060100full\u0060: 100 Mbps full duplex\u0022"
           },
           "merchantAccount": {
             "type": "string",
@@ -105855,8 +105841,7 @@
           },
           "simStatus": {
             "type": "string",
-            "description": "\u0022On a terminal that supports 3G or 4G connectivity, indicates the status of the SIM card in the terminal: ACTIVE or INVENTORY.\u0022",
-            "nullable": true
+            "description": "\u0022On a terminal that supports 3G or 4G connectivity, indicates the status of the SIM card in the terminal: ACTIVE or INVENTORY.\u0022"
           },
           "store": {
             "type": "string",
@@ -117139,17 +117124,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/InPersonDonationSettingsUpdate"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "The settings for in-person donations collected as part of the campaign.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117165,17 +117151,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/OnlineDonationSettingsUpdate"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "The settings for online donations collected as part of the campaign.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117191,17 +117178,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DonationAmountUpdate"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "The default amount for donations.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117214,10 +117202,12 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DonationTypeWrapper"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "\u0022The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.\u0022",
-        "nullable": true
+        "description": "\u0022The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.\u0022"
       },
       "OnlineDonationSettingsUpdateDefaultAmount": {
         "required": [
@@ -117227,17 +117217,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DonationAmountUpdate"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "The default amount for donations.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117250,10 +117241,12 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DonationTypeWrapper2"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "\u0022The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.\u0022",
-        "nullable": true
+        "description": "\u0022The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.\u0022"
       },
       "PatchableDisputeRequestDuplicateInfo": {
         "required": [
@@ -117263,17 +117256,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PatchableDuplicateInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **duplicate**. Required for disputes of \u0060type\u0060 **duplicate**.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117289,17 +117283,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PatchableFraudInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **fraud**. Required for disputes of \u0060type\u0060 **fraud**.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117315,17 +117310,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **notDelivered**. Required for disputes of \u0060type\u0060 **notDelivered**.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117341,17 +117337,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PatchableOtherInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **other**. Required for disputes of \u0060type\u0060 **other**.\n\n**Note:** The **other** dispute \u0060type\u0060 is currently in beta testing. Do not create or submit any disputes for this dispute \u0060type\u0060 at this time.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117364,20 +117361,24 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DisputeStatusWrapper"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "\u0022The current status of the dispute.\n\nWhen you create a dispute, you can only set the \u0060status\u0060 to **draft**. When you update a dispute, you can set the \u0060status\u0060 to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\u0022",
-        "nullable": true
+        "description": "\u0022The current status of the dispute.\n\nWhen you create a dispute, you can only set the \u0060status\u0060 to **draft**. When you update a dispute, you can set the \u0060status\u0060 to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\u0022"
       },
       "PatchableNotDeliveredInfoWhoCancelled": {
         "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CancellingEntityWrapper"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "\u0022The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\u0022",
-        "nullable": true
+        "description": "\u0022The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\u0022"
       },
       "AccountHolderResourceAllOf2": {
         "type": "object",
@@ -117416,17 +117417,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransactionServiceV4PatchableDuplicateInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **duplicate**. Required for disputes of \u0060type\u0060 **duplicate**.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117442,17 +117444,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransactionServiceV4PatchableFraudInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **fraud**. Required for disputes of \u0060type\u0060 **fraud**.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117468,17 +117471,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransactionServiceV4PatchableNotDeliveredInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **notDelivered**. Required for disputes of \u0060type\u0060 **notDelivered**.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117494,17 +117498,18 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransactionServiceV4PatchableOtherInfo"
+          },
+          {
+            "type": "object"
           }
         ],
         "properties": {
           "type": {
-            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
         },
         "description": "Additional information for raising a dispute of \u0060type\u0060 **other**. Required for disputes of \u0060type\u0060 **other**.\n\n**Note:** The **other** dispute \u0060type\u0060 is currently in beta testing. Do not create or submit any disputes for this dispute \u0060type\u0060 at this time.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -117517,20 +117522,24 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransactionServiceV4DisputeStatusWrapper"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "\u0022The current status of the dispute.\n\nWhen you create a dispute, you can only set the \u0060status\u0060 to **draft**. When you update a dispute, you can set the \u0060status\u0060 to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\u0022",
-        "nullable": true
+        "description": "\u0022The current status of the dispute.\n\nWhen you create a dispute, you can only set the \u0060status\u0060 to **draft**. When you update a dispute, you can set the \u0060status\u0060 to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\u0022"
       },
       "TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled": {
         "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransactionServiceV4CancellingEntityWrapper"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "\u0022The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\u0022",
-        "nullable": true
+        "description": "\u0022The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\u0022"
       },
       "TransferServiceV4BankAccountV3AccountIdentification": {
         "required": [
@@ -128700,7 +128709,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Business accounts with a \u0060formFactor\u0060 value of **physical** are business accounts issued under the central bank of that country. The default value is **physical** for NL, US, and UK business accounts. \n\nAdyen creates a local IBAN for business accounts when the \u0060formFactor\u0060 value is set to **virtual**. The local IBANs that are supported are for DE and FR, which reference a physical NL account, with funds being routed through the central bank of NL.",
-        "nullable": true,
         "x-ms-enum": {
           "name": "BankAccountModelFormFactor",
           "modelAsString": false,
@@ -140679,7 +140687,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "The reason for the refund request.\n\nPossible values:\n\n* **FRAUD**\n\n* **CUSTOMER REQUEST**\n\n* **RETURN**\n\n* **DUPLICATE**\n\n* **OTHER**\n\n",
-        "nullable": true,
         "x-ms-enum": {
           "name": "PaymentRefundRequestMerchantRefundReason",
           "modelAsString": false,
@@ -140718,7 +140725,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Your reason for the refund request.",
-        "nullable": true,
         "x-ms-enum": {
           "name": "PaymentRefundResponseMerchantRefundReason",
           "modelAsString": false,
@@ -148702,8 +148708,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.\u0022",
-        "nullable": true
+        "description": "\u0022Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.\u0022"
       },
       "ManagementServiceV3PaymentMethodVerificationStatus": {
         "enum": [
@@ -156812,7 +156817,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The type of load you are trying to do, when absent we default to \u0027Load\u0027",
+        "description": "The type of load you are trying to do, when absent we default to \u0027load\u0027",
         "x-ms-enum": {
           "name": "StoredValueLoadRequestLoadType",
           "modelAsString": false,
