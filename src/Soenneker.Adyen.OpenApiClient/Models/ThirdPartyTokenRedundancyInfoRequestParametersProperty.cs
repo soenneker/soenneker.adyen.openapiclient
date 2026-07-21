@@ -7,32 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>
+    /// Request-specific parameter values to populate the template placeholders. Each key must match a placeholder defined in the template referenced by `requestTemplateCode`.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CardBrandDetails : IParsable
-    #pragma warning restore CS1591
+    public partial class ThirdPartyTokenRedundancyInfoRequestParametersProperty : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Indicates if the card supports FSA/HSA healthcare payments.</summary>
-        public bool? Healthcare { get; set; }
-        /// <summary>Indicates if you support the card brand.</summary>
-        public bool? Supported { get; set; }
-        /// <summary>The name of the card brand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty"/> and sets the default values.
+        /// </summary>
+        public ThirdPartyTokenRedundancyInfoRequestParametersProperty()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,9 +40,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "healthcare", n => { Healthcare = n.GetBoolValue(); } },
-                { "supported", n => { Supported = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -54,9 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("healthcare", Healthcare);
-            writer.WriteBoolValue("supported", Supported);
-            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

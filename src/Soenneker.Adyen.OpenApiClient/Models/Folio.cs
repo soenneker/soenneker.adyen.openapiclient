@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -10,20 +9,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Ticket : IParsable
+    public partial class Folio : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The address of the organization that issued the ticket.* minLength: 0 characters* maxLength: 16 characters* **additionalData key:** `airline.ticket_issue_address`&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IssueAddress { get; set; }
-#nullable restore
-#else
-        public string IssueAddress { get; set; }
-#endif
-        /// <summary>&quot;The date that the ticket was issued to the passenger.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `airline.issue_date`&quot;</summary>
-        public Date? IssueDate { get; set; }
-        /// <summary>&quot;The ticket&apos;s unique identifier.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.ticket_number`&quot;</summary>
+        /// <summary>&quot;The folio cash advances, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.folioCashAdvances`&quot;</summary>
+        public long? CashAdvances { get; set; }
+        /// <summary>&quot;The card acceptor&apos;s internal invoice or billing ID reference number.* Format: Alphanumeric* Must not start with a space* Must not contain any special characters* Must not be all zeros.* **additionalData key:** `lodging.folioNumber`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -34,12 +25,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Ticket"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Folio"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.Ticket CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.Folio CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.Ticket();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.Folio();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "issueAddress", n => { IssueAddress = n.GetStringValue(); } },
-                { "issueDate", n => { IssueDate = n.GetDateValue(); } },
+                { "cashAdvances", n => { CashAdvances = n.GetLongValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
             };
         }
@@ -61,8 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("issueAddress", IssueAddress);
-            writer.WriteDateValue("issueDate", IssueDate);
+            writer.WriteLongValue("cashAdvances", CashAdvances);
             writer.WriteStringValue("number", Number);
         }
     }

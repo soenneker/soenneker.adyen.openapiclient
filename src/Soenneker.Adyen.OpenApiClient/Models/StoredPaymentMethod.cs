@@ -60,6 +60,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ExpiryYear { get; set; }
 #endif
+        /// <summary>The token issued by an external tokenization service representing the shopper&apos;s payment method</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalToken { get; set; }
+#nullable restore
+#else
+        public string ExternalToken { get; set; }
+#endif
         /// <summary>The name of the payment method holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -180,6 +188,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "cashtag", n => { Cashtag = n.GetStringValue(); } },
                 { "expiryMonth", n => { ExpiryMonth = n.GetStringValue(); } },
                 { "expiryYear", n => { ExpiryYear = n.GetStringValue(); } },
+                { "externalToken", n => { ExternalToken = n.GetStringValue(); } },
                 { "holderName", n => { HolderName = n.GetStringValue(); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -207,6 +216,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("cashtag", Cashtag);
             writer.WriteStringValue("expiryMonth", ExpiryMonth);
             writer.WriteStringValue("expiryYear", ExpiryYear);
+            writer.WriteStringValue("externalToken", ExternalToken);
             writer.WriteStringValue("holderName", HolderName);
             writer.WriteStringValue("iban", Iban);
             writer.WriteStringValue("id", Id);

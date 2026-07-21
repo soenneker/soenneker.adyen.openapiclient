@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -9,10 +10,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Destination : IParsable
+    public partial class PickupInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or three-letter [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) for the destination address.* Encoding: ASCII* Min length: 2 characters* Max length: 3 characters* **additionalData key:** `enhancedSchemeData.destinationCountryCode`&quot;</summary>
+        /// <summary>&quot;The city where the car is rented.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.locationCity`&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? City { get; set; }
+#nullable restore
+#else
+        public string City { get; set; }
+#endif
+        /// <summary>&quot;The country where the car is rented, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.* maxLength: 2 characters* **additionalData key:** `carRental.locationCountry`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -20,15 +29,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>&quot;The postal code of the destination address.* Encoding: ASCII* Max length: 10 characters* Must not start with a space.* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.* For Canada, it must be in 6 digits format. For example, M4B 1G5.* **additionalData key:** `enhancedSchemeData.destinationPostalCode`&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PostalCode { get; set; }
-#nullable restore
-#else
-        public string PostalCode { get; set; }
-#endif
-        /// <summary>&quot;The state or province code of the destination address.* Encoding: ASCII* Max length: 3 characters* Must not start with a space.* **additionalData key:** `enhancedSchemeData.destinationStateProvinceCode`&quot;</summary>
+        /// <summary>&quot;The pick-up date.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `carRental.checkOutDate`&quot;</summary>
+        public Date? Date { get; set; }
+        /// <summary>&quot;The state or province where the car is rented.* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.locationStateProvince`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StateOrProvince { get; set; }
@@ -39,12 +42,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Destination"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.Destination CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.Destination();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,8 +57,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "city", n => { City = n.GetStringValue(); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
-                { "postalCode", n => { PostalCode = n.GetStringValue(); } },
+                { "date", n => { Date = n.GetDateValue(); } },
                 { "stateOrProvince", n => { StateOrProvince = n.GetStringValue(); } },
             };
         }
@@ -66,8 +70,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("city", City);
             writer.WriteStringValue("countryCode", CountryCode);
-            writer.WriteStringValue("postalCode", PostalCode);
+            writer.WriteDateValue("date", Date);
             writer.WriteStringValue("stateOrProvince", StateOrProvince);
         }
     }

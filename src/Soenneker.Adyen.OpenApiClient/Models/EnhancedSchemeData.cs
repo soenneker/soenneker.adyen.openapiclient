@@ -20,6 +20,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Airline Airline { get; set; }
 #endif
+        /// <summary>The carRental property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarRental? CarRental { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarRental CarRental { get; set; }
+#endif
+        /// <summary>The healthcare property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.Healthcare? Healthcare { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.Healthcare Healthcare { get; set; }
+#endif
         /// <summary>The levelTwoThree property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +43,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.LevelTwoThree LevelTwoThree { get; set; }
+#endif
+        /// <summary>The lodging property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Lodging? Lodging { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Lodging Lodging { get; set; }
+#endif
+        /// <summary>The temporaryServices property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TemporaryServices? TemporaryServices { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TemporaryServices TemporaryServices { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +79,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "airline", n => { Airline = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Airline>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Airline.CreateFromDiscriminatorValue); } },
+                { "carRental", n => { CarRental = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarRental>(global::Soenneker.Adyen.OpenApiClient.Models.CarRental.CreateFromDiscriminatorValue); } },
+                { "healthcare", n => { Healthcare = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Healthcare>(global::Soenneker.Adyen.OpenApiClient.Models.Healthcare.CreateFromDiscriminatorValue); } },
                 { "levelTwoThree", n => { LevelTwoThree = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LevelTwoThree>(global::Soenneker.Adyen.OpenApiClient.Models.LevelTwoThree.CreateFromDiscriminatorValue); } },
+                { "lodging", n => { Lodging = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Lodging>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Lodging.CreateFromDiscriminatorValue); } },
+                { "temporaryServices", n => { TemporaryServices = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TemporaryServices>(global::Soenneker.Adyen.OpenApiClient.Models.TemporaryServices.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +94,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Airline>("airline", Airline);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CarRental>("carRental", CarRental);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Healthcare>("healthcare", Healthcare);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LevelTwoThree>("levelTwoThree", LevelTwoThree);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Lodging>("lodging", Lodging);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TemporaryServices>("temporaryServices", TemporaryServices);
         }
     }
 }

@@ -40,11 +40,11 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ValidateShopperId
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ValidateShopperIdResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ValidateShopperIdRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,11 +58,11 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ValidateShopperId
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Adyen.OpenApiClient.Models.CheckoutErrorResponseEntity.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ValidateShopperIdResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ValidateShopperIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

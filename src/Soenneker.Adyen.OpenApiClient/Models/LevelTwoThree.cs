@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class LevelTwoThree : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The reference number to identify the customer and their order.* Format: ASCII* Max length: 25 characters* Must not start with a space or be all spaces.* Must not be all zeros.&quot;</summary>
+        /// <summary>&quot;The reference number to identify the customer and their order.* Format: ASCII* Max length: 25 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.customerReference`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerReferenceNumber { get; set; }
@@ -29,9 +29,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.Destination Destination { get; set; }
 #endif
-        /// <summary>&quot;The duty tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>&quot;The duty tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.dutyAmount`&quot;</summary>
         public long? DutyAmount { get; set; }
-        /// <summary>&quot;The shipping amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>&quot;The shipping amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.freightAmount`&quot;</summary>
         public long? FreightAmount { get; set; }
         /// <summary>The list of item detail lines.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,9 +41,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemDetailLine> ItemDetailLines { get; set; }
 #endif
-        /// <summary>&quot;The date of the order.* Min Length: 10 characters* Max Length: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd&quot;</summary>
+        /// <summary>&quot;The date of the order.* Min Length: 10 characters* Max Length: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.orderDate`&quot;</summary>
         public Date? OrderDate { get; set; }
-        /// <summary>&quot;The postal code of the address where the item is shipped from.* Encoding: ASCII* Max length: 10 characters* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.* For Canada, it must be in 6 digits format. For example, M4B 1G5.&quot;</summary>
+        /// <summary>&quot;The postal code of the address where the item is shipped from.* Encoding: ASCII* Max length: 10 characters* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.* For Canada, it must be in 6 digits format. For example, M4B 1G5.* **additionalData key:** `enhancedSchemeData.shipFromPostalCode`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipFromPostalCode { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShipFromPostalCode { get; set; }
 #endif
-        /// <summary>&quot;The amount of state or provincial [tax included in the total transaction amount](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/l2-l3#requirements-to-send-level-2-3-esd), in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* For L2 data: must not be all zeroes. * For L3 data: can be zero.&quot;</summary>
+        /// <summary>&quot;The amount of state or provincial [tax included in the total transaction amount](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/l2-l3#requirements-to-send-level-2-3-esd), in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* For L2 data: must not be all zeroes. * For L3 data: can be zero.* **additionalData key:** `enhancedSchemeData.totalTaxAmount`&quot;</summary>
         public long? TotalTaxAmount { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -489,6 +489,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TelephoneNumber { get; set; }
 #endif
+        /// <summary>The thirdPartyTokenRedundancyInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo? ThirdPartyTokenRedundancyInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo ThirdPartyTokenRedundancyInfo { get; set; }
+#endif
         /// <summary>The threeDS2RequestData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -597,6 +605,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "subMerchants", n => { SubMerchants = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Surcharge>(global::Soenneker.Adyen.OpenApiClient.Models.Surcharge.CreateFromDiscriminatorValue); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
+                { "thirdPartyTokenRedundancyInfo", n => { ThirdPartyTokenRedundancyInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo.CreateFromDiscriminatorValue); } },
                 { "threeDS2RequestData", n => { ThreeDS2RequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields.CreateFromDiscriminatorValue); } },
                 { "threeDSAuthenticationOnly", n => { ThreeDSAuthenticationOnly = n.GetBoolValue(); } },
                 { "trustedShopper", n => { TrustedShopper = n.GetBoolValue(); } },
@@ -679,6 +688,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>("subMerchants", SubMerchants);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Surcharge>("surcharge", Surcharge);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo>("thirdPartyTokenRedundancyInfo", ThirdPartyTokenRedundancyInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>("threeDS2RequestData", ThreeDS2RequestData);
             writer.WriteBoolValue("threeDSAuthenticationOnly", ThreeDSAuthenticationOnly);
             writer.WriteBoolValue("trustedShopper", TrustedShopper);

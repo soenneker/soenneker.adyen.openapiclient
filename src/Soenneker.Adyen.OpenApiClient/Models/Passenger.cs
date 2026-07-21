@@ -13,9 +13,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Passenger : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The passenger&apos;s date of birth.* Format `yyyy-MM-dd`* minLength: 10* maxLength: 10&quot;</summary>
+        /// <summary>&quot;The passenger&apos;s date of birth.* Format `yyyy-MM-dd`* minLength: 10* maxLength: 10* **additionalData key:** `airline.passenger[N].date_of_birth`&quot;</summary>
         public Date? DateOfBirth { get; set; }
-        /// <summary>&quot;The passenger&apos;s first name.&gt; This field is required if the airline data includes passenger details or leg details.* Encoding: ASCII&quot;</summary>
+        /// <summary>&quot;The passenger&apos;s first name.&gt; This field is required if the airline data includes passenger details or leg details.* Encoding: ASCII* **additionalData key:** `airline.passenger[N].first_name`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>&quot;The passenger&apos;s last name.&gt; This field is required if the airline data includes passenger details or leg details.* Encoding: ASCII&quot;</summary>
+        /// <summary>&quot;The passenger&apos;s last name.&gt; This field is required if the airline data includes passenger details or leg details.* Encoding: ASCII* **additionalData key:** `airline.passenger[N].last_name`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>&quot;The passenger&apos;s phone number, including country code. This is an alphanumeric field that can include the &apos;+&apos; and &apos;-&apos; signs.* Encoding: ASCII* minLength: 3 characters* maxLength: 30 characters&quot;</summary>
+        /// <summary>&quot;The passenger&apos;s phone number, including country code. This is an alphanumeric field that can include the &apos;+&apos; and &apos;-&apos; signs.* Encoding: ASCII* minLength: 3 characters* maxLength: 30 characters* **additionalData key:** `airline.passenger[N].phone_number`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The IATA passenger type code (PTC).* Encoding: ASCII* minLength: 3 characters* maxLength: 6 characters&quot;</summary>
+        /// <summary>&quot;The IATA passenger type code (PTC).* Encoding: ASCII* minLength: 3 characters* maxLength: 6 characters* **additionalData key:** `airline.passenger[N].traveller_type`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TravellerType { get; set; }

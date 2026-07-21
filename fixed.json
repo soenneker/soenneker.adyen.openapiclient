@@ -18308,7 +18308,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CheckoutServiceV72DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
                 }
               }
             }
@@ -18318,7 +18318,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CheckoutServiceV72DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
                 }
               }
             }
@@ -18328,7 +18328,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CheckoutServiceV72DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
                 }
               }
             }
@@ -18338,7 +18338,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CheckoutServiceV72DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
                 }
               }
             }
@@ -18348,7 +18348,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CheckoutServiceV72DefaultErrorResponseEntity"
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
                 }
               }
             }
@@ -67123,11 +67123,11 @@
         "properties": {
           "invoiceNumber": {
             "type": "string",
-            "description": "\u0022The reference number for the invoice, issued by the agency.\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 6 characters\u0022"
+            "description": "\u0022The reference number for the invoice, issued by the agency.\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 6 characters\n* **additionalData key:** \u0060airline.agency_invoice_number\u0060\u0022"
           },
           "planName": {
             "type": "string",
-            "description": "\u0022The two-letter agency plan identifier.\n* Encoding: ASCII\n* minLength: 2 characters\n* maxLength: 2 characters\u0022"
+            "description": "\u0022The two-letter agency plan identifier.\n* Encoding: ASCII\n* minLength: 2 characters\n* maxLength: 2 characters\n* **additionalData key:** \u0060airline.agency_plan_name\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -67143,32 +67143,32 @@
           },
           "boardingFee": {
             "type": "integer",
-            "description": "\u0022The amount charged for boarding the plane, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* Encoding: Numeric\n* minLength: 1 character\n* maxLength: 11 characters\u0022",
+            "description": "\u0022The amount charged for boarding the plane, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* Encoding: Numeric\n* minLength: 1 character\n* maxLength: 11 characters\n* **additionalData key:** \u0060airline.boarding_fee\u0060\u0022",
             "format": "int64"
           },
           "code": {
             "type": "string",
-            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-digit accounting code (PAX) that identifies the carrier.\n* Format: IATA 3-digit accounting code (PAX)\n* Example: KLM = 074\n* minLength: 3 characters\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-digit accounting code (PAX) that identifies the carrier.\n* Format: IATA 3-digit accounting code (PAX)\n* Example: KLM = 074\n* minLength: 3 characters\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.airline_code\u0060\u0022"
           },
           "computerizedReservationSystem": {
             "type": "string",
-            "description": "\u0022The [CRS](https://en.wikipedia.org/wiki/Computer_reservation_system) used to make the reservation and purchase the ticket.\n* Encoding: ASCII\n* minLength: 4 characters\n* maxLength: 4 characters\u0022"
+            "description": "\u0022 The [CRS](https://en.wikipedia.org/wiki/Computer_reservation_system) used to make the reservation and purchase the ticket.\n* Encoding: ASCII\n* minLength: 4 characters\n* maxLength: 4 characters\n* **additionalData key:** \u0060airline.computerized_reservation_system\u0060\u0022"
           },
           "customerReferenceNumber": {
             "type": "string",
-            "description": "\u0022The alphanumeric customer reference number.\n* Encoding: ASCII\n* maxLength: 20 characters\n* If you send more than 20 characters, the customer reference number is truncated\n* Must not start with a space or be all spaces.\u0022"
+            "description": "\u0022The alphanumeric customer reference number.\n* Encoding: ASCII\n* maxLength: 20 characters\n* If you send more than 20 characters, the customer reference number is truncated\n* Must not start with a space or be all spaces.\n* **additionalData key:** \u0060airline.customer_reference_number\u0060\u0022"
           },
           "designatorCode": {
             "type": "string",
-            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.\n* Encoding: ASCII\n* Example: KLM = KL\n* minLength: 2 characters\n* maxLength: 2 characters\n* Must not start with a space or be all spaces.\u0022"
+            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.\n* Encoding: ASCII\n* Example: KLM = KL\n* minLength: 2 characters\n* maxLength: 2 characters\n* Must not start with a space or be all spaces.\n* **additionalData key:** \u0060airline.airline_designator_code\u0060\u0022"
           },
           "documentType": {
             "type": "string",
-            "description": "\u0022A code that identifies the type of item bought. The description of the code can appear on credit card statements.\n* Encoding: ASCII\n* Example: Passenger ticket = 01\n* minLength: 2 characters\n* maxLength: 2 characters\u0022"
+            "description": "\u0022A code that identifies the type of item bought. The description of the code can appear on credit card statements.\n* Encoding: ASCII\n* Example: Passenger ticket = 01\n* minLength: 2 characters\n* maxLength: 2 characters\n* **additionalData key:** \u0060airline.document_type\u0060\u0022"
           },
           "flightDate": {
             "type": "string",
-            "description": "\u0022The flight departure date. Time is optional.\n* Format for date only: \u0060yyyy-MM-dd\u0060\n* Format for date and time: \u0060yyyy-MM-ddTHH:mm\u0060\n* Use local time of departure airport.\n* minLength: 10 characters\n* maxLength: 16 characters\u0022",
+            "description": "\u0022The flight departure date. Time is optional.\n* Format for date only: \u0060yyyy-MM-dd\u0060\n* Format for date and time: \u0060yyyy-MM-ddTHH:mm\u0060\n* Use local time of departure airport.\n* minLength: 10 characters\n* maxLength: 16 characters\n* **additionalData key:** \u0060airline.flight_date\u0060\u0022",
             "format": "date-time"
           },
           "legs": {
@@ -67179,7 +67179,7 @@
           },
           "passengerName": {
             "type": "string",
-            "description": "\u0022The passenger\u0027s name, initials, and title.\n* Format: last name \u002B first name or initials \u002B title\n* Example: *FLYER / MARY MS*\n* minLength: 1 character\n* maxLength: 20 characters\n* If you send more than 20 characters, the name is truncated\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The passenger\u0027s name, initials, and title.\n* Format: last name \u002B first name or initials \u002B title\n* Example: *FLYER / MARY MS*\n* minLength: 1 character\n* maxLength: 20 characters\n* If you send more than 20 characters, the name is truncated\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.passenger_name\u0060\u0022"
           },
           "passengers": {
             "type": "array",
@@ -67506,6 +67506,39 @@
           },
           "shopperInteractionDevice": {
             "$ref": "#/components/schemas/ShopperInteractionDevice"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuPayDetails": {
+        "title": "AuPay",
+        "type": "object",
+        "properties": {
+          "checkoutAttemptId": {
+            "type": "string",
+            "description": "The checkout attempt identifier."
+          },
+          "recurringDetailReference": {
+            "type": "string",
+            "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
+            "deprecated": true,
+            "x-deprecatedInVersion": "49",
+            "x-deprecatedMessage": "Use \u0060storedPaymentMethodId\u0060 instead."
+          },
+          "sdkData": {
+            "maxLength": 50000,
+            "type": "string",
+            "description": "Base64-encoded JSON object containing SDK related parameters required by the SDK",
+            "x-addedInVersion": "67"
+          },
+          "storedPaymentMethodId": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
+            "x-addedInVersion": "49"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AuPayDetailsType"
           }
         },
         "additionalProperties": false
@@ -68016,9 +68049,69 @@
         },
         "additionalProperties": false
       },
+      "CarRental": {
+        "required": [
+          "renterName"
+        ],
+        "type": "object",
+        "properties": {
+          "customerServicePhoneNumber": {
+            "type": "string",
+            "description": "\u0022The customer service phone number of the car rental company.\n* Format: Alphanumeric\n* maxLength: 17\n* For US and CA numbers must be 10 characters in length\n* Must not contain any special characters such as \u002B or -\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.customerServiceTollFreeNumber\u0060\u0022"
+          },
+          "noShow": {
+            "type": "boolean",
+            "description": "Indicates if the customer didn\u0027t pick up their rental car.\n* **additionalData key:** \u0060carRental.noShowIndicator\u0060"
+          },
+          "pickupInfo": {
+            "$ref": "#/components/schemas/PickupInfo"
+          },
+          "rateType": {
+            "$ref": "#/components/schemas/CarRentalRateType"
+          },
+          "rentalAgreementNumber": {
+            "type": "string",
+            "description": "\u0022The rental agreement number for the car rental.\n* Format: ASCII\n* maxLength: 9 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.rentalAgreementNumber\u0060\u0022"
+          },
+          "rentalClassId": {
+            "type": "string",
+            "description": "\u0022The classification of the rental car.\n* Format: Alphanumeric\n* maxLength: 4 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.rentalClassId\u0060\u0022"
+          },
+          "rentalDays": {
+            "type": "integer",
+            "description": "\u0022The number of days the car is rented for.\n* Format: Numeric\n* Max value: 9999\n* **additionalData key:** \u0060carRental.daysRented\u0060\u0022",
+            "format": "int32"
+          },
+          "rentalRate": {
+            "type": "integer",
+            "description": "\u0022Rental rate, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* Frequency of the rental rate is specified in the rateType field.\n* **additionalData key:** \u0060carRental.rate\u0060\u0022",
+            "format": "int64"
+          },
+          "rentalSurcharges": {
+            "$ref": "#/components/schemas/RentalSurcharges"
+          },
+          "renterName": {
+            "type": "string",
+            "description": "\u0022The name of the person renting the car.\n* Format: ASCII\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.renterName\u0060\u0022"
+          },
+          "returnInfo": {
+            "$ref": "#/components/schemas/ReturnInfo"
+          },
+          "taxExempt": {
+            "type": "boolean",
+            "description": "Indicates if the goods or services were tax-exempt, or if tax was not collected.\n* **additionalData key:** \u0060carRental.taxExemptIndicator\u0060"
+          }
+        },
+        "additionalProperties": false
+      },
       "CardBrandDetails": {
         "type": "object",
         "properties": {
+          "healthcare": {
+            "type": "boolean",
+            "description": "Indicates if the card supports FSA/HSA healthcare payments.",
+            "x-addedInVersion": "72"
+          },
           "supported": {
             "type": "boolean",
             "description": "Indicates if you support the card brand."
@@ -69352,6 +69445,11 @@
           "riskData": {
             "$ref": "#/components/schemas/RiskData"
           },
+          "shopperConversionId": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "Use this if you made a \u0060/paymentMethods\u0060 request to get the payment methods for the shopper\u0027s checkout session.\n\nA unique ID to [connect the shopper to a single checkout session](https://docs.adyen.com/online-payments/checkout-settings#checkout-shopper-conversion-id) that uses multiple API requests. You can use this to get insights into conversion rates."
+          },
           "shopperEmail": {
             "type": "string",
             "description": "The shopper\u0027s email address."
@@ -69426,6 +69524,9 @@
             "type": "string",
             "description": "Sets a custom theme for [Hosted Checkout](https://docs.adyen.com/online-payments/build-your-integration/?platform=Web\u0026integration=Hosted\u002BCheckout). The value can be any of the **Theme ID** values from your Customer Area.",
             "x-addedInVersion": "69"
+          },
+          "thirdPartyTokenRedundancyInfo": {
+            "$ref": "#/components/schemas/ThirdPartyTokenRedundancyInfo"
           },
           "threeDS2RequestData": {
             "$ref": "#/components/schemas/CheckoutSessionThreeDs2RequestData"
@@ -69694,6 +69795,9 @@
             "description": "Sets a custom theme for [Hosted Checkout](https://docs.adyen.com/online-payments/build-your-integration/?platform=Web\u0026integration=Hosted\u002BCheckout). The value can be any of the **Theme ID** values from your Customer Area.",
             "x-addedInVersion": "69"
           },
+          "thirdPartyTokenRedundancyInfo": {
+            "$ref": "#/components/schemas/ThirdPartyTokenRedundancyInfo"
+          },
           "threeDS2RequestData": {
             "$ref": "#/components/schemas/CheckoutSessionThreeDs2RequestData"
           },
@@ -69791,6 +69895,39 @@
         },
         "additionalProperties": false
       },
+      "DBaraiDetails": {
+        "title": "DBarai",
+        "type": "object",
+        "properties": {
+          "checkoutAttemptId": {
+            "type": "string",
+            "description": "The checkout attempt identifier."
+          },
+          "recurringDetailReference": {
+            "type": "string",
+            "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
+            "deprecated": true,
+            "x-deprecatedInVersion": "49",
+            "x-deprecatedMessage": "Use \u0060storedPaymentMethodId\u0060 instead."
+          },
+          "sdkData": {
+            "maxLength": 50000,
+            "type": "string",
+            "description": "Base64-encoded JSON object containing SDK related parameters required by the SDK",
+            "x-addedInVersion": "67"
+          },
+          "storedPaymentMethodId": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
+            "x-addedInVersion": "49"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DBaraiDetailsType"
+          }
+        },
+        "additionalProperties": false
+      },
       "CheckoutServiceV72DeliveryAddress": {
         "required": [
           "city",
@@ -69868,15 +70005,15 @@
         "properties": {
           "countryCode": {
             "type": "string",
-            "description": "\u0022The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or three-letter [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) for the destination address. \n * Encoding: ASCII  \n * Min length: 2 characters \n * Max length: 3 characters\u0022"
+            "description": "\u0022The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or three-letter [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) for the destination address.\n* Encoding: ASCII\n* Min length: 2 characters\n* Max length: 3 characters\n* **additionalData key:** \u0060enhancedSchemeData.destinationCountryCode\u0060\u0022"
           },
           "postalCode": {
             "type": "string",
-            "description": "\u0022The postal code of the destination address.\n* Encoding: ASCII\n* Max length: 10 characters\n* Must not start with a space.\n* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.\n* For Canada, it must be in 6 digits format. For example, M4B 1G5.\u0022"
+            "description": "\u0022The postal code of the destination address.\n* Encoding: ASCII\n* Max length: 10 characters\n* Must not start with a space.\n* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.\n* For Canada, it must be in 6 digits format. For example, M4B 1G5.\n* **additionalData key:** \u0060enhancedSchemeData.destinationPostalCode\u0060\u0022"
           },
           "stateOrProvince": {
             "type": "string",
-            "description": "\u0022The state or province code of the destination address.\n* Encoding: ASCII\n* Max length: 3 characters\n* Must not start with a space.\u0022"
+            "description": "\u0022The state or province code of the destination address.\n* Encoding: ASCII\n* Max length: 3 characters\n* Must not start with a space.\n* **additionalData key:** \u0060enhancedSchemeData.destinationStateProvinceCode\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -70497,8 +70634,20 @@
           "airline": {
             "$ref": "#/components/schemas/CheckoutServiceV72Airline"
           },
+          "carRental": {
+            "$ref": "#/components/schemas/CarRental"
+          },
+          "healthcare": {
+            "$ref": "#/components/schemas/Healthcare"
+          },
           "levelTwoThree": {
             "$ref": "#/components/schemas/LevelTwoThree"
+          },
+          "lodging": {
+            "$ref": "#/components/schemas/CheckoutServiceV72Lodging"
+          },
+          "temporaryServices": {
+            "$ref": "#/components/schemas/TemporaryServices"
           }
         },
         "additionalProperties": false
@@ -70603,6 +70752,21 @@
           },
           "type": {
             "$ref": "#/components/schemas/FastlaneDetailsType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Folio": {
+        "type": "object",
+        "properties": {
+          "cashAdvances": {
+            "type": "integer",
+            "description": "\u0022The folio cash advances, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060lodging.folioCashAdvances\u0060\u0022",
+            "format": "int64"
+          },
+          "number": {
+            "type": "string",
+            "description": "\u0022The card acceptor\u0027s internal invoice or billing ID reference number.\n* Format: Alphanumeric\n* Must not start with a space\n* Must not contain any special characters\n* Must not be all zeros.\n* **additionalData key:** \u0060lodging.folioNumber\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -70932,6 +71096,40 @@
         },
         "additionalProperties": false
       },
+      "Healthcare": {
+        "required": [
+          "totalHealthcareValue"
+        ],
+        "type": "object",
+        "properties": {
+          "dentalValue": {
+            "type": "integer",
+            "description": "\u0022The dental amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "format": "int64"
+          },
+          "otherMedicalValue": {
+            "type": "integer",
+            "description": "\u0022The other medical amount not covered by the specific categories, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "format": "int64"
+          },
+          "prescriptionValue": {
+            "type": "integer",
+            "description": "\u0022The prescription/Rx amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "format": "int64"
+          },
+          "totalHealthcareValue": {
+            "type": "integer",
+            "description": "\u0022The total healthcare amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "format": "int64"
+          },
+          "visionPrescriptionValue": {
+            "type": "integer",
+            "description": "\u0022The vision/optical prescription amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
       "IdealDetails": {
         "title": "iDEAL",
         "type": "object",
@@ -71133,38 +71331,38 @@
         "properties": {
           "commodityCode": {
             "type": "string",
-            "description": "\u0022The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:\n* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)\n* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)\n* [NAICS commodity codes](https://www.census.gov/naics/)\n* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)\n\n\n* Encoding: ASCII\n* Max length: 12 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:\n* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)\n* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)\n* [NAICS commodity codes](https://www.census.gov/naics/)\n* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)\n\n\n* Encoding: ASCII\n* Max length: 12 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].commodityCode\u0060\u0022"
           },
           "description": {
             "type": "string",
-            "description": "\u0022A description of the item, that provides details about the purchase.\n\n For Visa transactions with level 3 ESD, the description must not be the same or very similar to your merchant name, or, consist only of common words like \\\u0022product\\\u0022, or \\\u0022service\\\u0022.\n* Encoding: ASCII\n* Max length: 26 characters\n* Must not be a single character.\n* Must not be blank.\n* Must not be all special characters.\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022A description of the item, that provides details about the purchase.\n\n For Visa transactions with level 3 ESD, the description must not be the same or very similar to your merchant name, or, consist only of common words like \\\u0022product\\\u0022, or \\\u0022service\\\u0022.\n* Encoding: ASCII\n* Max length: 26 characters\n* Must not be a single character.\n* Must not be blank.\n* Must not be all special characters.\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].description\u0060\u0022"
           },
           "discountAmount": {
             "type": "integer",
-            "description": "\u0022The discount amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "description": "\u0022The discount amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].discountAmount\u0060\u0022",
             "format": "int64"
           },
           "productCode": {
             "type": "string",
-            "description": "\u0022The product code. Must be a unique product code associated with the item or service. This can be your unique code for the item, or the manufacturer\u0027s product code. \n* Encoding: ASCII.\n* Max length: 12 characters\u0022"
+            "description": "\u0022The product code. Must be a unique product code associated with the item or service. This can be your unique code for the item, or the manufacturer\u0027s product code. \n* Encoding: ASCII.\n* Max length: 12 characters\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].productCode\u0060\u0022"
           },
           "quantity": {
             "type": "integer",
-            "description": "\u0022The number of items. Must be an integer greater than zero.\n* Encoding: Numeric\n* Max value: 9999\u0022",
+            "description": "\u0022The number of items. Must be an integer greater than zero.\n* Encoding: Numeric\n* Max value: 9999\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].quantity\u0060\u0022",
             "format": "int64"
           },
           "totalAmount": {
             "type": "integer",
-            "description": "\u0022The total amount for the line item, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n\nSee [Amount requirements for level 2/3 ESD](https://docs.adyen.com//payment-methods/cards/enhanced-scheme-data/l2-l3#amount-requirements) to learn more about how to calculate the line item total.\u0022",
+            "description": "\u0022The total amount for the line item, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n\nSee [Amount requirements for level 2/3 ESD](https://docs.adyen.com//payment-methods/cards/enhanced-scheme-data/l2-l3#amount-requirements) to learn more about how to calculate the line item total.\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].totalAmount\u0060\u0022",
             "format": "int64"
           },
           "unitOfMeasure": {
             "type": "string",
-            "description": "\u0022The unit of measurement for an item.\n* Encoding: ASCII\n* Max length: 3 characters\u0022"
+            "description": "\u0022The unit of measurement for an item.\n* Encoding: ASCII\n* Max length: 3 characters\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].unitOfMeasure\u0060\u0022"
           },
           "unitPrice": {
             "type": "integer",
-            "description": "\u0022The unit price, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "description": "\u0022The unit price, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060enhancedSchemeData.itemDetailLine[N].unitPrice\u0060\u0022",
             "format": "int64"
           }
         },
@@ -71188,6 +71386,12 @@
           "deliveryAddress": {
             "type": "string",
             "description": "The address where the goods should be delivered."
+          },
+          "merchantData": {
+            "maxLength": 10240,
+            "type": "string",
+            "description": "Base64-encoded merchant metadata (Extra Merchant Data) forwarded to Klarna at authorization.",
+            "x-addedInVersion": "72"
           },
           "personalDetails": {
             "type": "string",
@@ -71273,41 +71477,41 @@
         "properties": {
           "carrierCode": {
             "type": "string",
-            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.\nThis field is required if the airline data includes leg details.\n* Example: KLM = KL\n* minLength: 2 characters\n* maxLength: 2 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.\nThis field is required if the airline data includes leg details.\n* Example: KLM = KL\n* minLength: 2 characters\n* maxLength: 2 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].carrier_code\u0060\u0022"
           },
           "classOfTravel": {
             "type": "string",
-            "description": "\u0022A one-letter travel class identifier.\n The following are common:\n * F: first class\n* J: business class\n* Y: economy class\n* W: premium economy\n\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 1 character\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022A one-letter travel class identifier.\n The following are common:\n * F: first class\n* J: business class\n* Y: economy class\n* W: premium economy\n\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 1 character\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].class_of_travel\u0060\u0022"
           },
           "dateOfTravel": {
             "type": "string",
-            "description": "\u0022Date and time of travel in format \u0060yyyy-MM-ddTHH:mm\u0060.\n* Use local time of departure airport.\n* minLength: 16 characters\n* maxLength: 16 characters\u0022",
+            "description": "\u0022Date and time of travel in format \u0060yyyy-MM-ddTHH:mm\u0060.\n* Use local time of departure airport.\n* minLength: 16 characters\n* maxLength: 16 characters\n* **additionalData key:** \u0060airline.leg[N].date_of_travel\u0060\u0022",
             "format": "date-time"
           },
           "departureAirportCode": {
             "type": "string",
-            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) three-letter airport code of the departure airport.\nThis field is required if the airline data includes leg details.\n\n* Encoding: ASCII\n* Example: Amsterdam = AMS\n* minLength: 3 characters\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) three-letter airport code of the departure airport.\nThis field is required if the airline data includes leg details.\n\n* Encoding: ASCII\n* Example: Amsterdam = AMS\n* minLength: 3 characters\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].depart_airport\u0060\u0022"
           },
           "departureTax": {
             "type": "integer",
-            "description": "\u0022The amount of [departure tax](https://en.wikipedia.org/wiki/Departure_tax) charged, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* Encoding: Numeric\n* minLength: 1\n* maxLength: 11\n* Must not be all zeros.\u0022",
+            "description": "\u0022The amount of [departure tax](https://en.wikipedia.org/wiki/Departure_tax) charged, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* Encoding: Numeric\n* minLength: 1\n* maxLength: 11\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].depart_tax\u0060\u0022",
             "format": "int64"
           },
           "destinationAirportCode": {
             "type": "string",
-            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-letter airport code of the destination airport.\nThis field is required if the airline data includes leg details.\n* Example: Amsterdam = AMS\n* Encoding: ASCII\n* minLength: 3 characters\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-letter airport code of the destination airport.\nThis field is required if the airline data includes leg details.\n* Example: Amsterdam = AMS\n* Encoding: ASCII\n* minLength: 3 characters\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].destination_code\u0060\u0022"
           },
           "fareBasisCode": {
             "type": "string",
-            "description": "\u0022The [fare basis code](https://en.wikipedia.org/wiki/Fare_basis_code), alphanumeric.\n* minLength: 1 character\n* maxLength: 15 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The [fare basis code](https://en.wikipedia.org/wiki/Fare_basis_code), alphanumeric.\n* minLength: 1 character\n* maxLength: 15 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].fare_base_code\u0060\u0022"
           },
           "flightNumber": {
             "type": "string",
-            "description": "\u0022The flight identifier.\n* minLength: 1 character\n* maxLength: 5 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The flight identifier.\n* minLength: 1 character\n* maxLength: 5 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.leg[N].flight_number\u0060\u0022"
           },
           "stopOverCode": {
             "type": "string",
-            "description": "\u0022A one-letter code that indicates whether the passenger is entitled to make a stopover. Can be a space, O if the passenger is entitled to make a stopover, or X if they are not.\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 1 character\u0022"
+            "description": "\u0022A one-letter code that indicates whether the passenger is entitled to make a stopover. Can be a space, O if the passenger is entitled to make a stopover, or X if they are not.\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 1 character\n* **additionalData key:** \u0060airline.leg[N].stop_over_code\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -71317,19 +71521,19 @@
         "properties": {
           "customerReferenceNumber": {
             "type": "string",
-            "description": "\u0022The reference number to identify the customer and their order.\n* Format: ASCII\n* Max length: 25 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The reference number to identify the customer and their order.\n* Format: ASCII\n* Max length: 25 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060enhancedSchemeData.customerReference\u0060\u0022"
           },
           "destination": {
             "$ref": "#/components/schemas/Destination"
           },
           "dutyAmount": {
             "type": "integer",
-            "description": "\u0022The duty tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "description": "\u0022The duty tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060enhancedSchemeData.dutyAmount\u0060\u0022",
             "format": "int64"
           },
           "freightAmount": {
             "type": "integer",
-            "description": "\u0022The shipping amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\u0022",
+            "description": "\u0022The shipping amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060enhancedSchemeData.freightAmount\u0060\u0022",
             "format": "int64"
           },
           "itemDetailLines": {
@@ -71341,16 +71545,16 @@
           },
           "orderDate": {
             "type": "string",
-            "description": "\u0022The date of the order.\n* Min Length: 10 characters\n* Max Length: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\u0022",
+            "description": "\u0022The date of the order.\n* Min Length: 10 characters\n* Max Length: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060enhancedSchemeData.orderDate\u0060\u0022",
             "format": "date"
           },
           "shipFromPostalCode": {
             "type": "string",
-            "description": "\u0022The postal code of the address where the item is shipped from.\n* Encoding: ASCII\n* Max length: 10 characters\n* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.\n* For Canada, it must be in 6 digits format. For example, M4B 1G5.\u0022"
+            "description": "\u0022The postal code of the address where the item is shipped from.\n* Encoding: ASCII\n* Max length: 10 characters\n* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.\n* For Canada, it must be in 6 digits format. For example, M4B 1G5.\n* **additionalData key:** \u0060enhancedSchemeData.shipFromPostalCode\u0060\u0022"
           },
           "totalTaxAmount": {
             "type": "integer",
-            "description": "\u0022The amount of state or provincial [tax included in the total transaction amount](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/l2-l3#requirements-to-send-level-2-3-esd), in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* For L2 data: must not be all zeroes. \n* For L3 data: can be zero.\u0022",
+            "description": "\u0022The amount of state or provincial [tax included in the total transaction amount](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/l2-l3#requirements-to-send-level-2-3-esd), in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* For L2 data: must not be all zeroes. \n* For L3 data: can be zero.\n* **additionalData key:** \u0060enhancedSchemeData.totalTaxAmount\u0060\u0022",
             "format": "int64"
           }
         },
@@ -71420,6 +71624,31 @@
             "description": "Email associated with the given product in the basket (usually in electronic gift cards).",
             "x-addedInVersion": "70"
           },
+          "returnShippingCompany": {
+            "type": "string",
+            "description": "Shipping company handling the return of the item.",
+            "x-addedInVersion": "72"
+          },
+          "returnTrackingNumber": {
+            "type": "string",
+            "description": "Tracking number for the return of the item.",
+            "x-addedInVersion": "72"
+          },
+          "returnTrackingUri": {
+            "type": "string",
+            "description": "Tracking URI for the return of the item.",
+            "x-addedInVersion": "72"
+          },
+          "shippingCompany": {
+            "type": "string",
+            "description": "Shipping company handling the delivery of the item.",
+            "x-addedInVersion": "72"
+          },
+          "shippingMethod": {
+            "type": "string",
+            "description": "Shipping method used to deliver the item.",
+            "x-addedInVersion": "72"
+          },
           "size": {
             "type": "string",
             "description": "Size of the item.",
@@ -71439,6 +71668,16 @@
             "type": "integer",
             "description": "Tax percentage, represented as a [basis point](https://en.wikipedia.org/wiki/Basis_point) integer. For example:\n - **530** for 5.3% (five point three percent) \n - **2100** for 21% (twenty-one percent)",
             "format": "int64"
+          },
+          "trackingNumber": {
+            "type": "string",
+            "description": "Tracking number for the delivery of the item.",
+            "x-addedInVersion": "72"
+          },
+          "trackingUri": {
+            "type": "string",
+            "description": "Tracking URI for the delivery of the item.",
+            "x-addedInVersion": "72"
           },
           "upc": {
             "type": "string",
@@ -71465,6 +71704,75 @@
               "$ref": "#/components/schemas/StoredPaymentMethodResource"
             },
             "description": "List of all stored payment methods."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckoutServiceV72Lodging": {
+        "type": "object",
+        "properties": {
+          "checkInDate": {
+            "type": "string",
+            "description": "\u0022The check-in date.\n* Min Length: 10 characters\n* Max Length: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060lodging.checkInDate\u0060\u0022",
+            "format": "date"
+          },
+          "checkOutDate": {
+            "type": "string",
+            "description": "\u0022The check-out date.\n* Min Length: 10 characters\n* Max Length: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060lodging.checkOutDate\u0060\u0022",
+            "format": "date"
+          },
+          "customerServicePhoneNumber": {
+            "type": "string",
+            "description": "\u0022The toll-free phone number for the lodging customer service.\n* Format: Alphanumeric\n* For US and CA numbers must be 10 characters in length\n* Must not start with a space\n* Must not contain any special characters such as \u002B or -\n* Must not be all zeros.\n* **additionalData key:** \u0060lodging.customerServiceTollFreeNumber\u0060\u0022"
+          },
+          "fireSafetyCompliance": {
+            "type": "boolean",
+            "description": "Indicates that the facility complies with the Hotel and Motel Fire Safety Act of 1990.\n* **additionalData key:** \u0060lodging.fireSafetyActIndicator\u0060"
+          },
+          "folio": {
+            "$ref": "#/components/schemas/Folio"
+          },
+          "foodBeverageCharges": {
+            "type": "integer",
+            "description": "\u0022Any charges for food and beverages associated with the booking, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060lodging.foodBeverageCharges\u0060\u0022",
+            "format": "int64"
+          },
+          "lodgingChargeType": {
+            "$ref": "#/components/schemas/CheckoutServiceV72LodgingLodgingChargeType"
+          },
+          "noShow": {
+            "type": "boolean",
+            "description": "Indicates if the customer didn\u0027t check in for their booking.\n* **additionalData key:** \u0060lodging.noShowIndicator\u0060"
+          },
+          "prepaidExpenses": {
+            "type": "integer",
+            "description": "\u0022The prepaid expenses for the booking, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060lodging.prepaidExpenses\u0060\u0022",
+            "format": "int64"
+          },
+          "propertyPhoneNumber": {
+            "type": "string",
+            "description": "\u0022The lodging property location\u0027s phone number.\n* Format: Alphanumeric\n* Min length: 10 characters\n* For US and CA numbers must be 10 characters in length\n* Must not start with a space\n* Must not contain any special characters such as \u002B or -\n* Must not be all zeros.\n* **additionalData key:** \u0060lodging.propertyPhoneNumber\u0060\u0022"
+          },
+          "renterName": {
+            "type": "string",
+            "description": "\u0022The name of the person renting the room.\n* Format: ASCII\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060lodging.renterName\u0060\u0022"
+          },
+          "rooms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Room"
+            },
+            "description": "The list of rooms booked."
+          },
+          "totalRoomTax": {
+            "type": "integer",
+            "description": "\u0022The total room tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060lodging.totalRoomTax\u0060\u0022",
+            "format": "int64"
+          },
+          "totalTax": {
+            "type": "integer",
+            "description": "\u0022The total tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060lodging.totalTax\u0060\u0022",
+            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -71781,24 +72089,24 @@
         "properties": {
           "dateOfBirth": {
             "type": "string",
-            "description": "\u0022The passenger\u0027s date of birth.\n* Format \u0060yyyy-MM-dd\u0060\n* minLength: 10\n* maxLength: 10\u0022",
+            "description": "\u0022The passenger\u0027s date of birth.\n* Format \u0060yyyy-MM-dd\u0060\n* minLength: 10\n* maxLength: 10\n* **additionalData key:** \u0060airline.passenger[N].date_of_birth\u0060\u0022",
             "format": "date"
           },
           "firstName": {
             "type": "string",
-            "description": "\u0022The passenger\u0027s first name.\n\u003E This field is required if the airline data includes passenger details or leg details.\n* Encoding: ASCII\u0022"
+            "description": "\u0022The passenger\u0027s first name.\n\u003E This field is required if the airline data includes passenger details or leg details.\n* Encoding: ASCII\n* **additionalData key:** \u0060airline.passenger[N].first_name\u0060\u0022"
           },
           "lastName": {
             "type": "string",
-            "description": "\u0022The passenger\u0027s last name.\n\u003E This field is required if the airline data includes passenger details or leg details.\n* Encoding: ASCII\u0022"
+            "description": "\u0022The passenger\u0027s last name.\n\u003E This field is required if the airline data includes passenger details or leg details.\n* Encoding: ASCII\n* **additionalData key:** \u0060airline.passenger[N].last_name\u0060\u0022"
           },
           "phoneNumber": {
             "type": "string",
-            "description": "\u0022The passenger\u0027s phone number, including country code. This is an alphanumeric field that can include the \u0027\u002B\u0027 and \u0027-\u0027 signs.\n* Encoding: ASCII\n* minLength: 3 characters\n* maxLength: 30 characters\u0022"
+            "description": "\u0022The passenger\u0027s phone number, including country code. This is an alphanumeric field that can include the \u0027\u002B\u0027 and \u0027-\u0027 signs.\n* Encoding: ASCII\n* minLength: 3 characters\n* maxLength: 30 characters\n* **additionalData key:** \u0060airline.passenger[N].phone_number\u0060\u0022"
           },
           "travellerType": {
             "type": "string",
-            "description": "\u0022The IATA passenger type code (PTC).\n* Encoding: ASCII\n* minLength: 3 characters\n* maxLength: 6 characters\u0022"
+            "description": "\u0022The IATA passenger type code (PTC).\n* Encoding: ASCII\n* minLength: 3 characters\n* maxLength: 6 characters\n* **additionalData key:** \u0060airline.passenger[N].traveller_type\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -73781,6 +74089,9 @@
             "type": "string",
             "description": "The shopper\u0027s telephone number.\n The phone number must include a plus sign (\u002B) and a country code (1-3 digits), followed by the number (4-15 digits). If the value you provide does not follow the guidelines, we do not submit it for authentication.\n\u003E Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the \u0060shopperEmail\u0060."
           },
+          "thirdPartyTokenRedundancyInfo": {
+            "$ref": "#/components/schemas/ThirdPartyTokenRedundancyInfo"
+          },
           "threeDS2RequestData": {
             "$ref": "#/components/schemas/ThreeDs2RequestFields"
           },
@@ -74018,12 +74329,18 @@
           "amount": {
             "$ref": "#/components/schemas/CheckoutServiceV72Amount"
           },
+          "deliveryAddress": {
+            "$ref": "#/components/schemas/CheckoutServiceV72DeliveryAddress"
+          },
           "deliveryMethods": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DeliveryMethod"
             },
             "description": "The list of new delivery methods and the cost of each."
+          },
+          "discountAmount": {
+            "$ref": "#/components/schemas/CheckoutServiceV72Amount"
           },
           "paymentData": {
             "type": "string",
@@ -74036,6 +74353,9 @@
           "sessionId": {
             "type": "string",
             "description": "The original \u0060sessionId\u0060 from the \u0060/sessions\u0060 response."
+          },
+          "shippingAmount": {
+            "$ref": "#/components/schemas/CheckoutServiceV72Amount"
           },
           "taxTotal": {
             "$ref": "#/components/schemas/TaxTotal"
@@ -74073,6 +74393,29 @@
             "maxLength": 15,
             "type": "string",
             "description": "\u0022Subscriber number. Length: 4-15  digits.\u0022"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PickupInfo": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "description": "\u0022The city where the car is rented.\n* Format: ASCII\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.locationCity\u0060\u0022"
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "\u0022The country where the car is rented, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.\n* maxLength: 2 characters\n* **additionalData key:** \u0060carRental.locationCountry\u0060\u0022"
+          },
+          "date": {
+            "type": "string",
+            "description": "\u0022The pick-up date.\n* minLength: 10 characters\n* maxLength: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060carRental.checkOutDate\u0060\u0022",
+            "format": "date"
+          },
+          "stateOrProvince": {
+            "type": "string",
+            "description": "\u0022The state or province where the car is rented.\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.locationStateProvince\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -74397,6 +74740,27 @@
           },
           "tokenService": {
             "$ref": "#/components/schemas/CheckoutServiceV72RecurringTokenService"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RentalSurcharges": {
+        "type": "object",
+        "properties": {
+          "fuel": {
+            "type": "integer",
+            "description": "\u0022The fuel charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060carRental.fuelCharges\u0060\u0022",
+            "format": "int64"
+          },
+          "insurance": {
+            "type": "integer",
+            "description": "\u0022Any insurance charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060carRental.insuranceCharges\u0060\u0022",
+            "format": "int64"
+          },
+          "oneWayDropOff": {
+            "type": "integer",
+            "description": "\u0022The charge for not returning a car to the original rental location, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060carRental.oneWayDropOffCharges\u0060\u0022",
+            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -74918,6 +75282,33 @@
         },
         "additionalProperties": false
       },
+      "ReturnInfo": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "description": "\u0022The city where the car must be returned.\n* Format: ASCII\n* maxLength: 18 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.returnCity\u0060\u0022"
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "\u0022The country where the car must be returned, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.\n* maxLength: 2 characters\n* **additionalData key:** \u0060carRental.returnCountry\u0060\u0022"
+          },
+          "date": {
+            "type": "string",
+            "description": "\u0022The date by which the car must be returned.\n* minLength: 10 characters\n* maxLength: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060carRental.returnDate\u0060\u0022",
+            "format": "date"
+          },
+          "locationId": {
+            "type": "string",
+            "description": "\u0022The agency code, phone number, or address abbreviation.\n* Format: ASCII\n* maxLength: 10 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.returnLocationId\u0060\u0022"
+          },
+          "stateOrProvince": {
+            "type": "string",
+            "description": "\u0022The state or province where the car must be returned.\n* Format: ASCII\n* maxLength: 3 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060carRental.returnStateProvince\u0060\u0022"
+          }
+        },
+        "additionalProperties": false
+      },
       "RiskData": {
         "type": "object",
         "properties": {
@@ -74972,6 +75363,12 @@
             "type": "string",
             "description": "The iban number of the customer "
           },
+          "merchantData": {
+            "maxLength": 10240,
+            "type": "string",
+            "description": "Base64-encoded merchant metadata (Extra Merchant Data) forwarded to Riverty at authorization.",
+            "x-addedInVersion": "72"
+          },
           "personalDetails": {
             "type": "string",
             "description": "Shopper name, date of birth, phone number, and email address."
@@ -75001,6 +75398,22 @@
           },
           "type": {
             "$ref": "#/components/schemas/RivertyDetailsType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Room": {
+        "type": "object",
+        "properties": {
+          "numberOfNights": {
+            "type": "integer",
+            "description": "\u0022The total number of nights the room is booked for.\n* Format: Numeric\n* Must be a number between 1 and 99\n* **additionalData key:** \u0060lodging.room[N].numberOfNights\u0060\u0022",
+            "format": "int32"
+          },
+          "rate": {
+            "type": "integer",
+            "description": "\u0022Room rate per night, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060lodging.room[N].rate\u0060\u0022",
+            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -75384,6 +75797,11 @@
             "type": "string",
             "description": "The last two digits of the year the card expires. For example, **22** for the year 2022."
           },
+          "externalToken": {
+            "type": "string",
+            "description": "The token issued by an external tokenization service representing the shopper\u0027s payment method",
+            "x-addedInVersion": "72"
+          },
           "holderName": {
             "type": "string",
             "description": "The name of the payment method holder."
@@ -75749,6 +76167,60 @@
         "properties": {
           "amount": {
             "$ref": "#/components/schemas/CheckoutServiceV72Amount"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TemporaryServices": {
+        "type": "object",
+        "properties": {
+          "employeeName": {
+            "type": "string",
+            "description": "\u0022The name or ID of the person working in a temporary capacity.\n* Format: ASCII\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060enhancedSchemeData.employeeName\u0060\u0022"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "\u0022The billing period end date.\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060enhancedSchemeData.tempWeekEnding\u0060\u0022",
+            "format": "date"
+          },
+          "hourRate": {
+            "type": "integer",
+            "description": "\u0022The hourly rate for the temporary services, in [minor units](https://docs.adyen.com/development-resources/currency-codes).\n* For example, 2000 means USD 20.00.\n* Encoding: Numeric\n* Max value: 10000000000\n* **additionalData key:** \u0060enhancedSchemeData.regularHoursRate\u0060\u0022",
+            "format": "int32"
+          },
+          "hoursWorked": {
+            "type": "integer",
+            "description": "\u0022The number of hours worked during the billing period.\n* Format: Numeric\n* **additionalData key:** \u0060enhancedSchemeData.regularHoursWorked\u0060\u0022",
+            "format": "int32"
+          },
+          "jobDescription": {
+            "type": "string",
+            "description": "\u0022The job description of the person working in a temporary capacity.\n* Format: ASCII\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060enhancedSchemeData.jobDescription\u0060\u0022"
+          },
+          "serviceRequestor": {
+            "type": "string",
+            "description": "\u0022The name of the person requesting the temporary services.\n* Format: ASCII\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060enhancedSchemeData.requestName\u0060\u0022"
+          },
+          "startDate": {
+            "type": "string",
+            "description": "\u0022The billing period start date.\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060enhancedSchemeData.tempStartDate\u0060\u0022",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ThirdPartyTokenRedundancyInfo": {
+        "required": [
+          "requestTemplateCode"
+        ],
+        "type": "object",
+        "properties": {
+          "requestParameters": {
+            "$ref": "#/components/schemas/ThirdPartyTokenRedundancyInfoRequestParametersProperty"
+          },
+          "requestTemplateCode": {
+            "type": "string",
+            "description": "Identifier for the third-party token request template configured in your Adyen account. This template defines the structure and endpoint for token requests."
           }
         },
         "additionalProperties": false
@@ -76333,16 +76805,16 @@
         "properties": {
           "issueAddress": {
             "type": "string",
-            "description": "\u0022The address of the organization that issued the ticket.\n* minLength: 0 characters\n* maxLength: 16 characters\u0022"
+            "description": "\u0022The address of the organization that issued the ticket.\n* minLength: 0 characters\n* maxLength: 16 characters\n* **additionalData key:** \u0060airline.ticket_issue_address\u0060\u0022"
           },
           "issueDate": {
             "type": "string",
-            "description": "\u0022The date that the ticket was issued to the passenger.\n* minLength: 10 characters\n* maxLength: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\u0022",
+            "description": "\u0022The date that the ticket was issued to the passenger.\n* minLength: 10 characters\n* maxLength: 10 characters\n* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd\n* **additionalData key:** \u0060airline.issue_date\u0060\u0022",
             "format": "date"
           },
           "number": {
             "type": "string",
-            "description": "\u0022The ticket\u0027s unique identifier.\n* minLength: 1 character\n* maxLength: 15 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The ticket\u0027s unique identifier.\n* minLength: 1 character\n* maxLength: 15 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.ticket_number\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -76445,11 +76917,11 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "\u0022The unique identifier from IATA or ARC for the travel agency that issues the ticket.\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 8 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The unique identifier from IATA or ARC for the travel agency that issues the ticket.\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 8 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.travel_agency_code\u0060\u0022"
           },
           "name": {
             "type": "string",
-            "description": "\u0022The name of the travel agency.\n\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 25 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\u0022"
+            "description": "\u0022The name of the travel agency.\n\n* Encoding: ASCII\n* minLength: 1 character\n* maxLength: 25 characters\n* Must not start with a space or be all spaces.\n* Must not be all zeros.\n* **additionalData key:** \u0060airline.travel_agency_name\u0060\u0022"
           }
         },
         "additionalProperties": false
@@ -76834,70 +77306,29 @@
         },
         "additionalProperties": false
       },
-      "CheckoutServiceV72DefaultErrorResponseEntity": {
-        "type": "object",
-        "properties": {
-          "detail": {
-            "type": "string",
-            "description": "A human-readable explanation specific to this occurrence of the problem."
-          },
-          "errorCode": {
-            "type": "string",
-            "description": "Unique business error code."
-          },
-          "instance": {
-            "type": "string",
-            "description": "A URI that identifies the specific occurrence of the problem if applicable."
-          },
-          "invalidFields": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CheckoutServiceV72InvalidField"
-            },
-            "description": "Array of fields with validation errors when applicable."
-          },
-          "requestId": {
-            "type": "string",
-            "description": "The unique reference for the request."
-          },
-          "status": {
-            "type": "integer",
-            "description": "The HTTP status code.",
-            "format": "int32"
-          },
-          "title": {
-            "type": "string",
-            "description": "A short, human-readable summary of the problem type."
-          },
-          "type": {
-            "type": "string",
-            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
-          }
-        },
-        "description": "Standardized error response following RFC-7807 format",
-        "externalDocs": {
-          "url": "https://www.rfc-editor.org/rfc/rfc7807"
-        }
-      },
-      "CheckoutServiceV72InvalidField": {
+      "CheckoutErrorResponseEntity": {
         "required": [
-          "message",
-          "name",
-          "value"
+          "errorCode",
+          "errorType",
+          "message"
         ],
         "type": "object",
         "properties": {
+          "errorCode": {
+            "type": "string"
+          },
+          "errorType": {
+            "type": "string"
+          },
           "message": {
-            "type": "string",
-            "description": "Description of the validation error."
+            "type": "string"
           },
-          "name": {
-            "type": "string",
-            "description": "The field that has an invalid value."
+          "pspReference": {
+            "type": "string"
           },
-          "value": {
-            "type": "string",
-            "description": "The invalid value."
+          "status": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
@@ -116562,6 +116993,7 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
@@ -116570,6 +117002,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "applepay": "#/components/schemas/ApplePayDonations",
+            "paywithgoogle": "#/components/schemas/PayWithGoogleDonations",
+            "googlepay": "#/components/schemas/GooglePayDonations",
+            "scheme": "#/components/schemas/CardDonations",
+            "networkToken": "#/components/schemas/CardDonations",
+            "ideal": "#/components/schemas/IdealDonations",
+            "card": "#/components/schemas/CardDonations",
             "ApplePayDonations": "#/components/schemas/ApplePayDonations",
             "CardDonations": "#/components/schemas/CardDonations",
             "GooglePayDonations": "#/components/schemas/GooglePayDonations",
@@ -116599,6 +117038,7 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "threeDS2": "#/components/schemas/CheckoutThreeDs2Action",
             "CheckoutThreeDs2Action": "#/components/schemas/CheckoutThreeDs2Action"
           }
         },
@@ -116635,6 +117075,9 @@
             "$ref": "#/components/schemas/ApplePayDetails"
           },
           {
+            "$ref": "#/components/schemas/AuPayDetails"
+          },
+          {
             "$ref": "#/components/schemas/BacsDirectDebitDetails"
           },
           {
@@ -116651,6 +117094,9 @@
           },
           {
             "$ref": "#/components/schemas/CellulantDetails"
+          },
+          {
+            "$ref": "#/components/schemas/DBaraiDetails"
           },
           {
             "$ref": "#/components/schemas/DirectDebitAuDetails"
@@ -116787,6 +117233,7 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
@@ -116795,6 +117242,247 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "applepay": "#/components/schemas/ApplePayDetails",
+            "samsungpay": "#/components/schemas/SamsungPayDetails",
+            "androidpay": "#/components/schemas/AndroidPayDetails",
+            "visacheckout": "#/components/schemas/VisaCheckoutDetails",
+            "paywithgoogle": "#/components/schemas/PayWithGoogleDetails",
+            "amazonpay": "#/components/schemas/AmazonPayDetails",
+            "masterpass": "#/components/schemas/MasterpassDetails",
+            "googlepay": "#/components/schemas/GooglePayDetails",
+            "fastlane": "#/components/schemas/FastlaneDetails",
+            "alipay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "alipay_plus": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_alipay_cn": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_alipay_hk": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_dana": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_gcash": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_kakaopay": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_kplus": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_naverpay": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_rabbitlinepay": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_tosspay": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_touchngo": "#/components/schemas/StoredPaymentMethodDetails",
+            "alipay_plus_truemoney": "#/components/schemas/StoredPaymentMethodDetails",
+            "bcmc": "#/components/schemas/CardDetails",
+            "bcmc_mobile": "#/components/schemas/StoredPaymentMethodDetails",
+            "bcmc_mobile_QR": "#/components/schemas/StoredPaymentMethodDetails",
+            "bcmc_mobile_app": "#/components/schemas/StoredPaymentMethodDetails",
+            "scheme": "#/components/schemas/CardDetails",
+            "networkToken": "#/components/schemas/CardDetails",
+            "altId": "#/components/schemas/CardDetails",
+            "externalToken": "#/components/schemas/ExternalTokenDetails",
+            "multibanco": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "ach": "#/components/schemas/AchDetails",
+            "ach_plaid": "#/components/schemas/AchDetails",
+            "eft_directdebit_CA": "#/components/schemas/EftDetails",
+            "bankTransfer": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "bankTransfer_IBAN": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "klarna": "#/components/schemas/KlarnaDetails",
+            "klarnapayments": "#/components/schemas/KlarnaDetails",
+            "klarnapayments_account": "#/components/schemas/KlarnaDetails",
+            "klarnapayments_b2b": "#/components/schemas/KlarnaDetails",
+            "klarna_paynow": "#/components/schemas/KlarnaDetails",
+            "klarna_account": "#/components/schemas/KlarnaDetails",
+            "klarna_b2b": "#/components/schemas/KlarnaDetails",
+            "klarna_network": "#/components/schemas/KlarnaNetworkDetails",
+            "paynow": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "afterpay_default": "#/components/schemas/AfterpayDetails",
+            "afterpaytouch": "#/components/schemas/AfterpayDetails",
+            "afterpaytouch_pos": "#/components/schemas/AfterpayDetails",
+            "clearpay": "#/components/schemas/AfterpayDetails",
+            "afterpay_b2b": "#/components/schemas/AfterpayDetails",
+            "zip": "#/components/schemas/ZipDetails",
+            "zip_pos": "#/components/schemas/ZipDetails",
+            "ratepay": "#/components/schemas/RatepayDetails",
+            "ratepay_directdebit": "#/components/schemas/RatepayDetails",
+            "affirm": "#/components/schemas/AffirmDetails",
+            "affirm_pos": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "riverty_account": "#/components/schemas/RivertyDetails",
+            "ideal": "#/components/schemas/IdealDetails",
+            "iris": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "wero": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "paypal": "#/components/schemas/PayPalDetails",
+            "paypay": "#/components/schemas/PayPayDetails",
+            "rakutenpay": "#/components/schemas/RakutenPayDetails",
+            "aupay": "#/components/schemas/AuPayDetails",
+            "dbarai": "#/components/schemas/DBaraiDetails",
+            "trustly": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "trustlyvector": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "oney": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "facilypay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "facilypay_3x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "facilypay_4x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "facilypay_6x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "facilypay_10x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "facilypay_12x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "sepadirectdebit": "#/components/schemas/SepaDirectDebitDetails",
+            "sepadirectdebit_amazonpay": "#/components/schemas/SepaDirectDebitDetails",
+            "momo_wallet": "#/components/schemas/StoredPaymentMethodDetails",
+            "momo_wallet_app": "#/components/schemas/StoredPaymentMethodDetails",
+            "doku": "#/components/schemas/DokuDetails",
+            "doku_wallet": "#/components/schemas/DokuDetails",
+            "doku_ovo": "#/components/schemas/DokuDetails",
+            "doku_permata_lite_atm": "#/components/schemas/DokuDetails",
+            "doku_permata_atm": "#/components/schemas/DokuDetails",
+            "doku_alfamart": "#/components/schemas/DokuDetails",
+            "doku_indomaret": "#/components/schemas/DokuDetails",
+            "doku_sinarmas_va": "#/components/schemas/DokuDetails",
+            "doku_bca_va": "#/components/schemas/DokuDetails",
+            "doku_mandiri_va": "#/components/schemas/DokuDetails",
+            "doku_cimb_va": "#/components/schemas/DokuDetails",
+            "doku_danamon_va": "#/components/schemas/DokuDetails",
+            "doku_bri_va": "#/components/schemas/DokuDetails",
+            "doku_bni_va": "#/components/schemas/DokuDetails",
+            "doku_bni": "#/components/schemas/DokuDetails",
+            "vipps": "#/components/schemas/VippsDetails",
+            "mobilepay": "#/components/schemas/MobilePayDetails",
+            "cellulant": "#/components/schemas/CellulantDetails",
+            "unionpay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "kcp_banktransfer": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "kcp_payco": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "kcp_creditcard": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "wechatpay": "#/components/schemas/WeChatPayDetails",
+            "wechatpay_pos": "#/components/schemas/WeChatPayDetails",
+            "wechatpaySDK": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "wechatpayQR": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "wechatpayWeb": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "wechatpayMiniProgram": "#/components/schemas/WeChatPayMiniProgramDetails",
+            "molpay_ebanking_fpx_MY": "#/components/schemas/MolPayDetails",
+            "molpay_ebanking_TH": "#/components/schemas/MolPayDetails",
+            "molpay_krungsribank": "#/components/schemas/MolPayDetails",
+            "molpay_krungthaibank": "#/components/schemas/MolPayDetails",
+            "molpay_siamcommercialbank": "#/components/schemas/MolPayDetails",
+            "molpay_bangkokbank": "#/components/schemas/MolPayDetails",
+            "molpay_kbank": "#/components/schemas/MolPayDetails",
+            "molpay_boost": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "billdesk_online": "#/components/schemas/BillDeskDetails",
+            "billdesk_wallet": "#/components/schemas/BillDeskDetails",
+            "wallet_IN": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "payu_IN_cashcard": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "payu_IN_nb": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "payu_IN_upi": "#/components/schemas/PayUUpiDetails",
+            "pse_payulatam": "#/components/schemas/PseDetails",
+            "upi_collect": "#/components/schemas/UpiCollectDetails",
+            "upi_intent": "#/components/schemas/UpiIntentDetails",
+            "upi_qr": "#/components/schemas/UpiQrDetails",
+            "paytm": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_ebanking_VN": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "onlineBanking_PL": "#/components/schemas/GenericIssuerPaymentMethodDetails",
+            "eps": "#/components/schemas/GenericIssuerPaymentMethodDetails",
+            "paybybank": "#/components/schemas/PayByBankDetails",
+            "paybybank_AIS_DD": "#/components/schemas/PayByBankAisDirectDebitDetails",
+            "onlineBanking_SK": "#/components/schemas/GenericIssuerPaymentMethodDetails",
+            "onlineBanking_CZ": "#/components/schemas/GenericIssuerPaymentMethodDetails",
+            "openinvoice": "#/components/schemas/OpenInvoiceDetails",
+            "afterpay_directdebit": "#/components/schemas/OpenInvoiceDetails",
+            "atome_pos": "#/components/schemas/OpenInvoiceDetails",
+            "doku_paymentmethods": "#/components/schemas/DokuDetails",
+            "doku_atm_mandiri_va": "#/components/schemas/DokuDetails",
+            "doku_briepay": "#/components/schemas/DokuDetails",
+            "doku_mandiri_multipayment_lite": "#/components/schemas/DokuDetails",
+            "doku_card": "#/components/schemas/DokuDetails",
+            "doku_atm_mandiri_va_lite": "#/components/schemas/DokuDetails",
+            "doku_bca_klikpay": "#/components/schemas/DokuDetails",
+            "doku_mandiri_multipayment": "#/components/schemas/DokuDetails",
+            "doku_mandiri_clickpay": "#/components/schemas/DokuDetails",
+            "ebanking_FI": "#/components/schemas/EBankingFinlandDetails",
+            "molpay_ebanking_MY": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_ebanking_direct_MY": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "swish": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "twint": "#/components/schemas/TwintDetails",
+            "pix": "#/components/schemas/PixDetails",
+            "paybybank_pix": "#/components/schemas/PixPayByBankDetails",
+            "bizum": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "walley": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "walley_b2b": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "alma": "#/components/schemas/AlmaDetails",
+            "ancv": "#/components/schemas/AncvDetails",
+            "paypo": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "scalapay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "scalapay_3x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "scalapay_4x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "riverty": "#/components/schemas/RivertyDetails",
+            "riverty_installments": "#/components/schemas/RivertyDetails",
+            "sepadirectdebit_riverty": "#/components/schemas/RivertyDetails",
+            "payto": "#/components/schemas/PayToDetails",
+            "directdebit_AU": "#/components/schemas/DirectDebitAuDetails",
+            "molpay_fpx": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "payme": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "payme_pos": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "econtext_seven_eleven": "#/components/schemas/EcontextVoucherDetails",
+            "econtext_online": "#/components/schemas/EcontextVoucherDetails",
+            "econtext": "#/components/schemas/EcontextVoucherDetails",
+            "econtext_stores": "#/components/schemas/EcontextVoucherDetails",
+            "econtext_atm": "#/components/schemas/EcontextVoucherDetails",
+            "konbini": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "dragonpay_ebanking": "#/components/schemas/DragonpayDetails",
+            "dragonpay_otc_banking": "#/components/schemas/DragonpayDetails",
+            "dragonpay_otc_non_banking": "#/components/schemas/DragonpayDetails",
+            "dragonpay_otc_philippines": "#/components/schemas/DragonpayDetails",
+            "directEbanking": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "directdebit_GB": "#/components/schemas/BacsDirectDebitDetails",
+            "boletobancario": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "giftcard": "#/components/schemas/CardDetails",
+            "paymaya_wallet": "#/components/schemas/StoredPaymentMethodDetails",
+            "grabpay_SG": "#/components/schemas/StoredPaymentMethodDetails",
+            "grabpay_MY": "#/components/schemas/StoredPaymentMethodDetails",
+            "grabpay_TH": "#/components/schemas/StoredPaymentMethodDetails",
+            "grabpay_ID": "#/components/schemas/StoredPaymentMethodDetails",
+            "grabpay_VN": "#/components/schemas/StoredPaymentMethodDetails",
+            "grabpay_PH": "#/components/schemas/StoredPaymentMethodDetails",
+            "oxxo": "#/components/schemas/StoredPaymentMethodDetails",
+            "blik": "#/components/schemas/BlikDetails",
+            "gcash": "#/components/schemas/StoredPaymentMethodDetails",
+            "dana": "#/components/schemas/StoredPaymentMethodDetails",
+            "kakaopay": "#/components/schemas/StoredPaymentMethodDetails",
+            "truemoney": "#/components/schemas/StoredPaymentMethodDetails",
+            "mbway": "#/components/schemas/MbwayDetails",
+            "alliancedata": "#/components/schemas/CardDetails",
+            "paysafecard": "#/components/schemas/StoredPaymentMethodDetails",
+            "cashticket": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "ikano": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "karenmillen": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "oasis": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "warehouse": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "primeiropay_boleto": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "mada": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "benefit": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "knet": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "omannet": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "gopay_wallet": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "kcp_naverpay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "onlinebanking_IN": "#/components/schemas/GenericIssuerPaymentMethodDetails",
+            "fawry": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "atome": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "naps": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "nordea": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "boletobancario_bradesco": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "boletobancario_itau": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "boletobancario_santander": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "boletobancario_bancodobrasil": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "boletobancario_hsbc": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_maybank2u": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_cimb": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_rhb": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_amb": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_hlb": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_affin_epg": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_bankislam": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "molpay_publicbank": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "fpx_agrobank": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "touchngo": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "maybank2u_mae": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "duitnow": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "promptpay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "twint_pos": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "alipay_hk": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "alipay_hk_web": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "alipay_hk_wap": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "alipay_wap": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "balanceplatform": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "cashapp": "#/components/schemas/CashAppDetails",
+            "card": "#/components/schemas/CardDetails",
             "AchDetails": "#/components/schemas/AchDetails",
             "AffirmDetails": "#/components/schemas/AffirmDetails",
             "AfterpayDetails": "#/components/schemas/AfterpayDetails",
@@ -116803,12 +117491,14 @@
             "AncvDetails": "#/components/schemas/AncvDetails",
             "AndroidPayDetails": "#/components/schemas/AndroidPayDetails",
             "ApplePayDetails": "#/components/schemas/ApplePayDetails",
+            "AuPayDetails": "#/components/schemas/AuPayDetails",
             "BacsDirectDebitDetails": "#/components/schemas/BacsDirectDebitDetails",
             "BillDeskDetails": "#/components/schemas/BillDeskDetails",
             "BlikDetails": "#/components/schemas/BlikDetails",
             "CardDetails": "#/components/schemas/CardDetails",
             "CashAppDetails": "#/components/schemas/CashAppDetails",
             "CellulantDetails": "#/components/schemas/CellulantDetails",
+            "DBaraiDetails": "#/components/schemas/DBaraiDetails",
             "DirectDebitAuDetails": "#/components/schemas/DirectDebitAuDetails",
             "DokuDetails": "#/components/schemas/DokuDetails",
             "DragonpayDetails": "#/components/schemas/DragonpayDetails",
@@ -116892,6 +117582,7 @@
         ],
         "properties": {
           "type": {
+            "title": "type",
             "type": "string",
             "description": "Union discriminator"
           }
@@ -116900,6 +117591,16 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "bankTransfer": "#/components/schemas/CheckoutBankTransferAction",
+            "qrCode": "#/components/schemas/CheckoutQrCodeAction",
+            "nativeRedirect": "#/components/schemas/CheckoutNativeRedirectAction",
+            "redirect": "#/components/schemas/CheckoutRedirectAction",
+            "sdk": "#/components/schemas/CheckoutSdkAction",
+            "wechatpaySDK": "#/components/schemas/CheckoutSdkAction",
+            "threeDS2": "#/components/schemas/CheckoutThreeDs2Action",
+            "delegatedAuthentication": "#/components/schemas/CheckoutDelegatedAuthenticationAction",
+            "await": "#/components/schemas/CheckoutAwaitAction",
+            "voucher": "#/components/schemas/CheckoutVoucherAction",
             "CheckoutAwaitAction": "#/components/schemas/CheckoutAwaitAction",
             "CheckoutBankTransferAction": "#/components/schemas/CheckoutBankTransferAction",
             "CheckoutDelegatedAuthenticationAction": "#/components/schemas/CheckoutDelegatedAuthenticationAction",
@@ -118800,6 +119501,13 @@
         },
         "description": "Configuration parameters for the required input."
       },
+      "ThirdPartyTokenRedundancyInfoRequestParameters": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Request-specific parameter values to populate the template placeholders. Each key must match a placeholder defined in the template referenced by \u0060requestTemplateCode\u0060."
+      },
       "UtilityResponseOriginKeys": {
         "type": "object",
         "additionalProperties": {
@@ -120452,6 +121160,13 @@
           "type": "string"
         },
         "description": "Configuration parameters for the required input."
+      },
+      "ThirdPartyTokenRedundancyInfoRequestParametersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Request-specific parameter values to populate the template placeholders. Each key must match a placeholder defined in the template referenced by \u0060requestTemplateCode\u0060."
       },
       "UtilityResponseOriginKeysProperty": {
         "type": "object",
@@ -137491,6 +138206,24 @@
           ]
         }
       },
+      "AuPayDetailsType": {
+        "enum": [
+          "aupay"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "**aupay**",
+        "x-ms-enum": {
+          "name": "AuPayDetailsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "aupay",
+              "name": "Aupay"
+            }
+          ]
+        }
+      },
       "AuthenticationDataAttemptAuthentication": {
         "enum": [
           "always",
@@ -137623,6 +138356,29 @@
         "type": "string",
         "additionalProperties": false,
         "description": "The result of the cancellation request.\n\nPossible values:\n\n* **Received** \u2013 Indicates the cancellation has successfully been received by Adyen, and will be processed."
+      },
+      "CarRentalRateType": {
+        "enum": [
+          "daily",
+          "weekly"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Indicates whether the rental rate is daily or weekly.\n* **additionalData key:** \u0060carRental.rateIndicator\u0060",
+        "x-ms-enum": {
+          "name": "CarRentalRateType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daily",
+              "name": "Daily"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            }
+          ]
+        }
       },
       "CardDetailsFundingSource": {
         "enum": [
@@ -138440,6 +139196,24 @@
         "additionalProperties": false,
         "description": "The result of the order creation request.\n The value is always **Success**."
       },
+      "DBaraiDetailsType": {
+        "enum": [
+          "dbarai"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "**dbarai**",
+        "x-ms-enum": {
+          "name": "DBaraiDetailsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "dbarai",
+              "name": "Dbarai"
+            }
+          ]
+        }
+      },
       "DeliveryMethodType": {
         "enum": [
           "Shipping"
@@ -139236,6 +140010,34 @@
           ]
         }
       },
+      "CheckoutServiceV72LodgingLodgingChargeType": {
+        "enum": [
+          "advanceDeposit",
+          "noShow",
+          "stay"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The category of lodging charges for the payment.\n* **additionalData key:** \u0060lodging.specialProgramCode\u0060",
+        "x-ms-enum": {
+          "name": "CheckoutServiceV72LodgingLodgingChargeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "advanceDeposit",
+              "name": "AdvanceDeposit"
+            },
+            {
+              "value": "noShow",
+              "name": "NoShow"
+            },
+            {
+              "value": "stay",
+              "name": "Stay"
+            }
+          ]
+        }
+      },
       "CheckoutServiceV72MandateAmountRule": {
         "enum": [
           "max",
@@ -139944,7 +140746,6 @@
           "multibanco",
           "bankTransfer",
           "bankTransfer_IBAN",
-          "paybright",
           "paynow",
           "affirm_pos",
           "iris",
@@ -140050,10 +140851,6 @@
             {
               "value": "bankTransfer_IBAN",
               "name": "BankTransferIban"
-            },
-            {
-              "value": "paybright",
-              "name": "Paybright"
             },
             {
               "value": "paynow",

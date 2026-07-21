@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AfterpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AncvDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AndroidPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BacsDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BillDeskDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BlikDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CashAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DragonpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EBankingFinlandDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EftDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FastlaneDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GenericIssuerPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MbwayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobilePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MolPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OpenInvoiceDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankAisDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayToDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PseDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RakutenPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RatepayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RivertyDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TwintDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiCollectDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiIntentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiQrDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VippsDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayMiniProgramDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ZipDetails"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AfterpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AncvDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AndroidPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BacsDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BillDeskDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BlikDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CashAppDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DBaraiDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DragonpayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EBankingFinlandDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EftDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FastlaneDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GenericIssuerPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MbwayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobilePayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MolPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OpenInvoiceDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankAisDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayToDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PseDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RakutenPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RatepayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RivertyDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TwintDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiCollectDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiIntentDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpiQrDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VippsDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayMiniProgramDetails"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ZipDetails"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentRequestPaymentMethod : IComposedTypeWrapper, IParsable
@@ -77,6 +77,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails ApplePayDetails { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails? AuPayDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails AuPayDetails { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BacsDirectDebitDetails"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +140,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails CheckoutServiceV72PaymentDetails { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DBaraiDetails"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DBaraiDetails? DBaraiDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DBaraiDetails DBaraiDetails { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -487,11 +503,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentMethod();
-            if("AchDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ach".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AchDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AchDetails();
             }
-            else if("AffirmDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("affirm".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AffirmDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetails();
             }
@@ -499,25 +515,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.AfterpayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AfterpayDetails();
             }
-            else if("AlmaDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("alma".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AlmaDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetails();
             }
-            else if("AmazonPayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("amazonpay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AmazonPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails();
             }
-            else if("AncvDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ancv".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AncvDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AncvDetails();
             }
-            else if("AndroidPayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("androidpay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AndroidPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AndroidPayDetails();
             }
-            else if("ApplePayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("applepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ApplePayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails();
+            }
+            else if("aupay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AuPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails();
             }
             else if("BacsDirectDebitDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -527,31 +547,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.BillDeskDetails = new global::Soenneker.Adyen.OpenApiClient.Models.BillDeskDetails();
             }
-            else if("BlikDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("blik".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BlikDetails = new global::Soenneker.Adyen.OpenApiClient.Models.BlikDetails();
             }
-            else if("CardDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("alliancedata".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CardDetails = new global::Soenneker.Adyen.OpenApiClient.Models.CardDetails();
             }
-            else if("CashAppDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("cashapp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CashAppDetails = new global::Soenneker.Adyen.OpenApiClient.Models.CashAppDetails();
             }
-            else if("CellulantDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("cellulant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CellulantDetails = new global::Soenneker.Adyen.OpenApiClient.Models.CellulantDetails();
             }
-            else if("CheckoutServiceV72PaymentDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("affirm_pos".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CheckoutServiceV72PaymentDetails = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails();
+            }
+            else if("dbarai".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DBaraiDetails = new global::Soenneker.Adyen.OpenApiClient.Models.DBaraiDetails();
             }
             else if("DirectDebitAuDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DirectDebitAuDetails = new global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitAuDetails();
             }
-            else if("DokuDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("doku".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DokuDetails = new global::Soenneker.Adyen.OpenApiClient.Models.DokuDetails();
             }
@@ -563,7 +587,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.EBankingFinlandDetails = new global::Soenneker.Adyen.OpenApiClient.Models.EBankingFinlandDetails();
             }
-            else if("EcontextVoucherDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("econtext".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EcontextVoucherDetails = new global::Soenneker.Adyen.OpenApiClient.Models.EcontextVoucherDetails();
             }
@@ -571,27 +595,27 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.EftDetails = new global::Soenneker.Adyen.OpenApiClient.Models.EftDetails();
             }
-            else if("ExternalTokenDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("externalToken".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ExternalTokenDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetails();
             }
-            else if("FastlaneDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("fastlane".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FastlaneDetails = new global::Soenneker.Adyen.OpenApiClient.Models.FastlaneDetails();
             }
-            else if("GenericIssuerPaymentMethodDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("eps".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GenericIssuerPaymentMethodDetails = new global::Soenneker.Adyen.OpenApiClient.Models.GenericIssuerPaymentMethodDetails();
             }
-            else if("GooglePayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("googlepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GooglePayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDetails();
             }
-            else if("IdealDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ideal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.IdealDetails = new global::Soenneker.Adyen.OpenApiClient.Models.IdealDetails();
             }
-            else if("KlarnaDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("klarna".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.KlarnaDetails = new global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails();
             }
@@ -599,15 +623,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.KlarnaNetworkDetails = new global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetails();
             }
-            else if("MasterpassDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("masterpass".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MasterpassDetails = new global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetails();
             }
-            else if("MbwayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("mbway".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MbwayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.MbwayDetails();
             }
-            else if("MobilePayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("mobilepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MobilePayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.MobilePayDetails();
             }
@@ -615,7 +639,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.MolPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.MolPayDetails();
             }
-            else if("OpenInvoiceDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("afterpay_directdebit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OpenInvoiceDetails = new global::Soenneker.Adyen.OpenApiClient.Models.OpenInvoiceDetails();
             }
@@ -623,19 +647,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.PayByBankAisDirectDebitDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayByBankAisDirectDebitDetails();
             }
-            else if("PayByBankDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("paybybank".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayByBankDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayByBankDetails();
             }
-            else if("PayPalDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("paypal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayPalDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetails();
             }
-            else if("PayPayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("paypay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayPayDetails();
             }
-            else if("PayToDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("payto".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayToDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayToDetails();
             }
@@ -643,15 +667,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.PayUUpiDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayUUpiDetails();
             }
-            else if("PayWithGoogleDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("paywithgoogle".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayWithGoogleDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDetails();
             }
-            else if("PixDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("pix".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PixDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PixDetails();
             }
-            else if("PixPayByBankDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("paybybank_pix".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PixPayByBankDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetails();
             }
@@ -659,31 +683,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.PseDetails = new global::Soenneker.Adyen.OpenApiClient.Models.PseDetails();
             }
-            else if("RakutenPayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("rakutenpay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RakutenPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.RakutenPayDetails();
             }
-            else if("RatepayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ratepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RatepayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.RatepayDetails();
             }
-            else if("RivertyDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("riverty".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RivertyDetails = new global::Soenneker.Adyen.OpenApiClient.Models.RivertyDetails();
             }
-            else if("SamsungPayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("samsungpay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SamsungPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetails();
             }
-            else if("SepaDirectDebitDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("sepadirectdebit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SepaDirectDebitDetails = new global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDetails();
             }
-            else if("StoredPaymentMethodDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("alipay_plus".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.StoredPaymentMethodDetails = new global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodDetails();
             }
-            else if("TwintDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("twint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TwintDetails = new global::Soenneker.Adyen.OpenApiClient.Models.TwintDetails();
             }
@@ -699,23 +723,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.UpiQrDetails = new global::Soenneker.Adyen.OpenApiClient.Models.UpiQrDetails();
             }
-            else if("VippsDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("vipps".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.VippsDetails = new global::Soenneker.Adyen.OpenApiClient.Models.VippsDetails();
             }
-            else if("VisaCheckoutDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("visacheckout".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.VisaCheckoutDetails = new global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails();
             }
-            else if("WeChatPayDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("wechatpay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WeChatPayDetails = new global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayDetails();
             }
-            else if("WeChatPayMiniProgramDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("wechatpayMiniProgram".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WeChatPayMiniProgramDetails = new global::Soenneker.Adyen.OpenApiClient.Models.WeChatPayMiniProgramDetails();
             }
-            else if("ZipDetails".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("zip".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ZipDetails = new global::Soenneker.Adyen.OpenApiClient.Models.ZipDetails();
             }
@@ -759,6 +783,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 return ApplePayDetails.GetFieldDeserializers();
             }
+            else if(AuPayDetails != null)
+            {
+                return AuPayDetails.GetFieldDeserializers();
+            }
             else if(BacsDirectDebitDetails != null)
             {
                 return BacsDirectDebitDetails.GetFieldDeserializers();
@@ -786,6 +814,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if(CheckoutServiceV72PaymentDetails != null)
             {
                 return CheckoutServiceV72PaymentDetails.GetFieldDeserializers();
+            }
+            else if(DBaraiDetails != null)
+            {
+                return DBaraiDetails.GetFieldDeserializers();
             }
             else if(DirectDebitAuDetails != null)
             {
@@ -1000,6 +1032,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDetails>(null, ApplePayDetails);
             }
+            else if(AuPayDetails != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails>(null, AuPayDetails);
+            }
             else if(BacsDirectDebitDetails != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BacsDirectDebitDetails>(null, BacsDirectDebitDetails);
@@ -1027,6 +1063,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if(CheckoutServiceV72PaymentDetails != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetails>(null, CheckoutServiceV72PaymentDetails);
+            }
+            else if(DBaraiDetails != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DBaraiDetails>(null, DBaraiDetails);
             }
             else if(DirectDebitAuDetails != null)
             {

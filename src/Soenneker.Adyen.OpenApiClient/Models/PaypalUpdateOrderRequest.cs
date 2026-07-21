@@ -20,6 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
 #endif
+        /// <summary>The deliveryAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress? DeliveryAddress { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress DeliveryAddress { get; set; }
+#endif
         /// <summary>The list of new delivery methods and the cost of each.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +35,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod> DeliveryMethods { get; set; }
+#endif
+        /// <summary>The discountAmount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? DiscountAmount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount DiscountAmount { get; set; }
 #endif
         /// <summary>The `paymentData` from the client side. This value changes every time you make a `/paypal/updateOrder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,6 +67,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public string SessionId { get; set; }
+#endif
+        /// <summary>The shippingAmount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? ShippingAmount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount ShippingAmount { get; set; }
 #endif
         /// <summary>The taxTotal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +103,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "deliveryAddress", n => { DeliveryAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress.CreateFromDiscriminatorValue); } },
                 { "deliveryMethods", n => { DeliveryMethods = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod>(global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "discountAmount", n => { DiscountAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "shippingAmount", n => { ShippingAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
                 { "taxTotal", n => { TaxTotal = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxTotal>(global::Soenneker.Adyen.OpenApiClient.Models.TaxTotal.CreateFromDiscriminatorValue); } },
             };
         }
@@ -94,10 +121,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress>("deliveryAddress", DeliveryAddress);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethod>("deliveryMethods", DeliveryMethods);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("discountAmount", DiscountAmount);
             writer.WriteStringValue("paymentData", PaymentData);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("sessionId", SessionId);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("shippingAmount", ShippingAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxTotal>("taxTotal", TaxTotal);
         }
     }

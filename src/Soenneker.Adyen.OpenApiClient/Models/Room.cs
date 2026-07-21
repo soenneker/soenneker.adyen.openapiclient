@@ -9,34 +9,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Agency : IParsable
+    public partial class Room : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The reference number for the invoice, issued by the agency.* Encoding: ASCII* minLength: 1 character* maxLength: 6 characters* **additionalData key:** `airline.agency_invoice_number`&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvoiceNumber { get; set; }
-#nullable restore
-#else
-        public string InvoiceNumber { get; set; }
-#endif
-        /// <summary>&quot;The two-letter agency plan identifier.* Encoding: ASCII* minLength: 2 characters* maxLength: 2 characters* **additionalData key:** `airline.agency_plan_name`&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlanName { get; set; }
-#nullable restore
-#else
-        public string PlanName { get; set; }
-#endif
+        /// <summary>&quot;The total number of nights the room is booked for.* Format: Numeric* Must be a number between 1 and 99* **additionalData key:** `lodging.room[N].numberOfNights`&quot;</summary>
+        public int? NumberOfNights { get; set; }
+        /// <summary>&quot;Room rate per night, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.room[N].rate`&quot;</summary>
+        public long? Rate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Agency"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Room"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.Agency CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.Room CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.Agency();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.Room();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,8 +34,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "invoiceNumber", n => { InvoiceNumber = n.GetStringValue(); } },
-                { "planName", n => { PlanName = n.GetStringValue(); } },
+                { "numberOfNights", n => { NumberOfNights = n.GetIntValue(); } },
+                { "rate", n => { Rate = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,8 +45,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("invoiceNumber", InvoiceNumber);
-            writer.WriteStringValue("planName", PlanName);
+            writer.WriteIntValue("numberOfNights", NumberOfNights);
+            writer.WriteLongValue("rate", Rate);
         }
     }
 }

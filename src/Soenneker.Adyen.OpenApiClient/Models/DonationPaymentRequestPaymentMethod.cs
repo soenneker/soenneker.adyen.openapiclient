@@ -63,23 +63,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod();
-            if("ApplePayDonations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("applepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ApplePayDonations = new global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations();
             }
-            else if("CardDonations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("card".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CardDonations = new global::Soenneker.Adyen.OpenApiClient.Models.CardDonations();
             }
-            else if("GooglePayDonations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("googlepay".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GooglePayDonations = new global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations();
             }
-            else if("IdealDonations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ideal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.IdealDonations = new global::Soenneker.Adyen.OpenApiClient.Models.IdealDonations();
             }
-            else if("PayWithGoogleDonations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("paywithgoogle".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayWithGoogleDonations = new global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations();
             }

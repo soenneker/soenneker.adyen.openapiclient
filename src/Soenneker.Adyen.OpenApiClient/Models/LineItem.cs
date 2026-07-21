@@ -98,6 +98,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReceiverEmail { get; set; }
 #endif
+        /// <summary>Shipping company handling the return of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReturnShippingCompany { get; set; }
+#nullable restore
+#else
+        public string ReturnShippingCompany { get; set; }
+#endif
+        /// <summary>Tracking number for the return of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReturnTrackingNumber { get; set; }
+#nullable restore
+#else
+        public string ReturnTrackingNumber { get; set; }
+#endif
+        /// <summary>Tracking URI for the return of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReturnTrackingUri { get; set; }
+#nullable restore
+#else
+        public string ReturnTrackingUri { get; set; }
+#endif
+        /// <summary>Shipping company handling the delivery of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingCompany { get; set; }
+#nullable restore
+#else
+        public string ShippingCompany { get; set; }
+#endif
+        /// <summary>Shipping method used to deliver the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShippingMethod { get; set; }
+#nullable restore
+#else
+        public string ShippingMethod { get; set; }
+#endif
         /// <summary>Size of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +158,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public long? TaxAmount { get; set; }
         /// <summary>Tax percentage, represented as a [basis point](https://en.wikipedia.org/wiki/Basis_point) integer. For example: - **530** for 5.3% (five point three percent)  - **2100** for 21% (twenty-one percent)</summary>
         public long? TaxPercentage { get; set; }
+        /// <summary>Tracking number for the delivery of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingNumber { get; set; }
+#nullable restore
+#else
+        public string TrackingNumber { get; set; }
+#endif
+        /// <summary>Tracking URI for the delivery of the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrackingUri { get; set; }
+#nullable restore
+#else
+        public string TrackingUri { get; set; }
+#endif
         /// <summary>Universal Product Code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,10 +213,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "productUrl", n => { ProductUrl = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetLongValue(); } },
                 { "receiverEmail", n => { ReceiverEmail = n.GetStringValue(); } },
+                { "returnShippingCompany", n => { ReturnShippingCompany = n.GetStringValue(); } },
+                { "returnTrackingNumber", n => { ReturnTrackingNumber = n.GetStringValue(); } },
+                { "returnTrackingUri", n => { ReturnTrackingUri = n.GetStringValue(); } },
+                { "shippingCompany", n => { ShippingCompany = n.GetStringValue(); } },
+                { "shippingMethod", n => { ShippingMethod = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetStringValue(); } },
                 { "sku", n => { Sku = n.GetStringValue(); } },
                 { "taxAmount", n => { TaxAmount = n.GetLongValue(); } },
                 { "taxPercentage", n => { TaxPercentage = n.GetLongValue(); } },
+                { "trackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
+                { "trackingUri", n => { TrackingUri = n.GetStringValue(); } },
                 { "upc", n => { Upc = n.GetStringValue(); } },
             };
         }
@@ -184,10 +247,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("productUrl", ProductUrl);
             writer.WriteLongValue("quantity", Quantity);
             writer.WriteStringValue("receiverEmail", ReceiverEmail);
+            writer.WriteStringValue("returnShippingCompany", ReturnShippingCompany);
+            writer.WriteStringValue("returnTrackingNumber", ReturnTrackingNumber);
+            writer.WriteStringValue("returnTrackingUri", ReturnTrackingUri);
+            writer.WriteStringValue("shippingCompany", ShippingCompany);
+            writer.WriteStringValue("shippingMethod", ShippingMethod);
             writer.WriteStringValue("size", Size);
             writer.WriteStringValue("sku", Sku);
             writer.WriteLongValue("taxAmount", TaxAmount);
             writer.WriteLongValue("taxPercentage", TaxPercentage);
+            writer.WriteStringValue("trackingNumber", TrackingNumber);
+            writer.WriteStringValue("trackingUri", TrackingUri);
             writer.WriteStringValue("upc", Upc);
         }
     }

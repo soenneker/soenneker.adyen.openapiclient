@@ -390,6 +390,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ThemeId { get; set; }
 #endif
+        /// <summary>The thirdPartyTokenRedundancyInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo? ThirdPartyTokenRedundancyInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo ThirdPartyTokenRedundancyInfo { get; set; }
+#endif
         /// <summary>The threeDS2RequestData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -497,6 +505,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "storePaymentMethodMode", n => { StorePaymentMethodMode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionResponseStorePaymentMethodMode>(); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
                 { "themeId", n => { ThemeId = n.GetStringValue(); } },
+                { "thirdPartyTokenRedundancyInfo", n => { ThirdPartyTokenRedundancyInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo.CreateFromDiscriminatorValue); } },
                 { "threeDS2RequestData", n => { ThreeDS2RequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData.CreateFromDiscriminatorValue); } },
                 { "threeDSAuthenticationOnly", n => { ThreeDSAuthenticationOnly = n.GetBoolValue(); } },
                 { "trustedShopper", n => { TrustedShopper = n.GetBoolValue(); } },
@@ -569,6 +578,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionResponseStorePaymentMethodMode>("storePaymentMethodMode", StorePaymentMethodMode);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
             writer.WriteStringValue("themeId", ThemeId);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo>("thirdPartyTokenRedundancyInfo", ThirdPartyTokenRedundancyInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData>("threeDS2RequestData", ThreeDS2RequestData);
             writer.WriteBoolValue("threeDSAuthenticationOnly", ThreeDSAuthenticationOnly);
             writer.WriteBoolValue("trustedShopper", TrustedShopper);

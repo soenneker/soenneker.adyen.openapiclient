@@ -95,11 +95,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction();
-            if("CheckoutAwaitAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("await".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CheckoutAwaitAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutAwaitAction();
             }
-            else if("CheckoutBankTransferAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("bankTransfer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CheckoutBankTransferAction = new global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankTransferAction();
             }

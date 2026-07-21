@@ -52,6 +52,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Iban { get; set; }
 #endif
+        /// <summary>Base64-encoded merchant metadata (Extra Merchant Data) forwarded to Riverty at authorization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MerchantData { get; set; }
+#nullable restore
+#else
+        public string MerchantData { get; set; }
+#endif
         /// <summary>Shopper name, date of birth, phone number, and email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "deliveryAddress", n => { DeliveryAddress = n.GetStringValue(); } },
                 { "deviceFingerprint", n => { DeviceFingerprint = n.GetStringValue(); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
+                { "merchantData", n => { MerchantData = n.GetStringValue(); } },
                 { "personalDetails", n => { PersonalDetails = n.GetStringValue(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
@@ -138,6 +147,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("deliveryAddress", DeliveryAddress);
             writer.WriteStringValue("deviceFingerprint", DeviceFingerprint);
             writer.WriteStringValue("iban", Iban);
+            writer.WriteStringValue("merchantData", MerchantData);
             writer.WriteStringValue("personalDetails", PersonalDetails);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);

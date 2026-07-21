@@ -23,10 +23,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         BankTransferIban,
         #pragma warning restore CS1591
-        [EnumMember(Value = "paybright")]
-        #pragma warning disable CS1591
-        Paybright,
-        #pragma warning restore CS1591
         [EnumMember(Value = "paynow")]
         #pragma warning disable CS1591
         Paynow,

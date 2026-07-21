@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class ItemDetailLine : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)* [NAICS commodity codes](https://www.census.gov/naics/)* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)* Encoding: ASCII* Max length: 12 characters* Must not start with a space or be all spaces.* Must not be all zeros.&quot;</summary>
+        /// <summary>&quot;The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)* [NAICS commodity codes](https://www.census.gov/naics/)* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)* Encoding: ASCII* Max length: 12 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].commodityCode`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommodityCode { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CommodityCode { get; set; }
 #endif
-        /// <summary>&quot;A description of the item, that provides details about the purchase. For Visa transactions with level 3 ESD, the description must not be the same or very similar to your merchant name, or, consist only of common words like \&quot;product\&quot;, or \&quot;service\&quot;.* Encoding: ASCII* Max length: 26 characters* Must not be a single character.* Must not be blank.* Must not be all special characters.* Must not start with a space or be all spaces.* Must not be all zeros.&quot;</summary>
+        /// <summary>&quot;A description of the item, that provides details about the purchase. For Visa transactions with level 3 ESD, the description must not be the same or very similar to your merchant name, or, consist only of common words like \&quot;product\&quot;, or \&quot;service\&quot;.* Encoding: ASCII* Max length: 26 characters* Must not be a single character.* Must not be blank.* Must not be all special characters.* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].description`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -28,9 +28,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;The discount amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>&quot;The discount amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].discountAmount`&quot;</summary>
         public long? DiscountAmount { get; set; }
-        /// <summary>&quot;The product code. Must be a unique product code associated with the item or service. This can be your unique code for the item, or the manufacturer&apos;s product code. * Encoding: ASCII.* Max length: 12 characters&quot;</summary>
+        /// <summary>&quot;The product code. Must be a unique product code associated with the item or service. This can be your unique code for the item, or the manufacturer&apos;s product code. * Encoding: ASCII.* Max length: 12 characters* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].productCode`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductCode { get; set; }
@@ -38,11 +38,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ProductCode { get; set; }
 #endif
-        /// <summary>&quot;The number of items. Must be an integer greater than zero.* Encoding: Numeric* Max value: 9999&quot;</summary>
+        /// <summary>&quot;The number of items. Must be an integer greater than zero.* Encoding: Numeric* Max value: 9999* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].quantity`&quot;</summary>
         public long? Quantity { get; set; }
-        /// <summary>&quot;The total amount for the line item, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000See [Amount requirements for level 2/3 ESD](https://docs.adyen.com//payment-methods/cards/enhanced-scheme-data/l2-l3#amount-requirements) to learn more about how to calculate the line item total.&quot;</summary>
+        /// <summary>&quot;The total amount for the line item, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000See [Amount requirements for level 2/3 ESD](https://docs.adyen.com//payment-methods/cards/enhanced-scheme-data/l2-l3#amount-requirements) to learn more about how to calculate the line item total.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].totalAmount`&quot;</summary>
         public long? TotalAmount { get; set; }
-        /// <summary>&quot;The unit of measurement for an item.* Encoding: ASCII* Max length: 3 characters&quot;</summary>
+        /// <summary>&quot;The unit of measurement for an item.* Encoding: ASCII* Max length: 3 characters* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].unitOfMeasure`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UnitOfMeasure { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string UnitOfMeasure { get; set; }
 #endif
-        /// <summary>&quot;The unit price, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>&quot;The unit price, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].unitPrice`&quot;</summary>
         public long? UnitPrice { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

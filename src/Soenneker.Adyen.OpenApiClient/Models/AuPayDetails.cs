@@ -9,17 +9,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class KlarnaDetails : IParsable
+    public partial class AuPayDetails : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address where to send the invoice.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BillingAddress { get; set; }
-#nullable restore
-#else
-        public string BillingAddress { get; set; }
-#endif
         /// <summary>The checkout attempt identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,30 +19,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public string CheckoutAttemptId { get; set; }
-#endif
-        /// <summary>The address where the goods should be delivered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeliveryAddress { get; set; }
-#nullable restore
-#else
-        public string DeliveryAddress { get; set; }
-#endif
-        /// <summary>Base64-encoded merchant metadata (Extra Merchant Data) forwarded to Klarna at authorization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MerchantData { get; set; }
-#nullable restore
-#else
-        public string MerchantData { get; set; }
-#endif
-        /// <summary>Shopper name, date of birth, phone number, and email address.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PersonalDetails { get; set; }
-#nullable restore
-#else
-        public string PersonalDetails { get; set; }
 #endif
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
         [Obsolete("")]
@@ -77,25 +45,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StoredPaymentMethodId { get; set; }
 #endif
-        /// <summary>The type of flow to initiate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Subtype { get; set; }
-#nullable restore
-#else
-        public string Subtype { get; set; }
-#endif
-        /// <summary>**klarna**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetailsType? Type { get; set; }
+        /// <summary>**aupay**</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetailsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetails();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,16 +65,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billingAddress", n => { BillingAddress = n.GetStringValue(); } },
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "deliveryAddress", n => { DeliveryAddress = n.GetStringValue(); } },
-                { "merchantData", n => { MerchantData = n.GetStringValue(); } },
-                { "personalDetails", n => { PersonalDetails = n.GetStringValue(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "subtype", n => { Subtype = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetailsType>(); } },
             };
         }
         /// <summary>
@@ -124,16 +79,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("billingAddress", BillingAddress);
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteStringValue("deliveryAddress", DeliveryAddress);
-            writer.WriteStringValue("merchantData", MerchantData);
-            writer.WriteStringValue("personalDetails", PersonalDetails);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteStringValue("subtype", Subtype);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuPayDetailsType>("type", Type);
         }
     }
 }
