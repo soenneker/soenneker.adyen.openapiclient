@@ -131492,6 +131492,18 @@
           "paymentMethodVariant": {
             "type": "string"
           },
+          "refusalReason": {
+            "type": "string",
+            "description": "The Adyen-mapped [refusal reason](https://docs.adyen.com/development-resources/refusal-reasons).\n\nExample: **Refused**"
+          },
+          "refusalReasonCode": {
+            "type": "string",
+            "description": "The Adyen code that maps to the [refusal reason](https://docs.adyen.com/development-resources/refusal-reasons).\n\nExample: **2**"
+          },
+          "refusalReasonRaw": {
+            "type": "string",
+            "description": "The raw refusal reason from the acquirer, where available."
+          },
           "shopperCountry": {
             "type": "string"
           }
