@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApplePayDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DonationPaymentRequestPaymentMethod : IComposedTypeWrapper, IParsable
@@ -53,6 +53,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations PayWithGoogleDonations { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations? SepaDirectDebitDonations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations SepaDirectDebitDonations { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,6 +91,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.PayWithGoogleDonations = new global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations();
             }
+            else if("sepadirectdebit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SepaDirectDebitDonations = new global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations();
+            }
             return result;
         }
         /// <summary>
@@ -110,6 +122,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if(PayWithGoogleDonations != null)
             {
                 return PayWithGoogleDonations.GetFieldDeserializers();
+            }
+            else if(SepaDirectDebitDonations != null)
+            {
+                return SepaDirectDebitDonations.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -139,6 +155,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             else if(PayWithGoogleDonations != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayWithGoogleDonations>(null, PayWithGoogleDonations);
+            }
+            else if(SepaDirectDebitDonations != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitDonations>(null, SepaDirectDebitDonations);
             }
         }
     }

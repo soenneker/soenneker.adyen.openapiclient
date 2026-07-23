@@ -3,44 +3,38 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.ScaAssociations;
 using Soenneker.Adyen.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item
+namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\scaDevices\{deviceId}
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccount-id}\recurringTopUps\{topUpId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithDeviceItemRequestBuilder : BaseRequestBuilder
+    public partial class WithTopUpItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The scaAssociations property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.ScaAssociations.ScaAssociationsRequestBuilder ScaAssociations
-        {
-            get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.ScaAssociations.ScaAssociationsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.Item.WithTopUpItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/scaDevices/{deviceId}", pathParameters)
+        public WithTopUpItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/recurringTopUps/{topUpId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.Item.WithTopUpItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/scaDevices/{deviceId}", rawUrl)
+        public WithTopUpItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/recurringTopUps/{topUpId}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a Strong Customer Authentication (SCA) device.
+        /// Delete a recurring top up configuration by `topUpId`.For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,25 +67,23 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Finishes the registration process for a new Strong Customer Authentication (SCA) device.
+        /// Update the configuration of an existing recurring top up.For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponse?> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp?> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponse> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -101,14 +93,12 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item
                 { "400", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a Strong Customer Authentication (SCA) device.
+        /// Delete a recurring top up configuration by `topUpId`.For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,18 +117,18 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item
             return requestInfo;
         }
         /// <summary>
-        /// Finishes the registration process for a new Strong Customer Authentication (SCA) device.
+        /// Update the configuration of an existing recurring top up.For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUp body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -151,11 +141,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.Item.WithTopUpItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.Item.WithTopUpItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.Item.WithTopUpItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

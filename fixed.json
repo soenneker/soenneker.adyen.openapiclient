@@ -11105,6 +11105,863 @@
         }
       }
     },
+    "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/recurringTopUps": {
+      "get": {
+        "tags": [
+          "Recurring top ups"
+        ],
+        "summary": "Get recurring top ups for a specific balanceAccountId",
+        "description": "View all recurring top ups configured for a specific \u0060balanceAccountId\u0060.\n\nFor more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).\n",
+        "operationId": "BalancePlatformServiceV2GetBalanceAccountsBalanceAccountIdRecurringTopUps",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of items to return per page. Value must be between 1 and 100.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor used for pagination. Required if you want to see the next or previous page of results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecurringTopUpsResult"
+                },
+                "examples": {
+                  "get-recurring-topups-200": {
+                    "summary": "Gets recurring top Ups config for a balanceAccountId",
+                    "description": "Get Recurring top ups for a balanceAccountId",
+                    "value": {
+                      "recurringTopUps": [
+                        {
+                          "id": "TUPC0000000000000000000001",
+                          "counterparty": {
+                            "transferInstrumentId": "SE000000000000000000000001"
+                          },
+                          "description": "My description",
+                          "topUpAmount": {
+                            "fixed": {
+                              "value": 1000,
+                              "currency": "EUR"
+                            }
+                          },
+                          "trigger": {
+                            "schedule": {
+                              "type": "weekdays"
+                            },
+                            "threshold": {
+                              "value": 100,
+                              "currency": "EUR"
+                            }
+                          },
+                          "status": "active"
+                        }
+                      ],
+                      "link": {
+                        "next": {
+                          "href": "/balanceAccounts/balanceAccount1/recurringTopUps?limit=10\u0026cursor=nextCursorToken"
+                        },
+                        "previous": {
+                          "href": "/balanceAccounts/balanceAccount1/recurringTopUps?limit=10\u0026cursor=previousCursorToken"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "unauthorized-error-response": {
+                    "summary": "Unauthorized error response",
+                    "description": "Error response for unauthorized API requests",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unauthorized",
+                      "errorCode": "00_401",
+                      "title": "Unauthorized",
+                      "status": 401,
+                      "detail": "Authentication failed",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "access-denied-error-response": {
+                    "summary": "Access denied error response",
+                    "description": "Error response when access to resource is denied",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/forbidden",
+                      "errorCode": "00_403",
+                      "title": "Forbidden",
+                      "status": 403,
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the recurring top up was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "not-found-error-response": {
+                    "summary": "Not found error response",
+                    "description": "Error response when balance account or top-up is not found",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/not-found",
+                      "errorCode": "30_013",
+                      "title": "Balance account not found",
+                      "status": 404,
+                      "detail": "Could not find balance account with id SampleUSD.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "internal-server-error-response": {
+                    "summary": "Internal server error response",
+                    "description": "Error response when an unexpected server error occurs",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/internal-server-error",
+                      "errorCode": "00_500",
+                      "title": "Internal Server Error",
+                      "status": 500,
+                      "detail": "An unexpected error occurred while processing the request.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Recurring top ups"
+        ],
+        "summary": "Create recurring top up",
+        "description": "Create a recurring top up configuration.\n\nFor more information, refer to [Create recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/create-recurring-top-ups).\n",
+        "operationId": "BalancePlatformServiceV2PostBalanceAccountsBalanceAccountIdRecurringTopUps",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRecurringTopUp"
+              },
+              "examples": {
+                "create-recurring-topup": {
+                  "summary": "Creates recurring topup",
+                  "description": "Creates a new persistent configuration for a recurrent top-up.",
+                  "value": {
+                    "counterparty": {
+                      "transferInstrumentId": "SE000000000000000000000001"
+                    },
+                    "description": "My description",
+                    "topUpAmount": {
+                      "fixed": {
+                        "value": 1000,
+                        "currency": "EUR"
+                      }
+                    },
+                    "trigger": {
+                      "schedule": {
+                        "type": "weekdays"
+                      },
+                      "threshold": {
+                        "value": 100,
+                        "currency": "EUR"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecurringTopUp"
+                },
+                "examples": {
+                  "create-recurring-topup-200": {
+                    "summary": "Successfully created recurring topup",
+                    "description": "Successfully created a new persistent configuration for a recurrent top-up",
+                    "value": {
+                      "id": "TUPC0000000000000000000001",
+                      "counterparty": {
+                        "transferInstrumentId": "SE000000000000000000000001"
+                      },
+                      "description": "My description",
+                      "topUpAmount": {
+                        "fixed": {
+                          "value": 1000,
+                          "currency": "EUR"
+                        }
+                      },
+                      "trigger": {
+                        "schedule": {
+                          "type": "weekdays"
+                        },
+                        "threshold": {
+                          "value": 100,
+                          "currency": "EUR"
+                        }
+                      },
+                      "status": "active"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "bad-request-error-response": {
+                    "summary": "Bad request error response",
+                    "description": "Error response when the request body cannot be parsed",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad Request",
+                      "status": 400,
+                      "detail": "The request could not be processed due to malformed syntax.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "unauthorized-error-response": {
+                    "summary": "Unauthorized error response",
+                    "description": "Error response for unauthorized API requests",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unauthorized",
+                      "errorCode": "00_401",
+                      "title": "Unauthorized",
+                      "status": 401,
+                      "detail": "Authentication failed",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "access-denied-error-response": {
+                    "summary": "Access denied error response",
+                    "description": "Error response when access to resource is denied",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/forbidden",
+                      "errorCode": "00_403",
+                      "title": "Forbidden",
+                      "status": 403,
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "currency-mismatch-error-response": {
+                    "summary": "Currency mismatch error response",
+                    "description": "Error response when currency mismatch occurs",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "Account top up currency mismatch",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "feature-disabled-error-response": {
+                    "summary": "Feature disabled error response",
+                    "description": "Error response when feature is disabled",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "BAP property DirectDebitTopUp is not active for balance account",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "inactive-account-holder-error-response": {
+                    "summary": "Inactive account holder error response",
+                    "description": "Error response when account holder is inactive",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "BalanceAccountHolder PeterPanInactive has invalid account status inactive.",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "invalid-transfer-instrument-error-response": {
+                    "summary": "Invalid transfer instrument error response",
+                    "description": "Error response when transfer instrument is invalid",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "Invalid Transfer instrument with id 00000000-0000-0000-0000-000000000000",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "missing-capability-error-response": {
+                    "summary": "Missing capability error response",
+                    "description": "Error response when required capability is missing",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "Missing Capabilities [receiveFromTransferInstrument] for BalanceAccountHolder.PeterPanWithoutTransferInstrument",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "validation-error-response": {
+                    "summary": "Validation error response",
+                    "description": "Error response for request validation failures",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "No routes could be found using the provided sweep.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/recurringTopUps/{topUpId}": {
+      "delete": {
+        "tags": [
+          "Recurring top ups"
+        ],
+        "summary": "Delete a recurring top up",
+        "description": "Delete a recurring top up configuration by \u0060topUpId\u0060.\n\nFor more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).\n",
+        "operationId": "BalancePlatformServiceV2DeleteBalanceAccountsBalanceAccountIdRecurringTopUpsTopUpId",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "topUpId",
+            "in": "path",
+            "description": "The unique identifier of the recurring top-up you want to delete.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "bad-request-error-response": {
+                    "summary": "Bad request error response",
+                    "description": "bad-request-error-response",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad Request",
+                      "status": 400,
+                      "detail": "The request could not be processed due to malformed syntax.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "unauthorized-error-response": {
+                    "summary": "Unauthorized error response",
+                    "description": "unauthorized-error-response",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unauthorized",
+                      "errorCode": "00_401",
+                      "title": "Unauthorized",
+                      "status": 401,
+                      "detail": "Authentication failed",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "access-denied-error-response": {
+                    "summary": "Access denied error response",
+                    "description": "access-denied-error-response",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/forbidden",
+                      "errorCode": "00_403",
+                      "title": "Forbidden",
+                      "status": 403,
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the recurring top up was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "not-found-error-response": {
+                    "summary": "Not found error response",
+                    "description": "not-found-error-response",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/not-found",
+                      "errorCode": "30_013",
+                      "title": "Balance account not found",
+                      "status": 404,
+                      "detail": "Could not find balance account with id SampleUSD.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "validation-error-response": {
+                    "summary": "Validation error response",
+                    "description": "validation-error-response",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "No routes could be found using the provided sweep.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "internal-server-error-response": {
+                    "summary": "Internal server error response",
+                    "description": "internal-server-error-response",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/internal-server-error",
+                      "errorCode": "00_500",
+                      "title": "Internal Server Error",
+                      "status": 500,
+                      "detail": "An unexpected error occurred while processing the request.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Recurring top ups"
+        ],
+        "summary": "Update a RecurringTopUp",
+        "description": "Update the configuration of an existing recurring top up.\n\nFor more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).",
+        "operationId": "BalancePlatformServiceV2PatchBalanceAccountsBalanceAccountIdRecurringTopUpsTopUpId",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "topUpId",
+            "in": "path",
+            "description": "The unique identifier of the recurring top-up you want to update.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchableCreateRecurringTopUp"
+              },
+              "examples": {
+                "update-recurring-topup": {
+                  "summary": "Partially updates the configuration of a recurring Top up",
+                  "description": "Partially updates the configuration of a recurring Top up",
+                  "value": {
+                    "description": "new description"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecurringTopUp"
+                },
+                "examples": {
+                  "update-recurring-topup-200": {
+                    "summary": "Successfully updated recurring topup",
+                    "description": "Successfully updated the configuration of a recurring Top up",
+                    "value": {
+                      "id": "TUPC0000000000000000000001",
+                      "counterparty": {
+                        "transferInstrumentId": "SE000000000000000000000001"
+                      },
+                      "description": "new description",
+                      "topUpAmount": {
+                        "fixed": {
+                          "value": 1000,
+                          "currency": "EUR"
+                        }
+                      },
+                      "trigger": {
+                        "schedule": {
+                          "type": "weekdays"
+                        },
+                        "threshold": {
+                          "value": 100,
+                          "currency": "EUR"
+                        }
+                      },
+                      "status": "inactive"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "bad-request-error-response": {
+                    "summary": "Bad request error response",
+                    "description": "Error response when the request body cannot be parsed",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/bad-request",
+                      "errorCode": "00_400",
+                      "title": "Bad Request",
+                      "status": 400,
+                      "detail": "The request could not be processed due to malformed syntax.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "unauthorized-error-response": {
+                    "summary": "Unauthorized error response",
+                    "description": "Error response for unauthorized API requests",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unauthorized",
+                      "errorCode": "00_401",
+                      "title": "Unauthorized",
+                      "status": 401,
+                      "detail": "Authentication failed",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "access-denied-error-response": {
+                    "summary": "Access denied error response",
+                    "description": "Error response when access to resource is denied",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/forbidden",
+                      "errorCode": "00_403",
+                      "title": "Forbidden",
+                      "status": 403,
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "currency-mismatch-error-response": {
+                    "summary": "Currency mismatch error response",
+                    "description": "Error response when currency mismatch occurs",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "Account top up currency mismatch",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "feature-disabled-error-response": {
+                    "summary": "Feature disabled error response",
+                    "description": "Error response when feature is disabled",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "BAP property DirectDebitTopUp is not active for balance account",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "inactive-account-holder-error-response": {
+                    "summary": "Inactive account holder error response",
+                    "description": "Error response when account holder is inactive",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "BalanceAccountHolder PeterPanInactive has invalid account status inactive.",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "invalid-transfer-instrument-error-response": {
+                    "summary": "Invalid transfer instrument error response",
+                    "description": "Error response when transfer instrument is invalid",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "Invalid Transfer instrument with id 00000000-0000-0000-0000-000000000000",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "missing-capability-error-response": {
+                    "summary": "Missing capability error response",
+                    "description": "Error response when required capability is missing",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "Missing Capabilities [receiveFromTransferInstrument] for BalanceAccountHolder.PeterPanWithoutTransferInstrument",
+                      "requestId": "req123456789"
+                    }
+                  },
+                  "validation-error-response": {
+                    "summary": "Validation error response",
+                    "description": "Error response for request validation failures",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "errorCode": "29_001",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "detail": "No routes could be found using the provided sweep.",
+                      "requestId": "req123456789"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/BalancePlatformService-v2/balanceAccounts/{id}/transferLimits": {
       "get": {
         "tags": [
@@ -14172,6 +15029,89 @@
       }
     },
     "/BalancePlatformService-v2/scaDevices/{deviceId}": {
+      "delete": {
+        "tags": [
+          "SCA device management"
+        ],
+        "summary": "Delete an SCA device",
+        "description": "Deletes a Strong Customer Authentication (SCA) device.",
+        "operationId": "BalancePlatformServiceV2DeleteScaDevicesDeviceId",
+        "parameters": [
+          {
+            "name": "deviceId",
+            "in": "path",
+            "description": "The unique identifier of the SCA device to delete.",
+            "required": true,
+            "schema": {
+              "maxLength": 30,
+              "minLength": 30,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request - The request contains invalid input and fails validation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Device not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity - A request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - The server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformServiceV2DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
       "patch": {
         "tags": [
           "SCA device management"
@@ -53306,6 +54246,118 @@
         },
         "additionalProperties": false
       },
+      "TopUpConfigurationEventRequest": {
+        "required": [
+          "environment",
+          "type",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/TopUpWebhookData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\u0022The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\u0022"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TopUpConfigurationEventRequestType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TopUpConfigurationUpdatedEventRequest": {
+        "required": [
+          "environment",
+          "type",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/TopUpUpdatedWebhookData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\u0022The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\u0022"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TopUpConfigurationUpdatedEventRequestType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TopUpUpdatedWebhookData": {
+        "required": [
+          "accountId",
+          "webhookTopUpConfiguration"
+        ],
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account for which the recurring top-up is configured."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30\u002B01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource."
+          },
+          "webhookTopUpConfiguration": {
+            "$ref": "#/components/schemas/WebhookTopUpConfigurationUpdated"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TopUpWebhookData": {
+        "required": [
+          "accountId",
+          "webhookTopUpConfiguration"
+        ],
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account for which the recurring top-up is configured."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30\u002B01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource."
+          },
+          "webhookTopUpConfiguration": {
+            "$ref": "#/components/schemas/WebhookTopUpConfiguration"
+          }
+        },
+        "additionalProperties": false
+      },
       "UkLocalMandateAccountIdentification": {
         "required": [
           "type",
@@ -53481,6 +54533,168 @@
             "deprecated": true,
             "x-deprecatedInVersion": "2",
             "x-deprecatedMessage": "Use name of the \u0060tokenRequestor\u0060 instead."
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookTopUpAmount": {
+        "type": "object",
+        "properties": {
+          "fixedAmount": {
+            "$ref": "#/components/schemas/WebhookAmount"
+          },
+          "targetAmount": {
+            "$ref": "#/components/schemas/WebhookAmount"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookTopUpConfiguration": {
+        "required": [
+          "id",
+          "counterparty",
+          "description",
+          "topUpAmount",
+          "trigger",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "counterparty": {
+            "$ref": "#/components/schemas/WebhookTopUpCounterparty"
+          },
+          "description": {
+            "maxLength": 140,
+            "type": "string",
+            "description": "The message that is used in the top-up transfer\u0027s description body with a maximum length of 140 characters.\n\nIf the message is longer after replacing placeholders, the message is cut off at 140 characters."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the recurring top-up configuration."
+          },
+          "mandate": {
+            "$ref": "#/components/schemas/WebhookTopUpMandate"
+          },
+          "referenceForBeneficiary": {
+            "maxLength": 80,
+            "type": "string",
+            "description": "\u0022 A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**.\u0022"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WebhookTopUpConfigurationStatus"
+          },
+          "topUpAmount": {
+            "$ref": "#/components/schemas/WebhookTopUpAmount"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/WebhookTopUpTrigger"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookTopUpConfigurationUpdated": {
+        "required": [
+          "id",
+          "counterparty",
+          "description",
+          "topUpAmount",
+          "trigger",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "counterparty": {
+            "$ref": "#/components/schemas/WebhookTopUpCounterparty"
+          },
+          "description": {
+            "maxLength": 140,
+            "type": "string",
+            "description": "The message that is used in the top-up transfer\u0027s description body with a maximum length of 140 characters.\n\nIf the message is longer after replacing placeholders, the message is cut off at 140 characters."
+          },
+          "disabledReason": {
+            "type": "string",
+            "description": "A machine-readable code identifying the reason the system deactivated the top-up configuration. This field is only populated when the status is \u0060inactive\u0060.\n\nPossible values:\n\n* **transferInstrumentDoesNotExist**\n* **directDebitNotSupported**\n* **accountHierarchyNotActive**\n* **mandateNotFound**\n* **mandateNotActive**\n* **directDebitAmountThresholdExceeded**\n* **topUpNotSupported**\n* **routeNotFound**\n* **counterpartyAccountBlocked**\n* **counterpartyAccountInvalid**\n* **unknown**"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the recurring top-up configuration."
+          },
+          "mandate": {
+            "$ref": "#/components/schemas/WebhookTopUpMandate"
+          },
+          "reasonDetail": {
+            "type": "string",
+            "description": "A human-readable description providing the specific reason or context for why the configuration was disabled. This field is only populated when the status is \u0060inactive\u0060."
+          },
+          "referenceForBeneficiary": {
+            "maxLength": 80,
+            "type": "string",
+            "description": "\u0022 A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**.\u0022"
+          },
+          "status": {
+            "$ref": "#/components/schemas/WebhookTopUpConfigurationUpdatedStatus"
+          },
+          "topUpAmount": {
+            "$ref": "#/components/schemas/WebhookTopUpAmount"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/WebhookTopUpTrigger"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookTopUpCounterparty": {
+        "type": "object",
+        "properties": {
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer instrument that is the source of the funds."
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookTopUpMandate": {
+        "type": "object",
+        "properties": {
+          "creationDate": {
+            "type": "string",
+            "description": "The date when the mandate was created, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.",
+            "format": "date-time"
+          },
+          "reference": {
+            "type": "string",
+            "description": "The unique identifier of the mandate."
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookTopUpTrigger": {
+        "type": "object",
+        "properties": {
+          "schedule": {
+            "$ref": "#/components/schemas/WebhookTopUpTriggerSchedule"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/WebhookAmount"
           }
         },
         "additionalProperties": false
@@ -59638,6 +60852,11 @@
           "outcomeType": {
             "$ref": "#/components/schemas/TransactionRuleOutcomeType"
           },
+          "overridesRule": {
+            "type": "string",
+            "description": "The \u0060id\u0060 of the transaction rule you want to override or skip for the specified \u0060entityKey\u0060.",
+            "x-addedInVersion": "2"
+          },
           "purpose": {
             "$ref": "#/components/schemas/TransactionRulePurpose"
           },
@@ -59718,6 +60937,11 @@
           },
           "outcomeType": {
             "$ref": "#/components/schemas/TransactionRuleInfoOutcomeType"
+          },
+          "overridesRule": {
+            "type": "string",
+            "description": "The \u0060id\u0060 of the transaction rule you want to override or skip for the specified \u0060entityKey\u0060.",
+            "x-addedInVersion": "2"
           },
           "purpose": {
             "$ref": "#/components/schemas/TransactionRuleInfoPurpose"
@@ -60379,6 +61603,24 @@
           }
         },
         "additionalProperties": false
+      },
+      "AmountDto": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        }
       },
       "ApproveAssociationRequest": {
         "required": [
@@ -61043,6 +62285,41 @@
           }
         }
       },
+      "CreateRecurringTopUp": {
+        "required": [
+          "counterparty",
+          "description",
+          "topUpAmount",
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "counterparty": {
+            "$ref": "#/components/schemas/TopUpCounterparty"
+          },
+          "description": {
+            "maxLength": 140,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description for the recurring top-up.\n\nMaximum length is 140 characters. If you set a longer description, it will be cut off at 140 characters."
+          },
+          "referenceForBeneficiary": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string",
+            "description": "\u0022 A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**.\u0022"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CreateRecurringTopUpStatus"
+          },
+          "topUpAmount": {
+            "$ref": "#/components/schemas/TopUpAmount"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/Trigger"
+          }
+        }
+      },
       "CreateScaInformation": {
         "type": "object",
         "properties": {
@@ -61422,6 +62699,77 @@
           }
         }
       },
+      "PatchableAmountDto": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        }
+      },
+      "PatchableCreateRecurringTopUp": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "maxLength": 140,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description for the recurring top-up.\n\nMaximum length is 140 characters. If you set a longer description, it will be cut off at 140 characters."
+          },
+          "referenceForBeneficiary": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string",
+            "description": "\u0022 A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**.\u0022",
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/PatchableCreateRecurringTopUpStatus"
+          },
+          "topUpAmount": {
+            "$ref": "#/components/schemas/PatchableTopUpAmount"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/PatchableTrigger"
+          }
+        }
+      },
+      "PatchableSchedule": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ScheduleType"
+          }
+        }
+      },
+      "PatchableTopUpAmount": {
+        "type": "object",
+        "properties": {
+          "fixed": {
+            "$ref": "#/components/schemas/PatchableTopUpAmountFixed"
+          },
+          "target": {
+            "$ref": "#/components/schemas/PatchableTopUpAmountTarget"
+          }
+        }
+      },
+      "PatchableTrigger": {
+        "type": "object",
+        "properties": {
+          "schedule": {
+            "$ref": "#/components/schemas/PatchableTriggerSchedule"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/PatchableAmountDto"
+          }
+        }
+      },
       "PayoutScheduleExecution": {
         "type": "object",
         "properties": {
@@ -61471,6 +62819,65 @@
               "$ref": "#/components/schemas/PayoutScheduleExecution"
             },
             "description": "Contains a list of executions of the payout schedule."
+          }
+        }
+      },
+      "RecurringTopUp": {
+        "required": [
+          "counterparty",
+          "description",
+          "id",
+          "topUpAmount",
+          "trigger"
+        ],
+        "type": "object",
+        "properties": {
+          "counterparty": {
+            "$ref": "#/components/schemas/TopUpCounterparty"
+          },
+          "description": {
+            "maxLength": 140,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description for the recurring top-up.\n\nMaximum length is 140 characters. If you set a longer description, it will be cut off at 140 characters."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the top up.",
+            "readOnly": true
+          },
+          "referenceForBeneficiary": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string",
+            "description": "\u0022 A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**.\u0022"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RecurringTopUpStatus"
+          },
+          "topUpAmount": {
+            "$ref": "#/components/schemas/TopUpAmount"
+          },
+          "trigger": {
+            "$ref": "#/components/schemas/Trigger"
+          }
+        }
+      },
+      "RecurringTopUpsResult": {
+        "required": [
+          "link",
+          "recurringTopUps"
+        ],
+        "type": "object",
+        "properties": {
+          "link": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "recurringTopUps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecurringTopUp"
+            }
           }
         }
       },
@@ -61677,6 +63084,44 @@
             {
               "value": "performed",
               "name": "Performed"
+            }
+          ]
+        }
+      },
+      "Schedule": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ScheduleType"
+          }
+        }
+      },
+      "ScheduleType": {
+        "enum": [
+          "weekdays",
+          "weekly",
+          "monthly"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ScheduleType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "weekdays",
+              "name": "Weekdays"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
+            },
+            {
+              "value": "monthly",
+              "name": "Monthly"
             }
           ]
         }
@@ -61922,6 +63367,29 @@
           }
         }
       },
+      "TopUpAmount": {
+        "type": "object",
+        "properties": {
+          "fixed": {
+            "$ref": "#/components/schemas/AmountDto"
+          },
+          "target": {
+            "$ref": "#/components/schemas/AmountDto"
+          }
+        }
+      },
+      "TopUpCounterparty": {
+        "required": [
+          "transferInstrumentId"
+        ],
+        "type": "object",
+        "properties": {
+          "transferInstrumentId": {
+            "type": "string",
+            "description": "The unique identifier of the [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) that is funding the top-up. "
+          }
+        }
+      },
       "TransferLimit": {
         "required": [
           "amount",
@@ -62005,6 +63473,20 @@
               "name": "All"
             }
           ]
+        }
+      },
+      "Trigger": {
+        "required": [
+          "threshold"
+        ],
+        "type": "object",
+        "properties": {
+          "schedule": {
+            "$ref": "#/components/schemas/Schedule"
+          },
+          "threshold": {
+            "$ref": "#/components/schemas/AmountDto"
+          }
         }
       },
       "BalancePlatformServiceV2UkLocalMandateAccountIdentification": {
@@ -75547,6 +77029,39 @@
           },
           "type": {
             "$ref": "#/components/schemas/SepaDirectDebitDetailsType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SepaDirectDebitDonations": {
+        "title": "Stored Payment Method",
+        "type": "object",
+        "properties": {
+          "checkoutAttemptId": {
+            "type": "string",
+            "description": "The checkout attempt identifier."
+          },
+          "recurringDetailReference": {
+            "type": "string",
+            "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
+            "deprecated": true,
+            "x-deprecatedInVersion": "49",
+            "x-deprecatedMessage": "Use \u0060storedPaymentMethodId\u0060 instead."
+          },
+          "sdkData": {
+            "maxLength": 50000,
+            "type": "string",
+            "description": "Base64-encoded JSON object containing SDK related parameters required by the SDK",
+            "x-addedInVersion": "67"
+          },
+          "storedPaymentMethodId": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
+            "x-addedInVersion": "49"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SepaDirectDebitDonationsType"
           }
         },
         "additionalProperties": false
@@ -116251,6 +117766,87 @@
           }
         }
       },
+      "PatchableTopUpAmountFixed": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PatchableAmountDto"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The fixed amount with which you want to top up the balance account.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "PatchableAmountDto": "#/components/schemas/PatchableAmountDto"
+          }
+        }
+      },
+      "PatchableTopUpAmountTarget": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PatchableAmountDto"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The target balance for the balance account that the top-up must achieve.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "PatchableAmountDto": "#/components/schemas/PatchableAmountDto"
+          }
+        }
+      },
+      "PatchableTriggerSchedule": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PatchableSchedule"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Contains the details about the schedule that determines when the top up is executed.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "PatchableSchedule": "#/components/schemas/PatchableSchedule"
+          }
+        }
+      },
       "BalancePlatformServiceV2UkLocalMandateAccountIdentificationAllOf2": {
         "type": "object",
         "properties": {
@@ -117001,6 +118597,9 @@
           },
           {
             "$ref": "#/components/schemas/PayWithGoogleDonations"
+          },
+          {
+            "$ref": "#/components/schemas/SepaDirectDebitDonations"
           }
         ],
         "properties": {
@@ -117020,12 +118619,14 @@
             "scheme": "#/components/schemas/CardDonations",
             "networkToken": "#/components/schemas/CardDonations",
             "ideal": "#/components/schemas/IdealDonations",
+            "sepadirectdebit": "#/components/schemas/SepaDirectDebitDonations",
             "card": "#/components/schemas/CardDonations",
             "ApplePayDonations": "#/components/schemas/ApplePayDonations",
             "CardDonations": "#/components/schemas/CardDonations",
             "GooglePayDonations": "#/components/schemas/GooglePayDonations",
             "IdealDonations": "#/components/schemas/IdealDonations",
-            "PayWithGoogleDonations": "#/components/schemas/PayWithGoogleDonations"
+            "PayWithGoogleDonations": "#/components/schemas/PayWithGoogleDonations",
+            "SepaDirectDebitDonations": "#/components/schemas/SepaDirectDebitDonations"
           }
         }
       },
@@ -117462,7 +119063,7 @@
             "benefit": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "knet": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "omannet": "#/components/schemas/CheckoutServiceV72PaymentDetails",
-            "gopay_wallet": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "gopay_wallet": "#/components/schemas/StoredPaymentMethodDetails",
             "kcp_naverpay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "onlinebanking_IN": "#/components/schemas/GenericIssuerPaymentMethodDetails",
             "fawry": "#/components/schemas/CheckoutServiceV72PaymentDetails",
@@ -126782,6 +128383,47 @@
           ]
         }
       },
+      "TopUpConfigurationEventRequestType": {
+        "enum": [
+          "balancePlatform.balanceAccount.recurringTopUp.created",
+          "balancePlatform.balanceAccount.recurringTopUp.deleted"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of webhook.",
+        "x-ms-enum": {
+          "name": "TopUpConfigurationEventRequestType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "balancePlatform.balanceAccount.recurringTopUp.created",
+              "name": "BalancePlatformBalanceAccountRecurringTopUpCreated"
+            },
+            {
+              "value": "balancePlatform.balanceAccount.recurringTopUp.deleted",
+              "name": "BalancePlatformBalanceAccountRecurringTopUpDeleted"
+            }
+          ]
+        }
+      },
+      "TopUpConfigurationUpdatedEventRequestType": {
+        "enum": [
+          "balancePlatform.balanceAccount.recurringTopUp.updated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of webhook.",
+        "x-ms-enum": {
+          "name": "TopUpConfigurationUpdatedEventRequestType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "balancePlatform.balanceAccount.recurringTopUp.updated",
+              "name": "BalancePlatformBalanceAccountRecurringTopUpUpdated"
+            }
+          ]
+        }
+      },
       "UkLocalMandateAccountIdentificationType": {
         "enum": [
           "ukLocal"
@@ -127973,6 +129615,80 @@
             {
               "value": "walletAccountHolderNameOnFileDoesNotMatchCardholderEnteredName",
               "name": "WalletAccountHolderNameOnFileDoesNotMatchCardholderEnteredName"
+            }
+          ]
+        }
+      },
+      "WebhookTopUpConfigurationStatus": {
+        "enum": [
+          "active",
+          "inactive"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The status of the top-up configuration.\n\nPossible values: \n\n * **active**: the top-up is enabled and funds are pulled in.\n\n * **inactive**: the top-up is disabled and cannot be triggered. \n\n\u0022",
+        "x-ms-enum": {
+          "name": "WebhookTopUpConfigurationStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "inactive",
+              "name": "Inactive"
+            }
+          ]
+        }
+      },
+      "WebhookTopUpConfigurationUpdatedStatus": {
+        "enum": [
+          "active",
+          "inactive"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The status of the top-up configuration.\n\nPossible values: \n\n * **active**: the top-up is enabled and funds are pulled in.\n\n * **inactive**: the top-up is disabled and cannot be triggered. \n\n\u0022",
+        "x-ms-enum": {
+          "name": "WebhookTopUpConfigurationUpdatedStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "inactive",
+              "name": "Inactive"
+            }
+          ]
+        }
+      },
+      "WebhookTopUpTriggerSchedule": {
+        "enum": [
+          "monthly",
+          "weekdays",
+          "weekly"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The schedule for recurring top-ups. Defines when the top-up should be triggered based on time.\n\nPossible values:\n\n* **weekly**: triggers the top-up once per week.\n\n* **monthly**: triggers the top-up once per month.\n\n* **weekdays**: triggers the top-up on weekdays only.\u0022",
+        "x-ms-enum": {
+          "name": "WebhookTopUpTriggerSchedule",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "monthly",
+              "name": "Monthly"
+            },
+            {
+              "value": "weekdays",
+              "name": "Weekdays"
+            },
+            {
+              "value": "weekly",
+              "name": "Weekly"
             }
           ]
         }
@@ -131387,12 +133103,13 @@
         "enum": [
           "allowList",
           "blockList",
+          "bypass",
           "maxUsage",
           "velocity"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.\n\nPossible values:\n * **blockList**: decline a transaction when the conditions are met.\n * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met.\n * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met.\n\u0022",
+        "description": "\u0022The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.\n\nPossible values:\n * **blockList**: decline a transaction when the conditions are met.\n * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met.\n * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met.\n * **bypass**: bypass or skip a rule for the specified \u0060entityKey\u0060. Transactions processed to that entity are no longer evaluated by the bypassed rule.  You must provide the \u0060id\u0060 of the rule to bypass in \u0060overridesRule\u0060 and leave the \u0060ruleRestrictions\u0060 object empty.\n\u0022",
         "x-ms-enum": {
           "name": "TransactionRuleType",
           "modelAsString": false,
@@ -131404,6 +133121,10 @@
             {
               "value": "blockList",
               "name": "BlockList"
+            },
+            {
+              "value": "bypass",
+              "name": "Bypass"
             },
             {
               "value": "maxUsage",
@@ -131550,12 +133271,13 @@
         "enum": [
           "allowList",
           "blockList",
+          "bypass",
           "maxUsage",
           "velocity"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "\u0022The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.\n\nPossible values:\n * **blockList**: decline a transaction when the conditions are met.\n * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met.\n * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met.\n\u0022",
+        "description": "\u0022The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.\n\nPossible values:\n * **blockList**: decline a transaction when the conditions are met.\n * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met.\n * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met.\n * **bypass**: bypass or skip a rule for the specified \u0060entityKey\u0060. Transactions processed to that entity are no longer evaluated by the bypassed rule.  You must provide the \u0060id\u0060 of the rule to bypass in \u0060overridesRule\u0060 and leave the \u0060ruleRestrictions\u0060 object empty.\n\u0022",
         "x-ms-enum": {
           "name": "TransactionRuleInfoType",
           "modelAsString": false,
@@ -131567,6 +133289,10 @@
             {
               "value": "blockList",
               "name": "BlockList"
+            },
+            {
+              "value": "bypass",
+              "name": "Bypass"
             },
             {
               "value": "maxUsage",
@@ -133498,6 +135224,76 @@
             {
               "value": "lessThanOrEqual",
               "name": "LessThanOrEqual"
+            }
+          ]
+        }
+      },
+      "CreateRecurringTopUpStatus": {
+        "enum": [
+          "active",
+          "inactive"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The status of the recurring top-up. If not provided, by default, this is set to **active**.\n\nPossible values: \n\n * **active**:  the top up is enabled and funds will be pulled in.\n\n * **inactive**: the top up is disabled and cannot be triggered. \n\n\u0022",
+        "x-ms-enum": {
+          "name": "CreateRecurringTopUpStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "inactive",
+              "name": "Inactive"
+            }
+          ]
+        }
+      },
+      "PatchableCreateRecurringTopUpStatus": {
+        "enum": [
+          "active",
+          "inactive"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The status of the recurring top-up. If not provided, by default, this is set to **active**.\n\nPossible values: \n\n * **active**:  the top up is enabled and funds will be pulled in.\n\n * **inactive**: the top up is disabled and cannot be triggered. \n\n\u0022",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "PatchableCreateRecurringTopUpStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "inactive",
+              "name": "Inactive"
+            }
+          ]
+        }
+      },
+      "RecurringTopUpStatus": {
+        "enum": [
+          "active",
+          "inactive"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The status of the recurring top-up. If not provided, by default, this is set to **active**.\n\nPossible values: \n\n * **active**:  the top up is enabled and funds will be pulled in.\n\n * **inactive**: the top up is disabled and cannot be triggered. \n\n\u0022",
+        "x-ms-enum": {
+          "name": "RecurringTopUpStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "inactive",
+              "name": "Inactive"
             }
           ]
         }
@@ -140810,7 +142606,6 @@
           "benefit",
           "knet",
           "omannet",
-          "gopay_wallet",
           "kcp_naverpay",
           "fawry",
           "atome",
@@ -141071,10 +142866,6 @@
             {
               "value": "omannet",
               "name": "Omannet"
-            },
-            {
-              "value": "gopay_wallet",
-              "name": "GopayWallet"
             },
             {
               "value": "kcp_naverpay",
@@ -142199,6 +143990,24 @@
           ]
         }
       },
+      "SepaDirectDebitDonationsType": {
+        "enum": [
+          "sepadirectdebit"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "**sepadirectdebit**",
+        "x-ms-enum": {
+          "name": "SepaDirectDebitDonationsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "sepadirectdebit",
+              "name": "Sepadirectdebit"
+            }
+          ]
+        }
+      },
       "SessionResultResponseStatus": {
         "enum": [
           "active",
@@ -142328,7 +144137,8 @@
           "dana",
           "kakaopay",
           "truemoney",
-          "paysafecard"
+          "paysafecard",
+          "gopay_wallet"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -142456,6 +144266,10 @@
             {
               "value": "paysafecard",
               "name": "Paysafecard"
+            },
+            {
+              "value": "gopay_wallet",
+              "name": "GopayWallet"
             }
           ]
         }
@@ -171016,6 +172830,146 @@
           "type": "balancePlatform.balanceAccount.created"
         }
       },
+      "post-balancePlatform.balanceAccount.recurringTopUp.created-balancePlatform-recurringTopUp-created": {
+        "summary": "Recurring top-up created",
+        "description": "Example webhook when a recurring top-up was created",
+        "value": {
+          "data": {
+            "balancePlatform": "YOUR_BALANCE_PLATFORM",
+            "creationDate": "2026-04-17T10:30:00\u002B01:00",
+            "accountId": "BA00000000000000000001",
+            "webhookTopUpConfiguration": {
+              "id": "TU4227C224555B5FTD2NT2JV4WN5",
+              "description": "Top up when balance is low",
+              "status": "active",
+              "topUpAmount": {
+                "fixedAmount": {
+                  "currency": "EUR",
+                  "value": 10000
+                }
+              },
+              "trigger": {
+                "schedule": "weekly",
+                "threshold": {
+                  "currency": "EUR",
+                  "value": 5000
+                }
+              },
+              "counterparty": {
+                "transferInstrumentId": "SE00000000000000000001"
+              },
+              "referenceForBeneficiary": "TopUpFromSavings",
+              "mandate": {
+                "reference": "MND00000000000000000001",
+                "creationDate": "2026-04-17T10:30:00\u002B01:00"
+              }
+            }
+          },
+          "environment": "test",
+          "timestamp": "2026-04-17T10:30:00\u002B01:00",
+          "type": "balancePlatform.balanceAccount.recurringTopUp.created"
+        }
+      },
+      "post-balancePlatform.balanceAccount.recurringTopUp.created-balancePlatform-recurringTopUp-created-200": {
+        "summary": "Acknowledge Webhook",
+        "value": {
+          "notificationResponse": "[accepted]"
+        }
+      },
+      "post-balancePlatform.balanceAccount.recurringTopUp.deleted-balancePlatform-recurringTopUp-deleted": {
+        "summary": "Recurring top-up deleted",
+        "description": "Example webhook when a recurring top-up was deleted",
+        "value": {
+          "data": {
+            "balancePlatform": "YOUR_BALANCE_PLATFORM",
+            "creationDate": "2026-04-17T10:30:00\u002B01:00",
+            "accountId": "BA00000000000000000001",
+            "webhookTopUpConfiguration": {
+              "id": "TU4227C224555B5FTD2NT2JV4WN5",
+              "description": "Top up when balance is low",
+              "status": "active",
+              "topUpAmount": {
+                "fixedAmount": {
+                  "currency": "EUR",
+                  "value": 10000
+                }
+              },
+              "trigger": {
+                "schedule": "weekly",
+                "threshold": {
+                  "currency": "EUR",
+                  "value": 5000
+                }
+              },
+              "counterparty": {
+                "transferInstrumentId": "SE00000000000000000001"
+              },
+              "referenceForBeneficiary": "TopUpFromSavings",
+              "mandate": {
+                "reference": "MND00000000000000000001",
+                "creationDate": "2026-04-17T10:30:00\u002B01:00"
+              }
+            }
+          },
+          "environment": "test",
+          "timestamp": "2026-04-17T16:20:00\u002B01:00",
+          "type": "balancePlatform.balanceAccount.recurringTopUp.deleted"
+        }
+      },
+      "post-balancePlatform.balanceAccount.recurringTopUp.deleted-balancePlatform-recurringTopUp-deleted-200": {
+        "summary": "Acknowledge Webhook",
+        "value": {
+          "notificationResponse": "[accepted]"
+        }
+      },
+      "post-balancePlatform.balanceAccount.recurringTopUp.updated-balancePlatform-recurringTopUp-updated": {
+        "summary": "Recurring top-up updated",
+        "description": "Example webhook when a recurring top-up was updated",
+        "value": {
+          "data": {
+            "balancePlatform": "YOUR_BALANCE_PLATFORM",
+            "creationDate": "2026-04-17T10:30:00\u002B01:00",
+            "accountId": "BA00000000000000000001",
+            "webhookTopUpConfiguration": {
+              "id": "TU4227C224555B5FTD2NT2JV4WN5",
+              "description": "Top up when balance is low - updated",
+              "status": "inactive",
+              "topUpAmount": {
+                "fixedAmount": {
+                  "currency": "EUR",
+                  "value": 15000
+                }
+              },
+              "trigger": {
+                "schedule": "monthly",
+                "threshold": {
+                  "currency": "EUR",
+                  "value": 3000
+                }
+              },
+              "counterparty": {
+                "transferInstrumentId": "SE00000000000000000001"
+              },
+              "referenceForBeneficiary": "TopUpFromSavings",
+              "mandate": {
+                "reference": "MND00000000000000000001",
+                "creationDate": "2026-04-17T10:30:00\u002B01:00"
+              },
+              "disabledReason": "counterpartyAccountBlocked",
+              "reasonDetail": "The counterparty account is blocked."
+            }
+          },
+          "environment": "test",
+          "timestamp": "2026-04-17T14:45:00\u002B01:00",
+          "type": "balancePlatform.balanceAccount.recurringTopUp.updated"
+        }
+      },
+      "post-balancePlatform.balanceAccount.recurringTopUp.updated-balancePlatform-recurringTopUp-updated-200": {
+        "summary": "Acknowledge Webhook",
+        "value": {
+          "notificationResponse": "[accepted]"
+        }
+      },
       "post-balancePlatform.balanceAccount.updated-balancePlatform-balanceAccount-updated": {
         "summary": "Balance account updated",
         "description": "Example webhook when a balance account was updated",
@@ -195186,6 +197140,9 @@
       "name": "Network token"
     },
     {
+      "name": "Recurring top ups"
+    },
+    {
       "name": "Payout schedules"
     },
     {
@@ -195223,9 +197180,6 @@
     },
     {
       "name": "Authorized card users"
-    },
-    {
-      "name": "Recurring top ups"
     },
     {
       "name": "Payment instruments"

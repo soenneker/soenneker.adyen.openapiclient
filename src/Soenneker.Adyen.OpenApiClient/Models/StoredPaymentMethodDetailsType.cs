@@ -127,5 +127,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Paysafecard,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gopay_wallet")]
+        #pragma warning disable CS1591
+        GopayWallet,
+        #pragma warning restore CS1591
     }
 }

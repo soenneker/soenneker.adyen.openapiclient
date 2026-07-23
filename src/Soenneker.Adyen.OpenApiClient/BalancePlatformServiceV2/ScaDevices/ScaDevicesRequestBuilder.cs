@@ -19,7 +19,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices
     public partial class ScaDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.scaDevices.item collection</summary>
-        /// <param name="position">The unique identifier of the SCA device that you are associating with a resource.</param>
+        /// <param name="position">The unique identifier of the SCA device to delete.</param>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder"/></returns>
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaDevices.Item.WithDeviceItemRequestBuilder this[string position]
         {

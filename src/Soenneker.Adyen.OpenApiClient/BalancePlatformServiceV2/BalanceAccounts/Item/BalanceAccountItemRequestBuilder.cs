@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.PaymentInstruments;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.PayoutSchedules;
+using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.TransactionRules;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.TransferLimits;
@@ -31,6 +32,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.PayoutSchedules.PayoutSchedulesRequestBuilder PayoutSchedules
         {
             get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.PayoutSchedules.PayoutSchedulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The recurringTopUps property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.RecurringTopUpsRequestBuilder RecurringTopUps
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps.RecurringTopUpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sweeps property</summary>
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps.SweepsRequestBuilder Sweeps
