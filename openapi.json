@@ -79964,6 +79964,11 @@
             "type": "string",
             "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes/)."
           },
+          "label": {
+            "maxLength": 32,
+            "type": "string",
+            "description": "The label that is assigned to the donation campaign."
+          },
           "locale": {
             "type": "string",
             "description": "Locale on the shopper interaction device."
@@ -86660,10 +86665,6 @@
       },
       "SepaDirectDebitDetails": {
         "title": "SEPA Direct Debit",
-        "required": [
-          "iban",
-          "ownerName"
-        ],
         "type": "object",
         "properties": {
           "checkoutAttemptId": {
