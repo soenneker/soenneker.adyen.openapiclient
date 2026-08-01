@@ -19199,7 +19199,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/CheckoutServiceV72DeleteStoredPaymentMethodsStoredPaymentMethodId204Response"
                 }
               }
             }
@@ -19442,7 +19442,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdAsync200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdAsync200ResponseSchema"
                 }
               }
             }
@@ -19591,7 +19591,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdSync200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdSync200ResponseSchema"
                 }
               }
             }
@@ -24856,7 +24856,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview201Response"
                 }
               }
             }
@@ -43562,7 +43562,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RaiseDisputesServiceV4GetDisputes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4GetDisputes200ResponseSchema"
                 }
               }
             }
@@ -43684,7 +43684,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RaiseDisputesServiceV4GetDisputesDisputeIdAttachments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RaiseDisputesServiceV4GetDisputesDisputeIdAttachments200ResponseSchema"
                 }
               }
             }
@@ -46049,7 +46049,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionServiceV4GetDisputes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TransactionServiceV4GetDisputes200ResponseSchema"
                 }
               }
             }
@@ -46171,7 +46171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TransactionServiceV4GetDisputesDisputeIdAttachments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/TransactionServiceV4GetDisputesDisputeIdAttachments200ResponseSchema"
                 }
               }
             }
@@ -122279,18 +122279,18 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "DefaultResponse": {
+      "CheckoutServiceV72DeleteStoredPaymentMethodsStoredPaymentMethodId204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdAsync200ResponseResponseJson": {
+      "CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdAsync200ResponseSchema": {
         "type": "string"
       },
-      "CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdSync200ResponseResponseJson": {
+      "CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdSync200ResponseSchema": {
         "type": "string"
       },
-      "DefaultResponseResponseJson": {
+      "LegalEntityServiceV4PostLegalEntitiesIdRequestPeriodicReview201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -122298,7 +122298,7 @@
       "NotificationConfigurationServiceV6PostGetNotificationConfigurationListRequest": {
         "type": "object"
       },
-      "RaiseDisputesServiceV4GetDisputes200ResponseResponseJson": {
+      "RaiseDisputesServiceV4GetDisputes200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "array",
@@ -122307,7 +122307,7 @@
           }
         }
       },
-      "RaiseDisputesServiceV4GetDisputesDisputeIdAttachments200ResponseResponseJson": {
+      "RaiseDisputesServiceV4GetDisputesDisputeIdAttachments200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DisputeAttachment"
@@ -122317,7 +122317,7 @@
         "type": "object",
         "description": "A successful \u0060AbortRequest\u0060 returns a response with a **200 OK** HTTP status code and no body."
       },
-      "TransactionServiceV4GetDisputes200ResponseResponseJson": {
+      "TransactionServiceV4GetDisputes200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "array",
@@ -122326,7 +122326,7 @@
           }
         }
       },
-      "TransactionServiceV4GetDisputesDisputeIdAttachments200ResponseResponseJson": {
+      "TransactionServiceV4GetDisputesDisputeIdAttachments200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TransactionServiceV4DisputeAttachment"
