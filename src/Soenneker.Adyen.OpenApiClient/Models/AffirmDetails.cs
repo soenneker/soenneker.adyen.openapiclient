@@ -20,6 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CheckoutAttemptId { get; set; }
 #endif
+        /// <summary>The Affirm financing program to apply to this transaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FinancingProgram { get; set; }
+#nullable restore
+#else
+        public string FinancingProgram { get; set; }
+#endif
         /// <summary>Base64-encoded JSON object containing SDK related parameters required by the SDK</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
+                { "financingProgram", n => { FinancingProgram = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetailsType>(); } },
             };
@@ -61,6 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
+            writer.WriteStringValue("financingProgram", FinancingProgram);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AffirmDetailsType>("type", Type);
         }

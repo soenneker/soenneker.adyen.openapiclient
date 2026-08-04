@@ -20254,6 +20254,47 @@
         "x-addedInVersion": "68",
         "x-sortIndex": 2,
         "x-methodName": "getResultOfPaymentSession"
+      },
+      "patch": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Update a payment session",
+        "description": "Updates an existing payment session with the `sessionId` specified in the path.\n\nYou can update the session's `amount` and `payable` fields. The session can only be updated if it is not yet payable.",
+        "operationId": "CheckoutService_v72_patch_sessions_sessionId",
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckoutSessionPatchSessionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutSessionPatchSessionResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-methodName": "updateSession",
+        "x-sortIndex": 0
       }
     },
     "/CheckoutService-v72/storedPaymentMethods": {
@@ -60294,6 +60335,588 @@
         },
         "additionalProperties": false
       },
+      "BalancePlatformManagedRiskNotification_v1_Amount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        }
+      },
+      "BalancePlatformManagedRiskNotification_v1_BalancePlatformNotificationResponse": {
+        "type": "object",
+        "properties": {
+          "notificationResponse": {
+            "type": "string",
+            "description": "Respond with any **2xx** HTTP status code to [accept the webhook](https://docs.adyen.com/development-resources/webhooks/#accept-webhooks)."
+          }
+        }
+      },
+      "ManagedRiskBalanceBlockReleasedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/BalancePlatformManagedRiskNotification_v1_ReleaseBlockedBalanceNotificationData"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.balance.block.released"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskReserveWaiverAppliedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ReserveWaiverAppliedNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.reserveWaiver.applied"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskReserveWaiverRemovedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ReserveWaiverRemovedNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.reserveWaiver.removed"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskRollingReserveAppliedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RollingReserveNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.rollingReserve.applied"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskRollingReserveLiftedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RollingReserveLiftedNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.rollingReserve.lifted"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskRollingReserveUpdatedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RollingReserveNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.rollingReserve.updated"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskSettlementDelayLiftedNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SettlementDelayLiftedNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.settlementDelay.lifted"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "ManagedRiskSettlementDelayNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SettlementDelayNotificationResource"
+          },
+          "environment": {
+            "enum": [
+              "test",
+              "live"
+            ],
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "enum": [
+              "balancePlatform.managedRisk.settlementDelay.updated"
+            ],
+            "type": "string",
+            "description": "Type of webhook."
+          }
+        }
+      },
+      "BalancePlatformManagedRiskNotification_v1_ReleaseBlockedBalanceNotificationData": {
+        "required": [
+          "accountHolder",
+          "amount",
+          "balanceAccount"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolder": {
+            "$ref": "#/components/schemas/BalancePlatformManagedRiskNotification_v1_ResourceReference"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/BalancePlatformManagedRiskNotification_v1_Amount"
+          },
+          "balanceAccount": {
+            "$ref": "#/components/schemas/BalancePlatformManagedRiskNotification_v1_ResourceReference"
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "batchReference": {
+            "type": "string",
+            "description": "The reference of the batch that was released."
+          },
+          "blockedBalanceAfter": {
+            "$ref": "#/components/schemas/BalancePlatformManagedRiskNotification_v1_Amount"
+          },
+          "blockedBalanceBefore": {
+            "$ref": "#/components/schemas/BalancePlatformManagedRiskNotification_v1_Amount"
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          },
+          "valueDate": {
+            "type": "string",
+            "description": "The date and time when the amount was released, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          }
+        }
+      },
+      "ReserveWaiverAppliedNotificationResource": {
+        "required": [
+          "accountHolderId",
+          "eventDate"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "type": "string",
+            "description": "The unique identifier of the account holder whose reserves will be waived."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The date in which a reserve waiver has been applied to this account.",
+            "format": "date"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          }
+        }
+      },
+      "ReserveWaiverRemovedNotificationResource": {
+        "required": [
+          "accountHolderId",
+          "eventDate"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "type": "string",
+            "description": "The unique identifier of the account holder whose reserves will no longer be waived."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The date in which a reserve waiver has been removed from this account.",
+            "format": "date"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          }
+        }
+      },
+      "BalancePlatformManagedRiskNotification_v1_ResourceReference": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "The description of the resource."
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the resource."
+          },
+          "reference": {
+            "type": "string",
+            "description": "The reference for the resource."
+          }
+        }
+      },
+      "RollingReserveLiftedNotificationResource": {
+        "required": [
+          "accountHolderId"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "type": "string",
+            "description": "The unique identifier of the account holder whose risk settings changed."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          }
+        }
+      },
+      "RollingReserveNotificationResource": {
+        "required": [
+          "accountHolderId",
+          "rollingReservePercentage",
+          "withHoldingPeriodInDays"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "type": "string",
+            "description": "The unique identifier of the account holder whose risk settings changed."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          },
+          "rollingReservePercentage": {
+            "type": "integer",
+            "description": "The percentage of your user's daily sales volume that is withheld from the settlement batch as a rolling reserve.",
+            "format": "int32"
+          },
+          "withHoldingPeriodInDays": {
+            "type": "integer",
+            "description": "The number of days after which we release the withheld percentage of your user's daily sales volume.",
+            "format": "int32"
+          }
+        }
+      },
+      "SettlementDelayConfiguration": {
+        "required": [
+          "paymentMethod",
+          "settlementDelay"
+        ],
+        "type": "object",
+        "properties": {
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method to which the settlement delay applies."
+          },
+          "settlementDelay": {
+            "type": "integer",
+            "description": "The updated settlement delay applied to your user's transactions. It indicates the number of days after which your user's funds become available in their balance account.",
+            "format": "int32"
+          }
+        }
+      },
+      "SettlementDelayLiftedNotificationResource": {
+        "required": [
+          "accountHolderId",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "type": "string",
+            "description": "The unique identifier of the account holder whose risk settings changed."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          },
+          "reason": {
+            "enum": [
+              "paymentProcessingEnabled",
+              "settlementDelayChanged",
+              "riskReviewPeriodPassed"
+            ],
+            "type": "string",
+            "description": "The reason for the change in your account holder's settlement delay.\n\nPossible values: **paymentProcessingEnabled**, **settlementDelayChanged**, **riskReviewPeriodPassed**."
+          }
+        }
+      },
+      "SettlementDelayNotificationResource": {
+        "required": [
+          "accountHolderId",
+          "configurations",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "accountHolderId": {
+            "type": "string",
+            "description": "The unique identifier of the account holder whose risk settings changed."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "configurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SettlementDelayConfiguration"
+            },
+            "description": "Contains information about the configuration of a settlement delay."
+          },
+          "creationDate": {
+            "type": "string",
+            "description": "The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource.",
+            "readOnly": true
+          },
+          "reason": {
+            "enum": [
+              "paymentProcessingEnabled",
+              "settlementDelayChanged",
+              "riskReviewPeriodPassed"
+            ],
+            "type": "string",
+            "description": "The reason for the change in your account holder's settlement delay.\n\nPossible values: **paymentProcessingEnabled**, **settlementDelayChanged**, **riskReviewPeriodPassed**."
+          }
+        }
+      },
       "BalancePlatformNegativeBalanceCompensationWarningNotification_v1_Amount": {
         "required": [
           "value",
@@ -76161,6 +76784,10 @@
             "type": "string",
             "description": "The checkout attempt identifier."
           },
+          "financingProgram": {
+            "type": "string",
+            "description": "The Affirm financing program to apply to this transaction."
+          },
           "sdkData": {
             "maxLength": 50000,
             "type": "string",
@@ -88966,6 +89593,35 @@
           }
         }
       },
+      "CheckoutSessionPatchSessionRequest": {
+        "required": [
+          "amount",
+          "sessionData"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "$ref": "#/components/schemas/SessionAmountUpdate"
+          },
+          "payable": {
+            "type": "boolean",
+            "description": "Indicates if the session is payable. If the payment amount is final, set this to **true** to indicate that the session is payable, so that the shopper can proceed to submit the payment. When you set this to **true**, you can no longer update the session.\n\nIf you set this to **false**, you must make another request to update the session and set this to **true** before the shopper can submit the payment.\n"
+          },
+          "sessionData": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The encoded payment session data from the `beforeSubmit` callback from [Drop-in](https://docs.adyen.com/online-payments/build-your-integration/sessions-flow?platform=Web&integration=Drop-in#update-the-session-amount) or [the Component](https://docs.adyen.com/online-payments/build-your-integration/sessions-flow?platform=Web&integration=Components#update-the-session-amount)."
+          }
+        }
+      },
+      "CheckoutSessionPatchSessionResponse": {
+        "type": "object",
+        "properties": {
+          "sessionData": {
+            "type": "string"
+          }
+        }
+      },
       "PayToPaymentMethod": {
         "required": [
           "type"
@@ -88995,6 +89651,24 @@
           "NOT_REQUIRED"
         ],
         "type": "string"
+      },
+      "SessionAmountUpdate": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        }
       },
       "ShopperIdPaymentMethod": {
         "required": [
@@ -159358,6 +160032,15 @@
         "type": "http",
         "scheme": "basic"
       },
+      "BalancePlatformManagedRiskNotification_v1_ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      },
+      "BalancePlatformManagedRiskNotification_v1_BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
       "BalancePlatformNegativeBalanceCompensationWarningNotification_v1_BasicAuth": {
         "type": "http",
         "scheme": "basic"
@@ -159732,6 +160415,9 @@
     },
     {
       "name": "Grants"
+    },
+    {
+      "name": "Managed Risk"
     },
     {
       "name": "Payment authorisation, refund, or funds transfer initiated"

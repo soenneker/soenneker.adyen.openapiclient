@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CheckoutService-v72/sessions/{sessionId}?sessionResult={sessionResult}", pathParameters)
+        public WithSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CheckoutService-v72/sessions/{sessionId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CheckoutService-v72/sessions/{sessionId}?sessionResult={sessionResult}", rawUrl)
+        public WithSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/CheckoutService-v72/sessions/{sessionId}", rawUrl)
         {
         }
         /// <summary>
@@ -52,6 +52,26 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Updates an existing payment session with the `sessionId` specified in the path.You can update the session&apos;s `amount` and `payable` fields. The session can only be updated if it is not yet payable.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse?> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Returns the status of the payment session with the `sessionId` and `sessionResult` specified in the path.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -65,9 +85,31 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions.Item.WithSessionItemRequestBuilder.WithSessionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/CheckoutService-v72/sessions/{sessionId}?sessionResult={sessionResult}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Updates an existing payment session with the `sessionId` specified in the path.You can update the session&apos;s `amount` and `payable` fields. The session can only be updated if it is not yet payable.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
