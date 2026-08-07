@@ -80232,6 +80232,133 @@
           }
         }
       },
+      "ForwardApiNotificationData": {
+        "required": [
+          "pspReference",
+          "shopperReference",
+          "storedPaymentMethodId",
+          "scheme",
+          "externalPsp",
+          "merchantReference",
+          "eventDateTime",
+          "merchantAccountCode",
+          "merchantCountryCode"
+        ],
+        "type": "object",
+        "properties": {
+          "amountCurrency": {
+            "type": "string",
+            "description": "The transaction amount 3 character ISO currency code."
+          },
+          "amountValue": {
+            "type": "integer",
+            "description": "The transaction amount in minor currency units.",
+            "format": "int64"
+          },
+          "eventDateTime": {
+            "type": "string",
+            "description": "The transaction date and time.",
+            "format": "date-time"
+          },
+          "externalNetworkTxReferenceFound": {
+            "type": "boolean",
+            "description": "Confirms that the provided networkTxReference path successfully matched a reference in the third-party response."
+          },
+          "externalNetworkTxReferenceRequested": {
+            "type": "boolean",
+            "description": "It\u0027s being populated when networkTxReferencePaths is provided"
+          },
+          "externalPartyResponseBody": {
+            "type": "string",
+            "description": "The External Party response body."
+          },
+          "externalPsp": {
+            "type": "string",
+            "description": "The External Psp."
+          },
+          "externalPspTransactionStatus": {
+            "type": "string",
+            "description": "The External Psp transaction status."
+          },
+          "externalTransactionLinkIdFound": {
+            "type": "boolean",
+            "description": "Confirms that the provided transactionLinkId path successfully matched a reference in the third-party response."
+          },
+          "externalTransactionLinkIdRequested": {
+            "type": "boolean",
+            "description": "It\u0027s being populated when transactionLinkIdPaths is provided"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account code."
+          },
+          "merchantCountryCode": {
+            "type": "string",
+            "description": "The merchant country code."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Merchant transaction reference."
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "PSP Reference."
+          },
+          "scheme": {
+            "type": "string",
+            "description": "Card transaction scheme."
+          },
+          "shopperReference": {
+            "type": "string",
+            "description": "Shopper reference."
+          },
+          "storedPaymentMethodId": {
+            "type": "string",
+            "description": "Stored Payment Method Id."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ForwardApiNotificationRequest": {
+        "required": [
+          "type",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string",
+            "description": "Timestamp for when the webhook was created.",
+            "format": "date-time"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ForwardApiNotificationData"
+          },
+          "environment": {
+            "type": "string",
+            "description": "\u0022The environment from which the webhook originated.\n\nPossible values: **test**, **live**.\u0022"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of notification."
+          },
+          "version": {
+            "type": "string",
+            "description": "The version of this webhook type."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ForwardApiNotificationResponse": {
+        "type": "object",
+        "properties": {
+          "notificationResponse": {
+            "type": "string",
+            "description": "Respond with any **2xx** HTTP status code to [accept the webhook](https://docs.adyen.com/development-resources/webhooks/#accept-webhooks)."
+          }
+        },
+        "additionalProperties": false
+      },
       "AccountDetailBalance": {
         "type": "object",
         "properties": {
@@ -182846,6 +182973,30 @@
           }
         }
       },
+      "post-forwardApi.notification-recurring-forwardApi.notification": {
+        "summary": "Forward Api Request",
+        "value": {
+          "type": "forwardApi.notification",
+          "version": "1",
+          "createdAt": "2023-02-27T16:14:06\u002B01:00",
+          "environment": "test",
+          "data": {
+            "pspReference": "QFQTPCQ8HXSKGK82",
+            "shopperReference": "YOUR_SHOPPER_REFERENCE",
+            "storedPaymentMethodId": "M5N7TQ4TG5PFWR50",
+            "scheme": "visa",
+            "externalPsp": "adyen",
+            "merchantReference": "YOUR_ORDER_REFERENCE",
+            "externalPspTransactionStatus": "Authorised",
+            "eventDateTime": "2023-02-27T16:14:06\u002B01:00",
+            "merchantAccountCode": "YOUR_MERCHANT_ACCOUNT",
+            "merchantCountryCode": "NL",
+            "amountValue": 100,
+            "amountCurrency": "EUR",
+            "externalPartyResponseBody": "{\u0022status\u0022: \u0022success\u0022}"
+          }
+        }
+      },
       "post-accountHolderBalance-basic": {
         "summary": "Review the account holder balance",
         "value": {
@@ -197864,6 +198015,10 @@
         "in": "header"
       },
       "ForeignExchangeService_v1_BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
+      "ForwardApiNotification_v1_BasicAuth": {
         "type": "http",
         "scheme": "basic"
       },
