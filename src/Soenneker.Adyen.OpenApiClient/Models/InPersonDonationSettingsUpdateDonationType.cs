@@ -8,22 +8,27 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.&quot;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationTypeMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InPersonDonationSettingsUpdateDonationType : IAdditionalDataHolder, IParsable
+    public partial class InPersonDonationSettingsUpdateDonationType : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationType? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationType"/> and sets the default values.
-        /// </summary>
-        public InPersonDonationSettingsUpdateDonationType()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper? DonationTypeWrapper { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper DonationTypeWrapper { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationTypeMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationTypeMember1? InPersonDonationSettingsUpdateDonationTypeMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationTypeMember1 InPersonDonationSettingsUpdateDonationTypeMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationType();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationType();
+            if("DonationTypeWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DonationTypeWrapper = new global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,10 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DonationTypeWrapper != null)
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationType>(); } },
-            };
+                return DonationTypeWrapper.GetFieldDeserializers();
+            }
+            else if(InPersonDonationSettingsUpdateDonationTypeMember1 != null)
+            {
+                return InPersonDonationSettingsUpdateDonationTypeMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -52,8 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationType>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DonationTypeWrapper != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationTypeWrapper>(null, DonationTypeWrapper);
+            }
+            else if(InPersonDonationSettingsUpdateDonationTypeMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationTypeMember1>(null, InPersonDonationSettingsUpdateDonationTypeMember1);
+            }
         }
     }
 }

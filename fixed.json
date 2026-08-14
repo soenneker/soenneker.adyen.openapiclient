@@ -118500,7 +118500,10 @@
             "$ref": "#/components/schemas/PatchableAmountDto"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -118527,7 +118530,10 @@
             "$ref": "#/components/schemas/PatchableAmountDto"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -118554,7 +118560,10 @@
             "$ref": "#/components/schemas/PatchableSchedule"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120164,7 +120173,10 @@
             "$ref": "#/components/schemas/InPersonDonationSettingsUpdate"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120191,7 +120203,10 @@
             "$ref": "#/components/schemas/OnlineDonationSettingsUpdate"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120218,7 +120233,10 @@
             "$ref": "#/components/schemas/DonationAmountUpdate"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120242,7 +120260,10 @@
             "$ref": "#/components/schemas/DonationTypeWrapper"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "description": "\u0022The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.\u0022"
@@ -120257,7 +120278,10 @@
             "$ref": "#/components/schemas/DonationAmountUpdate"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120281,7 +120305,10 @@
             "$ref": "#/components/schemas/DonationTypeWrapper2"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "description": "\u0022The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.\u0022"
@@ -120296,7 +120323,10 @@
             "$ref": "#/components/schemas/PatchableDuplicateInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120323,7 +120353,10 @@
             "$ref": "#/components/schemas/PatchableFraudInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120350,7 +120383,10 @@
             "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120377,7 +120413,10 @@
             "$ref": "#/components/schemas/PatchableOtherInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120401,7 +120440,10 @@
             "$ref": "#/components/schemas/DisputeStatusWrapper"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "description": "\u0022The current status of the dispute.\n\nWhen you create a dispute, you can only set the \u0060status\u0060 to **draft**. When you update a dispute, you can set the \u0060status\u0060 to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\u0022"
@@ -120413,7 +120455,10 @@
             "$ref": "#/components/schemas/CancellingEntityWrapper"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "description": "\u0022The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\u0022"
@@ -120457,7 +120502,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4PatchableDuplicateInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120484,7 +120532,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4PatchableFraudInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120511,7 +120562,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4PatchableNotDeliveredInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120538,7 +120592,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4PatchableOtherInfo"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -120562,7 +120619,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4DisputeStatusWrapper"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "description": "\u0022The current status of the dispute.\n\nWhen you create a dispute, you can only set the \u0060status\u0060 to **draft**. When you update a dispute, you can set the \u0060status\u0060 to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.\u0022"
@@ -120574,7 +120634,10 @@
             "$ref": "#/components/schemas/TransactionServiceV4CancellingEntityWrapper"
           },
           {
-            "type": "object"
+            "enum": [
+              null
+            ],
+            "nullable": true
           }
         ],
         "description": "\u0022The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**.\u0022"

@@ -8,40 +8,27 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfoMember1"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchableDisputeRequestOtherInfo : IAdditionalDataHolder, IParsable
+    public partial class PatchableDisputeRequestOtherInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Your description of the issue for raising a dispute of `type` **other**.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfoMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfoMember1? PatchableDisputeRequestOtherInfoMember1 { get; set; }
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfoMember1 PatchableDisputeRequestOtherInfoMember1 { get; set; }
 #endif
-        /// <summary>The subType property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubType? SubType { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo? PatchableOtherInfo { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo PatchableOtherInfo { get; set; }
 #endif
-        /// <summary>The whatWasPurchased property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProductType? WhatWasPurchased { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo"/> and sets the default values.
-        /// </summary>
-        public PatchableDisputeRequestOtherInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo();
+            if("PatchableOtherInfo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchableOtherInfo = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,13 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchableDisputeRequestOtherInfoMember1 != null)
             {
-                { "descriptionOfIssue", n => { DescriptionOfIssue = n.GetStringValue(); } },
-                { "subType", n => { SubType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubType>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "whatWasPurchased", n => { WhatWasPurchased = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>(); } },
-            };
+                return PatchableDisputeRequestOtherInfoMember1.GetFieldDeserializers();
+            }
+            else if(PatchableOtherInfo != null)
+            {
+                return PatchableOtherInfo.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -73,11 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SubType>("subType", SubType);
-            writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>("whatWasPurchased", WhatWasPurchased);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PatchableDisputeRequestOtherInfoMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfoMember1>(null, PatchableDisputeRequestOtherInfoMember1);
+            }
+            else if(PatchableOtherInfo != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>(null, PatchableOtherInfo);
+            }
         }
     }
 }

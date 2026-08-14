@@ -2,75 +2,33 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo : IAdditionalDataHolder, IParsable
+    public partial class TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The delivery location specified by the cardholder. Required if **deliveredToWrongLocation** is **true**.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgreedDeliveryLocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1? TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1 { get; set; }
 #nullable restore
 #else
-        public string AgreedDeliveryLocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1 TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1 { get; set; }
 #endif
-        /// <summary>The date the undelivered goods or services were cancelled in YYYY-MM-DD format.</summary>
-        public Date? DateOfCancellation { get; set; }
-        /// <summary>&quot;Indicates goods were delivered to the wrong location.Possible values: **true**, **false**.&quot;</summary>
-        public bool? DeliveredToWrongLocation { get; set; }
-        /// <summary>Your description of the issue for raising a dispute of `type` **notDelivered**.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo? TransactionServiceV4PatchableNotDeliveredInfo { get; set; }
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo TransactionServiceV4PatchableNotDeliveredInfo { get; set; }
 #endif
-        /// <summary>&quot;Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.Possible values: **true**, **false**.&quot;</summary>
-        public bool? DidCardholderReturn { get; set; }
-        /// <summary>&quot;Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.Possible values: **true**, **false**.&quot;</summary>
-        public bool? IsDeliveryLate { get; set; }
-        /// <summary>&quot;Indicates if the transaction was processed by a bankrupt merchant.Possible values: **true**, **false**.&quot;</summary>
-        public bool? IsMerchantBankrupt { get; set; }
-        /// <summary>&quot;Indicates if the transaction is non-fiat or non-fungible token (NFT) related.Possible values: **true**, **false**.&quot;</summary>
-        public bool? IsNonFiatOrNft { get; set; }
-        /// <summary>The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.</summary>
-        public Date? LastExpectedDate { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The whatWasNotDelivered property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType? WhatWasNotDelivered { get; set; }
-        /// <summary>&quot;The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled? WhoCancelled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled WhoCancelled { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo"/> and sets the default values.
-        /// </summary>
-        public TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfo();
+            if("TransactionServiceV4PatchableNotDeliveredInfo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TransactionServiceV4PatchableNotDeliveredInfo = new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,21 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1 != null)
             {
-                { "agreedDeliveryLocation", n => { AgreedDeliveryLocation = n.GetStringValue(); } },
-                { "dateOfCancellation", n => { DateOfCancellation = n.GetDateValue(); } },
-                { "deliveredToWrongLocation", n => { DeliveredToWrongLocation = n.GetBoolValue(); } },
-                { "descriptionOfIssue", n => { DescriptionOfIssue = n.GetStringValue(); } },
-                { "didCardholderReturn", n => { DidCardholderReturn = n.GetBoolValue(); } },
-                { "isDeliveryLate", n => { IsDeliveryLate = n.GetBoolValue(); } },
-                { "isMerchantBankrupt", n => { IsMerchantBankrupt = n.GetBoolValue(); } },
-                { "isNonFiatOrNft", n => { IsNonFiatOrNft = n.GetBoolValue(); } },
-                { "lastExpectedDate", n => { LastExpectedDate = n.GetDateValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "whatWasNotDelivered", n => { WhatWasNotDelivered = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>(); } },
-                { "whoCancelled", n => { WhoCancelled = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled.CreateFromDiscriminatorValue); } },
-            };
+                return TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1.GetFieldDeserializers();
+            }
+            else if(TransactionServiceV4PatchableNotDeliveredInfo != null)
+            {
+                return TransactionServiceV4PatchableNotDeliveredInfo.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -110,19 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("agreedDeliveryLocation", AgreedDeliveryLocation);
-            writer.WriteDateValue("dateOfCancellation", DateOfCancellation);
-            writer.WriteBoolValue("deliveredToWrongLocation", DeliveredToWrongLocation);
-            writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
-            writer.WriteBoolValue("didCardholderReturn", DidCardholderReturn);
-            writer.WriteBoolValue("isDeliveryLate", IsDeliveryLate);
-            writer.WriteBoolValue("isMerchantBankrupt", IsMerchantBankrupt);
-            writer.WriteBoolValue("isNonFiatOrNft", IsNonFiatOrNft);
-            writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
-            writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType>("whatWasNotDelivered", WhatWasNotDelivered);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled>("whoCancelled", WhoCancelled);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1>(null, TransactionServiceV4PatchableDisputeRequestNotDeliveredInfoMember1);
+            }
+            else if(TransactionServiceV4PatchableNotDeliveredInfo != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo>(null, TransactionServiceV4PatchableNotDeliveredInfo);
+            }
         }
     }
 }

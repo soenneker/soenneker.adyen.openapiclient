@@ -8,38 +8,27 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The fixed amount with which you want to top up the balance account.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixedMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchableTopUpAmountFixed : IAdditionalDataHolder, IParsable
+    public partial class PatchableTopUpAmountFixed : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto? PatchableAmountDto { get; set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto PatchableAmountDto { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixedMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixedMember1? PatchableTopUpAmountFixedMember1 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixedMember1 PatchableTopUpAmountFixedMember1 { get; set; }
 #endif
-        /// <summary>The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
-        public long? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixed"/> and sets the default values.
-        /// </summary>
-        public PatchableTopUpAmountFixed()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixed();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixed();
+            if("PatchableAmountDto".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchableAmountDto = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchableAmountDto != null)
             {
-                { "currency", n => { Currency = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetLongValue(); } },
-            };
+                return PatchableAmountDto.GetFieldDeserializers();
+            }
+            else if(PatchableTopUpAmountFixedMember1 != null)
+            {
+                return PatchableTopUpAmountFixedMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteStringValue("type", Type);
-            writer.WriteLongValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PatchableAmountDto != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>(null, PatchableAmountDto);
+            }
+            else if(PatchableTopUpAmountFixedMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableTopUpAmountFixedMember1>(null, PatchableTopUpAmountFixedMember1);
+            }
         }
     }
 }

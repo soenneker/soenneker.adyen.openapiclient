@@ -8,42 +8,27 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfoMember1"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchableDisputeRequestFraudInfo : IAdditionalDataHolder, IParsable
+    public partial class PatchableDisputeRequestFraudInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The card is no longer in the cardholder&apos;s possession. Set to **true** if the card is lost or stolen.</summary>
-        public bool? CardDoesNotBelongToCardholder { get; set; }
-        /// <summary>The card was counterfeited.</summary>
-        public bool? CardWasCounterfeited { get; set; }
-        /// <summary>Your description of the issue for raising a dispute of `type` **fraud**.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfoMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfoMember1? PatchableDisputeRequestFraudInfoMember1 { get; set; }
 #nullable restore
 #else
-        public string DescriptionOfIssue { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfoMember1 PatchableDisputeRequestFraudInfoMember1 { get; set; }
 #endif
-        /// <summary>Set to **true** to report fraud to Adyen with no further action, such as a request for a chargeback or fee reversal. The default value is **false**.</summary>
-        public bool? ReportOnly { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo? PatchableFraudInfo { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo PatchableFraudInfo { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo"/> and sets the default values.
-        /// </summary>
-        public PatchableDisputeRequestFraudInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo();
+            if("PatchableFraudInfo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchableFraudInfo = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,14 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchableDisputeRequestFraudInfoMember1 != null)
             {
-                { "cardDoesNotBelongToCardholder", n => { CardDoesNotBelongToCardholder = n.GetBoolValue(); } },
-                { "cardWasCounterfeited", n => { CardWasCounterfeited = n.GetBoolValue(); } },
-                { "descriptionOfIssue", n => { DescriptionOfIssue = n.GetStringValue(); } },
-                { "reportOnly", n => { ReportOnly = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return PatchableDisputeRequestFraudInfoMember1.GetFieldDeserializers();
+            }
+            else if(PatchableFraudInfo != null)
+            {
+                return PatchableFraudInfo.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -76,12 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("cardDoesNotBelongToCardholder", CardDoesNotBelongToCardholder);
-            writer.WriteBoolValue("cardWasCounterfeited", CardWasCounterfeited);
-            writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
-            writer.WriteBoolValue("reportOnly", ReportOnly);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PatchableDisputeRequestFraudInfoMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfoMember1>(null, PatchableDisputeRequestFraudInfoMember1);
+            }
+            else if(PatchableFraudInfo != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo>(null, PatchableFraudInfo);
+            }
         }
     }
 }

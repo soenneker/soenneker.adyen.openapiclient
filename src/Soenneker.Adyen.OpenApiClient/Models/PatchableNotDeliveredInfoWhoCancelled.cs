@@ -8,22 +8,27 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.&quot;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelledMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchableNotDeliveredInfoWhoCancelled : IAdditionalDataHolder, IParsable
+    public partial class PatchableNotDeliveredInfoWhoCancelled : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelled"/> and sets the default values.
-        /// </summary>
-        public PatchableNotDeliveredInfoWhoCancelled()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper? CancellingEntityWrapper { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper CancellingEntityWrapper { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelledMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelledMember1? PatchableNotDeliveredInfoWhoCancelledMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelledMember1 PatchableNotDeliveredInfoWhoCancelledMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelled CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelled();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelled();
+            if("CancellingEntityWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CancellingEntityWrapper = new global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,10 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CancellingEntityWrapper != null)
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>(); } },
-            };
+                return CancellingEntityWrapper.GetFieldDeserializers();
+            }
+            else if(PatchableNotDeliveredInfoWhoCancelledMember1 != null)
+            {
+                return PatchableNotDeliveredInfoWhoCancelledMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -52,8 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CancellingEntityWrapper != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper>(null, CancellingEntityWrapper);
+            }
+            else if(PatchableNotDeliveredInfoWhoCancelledMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfoWhoCancelledMember1>(null, PatchableNotDeliveredInfoWhoCancelledMember1);
+            }
         }
     }
 }

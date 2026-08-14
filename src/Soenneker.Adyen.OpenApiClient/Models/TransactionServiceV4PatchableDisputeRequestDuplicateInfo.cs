@@ -8,40 +8,27 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1"/>, <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TransactionServiceV4PatchableDisputeRequestDuplicateInfo : IAdditionalDataHolder, IParsable
+    public partial class TransactionServiceV4PatchableDisputeRequestDuplicateInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The transaction id associated with the duplicate charge for which you are disputing. The disputed transaction must be in the same amount as the duplicate transaction.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DuplicateTransactionId { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1? TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1 { get; set; }
 #nullable restore
 #else
-        public string DuplicateTransactionId { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1 TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1 { get; set; }
 #endif
-        /// <summary>&quot;The duplicate charge was made on the same card. Possible values: **true**, **false**.&quot;</summary>
-        public bool? SameCard { get; set; }
-        /// <summary>&quot;The issuer associated with each charge is the same. Possible values: **true**, **false**.&quot;</summary>
-        public bool? SameIssuer { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo? TransactionServiceV4PatchableDuplicateInfo { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo TransactionServiceV4PatchableDuplicateInfo { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfo"/> and sets the default values.
-        /// </summary>
-        public TransactionServiceV4PatchableDisputeRequestDuplicateInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +37,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfo();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfo();
+            if("TransactionServiceV4PatchableDuplicateInfo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TransactionServiceV4PatchableDuplicateInfo = new global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,13 +51,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1 != null)
             {
-                { "duplicateTransactionId", n => { DuplicateTransactionId = n.GetStringValue(); } },
-                { "sameCard", n => { SameCard = n.GetBoolValue(); } },
-                { "sameIssuer", n => { SameIssuer = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1.GetFieldDeserializers();
+            }
+            else if(TransactionServiceV4PatchableDuplicateInfo != null)
+            {
+                return TransactionServiceV4PatchableDuplicateInfo.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -73,11 +68,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("duplicateTransactionId", DuplicateTransactionId);
-            writer.WriteBoolValue("sameCard", SameCard);
-            writer.WriteBoolValue("sameIssuer", SameIssuer);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1>(null, TransactionServiceV4PatchableDisputeRequestDuplicateInfoMember1);
+            }
+            else if(TransactionServiceV4PatchableDuplicateInfo != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo>(null, TransactionServiceV4PatchableDuplicateInfo);
+            }
         }
     }
 }

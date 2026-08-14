@@ -69941,7 +69941,12 @@
               {
                 "$ref": "#/components/schemas/PatchableAmountDTO"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The fixed amount with which you want to top up the balance account."
           },
@@ -69951,7 +69956,12 @@
               {
                 "$ref": "#/components/schemas/PatchableAmountDTO"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The target balance for the balance account that the top-up must achieve."
           }
@@ -69966,7 +69976,12 @@
               {
                 "$ref": "#/components/schemas/PatchableSchedule"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Contains the details about the schedule that determines when the top up is executed."
           },
@@ -104193,7 +104208,12 @@
               {
                 "$ref": "#/components/schemas/InPersonDonationSettingsUpdate"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The settings for in-person donations collected as part of the campaign."
           },
@@ -104208,7 +104228,12 @@
               {
                 "$ref": "#/components/schemas/OnlineDonationSettingsUpdate"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The settings for online donations collected as part of the campaign."
           }
@@ -104356,7 +104381,12 @@
               {
                 "$ref": "#/components/schemas/DonationAmountUpdate"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The default amount for donations."
           },
@@ -104372,7 +104402,12 @@
               {
                 "$ref": "#/components/schemas/DonationType"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount."
           },
@@ -104653,7 +104688,12 @@
               {
                 "$ref": "#/components/schemas/DonationAmountUpdate"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The default amount for donations."
           },
@@ -104663,7 +104703,12 @@
               {
                 "$ref": "#/components/schemas/DonationType"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount."
           },
@@ -116200,7 +116245,12 @@
               {
                 "$ref": "#/components/schemas/PatchableDuplicateInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**."
           },
@@ -116210,7 +116260,12 @@
               {
                 "$ref": "#/components/schemas/PatchableFraudInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**."
           },
@@ -116220,7 +116275,12 @@
               {
                 "$ref": "#/components/schemas/PatchableNotDeliveredInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**."
           },
@@ -116230,7 +116290,12 @@
               {
                 "$ref": "#/components/schemas/PatchableOtherInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time."
           },
@@ -116240,7 +116305,12 @@
               {
                 "$ref": "#/components/schemas/DisputeStatus"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**."
           }
@@ -116350,7 +116420,12 @@
               {
                 "$ref": "#/components/schemas/CancellingEntity"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**."
           }
@@ -123393,7 +123468,12 @@
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableDuplicateInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**."
           },
@@ -123403,7 +123483,12 @@
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableFraudInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**."
           },
@@ -123413,7 +123498,12 @@
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableNotDeliveredInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**."
           },
@@ -123423,7 +123513,12 @@
               {
                 "$ref": "#/components/schemas/TransactionService_v4_PatchableOtherInfo"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.\n\n**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time."
           },
@@ -123433,7 +123528,12 @@
               {
                 "$ref": "#/components/schemas/TransactionService_v4_DisputeStatus"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The current status of the dispute.\n\nWhen you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.\n\nPossible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**."
           }
@@ -123543,7 +123643,12 @@
               {
                 "$ref": "#/components/schemas/TransactionService_v4_CancellingEntity"
               },
-              { }
+              {
+                "enum": [
+                  null
+                ],
+                "nullable": true
+              }
             ],
             "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**."
           }
