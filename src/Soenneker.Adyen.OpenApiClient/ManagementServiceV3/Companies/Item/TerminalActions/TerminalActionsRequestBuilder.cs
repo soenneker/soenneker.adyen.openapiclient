@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
             /// <summary>The number of items to have on a page, maximum 100. The default is 20 items on a page.</summary>
             [QueryParameter("pageSize")]
             public int? PageSize { get; set; }
-            /// <summary>&quot;Returns terminal actions with the specified status. Allowed values: **pending**, **successful**, **failed**, **cancelled**, **tryLater**.&quot;</summary>
+            /// <summary>Returns terminal actions with the specified status. Allowed values: **pending**, **successful**, **failed**, **cancelled**, **tryLater**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -127,7 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            /// <summary>&quot;Returns terminal actions of the specified type. Allowed values: **InstallAndroidApp**, **UninstallAndroidApp**, **InstallAndroidCertificate**, **UninstallAndroidCertificate**.&quot;</summary>
+            /// <summary>Returns terminal actions of the specified type. Allowed values: **InstallAndroidApp**, **UninstallAndroidApp**, **InstallAndroidCertificate**, **UninstallAndroidCertificate**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

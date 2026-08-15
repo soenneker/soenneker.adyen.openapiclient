@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FromMerchant { get; set; }
 #endif
-        /// <summary>&quot;A reference for the balance transfer. Maximum length: 80 characters.&quot;</summary>
+        /// <summary>A reference for the balance transfer. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

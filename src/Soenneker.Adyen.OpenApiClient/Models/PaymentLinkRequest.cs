@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PaymentLinkRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `\&quot;allowedPaymentMethods\&quot;:[\&quot;ideal\&quot;,\&quot;applepay\&quot;]`&quot;</summary>
+        /// <summary>List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;allowedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedPaymentMethods { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address BillingAddress { get; set; }
 #endif
-        /// <summary>&quot;List of payment methods to be hidden from the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `\&quot;blockedPaymentMethods\&quot;:[\&quot;ideal\&quot;,\&quot;applepay\&quot;]`&quot;</summary>
+        /// <summary>List of payment methods to be hidden from the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;blockedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BlockedPaymentMethods { get; set; }
@@ -63,9 +63,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>&quot;The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD&quot;</summary>
+        /// <summary>The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD</summary>
         public Date? DateOfBirth { get; set; }
-        /// <summary>&quot;The date and time when the purchased goods should be delivered.[ISO 8601](https://www.w3.org/TR/NOTE-datetime) format: YYYY-MM-DDThh:mm:ss+TZD, for example, **2020-12-18T10:15:30+01:00**.&quot;</summary>
+        /// <summary>The date and time when the purchased goods should be delivered.[ISO 8601](https://www.w3.org/TR/NOTE-datetime) format: YYYY-MM-DDThh:mm:ss+TZD, for example, **2020-12-18T10:15:30+01:00**.</summary>
         public DateTimeOffset? DeliverAt { get; set; }
         /// <summary>The deliveryAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address DeliveryAddress { get; set; }
 #endif
-        /// <summary>&quot;A short description visible on the payment page.Maximum length: 280 characters.&quot;</summary>
+        /// <summary>A short description visible on the payment page.Maximum length: 280 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;The date when the payment link expires.[ISO 8601](https://www.w3.org/TR/NOTE-datetime) format with time zone offset: YYYY-MM-DDThh:mm:ss+TZD, for example, **2020-12-18T10:15:30+01:00**.The maximum expiry date is 70 days after the payment link is created.If not provided, the payment link expires 24 hours after it was created.&quot;</summary>
+        /// <summary>The date when the payment link expires.[ISO 8601](https://www.w3.org/TR/NOTE-datetime) format with time zone offset: YYYY-MM-DDThh:mm:ss+TZD, for example, **2020-12-18T10:15:30+01:00**.The maximum expiry date is 70 days after the payment link is created.If not provided, the payment link expires 24 hours after it was created.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The fundOrigin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantOrderReference { get; set; }
 #endif
-        /// <summary>&quot;Metadata consists of entries, each of which includes a key and a value.Limitations:* Maximum 20 key-value pairs per request. Otherwise, error \&quot;177\&quot; occurs: \&quot;Metadata size exceeds limit\&quot;* Maximum 20 characters per key. Otherwise, error \&quot;178\&quot; occurs: \&quot;Metadata key size exceeds limit\&quot;* A key cannot have the name `checkout.linkId`. Any value that you provide with this key is going to be replaced by the real payment link ID.&quot;</summary>
+        /// <summary>Metadata consists of entries, each of which includes a key and a value.Limitations:* Maximum 20 key-value pairs per request. Otherwise, error &quot;177&quot; occurs: &quot;Metadata size exceeds limit&quot;* Maximum 20 characters per key. Otherwise, error &quot;178&quot; occurs: &quot;Metadata key size exceeds limit&quot;* A key cannot have the name `checkout.linkId`. Any value that you provide with this key is going to be replaced by the real payment link ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentLinkRequestMetadataProperty? Metadata { get; set; }
@@ -227,7 +227,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperReference { get; set; }
 #endif
-        /// <summary>&quot;The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.&quot;</summary>
+        /// <summary>The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperStatement { get; set; }

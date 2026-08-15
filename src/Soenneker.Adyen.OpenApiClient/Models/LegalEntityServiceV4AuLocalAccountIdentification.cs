@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string BsbCode { get; set; }
 #endif
         /// <summary>**auLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4AuLocalAccountIdentificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuLocalType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "bsbCode", n => { BsbCode = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4AuLocalAccountIdentificationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuLocalType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteStringValue("bsbCode", BsbCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4AuLocalAccountIdentificationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuLocalType>("type", Type);
         }
     }
 }

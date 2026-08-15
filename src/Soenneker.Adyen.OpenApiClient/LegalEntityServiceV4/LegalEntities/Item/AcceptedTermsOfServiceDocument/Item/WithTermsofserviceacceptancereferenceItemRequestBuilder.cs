@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item.
         {
         }
         /// <summary>
-        /// &quot;Returns the accepted Terms of Service document for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns the accepted Terms of Service document for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns the accepted Terms of Service document for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns the accepted Terms of Service document for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,12 +93,12 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item.
             return new global::Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item.AcceptedTermsOfServiceDocument.Item.WithTermsofserviceacceptancereferenceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns the accepted Terms of Service document for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns the accepted Terms of Service document for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithTermsofserviceacceptancereferenceItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;The format of the Terms of Service document. Possible values: **JSON**, **PDF**, or **TXT**&quot;</summary>
+            /// <summary>The format of the Terms of Service document. Possible values: **JSON**, **PDF**, or **TXT**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("termsOfServiceDocumentFormat")]

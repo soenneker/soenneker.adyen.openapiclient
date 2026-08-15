@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Settings : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The preferred Wi-Fi band, for use if the terminals support multiple bands. Possible values: All, 2.4GHz, 5GHz.&quot;</summary>
+        /// <summary>The preferred Wi-Fi band, for use if the terminals support multiple bands. Possible values: All, 2.4GHz, 5GHz.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Band { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether roaming is enabled on the terminals.</summary>
         public bool? Roaming { get; set; }
-        /// <summary>&quot;The connection time-out in seconds. Minimum value: 0.&quot;</summary>
+        /// <summary>The connection time-out in seconds. Minimum value: 0.</summary>
         public int? Timeout { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

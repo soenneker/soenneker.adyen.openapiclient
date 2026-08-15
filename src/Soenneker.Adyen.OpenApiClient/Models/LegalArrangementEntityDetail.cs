@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LegalArrangementEntityReference { get; set; }
 #endif
-        /// <summary>&quot;An array containing the roles of the entity in the legal arrangement.The possible values depend on the legal arrangement `type`.- For `type` **Association**: **ControllingPerson** and **Shareholder**.- For `type` **Partnership**: **Partner** and **Shareholder**.- For `type` **Trust**: **Trustee**, **Settlor**, **Protector**, **Beneficiary**,  and **Shareholder**.&quot;</summary>
+        /// <summary>An array containing the roles of the entity in the legal arrangement.The possible values depend on the legal arrangement `type`.- For `type` **Association**: **ControllingPerson** and **Shareholder**.- For `type` **Partnership**: **Partner** and **Shareholder**.- For `type` **Trust**: **Trustee**, **Settlor**, **Protector**, **Beneficiary**,  and **Shareholder**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalArrangementMembersItem?>? LegalArrangementMembers { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalArrangementMembersItem?> LegalArrangementMembers { get; set; }
 #endif
-        /// <summary>&quot;The legal entity type.Possible values: **Business**, **Individual**, **NonProfit**, **PublicCompany**, or **Partnership**. &quot;</summary>
+        /// <summary>The legal entity type.Possible values: **Business**, **Individual**, **NonProfit**, **PublicCompany**, or **Partnership**. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalEntityType? LegalEntityType { get; set; }
         /// <summary>The phoneNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

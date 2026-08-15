@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.&quot;</summary>
+    /// <summary>The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferType
     {

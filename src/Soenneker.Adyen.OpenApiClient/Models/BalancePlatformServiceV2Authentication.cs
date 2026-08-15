@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>&quot;The password used for 3D Secure password-based authentication. The value must be between 1 to 30 characters and must only contain the following supported characters.* Characters between **a-z**, **A-Z**, and **0-9*** Special characters: **äöüßÄÖÜ+-*/ç%()=?!~#&apos;\&quot;,;:$&amp;àùòâôûáúó**&quot;</summary>
+        /// <summary>The password used for 3D Secure password-based authentication. The value must be between 1 to 30 characters and must only contain the following supported characters.* Characters between **a-z**, **A-Z**, and **0-9*** Special characters: **äöüßÄÖÜ+-*/ç%()=?!~#&apos;&quot;,;:$&amp;àùòâôûáúó**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Password { get; set; }

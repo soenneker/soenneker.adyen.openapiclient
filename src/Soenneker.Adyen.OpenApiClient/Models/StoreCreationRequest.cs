@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;Your reference to recognize the store by. Also known as the store code. Allowed characters: lowercase and uppercase letters without diacritics, numbers 0 through 9, hyphen (-), and underscore (_).If you do not provide a reference in your POST request, it is populated with the Adyen-generated [id](https://docs.adyen.com/api-explorer/Management/latest/post/stores#responses-200-id).&quot;</summary>
+        /// <summary>Your reference to recognize the store by. Also known as the store code. Allowed characters: lowercase and uppercase letters without diacritics, numbers 0 through 9, hyphen (-), and underscore (_).If you do not provide a reference in your POST request, it is populated with the Adyen-generated [id](https://docs.adyen.com/api-explorer/Management/latest/post/stores#responses-200-id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The store name to be shown on the shopper&apos;s bank or credit card statement and on the shopper receipt.Maximum length: 22 characters; can&apos;t be all numbers.&quot;</summary>
+        /// <summary>The store name to be shown on the shopper&apos;s bank or credit card statement and on the shopper receipt.Maximum length: 22 characters; can&apos;t be all numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperStatement { get; set; }

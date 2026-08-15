@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Identifies the type of transaction being authenticated. Length: 2 characters. Allowed values:* **01** — Goods/Service Purchase* **03** — Check Acceptance* **10** — Account Funding* **11** — Quasi-Cash Transaction* **28** — Prepaid Activation and Load&quot;</summary>
+    /// <summary>Identifies the type of transaction being authenticated. Length: 2 characters. Allowed values:* **01** — Goods/Service Purchase* **03** — Check Acceptance* **10** — Account Funding* **11** — Quasi-Cash Transaction* **28** — Prepaid Activation and Load</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ThreeDs2RequestDataTransType
     {

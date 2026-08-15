@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The unit of time. You can only use **minutes** and **hours** if the `interval.type` is **sliding**.Possible values: **minutes**, **hours**, **days**, **weeks**, or **months**&quot;</summary>
+    /// <summary>The unit of time. You can only use **minutes** and **hours** if the `interval.type` is **sliding**.Possible values: **minutes**, **hours**, **days**, **weeks**, or **months**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DurationUnit
     {

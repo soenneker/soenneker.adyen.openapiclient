@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PhoneCountryCode { get; private set; }
 #endif
-        /// <summary>&quot;The type of phone number. Possible values: **mobile**, **landline**, **sip**, **fax.** &quot;</summary>
+        /// <summary>The type of phone number. Possible values: **mobile**, **landline**, **sip**, **fax.** </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TransactionRuleInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The level at which data must be accumulated, used in rules with `type` **velocity** or **maxUsage**. The level must be the [same or lower in hierarchy](https://docs.adyen.com/issuing/transaction-rules#accumulate-data) than the `entityKey`.If not provided, by default, the rule will accumulate data at the **paymentInstrument** level.Possible values: **paymentInstrument**, **paymentInstrumentGroup**, **balanceAccount**, **accountHolder**, **balancePlatform**.&quot;</summary>
+        /// <summary>The level at which data must be accumulated, used in rules with `type` **velocity** or **maxUsage**. The level must be the [same or lower in hierarchy](https://docs.adyen.com/issuing/transaction-rules#accumulate-data) than the `entityKey`.If not provided, by default, the rule will accumulate data at the **paymentInstrument** level.Possible values: **paymentInstrument**, **paymentInstrumentGroup**, **balanceAccount**, **accountHolder**, **balancePlatform**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AggregationLevel { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInterval Interval { get; set; }
 #endif
-        /// <summary>&quot;The [outcome](https://docs.adyen.com/issuing/transaction-rules#outcome) that will be applied when a transaction meets the conditions of the rule.Possible values:* **hardBlock** (default): the transaction is declined.* **scoreBased**: the transaction is assigned the `score` you specified. Adyen calculates the total score and if it exceeds 100, the transaction is declined. This value is not allowed when `requestType` is **bankTransfer**.* **enforceSCA**: your user is prompted to verify their identity using [3D Secure authentication](https://docs.adyen.com/issuing/3d-secure/). If the authentication fails or times out, the transaction is declined. This value is only allowed when `requestType` is **authentication**.&quot;</summary>
+        /// <summary>The [outcome](https://docs.adyen.com/issuing/transaction-rules#outcome) that will be applied when a transaction meets the conditions of the rule.Possible values:* **hardBlock** (default): the transaction is declined.* **scoreBased**: the transaction is assigned the `score` you specified. Adyen calculates the total score and if it exceeds 100, the transaction is declined. This value is not allowed when `requestType` is **bankTransfer**.* **enforceSCA**: your user is prompted to verify their identity using [3D Secure authentication](https://docs.adyen.com/issuing/3d-secure/). If the authentication fails or times out, the transaction is declined. This value is only allowed when `requestType` is **authentication**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoOutcomeType? OutcomeType { get; set; }
         /// <summary>The `id` of the transaction rule you want to override or skip for the specified `entityKey`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string OverridesRule { get; set; }
 #endif
-        /// <summary>&quot;Specifies the reason for creating the rule.Possible values:* **fraud**: the rule is created to regulate fraudulent activity.* **policy**: the rule is created to ensure that the transaction adheres to your business&apos; policies. For example, if your business has policies about the Merchant Category Codes (MCCs) allowed on a transaction, you can create a rule to block transactions that have specific MCCs.&quot;</summary>
+        /// <summary>Specifies the reason for creating the rule.Possible values:* **fraud**: the rule is created to regulate fraudulent activity.* **policy**: the rule is created to ensure that the transaction adheres to your business&apos; policies. For example, if your business has policies about the Merchant Category Codes (MCCs) allowed on a transaction, you can create a rule to block transactions that have specific MCCs.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoPurpose? Purpose { get; set; }
         /// <summary>Your reference for the transaction rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;Indicates the type of request to which the rule applies. If not provided, by default, this is set to **authorization**.Possible values: **authorization**, **authentication**, **tokenization**, **bankTransfer**.&quot;</summary>
+        /// <summary>Indicates the type of request to which the rule applies. If not provided, by default, this is set to **authorization**.Possible values: **authorization**, **authentication**, **tokenization**, **bankTransfer**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRequestType? RequestType { get; set; }
         /// <summary>The ruleRestrictions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,9 +92,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StartDate { get; set; }
 #endif
-        /// <summary>&quot;The status of the transaction rule. If you provide a `startDate` in the request, the rule is automatically created with an **active** status. Possible values: **active**, **inactive**.&quot;</summary>
+        /// <summary>The status of the transaction rule. If you provide a `startDate` in the request, the rule is automatically created with an **active** status. Possible values: **active**, **inactive**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoStatus? Status { get; set; }
-        /// <summary>&quot;The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.Possible values: * **blockList**: decline a transaction when the conditions are met. * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met. * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met. * **bypass**: bypass or skip a rule for the specified `entityKey`. Transactions processed to that entity are no longer evaluated by the bypassed rule.  You must provide the `id` of the rule to bypass in `overridesRule` and leave the `ruleRestrictions` object empty.&quot;</summary>
+        /// <summary>The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.Possible values: * **blockList**: decline a transaction when the conditions are met. * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met. * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met. * **bypass**: bypass or skip a rule for the specified `entityKey`. Transactions processed to that entity are no longer evaluated by the bypassed rule.  You must provide the `id` of the rule to bypass in `overridesRule` and leave the `ruleRestrictions` object empty.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

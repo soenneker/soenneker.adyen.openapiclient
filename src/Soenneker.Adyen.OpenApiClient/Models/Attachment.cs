@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public byte[] Content { get; set; }
 #endif
-        /// <summary>&quot;The file format. Possible values: **application/pdf**, **image/jpg**, **image/jpeg**, **image/png**. &quot;</summary>
+        /// <summary>The file format. Possible values: **application/pdf**, **image/jpg**, **image/jpeg**, **image/png**. </summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

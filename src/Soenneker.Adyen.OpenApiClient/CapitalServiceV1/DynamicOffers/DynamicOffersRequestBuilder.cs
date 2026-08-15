@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.DynamicOffers
             [QueryParameter("accountHolderId")]
             public string AccountHolderId { get; set; }
 #endif
-            /// <summary>&quot;The type of financing that the offer is for. If the value is not specified, returns all available types.Possible values: **businessFinancing**&quot;</summary>
+            /// <summary>The type of financing that the offer is for. If the value is not specified, returns all available types.Possible values: **businessFinancing**</summary>
             [QueryParameter("financingType")]
             public global::Soenneker.Adyen.OpenApiClient.Models.FinancingType? FinancingType { get; set; }
         }

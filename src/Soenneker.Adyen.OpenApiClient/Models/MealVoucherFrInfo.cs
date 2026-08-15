@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class MealVoucherFrInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Meal Voucher conecsId. Format: digits only&quot;</summary>
+        /// <summary>Meal Voucher conecsId. Format: digits only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConecsId { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ConecsId { get; set; }
 #endif
-        /// <summary>&quot;Meal Voucher siret. Format: 14 digits.&quot;</summary>
+        /// <summary>Meal Voucher siret. Format: 14 digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Siret { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Siret { get; set; }
 #endif
-        /// <summary>&quot;The list of additional payment methods. Allowed values: **mealVoucher_FR_endenred**, **mealVoucher_FR_groupeup**, **mealVoucher_FR_natixis**, **mealVoucher_FR_sodexo**.&quot;</summary>
+        /// <summary>The list of additional payment methods. Allowed values: **mealVoucher_FR_endenred**, **mealVoucher_FR_groupeup**, **mealVoucher_FR_natixis**, **mealVoucher_FR_sodexo**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SubTypes { get; set; }

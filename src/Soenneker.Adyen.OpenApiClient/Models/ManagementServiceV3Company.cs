@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The status of the company account.Possible values:* **Active**: Users can log in. Processing and payout capabilities depend on the status of the merchant account.* **Inactive**: Users can log in. Payment processing and payouts are disabled.* **Closed**: The company account is closed and this cannot be reversed. Users cannot log in. Payment processing and payouts are disabled.&quot;</summary>
+        /// <summary>The status of the company account.Possible values:* **Active**: Users can log in. Processing and payout capabilities depend on the status of the merchant account.* **Inactive**: Users can log in. Payment processing and payouts are disabled.* **Closed**: The company account is closed and this cannot be reversed. Users cannot log in. Payment processing and payouts are disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

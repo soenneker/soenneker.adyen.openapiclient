@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PayoutMethodCode { get; set; }
 #endif
-        /// <summary>&quot;The payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.&quot;</summary>
+        /// <summary>The payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountRequestPayoutSchedule? PayoutSchedule { get; set; }
         /// <summary>The reason for the payout schedule choice.&gt; This field is required when the `payoutSchedule` parameter is set to `HOLD`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PayoutScheduleReason { get; set; }
 #endif
-        /// <summary>&quot;Speed at which payouts for this account are processed.Possible values: `STANDARD` (default), `SAME_DAY`.&quot;</summary>
+        /// <summary>Speed at which payouts for this account are processed.Possible values: `STANDARD` (default), `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountRequestPayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

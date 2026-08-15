@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Themes
         {
         }
         /// <summary>
-        /// &quot;Returns a list of hosted onboarding page themes.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a list of hosted onboarding page themes.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemes"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Themes
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemes>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemes.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns a list of hosted onboarding page themes.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a list of hosted onboarding page themes.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountProcessingState ProcessingState { get; set; }
 #endif
-        /// <summary>&quot;The status of the account holder.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
+        /// <summary>The status of the account holder.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus? Status { get; set; }
         /// <summary>The reason why the status was assigned to the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

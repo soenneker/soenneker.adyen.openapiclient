@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
-        /// <summary>&quot;List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `\&quot;allowedPaymentMethods\&quot;:[\&quot;ideal\&quot;,\&quot;applepay\&quot;]`&quot;</summary>
+        /// <summary>List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;allowedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedPaymentMethods { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
 #endif
-        /// <summary>&quot;List of payment methods to be hidden from the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `\&quot;blockedPaymentMethods\&quot;:[\&quot;ideal\&quot;,\&quot;applepay\&quot;]`&quot;</summary>
+        /// <summary>List of payment methods to be hidden from the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;blockedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BlockedPaymentMethods { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The platform where a payment transaction takes place. This field can be used for filtering out payment methods that are only available on specific platforms. Possible values:* iOS* Android* Web</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestChannel? Channel { get; set; }
-        /// <summary>&quot;The shopper country code.Format: [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)Example: NL or DE&quot;</summary>
+        /// <summary>The shopper country code.Format: [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)Example: NL or DE</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -128,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Store { get; set; }
 #endif
-        /// <summary>&quot;Specifies how payment methods should be filtered based on the `store` parameter:  - **exclusive**: Only payment methods belonging to the specified `store` are returned.  - **inclusive**: Payment methods from the `store` and those not associated with any other store are returned.&quot;</summary>
+        /// <summary>Specifies how payment methods should be filtered based on the `store` parameter:  - **exclusive**: Only payment methods belonging to the specified `store` are returned.  - **inclusive**: Payment methods from the `store` and those not associated with any other store are returned.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodsRequestStoreFiltrationMode? StoreFiltrationMode { get; set; }
         /// <summary>The shopper&apos;s telephone number. The phone number must include a plus sign (+) and a country code (1-3 digits), followed by the number (4-15 digits). If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

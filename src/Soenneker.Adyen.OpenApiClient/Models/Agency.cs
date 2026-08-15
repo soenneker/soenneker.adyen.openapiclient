@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Agency : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The reference number for the invoice, issued by the agency.* Encoding: ASCII* minLength: 1 character* maxLength: 6 characters* **additionalData key:** `airline.agency_invoice_number`&quot;</summary>
+        /// <summary>The reference number for the invoice, issued by the agency.* Encoding: ASCII* minLength: 1 character* maxLength: 6 characters* **additionalData key:** `airline.agency_invoice_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvoiceNumber { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string InvoiceNumber { get; set; }
 #endif
-        /// <summary>&quot;The two-letter agency plan identifier.* Encoding: ASCII* minLength: 2 characters* maxLength: 2 characters* **additionalData key:** `airline.agency_plan_name`&quot;</summary>
+        /// <summary>The two-letter agency plan identifier.* Encoding: ASCII* minLength: 2 characters* maxLength: 2 characters* **additionalData key:** `airline.agency_plan_name`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlanName { get; set; }

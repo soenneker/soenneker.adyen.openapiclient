@@ -12,8 +12,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class ReleaseUpdateDetails : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Type of terminal action: Update Release.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetailsType? Type { get; set; }
+        /// <summary>Type of terminal action: Update Release.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType? Type { get; set; }
         /// <summary>Boolean flag that tells if the terminal should update at the first next maintenance call. If false, terminal will update on its configured reboot time.</summary>
         public bool? UpdateAtFirstMaintenanceCall { get; set; }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType>(); } },
                 { "updateAtFirstMaintenanceCall", n => { UpdateAtFirstMaintenanceCall = n.GetBoolValue(); } },
             };
         }
@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType>("type", Type);
             writer.WriteBoolValue("updateAtFirstMaintenanceCall", UpdateAtFirstMaintenanceCall);
         }
     }

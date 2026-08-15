@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Ispb { get; set; }
 #endif
         /// <summary>**brLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BrLocalType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "bankCode", n => { BankCode = n.GetStringValue(); } },
                 { "branchNumber", n => { BranchNumber = n.GetStringValue(); } },
                 { "ispb", n => { Ispb = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentificationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BrLocalType>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("bankCode", BankCode);
             writer.WriteStringValue("branchNumber", BranchNumber);
             writer.WriteStringValue("ispb", Ispb);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BrLocalAccountIdentificationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BrLocalType>("type", Type);
         }
     }
 }

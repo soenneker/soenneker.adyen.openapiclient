@@ -14,9 +14,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Indicates if payouts to the bank account are allowed. This value is set automatically based on the status of the verification process. The value is:* **true** if `verificationStatus` is **valid**.* **false** for all other values.</summary>
         public bool? Allowed { get; set; }
-        /// <summary>&quot;Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.&quot;</summary>
+        /// <summary>Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>&quot;The date when Adyen starts paying out to this bank account.Format: [ISO 8601](https://www.w3.org/TR/NOTE-datetime), for example, **2019-11-23T12:25:28Z** or **2020-05-27T20:25:28+08:00**.If not specified, the `enabled` field indicates if payouts are enabled for this bank account.If a date is specified and:* `enabled`: **true**, payouts are enabled starting the specified date.* `enabled`: **false**, payouts are disabled until the specified date. On the specified date, `enabled` changes to **true** and this field is reset to **null**.&quot;</summary>
+        /// <summary>The date when Adyen starts paying out to this bank account.Format: [ISO 8601](https://www.w3.org/TR/NOTE-datetime), for example, **2019-11-23T12:25:28Z** or **2020-05-27T20:25:28+08:00**.If not specified, the `enabled` field indicates if payouts are enabled for this bank account.If a date is specified and:* `enabled`: **true**, payouts are enabled starting the specified date.* `enabled`: **false**, payouts are disabled until the specified date. On the specified date, `enabled` changes to **true** and this field is reset to **null**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnabledFromDate { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Determines how long it takes for the funds to reach the bank account. Adyen pays out based on the [payout frequency](https://docs.adyen.com/account/getting-paid#payout-frequency). Depending on the currencies and banks involved in transferring the money, it may take up to three days for the payout funds to arrive in the bank account. Possible values:* **first**: same day.* **urgent**: the next day.* **normal**: between 1 and 3 days.&quot;</summary>
+        /// <summary>Determines how long it takes for the funds to reach the bank account. Adyen pays out based on the [payout frequency](https://docs.adyen.com/account/getting-paid#payout-frequency). Depending on the currencies and banks involved in transferring the money, it may take up to three days for the payout funds to arrive in the bank account. Possible values:* **first**: same day.* **urgent**: the next day.* **normal**: between 1 and 3 days.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority? Priority { get; set; }
         /// <summary>The unique identifier of the [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) that contains the details of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TransferInstrumentId { get; set; }
 #endif
-        /// <summary>&quot;The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.&quot;</summary>
+        /// <summary>The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus? VerificationStatus { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

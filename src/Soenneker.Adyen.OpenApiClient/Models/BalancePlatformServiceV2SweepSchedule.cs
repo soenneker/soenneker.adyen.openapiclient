@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class BalancePlatformServiceV2SweepSchedule : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;A [cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression) that is used to set the sweep schedule. The schedule uses the time zone of the balance account. For example, **30 17 * * MON** schedules a sweep every Monday at 17:30.The expression must have five values separated by a single space in the following order:* Minute: **0-59*** Hour: **0-23*** Day of the month: **1-31*** Month: **1-12** or **JAN-DEC*** Day of the week: **0-7** (0 and 7 are Sunday) or **MON-SUN**.The following non-standard characters are supported: **&amp;ast;**, **L**, **#**, **W** and **/**. See [crontab guru](https://crontab.guru/) for more examples.Required when `type` is **cron**.&quot;</summary>
+        /// <summary>A [cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression) that is used to set the sweep schedule. The schedule uses the time zone of the balance account. For example, **30 17 * * MON** schedules a sweep every Monday at 17:30.The expression must have five values separated by a single space in the following order:* Minute: **0-59*** Hour: **0-23*** Day of the month: **1-31*** Month: **1-12** or **JAN-DEC*** Day of the week: **0-7** (0 and 7 are Sunday) or **MON-SUN**.The following non-standard characters are supported: **&amp;ast;**, **L**, **#**, **W** and **/**. See [crontab guru](https://crontab.guru/) for more examples.Required when `type` is **cron**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CronExpression { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CronExpression { get; set; }
 #endif
-        /// <summary>&quot;The schedule type.Possible values:* **cron**: push out funds based on a `cronExpression`.* **daily**: push out funds daily at 07:00 AM CET.* **weekly**: push out funds every Monday at 07:00 AM CET.* **monthly**: push out funds every first of the month at 07:00 AM CET.* **balance**: execute the sweep instantly if the `triggerAmount` is reached.&quot;</summary>
+        /// <summary>The schedule type.Possible values:* **cron**: push out funds based on a `cronExpression`.* **daily**: push out funds daily at 07:00 AM CET.* **weekly**: push out funds every Monday at 07:00 AM CET.* **monthly**: push out funds every first of the month at 07:00 AM CET.* **balance**: execute the sweep instantly if the `triggerAmount` is reached.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2SweepScheduleType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

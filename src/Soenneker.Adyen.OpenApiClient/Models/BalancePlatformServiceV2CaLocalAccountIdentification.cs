@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
-        /// <summary>&quot;The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.&quot;</summary>
+        /// <summary>The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationAccountType? AccountType { get; set; }
         /// <summary>The 3-digit institution number, without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransitNumber { get; set; }
 #endif
         /// <summary>**caLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationAccountType>(); } },
                 { "institutionNumber", n => { InstitutionNumber = n.GetStringValue(); } },
                 { "transitNumber", n => { TransitNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType>(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationAccountType>("accountType", AccountType);
             writer.WriteStringValue("institutionNumber", InstitutionNumber);
             writer.WriteStringValue("transitNumber", TransitNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType>("type", Type);
         }
     }
 }

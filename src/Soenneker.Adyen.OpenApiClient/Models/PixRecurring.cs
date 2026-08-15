@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount RecurringAmount { get; set; }
 #endif
-        /// <summary>&quot;The text that that will be shown on the shopper&apos;s bank statement for the recurring payments. We recommend to add a descriptive text about the subscription to let your shoppers recognize your recurring payments.Maximum length: 35 characters.&quot;</summary>
+        /// <summary>The text that that will be shown on the shopper&apos;s bank statement for the recurring payments. We recommend to add a descriptive text about the subscription to let your shoppers recognize your recurring payments.Maximum length: 35 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurringStatement { get; set; }

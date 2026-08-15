@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LegalEntityId { get; set; }
 #endif
-        /// <summary>&quot;The type of transfer instrument.Possible value: **bankAccount**.&quot;</summary>
+        /// <summary>The type of transfer instrument.Possible value: **bankAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentInfoType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

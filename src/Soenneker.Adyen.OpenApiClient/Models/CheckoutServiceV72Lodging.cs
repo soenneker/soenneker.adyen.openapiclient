@@ -13,11 +13,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CheckoutServiceV72Lodging : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The check-in date.* Min Length: 10 characters* Max Length: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `lodging.checkInDate`&quot;</summary>
+        /// <summary>The check-in date.* Min Length: 10 characters* Max Length: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `lodging.checkInDate`</summary>
         public Date? CheckInDate { get; set; }
-        /// <summary>&quot;The check-out date.* Min Length: 10 characters* Max Length: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `lodging.checkOutDate`&quot;</summary>
+        /// <summary>The check-out date.* Min Length: 10 characters* Max Length: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `lodging.checkOutDate`</summary>
         public Date? CheckOutDate { get; set; }
-        /// <summary>&quot;The toll-free phone number for the lodging customer service.* Format: Alphanumeric* For US and CA numbers must be 10 characters in length* Must not start with a space* Must not contain any special characters such as + or -* Must not be all zeros.* **additionalData key:** `lodging.customerServiceTollFreeNumber`&quot;</summary>
+        /// <summary>The toll-free phone number for the lodging customer service.* Format: Alphanumeric* For US and CA numbers must be 10 characters in length* Must not start with a space* Must not contain any special characters such as + or -* Must not be all zeros.* **additionalData key:** `lodging.customerServiceTollFreeNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerServicePhoneNumber { get; set; }
@@ -35,15 +35,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.Folio Folio { get; set; }
 #endif
-        /// <summary>&quot;Any charges for food and beverages associated with the booking, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.foodBeverageCharges`&quot;</summary>
+        /// <summary>Any charges for food and beverages associated with the booking, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.foodBeverageCharges`</summary>
         public long? FoodBeverageCharges { get; set; }
         /// <summary>The category of lodging charges for the payment.* **additionalData key:** `lodging.specialProgramCode`</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72LodgingLodgingChargeType? LodgingChargeType { get; set; }
         /// <summary>Indicates if the customer didn&apos;t check in for their booking.* **additionalData key:** `lodging.noShowIndicator`</summary>
         public bool? NoShow { get; set; }
-        /// <summary>&quot;The prepaid expenses for the booking, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.prepaidExpenses`&quot;</summary>
+        /// <summary>The prepaid expenses for the booking, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.prepaidExpenses`</summary>
         public long? PrepaidExpenses { get; set; }
-        /// <summary>&quot;The lodging property location&apos;s phone number.* Format: Alphanumeric* Min length: 10 characters* For US and CA numbers must be 10 characters in length* Must not start with a space* Must not contain any special characters such as + or -* Must not be all zeros.* **additionalData key:** `lodging.propertyPhoneNumber`&quot;</summary>
+        /// <summary>The lodging property location&apos;s phone number.* Format: Alphanumeric* Min length: 10 characters* For US and CA numbers must be 10 characters in length* Must not start with a space* Must not contain any special characters such as + or -* Must not be all zeros.* **additionalData key:** `lodging.propertyPhoneNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyPhoneNumber { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PropertyPhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The name of the person renting the room.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `lodging.renterName`&quot;</summary>
+        /// <summary>The name of the person renting the room.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `lodging.renterName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenterName { get; set; }
@@ -67,9 +67,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Room> Rooms { get; set; }
 #endif
-        /// <summary>&quot;The total room tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.totalRoomTax`&quot;</summary>
+        /// <summary>The total room tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.totalRoomTax`</summary>
         public long? TotalRoomTax { get; set; }
-        /// <summary>&quot;The total tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.totalTax`&quot;</summary>
+        /// <summary>The total tax amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.totalTax`</summary>
         public long? TotalTax { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

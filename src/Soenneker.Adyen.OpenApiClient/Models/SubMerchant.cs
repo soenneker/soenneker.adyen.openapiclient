@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class SubMerchant : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The city of the sub-merchant&apos;s address.* Format: Alphanumeric* Maximum length: 13 characters&quot;</summary>
+        /// <summary>The city of the sub-merchant&apos;s address.* Format: Alphanumeric* Maximum length: 13 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>&quot;The three-letter country code of the sub-merchant&apos;s address. For example, **BRA** for Brazil. * Format: [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)* Fixed length: 3 characters&quot;</summary>
+        /// <summary>The three-letter country code of the sub-merchant&apos;s address. For example, **BRA** for Brazil. * Format: [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)* Fixed length: 3 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>&quot;The sub-merchant&apos;s 4-digit Merchant Category Code (MCC). * Format: Numeric* Fixed length: 4 digits&quot;</summary>
+        /// <summary>The sub-merchant&apos;s 4-digit Merchant Category Code (MCC). * Format: Numeric* Fixed length: 4 digits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mcc { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Mcc { get; set; }
 #endif
-        /// <summary>&quot;The name of the sub-merchant. Based on scheme specifications, this value will overwrite the shopper statement  that will appear in the card statement.* Format: Alphanumeric* Maximum length: 22 characters&quot;</summary>
+        /// <summary>The name of the sub-merchant. Based on scheme specifications, this value will overwrite the shopper statement  that will appear in the card statement.* Format: Alphanumeric* Maximum length: 22 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;The tax ID of the sub-merchant.* Format: Numeric* Fixed length: 11 digits for the CPF or 14 digits for the CNPJ&quot;</summary>
+        /// <summary>The tax ID of the sub-merchant.* Format: Numeric* Fixed length: 11 digits for the CPF or 14 digits for the CNPJ</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxId { get; set; }

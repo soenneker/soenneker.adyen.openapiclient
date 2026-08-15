@@ -12,9 +12,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Room : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The total number of nights the room is booked for.* Format: Numeric* Must be a number between 1 and 99* **additionalData key:** `lodging.room[N].numberOfNights`&quot;</summary>
+        /// <summary>The total number of nights the room is booked for.* Format: Numeric* Must be a number between 1 and 99* **additionalData key:** `lodging.room[N].numberOfNights`</summary>
         public int? NumberOfNights { get; set; }
-        /// <summary>&quot;Room rate per night, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.room[N].rate`&quot;</summary>
+        /// <summary>Room rate per night, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.room[N].rate`</summary>
         public long? Rate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

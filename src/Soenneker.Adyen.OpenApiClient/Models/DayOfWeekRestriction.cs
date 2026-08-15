@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>&quot;List of days of the week.Possible values: **monday**, **tuesday**, **wednesday**, **thursday**, **friday**, **saturday**, **sunday**.&quot;</summary>
+        /// <summary>List of days of the week.Possible values: **monday**, **tuesday**, **wednesday**, **thursday**, **friday**, **saturday**, **sunday**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.DayOfWeekRestrictionValueItem?>? Value { get; set; }

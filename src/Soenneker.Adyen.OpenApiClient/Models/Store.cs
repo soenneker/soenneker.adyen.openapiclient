@@ -84,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;A reference to recognize the store by. Also known as the store code. Allowed characters: lowercase and uppercase letters without diacritics, numbers 0 through 9, hyphen (-), and underscore (_)&quot;</summary>
+        /// <summary>A reference to recognize the store by. Also known as the store code. Allowed characters: lowercase and uppercase letters without diacritics, numbers 0 through 9, hyphen (-), and underscore (_)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

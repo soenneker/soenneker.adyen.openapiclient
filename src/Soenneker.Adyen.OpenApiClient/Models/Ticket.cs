@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Ticket : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The address of the organization that issued the ticket.* minLength: 0 characters* maxLength: 16 characters* **additionalData key:** `airline.ticket_issue_address`&quot;</summary>
+        /// <summary>The address of the organization that issued the ticket.* minLength: 0 characters* maxLength: 16 characters* **additionalData key:** `airline.ticket_issue_address`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssueAddress { get; set; }
@@ -21,9 +21,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string IssueAddress { get; set; }
 #endif
-        /// <summary>&quot;The date that the ticket was issued to the passenger.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `airline.issue_date`&quot;</summary>
+        /// <summary>The date that the ticket was issued to the passenger.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `airline.issue_date`</summary>
         public Date? IssueDate { get; set; }
-        /// <summary>&quot;The ticket&apos;s unique identifier.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.ticket_number`&quot;</summary>
+        /// <summary>The ticket&apos;s unique identifier.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.ticket_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }

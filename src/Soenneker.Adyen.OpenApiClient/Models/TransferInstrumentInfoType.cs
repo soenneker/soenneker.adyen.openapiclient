@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of transfer instrument.Possible value: **bankAccount**.&quot;</summary>
+    /// <summary>The type of transfer instrument.Possible value: **bankAccount**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferInstrumentInfoType
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Network type for Terminal API notification webhooks. Possible values:* **public*** **local**Default Value: **public**.&quot;</summary>
+    /// <summary>Network type for Terminal API notification webhooks. Possible values:* **public*** **local**Default Value: **public**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateMerchantWebhookRequestNetworkType
     {

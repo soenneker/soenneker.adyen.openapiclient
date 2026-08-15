@@ -150,7 +150,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods
             [QueryParameter("merchantAccount")]
             public string MerchantAccount { get; set; }
 #endif
-            /// <summary>&quot;Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.&gt; Your reference must not include personally identifiable information (PII), for example name or email address.&quot;</summary>
+            /// <summary>Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.&gt; Your reference must not include personally identifiable information (PII), for example name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("shopperReference")]

@@ -96,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.UndefinedBeneficiary> UndefinedBeneficiaryInfo { get; set; }
 #endif
-        /// <summary>&quot;The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
+        /// <summary>The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TrustVatAbsenceReason? VatAbsenceReason { get; set; }
         /// <summary>The VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -65,7 +65,6 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.NetworkTokens.I
         /// <summary>
         /// Updates the status of the network token.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -75,11 +74,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.NetworkTokens.I
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -91,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.NetworkTokens.I
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the details of a network token.

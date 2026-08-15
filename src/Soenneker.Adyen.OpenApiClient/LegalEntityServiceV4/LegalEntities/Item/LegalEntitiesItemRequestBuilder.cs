@@ -106,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item
         {
         }
         /// <summary>
-        /// &quot;Returns a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +137,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntity>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.LegalEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates a legal entity. &gt;To change the legal entity type, include only the new `type` in your request.If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Updates a legal entity. &gt;To change the legal entity type, include only the new `type` in your request.If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntity"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +170,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntity>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.LegalEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +189,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates a legal entity. &gt;To change the legal entity type, include only the new `type` in your request.If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Updates a legal entity. &gt;To change the legal entity type, include only the new `type` in your request.If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

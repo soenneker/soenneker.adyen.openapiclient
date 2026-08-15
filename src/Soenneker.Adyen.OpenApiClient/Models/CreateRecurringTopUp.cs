@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot; A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement. Supported characters: **a-z**, **A-Z**, **0-9**.&quot;</summary>
+        /// <summary> A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement. Supported characters: **a-z**, **A-Z**, **0-9**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceForBeneficiary { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReferenceForBeneficiary { get; set; }
 #endif
-        /// <summary>&quot;The status of the recurring top-up. If not provided, by default, this is set to **active**.Possible values:  * **active**:  the top up is enabled and funds will be pulled in. * **inactive**: the top up is disabled and cannot be triggered. &quot;</summary>
+        /// <summary>The status of the recurring top-up. If not provided, by default, this is set to **active**.Possible values:  * **active**:  the top up is enabled and funds will be pulled in. * **inactive**: the top up is disabled and cannot be triggered. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpStatus? Status { get; set; }
         /// <summary>The topUpAmount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

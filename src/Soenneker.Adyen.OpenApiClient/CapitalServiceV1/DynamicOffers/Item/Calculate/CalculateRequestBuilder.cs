@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.DynamicOffers.Item.Calc
         {
         }
         /// <summary>
-        /// &quot;Calculates a preliminary offer for the financing amount that the user selected from a [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/). The preliminary offer is for informational purposes only and cannot be used to initiate a grant.Requests to this endpoint are subject to rate limits:- Live environments: 120 requests per minute.- Test environments: 120 requests per minute.&quot;
+        /// Calculates a preliminary offer for the financing amount that the user selected from a [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/). The preliminary offer is for informational purposes only and cannot be used to initiate a grant.Requests to this endpoint are subject to rate limits:- Live environments: 120 requests per minute.- Test environments: 120 requests per minute.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CalculatedGrantOffer"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.DynamicOffers.Item.Calc
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CalculatedGrantOffer>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CalculatedGrantOffer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Calculates a preliminary offer for the financing amount that the user selected from a [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/). The preliminary offer is for informational purposes only and cannot be used to initiate a grant.Requests to this endpoint are subject to rate limits:- Live environments: 120 requests per minute.- Test environments: 120 requests per minute.&quot;
+        /// Calculates a preliminary offer for the financing amount that the user selected from a [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/). The preliminary offer is for informational purposes only and cannot be used to initiate a grant.Requests to this endpoint are subject to rate limits:- Live environments: 120 requests per minute.- Test environments: 120 requests per minute.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

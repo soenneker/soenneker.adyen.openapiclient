@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantReference { get; set; }
 #endif
-        /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
+        /// <summary>Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderResponsePayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>The reference of a request. Can be used to uniquely identify the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

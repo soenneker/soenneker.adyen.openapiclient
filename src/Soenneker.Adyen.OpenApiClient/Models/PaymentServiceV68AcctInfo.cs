@@ -14,7 +14,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Length of time that the cardholder has had the account with the 3DS Requestor. Allowed values:* **01** — No account* **02** — Created during this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfoChAccAgeInd? ChAccAgeInd { get; set; }
-        /// <summary>&quot;Date that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Format: **YYYYMMDD**&quot;</summary>
+        /// <summary>Date that the cardholder’s account with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChAccChange { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Length of time since the cardholder’s account information with the 3DS Requestor was last changed, including Billing or Shipping address, new payment account, or new user(s) added. Allowed values:* **01** — Changed during this transaction* **02** — Less than 30 days* **03** — 30–60 days* **04** — More than 60 days</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfoChAccChangeInd? ChAccChangeInd { get; set; }
-        /// <summary>&quot;Date that cardholder’s account with the 3DS Requestor had a password change or account reset. Format: **YYYYMMDD**&quot;</summary>
+        /// <summary>Date that cardholder’s account with the 3DS Requestor had a password change or account reset. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChAccPwChange { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates the length of time since the cardholder’s account with the 3DS Requestor had a password change or account reset. Allowed values:* **01** — No change* **02** — Changed during this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfoChAccPwChangeInd? ChAccPwChangeInd { get; set; }
-        /// <summary>&quot;Date that the cardholder opened the account with the 3DS Requestor. Format: **YYYYMMDD**&quot;</summary>
+        /// <summary>Date that the cardholder opened the account with the 3DS Requestor. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChAccString { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ChAccString { get; set; }
 #endif
-        /// <summary>&quot;Number of purchases with this cardholder account during the previous six months. Max length: 4 characters.&quot;</summary>
+        /// <summary>Number of purchases with this cardholder account during the previous six months. Max length: 4 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NbPurchaseAccount { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string NbPurchaseAccount { get; set; }
 #endif
-        /// <summary>&quot;String that the payment account was enrolled in the cardholder’s account with the 3DS Requestor. Format: **YYYYMMDD**&quot;</summary>
+        /// <summary>String that the payment account was enrolled in the cardholder’s account with the 3DS Requestor. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentAccAge { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates the length of time that the payment account was enrolled in the cardholder’s account with the 3DS Requestor. Allowed values:* **01** — No account (guest checkout)* **02** — During this transaction* **03** — Less than 30 days* **04** — 30–60 days* **05** — More than 60 days</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfoPaymentAccInd? PaymentAccInd { get; set; }
-        /// <summary>&quot;Number of Add Card attempts in the last 24 hours. Max length: 3 characters.&quot;</summary>
+        /// <summary>Number of Add Card attempts in the last 24 hours. Max length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProvisionAttemptsDay { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ProvisionAttemptsDay { get; set; }
 #endif
-        /// <summary>&quot;String when the shipping address used for this transaction was first used with the 3DS Requestor. Format: **YYYYMMDD**&quot;</summary>
+        /// <summary>String when the shipping address used for this transaction was first used with the 3DS Requestor. Format: **YYYYMMDD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShipAddressUsage { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfoShipNameIndicator? ShipNameIndicator { get; set; }
         /// <summary>Indicates whether the 3DS Requestor has experienced suspicious activity (including previous fraud) on the cardholder account. Allowed values:* **01** — No suspicious activity has been observed* **02** — Suspicious activity has been observed</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfoSuspiciousAccActivity? SuspiciousAccActivity { get; set; }
-        /// <summary>&quot;Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous 24 hours. Max length: 3 characters.&quot;</summary>
+        /// <summary>Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous 24 hours. Max length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TxnActivityDay { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TxnActivityDay { get; set; }
 #endif
-        /// <summary>&quot;Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous year. Max length: 3 characters.&quot;</summary>
+        /// <summary>Number of transactions (successful and abandoned) for this cardholder account with the 3DS Requestor across all payment accounts in the previous year. Max length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TxnActivityYear { get; set; }

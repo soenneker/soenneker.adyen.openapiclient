@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse PayoutSchedule { get; set; }
 #endif
-        /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
+        /// <summary>Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountResponsePayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>The reference of a request. Can be used to uniquely identify the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ResultCode { get; set; }
 #endif
-        /// <summary>&quot;The status of the account.&gt;Permitted values: `Active`.&quot;</summary>
+        /// <summary>The status of the account.&gt;Permitted values: `Active`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

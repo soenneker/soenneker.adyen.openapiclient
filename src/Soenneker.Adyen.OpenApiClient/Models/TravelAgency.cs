@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TravelAgency : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The unique identifier from IATA or ARC for the travel agency that issues the ticket.* Encoding: ASCII* minLength: 1 character* maxLength: 8 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.travel_agency_code`&quot;</summary>
+        /// <summary>The unique identifier from IATA or ARC for the travel agency that issues the ticket.* Encoding: ASCII* minLength: 1 character* maxLength: 8 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.travel_agency_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>&quot;The name of the travel agency.* Encoding: ASCII* minLength: 1 character* maxLength: 25 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.travel_agency_name`&quot;</summary>
+        /// <summary>The name of the travel agency.* Encoding: ASCII* minLength: 1 character* maxLength: 25 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.travel_agency_name`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

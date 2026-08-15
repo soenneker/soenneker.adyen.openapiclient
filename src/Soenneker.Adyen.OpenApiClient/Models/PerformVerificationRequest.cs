@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
-        /// <summary>&quot;The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.&quot;</summary>
+        /// <summary>The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType? AccountStateType { get; set; }
         /// <summary>The tier required for the account holder.</summary>
         public int? Tier { get; set; }

@@ -316,7 +316,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfo Sepadirectdebit { get; set; }
 #endif
-        /// <summary>&quot;The sales channel. Required if:- The merchant account does not have a sales channel.- `type` is **alipay**.When you provide this field, it overrides the default sales channel set on the merchant account.Possible values: **eCommerce**, **pos**, **contAuth**, and **moto**. &quot;</summary>
+        /// <summary>The sales channel. Required if:- The merchant account does not have a sales channel.- `type` is **alipay**.When you provide this field, it overrides the default sales channel set on the merchant account.Possible values: **eCommerce**, **pos**, **contAuth**, and **moto**. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoShopperInteraction? ShopperInteraction { get; set; }
         /// <summary>The sodexo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

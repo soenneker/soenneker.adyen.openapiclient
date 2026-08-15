@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The reason why the web data was not provided. Possible value: **noOnlinePresence**.&quot;</summary>
+    /// <summary>The reason why the web data was not provided. Possible value: **noOnlinePresence**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WebDataExemptionReason
     {

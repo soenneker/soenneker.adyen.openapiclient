@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Bic { get; set; }
 #endif
         /// <summary>**numberAndBic**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NumberAndBicType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "additionalBankIdentification", n => { AdditionalBankIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AdditionalBankIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AdditionalBankIdentification.CreateFromDiscriminatorValue); } },
                 { "bic", n => { Bic = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentificationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NumberAndBicType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AdditionalBankIdentification>("additionalBankIdentification", AdditionalBankIdentification);
             writer.WriteStringValue("bic", Bic);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NumberAndBicAccountIdentificationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NumberAndBicType>("type", Type);
         }
     }
 }

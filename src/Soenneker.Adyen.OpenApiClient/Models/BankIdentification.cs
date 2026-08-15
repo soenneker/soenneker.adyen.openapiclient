@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Identification { get; set; }
 #endif
-        /// <summary>&quot;The type of the identification.Possible values: **iban**, **routingNumber**, **sortCode**, **bic**.&quot;</summary>
+        /// <summary>The type of the identification.Possible values: **iban**, **routingNumber**, **sortCode**, **bic**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BankIdentificationIdentificationType? IdentificationType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

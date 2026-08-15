@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Iban { get; set; }
 #endif
         /// <summary>**iban**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4IbanAccountIdentificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IbanType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "bic", n => { Bic = n.GetStringValue(); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4IbanAccountIdentificationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bic", Bic);
             writer.WriteStringValue("iban", Iban);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4IbanAccountIdentificationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IbanType>("type", Type);
         }
     }
 }

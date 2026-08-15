@@ -96,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PublicKey
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicKeyRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;The encoding format of public key.Possible values: **jwk**, **pem**.Default value: **pem**.&quot;</summary>
+            /// <summary>The encoding format of public key.Possible values: **jwk**, **pem**.Default value: **pem**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -106,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PublicKey
             [QueryParameter("format")]
             public string Format { get; set; }
 #endif
-            /// <summary>&quot;The purpose of the public key.Possible values: **pinChange**, **pinReveal**, **panReveal**.Default value: **pinReveal**.&quot;</summary>
+            /// <summary>The purpose of the public key.Possible values: **pinChange**, **pinReveal**, **panReveal**.Default value: **pinReveal**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("purpose")]

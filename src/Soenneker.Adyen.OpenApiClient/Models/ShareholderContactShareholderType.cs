@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Specifies how the person is associated with the account holder. Possible values: * **Owner**: Individuals who directly or indirectly own 25% or more of a company.* **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.&quot;</summary>
+    /// <summary>Specifies how the person is associated with the account holder. Possible values: * **Owner**: Individuals who directly or indirectly own 25% or more of a company.* **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ShareholderContactShareholderType
     {

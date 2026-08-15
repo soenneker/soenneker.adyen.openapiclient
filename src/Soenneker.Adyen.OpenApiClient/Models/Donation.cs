@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>&quot;The [type of donation](https://docs.adyen.com/online-payments/donations/#donation-types).Possible values:* **roundup**: a donation where the original transaction amount is rounded up as a donation.* **fixedAmounts**: a donation where you show fixed donations amounts that the shopper can select from.&quot;</summary>
+        /// <summary>The [type of donation](https://docs.adyen.com/online-payments/donations/#donation-types).Possible values:* **roundup**: a donation where the original transaction amount is rounded up as a donation.* **fixedAmounts**: a donation where you show fixed donations amounts that the shopper can select from.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The maximum amount a transaction can be rounded up to make a donation. This field is only present when `donationType` is **roundup**.</summary>
         public long? MaxRoundupAmount { get; set; }
-        /// <summary>&quot;The [type of donation](https://docs.adyen.com/online-payments/donations/#donation-types).Possible values:* **roundup**: a donation where the original transaction amount is rounded up as a donation.* **fixedAmounts**: a donation where you show fixed donation amounts that the shopper can select from.&quot;</summary>
+        /// <summary>The [type of donation](https://docs.adyen.com/online-payments/donations/#donation-types).Possible values:* **roundup**: a donation where the original transaction amount is rounded up as a donation.* **fixedAmounts**: a donation where you show fixed donation amounts that the shopper can select from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

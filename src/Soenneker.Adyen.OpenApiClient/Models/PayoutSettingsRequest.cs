@@ -12,9 +12,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PayoutSettingsRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.&quot;</summary>
+        /// <summary>Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>&quot;The date when Adyen starts paying out to this bank account.Format: [ISO 8601](https://www.w3.org/TR/NOTE-datetime), for example, **2019-11-23T12:25:28Z** or **2020-05-27T20:25:28+08:00**.If not specified, the `enabled` field indicates if payouts are enabled for this bank account.If a date is specified and:* `enabled`: **true**, payouts are enabled starting the specified date.* `enabled`: **false**, payouts are disabled until the specified date. On the specified date, `enabled` changes to **true** and this field is reset to **null**.&quot;</summary>
+        /// <summary>The date when Adyen starts paying out to this bank account.Format: [ISO 8601](https://www.w3.org/TR/NOTE-datetime), for example, **2019-11-23T12:25:28Z** or **2020-05-27T20:25:28+08:00**.If not specified, the `enabled` field indicates if payouts are enabled for this bank account.If a date is specified and:* `enabled`: **true**, payouts are enabled starting the specified date.* `enabled`: **false**, payouts are disabled until the specified date. On the specified date, `enabled` changes to **true** and this field is reset to **null**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnabledFromDate { get; set; }

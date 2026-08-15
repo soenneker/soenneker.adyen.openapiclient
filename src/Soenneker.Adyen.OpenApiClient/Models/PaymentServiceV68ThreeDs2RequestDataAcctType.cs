@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:* **01** — Not applicable* **02** — Credit* **03** — Debit&quot;</summary>
+    /// <summary>Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:* **01** — Not applicable* **02** — Credit* **03** — Debit</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentServiceV68ThreeDs2RequestDataAcctType
     {

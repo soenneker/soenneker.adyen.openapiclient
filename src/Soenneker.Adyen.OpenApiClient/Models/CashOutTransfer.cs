@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The type of the cashout transfer.Possible values: - **cashoutRepayment**: Corresponds to the transfer created to deduct the cashout amount after settlement.- **cashoutFee**: Corresponds to the transfer created to debit the cashout fee form the user&apos;s balance account.&quot;</summary>
+        /// <summary>The type of the cashout transfer.Possible values: - **cashoutRepayment**: Corresponds to the transfer created to deduct the cashout amount after settlement.- **cashoutFee**: Corresponds to the transfer created to debit the cashout fee form the user&apos;s balance account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CashOutTransferType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CashOutTransfer"/> and sets the default values.

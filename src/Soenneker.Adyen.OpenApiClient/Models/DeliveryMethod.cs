@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>If you display the PayPal lightbox with delivery methods, set to **true** for the delivery method that is selected. Only one delivery method can be selected at a time.</summary>
         public bool? Selected { get; set; }
         /// <summary>The type of the delivery method.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethodType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ShippingType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "selected", n => { Selected = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethodType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShippingType>(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("reference", Reference);
             writer.WriteBoolValue("selected", Selected);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DeliveryMethodType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShippingType>("type", Type);
         }
     }
 }

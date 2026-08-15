@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Destination : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or three-letter [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) for the destination address.* Encoding: ASCII* Min length: 2 characters* Max length: 3 characters* **additionalData key:** `enhancedSchemeData.destinationCountryCode`&quot;</summary>
+        /// <summary>The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or three-letter [ISO 3166-1 alpha-3 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) for the destination address.* Encoding: ASCII* Min length: 2 characters* Max length: 3 characters* **additionalData key:** `enhancedSchemeData.destinationCountryCode`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>&quot;The postal code of the destination address.* Encoding: ASCII* Max length: 10 characters* Must not start with a space.* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.* For Canada, it must be in 6 digits format. For example, M4B 1G5.* **additionalData key:** `enhancedSchemeData.destinationPostalCode`&quot;</summary>
+        /// <summary>The postal code of the destination address.* Encoding: ASCII* Max length: 10 characters* Must not start with a space.* For the US, it must be in five or nine digits format. For example, 10001 or 10001-0000.* For Canada, it must be in 6 digits format. For example, M4B 1G5.* **additionalData key:** `enhancedSchemeData.destinationPostalCode`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostalCode { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>&quot;The state or province code of the destination address.* Encoding: ASCII* Max length: 3 characters* Must not start with a space.* **additionalData key:** `enhancedSchemeData.destinationStateProvinceCode`&quot;</summary>
+        /// <summary>The state or province code of the destination address.* Encoding: ASCII* Max length: 3 characters* Must not start with a space.* **additionalData key:** `enhancedSchemeData.destinationStateProvinceCode`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StateOrProvince { get; set; }

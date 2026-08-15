@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>The payment method type.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AlmaType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "feeType", n => { FeeType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsFeeType>(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsFeeType>("feeType", FeeType);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AlmaType>("type", Type);
         }
     }
 }

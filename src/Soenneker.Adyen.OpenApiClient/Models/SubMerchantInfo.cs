@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>&quot;Required for transactions performed by registered payment facilitators. A unique identifier that you create for the sub-merchant, used by schemes to identify the sub-merchant. * Format: Alphanumeric* Maximum length: 15 characters&quot;</summary>
+        /// <summary>Required for transactions performed by registered payment facilitators. A unique identifier that you create for the sub-merchant, used by schemes to identify the sub-merchant. * Format: Alphanumeric* Maximum length: 15 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Required for transactions performed by registered payment facilitators. The sub-merchant&apos;s 4-digit Merchant Category Code (MCC). * Format: Numeric* Fixed length: 4 digits&quot;</summary>
+        /// <summary>Required for transactions performed by registered payment facilitators. The sub-merchant&apos;s 4-digit Merchant Category Code (MCC). * Format: Numeric* Fixed length: 4 digits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mcc { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Mcc { get; set; }
 #endif
-        /// <summary>&quot;Required for transactions performed by registered payment facilitators. The name of the sub-merchant. Based on scheme specifications, this value will overwrite the shopper statement that will appear in the card statement.Exception: for acquirers in Brazil, this value does not overwrite the shopper statement.* Format: Alphanumeric* Maximum length: 22 characters&quot;</summary>
+        /// <summary>Required for transactions performed by registered payment facilitators. The name of the sub-merchant. Based on scheme specifications, this value will overwrite the shopper statement that will appear in the card statement.Exception: for acquirers in Brazil, this value does not overwrite the shopper statement.* Format: Alphanumeric* Maximum length: 22 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RegisteredSince { get; set; }
 #endif
-        /// <summary>&quot;Required for transactions performed by registered payment facilitators. The tax ID of the sub-merchant.* Format: Numeric* Fixed length: 11 digits for the CPF or 14 digits for the CNPJ&quot;</summary>
+        /// <summary>Required for transactions performed by registered payment facilitators. The tax ID of the sub-merchant.* Format: Numeric* Fixed length: 11 digits for the CPF or 14 digits for the CNPJ</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaxId { get; set; }

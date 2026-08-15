@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class StringMatch : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The type of string matching operation. Possible values:  **startsWith**, **endsWith**, **isEqualTo**, **contains**,&quot;</summary>
+        /// <summary>The type of string matching operation. Possible values:  **startsWith**, **endsWith**, **isEqualTo**, **contains**,</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StringMatchOperation? Operation { get; set; }
         /// <summary>The string to be matched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

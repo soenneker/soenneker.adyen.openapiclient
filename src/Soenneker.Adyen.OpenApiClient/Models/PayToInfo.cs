@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantName { get; set; }
 #endif
-        /// <summary>&quot;Represents the purpose of the Agreements created, it relates to the business type**Allowed values**: mortgage, utility, loan, gambling, retail, salary, personal, government, pension, tax, other&quot;</summary>
+        /// <summary>Represents the purpose of the Agreements created, it relates to the business type**Allowed values**: mortgage, utility, loan, gambling, retail, salary, personal, government, pension, tax, other</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PayToPurpose { get; set; }

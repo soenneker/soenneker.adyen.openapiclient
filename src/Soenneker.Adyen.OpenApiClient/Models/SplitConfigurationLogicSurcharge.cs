@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Books the surcharge amount to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**&quot;</summary>
+    /// <summary>Books the surcharge amount to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SplitConfigurationLogicSurcharge
     {

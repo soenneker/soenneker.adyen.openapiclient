@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Specifies the reason for creating the rule.Possible values:* **fraud**: the rule is created to regulate fraudulent activity.* **policy**: the rule is created to ensure that the transaction adheres to your business&apos; policies. For example, if your business has policies about the Merchant Category Codes (MCCs) allowed on a transaction, you can create a rule to block transactions that have specific MCCs.&quot;</summary>
+    /// <summary>Specifies the reason for creating the rule.Possible values:* **fraud**: the rule is created to regulate fraudulent activity.* **policy**: the rule is created to ensure that the transaction adheres to your business&apos; policies. For example, if your business has policies about the Merchant Category Codes (MCCs) allowed on a transaction, you can create a rule to block transactions that have specific MCCs.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionRulePurpose
     {

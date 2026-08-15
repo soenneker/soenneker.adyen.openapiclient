@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The gender.&gt;The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.&quot;</summary>
+    /// <summary>The gender.&gt;The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ViasNameGender
     {

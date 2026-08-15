@@ -22,9 +22,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DuplicateTransactionId { get; set; }
 #endif
-        /// <summary>&quot;The duplicate charge was made on the same card. Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>The duplicate charge was made on the same card. Possible values: **true**, **false**.</summary>
         public bool? SameCard { get; set; }
-        /// <summary>&quot;The issuer associated with each charge is the same. Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>The issuer associated with each charge is the same. Possible values: **true**, **false**.</summary>
         public bool? SameIssuer { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo"/> and sets the default values.

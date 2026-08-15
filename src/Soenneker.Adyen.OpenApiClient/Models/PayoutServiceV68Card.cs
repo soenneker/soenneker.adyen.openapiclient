@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PayoutServiceV68Card : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The [card verification code](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-security-code-cvc-cvv-cid) (1-20 characters). Depending on the card brand, it is known also as:* CVV2/CVC2 – length: 3 digits* CID – length: 4 digits&gt; If you are using [Client-Side Encryption](https://docs.adyen.com/classic-integration/cse-integration-ecommerce), the CVC code is present in the encrypted data. You must never post the card details to the server.&gt; This field must be always present in a [one-click payment request](https://docs.adyen.com/classic-integration/recurring-payments).&gt; When this value is returned in a response, it is always empty because it is not stored.&quot;</summary>
+        /// <summary>The [card verification code](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-security-code-cvc-cvv-cid) (1-20 characters). Depending on the card brand, it is known also as:* CVV2/CVC2 – length: 3 digits* CID – length: 4 digits&gt; If you are using [Client-Side Encryption](https://docs.adyen.com/classic-integration/cse-integration-ecommerce), the CVC code is present in the encrypted data. You must never post the card details to the server.&gt; This field must be always present in a [one-click payment request](https://docs.adyen.com/classic-integration/recurring-payments).&gt; When this value is returned in a response, it is always empty because it is not stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cvc { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Cvc { get; set; }
 #endif
-        /// <summary>&quot;The card expiry month.Format: 2 digits, zero-padded for single digits. For example:* 03 = March* 11 = November&quot;</summary>
+        /// <summary>The card expiry month.Format: 2 digits, zero-padded for single digits. For example:* 03 = March* 11 = November</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiryMonth { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ExpiryMonth { get; set; }
 #endif
-        /// <summary>&quot;The card expiry year.Format: 4 digits. For example: 2020&quot;</summary>
+        /// <summary>The card expiry year.Format: 4 digits. For example: 2020</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiryYear { get; set; }

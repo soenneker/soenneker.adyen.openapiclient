@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
-        /// <summary>&quot;The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.&quot;</summary>
+        /// <summary>The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentificationAccountType? AccountType { get; set; }
         /// <summary>The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string RoutingNumber { get; set; }
 #endif
         /// <summary>**usLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentificationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UsLocalType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentificationAccountType>(); } },
                 { "routingNumber", n => { RoutingNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentificationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UsLocalType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentificationAccountType>("accountType", AccountType);
             writer.WriteStringValue("routingNumber", RoutingNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2UsLocalAccountIdentificationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UsLocalType>("type", Type);
         }
     }
 }

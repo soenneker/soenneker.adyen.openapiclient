@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class ReturnInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The city where the car must be returned.* Format: ASCII* maxLength: 18 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.returnCity`&quot;</summary>
+        /// <summary>The city where the car must be returned.* Format: ASCII* maxLength: 18 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.returnCity`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>&quot;The country where the car must be returned, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.* maxLength: 2 characters* **additionalData key:** `carRental.returnCountry`&quot;</summary>
+        /// <summary>The country where the car must be returned, in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format.* maxLength: 2 characters* **additionalData key:** `carRental.returnCountry`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -29,9 +29,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>&quot;The date by which the car must be returned.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `carRental.returnDate`&quot;</summary>
+        /// <summary>The date by which the car must be returned.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `carRental.returnDate`</summary>
         public Date? Date { get; set; }
-        /// <summary>&quot;The agency code, phone number, or address abbreviation.* Format: ASCII* maxLength: 10 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.returnLocationId`&quot;</summary>
+        /// <summary>The agency code, phone number, or address abbreviation.* Format: ASCII* maxLength: 10 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.returnLocationId`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocationId { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LocationId { get; set; }
 #endif
-        /// <summary>&quot;The state or province where the car must be returned.* Format: ASCII* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.returnStateProvince`&quot;</summary>
+        /// <summary>The state or province where the car must be returned.* Format: ASCII* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.returnStateProvince`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StateOrProvince { get; set; }

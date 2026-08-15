@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class LocalShopperStatement : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The character set of the local shopper statement.Possible values: **ja-Hani**, **ja-Kana**.&quot;</summary>
+        /// <summary>The character set of the local shopper statement.Possible values: **ja-Hani**, **ja-Kana**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Script { get; set; }

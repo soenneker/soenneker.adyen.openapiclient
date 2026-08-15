@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class GooglePayInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Google Pay [Merchant ID](https://support.google.com/paymentscenter/answer/7163092?hl=en). Character length and limitations: 16 alphanumeric characters or 20 numeric characters.&quot;</summary>
+        /// <summary>Google Pay [Merchant ID](https://support.google.com/paymentscenter/answer/7163092?hl=en). Character length and limitations: 16 alphanumeric characters or 20 numeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MerchantId { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantId { get; set; }
 #endif
-        /// <summary>&quot;Indicates whether the Google Pay Merchant ID is used for several merchant accounts. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates whether the Google Pay Merchant ID is used for several merchant accounts. Default value: **false**.</summary>
         public bool? ReuseMerchantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

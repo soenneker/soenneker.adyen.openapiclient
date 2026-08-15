@@ -12,15 +12,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Healthcare : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The dental amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>The dental amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
         public long? DentalValue { get; set; }
-        /// <summary>&quot;The other medical amount not covered by the specific categories, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>The other medical amount not covered by the specific categories, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
         public long? OtherMedicalValue { get; set; }
-        /// <summary>&quot;The prescription/Rx amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>The prescription/Rx amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
         public long? PrescriptionValue { get; set; }
-        /// <summary>&quot;The total healthcare amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>The total healthcare amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
         public long? TotalHealthcareValue { get; set; }
-        /// <summary>&quot;The vision/optical prescription amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000&quot;</summary>
+        /// <summary>The vision/optical prescription amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000</summary>
         public long? VisionPrescriptionValue { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

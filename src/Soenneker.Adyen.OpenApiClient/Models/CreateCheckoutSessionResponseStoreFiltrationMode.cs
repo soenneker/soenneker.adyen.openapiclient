@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Specifies how payment methods should be filtered based on the &apos;store&apos; parameter:  - &apos;exclusive&apos;: Only payment methods belonging to the specified &apos;store&apos; are returned.  - &apos;inclusive&apos;: Payment methods from the &apos;store&apos; and those not associated with any other store are returned.&quot;</summary>
+    /// <summary>Specifies how payment methods should be filtered based on the &apos;store&apos; parameter:  - &apos;exclusive&apos;: Only payment methods belonging to the specified &apos;store&apos; are returned.  - &apos;inclusive&apos;: Payment methods from the &apos;store&apos; and those not associated with any other store are returned.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateCheckoutSessionResponseStoreFiltrationMode
     {

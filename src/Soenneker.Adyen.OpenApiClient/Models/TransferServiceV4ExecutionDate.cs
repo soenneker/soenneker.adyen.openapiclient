@@ -13,9 +13,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TransferServiceV4ExecutionDate : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The date when the transfer will be processed. This date must be:* Within 30 days of the current date.* In the [ISO 8601 format](https://www.iso.org/iso-8601-date-and-time-format.html) **YYYY-MM-DD**. For example: 2025-01-31&quot;</summary>
+        /// <summary>The date when the transfer will be processed. This date must be:* Within 30 days of the current date.* In the [ISO 8601 format](https://www.iso.org/iso-8601-date-and-time-format.html) **YYYY-MM-DD**. For example: 2025-01-31</summary>
         public Date? Date { get; set; }
-        /// <summary>&quot;The timezone that applies to the execution date. Use a timezone identifier from the [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Example: **America/Los_Angeles**. Default value: **Europe/Amsterdam**.&quot;</summary>
+        /// <summary>The timezone that applies to the execution date. Use a timezone identifier from the [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).Example: **America/Los_Angeles**. Default value: **Europe/Amsterdam**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }

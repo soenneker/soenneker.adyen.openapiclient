@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.&quot;</summary>
+    /// <summary>The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NotificationConfigurationDetailsSslProtocol
     {

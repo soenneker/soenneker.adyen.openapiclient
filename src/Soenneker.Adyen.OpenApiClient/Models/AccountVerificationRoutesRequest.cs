@@ -16,7 +16,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The country property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationCountry? Country { get; set; }
-        /// <summary>&quot;The language to use in the open banking flow UI, specified by a combination of a two-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language code and an [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code.This information is used to configure the open banking flow with the same language for a consistent user experience.Default value: **en-US**&quot;</summary>
+        /// <summary>The language to use in the open banking flow UI, specified by a combination of a two-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language code and an [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code.This information is used to configure the open banking flow with the same language for a consistent user experience.Default value: **en-US**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale { get; set; }

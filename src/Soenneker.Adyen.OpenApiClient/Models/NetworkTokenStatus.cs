@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the network token. Possible values: **active**, **inactive**, **suspended**, **closed**.&quot;</summary>
+    /// <summary>The status of the network token. Possible values: **active**, **inactive**, **suspended**, **closed**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NetworkTokenStatus
     {

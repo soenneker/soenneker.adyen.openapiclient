@@ -208,7 +208,7 @@ namespace Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes
             [QueryParameter("paymentInstrument")]
             public string PaymentInstrument { get; set; }
 #endif
-            /// <summary>&quot;The current status of the dispute.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.&quot;</summary>
+            /// <summary>The current status of the dispute.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

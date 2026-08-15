@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
+    /// <summary>The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SoleProprietorshipVatAbsenceReason
     {

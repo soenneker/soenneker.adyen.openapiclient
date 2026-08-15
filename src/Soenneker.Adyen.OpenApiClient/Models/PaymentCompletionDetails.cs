@@ -108,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentID { get; set; }
 #endif
-        /// <summary>&quot;Value passed from the WeChat MiniProgram `wx.requestPayment` **complete** callback. Possible values: any value starting with `requestPayment:`.&quot;</summary>
+        /// <summary>Value passed from the WeChat MiniProgram `wx.requestPayment` **complete** callback. Possible values: any value starting with `requestPayment:`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentStatus { get; set; }
@@ -140,7 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReturnUrlQueryString { get; set; }
 #endif
-        /// <summary>&quot;Base64-encoded string returned by the Component after the challenge flow. It contains the following parameter: `transStatus`.&quot;</summary>
+        /// <summary>Base64-encoded string returned by the Component after the challenge flow. It contains the following parameter: `transStatus`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Threeds2ChallengeResult { get; set; }
@@ -148,7 +148,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Threeds2ChallengeResult { get; set; }
 #endif
-        /// <summary>&quot;Base64-encoded string returned by the Component after the challenge flow. It contains the following parameter: `threeDSCompInd`.&quot;</summary>
+        /// <summary>Base64-encoded string returned by the Component after the challenge flow. It contains the following parameter: `threeDSCompInd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Threeds2Fingerprint { get; set; }
@@ -156,7 +156,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Threeds2Fingerprint { get; set; }
 #endif
-        /// <summary>&quot;Base64-encoded string returned by the Component after the challenge flow. It contains the following parameters: `transStatus`, `authorisationToken`.&quot;</summary>
+        /// <summary>Base64-encoded string returned by the Component after the challenge flow. It contains the following parameters: `transStatus`, `authorisationToken`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSResult { get; set; }

@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.FundServiceV6.AccountHolderBalance
         {
         }
         /// <summary>
-        /// &quot;Returns the account balances of an account holder. An account&apos;s balances are organized according by currencies. This mean that an account may have multiple balances: one for each currency.&quot;
+        /// Returns the account balances of an account holder. An account&apos;s balances are organized according by currencies. This mean that an account may have multiple balances: one for each currency.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderBalanceResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.FundServiceV6.AccountHolderBalance
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderBalanceResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderBalanceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns the account balances of an account holder. An account&apos;s balances are organized according by currencies. This mean that an account may have multiple balances: one for each currency.&quot;
+        /// Returns the account balances of an account holder. An account&apos;s balances are organized according by currencies. This mean that an account may have multiple balances: one for each currency.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Direction on how to handle any payouts that have already been scheduled.Possible values:* `CLOSE`: close the existing batch of payouts.* `UPDATE`: reschedule the existing batch to the new schedule.* `NOTHING` (**default**): allow the payout to proceed.&quot;</summary>
+    /// <summary>Direction on how to handle any payouts that have already been scheduled.Possible values:* `CLOSE`: close the existing batch of payouts.* `UPDATE`: reschedule the existing batch to the new schedule.* `NOTHING` (**default**): allow the payout to proceed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdatePayoutScheduleRequestAction
     {

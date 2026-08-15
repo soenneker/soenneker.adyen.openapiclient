@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentReference { get; set; }
 #endif
-        /// <summary>&quot;Your reference for the cancel request. Maximum length: 80 characters.&quot;</summary>
+        /// <summary>Your reference for the cancel request. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

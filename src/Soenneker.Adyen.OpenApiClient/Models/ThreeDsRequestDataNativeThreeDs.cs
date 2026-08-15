@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Indicates if [native 3D Secure authentication](https://docs.adyen.com/online-payments/3d-secure/native-3ds2) should be triggered when available. Adyen can still select to fallback to the redirect flow to optimize authorization rates and improve the shopper&apos;s experience.Possible values:* **preferred**: Use native 3D Secure authentication when available.* **disabled**: Use the redirect 3D Secure authentication flow.&quot;</summary>
+    /// <summary>Indicates if [native 3D Secure authentication](https://docs.adyen.com/online-payments/3d-secure/native-3ds2) should be triggered when available. Adyen can still select to fallback to the redirect flow to optimize authorization rates and improve the shopper&apos;s experience.Possible values:* **preferred**: Use native 3D Secure authentication when available.* **disabled**: Use the redirect 3D Secure authentication flow.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ThreeDsRequestDataNativeThreeDs
     {

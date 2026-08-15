@@ -12,11 +12,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class UpdateMerchantWebhookRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates if expired SSL certificates are accepted. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates if expired SSL certificates are accepted. Default value: **false**.</summary>
         public bool? AcceptsExpiredCertificate { get; set; }
-        /// <summary>&quot;Indicates if self-signed SSL certificates are accepted. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates if self-signed SSL certificates are accepted. Default value: **false**.</summary>
         public bool? AcceptsSelfSignedCertificate { get; set; }
-        /// <summary>&quot;Indicates if untrusted SSL certificates are accepted. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates if untrusted SSL certificates are accepted. Default value: **false**.</summary>
         public bool? AcceptsUntrustedRootCertificate { get; set; }
         /// <summary>Indicates if the webhook configuration is active. The field must be **true** for us to send webhooks about events related an account.</summary>
         public bool? Active { get; set; }
@@ -38,9 +38,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.&quot;</summary>
+        /// <summary>SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateMerchantWebhookRequestEncryptionProtocol? EncryptionProtocol { get; set; }
-        /// <summary>&quot;Network type for Terminal API notification webhooks. Possible values:* **public*** **local**Default Value: **public**.&quot;</summary>
+        /// <summary>Network type for Terminal API notification webhooks. Possible values:* **public*** **local**Default Value: **public**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateMerchantWebhookRequestNetworkType? NetworkType { get; set; }
         /// <summary>Password to access the webhook URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Password { get; set; }
 #endif
-        /// <summary>&quot;Indicates if the SOAP action header needs to be populated. Default value: **false**.Only applies if `communicationFormat`: **soap**.&quot;</summary>
+        /// <summary>Indicates if the SOAP action header needs to be populated. Default value: **false**.Only applies if `communicationFormat`: **soap**.</summary>
         public bool? PopulateSoapActionHeader { get; set; }
         /// <summary>Public URL where webhooks will be sent, for example **https://www.domain.com/webhook-endpoint**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

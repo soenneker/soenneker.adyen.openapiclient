@@ -92,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PricingPlan { get; set; }
 #endif
-        /// <summary>&quot;The currency of the country where the legal entity of this merchant account is registered. Format: [ISO currency code](https://docs.adyen.com/development-resources/currency-codes). For example, a legal entity based in the United States has USD as the primary settlement currency.&quot;</summary>
+        /// <summary>The currency of the country where the legal entity of this merchant account is registered. Format: [ISO currency code](https://docs.adyen.com/development-resources/currency-codes). For example, a legal entity based in the United States has USD as the primary settlement currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimarySettlementCurrency { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopWebAddress { get; set; }
 #endif
-        /// <summary>&quot;The status of the merchant account.Possible values:* **PreActive**: The merchant account has been created. Users cannot access the merchant account in the Customer Area. The account cannot process payments.* **Active**: Users can access the merchant account in the Customer Area. If the company account is also **Active**, then payment processing and payouts are enabled.* **InactiveWithModifications**: Users can access the merchant account in the Customer Area. You cannot process new payments but you can still modify payments, for example issue refunds. You can still receive payouts.* **Inactive**: Users can access the merchant account in the Customer Area. Payment processing and payouts are disabled.* **Closed**: The account is closed and this cannot be reversed. Users cannot log in. Payment processing and payouts are disabled.&quot;</summary>
+        /// <summary>The status of the merchant account.Possible values:* **PreActive**: The merchant account has been created. Users cannot access the merchant account in the Customer Area. The account cannot process payments.* **Active**: Users can access the merchant account in the Customer Area. If the company account is also **Active**, then payment processing and payouts are enabled.* **InactiveWithModifications**: Users can access the merchant account in the Customer Area. You cannot process new payments but you can still modify payments, for example issue refunds. You can still receive payouts.* **Inactive**: Users can access the merchant account in the Customer Area. Payment processing and payouts are disabled.* **Closed**: The account is closed and this cannot be reversed. Users cannot log in. Payment processing and payouts are disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

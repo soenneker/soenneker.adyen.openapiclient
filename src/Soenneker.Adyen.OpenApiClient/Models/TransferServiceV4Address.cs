@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TransferServiceV4Address : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The name of the city.Supported characters: **[a-z] [A-Z] [0-9] . - — / # , ’ ° ( ) : ; [ ] &amp; \ |** and Space.&gt; Required when the `category` is **card**.&quot;</summary>
+        /// <summary>The name of the city.Supported characters: **[a-z] [A-Z] [0-9] . - — / # , ’ ° ( ) : ; [ ] &amp; \ |** and Space.&gt; Required when the `category` is **card**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>&quot;The first line of the street address.Supported characters: **[a-z] [A-Z] [0-9] . - — / # , ’ ° ( ) : ; [ ] &amp; \ |** and Space.&gt; Required when the `category` is **card**.&quot;</summary>
+        /// <summary>The first line of the street address.Supported characters: **[a-z] [A-Z] [0-9] . - — / # , ’ ° ( ) : ; [ ] &amp; \ |** and Space.&gt; Required when the `category` is **card**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Line1 { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Line1 { get; set; }
 #endif
-        /// <summary>&quot;The second line of the street address.Supported characters: **[a-z] [A-Z] [0-9] . - — / # , ’ ° ( ) : ; [ ] &amp; \ |** and Space.&gt; Required when the `category` is **card**.&quot;</summary>
+        /// <summary>The second line of the street address.Supported characters: **[a-z] [A-Z] [0-9] . - — / # , ’ ° ( ) : ; [ ] &amp; \ |** and Space.&gt; Required when the `category` is **card**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Line2 { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Line2 { get; set; }
 #endif
-        /// <summary>&quot;The postal code.Maximum length:* 5 digits for an address in the US.* 10 characters for an address in all other countries.Supported characters: **[a-z] [A-Z] [0-9]** and Space.&gt; Required for addresses in the US.&quot;</summary>
+        /// <summary>The postal code.Maximum length:* 5 digits for an address in the US.* 10 characters for an address in all other countries.Supported characters: **[a-z] [A-Z] [0-9]** and Space.&gt; Required for addresses in the US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostalCode { get; set; }

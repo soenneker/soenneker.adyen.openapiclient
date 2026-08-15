@@ -9,6 +9,7 @@ using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.DonationCampaigns;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Donations;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Forward;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Orders;
+using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.OriginKeys;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.PaymentLinks;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.PaymentMethods;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Payments;
@@ -62,6 +63,11 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72
         public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Orders.OrdersRequestBuilder Orders
         {
             get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Orders.OrdersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The originKeys property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.OriginKeys.OriginKeysRequestBuilder OriginKeys
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.OriginKeys.OriginKeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The paymentLinks property</summary>
         public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.PaymentLinks.PaymentLinksRequestBuilder PaymentLinks

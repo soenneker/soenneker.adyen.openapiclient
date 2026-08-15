@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the store. Possible values are:- **active**: This value is assigned automatically when a store is created. - **inactive**: The maximum [transaction limits and number of Store-and-Forward transactions](https://docs.adyen.com/point-of-sale/determine-account-structure/configure-features#payment-features) for the store are set to 0. This blocks new transactions, but captures are still possible.- **closed**: The terminals of the store are reassigned to the merchant inventory, so they can&apos;t process payments.You can change the status from **active** to **inactive**, and from **inactive** to **active** or **closed**. Once **closed**, a store can&apos;t be reopened.&quot;</summary>
+    /// <summary>The status of the store. Possible values are:- **active**: This value is assigned automatically when a store is created. - **inactive**: The maximum [transaction limits and number of Store-and-Forward transactions](https://docs.adyen.com/point-of-sale/determine-account-structure/configure-features#payment-features) for the store are set to 0. This blocks new transactions, but captures are still possible.- **closed**: The terminals of the store are reassigned to the merchant inventory, so they can&apos;t process payments.You can change the status from **active** to **inactive**, and from **inactive** to **active** or **closed**. Once **closed**, a store can&apos;t be reopened.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateStoreRequestStatus
     {

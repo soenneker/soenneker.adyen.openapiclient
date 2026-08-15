@@ -12,9 +12,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PayPalResponseInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates if direct (immediate) capture for PayPal is enabled. If set to **true**, this setting overrides the [capture](https://docs.adyen.com/online-payments/capture) settings of your merchant account. Default value: **true**.&quot;</summary>
+        /// <summary>Indicates if direct (immediate) capture for PayPal is enabled. If set to **true**, this setting overrides the [capture](https://docs.adyen.com/online-payments/capture) settings of your merchant account. Default value: **true**.</summary>
         public bool? DirectCapture { get; set; }
-        /// <summary>&quot;PayPal Merchant ID. Character length and limitations: 13 single-byte alphanumeric characters.&quot;</summary>
+        /// <summary>PayPal Merchant ID. Character length and limitations: 13 single-byte alphanumeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PayerId { get; set; }

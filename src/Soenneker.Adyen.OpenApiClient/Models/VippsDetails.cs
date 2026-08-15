@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TelephoneNumber { get; set; }
 #endif
         /// <summary>**vipps**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.VippsDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VippsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsType>(); } },
             };
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VippsType>("type", Type);
         }
     }
 }

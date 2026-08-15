@@ -34,9 +34,8 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
         {
         }
         /// <summary>
-        /// &quot;Deletes a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Deletes a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4ServiceError">When receiving a 400 status code</exception>
@@ -46,11 +45,11 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4ServiceError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -62,10 +61,10 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4ServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4ServiceError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Document"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.Document>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.Document.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates a document. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Updates a document. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Document"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.Document>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.Document.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Deletes a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +147,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Returns a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +166,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates a document. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Updates a document. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -198,7 +197,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item
             return new global::Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents.Item.DocumentsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns a document.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DocumentsItemRequestBuilderGetQueryParameters 

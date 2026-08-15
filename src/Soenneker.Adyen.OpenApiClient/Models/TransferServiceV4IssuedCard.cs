@@ -20,9 +20,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AuthorisationType { get; set; }
 #endif
-        /// <summary>&quot;Indicates the method used for entering the PAN to initiate a transaction.Possible values: **manual**, **chip**, **magstripe**, **contactless**, **cof**, **ecommerce**, **token**.&quot;</summary>
+        /// <summary>Indicates the method used for entering the PAN to initiate a transaction.Possible values: **manual**, **chip**, **magstripe**, **contactless**, **cof**, **ecommerce**, **token**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode? PanEntryMode { get; set; }
-        /// <summary>&quot;Contains information about how the payment was processed.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **purchaseWithCashback**, **recurring**, **token**.&quot;</summary>
+        /// <summary>Contains information about how the payment was processed.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **purchaseWithCashback**, **recurring**, **token**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardProcessingType? ProcessingType { get; set; }
         /// <summary>The relayedAuthorisationData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ThreeDSecure ThreeDSecure { get; set; }
 #endif
         /// <summary>**issuedCard**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IssuedCardType? Type { get; set; }
         /// <summary>The evaluation of the validation facts. See [validation checks](https://docs.adyen.com/issuing/validation-checks) for more information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "schemeTraceId", n => { SchemeTraceId = n.GetStringValue(); } },
                 { "schemeUniqueTransactionId", n => { SchemeUniqueTransactionId = n.GetStringValue(); } },
                 { "threeDSecure", n => { ThreeDSecure = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ThreeDSecure>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ThreeDSecure.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IssuedCardType>(); } },
                 { "validationFacts", n => { ValidationFacts = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -109,7 +109,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("schemeTraceId", SchemeTraceId);
             writer.WriteStringValue("schemeUniqueTransactionId", SchemeUniqueTransactionId);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ThreeDSecure>("threeDSecure", ThreeDSecure);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IssuedCardType>("type", Type);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferNotificationValidationFact>("validationFacts", ValidationFacts);
         }
     }

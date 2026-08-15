@@ -84,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo BrowserInfo { get; set; }
 #endif
-        /// <summary>&quot;The [delay between the authorization and automatic capture](https://docs.adyen.com/online-payments/capture?tab=delayed-individual_2#delayed-automatic-capture) of the payment, specified in hours.Maximum value: **672** (28 days).&quot;</summary>
+        /// <summary>The [delay between the authorization and automatic capture](https://docs.adyen.com/online-payments/capture?tab=delayed-individual_2#delayed-automatic-capture) of the payment, specified in hours.Maximum value: **672** (28 days).</summary>
         public int? CaptureDelayHours { get; set; }
         /// <summary>The platform where a payment transaction takes place. This field is optional for filtering out payment methods that are only available on specific platforms. If this value is not set, then we will try to infer it from the `sdkVersion` or `token`.Possible values:* iOS* Android* Web</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestChannel? Channel { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.Company Company { get; set; }
 #endif
-        /// <summary>&quot;The shopper country code.Format: [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)Example: NL or DE&quot;</summary>
+        /// <summary>The shopper country code.Format: [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)Example: NL or DE</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>&quot;The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD&quot;</summary>
+        /// <summary>The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD</summary>
         public DateTimeOffset? DateOfBirth { get; set; }
         /// <summary>The dccQuote property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ForexQuote DccQuote { get; set; }
 #endif
-        /// <summary>&quot;The date and time the purchased goods should be delivered.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZDExample: 2017-07-17T13:42:40.428+01:00&quot;</summary>
+        /// <summary>The date and time the purchased goods should be delivered.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZDExample: 2017-07-17T13:42:40.428+01:00</summary>
         public DateTimeOffset? DeliverAt { get; set; }
         /// <summary>The deliveryAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress DeliveryAddress { get; set; }
 #endif
-        /// <summary>&quot;The date and time the purchased goods should be delivered.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZDExample: 2017-07-17T13:42:40.428+01:00&quot;</summary>
+        /// <summary>The date and time the purchased goods should be delivered.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZDExample: 2017-07-17T13:42:40.428+01:00</summary>
         [Obsolete("")]
         public DateTimeOffset? DeliveryDate { get; set; }
         /// <summary>A string containing the shopper&apos;s device fingerprint. For more information, refer to [Device fingerprinting](https://docs.adyen.com/risk-management/device-fingerprinting).</summary>
@@ -177,7 +177,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient FundRecipient { get; set; }
 #endif
-        /// <summary>&quot;The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**&quot;</summary>
+        /// <summary>The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestIndustryUsage? IndustryUsage { get; set; }
         /// <summary>The installments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,7 +195,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LineItem> LineItems { get; set; }
 #endif
-        /// <summary>&quot;The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set. If this parameter is left empty, not provided, or not applicable (in case of cross-border transactions), then **shopperStatement** is used.Currently, `localizedShopperStatement` is only supported for payments with Visa, Mastercard, JCB, Diners, and Discover.**Supported characters**: Hiragana, Katakana, Kanji, and alphanumeric.&quot;</summary>
+        /// <summary>The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set. If this parameter is left empty, not provided, or not applicable (in case of cross-border transactions), then **shopperStatement** is used.Currently, `localizedShopperStatement` is only supported for payments with Visa, Mastercard, JCB, Diners, and Discover.**Supported characters**: Hiragana, Katakana, Kanji, and alphanumeric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty? LocalizedShopperStatement { get; set; }
@@ -227,7 +227,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>&quot;You can use this reference to link multiple transactions to one another (for example, to track order authorization rate).For each billing cycle, this reference should be unique. After the first authorized payment attempt, do not reuse the reference. If you use this parameter, include it in all of the payment requests that you make.  We strongly recommend that you:* Always include this parameter, so that you can benefit from linking payment requests to one another, in case of authorization retries. * Additionally include the following parameters in the `additionalData` object: [`retry.orderAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-orderAttemptNumber), [`retry.chainAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-chainAttemptNumber), and [`retry.skipRetry`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-skipRetry)&quot;</summary>
+        /// <summary>You can use this reference to link multiple transactions to one another (for example, to track order authorization rate).For each billing cycle, this reference should be unique. After the first authorized payment attempt, do not reuse the reference. If you use this parameter, include it in all of the payment requests that you make.  We strongly recommend that you:* Always include this parameter, so that you can benefit from linking payment requests to one another, in case of authorization retries. * Additionally include the following parameters in the `additionalData` object: [`retry.orderAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-orderAttemptNumber), [`retry.chainAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-chainAttemptNumber), and [`retry.skipRetry`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-skipRetry)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MerchantOrderReference { get; set; }
@@ -243,7 +243,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator MerchantRiskIndicator { get; set; }
 #endif
-        /// <summary>&quot;Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the \&quot;177\&quot; error occurs: \&quot;Metadata size exceeds limit\&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. &quot;</summary>
+        /// <summary>Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the &quot;177&quot; error occurs: &quot;Metadata size exceeds limit&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty? Metadata { get; set; }
@@ -341,7 +341,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RedirectToIssuerMethod { get; set; }
 #endif
-        /// <summary>&quot;The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. To provide multiple references for one transaction, separate the reference values with the hyphen (`-`) character.We strongly recommend that you use a unique value for each transaction.Maximum length: 80 characters.&quot;</summary>
+        /// <summary>The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. To provide multiple references for one transaction, separate the reference values with the hyphen (`-`) character.We strongly recommend that you use a unique value for each transaction.Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -349,7 +349,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The URL to return to in case of a redirection.The format depends on the channel. * For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.Example: `https://your-company.example.com/checkout?shopperOrder=12xy`* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).Example: `my-app://`* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).Example: `my-app://your.package.name`If the URL to return to includes non-ASCII characters, like spaces or special letters, URL encode the value.&gt; The URL must not include personally identifiable information (PII), for example name or email address.&quot;</summary>
+        /// <summary>The URL to return to in case of a redirection.The format depends on the channel. * For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.Example: `https://your-company.example.com/checkout?shopperOrder=12xy`* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).Example: `my-app://`* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).Example: `my-app://your.package.name`If the URL to return to includes non-ASCII characters, like spaces or special letters, URL encode the value.&gt; The URL must not include personally identifiable information (PII), for example name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnUrl { get; set; }
@@ -365,7 +365,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.RiskData RiskData { get; set; }
 #endif
-        /// <summary>&quot;The date and time until when the session remains valid, in [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format.For example: 2020-07-18T15:42:40.428+01:00&quot;</summary>
+        /// <summary>The date and time until when the session remains valid, in [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format.For example: 2020-07-18T15:42:40.428+01:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionValidity { get; set; }
@@ -415,7 +415,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ShopperName ShopperName { get; set; }
 #endif
-        /// <summary>&quot;Required for recurring payments. Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.&gt; Your reference must not include personally identifiable information (PII), for example name or email address.&quot;</summary>
+        /// <summary>Required for recurring payments. Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.&gt; Your reference must not include personally identifiable information (PII), for example name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperReference { get; set; }
@@ -423,7 +423,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperReference { get; set; }
 #endif
-        /// <summary>&quot;The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.&quot;</summary>
+        /// <summary>The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperStatement { get; set; }
@@ -505,7 +505,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields ThreeDS2RequestData { get; set; }
 #endif
-        /// <summary>&quot;Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorisation.Default: **false**.&quot;</summary>
+        /// <summary>Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorisation.Default: **false**.</summary>
         [Obsolete("")]
         public bool? ThreeDSAuthenticationOnly { get; set; }
         /// <summary>Set to true if the payment should be routed to a trusted MID.</summary>

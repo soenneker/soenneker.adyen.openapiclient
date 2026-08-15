@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CardHolderName { get; set; }
 #endif
-        /// <summary>&quot;The test card range security code.Example: 123&quot;</summary>
+        /// <summary>The test card range security code.Example: 123</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cvc { get; set; }
@@ -40,9 +40,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Expiry month for the test card range.Allowed values:* JANUARY* FEBRUARY* MARCH* APRIL* MAY* JUNE* JULY* AUGUST* SEPTEMBER* OCTOBER* NOVEMBER* DECEMBER</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth? ExpiryMonth { get; set; }
-        /// <summary>&quot;Expiry year for the test card range.Example: 2020&quot;</summary>
+        /// <summary>Expiry year for the test card range.Example: 2020</summary>
         public int? ExpiryYear { get; set; }
-        /// <summary>&quot;The last test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 4321&quot;</summary>
+        /// <summary>The last test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 4321</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RangeEnd { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RangeEnd { get; set; }
 #endif
-        /// <summary>&quot;The first test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 1234&quot;</summary>
+        /// <summary>The first test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 1234</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RangeStart { get; set; }

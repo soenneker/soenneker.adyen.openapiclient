@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentInstrumentId { get; set; }
 #endif
-        /// <summary>&quot;The type of device.Possible values: **ios**, **android**, **browser**.&quot;</summary>
+        /// <summary>The type of device.Possible values: **ios**, **android**, **browser**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeviceType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

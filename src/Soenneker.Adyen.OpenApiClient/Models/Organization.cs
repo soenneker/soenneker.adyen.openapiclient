@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DateOfIncorporation { get; set; }
 #endif
-        /// <summary>&quot;Required if the value of `statusOfLegalProceeding` is one of the following:**underJudicialAdministration**, **bankruptcyInsolvency**, **otherLegalMeasures**The date at which a legal proceeding was initiated, in **YYYY-MM-DD** format. Example: **2000-02-12**&quot;</summary>
+        /// <summary>Required if the value of `statusOfLegalProceeding` is one of the following:**underJudicialAdministration**, **bankruptcyInsolvency**, **otherLegalMeasures**The date at which a legal proceeding was initiated, in **YYYY-MM-DD** format. Example: **2000-02-12**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateOfInitiationOfLegalProceeding { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Set this to **true** if the organization or legal arrangement does not have a `Doing business as` name.</summary>
         public bool? DoingBusinessAsAbsent { get; set; }
-        /// <summary>&quot;The sector of the economy the legal entity operates within, represented by a 2-4 digit code that may include a \&quot;.\&quot;. Example: 45.11You can locate economic sector codes for your area by referencing codes defined by the NACE (Nomenclature of Economic Activities) used in the European Union.&quot;</summary>
+        /// <summary>The sector of the economy the legal entity operates within, represented by a 2-4 digit code that may include a &quot;.&quot;. Example: 45.11You can locate economic sector codes for your area by referencing codes defined by the NACE (Nomenclature of Economic Activities) used in the European Union.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EconomicSector { get; set; }
@@ -140,7 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Set this to **true** if the organization does not have a registration number available. Only applicable for organizations in New Zealand, and incorporated partnerships and government organizations in Australia.</summary>
         public bool? RegistrationNumberAbsent { get; set; }
-        /// <summary>&quot;The status of any current or past legal action taken against the legal entity.Possible values: **noLegalActionsTaken**, **underJudicialAdministration**, **bankruptcyInsolvency**, **otherLegalMeasures**If the value of this field is **noLegalActionsTaken**, then `dateOfInitiationOfLegalProceeding` is not required. Otherwise, it is required.&quot;</summary>
+        /// <summary>The status of any current or past legal action taken against the legal entity.Possible values: **noLegalActionsTaken**, **underJudicialAdministration**, **bankruptcyInsolvency**, **otherLegalMeasures**If the value of this field is **noLegalActionsTaken**, then `dateOfInitiationOfLegalProceeding` is not required. Otherwise, it is required.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding? StatusOfLegalProceeding { get; set; }
         /// <summary>The stockData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,9 +174,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassification TaxReportingClassification { get; set; }
 #endif
-        /// <summary>&quot;Type of organization.Possible values: **associationIncorporated**, **governmentalOrganization**, **listedPublicCompany**, **nonProfit**, **partnershipIncorporated**, **privateCompany**.&quot;</summary>
+        /// <summary>Type of organization.Possible values: **associationIncorporated**, **governmentalOrganization**, **listedPublicCompany**, **nonProfit**, **partnershipIncorporated**, **privateCompany**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationType? Type { get; set; }
-        /// <summary>&quot;The reason the organization has not provided a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
+        /// <summary>The reason the organization has not provided a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationVatAbsenceReason? VatAbsenceReason { get; set; }
         /// <summary>The organization&apos;s VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -14,7 +14,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The street and house number of the address.Example: 1 Infinite Loop, Cupertino.&quot;</summary>
+        /// <summary>The street and house number of the address.Example: 1 Infinite Loop, Cupertino.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StreetAddress { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StreetAddress { get; set; }
 #endif
-        /// <summary>&quot;The zip or post code of the address.Example: CA 95014&quot;</summary>
+        /// <summary>The zip or post code of the address.Example: CA 95014</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Zip { get; set; }

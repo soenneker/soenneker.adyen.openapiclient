@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the transfer.Possible values: - **credited**: the funds are credited to your user&apos;s transfer instrument or bank account.- **accepted**: the request is accepted by the integration.&quot;</summary>
+    /// <summary>The status of the transfer.Possible values: - **credited**: the funds are credited to your user&apos;s transfer instrument or bank account.- **accepted**: the request is accepted by the integration.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4ConfirmationTrackingDataStatus
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.&quot;</summary>
+    /// <summary>The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalancePlatformServiceV2UsLocalAccountIdentificationAccountType
     {

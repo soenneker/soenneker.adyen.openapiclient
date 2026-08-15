@@ -14,9 +14,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Define the type of balance about which you want to get notified. Possible values:* **available**: the balance available for use.* **balance**: the sum of transactions that have already been settled.* **pending**: the sum of transactions that will be settled in the future.* **reserved**: the balance currently held in reserve.&quot;</summary>
+        /// <summary>Define the type of balance about which you want to get notified. Possible values:* **available**: the balance available for use.* **balance**: the sum of transactions that have already been settled.* **pending**: the sum of transactions that will be settled in the future.* **reserved**: the balance currently held in reserve.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ConditionBalanceType? BalanceType { get; set; }
-        /// <summary>&quot;Define when you want to get notified about a balance change. Possible values:* **greaterThan**: the balance in the account(s) exceeds the specified `value`.* **greaterThanOrEqual**: the balance in the account(s) reaches or exceeds the specified `value`.* **lessThan**: the balance in the account(s) drops below the specified `value`.* **lessThanOrEqual**: the balance in the account(s) reaches to drops below the specified `value`.&quot;</summary>
+        /// <summary>Define when you want to get notified about a balance change. Possible values:* **greaterThan**: the balance in the account(s) exceeds the specified `value`.* **greaterThanOrEqual**: the balance in the account(s) reaches or exceeds the specified `value`.* **lessThan**: the balance in the account(s) drops below the specified `value`.* **lessThanOrEqual**: the balance in the account(s) reaches to drops below the specified `value`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ConditionConditionType? ConditionType { get; set; }
         /// <summary>The value limit in the specified balance type and currency, in minor units.</summary>
         public long? Value { get; set; }

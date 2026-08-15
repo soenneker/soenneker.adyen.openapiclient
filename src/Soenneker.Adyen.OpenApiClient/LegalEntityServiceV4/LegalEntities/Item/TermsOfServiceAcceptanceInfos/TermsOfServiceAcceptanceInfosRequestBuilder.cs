@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item.
         {
         }
         /// <summary>
-        /// &quot;Returns Terms of Service information for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns Terms of Service information for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceAcceptanceInfosResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.LegalEntities.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceAcceptanceInfosResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceAcceptanceInfosResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns Terms of Service information for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Returns Terms of Service information for a legal entity.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

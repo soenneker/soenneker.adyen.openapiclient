@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;The expiration date of the payment in ISO DateTime format, as described on ISO 20022 (YYYY-MM-DDThh:mm:ss.sss+/-hh:mm).Example: **2025-12-30T14:15:30+01:00**&quot;</summary>
+        /// <summary>The expiration date of the payment in ISO DateTime format, as described on ISO 20022 (YYYY-MM-DDThh:mm:ss.sss+/-hh:mm).Example: **2025-12-30T14:15:30+01:00**</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentDetails"/> and sets the default values.

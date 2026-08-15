@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Speed at which payouts for this account are processed.Possible values: `STANDARD` (default), `SAME_DAY`.&quot;</summary>
+    /// <summary>Speed at which payouts for this account are processed.Possible values: `STANDARD` (default), `SAME_DAY`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateAccountRequestPayoutSpeed
     {

@@ -16,7 +16,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
     public partial class StatusRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.ManagementServiceV3.companies.item.campaignManagement.item.status.item collection</summary>
-        /// <param name="position">&quot;The desired status change. Possible values: **activate** or **end**.&quot;</param>
+        /// <param name="position">The desired status change. Possible values: **activate** or **end**.</param>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement.Item.Status.Item.WithStatusItemRequestBuilder"/></returns>
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement.Item.Status.Item.WithStatusItemRequestBuilder this[string position]
         {

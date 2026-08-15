@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ServiceCenter { get; set; }
 #endif
-        /// <summary>&quot;The status of the card order.Possible values: **Open**, **Closed**.&quot;</summary>
+        /// <summary>The status of the card order.Possible values: **Open**, **Closed**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The new status of the account.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
+    /// <summary>The new status of the account.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CloseAccountResponseStatus
     {

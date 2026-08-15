@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Deducts the fees due to Adyen (markup or commission) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+    /// <summary>Deducts the fees due to Adyen (markup or commission) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateSplitConfigurationLogicRequestAdyenFees
     {

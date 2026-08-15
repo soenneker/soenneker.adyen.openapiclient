@@ -28,11 +28,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>&quot;The limitation rule of the billing amount.Possible values: * **max**: The transaction amount can not exceed the `amount`. * **exact**: The transaction amount should be the same as the `amount`.&quot;</summary>
+        /// <summary>The limitation rule of the billing amount.Possible values: * **max**: The transaction amount can not exceed the `amount`. * **exact**: The transaction amount should be the same as the `amount`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateAmountRule? AmountRule { get; set; }
-        /// <summary>&quot;The rule to specify the period, within which the recurring debit can happen, relative to the mandate recurring date.Possible values: * **on**: On a specific date. * **before**:  Before and on a specific date. * **after**: On and after a specific date.&quot;</summary>
+        /// <summary>The rule to specify the period, within which the recurring debit can happen, relative to the mandate recurring date.Possible values: * **on**: On a specific date. * **before**:  Before and on a specific date. * **after**: On and after a specific date.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateBillingAttemptsRule? BillingAttemptsRule { get; set; }
-        /// <summary>&quot;The number of the day, on which the recurring debit can happen. Should be within the same calendar month as the mandate recurring date.Possible values: 1-31 based on the `frequency`.&quot;</summary>
+        /// <summary>The number of the day, on which the recurring debit can happen. Should be within the same calendar month as the mandate recurring date.Possible values: 1-31 based on the `frequency`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillingDay { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EndsAt { get; set; }
 #endif
-        /// <summary>&quot;The frequency with which a shopper should be charged.Possible values: **adhoc**, **daily**, **weekly**, **biWeekly**, **monthly**, **quarterly**, **halfYearly**, **yearly**.&quot;</summary>
+        /// <summary>The frequency with which a shopper should be charged.Possible values: **adhoc**, **daily**, **weekly**, **biWeekly**, **monthly**, **quarterly**, **halfYearly**, **yearly**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandateFrequency? Frequency { get; set; }
         /// <summary>The unique identifier of the mandate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RecurringAmount { get; set; }
 #endif
-        /// <summary>&quot;The text that will be shown on the shopper&apos;s bank statement for the recurring payments. We recommend to add a descriptive text about the subscription to let your shoppers recognize your recurring payments.Maximum length: 35 characters.&quot;</summary>
+        /// <summary>The text that will be shown on the shopper&apos;s bank statement for the recurring payments. We recommend to add a descriptive text about the subscription to let your shoppers recognize your recurring payments.Maximum length: 35 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurringStatement { get; set; }
@@ -132,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StartsAt { get; set; }
 #endif
-        /// <summary>&quot;The status of the mandate. Examples : active, revoked, completed, expired&quot;</summary>
+        /// <summary>The status of the mandate. Examples : active, revoked, completed, expired</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

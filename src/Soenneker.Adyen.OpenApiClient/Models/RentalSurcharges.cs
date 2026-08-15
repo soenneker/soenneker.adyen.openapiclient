@@ -12,11 +12,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class RentalSurcharges : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The fuel charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.fuelCharges`&quot;</summary>
+        /// <summary>The fuel charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.fuelCharges`</summary>
         public long? Fuel { get; set; }
-        /// <summary>&quot;Any insurance charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.insuranceCharges`&quot;</summary>
+        /// <summary>Any insurance charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.insuranceCharges`</summary>
         public long? Insurance { get; set; }
-        /// <summary>&quot;The charge for not returning a car to the original rental location, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.oneWayDropOffCharges`&quot;</summary>
+        /// <summary>The charge for not returning a car to the original rental location, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.oneWayDropOffCharges`</summary>
         public long? OneWayDropOff { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

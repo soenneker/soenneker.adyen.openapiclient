@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>**masterpass**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MasterpassType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsFundingSource>(); } },
                 { "masterpassTransactionId", n => { MasterpassTransactionId = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassType>(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("masterpassTransactionId", MasterpassTransactionId);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MasterpassType>("type", Type);
         }
     }
 }

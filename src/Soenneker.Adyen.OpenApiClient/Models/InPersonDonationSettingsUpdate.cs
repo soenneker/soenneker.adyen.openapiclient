@@ -26,7 +26,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.DisplayTextField? DisplayTextField { get; set; }
         /// <summary>The donationFlow property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DonationFlow? DonationFlow { get; set; }
-        /// <summary>&quot;The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.&quot;</summary>
+        /// <summary>The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdateDonationType? DonationType { get; set; }
@@ -42,9 +42,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> MerchantAccounts { get; set; }
 #endif
-        /// <summary>&quot;Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.&quot;</summary>
+        /// <summary>Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.</summary>
         public long? PresentCardTimeoutMs { get; set; }
-        /// <summary>&quot;The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.&quot;</summary>
+        /// <summary>The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.</summary>
         public long? PromptTimeoutMs { get; set; }
         /// <summary>The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

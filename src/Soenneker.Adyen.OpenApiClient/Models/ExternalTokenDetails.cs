@@ -61,9 +61,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>The external service from which to fetch the token. Supported only for specific companies. Contact Adyen if you want to use this feature.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetailsSubtype? Subtype { get; set; }
-        /// <summary>&quot;The type of token. Allowed value: **externalToken**.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.HiltonSubtype? Subtype { get; set; }
+        /// <summary>The type of token. Allowed value: **externalToken**.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,8 +88,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "holderName", n => { HolderName = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetailsSubtype>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetailsType>(); } },
+                { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.HiltonSubtype>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenType>(); } },
             };
         }
         /// <summary>
@@ -105,8 +105,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("holderName", HolderName);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetailsSubtype>("subtype", Subtype);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.HiltonSubtype>("subtype", Subtype);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExternalTokenType>("type", Type);
         }
     }
 }

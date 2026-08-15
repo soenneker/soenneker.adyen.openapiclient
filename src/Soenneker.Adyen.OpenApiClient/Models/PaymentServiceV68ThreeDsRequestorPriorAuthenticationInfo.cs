@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Data that documents and supports a specific authentication process. Maximum length: 2048 bytes.&quot;</summary>
+        /// <summary>Data that documents and supports a specific authentication process. Maximum length: 2048 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSReqPriorAuthData { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Mechanism used by the Cardholder to previously authenticate to the 3DS Requestor. Allowed values:* **01** — Frictionless authentication occurred by ACS.* **02** — Cardholder challenge occurred by ACS.* **03** — AVS verified.* **04** — Other issuer methods.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod? ThreeDSReqPriorAuthMethod { get; set; }
-        /// <summary>&quot;Date and time in UTC of the prior cardholder authentication. Format: YYYYMMDDHHMM&quot;</summary>
+        /// <summary>Date and time in UTC of the prior cardholder authentication. Format: YYYYMMDDHHMM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSReqPriorAuthTimestamp { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ThreeDSReqPriorAuthTimestamp { get; set; }
 #endif
-        /// <summary>&quot;This data element provides additional information to the ACS to determine the best approach for handing a request. This data element contains an ACS Transaction ID for a prior authenticated transaction. For example, the first recurring transaction that was authenticated with the cardholder. Length: 30 characters.&quot;</summary>
+        /// <summary>This data element provides additional information to the ACS to determine the best approach for handing a request. This data element contains an ACS Transaction ID for a prior authenticated transaction. For example, the first recurring transaction that was authenticated with the cardholder. Length: 30 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSReqPriorRef { get; set; }

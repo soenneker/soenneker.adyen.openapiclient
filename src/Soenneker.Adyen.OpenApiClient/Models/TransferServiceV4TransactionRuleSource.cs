@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Indicates the type of resource for which the transaction rule is defined.Possible values: * **PaymentInstrumentGroup*** **PaymentInstrument*** **BalancePlatform*** **EntityUsageConfiguration*** **PlatformRule**: The transaction rule is a platform-wide rule imposed by Adyen.&quot;</summary>
+        /// <summary>Indicates the type of resource for which the transaction rule is defined.Possible values: * **PaymentInstrumentGroup*** **PaymentInstrument*** **BalancePlatform*** **EntityUsageConfiguration*** **PlatformRule**: The transaction rule is a platform-wide rule imposed by Adyen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

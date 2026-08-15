@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The direction of sweep, whether pushing out or pulling in funds to the balance account. If not provided, by default, this is set to **push**.Possible values: * **push**: _push out funds_ to a destination balance account or transfer instrument. * **pull**: _pull in funds_ from a source merchant account, transfer instrument, or balance account.&quot;</summary>
+    /// <summary>The direction of sweep, whether pushing out or pulling in funds to the balance account. If not provided, by default, this is set to **push**.Possible values: * **push**: _push out funds_ to a destination balance account or transfer instrument. * **pull**: _pull in funds_ from a source merchant account, transfer instrument, or balance account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalancePlatformServiceV2SweepConfigurationV2Type
     {

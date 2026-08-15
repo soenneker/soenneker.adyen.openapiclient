@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The result of the transfer.For example:- **received**: an outgoing transfer request is created.- **refused**: the transfer request is rejected by Adyen for one of the following reasons:  - Transfer limit exceeded.  - Transaction rule requirements violated.- **authorised**: the transfer request is authorized and the funds are reserved.- **booked**: the funds are deducted from your user&apos;s balance account. - **failed**: the transfer is rejected by the counterparty&apos;s bank.- **returned**: the transfer is returned by the counterparty&apos;s bank.&quot;</summary>
+    /// <summary>The result of the transfer.For example:- **received**: an outgoing transfer request is created.- **refused**: the transfer request is rejected by Adyen for one of the following reasons:  - Transfer limit exceeded.  - Transaction rule requirements violated.- **authorised**: the transfer request is authorized and the funds are reserved.- **booked**: the funds are deducted from your user&apos;s balance account. - **failed**: the transfer is rejected by the counterparty&apos;s bank.- **returned**: the transfer is returned by the counterparty&apos;s bank.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4TransferDataStatus
     {

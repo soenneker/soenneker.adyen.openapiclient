@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RecurringDetailReference { get; set; }
 #endif
-        /// <summary>&quot;The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.If you need to provide multiple references for a transaction, separate them with hyphens (\&quot;-\&quot;).Maximum length: 80 characters.&quot;</summary>
+        /// <summary>The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.If you need to provide multiple references for a transaction, separate them with hyphens (&quot;-&quot;).Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

@@ -20,35 +20,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> AcceptedCountries { get; set; }
 #endif
-        /// <summary>&quot;Default value: **false**Indicates if the user can select the format for their payout account (if applicable).&quot;</summary>
+        /// <summary>Default value: **false**Indicates if the user can select the format for their payout account (if applicable).</summary>
         public bool? AllowBankAccountFormatSelection { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates whether the debug user interface (UI) is enabled. The debug UI provides information for your support staff to diagnose and resolve user issues during onboarding. It can be accessed using a keyboard shortcut.&quot;</summary>
+        /// <summary>Default value: **true**Indicates whether the debug user interface (UI) is enabled. The debug UI provides information for your support staff to diagnose and resolve user issues during onboarding. It can be accessed using a keyboard shortcut.</summary>
         public bool? AllowDebugUi { get; set; }
-        /// <summary>&quot;Default value: **false**Indicates if the user can select a payout account in a different EU/EEA location (including Switzerland and the UK) than the location of their legal entity.&quot;</summary>
+        /// <summary>Default value: **false**Indicates if the user can select a payout account in a different EU/EEA location (including Switzerland and the UK) than the location of their legal entity.</summary>
         public bool? AllowIntraRegionCrossBorderPayout { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates if the user can change their legal entity type.&quot;</summary>
+        /// <summary>Default value: **true**Indicates if the user can change their legal entity type.</summary>
         public bool? ChangeLegalEntityType { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates if the user can change the country of their legal entity&apos;s address, for example the registered address of an organization.&quot;</summary>
+        /// <summary>Default value: **true**Indicates if the user can change the country of their legal entity&apos;s address, for example the registered address of an organization.</summary>
         public bool? EditPrefilledCountry { get; set; }
-        /// <summary>&quot;Default value: **false**Indicates if only users above the age of 18 can be onboarded.&quot;</summary>
+        /// <summary>Default value: **false**Indicates if only users above the age of 18 can be onboarded.</summary>
         public bool? EnforceLegalAge { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates whether the introduction screen is hidden for the user of the individual legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.&quot;</summary>
+        /// <summary>Default value: **true**Indicates whether the introduction screen is hidden for the user of the individual legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.</summary>
         public bool? HideOnboardingIntroductionIndividual { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates whether the introduction screen is hidden for the user of the organization legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.&quot;</summary>
+        /// <summary>Default value: **true**Indicates whether the introduction screen is hidden for the user of the organization legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.</summary>
         public bool? HideOnboardingIntroductionOrganization { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates whether the introduction screen is hidden for the user of the sole proprietorship legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.&quot;</summary>
+        /// <summary>Default value: **true**Indicates whether the introduction screen is hidden for the user of the sole proprietorship legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.</summary>
         public bool? HideOnboardingIntroductionSoleProprietor { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates whether the introduction screen is hidden for the user of the trust legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.&quot;</summary>
+        /// <summary>Default value: **true**Indicates whether the introduction screen is hidden for the user of the trust legal entity type.The introduction screen provides brief instructions for the subsequent steps in the hosted onboarding process.</summary>
         public bool? HideOnboardingIntroductionTrust { get; set; }
-        /// <summary>&quot;Default value: **true**Indicates if the user can initiate the verification process through open banking providers, like Plaid or Tink.&quot;</summary>
+        /// <summary>Default value: **true**Indicates if the user can initiate the verification process through open banking providers, like Plaid or Tink.</summary>
         public bool? InstantBankVerification { get; set; }
-        /// <summary>&quot;Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **eCommerce** sales channel type.&quot;</summary>
+        /// <summary>Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **eCommerce** sales channel type.</summary>
         public bool? RequirePciSignEcommerce { get; set; }
-        /// <summary>&quot;Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **ecomMoto** sales channel type.&quot;</summary>
+        /// <summary>Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **ecomMoto** sales channel type.</summary>
         public bool? RequirePciSignEcomMoto { get; set; }
-        /// <summary>&quot;Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **pos** sales channel type.&quot;</summary>
+        /// <summary>Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **pos** sales channel type.</summary>
         public bool? RequirePciSignPos { get; set; }
-        /// <summary>&quot;Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **posMoto** sales channel type.&quot;</summary>
+        /// <summary>Default value: **false**Indicates if the user is required to sign a PCI questionnaires for the **posMoto** sales channel type.</summary>
         public bool? RequirePciSignPosMoto { get; set; }
         /// <summary>The maximum number of transfer instruments the user can create.</summary>
         public int? TransferInstrumentLimit { get; set; }

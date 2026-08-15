@@ -167,7 +167,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.Cardorders
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            /// <summary>&quot;The unique code of the card manufacturer profile.Possible values: **mcmaestro**, **mc**, **visa**, **mcdebit**. &quot;</summary>
+            /// <summary>The unique code of the card manufacturer profile.Possible values: **mcmaestro**, **mc**, **visa**, **mcdebit**. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("txVariantCode")]

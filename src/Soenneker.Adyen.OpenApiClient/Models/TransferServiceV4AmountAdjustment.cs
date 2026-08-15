@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
 #endif
-        /// <summary>&quot;The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.&quot;</summary>
+        /// <summary>The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get; set; }
         /// <summary>The basepoints associated with the applied markup.</summary>
         public int? Basepoints { get; set; }

@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LivePrefix { get; set; }
 #endif
-        /// <summary>&quot;The name assigned to a data center, for example **EU** for the European data center. Possible values are:* **default**: the European data center. This value is always returned in the test environment. * **AU*** **EU*** **US**&quot;</summary>
+        /// <summary>The name assigned to a data center, for example **EU** for the European data center. Possible values are:* **default**: the European data center. This value is always returned in the test environment. * **AU*** **EU*** **US**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PaymentMethodToStore : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Secondary brand of the card. For example: **plastix**, **hmclub**.&quot;</summary>
+        /// <summary>Secondary brand of the card. For example: **plastix**, **hmclub**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brand { get; set; }

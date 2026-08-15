@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CurrencyCode { get; set; }
 #endif
-        /// <summary>&quot;Sofort logo. Format: Base64-encoded string.&quot;</summary>
+        /// <summary>Sofort logo. Format: Base64-encoded string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Logo { get; set; }

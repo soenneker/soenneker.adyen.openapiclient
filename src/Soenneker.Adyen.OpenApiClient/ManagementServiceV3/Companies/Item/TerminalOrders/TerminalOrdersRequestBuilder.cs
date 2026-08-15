@@ -182,7 +182,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Termi
             /// <summary>The number of orders to skip.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>&quot;The order status. Possible values (not case-sensitive): Placed, Confirmed, Cancelled, Shipped, Delivered.&quot;</summary>
+            /// <summary>The order status. Possible values (not case-sensitive): Placed, Confirmed, Cancelled, Shipped, Delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

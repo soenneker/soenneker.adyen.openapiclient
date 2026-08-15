@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class UpdatePayoutSettingsRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.&quot;</summary>
+        /// <summary>Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.</summary>
         public bool? Enabled { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

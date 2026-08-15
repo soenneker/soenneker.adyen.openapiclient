@@ -34,7 +34,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.DynamicOffers.Item.Gran
         {
         }
         /// <summary>
-        /// &quot;Creates a static offer for the financing amount that the user selected from the [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).Requests to this endpoint are subject to rate limits:- Live environments: 30 requests per minute.- Test environments: 30 requests per minute.&quot;
+        /// Creates a static offer for the financing amount that the user selected from the [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).Requests to this endpoint are subject to rate limits:- Live environments: 30 requests per minute.- Test environments: 30 requests per minute.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOffer"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.CapitalServiceV1.DynamicOffers.Item.Gran
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOffer>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOffer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a static offer for the financing amount that the user selected from the [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).Requests to this endpoint are subject to rate limits:- Live environments: 30 requests per minute.- Test environments: 30 requests per minute.&quot;
+        /// Creates a static offer for the financing amount that the user selected from the [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).Requests to this endpoint are subject to rate limits:- Live environments: 30 requests per minute.- Test environments: 30 requests per minute.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

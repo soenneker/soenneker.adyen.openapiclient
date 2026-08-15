@@ -20,9 +20,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.Agency Agency { get; set; }
 #endif
-        /// <summary>&quot;The amount charged for boarding the plane, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* Encoding: Numeric* minLength: 1 character* maxLength: 11 characters* **additionalData key:** `airline.boarding_fee`&quot;</summary>
+        /// <summary>The amount charged for boarding the plane, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* Encoding: Numeric* minLength: 1 character* maxLength: 11 characters* **additionalData key:** `airline.boarding_fee`</summary>
         public long? BoardingFee { get; set; }
-        /// <summary>&quot;The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-digit accounting code (PAX) that identifies the carrier.* Format: IATA 3-digit accounting code (PAX)* Example: KLM = 074* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.airline_code`&quot;</summary>
+        /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-digit accounting code (PAX) that identifies the carrier.* Format: IATA 3-digit accounting code (PAX)* Example: KLM = 074* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.airline_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>&quot; The [CRS](https://en.wikipedia.org/wiki/Computer_reservation_system) used to make the reservation and purchase the ticket.* Encoding: ASCII* minLength: 4 characters* maxLength: 4 characters* **additionalData key:** `airline.computerized_reservation_system`&quot;</summary>
+        /// <summary> The [CRS](https://en.wikipedia.org/wiki/Computer_reservation_system) used to make the reservation and purchase the ticket.* Encoding: ASCII* minLength: 4 characters* maxLength: 4 characters* **additionalData key:** `airline.computerized_reservation_system`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComputerizedReservationSystem { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ComputerizedReservationSystem { get; set; }
 #endif
-        /// <summary>&quot;The alphanumeric customer reference number.* Encoding: ASCII* maxLength: 20 characters* If you send more than 20 characters, the customer reference number is truncated* Must not start with a space or be all spaces.* **additionalData key:** `airline.customer_reference_number`&quot;</summary>
+        /// <summary>The alphanumeric customer reference number.* Encoding: ASCII* maxLength: 20 characters* If you send more than 20 characters, the customer reference number is truncated* Must not start with a space or be all spaces.* **additionalData key:** `airline.customer_reference_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerReferenceNumber { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CustomerReferenceNumber { get; set; }
 #endif
-        /// <summary>&quot;The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.* Encoding: ASCII* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* **additionalData key:** `airline.airline_designator_code`&quot;</summary>
+        /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.* Encoding: ASCII* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* **additionalData key:** `airline.airline_designator_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DesignatorCode { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DesignatorCode { get; set; }
 #endif
-        /// <summary>&quot;A code that identifies the type of item bought. The description of the code can appear on credit card statements.* Encoding: ASCII* Example: Passenger ticket = 01* minLength: 2 characters* maxLength: 2 characters* **additionalData key:** `airline.document_type`&quot;</summary>
+        /// <summary>A code that identifies the type of item bought. The description of the code can appear on credit card statements.* Encoding: ASCII* Example: Passenger ticket = 01* minLength: 2 characters* maxLength: 2 characters* **additionalData key:** `airline.document_type`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DocumentType { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DocumentType { get; set; }
 #endif
-        /// <summary>&quot;The flight departure date. Time is optional.* Format for date only: `yyyy-MM-dd`* Format for date and time: `yyyy-MM-ddTHH:mm`* Use local time of departure airport.* minLength: 10 characters* maxLength: 16 characters* **additionalData key:** `airline.flight_date`&quot;</summary>
+        /// <summary>The flight departure date. Time is optional.* Format for date only: `yyyy-MM-dd`* Format for date and time: `yyyy-MM-ddTHH:mm`* Use local time of departure airport.* minLength: 10 characters* maxLength: 16 characters* **additionalData key:** `airline.flight_date`</summary>
         public DateTimeOffset? FlightDate { get; set; }
         /// <summary>The legs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg> Legs { get; set; }
 #endif
-        /// <summary>&quot;The passenger&apos;s name, initials, and title.* Format: last name + first name or initials + title* Example: *FLYER / MARY MS** minLength: 1 character* maxLength: 20 characters* If you send more than 20 characters, the name is truncated* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.passenger_name`&quot;</summary>
+        /// <summary>The passenger&apos;s name, initials, and title.* Format: last name + first name or initials + title* Example: *FLYER / MARY MS** minLength: 1 character* maxLength: 20 characters* If you send more than 20 characters, the name is truncated* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.passenger_name`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PassengerName { get; set; }

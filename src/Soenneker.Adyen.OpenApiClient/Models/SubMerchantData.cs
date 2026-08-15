@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>&quot;A unique identifier that you create for the sub-merchant, used by schemes to identify the sub-merchant.* Format: Alphanumeric* Maximum length: 15 characters&quot;</summary>
+        /// <summary>A unique identifier that you create for the sub-merchant, used by schemes to identify the sub-merchant.* Format: Alphanumeric* Maximum length: 15 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The sub-merchant&apos;s 4-digit Merchant Category Code (MCC).* Format: Numeric* Fixed length: 4 digits&quot;</summary>
+        /// <summary>The sub-merchant&apos;s 4-digit Merchant Category Code (MCC).* Format: Numeric* Fixed length: 4 digits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mcc { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Mcc { get; set; }
 #endif
-        /// <summary>&quot;The name of the sub-merchant. Based on scheme specifications, this value will overwrite the shopper statement that will appear in the card statement.* Format: Alphanumeric* Maximum length: 22 characters&quot;</summary>
+        /// <summary>The name of the sub-merchant. Based on scheme specifications, this value will overwrite the shopper statement that will appear in the card statement.* Format: Alphanumeric* Maximum length: 22 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

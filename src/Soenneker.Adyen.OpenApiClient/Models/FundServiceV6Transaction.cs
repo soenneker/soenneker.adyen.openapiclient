@@ -118,7 +118,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string SourceAccountCode { get; set; }
 #endif
-        /// <summary>&quot;The status of the transaction.&gt;Permitted values: `PendingCredit`, `CreditFailed`, `CreditClosed`, `CreditSuspended`, `Credited`, `Converted`, `PendingDebit`, `DebitFailed`, `Debited`, `DebitReversedReceived`, `DebitedReversed`, `ChargebackReceived`, `Chargeback`, `ChargebackReversedReceived`, `ChargebackReversed`, `Payout`, `PayoutReversed`, `FundTransfer`, `PendingFundTransfer`, `ManualCorrected`.&quot;</summary>
+        /// <summary>The status of the transaction.&gt;Permitted values: `PendingCredit`, `CreditFailed`, `CreditClosed`, `CreditSuspended`, `Credited`, `Converted`, `PendingDebit`, `DebitFailed`, `Debited`, `DebitReversedReceived`, `DebitedReversed`, `ChargebackReceived`, `Chargeback`, `ChargebackReversedReceived`, `ChargebackReversed`, `Payout`, `PayoutReversed`, `FundTransfer`, `PendingFundTransfer`, `ManualCorrected`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus? TransactionStatus { get; set; }
         /// <summary>The transfer code of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

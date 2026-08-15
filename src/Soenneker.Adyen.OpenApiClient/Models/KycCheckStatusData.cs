@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> RequiredFields { get; set; }
 #endif
-        /// <summary>&quot;The status of the check.Possible values: **AWAITING_DATA** , **DATA_PROVIDED**, **FAILED**, **INVALID_DATA**, **PASSED**, **PENDING**, **RETRY_LIMIT_REACHED**.&quot;</summary>
+        /// <summary>The status of the check.Possible values: **AWAITING_DATA** , **DATA_PROVIDED**, **FAILED**, **INVALID_DATA**, **PASSED**, **PENDING**, **RETRY_LIMIT_REACHED**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus? Status { get; set; }
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary Summary { get; set; }
 #endif
-        /// <summary>&quot;The type of check.Possible values: * **BANK_ACCOUNT_VERIFICATION**: Used in v5 and earlier. Replaced by **PAYOUT_METHOD_VERIFICATION** in v6 and later. * **COMPANY_VERIFICATION**  * **CARD_VERIFICATION*** **IDENTITY_VERIFICATION*** **LEGAL_ARRANGEMENT_VERIFICATION*** **NONPROFIT_VERIFICATION** * **PASSPORT_VERIFICATION*** **PAYOUT_METHOD_VERIFICATION**: Used in v6 and later.* **PCI_VERIFICATION**&quot;</summary>
+        /// <summary>The type of check.Possible values: * **BANK_ACCOUNT_VERIFICATION**: Used in v5 and earlier. Replaced by **PAYOUT_METHOD_VERIFICATION** in v6 and later. * **COMPANY_VERIFICATION**  * **CARD_VERIFICATION*** **IDENTITY_VERIFICATION*** **LEGAL_ARRANGEMENT_VERIFICATION*** **NONPROFIT_VERIFICATION** * **PASSPORT_VERIFICATION*** **PAYOUT_METHOD_VERIFICATION**: Used in v6 and later.* **PCI_VERIFICATION**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class AccountEvent : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The event.&gt;Permitted values: `InactivateAccount`, `RefundNotPaidOutTransfers`.For more information, refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-process).&quot;</summary>
+        /// <summary>The event.&gt;Permitted values: `InactivateAccount`, `RefundNotPaidOutTransfers`.For more information, refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-process).</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountEventEvent? Event { get; set; }
         /// <summary>The date on which the event will take place.</summary>
         public DateTimeOffset? ExecutionDate { get; set; }

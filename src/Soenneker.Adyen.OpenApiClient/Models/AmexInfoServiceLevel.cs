@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Specifies the service level (settlement type) of this payment method. Possible values:* **noContract**: Adyen holds the contract with American Express.* **gatewayContract**: American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Adyen receives the settlement, and handles disputes and payouts.&quot;</summary>
+    /// <summary>Specifies the service level (settlement type) of this payment method. Possible values:* **noContract**: Adyen holds the contract with American Express.* **gatewayContract**: American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Adyen receives the settlement, and handles disputes and payouts.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AmexInfoServiceLevel
     {

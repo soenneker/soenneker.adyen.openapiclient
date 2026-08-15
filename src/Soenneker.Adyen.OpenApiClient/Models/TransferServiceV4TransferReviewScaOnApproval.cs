@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Shows the status of the Strong Customer Authentication (SCA) process.Possible values: **required**, **notApplicable**.&quot;</summary>
+    /// <summary>Shows the status of the Strong Customer Authentication (SCA) process.Possible values: **required**, **notApplicable**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4TransferReviewScaOnApproval
     {

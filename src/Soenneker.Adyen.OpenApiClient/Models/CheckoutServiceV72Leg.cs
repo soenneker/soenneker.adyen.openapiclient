@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CheckoutServiceV72Leg : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.This field is required if the airline data includes leg details.* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].carrier_code`&quot;</summary>
+        /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.This field is required if the airline data includes leg details.* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].carrier_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CarrierCode { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CarrierCode { get; set; }
 #endif
-        /// <summary>&quot;A one-letter travel class identifier. The following are common: * F: first class* J: business class* Y: economy class* W: premium economy* Encoding: ASCII* minLength: 1 character* maxLength: 1 character* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].class_of_travel`&quot;</summary>
+        /// <summary>A one-letter travel class identifier. The following are common: * F: first class* J: business class* Y: economy class* W: premium economy* Encoding: ASCII* minLength: 1 character* maxLength: 1 character* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].class_of_travel`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassOfTravel { get; set; }
@@ -28,9 +28,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ClassOfTravel { get; set; }
 #endif
-        /// <summary>&quot;Date and time of travel in format `yyyy-MM-ddTHH:mm`.* Use local time of departure airport.* minLength: 16 characters* maxLength: 16 characters* **additionalData key:** `airline.leg[N].date_of_travel`&quot;</summary>
+        /// <summary>Date and time of travel in format `yyyy-MM-ddTHH:mm`.* Use local time of departure airport.* minLength: 16 characters* maxLength: 16 characters* **additionalData key:** `airline.leg[N].date_of_travel`</summary>
         public DateTimeOffset? DateOfTravel { get; set; }
-        /// <summary>&quot;The [IATA](https://www.iata.org/services/pages/codes.aspx) three-letter airport code of the departure airport.This field is required if the airline data includes leg details.* Encoding: ASCII* Example: Amsterdam = AMS* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].depart_airport`&quot;</summary>
+        /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) three-letter airport code of the departure airport.This field is required if the airline data includes leg details.* Encoding: ASCII* Example: Amsterdam = AMS* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].depart_airport`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DepartureAirportCode { get; set; }
@@ -38,9 +38,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DepartureAirportCode { get; set; }
 #endif
-        /// <summary>&quot;The amount of [departure tax](https://en.wikipedia.org/wiki/Departure_tax) charged, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* Encoding: Numeric* minLength: 1* maxLength: 11* Must not be all zeros.* **additionalData key:** `airline.leg[N].depart_tax`&quot;</summary>
+        /// <summary>The amount of [departure tax](https://en.wikipedia.org/wiki/Departure_tax) charged, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* Encoding: Numeric* minLength: 1* maxLength: 11* Must not be all zeros.* **additionalData key:** `airline.leg[N].depart_tax`</summary>
         public long? DepartureTax { get; set; }
-        /// <summary>&quot;The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-letter airport code of the destination airport.This field is required if the airline data includes leg details.* Example: Amsterdam = AMS* Encoding: ASCII* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].destination_code`&quot;</summary>
+        /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-letter airport code of the destination airport.This field is required if the airline data includes leg details.* Example: Amsterdam = AMS* Encoding: ASCII* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].destination_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationAirportCode { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DestinationAirportCode { get; set; }
 #endif
-        /// <summary>&quot;The [fare basis code](https://en.wikipedia.org/wiki/Fare_basis_code), alphanumeric.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].fare_base_code`&quot;</summary>
+        /// <summary>The [fare basis code](https://en.wikipedia.org/wiki/Fare_basis_code), alphanumeric.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].fare_base_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FareBasisCode { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FareBasisCode { get; set; }
 #endif
-        /// <summary>&quot;The flight identifier.* minLength: 1 character* maxLength: 5 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].flight_number`&quot;</summary>
+        /// <summary>The flight identifier.* minLength: 1 character* maxLength: 5 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].flight_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FlightNumber { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FlightNumber { get; set; }
 #endif
-        /// <summary>&quot;A one-letter code that indicates whether the passenger is entitled to make a stopover. Can be a space, O if the passenger is entitled to make a stopover, or X if they are not.* Encoding: ASCII* minLength: 1 character* maxLength: 1 character* **additionalData key:** `airline.leg[N].stop_over_code`&quot;</summary>
+        /// <summary>A one-letter code that indicates whether the passenger is entitled to make a stopover. Can be a space, O if the passenger is entitled to make a stopover, or X if they are not.* Encoding: ASCII* minLength: 1 character* maxLength: 1 character* **additionalData key:** `airline.leg[N].stop_over_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StopOverCode { get; set; }

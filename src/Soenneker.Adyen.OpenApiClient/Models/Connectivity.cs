@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Connectivity : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates the status of the SIM card in the payment terminal. Can be updated and received only at terminal level, and only for models that support cellular connectivity.Possible values:* **ACTIVATED**: the SIM card is activated. Cellular connectivity may still need to be enabled on the terminal itself, in the **Network** settings.* **INVENTORY**: the SIM card is not activated. The terminal can&apos;t use cellular connectivity.&quot;</summary>
+        /// <summary>Indicates the status of the SIM card in the payment terminal. Can be updated and received only at terminal level, and only for models that support cellular connectivity.Possible values:* **ACTIVATED**: the SIM card is activated. Cellular connectivity may still need to be enabled on the terminal itself, in the **Network** settings.* **INVENTORY**: the SIM card is not activated. The terminal can&apos;t use cellular connectivity.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ConnectivitySimcardStatus? SimcardStatus { get; set; }
         /// <summary>The terminalIPAddressURL property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

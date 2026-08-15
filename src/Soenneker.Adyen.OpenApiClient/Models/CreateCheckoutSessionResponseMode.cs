@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Indicates the type of front end integration. Possible values:* **embedded** (default): Drop-in or Components integration* **hosted**: Hosted Checkout integration&quot;</summary>
+    /// <summary>Indicates the type of front end integration. Possible values:* **embedded** (default): Drop-in or Components integration* **hosted**: Hosted Checkout integration</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateCheckoutSessionResponseMode
     {

@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class UpdateNetworkTokenRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The new status of the network token. Possible values: **active**, **suspended**, **closed**. The **closed** status is final and cannot be changed.&quot;</summary>
+        /// <summary>The new status of the network token. Possible values: **active**, **suspended**, **closed**. The **closed** status is final and cannot be changed.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequestStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

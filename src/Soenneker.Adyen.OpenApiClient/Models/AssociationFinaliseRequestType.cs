@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**&quot;</summary>
+    /// <summary>The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationFinaliseRequestType
     {

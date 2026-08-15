@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether a screen appears asking if you want to print the shopper receipt.</summary>
         public bool? PromptBeforePrinting { get; set; }
-        /// <summary>&quot;Data to print on the receipt as a QR code. This can include static text and the following variables:- `${merchantreference}`: the merchant reference of the transaction.- `${pspreference}`: the PSP reference of the transaction. For example, **http://www.example.com/order/${pspreference}/${merchantreference}**.&quot;</summary>
+        /// <summary>Data to print on the receipt as a QR code. This can include static text and the following variables:- `${merchantreference}`: the merchant reference of the transaction.- `${pspreference}`: the PSP reference of the transaction. For example, **http://www.example.com/order/${pspreference}/${merchantreference}**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QrCodeData { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The legal entity type.Possible values: **Business**, **Individual**, **NonProfit**, **PublicCompany**, or **Partnership**. &quot;</summary>
+    /// <summary>The legal entity type.Possible values: **Business**, **Individual**, **NonProfit**, **PublicCompany**, or **Partnership**. </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LegalArrangementEntityDetailLegalEntityType
     {

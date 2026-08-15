@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>&quot;List of point-of-sale entry modes.Possible values: **barcode**, **chip**, **cof**, **contactless**, **magstripe**, **manual**, **ocr**, **server**.&quot;</summary>
+        /// <summary>List of point-of-sale entry modes.Possible values: **barcode**, **chip**, **cof**, **contactless**, **magstripe**, **manual**, **ocr**, **server**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.EntryModesRestrictionValueItem?>? Value { get; set; }

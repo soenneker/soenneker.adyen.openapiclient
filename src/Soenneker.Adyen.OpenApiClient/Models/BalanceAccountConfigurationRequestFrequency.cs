@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The frequency of payouts initiated by this payout schedule.Possible values:* daily* weekdays* weekly* monthlyDefault value: The `defaultFrequency` from the balance platform schedule that you are applying.&quot;</summary>
+    /// <summary>The frequency of payouts initiated by this payout schedule.Possible values:* daily* weekdays* weekly* monthlyDefault value: The `defaultFrequency` from the balance platform schedule that you are applying.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalanceAccountConfigurationRequestFrequency
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the transfer limit. Possible values:   * **active**: the limit is currently active.* **inactive**: the limit is currently inactive.* **pendingSCA**: the limit is pending until your user performs SCA.* **scheduled**: the limit is scheduled to become active at a future date.&quot;</summary>
+    /// <summary>The status of the transfer limit. Possible values:   * **active**: the limit is currently active.* **inactive**: the limit is currently inactive.* **pendingSCA**: the limit is pending until your user performs SCA.* **scheduled**: the limit is scheduled to become active at a future date.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LimitStatus
     {

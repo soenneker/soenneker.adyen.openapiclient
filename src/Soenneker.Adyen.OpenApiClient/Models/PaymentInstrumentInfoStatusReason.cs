@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The reason for the status of the payment instrument.Possible values: **accountClosure**, **damaged**, **endOfLife**, **expired**, **lost**, **stolen**, **suspectedFraud**, **transactionRule**, **other**.If the reason is **other**, you must also send the `statusComment` parameter describing the status change.&quot;</summary>
+    /// <summary>The reason for the status of the payment instrument.Possible values: **accountClosure**, **damaged**, **endOfLife**, **expired**, **lost**, **stolen**, **suspectedFraud**, **transactionRule**, **other**.If the reason is **other**, you must also send the `statusComment` parameter describing the status change.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentInstrumentInfoStatusReason
     {

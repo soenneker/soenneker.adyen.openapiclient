@@ -93,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The status of the account holder.Possible values:  * **active**: The account holder is active and allowed to use its capabilities. This is the initial status for account holders and balance accounts. You can change this status to **suspended** or **closed**.  * **suspended**: The account holder is temporarily disabled and payouts are blocked. You can change this status to **active** or **closed**. * **closed**: The account holder and all of its capabilities are permanently disabled. This is a final status and cannot be changed.&quot;</summary>
+        /// <summary>The status of the account holder.Possible values:  * **active**: The account holder is active and allowed to use its capabilities. This is the initial status for account holders and balance accounts. You can change this status to **suspended** or **closed**.  * **suspended**: The account holder is temporarily disabled and payouts are blocked. You can change this status to **active** or **closed**. * **closed**: The account holder and all of its capabilities are permanently disabled. This is a final status and cannot be changed.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolderStatus? Status { get; set; }
         /// <summary>The time zone of the account holder. For example, **Europe/Amsterdam**.Defaults to the time zone of the balance platform if no time zone is set. For possible values, see the [list of time zone codes](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

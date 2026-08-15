@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Status of the payment link. Possible values:* **active**: The link can be used to make payments.* **expired**: The expiry date for the payment link has passed. Shoppers can no longer use the link to make payments.* **completed**: The shopper completed the payment.* **paymentPending**: The shopper is in the process of making the payment. Applies to payment methods with an asynchronous flow.&quot;</summary>
+    /// <summary>Status of the payment link. Possible values:* **active**: The link can be used to make payments.* **expired**: The expiry date for the payment link has passed. Shoppers can no longer use the link to make payments.* **completed**: The shopper completed the payment.* **paymentPending**: The shopper is in the process of making the payment. Applies to payment methods with an asynchronous flow.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentLinkResponseStatus
     {

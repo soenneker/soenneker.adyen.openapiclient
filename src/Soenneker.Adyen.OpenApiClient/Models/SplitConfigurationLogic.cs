@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class SplitConfigurationLogic : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Deducts the acquiring fees (the aggregated amount of interchange and scheme fee) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts the acquiring fees (the aggregated amount of interchange and scheme fee) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAcquiringFees? AcquiringFees { get; set; }
         /// <summary>The additionalCommission property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,15 +22,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalCommission AdditionalCommission { get; set; }
 #endif
-        /// <summary>&quot;Deducts the transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/guides/payments-training-guide/get-the-best-from-your-card-processing) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts the transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/guides/payments-training-guide/get-the-best-from-your-card-processing) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenCommission? AdyenCommission { get; set; }
-        /// <summary>&quot;Deducts the fees due to Adyen (markup or commission) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts the fees due to Adyen (markup or commission) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenFees? AdyenFees { get; set; }
-        /// <summary>&quot;Deducts the transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/what-is-interchange) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts the transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/what-is-interchange) from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdyenMarkup? AdyenMarkup { get; set; }
-        /// <summary>&quot;Specifies how and from which balance account(s) to deduct the chargeback amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.&quot;</summary>
+        /// <summary>Specifies how and from which balance account(s) to deduct the chargeback amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargeback? Chargeback { get; set; }
-        /// <summary>&quot;Deducts the chargeback costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**&quot;</summary>
+        /// <summary>Deducts the chargeback costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicChargebackCostAllocation? ChargebackCostAllocation { get; set; }
         /// <summary>The commission property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,17 +48,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitDcc Dcc { get; set; }
 #endif
-        /// <summary>&quot;Deducts the interchange fee from specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts the interchange fee from specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicInterchange? Interchange { get; set; }
-        /// <summary>&quot;Deducts all transaction fees incurred by the payment from the specified balance account. The transaction fees include the acquiring fees (interchange and scheme fee), and the fees due to Adyen (markup or commission). You can book any and all these fees to different balance account by specifying other transaction fee parameters in your split configuration profile:- [`adyenCommission`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenCommission): The transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`adyenMarkup`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenMarkup): The transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`schemeFee`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-schemeFee): The fee paid to the card scheme for using their network.- [`interchange`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-interchange): The fee paid to the issuer for each payment transaction made with the card network.- [`adyenFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenFees): The aggregated amount of Adyen&apos;s commission and markup.- [`acquiringFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-acquiringFees): The aggregated amount of the interchange and scheme fees.If you don&apos;t include at least one transaction fee type in the `splitLogic` object, Adyen updates the payment request with the `paymentFee` parameter, booking all transaction fees to your platform&apos;s liable balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts all transaction fees incurred by the payment from the specified balance account. The transaction fees include the acquiring fees (interchange and scheme fee), and the fees due to Adyen (markup or commission). You can book any and all these fees to different balance account by specifying other transaction fee parameters in your split configuration profile:- [`adyenCommission`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenCommission): The transaction fee due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`adyenMarkup`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenMarkup): The transaction fee due to Adyen under [Interchange ++ pricing](https://www.adyen.com/knowledge-hub/interchange-fees-explained#interchange-vs-blended).- [`schemeFee`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-schemeFee): The fee paid to the card scheme for using their network.- [`interchange`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-interchange): The fee paid to the issuer for each payment transaction made with the card network.- [`adyenFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-adyenFees): The aggregated amount of Adyen&apos;s commission and markup.- [`acquiringFees`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic-acquiringFees): The aggregated amount of the interchange and scheme fees.If you don&apos;t include at least one transaction fee type in the `splitLogic` object, Adyen updates the payment request with the `paymentFee` parameter, booking all transaction fees to your platform&apos;s liable balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicPaymentFee? PaymentFee { get; set; }
-        /// <summary>&quot;Specifies how and from which balance account(s) to deduct the refund amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**&quot;</summary>
+        /// <summary>Specifies how and from which balance account(s) to deduct the refund amount.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefund? Refund { get; set; }
-        /// <summary>&quot;Deducts the refund costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**&quot;</summary>
+        /// <summary>Deducts the refund costs from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRefundCostAllocation? RefundCostAllocation { get; set; }
-        /// <summary>&quot;Books the amount left over after currency conversion to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.&quot;</summary>
+        /// <summary>Books the amount left over after currency conversion to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicRemainder? Remainder { get; set; }
-        /// <summary>&quot;Deducts the scheme fee from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.&quot;</summary>
+        /// <summary>Deducts the scheme fee from the specified balance account.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSchemeFee? SchemeFee { get; set; }
         /// <summary>Unique identifier of the collection of split instructions that are applied when the rule conditions are met.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,9 +68,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string SplitLogicId { get; private set; }
 #endif
-        /// <summary>&quot;Books the surcharge amount to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**&quot;</summary>
+        /// <summary>Books the surcharge amount to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicSurcharge? Surcharge { get; set; }
-        /// <summary>&quot;Books the tips (gratuity) to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.&quot;</summary>
+        /// <summary>Books the tips (gratuity) to the specified balance account.Possible values: **addToLiableAccount**, **addToOneBalanceAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicTip? Tip { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

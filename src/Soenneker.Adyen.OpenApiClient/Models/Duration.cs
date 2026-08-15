@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Duration : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The unit of time. You can only use **minutes** and **hours** if the `interval.type` is **sliding**.Possible values: **minutes**, **hours**, **days**, **weeks**, or **months**&quot;</summary>
+        /// <summary>The unit of time. You can only use **minutes** and **hours** if the `interval.type` is **sliding**.Possible values: **minutes**, **hours**, **days**, **weeks**, or **months**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DurationUnit? Unit { get; set; }
         /// <summary>The length of time by the unit. For example, 5 days.The maximum duration is 90 days or an equivalent in other units. For example, 3 months.</summary>
         public int? Value { get; set; }

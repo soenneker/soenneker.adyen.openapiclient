@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.&quot;</summary>
+    /// <summary>The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Scope
     {

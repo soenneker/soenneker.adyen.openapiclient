@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of the cashout transfer.Possible values: - **cashoutRepayment**: Corresponds to the transfer created to deduct the cashout amount after settlement.- **cashoutFee**: Corresponds to the transfer created to debit the cashout fee form the user&apos;s balance account.&quot;</summary>
+    /// <summary>The type of the cashout transfer.Possible values: - **cashoutRepayment**: Corresponds to the transfer created to deduct the cashout amount after settlement.- **cashoutFee**: Corresponds to the transfer created to debit the cashout fee form the user&apos;s balance account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CashOutTransferType
     {

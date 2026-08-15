@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReferenceForBeneficiary { get; set; }
 #endif
-        /// <summary>&quot;The status of the transaction. Possible values:* **pending**: The transaction is still pending.* **booked**: The transaction has been booked to the balance account.&quot;</summary>
+        /// <summary>The status of the transaction. Possible values:* **pending**: The transaction is still pending.* **booked**: The transaction has been booked to the balance account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus? Status { get; set; }
         /// <summary>The transfer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

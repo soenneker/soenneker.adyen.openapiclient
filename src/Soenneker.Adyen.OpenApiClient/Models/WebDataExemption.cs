@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class WebDataExemption : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The reason why the web data was not provided. Possible value: **noOnlinePresence**.&quot;</summary>
+        /// <summary>The reason why the web data was not provided. Possible value: **noOnlinePresence**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemptionReason? Reason { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

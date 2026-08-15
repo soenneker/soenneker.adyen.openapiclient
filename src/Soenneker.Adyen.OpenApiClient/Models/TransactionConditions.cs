@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> AllowedPaymentBrand { get; set; }
 #endif
-        /// <summary>&quot;The language used on the terminal screen or in text printed by the terminal.Typical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.&quot;</summary>
+        /// <summary>The language used on the terminal screen or in text printed by the terminal.Typical use case is setting the language on unattended terminals. Format: two-character [ISO 639:2023](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerLanguage { get; set; }

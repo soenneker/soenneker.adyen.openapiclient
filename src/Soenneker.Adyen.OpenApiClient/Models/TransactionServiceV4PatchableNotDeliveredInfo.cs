@@ -25,7 +25,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The date the undelivered goods or services were cancelled in YYYY-MM-DD format.</summary>
         public Date? DateOfCancellation { get; set; }
-        /// <summary>&quot;Indicates goods were delivered to the wrong location.Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>Indicates goods were delivered to the wrong location.Possible values: **true**, **false**.</summary>
         public bool? DeliveredToWrongLocation { get; set; }
         /// <summary>Your description of the issue for raising a dispute of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,19 +35,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DescriptionOfIssue { get; set; }
 #endif
-        /// <summary>&quot;Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>Indicates if the cardholder returned the goods to the merchant. Required if **isDeliveryLate** is **true**.Possible values: **true**, **false**.</summary>
         public bool? DidCardholderReturn { get; set; }
-        /// <summary>&quot;Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>Indicates if the goods or services were delivered late. Required if **whatWasNotDelivered** is **goods**.Possible values: **true**, **false**.</summary>
         public bool? IsDeliveryLate { get; set; }
-        /// <summary>&quot;Indicates if the transaction was processed by a bankrupt merchant.Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>Indicates if the transaction was processed by a bankrupt merchant.Possible values: **true**, **false**.</summary>
         public bool? IsMerchantBankrupt { get; set; }
-        /// <summary>&quot;Indicates if the transaction is non-fiat or non-fungible token (NFT) related.Possible values: **true**, **false**.&quot;</summary>
+        /// <summary>Indicates if the transaction is non-fiat or non-fungible token (NFT) related.Possible values: **true**, **false**.</summary>
         public bool? IsNonFiatOrNft { get; set; }
         /// <summary>The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.</summary>
         public Date? LastExpectedDate { get; set; }
         /// <summary>The whatWasNotDelivered property</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4ProductType? WhatWasNotDelivered { get; set; }
-        /// <summary>&quot;The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.&quot;</summary>
+        /// <summary>The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhoCancelled? WhoCancelled { get; set; }

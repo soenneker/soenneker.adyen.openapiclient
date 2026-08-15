@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequest PayoutSchedule { get; set; }
 #endif
-        /// <summary>&quot;Speed at which payouts for this account are processed.Possible values: `STANDARD` (default), `SAME_DAY`.&quot;</summary>
+        /// <summary>Speed at which payouts for this account are processed.Possible values: `STANDARD` (default), `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountRequestPayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

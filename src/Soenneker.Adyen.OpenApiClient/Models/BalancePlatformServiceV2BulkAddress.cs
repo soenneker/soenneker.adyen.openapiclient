@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string HouseNumberOrName { get; set; }
 #endif
-        /// <summary>&quot;The name of the street and the number of the building.For example: **Simon Carmiggeltstraat 6-50**.&quot;</summary>
+        /// <summary>The name of the street and the number of the building.For example: **Simon Carmiggeltstraat 6-50**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Line1 { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>&quot;The two-letter ISO 3166-2 state or province code.Maximum length: 2 characters for addresses in the US.&quot;</summary>
+        /// <summary>The two-letter ISO 3166-2 state or province code.Maximum length: 2 characters for addresses in the US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StateOrProvince { get; set; }

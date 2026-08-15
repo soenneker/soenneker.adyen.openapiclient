@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FundingSource { get; set; }
 #endif
-        /// <summary>&quot;The payment method condition that defines whether the split logic applies.Possible values:* [Payment method variant](https://docs.adyen.com/development-resources/paymentmethodvariant): Apply the split logic for a specific payment method.* **ANY**: Apply the split logic for all available payment methods.&quot;</summary>
+        /// <summary>The payment method condition that defines whether the split logic applies.Possible values:* [Payment method variant](https://docs.adyen.com/development-resources/paymentmethodvariant): Apply the split logic for a specific payment method.* **ANY**: Apply the split logic for all available payment methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentMethod { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentMethod { get; set; }
 #endif
-        /// <summary>&quot;The sales channel condition that defines whether the split logic applies.Possible values:* **Ecommerce**: Online transactions where the cardholder is present.* **ContAuth**: Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer).* **Moto**: Mail-order and telephone-order transactions where the customer is in contact with the merchant via email or telephone.* **POS**: Point-of-sale transactions where the customer is physically present to make a payment using a secure payment terminal.* **ANY**: All sales channels.&quot;</summary>
+        /// <summary>The sales channel condition that defines whether the split logic applies.Possible values:* **Ecommerce**: Online transactions where the cardholder is present.* **ContAuth**: Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer).* **Moto**: Mail-order and telephone-order transactions where the customer is in contact with the merchant via email or telephone.* **POS**: Point-of-sale transactions where the customer is physically present to make a payment using a secure payment terminal.* **ANY**: All sales channels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperInteraction { get; set; }

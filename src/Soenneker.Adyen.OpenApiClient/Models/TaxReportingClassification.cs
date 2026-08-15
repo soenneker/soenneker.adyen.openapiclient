@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TaxReportingClassification : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The organization&apos;s business type.Possible values: **other**, **listedPublicCompany**, **subsidiaryOfListedPublicCompany**, **governmentalOrganization**, **internationalOrganization**, **financialInstitution**.&quot;</summary>
+        /// <summary>The organization&apos;s business type.Possible values: **other**, **listedPublicCompany**, **subsidiaryOfListedPublicCompany**, **governmentalOrganization**, **internationalOrganization**, **financialInstitution**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationBusinessType? BusinessType { get; set; }
         /// <summary>The Global Intermediary Identification Number (GIIN) required for FATCA. Only required if the organization is a US financial institution and the `businessType` is **financialInstitution**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,9 +22,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FinancialInstitutionNumber { get; set; }
 #endif
-        /// <summary>&quot;The organization&apos;s main source of income. Only required if `businessType` is **other**.Possible values: **businessOperation**, **realEstateSales**, **investmentInterestOrRoyalty**, **propertyRental**, **other**.&quot;</summary>
+        /// <summary>The organization&apos;s main source of income. Only required if `businessType` is **other**.Possible values: **businessOperation**, **realEstateSales**, **investmentInterestOrRoyalty**, **propertyRental**, **other**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationMainSourceOfIncome? MainSourceOfIncome { get; set; }
-        /// <summary>&quot;The tax reporting classification type.Possible values: **nonFinancialNonReportable**, **financialNonReportable**, **nonFinancialActive**, **nonFinancialPassive**.&quot;</summary>
+        /// <summary>The tax reporting classification type.Possible values: **nonFinancialNonReportable**, **financialNonReportable**, **nonFinancialActive**, **nonFinancialPassive**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxReportingClassificationType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

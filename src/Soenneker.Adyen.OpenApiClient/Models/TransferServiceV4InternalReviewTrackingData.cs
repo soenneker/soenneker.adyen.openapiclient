@@ -12,12 +12,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TransferServiceV4InternalReviewTrackingData : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The reason why the transfer failed Adyen&apos;s internal review. Possible values:- **refusedForRegulatoryReasons**: the transfer does not comply with Adyen&apos;s risk policy. For more information, [contact the Support Team](https://www.adyen.help/hc/en-us/requests/new). &quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataReason? Reason { get; set; }
-        /// <summary>&quot;The status of the transfer.Possible values: - **pending**: the transfer is under internal review by Adyen.- **failed**: the transfer failed Adyen&apos;s internal review. For details, see `reason`.&quot;</summary>
+        /// <summary>The reason why the transfer failed Adyen&apos;s internal review. Possible values:- **refusedForRegulatoryReasons**: the transfer does not comply with Adyen&apos;s risk policy. For more information, [contact the Support Team](https://www.adyen.help/hc/en-us/requests/new). </summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefusedForRegulatoryReasonsReason? Reason { get; set; }
+        /// <summary>The status of the transfer.Possible values: - **pending**: the transfer is under internal review by Adyen.- **failed**: the transfer failed Adyen&apos;s internal review. For details, see `reason`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataStatus? Status { get; set; }
-        /// <summary>&quot;The type of tracking event. Possible values:  - **internalReview**: the transfer was flagged because it does not comply with Adyen&apos;s risk policy.&quot;</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataType? Type { get; set; }
+        /// <summary>The type of tracking event. Possible values:  - **internalReview**: the transfer was flagged because it does not comply with Adyen&apos;s risk policy.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.InternalReviewType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,9 +36,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataReason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RefusedForRegulatoryReasonsReason>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InternalReviewType>(); } },
             };
         }
         /// <summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataReason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RefusedForRegulatoryReasonsReason>("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InternalReviewTrackingDataType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InternalReviewType>("type", Type);
         }
     }
 }

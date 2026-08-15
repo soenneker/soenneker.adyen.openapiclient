@@ -104,7 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
             /// <summary>The number of items to have on a page, maximum 100. The default is 10 items on a page.</summary>
             [QueryParameter("pageSize")]
             public int? PageSize { get; set; }
-            /// <summary>&quot;The campaign status to return campaigns that match. Allowed values: **inactive**, **active**, or **ended**.&quot;</summary>
+            /// <summary>The campaign status to return campaigns that match. Allowed values: **inactive**, **active**, or **ended**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

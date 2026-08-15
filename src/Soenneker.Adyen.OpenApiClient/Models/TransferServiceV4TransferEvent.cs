@@ -116,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TransactionId { get; set; }
 #endif
-        /// <summary>&quot;The type of the transfer event. Possible values: **accounting**, **tracking**.&quot;</summary>
+        /// <summary>The type of the transfer event. Possible values: **accounting**, **tracking**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventType? Type { get; set; }
         /// <summary>The date when the tracking status was updated.</summary>
         public DateTimeOffset? UpdateDate { get; set; }

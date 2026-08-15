@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Card Card { get; set; }
 #endif
-        /// <summary>&quot;The date of birth.Format: [ISO-8601](https://www.w3.org/TR/NOTE-datetime); example: YYYY-MM-DDFor Paysafecard it must be the same as used when registering the Paysafecard account.&gt; This field is mandatory for natural persons.&quot;</summary>
+        /// <summary>The date of birth.Format: [ISO-8601](https://www.w3.org/TR/NOTE-datetime); example: YYYY-MM-DDFor Paysafecard it must be the same as used when registering the Paysafecard account.&gt; This field is mandatory for natural persons.</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>The type of the entity the payout is processed for.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailRequestEntityType? EntityType { get; set; }

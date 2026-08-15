@@ -9,6 +9,7 @@ using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Authorise;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Cancel;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.CancelOrRefund;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Capture;
+using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Donate;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.GetAuthenticationResult;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Refund;
 using Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Retrieve3ds2Result;
@@ -60,6 +61,11 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentServiceV68
         public global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Capture.CaptureRequestBuilder Capture
         {
             get => new global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Capture.CaptureRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The donate property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Donate.DonateRequestBuilder Donate
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.Donate.DonateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getAuthenticationResult property</summary>
         public global::Soenneker.Adyen.OpenApiClient.PaymentServiceV68.GetAuthenticationResult.GetAuthenticationResultRequestBuilder GetAuthenticationResult

@@ -36,9 +36,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> MerchantAccounts { get; set; }
 #endif
-        /// <summary>&quot;Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.&quot;</summary>
+        /// <summary>Required if `donationFlow` is set to **twoStep**. The time, in milliseconds, that the terminal waits for the shopper to present their card. Defaults to **10000** (10 seconds). Range: 5000 to 15000.</summary>
         public long? PresentCardTimeoutMs { get; set; }
-        /// <summary>&quot;The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.&quot;</summary>
+        /// <summary>The time, in milliseconds, that the terminal waits for the shopper to make a selection on the donation screen. Defaults to **10000** (10 seconds). Range: 5000 to 15000.</summary>
         public long? PromptTimeoutMs { get; set; }
         /// <summary>The Adyen-generated unique identifiers of stores for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

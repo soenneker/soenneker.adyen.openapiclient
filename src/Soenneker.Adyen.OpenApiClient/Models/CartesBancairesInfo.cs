@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CartesBancairesInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Cartes Bancaires SIRET. Format: 14 digits.&quot;</summary>
+        /// <summary>Cartes Bancaires SIRET. Format: 14 digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Siret { get; set; }

@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>&quot;Tipping options the shopper can choose from if `usePredefinedTipEntries` is **true**. The maximum number of predefined options is four, or three plus the option to enter a custom tip.The options can be a mix of:- A percentage of the transaction amount. Example: **5%**- A tip amount in [minor units](https://docs.adyen.com/development-resources/currency-codes). Example: **500** for a EUR 5 tip.&quot;</summary>
+        /// <summary>Tipping options the shopper can choose from if `usePredefinedTipEntries` is **true**. The maximum number of predefined options is four, or three plus the option to enter a custom tip.The options can be a mix of:- A percentage of the transaction amount. Example: **5%**- A tip amount in [minor units](https://docs.adyen.com/development-resources/currency-codes). Example: **500** for a EUR 5 tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PredefinedTipEntries { get; set; }

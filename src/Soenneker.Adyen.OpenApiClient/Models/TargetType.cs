@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The resource for which you want to receive notifications. Possible values:* **balancePlatform**: receive notifications about balance changes in your entire balance platform.* **accountHolder**: receive notifications about balance changes of a specific user.* **balanceAccount**: receive notifications about balance changes in a specific balance account.&quot;</summary>
+    /// <summary>The resource for which you want to receive notifications. Possible values:* **balancePlatform**: receive notifications about balance changes in your entire balance platform.* **accountHolder**: receive notifications about balance changes of a specific user.* **balanceAccount**: receive notifications about balance changes in a specific balance account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TargetType
     {

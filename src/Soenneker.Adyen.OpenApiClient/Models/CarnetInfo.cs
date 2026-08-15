@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CarnetInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates whether to add the MCC acronym to the merchant name for Prosa acquirer in Mexico.When set to **true**, the MCC acronym is automatically appended to the merchant name.Default: **false**.&quot;</summary>
+        /// <summary>Indicates whether to add the MCC acronym to the merchant name for Prosa acquirer in Mexico.When set to **true**, the MCC acronym is automatically appended to the merchant name.Default: **false**.</summary>
         public bool? AddMccAcronym { get; set; }
         /// <summary>The transactionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

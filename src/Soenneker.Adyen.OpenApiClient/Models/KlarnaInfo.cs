@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class KlarnaInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates the status of [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture). Default value: **false**.&quot;</summary>
+        /// <summary>Indicates the status of [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture). Default value: **false**.</summary>
         public bool? AutoCapture { get; set; }
         /// <summary>The email address for disputes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

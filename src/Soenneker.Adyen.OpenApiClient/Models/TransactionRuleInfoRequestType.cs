@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Indicates the type of request to which the rule applies. If not provided, by default, this is set to **authorization**.Possible values: **authorization**, **authentication**, **tokenization**, **bankTransfer**.&quot;</summary>
+    /// <summary>Indicates the type of request to which the rule applies. If not provided, by default, this is set to **authorization**.Possible values: **authorization**, **authentication**, **tokenization**, **bankTransfer**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionRuleInfoRequestType
     {

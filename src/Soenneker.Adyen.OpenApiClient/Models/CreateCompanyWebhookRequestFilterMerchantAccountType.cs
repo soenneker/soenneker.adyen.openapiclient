@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Shows how merchant accounts are filtered when configuring the webhook. Possible values:*  **allAccounts** : Includes all merchant accounts, and does not require specifying `filterMerchantAccounts`.*  **includeAccounts** : The webhook is configured for the merchant accounts listed in `filterMerchantAccounts`.*  **excludeAccounts** : The webhook is not configured for the merchant accounts listed in `filterMerchantAccounts`.&quot;</summary>
+    /// <summary>Shows how merchant accounts are filtered when configuring the webhook. Possible values:*  **allAccounts** : Includes all merchant accounts, and does not require specifying `filterMerchantAccounts`.*  **includeAccounts** : The webhook is configured for the merchant accounts listed in `filterMerchantAccounts`.*  **excludeAccounts** : The webhook is not configured for the merchant accounts listed in `filterMerchantAccounts`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateCompanyWebhookRequestFilterMerchantAccountType
     {

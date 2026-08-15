@@ -24,7 +24,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MandateId { get; set; }
 #endif
-        /// <summary>&quot;Identifies the direct debit transfer&apos;s type.Possible values: **OneOff**, **First**, **Recurring**, **Final**.&quot;</summary>
+        /// <summary>Identifies the direct debit transfer&apos;s type.Possible values: **OneOff**, **First**, **Recurring**, **Final**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SequenceType { get; set; }

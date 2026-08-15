@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve
         /// <summary>
         /// Initiates the approval of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the approval request through webhooks.To use this endpoint:- Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).Reach out to your Adyen contact to set up these permissions.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve.ApprovePostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ApproveTransfersRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve.ApprovePostResponse?> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ApproveTransfersRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ApproveTransfersRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve.ApprovePostResponse> PostAsync(global::Soenneker.Adyen.OpenApiClient.Models.ApproveTransfersRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve.ApprovePostResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Approve.ApprovePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Initiates the approval of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the approval request through webhooks.To use this endpoint:- Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3).- The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).Reach out to your Adyen contact to set up these permissions.

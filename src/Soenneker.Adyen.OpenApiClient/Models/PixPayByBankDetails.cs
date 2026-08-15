@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**paybybank_pix**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaybybankPixType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "riskSignals", n => { RiskSignals = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals>(global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals.CreateFromDiscriminatorValue); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaybybankPixType>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankRiskSignals>("riskSignals", RiskSignals);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PixPayByBankDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaybybankPixType>("type", Type);
         }
     }
 }

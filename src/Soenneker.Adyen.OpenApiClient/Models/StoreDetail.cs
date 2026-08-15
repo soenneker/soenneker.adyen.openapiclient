@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress Address { get; set; }
 #endif
-        /// <summary>&quot;The phone number of the store provided as a single string.  It will be handled as a landline phone.Examples: \&quot;0031 6 11 22 33 44\&quot;, \&quot;+316/1122-3344\&quot;, \&quot;(0031) 611223344\&quot;&quot;</summary>
+        /// <summary>The phone number of the store provided as a single string.  It will be handled as a landline phone.Examples: &quot;0031 6 11 22 33 44&quot;, &quot;+316/1122-3344&quot;, &quot;(0031) 611223344&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullPhoneNumber { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The sales channel. Possible values: **Ecommerce**, **POS**.&quot;</summary>
+        /// <summary>The sales channel. Possible values: **Ecommerce**, **POS**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction? ShopperInteraction { get; set; }
         /// <summary>The unique reference for the split configuration, returned when you configure splits in your Customer Area. When this is provided, the `virtualAccount` is also required. Adyen uses the configuration and the `virtualAccount` to split funds between accounts in your platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string SplitConfigurationUUID { get; set; }
 #endif
-        /// <summary>&quot;The status of the store. Possible values: **Pending**, **Active**, **Inactive**, **InactiveWithModifications**, **Closed**.&quot;</summary>
+        /// <summary>The status of the store. Possible values: **Pending**, **Active**, **Inactive**, **InactiveWithModifications**, **Closed**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailStatus? Status { get; set; }
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the store, returned in the response when you create a store. Required when updating an existing store in an `/updateAccountHolder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Store { get; set; }
 #endif
-        /// <summary>&quot;The name of the account holder&apos;s store. This value is shown in shopper statements. * Length: Between 3 to 22 characters  * The following characters are *not* supported: **:;}{$#@!|&lt;&gt;%^*+=\\****Note:** storeName does not appear in American Express shopper statements by default. Contact Adyen Support to enable this for American Express.&quot;</summary>
+        /// <summary>The name of the account holder&apos;s store. This value is shown in shopper statements. * Length: Between 3 to 22 characters  * The following characters are *not* supported: **:;}{$#@!|&lt;&gt;%^*+=\\****Note:** storeName does not appear in American Express shopper statements by default. Contact Adyen Support to enable this for American Express.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StoreName { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StoreName { get; set; }
 #endif
-        /// <summary>&quot;Your unique identifier for the store. The Customer Area also uses this value for the store description. * Length: Between 3 to 128 characters* The following characters are *not* supported: **:;}{$#@!|&lt;&gt;%^*+=\\**&quot;</summary>
+        /// <summary>Your unique identifier for the store. The Customer Area also uses this value for the store description. * Length: Between 3 to 128 characters* The following characters are *not* supported: **:;}{$#@!|&lt;&gt;%^*+=\\**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StoreReference { get; set; }

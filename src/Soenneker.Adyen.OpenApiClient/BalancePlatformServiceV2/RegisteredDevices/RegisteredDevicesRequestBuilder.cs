@@ -166,10 +166,10 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegisteredDevicesRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;The index of the page to retrieve. The index of the first page is 0 (zero).Default: 0.&quot;</summary>
+            /// <summary>The index of the page to retrieve. The index of the first page is 0 (zero).Default: 0.</summary>
             [QueryParameter("pageNumber")]
             public int? PageNumber { get; set; }
-            /// <summary>&quot;The number of items to have on a page.Default: 20. Maximum: 100.&quot;</summary>
+            /// <summary>The number of items to have on a page.Default: 20. Maximum: 100.</summary>
             [QueryParameter("pageSize")]
             public int? PageSize { get; set; }
             /// <summary>The unique identifier of a payment instrument. It limits the returned list to SCA devices associated to this payment instrument.</summary>

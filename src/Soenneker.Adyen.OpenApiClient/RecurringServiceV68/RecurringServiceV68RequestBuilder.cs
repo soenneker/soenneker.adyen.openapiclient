@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Adyen.OpenApiClient.RecurringServiceV68.CreatePermit;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68.Disable;
+using Soenneker.Adyen.OpenApiClient.RecurringServiceV68.DisablePermit;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68.ListRecurringDetails;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68.NotifyShopper;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68.ScheduleAccountUpdater;
@@ -18,10 +20,20 @@ namespace Soenneker.Adyen.OpenApiClient.RecurringServiceV68
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecurringServiceV68RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The createPermit property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.CreatePermit.CreatePermitRequestBuilder CreatePermit
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.CreatePermit.CreatePermitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The disable property</summary>
         public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.Disable.DisableRequestBuilder Disable
         {
             get => new global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The disablePermit property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.DisablePermit.DisablePermitRequestBuilder DisablePermit
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.DisablePermit.DisablePermitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listRecurringDetails property</summary>
         public global::Soenneker.Adyen.OpenApiClient.RecurringServiceV68.ListRecurringDetails.ListRecurringDetailsRequestBuilder ListRecurringDetails

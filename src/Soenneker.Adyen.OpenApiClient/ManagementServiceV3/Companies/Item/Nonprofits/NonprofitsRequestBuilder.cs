@@ -103,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Nonpr
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NonprofitsRequestBuilderPostQueryParameters 
         {
-            /// <summary>&quot;One or more United Nations Sustainable Development Goals to return nonprofit organizations for. Format: `unsdg_&lt;number&gt;`, for example, `&amp;goal=unsdg_6&amp;goal=unsdg_2`.&quot;</summary>
+            /// <summary>One or more United Nations Sustainable Development Goals to return nonprofit organizations for. Format: `unsdg_&lt;number&gt;`, for example, `&amp;goal=unsdg_6&amp;goal=unsdg_2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("goal")]

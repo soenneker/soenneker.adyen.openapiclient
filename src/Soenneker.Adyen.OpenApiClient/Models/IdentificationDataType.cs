@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Type of identity data. For individuals, the following types are supported. See our [onboarding guide](https://docs.adyen.com/platforms/onboard-users/onboarding-steps/?onboarding_type=custom) for other supported countries.- Australia: **driversLicense**, **passport**- Hong Kong: **driversLicense**, **nationalIdNumber**, **passport**- New Zealand: **driversLicense**, **passport**- Singapore: **driversLicense**, **nationalIdNumber**, **passport** - All other supported countries: **nationalIdNumber**&quot;</summary>
+    /// <summary>Type of identity data. For individuals, the following types are supported. See our [onboarding guide](https://docs.adyen.com/platforms/onboard-users/onboarding-steps/?onboarding_type=custom) for other supported countries.- Australia: **driversLicense**, **passport**- Hong Kong: **driversLicense**, **nationalIdNumber**, **passport**- New Zealand: **driversLicense**, **passport**- Singapore: **driversLicense**, **nationalIdNumber**, **passport** - All other supported countries: **nationalIdNumber**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum IdentificationDataType
     {

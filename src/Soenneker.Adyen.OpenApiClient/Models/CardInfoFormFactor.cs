@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The form factor of the card.Possible values: **virtual**, **physical**.&quot;</summary>
+    /// <summary>The form factor of the card.Possible values: **virtual**, **physical**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CardInfoFormFactor
     {

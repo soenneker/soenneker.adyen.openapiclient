@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Profile : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The type of Wi-Fi network. Possible values: **wpa-psk**, **wpa2-psk**, **wpa-eap**, **wpa2-eap**.&quot;</summary>
+        /// <summary>The type of Wi-Fi network. Possible values: **wpa-psk**, **wpa2-psk**, **wpa-eap**, **wpa2-eap**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthType { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DomainSuffix { get; set; }
 #endif
-        /// <summary>&quot;For `authType` **wpa-eap** or **wpa2-eap**. Possible values: **tls**, **peap**, **leap**, **fast**&quot;</summary>
+        /// <summary>For `authType` **wpa-eap** or **wpa2-eap**. Possible values: **tls**, **peap**, **leap**, **fast**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Eap { get; set; }
@@ -132,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Ssid { get; set; }
 #endif
-        /// <summary>&quot;The type of encryption. Possible values: **auto**, **ccmp** (recommended), **tkip**&quot;</summary>
+        /// <summary>The type of encryption. Possible values: **auto**, **ccmp** (recommended), **tkip**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Wsec { get; set; }

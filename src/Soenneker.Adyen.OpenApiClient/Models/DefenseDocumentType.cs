@@ -24,7 +24,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DefenseDocumentTypeCode { get; set; }
 #endif
-        /// <summary>&quot;Indicates to what extent the defense document is required in the defense process.Possible values: * **Required**: You must supply the document. * **OneOrMore**: You must supply at least one of the documents with this label.* **Optional**: You can choose to supply the document.* **AlternativeRequired**: You must supply a generic defense document. To enable this functionality, contact our Support Team. When enabled, you can supply a generic defense document for all schemes.&quot;</summary>
+        /// <summary>Indicates to what extent the defense document is required in the defense process.Possible values: * **Required**: You must supply the document. * **OneOrMore**: You must supply at least one of the documents with this label.* **Optional**: You can choose to supply the document.* **AlternativeRequired**: You must supply a generic defense document. To enable this functionality, contact our Support Team. When enabled, you can supply a generic defense document for all schemes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequirementLevel { get; set; }

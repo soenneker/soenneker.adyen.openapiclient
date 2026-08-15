@@ -88,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Type of Partnership.Possible values:*  **limitedPartnership***  **generalPartnership***  **familyPartnership***  **commercialPartnership***  **publicPartnership***  **otherPartnership***  **gbr***  **gmbh***  **kgaa***  **cv***  **vof***  **maatschap***  **privateFundLimitedPartnership***  **businessTrustEntity***  **businessPartnership***  **limitedLiabilityPartnership***  **eg***  **cooperative***  **vos***  **comunidadDeBienes***  **herenciaYacente***  **comunidadDePropietarios***  **sep***  **sca***  **bt***  **kkt***  **scs***  **snc**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipType? Type { get; private set; }
-        /// <summary>&quot;The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.&quot;</summary>
+        /// <summary>The reason for not providing a VAT number.Possible values: **industryExemption**, **belowTaxThreshold**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipVatAbsenceReason? VatAbsenceReason { get; set; }
         /// <summary>The VAT number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the webhook setting. Possible values:* **active**: You receive a balance webhook if any of the conditions in this setting are met.* **inactive**: You do not receive a balance webhook even if the conditions in this settings are met.&quot;</summary>
+    /// <summary>The status of the webhook setting. Possible values:* **active**: You receive a balance webhook if any of the conditions in this setting are met.* **inactive**: You do not receive a balance webhook even if the conditions in this settings are met.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalanceWebhookSettingInfoUpdateStatus
     {

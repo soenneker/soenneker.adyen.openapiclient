@@ -54,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Subtype { get; set; }
 #endif
         /// <summary>The payment method type.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TwintDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TwintType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "subtype", n => { Subtype = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintType>(); } },
             };
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("subtype", Subtype);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TwintType>("type", Type);
         }
     }
 }

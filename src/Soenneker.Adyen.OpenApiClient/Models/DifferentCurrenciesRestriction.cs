@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>&quot;Checks the currency of the payment against the currency of the payment instrument.Possible values:- **true**: The currency of the payment is different from the currency of the payment instrument.- **false**: The currencies are the same.&quot;</summary>
+        /// <summary>Checks the currency of the payment against the currency of the payment instrument.Possible values:- **true**: The currency of the payment is different from the currency of the payment instrument.- **false**: The currencies are the same.</summary>
         public bool? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

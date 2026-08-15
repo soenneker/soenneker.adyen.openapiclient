@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>&quot;List of processing types.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **recurring**, **token**.&quot;</summary>
+        /// <summary>List of processing types.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **recurring**, **token**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.ProcessingTypesRestrictionValueItem?>? Value { get; set; }

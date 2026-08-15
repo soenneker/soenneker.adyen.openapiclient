@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class DinersInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;MID (Merchant ID) number. Required for merchants operating in Japan.Format: 14 numeric characters.&quot;</summary>
+        /// <summary>MID (Merchant ID) number. Required for merchants operating in Japan.Format: 14 numeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MidNumber { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the JCB Merchant ID is reused from a previously configured JCB payment method.The default value is **false**.For merchants operating in Japan, this field is required and must be set to **true**.</summary>
         public bool? ReuseMidNumber { get; set; }
-        /// <summary>&quot;Specifies the service level (settlement type) of this payment method. Required for merchants operating in Japan. Possible values: * **noContract**: Adyen holds the contract with JCB. * **gatewayContract**: JCB receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.&quot;</summary>
+        /// <summary>Specifies the service level (settlement type) of this payment method. Required for merchants operating in Japan. Possible values: * **noContract**: Adyen holds the contract with JCB. * **gatewayContract**: JCB receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DinersInfoServiceLevel? ServiceLevel { get; set; }
         /// <summary>The transactionDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -6,6 +6,8 @@ using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.AccountHolders;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.Cardorders;
+using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantAccounts;
+using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantOffers;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.Mandates;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.NetworkTokens;
 using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstrumentGroups;
@@ -49,6 +51,16 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.Cardorders.CardordersRequestBuilder Cardorders
         {
             get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.Cardorders.CardordersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The grantAccounts property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantAccounts.GrantAccountsRequestBuilder GrantAccounts
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantAccounts.GrantAccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The grantOffers property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantOffers.GrantOffersRequestBuilder GrantOffers
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.GrantOffers.GrantOffersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mandates property</summary>
         public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.Mandates.MandatesRequestBuilder Mandates

@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LegalEntityId { get; set; }
 #endif
-        /// <summary>&quot;A list of channels where goods or services are sold.Possible values: **pos**, **posMoto**, **eCommerce**, **ecomMoto**, **payByLink**.Required only in combination with the `service` **paymentProcessing**.&quot;</summary>
+        /// <summary>A list of channels where goods or services are sold.Possible values: **pos**, **posMoto**, **eCommerce**, **ecomMoto**, **payByLink**.Required only in combination with the `service` **paymentProcessing**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SalesChannels { get; set; }

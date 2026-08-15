@@ -76,9 +76,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleResponse PayoutSchedule { get; set; }
 #endif
-        /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
+        /// <summary>Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountPayoutSpeed? PayoutSpeed { get; set; }
-        /// <summary>&quot;The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
+        /// <summary>The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

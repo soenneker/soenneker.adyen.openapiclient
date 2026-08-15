@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference BalanceAccount { get; set; }
 #endif
-        /// <summary>&quot;The category of the transfer.Possible values: - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.- **card**: A transfer involving a third-party card.- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.- **issuedCard**: A transfer initiated by an Adyen-issued card.- **platformPayment**: Funds movements related to payments that are acquired for your users.- **topUp**: An incoming transfer initiated by your user to top up their balance account.&quot;</summary>
+        /// <summary>The category of the transfer.Possible values: - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.- **card**: A transfer involving a third-party card.- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.- **issuedCard**: A transfer initiated by an Adyen-issued card.- **platformPayment**: Funds movements related to payments that are acquired for your users.- **topUp**: An incoming transfer initiated by your user to top up their balance account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferCategory? Category { get; set; }
         /// <summary>The relevant data according to the transfer category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The date and time when the event was triggered, in ISO 8601 extended format. For example, **2020-12-18T10:15:30+01:00**.</summary>
         [Obsolete("")]
         public DateTimeOffset? CreationDate { get; set; }
-        /// <summary>&quot;Your description for the transfer. It is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.Supported characters: **[a-z] [A-Z] [0-9] / - ?** **: ( ) . , &apos; + Space**Supported characters for **regular** and **fast** transfers to a US counterparty: **[a-z] [A-Z] [0-9] &amp; $ % # @** **~ = + - _ &apos; \&quot; ! ?**&quot;</summary>
+        /// <summary>Your description for the transfer. It is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.Supported characters: **[a-z] [A-Z] [0-9] / - ?** **: ( ) . , &apos; + Space**Supported characters for **regular** and **fast** transfers to a US counterparty: **[a-z] [A-Z] [0-9] &amp; $ % # @** **~ = + - _ &apos; &quot; ! ?**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4DirectDebitInformation DirectDebitInformation { get; set; }
 #endif
-        /// <summary>&quot;The direction of the transfer.Possible values: **incoming**, **outgoing**.&quot;</summary>
+        /// <summary>The direction of the transfer.Possible values: **incoming**, **outgoing**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferDirection? Direction { get; set; }
         /// <summary>The executionDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot; A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both the source and recipient of funds. Supported characters: **a-z**, **A-Z**, **0-9**.The maximum length depends on the `category`. - **internal**: 80 characters- **bank**: 35 characters when transferring to an IBAN, 15 characters for others.&quot;</summary>
+        /// <summary> A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both the source and recipient of funds. Supported characters: **a-z**, **A-Z**, **0-9**.The maximum length depends on the `category`. - **internal**: 80 characters- **bank**: 35 characters when transferring to an IBAN, 15 characters for others.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceForBeneficiary { get; set; }
@@ -127,7 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReview Review { get; set; }
 #endif
-        /// <summary>&quot;The result of the transfer.For example:- **received**: an outgoing transfer request is created.- **refused**: the transfer request is rejected by Adyen for one of the following reasons:  - Transfer limit exceeded.  - Transaction rule requirements violated.- **authorised**: the transfer request is authorized and the funds are reserved.- **booked**: the funds are deducted from your user&apos;s balance account. - **failed**: the transfer is rejected by the counterparty&apos;s bank.- **returned**: the transfer is returned by the counterparty&apos;s bank.&quot;</summary>
+        /// <summary>The result of the transfer.For example:- **received**: an outgoing transfer request is created.- **refused**: the transfer request is rejected by Adyen for one of the following reasons:  - Transfer limit exceeded.  - Transaction rule requirements violated.- **authorised**: the transfer request is authorized and the funds are reserved.- **booked**: the funds are deducted from your user&apos;s balance account. - **failed**: the transfer is rejected by the counterparty&apos;s bank.- **returned**: the transfer is returned by the counterparty&apos;s bank.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferStatus? Status { get; set; }
         /// <summary>The type of transfer or transaction. For example, **refund**, **payment**, **internalTransfer**, **bankTransfer**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferTypeEnum? Type { get; set; }

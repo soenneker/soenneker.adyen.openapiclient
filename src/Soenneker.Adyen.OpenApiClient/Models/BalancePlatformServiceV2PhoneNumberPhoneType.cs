@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of the phone number.Possible values: **Landline**, **Mobile**, **SIP**, **Fax**.&quot;</summary>
+    /// <summary>The type of the phone number.Possible values: **Landline**, **Mobile**, **SIP**, **Fax**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalancePlatformServiceV2PhoneNumberPhoneType
     {

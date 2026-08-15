@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the Amex Merchant ID is reused from a previously setup Amex payment method.</summary>
         public bool? ReuseMidNumber { get; set; }
-        /// <summary>&quot; The service level (settlement type) of this payment method. Possible values:* **noContract**: Adyen holds the contract with American Express.* **gatewayContract**: American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Adyen receives the settlement, and handles disputes and payouts.&quot;</summary>
+        /// <summary> The service level (settlement type) of this payment method. Possible values:* **noContract**: Adyen holds the contract with American Express.* **gatewayContract**: American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Adyen receives the settlement, and handles disputes and payouts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceLevel { get; set; }

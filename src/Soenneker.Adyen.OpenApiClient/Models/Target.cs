@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The resource for which you want to receive notifications. Possible values:* **balancePlatform**: receive notifications about balance changes in your entire balance platform.* **accountHolder**: receive notifications about balance changes of a specific user.* **balanceAccount**: receive notifications about balance changes in a specific balance account.&quot;</summary>
+        /// <summary>The resource for which you want to receive notifications. Possible values:* **balancePlatform**: receive notifications about balance changes in your entire balance platform.* **accountHolder**: receive notifications about balance changes of a specific user.* **balanceAccount**: receive notifications about balance changes in a specific balance account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TargetType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Target"/> and sets the default values.

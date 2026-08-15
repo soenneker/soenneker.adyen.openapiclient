@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the balance account. Payment instruments linked to the balance account can only be used if the balance account status is **active**.Possible values: **active**, **closed**, **suspended**.&quot;</summary>
+    /// <summary>The status of the balance account. Payment instruments linked to the balance account can only be used if the balance account status is **active**.Possible values: **active**, **closed**, **suspended**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalanceAccountUpdateRequestStatus
     {

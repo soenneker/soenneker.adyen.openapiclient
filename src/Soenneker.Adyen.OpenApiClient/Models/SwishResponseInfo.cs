@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class SwishResponseInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Swish number. Format: 10 digits without spaces. For example, **1231111111**.&quot;</summary>
+        /// <summary>Swish number. Format: 10 digits without spaces. For example, **1231111111**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SwishNumber { get; set; }

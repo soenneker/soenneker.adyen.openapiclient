@@ -42,7 +42,6 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
         /// <summary>
         /// Removes the donation campaign specified in the path. This request is only allowed if the campaign has the status **inactive**.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Management API—Campaign Management read and write
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 400 status code</exception>
@@ -52,11 +51,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -68,10 +67,10 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates the properties of the donation campaign specified in the path. Note the following restrictions: * You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint.* You get a validation error if you add account holders that are not compatible with the nonprofit.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Management API—Campaign Management read and write&quot;
+        /// Updates the properties of the donation campaign specified in the path. Note the following restrictions: * You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint.* You get a validation error if you add account holders that are not compatible with the nonprofit.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Management API—Campaign Management read and write
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates the properties of the donation campaign specified in the path. Note the following restrictions: * You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint.* You get a validation error if you add account holders that are not compatible with the nonprofit.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Management API—Campaign Management read and write&quot;
+        /// Updates the properties of the donation campaign specified in the path. Note the following restrictions: * You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint.* You get a validation error if you add account holders that are not compatible with the nonprofit.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Management API—Campaign Management read and write
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

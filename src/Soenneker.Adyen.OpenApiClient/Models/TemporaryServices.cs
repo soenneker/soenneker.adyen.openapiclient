@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TemporaryServices : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The name or ID of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.employeeName`&quot;</summary>
+        /// <summary>The name or ID of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.employeeName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmployeeName { get; set; }
@@ -21,13 +21,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EmployeeName { get; set; }
 #endif
-        /// <summary>&quot;The billing period end date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempWeekEnding`&quot;</summary>
+        /// <summary>The billing period end date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempWeekEnding`</summary>
         public Date? EndDate { get; set; }
-        /// <summary>&quot;The hourly rate for the temporary services, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.regularHoursRate`&quot;</summary>
+        /// <summary>The hourly rate for the temporary services, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.regularHoursRate`</summary>
         public int? HourRate { get; set; }
-        /// <summary>&quot;The number of hours worked during the billing period.* Format: Numeric* **additionalData key:** `enhancedSchemeData.regularHoursWorked`&quot;</summary>
+        /// <summary>The number of hours worked during the billing period.* Format: Numeric* **additionalData key:** `enhancedSchemeData.regularHoursWorked`</summary>
         public int? HoursWorked { get; set; }
-        /// <summary>&quot;The job description of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.jobDescription`&quot;</summary>
+        /// <summary>The job description of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.jobDescription`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobDescription { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string JobDescription { get; set; }
 #endif
-        /// <summary>&quot;The name of the person requesting the temporary services.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.requestName`&quot;</summary>
+        /// <summary>The name of the person requesting the temporary services.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.requestName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceRequestor { get; set; }
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ServiceRequestor { get; set; }
 #endif
-        /// <summary>&quot;The billing period start date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempStartDate`&quot;</summary>
+        /// <summary>The billing period start date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempStartDate`</summary>
         public Date? StartDate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

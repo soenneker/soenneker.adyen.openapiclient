@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class BankAccountIdentificationTypeRequirement : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;List of bank account identification types: eg.; [iban , numberAndBic]&quot;</summary>
+        /// <summary>List of bank account identification types: eg.; [iban , numberAndBic]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentificationTypeRequirementBankAccountIdentificationTypesItem?>? BankAccountIdentificationTypes { get; set; }

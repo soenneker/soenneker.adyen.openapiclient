@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ThreeDS2SdkVersion { get; set; }
 #endif
         /// <summary>**googlepay**, **paywithgoogle**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -99,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "threeDS2SdkVersion", n => { ThreeDS2SdkVersion = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType>(); } },
             };
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("threeDS2SdkVersion", ThreeDS2SdkVersion);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType>("type", Type);
         }
     }
 }

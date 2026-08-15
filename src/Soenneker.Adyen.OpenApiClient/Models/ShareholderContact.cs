@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>&quot;The phone number of the person provided as a single string.  It will be handled as a landline phone.Examples: \&quot;0031 6 11 22 33 44\&quot;, \&quot;+316/1122-3344\&quot;, \&quot;(0031) 611223344\&quot;&quot;</summary>
+        /// <summary>The phone number of the person provided as a single string.  It will be handled as a landline phone.Examples: &quot;0031 6 11 22 33 44&quot;, &quot;+316/1122-3344&quot;, &quot;(0031) 611223344&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullPhoneNumber { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FullPhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;Job title of the person. Required when the `shareholderType` is **Controller**.Example values: **Chief Executive Officer**, **Chief Financial Officer**, **Chief Operating Officer**, **President**, **Vice President**, **Executive President**, **Managing Member**, **Partner**, **Treasurer**, **Director**, or **Other**.&quot;</summary>
+        /// <summary>Job title of the person. Required when the `shareholderType` is **Controller**.Example values: **Chief Executive Officer**, **Chief Financial Officer**, **Chief Operating Officer**, **President**, **Vice President**, **Executive President**, **Managing Member**, **Partner**, **Treasurer**, **Director**, or **Other**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobTitle { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShareholderReference { get; set; }
 #endif
-        /// <summary>&quot;Specifies how the person is associated with the account holder. Possible values: * **Owner**: Individuals who directly or indirectly own 25% or more of a company.* **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.&quot;</summary>
+        /// <summary>Specifies how the person is associated with the account holder. Possible values: * **Owner**: Individuals who directly or indirectly own 25% or more of a company.* **Controller**: Individuals who are members of senior management staff responsible for managing a company or organization.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContactShareholderType? ShareholderType { get; set; }
         /// <summary>The URL of the person&apos;s website.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

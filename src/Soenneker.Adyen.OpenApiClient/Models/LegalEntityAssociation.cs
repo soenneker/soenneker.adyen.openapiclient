@@ -52,9 +52,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Name { get; private set; }
 #endif
-        /// <summary>&quot;Default value: **false**Set to **true** if the entity association `type` **director**, **secondaryPartner** or **shareholder** is also a nominee. Only applicable to New Zealand.&quot;</summary>
+        /// <summary>Default value: **false**Set to **true** if the entity association `type` **director**, **secondaryPartner** or **shareholder** is also a nominee. Only applicable to New Zealand.</summary>
         public bool? Nominee { get; set; }
-        /// <summary>&quot;The individual&apos;s relationship to a legal representative if the `type` is **legalRepresentative**. Possible values: **parent**, **guardian**.&quot;</summary>
+        /// <summary>The individual&apos;s relationship to a legal representative if the `type` is **legalRepresentative**. Possible values: **parent**, **guardian**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Relationship { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> SettlorExemptionReason { get; set; }
 #endif
-        /// <summary>&quot;Defines the relationship of the legal entity to the current legal entity.Possible value for individuals: **legalRepresentative**.Possible values for organizations: **director**, **signatory**, **trustOwnership**, **uboThroughOwnership**, **uboThroughControl**, **ultimateParentCompany**, or **immediateParentCompany**.Possible values for sole proprietorships: **soleProprietorship**.Possible value for trusts: **trust**.Possible values for trust members: **definedBeneficiary**, **protector**, **secondaryTrustee**, **settlor**, **uboThroughControl**, or **uboThroughOwnership**.Possible value for unincorporated partnership: **unincorporatedPartnership**.Possible values for unincorporated partnership members: **secondaryPartner**, **uboThroughControl**, **uboThroughOwnership**&quot;</summary>
+        /// <summary>Defines the relationship of the legal entity to the current legal entity.Possible value for individuals: **legalRepresentative**.Possible values for organizations: **director**, **signatory**, **trustOwnership**, **uboThroughOwnership**, **uboThroughControl**, **ultimateParentCompany**, or **immediateParentCompany**.Possible values for sole proprietorships: **soleProprietorship**.Possible value for trusts: **trust**.Possible values for trust members: **definedBeneficiary**, **protector**, **secondaryTrustee**, **settlor**, **uboThroughControl**, or **uboThroughOwnership**.Possible value for unincorporated partnership: **unincorporatedPartnership**.Possible values for unincorporated partnership members: **secondaryPartner**, **uboThroughControl**, **uboThroughOwnership**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

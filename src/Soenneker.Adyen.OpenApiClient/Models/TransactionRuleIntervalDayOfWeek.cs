@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The day of week, used when the `duration.unit` is **weeks**. If not provided, by default, this is set to **monday**.Possible values: **sunday**, **monday**, **tuesday**, **wednesday**, **thursday**, **friday**.&quot;</summary>
+    /// <summary>The day of week, used when the `duration.unit` is **weeks**. If not provided, by default, this is set to **monday**.Possible values: **sunday**, **monday**, **tuesday**, **wednesday**, **thursday**, **friday**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionRuleIntervalDayOfWeek
     {

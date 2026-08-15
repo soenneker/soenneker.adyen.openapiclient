@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The sales channel condition that defines whether the split logic applies.Possible values:* **Ecommerce**: Online transactions where the cardholder is present.* **ContAuth**: Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer).* **Moto**: Mail-order and telephone-order transactions where the customer is in contact with the merchant via email or telephone.* **POS**: Point-of-sale transactions where the customer is physically present to make a payment using a secure payment terminal.* **ANY**: All sales channels.&quot;</summary>
+    /// <summary>The sales channel condition that defines whether the split logic applies.Possible values:* **Ecommerce**: Online transactions where the cardholder is present.* **ContAuth**: Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer).* **Moto**: Mail-order and telephone-order transactions where the customer is in contact with the merchant via email or telephone.* **POS**: Point-of-sale transactions where the customer is physically present to make a payment using a secure payment terminal.* **ANY**: All sales channels.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SplitConfigurationRuleShopperInteraction
     {

@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**samsungpay**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SamsungpayType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "samsungPayToken", n => { SamsungPayToken = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungpayType>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("samsungPayToken", SamsungPayToken);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungPayDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SamsungpayType>("type", Type);
         }
     }
 }

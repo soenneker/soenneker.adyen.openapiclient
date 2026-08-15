@@ -13,9 +13,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class BalancePlatformServiceV2PlatformPaymentConfiguration : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Specifies at what time a sales day ends for this account.Possible values: Time in **\&quot;HH:MM\&quot;** format. **HH** ranges from **00** to **07**. **MM** must be **00**.Default value: **\&quot;00:00\&quot;**.&quot;</summary>
+        /// <summary>Specifies at what time a sales day ends for this account.Possible values: Time in **&quot;HH:MM&quot;** format. **HH** ranges from **00** to **07**. **MM** must be **00**.Default value: **&quot;00:00&quot;**.</summary>
         public Time? SalesDayClosingTime { get; set; }
-        /// <summary>&quot;Specifies after how many business days the funds in a settlement batch are made available in this balance account. Requires Custom Sales Day Payout to be enabled for your balance account. Contact your account manager or implementation manager to enable this.Possible values: **1** to **20**, or **null**.Default value: **null**.&quot;</summary>
+        /// <summary>Specifies after how many business days the funds in a settlement batch are made available in this balance account. Requires Custom Sales Day Payout to be enabled for your balance account. Contact your account manager or implementation manager to enable this.Possible values: **1** to **20**, or **null**.Default value: **null**.</summary>
         public int? SettlementDelayDays { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -53,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Token { get; set; }
 #endif
         /// <summary>**threeDS2**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDs2ActionType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Type? Type { get; set; }
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "paymentMethodType", n => { PaymentMethodType = n.GetStringValue(); } },
                 { "subtype", n => { Subtype = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDs2ActionType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Type>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -101,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("paymentMethodType", PaymentMethodType);
             writer.WriteStringValue("subtype", Subtype);
             writer.WriteStringValue("token", Token);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutThreeDs2ActionType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Type>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Allowed authentication methods: Magswipe, Manual Entry.&quot;</summary>
+    /// <summary>Allowed authentication methods: Magswipe, Manual Entry.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PayAtTableAuthenticationMethod
     {

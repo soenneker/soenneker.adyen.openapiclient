@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of your request. If you included `adjustAuthorisationData` in your request, possible values are the following: * **authorised** * **refused** Otherwise, the value is **received**.&quot;</summary>
+    /// <summary>The status of your request. If you included `adjustAuthorisationData` in your request, possible values are the following: * **authorised** * **refused** Otherwise, the value is **received**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentAmountUpdateResponseStatus
     {

@@ -29,7 +29,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68Amount Amount { get; set; }
 #endif
-        /// <summary>&quot;The date of birth.Format: ISO-8601; example: YYYY-MM-DDFor Paysafecard it must be the same as used when registering the Paysafecard account.&gt; This field is mandatory for natural persons. &gt; This field is required to update the existing `dateOfBirth` that is associated with this recurring contract.&quot;</summary>
+        /// <summary>The date of birth.Format: ISO-8601; example: YYYY-MM-DDFor Paysafecard it must be the same as used when registering the Paysafecard account.&gt; This field is mandatory for natural persons. &gt; This field is required to update the existing `dateOfBirth` that is associated with this recurring contract.</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>The type of the entity the payout is processed for.Allowed values:* NaturalPerson* Company&gt; This field is required to update the existing `entityType` that is associated with this recurring contract.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SubmitRequestEntityType? EntityType { get; set; }

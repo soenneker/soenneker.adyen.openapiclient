@@ -98,13 +98,13 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExecutionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;The number of items returned per page.Default: **10**&quot;</summary>
+            /// <summary>The number of items returned per page.Default: **10**</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>&quot;The page number to be returned.Default: **1**&quot;</summary>
+            /// <summary>The page number to be returned.Default: **1**</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>&quot;Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.Possible statuses:- **succeeded**: The payout was sent successfully.- **failed**: The payout was not sent due to an error.- **skipped**: The payout was not triggered as expected.&quot;</summary>
+            /// <summary>Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.Possible statuses:- **succeeded**: The payout was sent successfully.- **failed**: The payout was not sent due to an error.- **skipped**: The payout was not triggered as expected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("results")]

@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Paym
         /// <summary>
         /// Revokes the authentication of the Payments App instance for the `installationId` and merchant account identified in the path. This call revokes the authentication of the Payments App instance with the `installationId` identified in the path for both merchant accounts and stores.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Adyen Payments App role
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.PaymentsApps.Item.Revoke.RevokePostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity">When receiving a 400 status code</exception>
@@ -44,11 +44,11 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Paym
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.PaymentsApps.Item.Revoke.RevokePostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.PaymentsApps.Item.Revoke.RevokePostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Paym
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.PaymentsApps.Item.Revoke.RevokePostResponse>(requestInfo, global::Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.PaymentsApps.Item.Revoke.RevokePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Revokes the authentication of the Payments App instance for the `installationId` and merchant account identified in the path. This call revokes the authentication of the Payments App instance with the `installationId` identified in the path for both merchant accounts and stores.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* Adyen Payments App role

@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DefaultFrequency { get; set; }
 #endif
-        /// <summary>&quot;The default value for date of the month or day of the week when payouts are initiated. Allowed only if `defaultFrequency` is **monthly** or **weekly**.Possible values if `defaultFrequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.Possible values if `defaultFrequency` is **weekly**: **[1 - 5]**.&quot;</summary>
+        /// <summary>The default value for date of the month or day of the week when payouts are initiated. Allowed only if `defaultFrequency` is **monthly** or **weekly**.Possible values if `defaultFrequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.Possible values if `defaultFrequency` is **weekly**: **[1 - 5]**.</summary>
         public int? DefaultFrequencyValue { get; set; }
         /// <summary>Your internal default reference for the payout schedule.When the payout schedule is applied to a balance account, this reference is also used for that payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,11 +86,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**, which means that there is no maximum limit.&quot;</summary>
+        /// <summary>The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**, which means that there is no maximum limit.</summary>
         public long? MaxPayoutAmount { get; set; }
-        /// <summary>&quot;The minimum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**.&quot;</summary>
+        /// <summary>The minimum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**.</summary>
         public long? MinPayoutAmount { get; set; }
-        /// <summary>&quot;The type of payout schedule. This type indicates how fast funds are paid out to your user.Possible values:- **Standard**: The funds arrive in your user&apos;s transfer instrument two days after the funds are settled.- **Accelerated**: The funds arrive to your user&apos;s transfer instrument the day after the funds are settled.&quot;</summary>
+        /// <summary>The type of payout schedule. This type indicates how fast funds are paid out to your user.Possible values:- **Standard**: The funds arrive in your user&apos;s transfer instrument two days after the funds are settled.- **Accelerated**: The funds arrive to your user&apos;s transfer instrument the day after the funds are settled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PayoutScheduleDescription { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PayoutScheduleDescription { get; set; }
 #endif
-        /// <summary>&quot;The amount of funds that must remain available in a balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.Default value: **0**&quot;</summary>
+        /// <summary>The amount of funds that must remain available in a balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.Default value: **0**</summary>
         public long? RetainedAmount { get; set; }
         /// <summary>The date when the payout schedule was updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

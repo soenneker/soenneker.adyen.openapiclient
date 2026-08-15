@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The resulting status of the return.Possible values: **Authorised**, **Declined**.&quot;</summary>
+        /// <summary>The resulting status of the return.Possible values: **Authorised**, **Declined**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ReturnTransferResponseStatus? Status { get; set; }
         /// <summary>The unique identifier of the original transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

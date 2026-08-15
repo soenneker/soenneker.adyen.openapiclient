@@ -12,9 +12,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Folio : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The folio cash advances, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.folioCashAdvances`&quot;</summary>
+        /// <summary>The folio cash advances, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.folioCashAdvances`</summary>
         public long? CashAdvances { get; set; }
-        /// <summary>&quot;The card acceptor&apos;s internal invoice or billing ID reference number.* Format: Alphanumeric* Must not start with a space* Must not contain any special characters* Must not be all zeros.* **additionalData key:** `lodging.folioNumber`&quot;</summary>
+        /// <summary>The card acceptor&apos;s internal invoice or billing ID reference number.* Format: Alphanumeric* Must not start with a space* Must not contain any special characters* Must not be all zeros.* **additionalData key:** `lodging.folioNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }

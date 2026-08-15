@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CheckoutServiceV72Phone : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Country code. Length: 1–3 digits.&quot;</summary>
+        /// <summary>Country code. Length: 1–3 digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cc { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Cc { get; set; }
 #endif
-        /// <summary>&quot;Subscriber number. Length: 4-15  digits.&quot;</summary>
+        /// <summary>Subscriber number. Length: 4-15  digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subscriber { get; set; }

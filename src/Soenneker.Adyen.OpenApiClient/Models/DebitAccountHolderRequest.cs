@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BankAccountUUID { get; set; }
 #endif
-        /// <summary>&quot;A description of the direct debit. Maximum length: 35 characters.Allowed characters: **a-z**, **A-Z**, **0-9**, and special characters **/?:().,&apos;+ \&quot;;**.&quot;</summary>
+        /// <summary>A description of the direct debit. Maximum length: 35 characters.Allowed characters: **a-z**, **A-Z**, **0-9**, and special characters **/?:().,&apos;+ &quot;;**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }

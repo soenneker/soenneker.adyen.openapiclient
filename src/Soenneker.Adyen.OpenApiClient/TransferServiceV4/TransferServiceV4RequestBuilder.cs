@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts;
+using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Grants;
 using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transactions;
 using Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4
         public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts.CashoutsRequestBuilder Cashouts
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Cashouts.CashoutsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The grants property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Grants.GrantsRequestBuilder Grants
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Grants.GrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transactions property</summary>
         public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transactions.TransactionsRequestBuilder Transactions

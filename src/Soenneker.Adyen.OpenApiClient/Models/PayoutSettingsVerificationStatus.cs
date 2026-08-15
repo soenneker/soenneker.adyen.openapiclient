@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.&quot;</summary>
+    /// <summary>The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PayoutSettingsVerificationStatus
     {

@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The status of the balance account. Payment instruments linked to the balance account can only be used if the balance account status is **active**.Possible values: **active**, **closed**, **suspended**.&quot;</summary>
+        /// <summary>The status of the balance account. Payment instruments linked to the balance account can only be used if the balance account status is **active**.Possible values: **active**, **closed**, **suspended**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestStatus? Status { get; set; }
         /// <summary>The time zone of the balance account. For example, **Europe/Amsterdam**.Defaults to the time zone of the account holder if no time zone is set. For possible values, see the [list of time zone codes](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

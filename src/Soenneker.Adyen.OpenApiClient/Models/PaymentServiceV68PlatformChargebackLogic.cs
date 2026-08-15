@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PaymentServiceV68PlatformChargebackLogic : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The method of handling the chargeback.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.&quot;</summary>
+        /// <summary>The method of handling the chargeback.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PlatformChargebackLogicBehavior? Behavior { get; set; }
         /// <summary>The unique identifier of the balance account to which the chargeback fees are booked. By default, the chargeback fees are booked to your liable balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

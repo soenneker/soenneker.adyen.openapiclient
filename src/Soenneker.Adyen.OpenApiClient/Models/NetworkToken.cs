@@ -46,7 +46,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentInstrumentId { get; set; }
 #endif
-        /// <summary>&quot;The status of the network token. Possible values: **active**, **inactive**, **suspended**, **closed**.&quot;</summary>
+        /// <summary>The status of the network token. Possible values: **active**, **inactive**, **suspended**, **closed**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenStatus? Status { get; set; }
         /// <summary>The last four digits of the network token `id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

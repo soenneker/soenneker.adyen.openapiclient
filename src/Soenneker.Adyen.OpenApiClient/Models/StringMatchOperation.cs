@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of string matching operation. Possible values:  **startsWith**, **endsWith**, **isEqualTo**, **contains**,&quot;</summary>
+    /// <summary>The type of string matching operation. Possible values:  **startsWith**, **endsWith**, **isEqualTo**, **contains**,</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum StringMatchOperation
     {

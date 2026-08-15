@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BankAccountUUID { get; set; }
 #endif
-        /// <summary>&quot;A description of the payout. Maximum 200 characters.Allowed: **abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/?:().,&apos;+ \&quot;;**&quot;</summary>
+        /// <summary>A description of the payout. Maximum 200 characters.Allowed: **abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/?:().,&apos;+ &quot;;**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PayoutMethodCode { get; set; }
 #endif
-        /// <summary>&quot;Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.&quot;</summary>
+        /// <summary>Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestPayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

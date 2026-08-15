@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AcceptHeader { get; set; }
 #endif
-        /// <summary>&quot;The color depth of the shopper&apos;s browser in bits per pixel. This should be obtained by using the browser&apos;s `screen.colorDepth` property. Accepted values: 1, 4, 8, 15, 16, 24, 30, 32 or 48 bit color depth.&quot;</summary>
+        /// <summary>The color depth of the shopper&apos;s browser in bits per pixel. This should be obtained by using the browser&apos;s `screen.colorDepth` property. Accepted values: 1, 4, 8, 15, 16, 24, 30, 32 or 48 bit color depth.</summary>
         public int? ColorDepth { get; set; }
         /// <summary>Boolean value indicating if the shopper&apos;s browser is able to execute Java.</summary>
         public bool? JavaEnabled { get; set; }

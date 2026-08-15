@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AdjustAuthorisationData { get; set; }
 #endif
-        /// <summary>&quot;The type of adjustment. Possible values: * **cardholderInitiatedTransaction** * **merchantInitiatedTransaction** &quot;</summary>
+        /// <summary>The type of adjustment. Possible values: * **cardholderInitiatedTransaction** * **merchantInitiatedTransaction** </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAdjustAuthType? AdjustAuthType { get; set; }
         /// <summary>The amount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,7 +38,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo ApplicationInfo { get; set; }
 #endif
-        /// <summary>&quot;The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**&quot;</summary>
+        /// <summary>The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestIndustryUsage? IndustryUsage { get; set; }
         /// <summary>Price and product information of the refunded items, required for [partial refunds](https://docs.adyen.com/online-payments/refund#refund-a-payment).&gt; This field is required for partial refunds with 3x 4x Oney, Affirm, Afterpay, Atome, Clearpay, Klarna, Ratepay, Walley, and Zip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData MpiData { get; set; }
 #endif
-        /// <summary>&quot;Your reference for the amount update request. Maximum length: 80 characters.&quot;</summary>
+        /// <summary>Your reference for the amount update request. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

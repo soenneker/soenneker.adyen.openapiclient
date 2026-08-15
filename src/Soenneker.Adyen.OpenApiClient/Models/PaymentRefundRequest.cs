@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The reason for the refund request.Possible values:* **FRAUD*** **CUSTOMER REQUEST*** **RETURN*** **DUPLICATE*** **OTHER**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestMerchantRefundReason? MerchantRefundReason { get; set; }
-        /// <summary>&quot;Your reference for the refund request. Maximum length: 80 characters.&quot;</summary>
+        /// <summary>Your reference for the refund request. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

@@ -14,7 +14,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The last test card number in the generated test card range.Example: 5432 1234 1234 4321&quot;</summary>
+        /// <summary>The last test card number in the generated test card range.Example: 5432 1234 1234 4321</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CardNumberRangeEnd { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CardNumberRangeEnd { get; set; }
 #endif
-        /// <summary>&quot;The first test card number in the generated test card range.Example: 5432 1234 1234 1234&quot;</summary>
+        /// <summary>The first test card number in the generated test card range.Example: 5432 1234 1234 1234</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CardNumberRangeStart { get; set; }

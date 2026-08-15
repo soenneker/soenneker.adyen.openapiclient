@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>&quot;The description used for all payouts initiated by this payout schedule.Maximum length: 140 characters. If your description is longer, it may be truncated.Default value: The `defaultDescription` from the balance platform schedule that you are applying.&quot;</summary>
+        /// <summary>The description used for all payouts initiated by this payout schedule.Maximum length: 140 characters. If your description is longer, it may be truncated.Default value: The `defaultDescription` from the balance platform schedule that you are applying.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Frequency { get; set; }
 #endif
-        /// <summary>&quot;The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.Possible values if `frequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.Possible values if `frequency` is **weekly**: **[1 - 5]**.Default value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.&quot;</summary>
+        /// <summary>The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.Possible values if `frequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated  on the last day of that month.Possible values if `frequency` is **weekly**: **[1 - 5]**.Default value: The `defaultFrequencyValue` from the balance platform schedule that you are applying.</summary>
         public int? FrequencyValue { get; set; }
         /// <summary>The unique identifier of the payout schedule for the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,9 +68,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**&quot;</summary>
+        /// <summary>The maximum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**</summary>
         public long? MaxPayoutAmount { get; set; }
-        /// <summary>&quot;The minimum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**&quot;</summary>
+        /// <summary>The minimum amount that can be paid out from balance accounts that use this payout schedule.Default value: **0**</summary>
         public long? MinPayoutAmount { get; set; }
         /// <summary>Your reference for the payout schedule. This reference does not appear on statements of payouts initiated by the payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the payout and is included in all webhooks related to the payout.Supported characters: **a-z**, **A-Z**, **0-9**.Default value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.&quot;</summary>
+        /// <summary>The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the payout and is included in all webhooks related to the payout.Supported characters: **a-z**, **A-Z**, **0-9**.Default value: The `defaultReferenceForBeneficiary` from the balance platform schedule that you are applying.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceForBeneficiary { get; set; }
@@ -88,9 +88,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReferenceForBeneficiary { get; set; }
 #endif
-        /// <summary>&quot;The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.Default value: **0**&quot;</summary>
+        /// <summary>The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.Default value: **0**</summary>
         public long? RetainedAmount { get; set; }
-        /// <summary>&quot;The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.Format: **HH:mm:ss**&quot;</summary>
+        /// <summary>The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.Format: **HH:mm:ss**</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The legal entity type of the account holder. This determines the information that should be provided in the request.Possible values: **Business**, **Individual**, or **NonProfit**.* If set to **Business** or **NonProfit**, then `accountHolderDetails.businessDetails` must be provided, with at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.* If set to **Individual**, then `accountHolderDetails.individualDetails` must be provided.&quot;</summary>
+    /// <summary>The legal entity type of the account holder. This determines the information that should be provided in the request.Possible values: **Business**, **Individual**, or **NonProfit**.* If set to **Business** or **NonProfit**, then `accountHolderDetails.businessDetails` must be provided, with at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.* If set to **Individual**, then `accountHolderDetails.individualDetails` must be provided.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateAccountHolderRequestLegalEntity
     {

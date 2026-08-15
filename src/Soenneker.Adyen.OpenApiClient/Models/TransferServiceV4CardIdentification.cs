@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class TransferServiceV4CardIdentification : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The expiry month of the card.Format: two digits. Add a leading zero for single-digit months. For example:* 03 = March* 11 = November&quot;</summary>
+        /// <summary>The expiry month of the card.Format: two digits. Add a leading zero for single-digit months. For example:* 03 = March* 11 = November</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiryMonth { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ExpiryMonth { get; set; }
 #endif
-        /// <summary>&quot;The expiry year of the card.Format: four digits. For example: 2020&quot;</summary>
+        /// <summary>The expiry year of the card.Format: four digits. For example: 2020</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiryYear { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>&quot;The month when the card was issued. Applies only to some UK debit cards.Format: two digits. Add a leading zero for single-digit months. For example:* 03 = March* 11 = November&quot;</summary>
+        /// <summary>The month when the card was issued. Applies only to some UK debit cards.Format: two digits. Add a leading zero for single-digit months. For example:* 03 = March* 11 = November</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartMonth { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StartMonth { get; set; }
 #endif
-        /// <summary>&quot;The year when the card was issued. Applies only to some UK debit cards.Format: four digits. For example: 2020&quot;</summary>
+        /// <summary>The year when the card was issued. Applies only to some UK debit cards.Format: four digits. For example: 2020</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartYear { get; set; }

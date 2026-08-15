@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Metadata consists of entries, each of which includes a key and a value.Limitations:* Maximum 20 key-value pairs per request. Otherwise, error \&quot;177\&quot; occurs: \&quot;Metadata size exceeds limit\&quot;* Maximum 20 characters per key. Otherwise, error \&quot;178\&quot; occurs: \&quot;Metadata key size exceeds limit\&quot;* A key cannot have the name `checkout.linkId`. Any value that you provide with this key is going to be replaced by the real payment link ID.&quot;
+    /// Metadata consists of entries, each of which includes a key and a value.Limitations:* Maximum 20 key-value pairs per request. Otherwise, error &quot;177&quot; occurs: &quot;Metadata size exceeds limit&quot;* Maximum 20 characters per key. Otherwise, error &quot;178&quot; occurs: &quot;Metadata key size exceeds limit&quot;* A key cannot have the name `checkout.linkId`. Any value that you provide with this key is going to be replaced by the real payment link ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentLinkRequestMetadataProperty : IAdditionalDataHolder, IParsable

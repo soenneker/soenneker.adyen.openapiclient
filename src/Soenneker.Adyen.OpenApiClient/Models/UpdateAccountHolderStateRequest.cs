@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>&quot;The state to be updated.&gt;Permitted values are: `Processing`, `Payout`&quot;</summary>
+        /// <summary>The state to be updated.&gt;Permitted values are: `Processing`, `Payout`</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType? StateType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

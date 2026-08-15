@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of transfer.Possible values: - **bankTransfer**: for push transfers to a transfer instrument or a bank account. The `category` must be **bank**.- **internalTransfer**: for push transfers between balance accounts. The `category` must be **internal**.- **internalDirectDebit**: for pull transfers (direct debits) between balance accounts. The `category` must be **internal**. &quot;</summary>
+    /// <summary>The type of transfer.Possible values: - **bankTransfer**: for push transfers to a transfer instrument or a bank account. The `category` must be **bank**.- **internalTransfer**: for push transfers between balance accounts. The `category` must be **internal**.- **internalDirectDebit**: for pull transfers (direct debits) between balance accounts. The `category` must be **internal**. </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferInfoType
     {

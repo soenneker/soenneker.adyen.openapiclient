@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PayByBankPlaidInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Merchant logo (max. size 150kB). Format: Base64-encoded string.&quot;</summary>
+        /// <summary>Merchant logo (max. size 150kB). Format: Base64-encoded string.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

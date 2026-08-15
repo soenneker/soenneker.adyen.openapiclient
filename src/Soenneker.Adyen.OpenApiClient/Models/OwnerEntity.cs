@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Type of resource that owns the document.Possible values: **legalEntity**, **bankAccount**.&quot;</summary>
+        /// <summary>Type of resource that owns the document.Possible values: **legalEntity**, **bankAccount**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

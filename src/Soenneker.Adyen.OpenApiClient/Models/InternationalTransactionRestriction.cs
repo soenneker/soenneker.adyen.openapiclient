@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>&quot;Boolean indicating whether transaction is an international transaction.Possible values:- **true**: The transaction is an international transaction.- **false**: The transaction is a domestic transaction.&quot;</summary>
+        /// <summary>Boolean indicating whether transaction is an international transaction.Possible values:- **true**: The transaction is an international transaction.- **false**: The transaction is a domestic transaction.</summary>
         public bool? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
-        /// <summary>&quot;The type of bank account.Only applicable to bank accounts held in the USA.The permitted values are: `checking`, `savings`.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.&quot;</summary>
+        /// <summary>The type of bank account.Only applicable to bank accounts held in the USA.The permitted values are: `checking`, `savings`.&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountType { get; set; }

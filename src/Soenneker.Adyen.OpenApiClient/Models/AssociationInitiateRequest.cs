@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class AssociationInitiateRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The list of unique identifiers of the resources that you are associating with the SCA device.Maximum: 5 strings.&quot;</summary>
+        /// <summary>The list of unique identifiers of the resources that you are associating with the SCA device.Maximum: 5 strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ids { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> Ids { get; set; }
 #endif
-        /// <summary>&quot;The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**&quot;</summary>
+        /// <summary>The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AssociationInitiateRequestType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PinChangeResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The status of the request for PIN change.Possible values: **completed**, **pending**, **unavailable**.&quot;</summary>
+        /// <summary>The status of the request for PIN change.Possible values: **completed**, **pending**, **unavailable**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PinChangeResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -45,7 +45,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string QrCodeData { get; set; }
 #endif
         /// <summary>**qrCode**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeActionType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.QrCodeType? Type { get; set; }
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
                 { "paymentMethodType", n => { PaymentMethodType = n.GetStringValue(); } },
                 { "qrCodeData", n => { QrCodeData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeActionType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.QrCodeType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -91,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("paymentData", PaymentData);
             writer.WriteStringValue("paymentMethodType", PaymentMethodType);
             writer.WriteStringValue("qrCodeData", QrCodeData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutQrCodeActionType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.QrCodeType>("type", Type);
             writer.WriteStringValue("url", Url);
         }
     }

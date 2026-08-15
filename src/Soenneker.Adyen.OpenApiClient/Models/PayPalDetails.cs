@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of flow to initiate.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsSubtype? Subtype { get; set; }
         /// <summary>**paypal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaypalType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -108,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsSubtype>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalType>(); } },
             };
         }
         /// <summary>
@@ -127,7 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsSubtype>("subtype", Subtype);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayPalDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaypalType>("type", Type);
         }
     }
 }

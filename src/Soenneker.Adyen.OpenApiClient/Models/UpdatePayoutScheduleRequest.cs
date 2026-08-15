@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class UpdatePayoutScheduleRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Direction on how to handle any payouts that have already been scheduled.Possible values:* `CLOSE`: close the existing batch of payouts.* `UPDATE`: reschedule the existing batch to the new schedule.* `NOTHING` (**default**): allow the payout to proceed.&quot;</summary>
+        /// <summary>Direction on how to handle any payouts that have already been scheduled.Possible values:* `CLOSE`: close the existing batch of payouts.* `UPDATE`: reschedule the existing batch to the new schedule.* `NOTHING` (**default**): allow the payout to proceed.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction? Action { get; set; }
         /// <summary>The reason for the payout schedule update.&gt; This field is required when the `schedule` parameter is set to `HOLD`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>&quot;The new payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.&quot;</summary>
+        /// <summary>The new payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule? Schedule { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

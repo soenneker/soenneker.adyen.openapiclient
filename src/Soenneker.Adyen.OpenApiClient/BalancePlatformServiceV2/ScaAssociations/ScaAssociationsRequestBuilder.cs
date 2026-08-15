@@ -36,7 +36,6 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
         /// <summary>
         /// Deletes one or more SCA associations for a device.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -45,11 +44,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -60,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of the SCA devices associated with a specific entity.
@@ -208,13 +207,13 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.ScaAssociations
             [QueryParameter("entityId")]
             public string EntityId { get; set; }
 #endif
-            /// <summary>&quot;The type of entity you want to retrieve a list of associations for. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.&quot;</summary>
+            /// <summary>The type of entity you want to retrieve a list of associations for. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
             [QueryParameter("entityType")]
             public global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType? EntityType { get; set; }
-            /// <summary>&quot;The index of the page to retrieve. The index of the first page is **0** (zero). Default:  **0**.&quot;</summary>
+            /// <summary>The index of the page to retrieve. The index of the first page is **0** (zero). Default:  **0**.</summary>
             [QueryParameter("pageNumber")]
             public int? PageNumber { get; set; }
-            /// <summary>&quot;The number of items to have on a page. Default: **5**.&quot;</summary>
+            /// <summary>The number of items to have on a page. Default: **5**.</summary>
             [QueryParameter("pageSize")]
             public int? PageSize { get; set; }
         }

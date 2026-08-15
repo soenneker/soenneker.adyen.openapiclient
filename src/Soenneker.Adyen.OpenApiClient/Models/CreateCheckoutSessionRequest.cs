@@ -37,7 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
 #endif
-        /// <summary>&quot;List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `\&quot;allowedPaymentMethods\&quot;:[\&quot;ideal\&quot;,\&quot;applepay\&quot;]`&quot;</summary>
+        /// <summary>List of payment methods to be presented to the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;allowedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedPaymentMethods { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress BillingAddress { get; set; }
 #endif
-        /// <summary>&quot;List of payment methods to be hidden from the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `\&quot;blockedPaymentMethods\&quot;:[\&quot;ideal\&quot;,\&quot;applepay\&quot;]`&quot;</summary>
+        /// <summary>List of payment methods to be hidden from the shopper. To refer to payment methods, use their [payment method type](https://docs.adyen.com/payment-methods/payment-method-types).Example: `&quot;blockedPaymentMethods&quot;:[&quot;ideal&quot;,&quot;applepay&quot;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BlockedPaymentMethods { get; set; }
@@ -105,9 +105,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>&quot;The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD&quot;</summary>
+        /// <summary>The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD</summary>
         public Date? DateOfBirth { get; set; }
-        /// <summary>&quot;The date and time when the purchased goods should be delivered.[ISO 8601](https://www.w3.org/TR/NOTE-datetime) format: YYYY-MM-DDThh:mm:ss+TZD, for example, **2020-12-18T10:15:30+01:00**.&quot;</summary>
+        /// <summary>The date and time when the purchased goods should be delivered.[ISO 8601](https://www.w3.org/TR/NOTE-datetime) format: YYYY-MM-DDThh:mm:ss+TZD, for example, **2020-12-18T10:15:30+01:00**.</summary>
         public DateTimeOffset? DeliverAt { get; set; }
         /// <summary>The deliveryAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -197,7 +197,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMetadataProperty Metadata { get; set; }
 #endif
-        /// <summary>&quot;Indicates the type of front end integration. Possible values:* **embedded** (default): Drop-in or Components integration* **hosted**: Hosted Checkout integration&quot;</summary>
+        /// <summary>Indicates the type of front end integration. Possible values:* **embedded** (default): Drop-in or Components integration* **hosted**: Hosted Checkout integration</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMode? Mode { get; set; }
         /// <summary>The mpiData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -257,7 +257,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The URL to return to in case of a redirection.The format depends on the channel. * For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.Example: `https://your-company.example.com/checkout?shopperOrder=12xy`* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).Example: `my-app://`* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).Example: `my-app://your.package.name`If the URL to return to includes non-ASCII characters, like spaces or special letters, URL encode the value.&gt; The URL must not include personally identifiable information (PII), for example name or email address.&quot;</summary>
+        /// <summary>The URL to return to in case of a redirection.The format depends on the channel. * For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.Example: `https://your-company.example.com/checkout?shopperOrder=12xy`* For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).Example: `my-app://`* For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).Example: `my-app://your.package.name`If the URL to return to includes non-ASCII characters, like spaces or special letters, URL encode the value.&gt; The URL must not include personally identifiable information (PII), for example name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnUrl { get; set; }
@@ -323,7 +323,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperReference { get; set; }
 #endif
-        /// <summary>&quot;The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.&quot;</summary>
+        /// <summary>The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShopperStatement { get; set; }
@@ -361,7 +361,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Store { get; set; }
 #endif
-        /// <summary>&quot;Specifies how payment methods should be filtered based on the &apos;store&apos; parameter:  - &apos;exclusive&apos;: Only payment methods belonging to the specified &apos;store&apos; are returned.  - &apos;inclusive&apos;: Payment methods from the &apos;store&apos; and those not associated with any other store are returned.&quot;</summary>
+        /// <summary>Specifies how payment methods should be filtered based on the &apos;store&apos; parameter:  - &apos;exclusive&apos;: Only payment methods belonging to the specified &apos;store&apos; are returned.  - &apos;inclusive&apos;: Payment methods from the &apos;store&apos; and those not associated with any other store are returned.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestStoreFiltrationMode? StoreFiltrationMode { get; set; }
         /// <summary>When true and `shopperReference` is provided, the payment details will be stored for future [recurring payments](https://docs.adyen.com/online-payments/tokenization/#recurring-payment-types).</summary>
         public bool? StorePaymentMethod { get; set; }
@@ -399,7 +399,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData ThreeDS2RequestData { get; set; }
 #endif
-        /// <summary>&quot;Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.&quot;</summary>
+        /// <summary>Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.</summary>
         [Obsolete("")]
         public bool? ThreeDSAuthenticationOnly { get; set; }
         /// <summary>Set to true if the payment should be routed to a trusted MID.</summary>

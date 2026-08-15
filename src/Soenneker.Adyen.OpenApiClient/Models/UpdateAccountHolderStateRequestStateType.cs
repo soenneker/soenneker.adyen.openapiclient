@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The state to be updated.&gt;Permitted values are: `Processing`, `Payout`&quot;</summary>
+    /// <summary>The state to be updated.&gt;Permitted values are: `Processing`, `Payout`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateAccountHolderStateRequestStateType
     {

@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class RecurringServiceV68Address : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The name of the city. Maximum length: 3000 characters.&quot;</summary>
+        /// <summary>The name of the city. Maximum length: 3000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>&quot;The number or name of the house. Maximum length: 3000 characters.&quot;</summary>
+        /// <summary>The number or name of the house. Maximum length: 3000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HouseNumberOrName { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StateOrProvince { get; set; }
 #endif
-        /// <summary>&quot;The name of the street. Maximum length: 3000 characters.&gt; The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.&quot;</summary>
+        /// <summary>The name of the street. Maximum length: 3000 characters.&gt; The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Street { get; set; }

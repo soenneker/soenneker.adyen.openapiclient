@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class PaymentServiceV68ThreeDsRequestorAuthenticationInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Data that documents and supports a specific authentication process. Maximum length: 2048 bytes.&quot;</summary>
+        /// <summary>Data that documents and supports a specific authentication process. Maximum length: 2048 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSReqAuthData { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Mechanism used by the Cardholder to authenticate to the 3DS Requestor. Allowed values:* **01** — No 3DS Requestor authentication occurred (for example, cardholder “logged in” as guest).* **02** — Login to the cardholder account at the 3DS Requestor system using 3DS Requestor’s own credentials.* **03** — Login to the cardholder account at the 3DS Requestor system using federated ID.* **04** — Login to the cardholder account at the 3DS Requestor system using issuer credentials.* **05** — Login to the cardholder account at the 3DS Requestor system using third-party authentication.* **06** — Login to the cardholder account at the 3DS Requestor system using FIDO Authenticator.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDsRequestorAuthenticationInfoThreeDsReqAuthMethod? ThreeDSReqAuthMethod { get; set; }
-        /// <summary>&quot;Date and time in UTC of the cardholder authentication. Format: YYYYMMDDHHMM&quot;</summary>
+        /// <summary>Date and time in UTC of the cardholder authentication. Format: YYYYMMDDHHMM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSReqAuthTimestamp { get; set; }

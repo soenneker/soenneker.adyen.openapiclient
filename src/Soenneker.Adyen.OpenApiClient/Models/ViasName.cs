@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>&quot;The gender.&gt;The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.&quot;</summary>
+        /// <summary>The gender.&gt;The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ViasNameGender? Gender { get; set; }
         /// <summary>The name&apos;s infix, if applicable.&gt;A maximum length of twenty (20) characters is imposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

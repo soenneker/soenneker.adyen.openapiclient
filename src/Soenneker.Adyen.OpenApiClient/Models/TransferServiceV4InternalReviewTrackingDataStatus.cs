@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the transfer.Possible values: - **pending**: the transfer is under internal review by Adyen.- **failed**: the transfer failed Adyen&apos;s internal review. For details, see `reason`.&quot;</summary>
+    /// <summary>The status of the transfer.Possible values: - **pending**: the transfer is under internal review by Adyen.- **failed**: the transfer failed Adyen&apos;s internal review. For details, see `reason`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4InternalReviewTrackingDataStatus
     {

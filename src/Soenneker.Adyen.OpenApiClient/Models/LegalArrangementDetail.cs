@@ -44,9 +44,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LegalArrangementReference { get; set; }
 #endif
-        /// <summary>&quot;The form of legal arrangement. Required if `type` is **Trust** or **Partnership**.The possible values depend on the `type`.- For `type` **Trust**:  **CashManagementTrust**, **CorporateUnitTrust**, **DeceasedEstate**, **DiscretionaryInvestmentTrust**, **DiscretionaryServicesManagementTrust**, **DiscretionaryTradingTrust**, **FirstHomeSaverAccountsTrust**, **FixedTrust**, **FixedUnitTrust**, **HybridTrust**, **ListedPublicUnitTrust**, **OtherTrust**, **PooledSuperannuationTrust**, **PublicTradingTrust**, or **UnlistedPublicUnitTrust**.- For `type` **Partnership**: **LimitedPartnership**, **FamilyPartnership**, or **OtherPartnership**&quot;</summary>
+        /// <summary>The form of legal arrangement. Required if `type` is **Trust** or **Partnership**.The possible values depend on the `type`.- For `type` **Trust**:  **CashManagementTrust**, **CorporateUnitTrust**, **DeceasedEstate**, **DiscretionaryInvestmentTrust**, **DiscretionaryServicesManagementTrust**, **DiscretionaryTradingTrust**, **FirstHomeSaverAccountsTrust**, **FixedTrust**, **FixedUnitTrust**, **HybridTrust**, **ListedPublicUnitTrust**, **OtherTrust**, **PooledSuperannuationTrust**, **PublicTradingTrust**, or **UnlistedPublicUnitTrust**.- For `type` **Partnership**: **LimitedPartnership**, **FamilyPartnership**, or **OtherPartnership**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm? LegalForm { get; set; }
-        /// <summary>&quot;The legal name of the legal arrangement. Minimum length: 3 characters.&quot;</summary>
+        /// <summary>The legal name of the legal arrangement. Minimum length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

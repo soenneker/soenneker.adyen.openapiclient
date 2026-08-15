@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class ExternalTerminalAction : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The type of terminal action: **InstallAndroidApp**, **UninstallAndroidApp**, **InstallAndroidCertificate**, or **UninstallAndroidCertificate**.&quot;</summary>
+        /// <summary>The type of terminal action: **InstallAndroidApp**, **UninstallAndroidApp**, **InstallAndroidCertificate**, or **UninstallAndroidCertificate**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionType { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the action was scheduled to happen.</summary>
         public DateTimeOffset? ScheduledAt { get; set; }
-        /// <summary>&quot;The status of the terminal action: **pending**, **successful**, **failed**, **cancelled**, or **tryLater**.&quot;</summary>
+        /// <summary>The status of the terminal action: **pending**, **successful**, **failed**, **cancelled**, or **tryLater**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

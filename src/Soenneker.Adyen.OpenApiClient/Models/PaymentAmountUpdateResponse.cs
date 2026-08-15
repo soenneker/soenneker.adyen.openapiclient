@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
 #endif
-        /// <summary>&quot;The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**&quot;</summary>
+        /// <summary>The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseIndustryUsage? IndustryUsage { get; set; }
         /// <summary>Price and product information of the refunded items, required for [partial refunds](https://docs.adyen.com/online-payments/refund#refund-a-payment).&gt; This field is required for partial refunds with 3x 4x Oney, Affirm, Afterpay, Atome, Clearpay, Klarna, Ratepay, Walley, and Zip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PspReference { get; set; }
 #endif
-        /// <summary>&quot;Your reference for the amount update request. Maximum length: 80 characters.&quot;</summary>
+        /// <summary>Your reference for the amount update request. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Split> Splits { get; set; }
 #endif
-        /// <summary>&quot;The status of your request. If you included `adjustAuthorisationData` in your request, possible values are the following: * **authorised** * **refused** Otherwise, the value is **received**.&quot;</summary>
+        /// <summary>The status of your request. If you included `adjustAuthorisationData` in your request, possible values are the following: * **authorised** * **refused** Otherwise, the value is **received**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

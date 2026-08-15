@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of Strong Customer Authentication (SCA). Possible values:* **notPerformed**: the requester was unable to successfully authenticate the request using SCA, or has an SCA exemption.* **pending**: the request is pending SCA authentication.* **performed**: the request is successfully authenticated using SCA.&quot;</summary>
+    /// <summary>The status of Strong Customer Authentication (SCA). Possible values:* **notPerformed**: the requester was unable to successfully authenticate the request using SCA, or has an SCA exemption.* **pending**: the request is pending SCA authentication.* **performed**: the request is successfully authenticated using SCA.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ScaStatus
     {

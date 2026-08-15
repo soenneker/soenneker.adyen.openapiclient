@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The resulting status of the return.Possible values: **Authorised**, **Declined**.&quot;</summary>
+    /// <summary>The resulting status of the return.Possible values: **Authorised**, **Declined**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ReturnTransferResponseStatus
     {

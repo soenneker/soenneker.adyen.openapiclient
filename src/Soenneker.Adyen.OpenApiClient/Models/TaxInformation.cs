@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Set this to **true** if the legal entity or legal arrangement does not have a tax ID number (TIN). Only applicable in Australia.</summary>
         public bool? NumberAbsent { get; set; }
-        /// <summary>&quot;The TIN type depending on the country where it was issued. Only provide if the country has multiple tax IDs: Singapore, Sweden, the UK, or the US. For example, provide **SSN**, **EIN**, or **ITIN** for the US.&quot;</summary>
+        /// <summary>The TIN type depending on the country where it was issued. Only provide if the country has multiple tax IDs: Singapore, Sweden, the UK, or the US. For example, provide **SSN**, **EIN**, or **ITIN** for the US.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

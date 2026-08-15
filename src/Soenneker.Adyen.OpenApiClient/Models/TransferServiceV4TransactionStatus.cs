@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The status of the transaction. Possible values:* **pending**: The transaction is still pending.* **booked**: The transaction has been booked to the balance account.&quot;</summary>
+    /// <summary>The status of the transaction. Possible values:* **pending**: The transaction is still pending.* **booked**: The transaction has been booked to the balance account.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4TransactionStatus
     {

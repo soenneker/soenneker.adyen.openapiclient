@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents
         {
         }
         /// <summary>
-        /// &quot;Uploads a document for verification checks. Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents. You should only upload documents when Adyen requests additional information for the legal entity. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Uploads a document for verification checks. Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents. You should only upload documents when Adyen requests additional information for the legal entity. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Document"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.LegalEntityServiceV4.Documents
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.Document>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.Document.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Uploads a document for verification checks. Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents. You should only upload documents when Adyen requests additional information for the legal entity. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.&quot;
+        /// Uploads a document for verification checks. Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents. You should only upload documents when Adyen requests additional information for the legal entity. &gt;You can upload a maximum of 15 pages for photo IDs.Requests to this endpoint are subject to rate limits:- Live environments: 700 requests per 5 seconds.- Test environments: 200 requests per 5 seconds.- Failed requests are subject to a limit of 5 failures per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

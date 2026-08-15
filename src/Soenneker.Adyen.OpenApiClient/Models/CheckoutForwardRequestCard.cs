@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CheckoutForwardRequestCard : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The [card verification code](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-security-code-cvc-cvv-cid) (1-20 characters). Depending on the card brand, it is also known as:* CVV2/CVC2 – length: 3 digits* CID – length: 4 digits&quot;</summary>
+        /// <summary>The [card verification code](https://docs.adyen.com/payments-fundamentals/payment-glossary#card-security-code-cvc-cvv-cid) (1-20 characters). Depending on the card brand, it is also known as:* CVV2/CVC2 – length: 3 digits* CID – length: 4 digits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cvc { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EncryptedSecurityCode { get; set; }
 #endif
-        /// <summary>&quot;The card expiry month.Format: 2 digits, zero-padded for single digits. For example:* 03 = March* 11 = November&quot;</summary>
+        /// <summary>The card expiry month.Format: 2 digits, zero-padded for single digits. For example:* 03 = March* 11 = November</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiryMonth { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string HolderName { get; set; }
 #endif
-        /// <summary>&quot;The card number. Only collect raw card data if you are fully [PCI compliant](https://docs.adyen.com/development-resources/pci-dss-compliance-guide).Format: Do not use separators.&quot;</summary>
+        /// <summary>The card number. Only collect raw card data if you are fully [PCI compliant](https://docs.adyen.com/development-resources/pci-dss-compliance-guide).Format: Do not use separators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Number { get; set; }
 #endif
         /// <summary>Default payment method details. Common for scheme payment methods, and for simple payment method details.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCardType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SchemeType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "expiryYear", n => { ExpiryYear = n.GetStringValue(); } },
                 { "holderName", n => { HolderName = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCardType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SchemeType>(); } },
             };
         }
         /// <summary>
@@ -132,7 +132,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("expiryYear", ExpiryYear);
             writer.WriteStringValue("holderName", HolderName);
             writer.WriteStringValue("number", Number);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCardType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SchemeType>("type", Type);
         }
     }
 }

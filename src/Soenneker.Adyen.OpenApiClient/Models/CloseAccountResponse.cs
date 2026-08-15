@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ResultCode { get; set; }
 #endif
-        /// <summary>&quot;The new status of the account.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.&quot;</summary>
+        /// <summary>The new status of the account.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CloseAccountResponseStatus? Status { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

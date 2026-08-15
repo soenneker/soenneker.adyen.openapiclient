@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>The payment method type.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PseDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PsePayulatamType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "identification", n => { Identification = n.GetStringValue(); } },
                 { "identificationType", n => { IdentificationType = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PseDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PsePayulatamType>(); } },
             };
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("identification", Identification);
             writer.WriteStringValue("identificationType", IdentificationType);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PseDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PsePayulatamType>("type", Type);
         }
     }
 }

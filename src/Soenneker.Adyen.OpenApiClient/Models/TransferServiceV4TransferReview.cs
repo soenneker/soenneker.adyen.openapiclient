@@ -14,7 +14,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Shows the number of [approvals](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers/approve) required to process the transfer.</summary>
         public int? NumberOfApprovalsRequired { get; set; }
-        /// <summary>&quot;Shows the status of the Strong Customer Authentication (SCA) process.Possible values: **required**, **notApplicable**.&quot;</summary>
+        /// <summary>Shows the status of the Strong Customer Authentication (SCA) process.Possible values: **required**, **notApplicable**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReviewScaOnApproval? ScaOnApproval { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

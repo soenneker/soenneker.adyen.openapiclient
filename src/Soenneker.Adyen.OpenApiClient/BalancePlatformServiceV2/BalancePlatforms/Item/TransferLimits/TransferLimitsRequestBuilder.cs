@@ -154,13 +154,13 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransferLimitsRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.&quot;</summary>
+            /// <summary>The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.</summary>
             [QueryParameter("scope")]
             public global::Soenneker.Adyen.OpenApiClient.Models.Scope? Scope { get; set; }
-            /// <summary>&quot;The status of the transfer limit. Possible values:   * **active**: the limit is currently active.* **inactive**: the limit is currently inactive.* **pendingSCA**: the limit is pending until your user performs SCA.* **scheduled**: the limit is scheduled to become active at a future date.&quot;</summary>
+            /// <summary>The status of the transfer limit. Possible values:   * **active**: the limit is currently active.* **inactive**: the limit is currently inactive.* **pendingSCA**: the limit is pending until your user performs SCA.* **scheduled**: the limit is scheduled to become active at a future date.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Adyen.OpenApiClient.Models.LimitStatus? Status { get; set; }
-            /// <summary>&quot;The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.&quot;</summary>
+            /// <summary>The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.</summary>
             [QueryParameter("transferType")]
             public global::Soenneker.Adyen.OpenApiClient.Models.TransferType? TransferType { get; set; }
         }

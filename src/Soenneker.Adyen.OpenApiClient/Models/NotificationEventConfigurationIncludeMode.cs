@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;Indicates whether the specified `eventType` is sent to your webhook endpoint.Possible values:* **INCLUDE**: Send the specified `eventType`.* **EXCLUDE**: Send all event types except the specified `eventType` and other event types with the `includeMode` set to **EXCLUDE**.&quot;</summary>
+    /// <summary>Indicates whether the specified `eventType` is sent to your webhook endpoint.Possible values:* **INCLUDE**: Send the specified `eventType`.* **EXCLUDE**: Send all event types except the specified `eventType` and other event types with the `includeMode` set to **EXCLUDE**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NotificationEventConfigurationIncludeMode
     {

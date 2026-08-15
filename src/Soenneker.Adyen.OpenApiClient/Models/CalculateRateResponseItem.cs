@@ -41,7 +41,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1Amount TargetAmount { get; set; }
 #endif
-        /// <summary>&quot;The type of transaction. Possible values:* **splitPayment**: for payments* **splitRefund**: for refunds&quot;</summary>
+        /// <summary>The type of transaction. Possible values:* **splitPayment**: for payments* **splitRefund**: for refunds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

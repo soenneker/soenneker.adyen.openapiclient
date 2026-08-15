@@ -12,11 +12,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class Webhook : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Indicates if expired SSL certificates are accepted. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates if expired SSL certificates are accepted. Default value: **false**.</summary>
         public bool? AcceptsExpiredCertificate { get; set; }
-        /// <summary>&quot;Indicates if self-signed SSL certificates are accepted. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates if self-signed SSL certificates are accepted. Default value: **false**.</summary>
         public bool? AcceptsSelfSignedCertificate { get; set; }
-        /// <summary>&quot;Indicates if untrusted SSL certificates are accepted. Default value: **false**.&quot;</summary>
+        /// <summary>Indicates if untrusted SSL certificates are accepted. Default value: **false**.</summary>
         public bool? AcceptsUntrustedRootCertificate { get; set; }
         /// <summary>Reference to the account the webook is set on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,9 +54,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.&quot;</summary>
+        /// <summary>SSL version to access the public webhook URL specified in the `url` field. Possible values:* **TLSv1.3*** **TLSv1.2*** **HTTP** - Only allowed on Test environment.If not specified, the webhook will use `sslVersion`: **TLSv1.2**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookEncryptionProtocol? EncryptionProtocol { get; set; }
-        /// <summary>&quot;A list of merchant account names that are included or excluded from receiving the webhook. Inclusion or exclusion is based on the value defined for `filterMerchantAccountType`.Required if `filterMerchantAccountType` is either:* **includeAccounts*** **excludeAccounts**Not needed for `filterMerchantAccountType`: **allAccounts**.&quot;</summary>
+        /// <summary>A list of merchant account names that are included or excluded from receiving the webhook. Inclusion or exclusion is based on the value defined for `filterMerchantAccountType`.Required if `filterMerchantAccountType` is either:* **includeAccounts*** **excludeAccounts**Not needed for `filterMerchantAccountType`: **allAccounts**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? FilterMerchantAccounts { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> FilterMerchantAccounts { get; set; }
 #endif
-        /// <summary>&quot;Shows how merchant accounts are included in company-level webhooks. Possible values:* **includeAccounts*** **excludeAccounts*** **allAccounts**: Includes all merchant accounts, and does not require specifying `filterMerchantAccounts`.&quot;</summary>
+        /// <summary>Shows how merchant accounts are included in company-level webhooks. Possible values:* **includeAccounts*** **excludeAccounts*** **allAccounts**: Includes all merchant accounts, and does not require specifying `filterMerchantAccounts`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookFilterMerchantAccountType? FilterMerchantAccountType { get; set; }
         /// <summary>Indicates if the webhook configuration has errors that need troubleshooting. If the value is **true**, troubleshoot the configuration using the [testing endpoint](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookid}/test).</summary>
         public bool? HasError { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Network type for Terminal API details webhooks.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType? NetworkType { get; set; }
-        /// <summary>&quot;Indicates if the SOAP action header needs to be populated. Default value: **false**.Only applies if `communicationFormat`: **soap**.&quot;</summary>
+        /// <summary>Indicates if the SOAP action header needs to be populated. Default value: **false**.Only applies if `communicationFormat`: **soap**.</summary>
         public bool? PopulateSoapActionHeader { get; set; }
         /// <summary>The type of webhook. Possible values are:- **standard**- **account-settings-notification**- **banktransfer-notification**- **boletobancario-notification**- **directdebit-notification**- **ach-notification-of-change-notification**- **direct-debit-notice-of-change-notification**- **pending-notification**- **ideal-notification**- **ideal-pending-notification**- **report-notification**- **terminal-api-notification**- **terminal-settings**- **terminal-boarding**Find out more about [standard webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#event-codes) and [other types of webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#other-webhooks).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

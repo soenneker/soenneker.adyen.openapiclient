@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterparty Counterparty { get; set; }
 #endif
-        /// <summary>&quot;Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.Your description of the cashout transfer. This description is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.If you do not provide a description, Adyen generates a description automatically. This generated description is not returned in the response.Supported characters: **[a-z] [A-Z] [0-9] / - ? : ( ) . , &apos; + Space**.&quot;</summary>
+        /// <summary>Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.Your description of the cashout transfer. This description is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.If you do not provide a description, Adyen generates a description automatically. This generated description is not returned in the response.Supported characters: **[a-z] [A-Z] [0-9] / - ? : ( ) . , &apos; + Space**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string InstructingBalanceAccountId { get; set; }
 #endif
-        /// <summary>&quot;Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.The reference that is sent to the recipient of a cashout transfer. This reference is also sent in all webhooks related to the cashout transfer, so you can use it to track the status of the transfer.If you do not provide a reference for the beneficiary, Adyen generates one automatically. This generated reference for the beneficiary is not returned in the response.Supported characters: **a-z**, **A-Z**, **0-9**.&quot;</summary>
+        /// <summary>Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.The reference that is sent to the recipient of a cashout transfer. This reference is also sent in all webhooks related to the cashout transfer, so you can use it to track the status of the transfer.If you do not provide a reference for the beneficiary, Adyen generates one automatically. This generated reference for the beneficiary is not returned in the response.Supported characters: **a-z**, **A-Z**, **0-9**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferenceForBeneficiary { get; set; }

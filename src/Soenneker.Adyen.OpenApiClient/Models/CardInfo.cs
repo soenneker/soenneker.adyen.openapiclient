@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Authentication Authentication { get; set; }
 #endif
-        /// <summary>&quot;The brand of the physical or the virtual card.Possible values: **visa**, **mc**.&quot;</summary>
+        /// <summary>The brand of the physical or the virtual card.Possible values: **visa**, **mc**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brand { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BrandVariant { get; set; }
 #endif
-        /// <summary>&quot;The name of the cardholder. Maximum length: 26 characters.&quot;</summary>
+        /// <summary>The name of the cardholder. Maximum length: 26 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CardholderName { get; set; }
@@ -60,9 +60,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DeliveryContact DeliveryContact { get; set; }
 #endif
-        /// <summary>&quot;The form factor of the card.Possible values: **virtual**, **physical**.&quot;</summary>
+        /// <summary>The form factor of the card.Possible values: **virtual**, **physical**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CardInfoFormFactor? FormFactor { get; set; }
-        /// <summary>&quot;The 3DS configuration of the physical or the virtual card. Possible values: **fullySupported**, **secureCorporate**.&gt; Reach out to your Adyen contact to get the values relevant for your integration.&quot;</summary>
+        /// <summary>The 3DS configuration of the physical or the virtual card. Possible values: **fullySupported**, **secureCorporate**.&gt; Reach out to your Adyen contact to get the values relevant for your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThreeDSecure { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ThreeDSecure { get; set; }
 #endif
-        /// <summary>&quot;Specifies how many times the card can be used. Possible values: **singleUse**, **multiUse**.&gt; Reach out to your Adyen contact to determine the value relevant for your integration.&quot;</summary>
+        /// <summary>Specifies how many times the card can be used. Possible values: **singleUse**, **multiUse**.&gt; Reach out to your Adyen contact to determine the value relevant for your integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Usage { get; set; }

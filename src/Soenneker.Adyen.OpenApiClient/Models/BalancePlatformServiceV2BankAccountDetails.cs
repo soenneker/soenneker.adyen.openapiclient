@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
-        /// <summary>&quot;The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.&quot;</summary>
+        /// <summary>The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountType { get; set; }

@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Identifier { get; set; }
 #endif
-        /// <summary>&quot;The secure passphrase to protect the shared key. Must consist of: * At least 12 characters.* At least 1 uppercase letter: `[A-Z]`. * At least 1 lowercase letter: `[a-z]`. * At least 1 digit: `[0-9]`.  * At least 1 special character. Limited to the following: `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&amp;`, `*`, `(`, `)`, `_`, `+`, `=`, `}`, `{`, `]`, `[`, `;`, `:`, `?`, `.`, `,`, `&gt;`, `&lt;`.  &quot;</summary>
+        /// <summary>The secure passphrase to protect the shared key. Must consist of: * At least 12 characters.* At least 1 uppercase letter: `[A-Z]`. * At least 1 lowercase letter: `[a-z]`. * At least 1 digit: `[0-9]`.  * At least 1 special character. Limited to the following: `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&amp;`, `*`, `(`, `)`, `_`, `+`, `=`, `}`, `{`, `]`, `[`, `;`, `:`, `?`, `.`, `,`, `&gt;`, `&lt;`.  </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Passphrase { get; set; }

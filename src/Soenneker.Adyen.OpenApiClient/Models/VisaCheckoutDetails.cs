@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SdkData { get; set; }
 #endif
         /// <summary>**visacheckout**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VisacheckoutType? Type { get; set; }
         /// <summary>The Visa Click to Pay Call ID value. When your shopper selects a payment and/or a shipping address from Visa Click to Pay, you will receive a Visa Click to Pay Call ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsFundingSource>(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisacheckoutType>(); } },
                 { "visaCheckoutCallId", n => { VisaCheckoutCallId = n.GetStringValue(); } },
             };
         }
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("sdkData", SdkData);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisacheckoutType>("type", Type);
             writer.WriteStringValue("visaCheckoutCallId", VisaCheckoutCallId);
         }
     }

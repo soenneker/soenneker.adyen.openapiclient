@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiApps> Apps { get; set; }
 #endif
-        /// <summary>&quot;Brand for the selected gift card. For example: plastix, hmclub.&quot;</summary>
+        /// <summary>Brand for the selected gift card. For example: plastix, hmclub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brand { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Brand { get; set; }
 #endif
-        /// <summary>&quot;List of possible brands. For example: visa, mc.&quot;</summary>
+        /// <summary>List of possible brands. For example: visa, mc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Brands { get; set; }

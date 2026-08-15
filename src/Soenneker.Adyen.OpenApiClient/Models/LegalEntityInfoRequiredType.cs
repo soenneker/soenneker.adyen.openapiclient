@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.Trust Trust { get; set; }
 #endif
-        /// <summary>&quot;The type of legal entity. Possible values: **individual**, **organization**, **soleProprietorship**, or **trust**.&quot;</summary>
+        /// <summary>The type of legal entity. Possible values: **individual**, **organization**, **soleProprietorship**, or **trust**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeType? Type { get; set; }
         /// <summary>The unincorporatedPartnership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -168,7 +168,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transactions
             [QueryParameter("paymentInstrumentId")]
             public string PaymentInstrumentId { get; set; }
 #endif
-            /// <summary>&quot;Determines the sort order of the returned transactions. The sort order is based on the creation date of the transaction.Possible values: - **asc**: Ascending order, from oldest to most recent.- **desc**: Descending order, from most recent to oldest.Default value: **asc**.&quot;</summary>
+            /// <summary>Determines the sort order of the returned transactions. The sort order is based on the creation date of the transaction.Possible values: - **asc**: Ascending order, from oldest to most recent.- **desc**: Descending order, from most recent to oldest.Default value: **asc**.</summary>
             [QueryParameter("sortOrder")]
             public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GetTransactionsSortOrderParameter? SortOrder { get; set; }
         }

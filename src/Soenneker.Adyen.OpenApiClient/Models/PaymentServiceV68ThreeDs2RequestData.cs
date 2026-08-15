@@ -20,7 +20,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68AcctInfo AcctInfo { get; set; }
 #endif
-        /// <summary>&quot;Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:* **01** — Not applicable* **02** — Credit* **03** — Debit&quot;</summary>
+        /// <summary>Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:* **01** — Not applicable* **02** — Credit* **03** — Debit</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataAcctType? AcctType { get; set; }
         /// <summary>Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The acquiring BIN enrolled for 3D Secure 2. This string should match the value that you will use in the authorisation. Use 123456 on the Test platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Value **true** indicates that the transaction was de-tokenised prior to being received by the ACS.</summary>
         public bool? PayTokenInd { get; set; }
-        /// <summary>&quot;Indicates the maximum number of authorisations permitted for instalment payments. Length: 1–3 characters.&quot;</summary>
+        /// <summary>Indicates the maximum number of authorisations permitted for instalment payments. Length: 1–3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PurchaseInstalData { get; set; }
@@ -128,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PurchaseInstalData { get; set; }
 #endif
-        /// <summary>&quot;Date after which no further authorisations shall be performed. Format: YYYYMMDD&quot;</summary>
+        /// <summary>Date after which no further authorisations shall be performed. Format: YYYYMMDD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurringExpiry { get; set; }
@@ -136,7 +136,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RecurringExpiry { get; set; }
 #endif
-        /// <summary>&quot;Indicates the minimum number of days between authorisations. Maximum length: 4 characters.&quot;</summary>
+        /// <summary>Indicates the minimum number of days between authorisations. Maximum length: 4 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurringFrequency { get; set; }
@@ -254,7 +254,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Identify the type of the transaction being authenticated.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransactionType? TransactionType { get; set; }
-        /// <summary>&quot;Identifies the type of transaction being authenticated. Length: 2 characters. Allowed values:* **01** — Goods/Service Purchase* **03** — Check Acceptance* **10** — Account Funding* **11** — Quasi-Cash Transaction* **28** — Prepaid Activation and Load&quot;</summary>
+        /// <summary>Identifies the type of transaction being authenticated. Length: 2 characters. Allowed values:* **01** — Goods/Service Purchase* **03** — Check Acceptance* **10** — Account Funding* **11** — Quasi-Cash Transaction* **28** — Prepaid Activation and Load</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDs2RequestDataTransType? TransType { get; set; }
         /// <summary>The `whiteListStatus` value returned from a previous 3D Secure 2 transaction, only applicable for 3D Secure 2 protocol version 2.2.0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

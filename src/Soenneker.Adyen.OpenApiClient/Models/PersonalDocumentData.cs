@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>&quot;The type of the document. Possible values: **ID**, **DRIVINGLICENSE**, **PASSPORT**, **SOCIALSECURITY**, **VISA**.To delete an existing entry for a document `type`, send only the `type` field in your request. &quot;</summary>
+        /// <summary>The type of the document. Possible values: **ID**, **DRIVINGLICENSE**, **PASSPORT**, **SOCIALSECURITY**, **VISA**.To delete an existing entry for a document `type`, send only the `type` field in your request. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

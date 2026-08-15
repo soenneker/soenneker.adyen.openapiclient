@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.&quot;</summary>
+    /// <summary>The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PerformVerificationRequestAccountStateType
     {

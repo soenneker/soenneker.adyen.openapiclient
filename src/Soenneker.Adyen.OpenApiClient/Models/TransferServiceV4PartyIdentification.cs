@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The date of birth of the individual in [ISO-8601](https://www.w3.org/TR/NOTE-datetime) format. For example, **YYYY-MM-DD**.Allowed only when `type` is **individual**.</summary>
         public Date? DateOfBirth { get; set; }
-        /// <summary>&quot;The email address of the organization or individual. Maximum length: 254 characters.&quot;</summary>
+        /// <summary>The email address of the organization or individual. Maximum length: 254 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>&quot;The first name of the individual.Supported characters: [a-z] [A-Z] - . / — and space.This parameter is:- Allowed only when `type` is **individual**.- Required when `category` is **card**.&quot;</summary>
+        /// <summary>The first name of the individual.Supported characters: [a-z] [A-Z] - . / — and space.This parameter is:- Allowed only when `type` is **individual**.- Required when `category` is **card**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>&quot;The full name of the entity that owns the bank account or card.Supported characters: [a-z] [A-Z] [0-9] , . ; : - — / \ + &amp; ! ? @ ( ) \&quot; &apos; and space.Required when `category` is **bank**.&quot;</summary>
+        /// <summary>The full name of the entity that owns the bank account or card.Supported characters: [a-z] [A-Z] [0-9] , . ; : - — / \ + &amp; ! ? @ ( ) &quot; &apos; and space.Required when `category` is **bank**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullName { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FullName { get; set; }
 #endif
-        /// <summary>&quot;The last name of the individual.Supported characters: [a-z] [A-Z] - . / — and space.This parameter is:- Allowed only when `type` is **individual**.- Required when `category` is **card**.&quot;</summary>
+        /// <summary>The last name of the individual.Supported characters: [a-z] [A-Z] - . / — and space.This parameter is:- Allowed only when `type` is **individual**.- Required when `category` is **card**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -63,9 +63,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>&quot;The type of entity that owns the bank account or card.Possible values: **individual**, **organization**, or **unknown**.Required when `category` is **card**. In this case, the value must be **individual**.&quot;</summary>
+        /// <summary>The type of entity that owns the bank account or card.Possible values: **individual**, **organization**, or **unknown**.Required when `category` is **card**. In this case, the value must be **individual**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PartyIdentificationType? Type { get; set; }
-        /// <summary>&quot;The URL of the organization or individual. Maximum length: 255 characters.&quot;</summary>
+        /// <summary>The URL of the organization or individual. Maximum length: 255 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

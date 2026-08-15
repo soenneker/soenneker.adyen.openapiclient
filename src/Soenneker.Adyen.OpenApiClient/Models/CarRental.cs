@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CarRental : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The customer service phone number of the car rental company.* Format: Alphanumeric* maxLength: 17* For US and CA numbers must be 10 characters in length* Must not contain any special characters such as + or -* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.customerServiceTollFreeNumber`&quot;</summary>
+        /// <summary>The customer service phone number of the car rental company.* Format: Alphanumeric* maxLength: 17* For US and CA numbers must be 10 characters in length* Must not contain any special characters such as + or -* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.customerServiceTollFreeNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerServicePhoneNumber { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the rental rate is daily or weekly.* **additionalData key:** `carRental.rateIndicator`</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CarRentalRateType? RateType { get; set; }
-        /// <summary>&quot;The rental agreement number for the car rental.* Format: ASCII* maxLength: 9 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.rentalAgreementNumber`&quot;</summary>
+        /// <summary>The rental agreement number for the car rental.* Format: ASCII* maxLength: 9 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.rentalAgreementNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RentalAgreementNumber { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RentalAgreementNumber { get; set; }
 #endif
-        /// <summary>&quot;The classification of the rental car.* Format: Alphanumeric* maxLength: 4 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.rentalClassId`&quot;</summary>
+        /// <summary>The classification of the rental car.* Format: Alphanumeric* maxLength: 4 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.rentalClassId`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RentalClassId { get; set; }
@@ -48,9 +48,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RentalClassId { get; set; }
 #endif
-        /// <summary>&quot;The number of days the car is rented for.* Format: Numeric* Max value: 9999* **additionalData key:** `carRental.daysRented`&quot;</summary>
+        /// <summary>The number of days the car is rented for.* Format: Numeric* Max value: 9999* **additionalData key:** `carRental.daysRented`</summary>
         public int? RentalDays { get; set; }
-        /// <summary>&quot;Rental rate, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* Frequency of the rental rate is specified in the rateType field.* **additionalData key:** `carRental.rate`&quot;</summary>
+        /// <summary>Rental rate, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* Frequency of the rental rate is specified in the rateType field.* **additionalData key:** `carRental.rate`</summary>
         public long? RentalRate { get; set; }
         /// <summary>The rentalSurcharges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges RentalSurcharges { get; set; }
 #endif
-        /// <summary>&quot;The name of the person renting the car.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.renterName`&quot;</summary>
+        /// <summary>The name of the person renting the car.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.renterName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenterName { get; set; }

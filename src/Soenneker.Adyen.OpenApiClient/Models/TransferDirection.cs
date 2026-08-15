@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The direction of the transfer.Possible values: **incoming**, **outgoing**.&quot;</summary>
+    /// <summary>The direction of the transfer.Possible values: **incoming**, **outgoing**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferDirection
     {

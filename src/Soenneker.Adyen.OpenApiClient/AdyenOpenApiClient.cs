@@ -29,10 +29,12 @@ using Soenneker.Adyen.OpenApiClient.PayoutServiceV68;
 using Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4;
 using Soenneker.Adyen.OpenApiClient.RecurringServiceV68;
 using Soenneker.Adyen.OpenApiClient.SessionAuthenticationServiceV1;
+using Soenneker.Adyen.OpenApiClient.SessionServiceV68;
 using Soenneker.Adyen.OpenApiClient.SoftPOSConfigurationServiceV3;
 using Soenneker.Adyen.OpenApiClient.StoredValueServiceV46;
 using Soenneker.Adyen.OpenApiClient.TerminalAPIV1;
 using Soenneker.Adyen.OpenApiClient.TestCardServiceV1;
+using Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1;
 using Soenneker.Adyen.OpenApiClient.TransactionServiceV4;
 using Soenneker.Adyen.OpenApiClient.TransferServiceV4;
 using System.Collections.Generic;
@@ -162,6 +164,11 @@ namespace Soenneker.Adyen.OpenApiClient
         {
             get => new global::Soenneker.Adyen.OpenApiClient.SessionAuthenticationServiceV1.SessionAuthenticationServiceV1RequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The SessionServiceV68 property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.SessionServiceV68.SessionServiceV68RequestBuilder SessionServiceV68
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.SessionServiceV68.SessionServiceV68RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The SoftPOSConfigurationServiceV3 property</summary>
         public global::Soenneker.Adyen.OpenApiClient.SoftPOSConfigurationServiceV3.SoftPOSConfigurationServiceV3RequestBuilder SoftPOSConfigurationServiceV3
         {
@@ -181,6 +188,11 @@ namespace Soenneker.Adyen.OpenApiClient
         public global::Soenneker.Adyen.OpenApiClient.TestCardServiceV1.TestCardServiceV1RequestBuilder TestCardServiceV1
         {
             get => new global::Soenneker.Adyen.OpenApiClient.TestCardServiceV1.TestCardServiceV1RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The TfmAPIServiceV1 property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.TfmAPIServiceV1RequestBuilder TfmAPIServiceV1
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.TfmAPIServiceV1.TfmAPIServiceV1RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The TransactionServiceV4 property</summary>
         public global::Soenneker.Adyen.OpenApiClient.TransactionServiceV4.TransactionServiceV4RequestBuilder TransactionServiceV4

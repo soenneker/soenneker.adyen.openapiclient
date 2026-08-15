@@ -12,7 +12,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class VippsResponseInfo : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Vipps logo. Format: Base64-encoded string.&quot;</summary>
+        /// <summary>Vipps logo. Format: Base64-encoded string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Logo { get; set; }

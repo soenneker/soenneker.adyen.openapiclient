@@ -28,7 +28,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>&quot;The type of the phone number.Possible values: **Landline**, **Mobile**, **SIP**, **Fax**.&quot;</summary>
+        /// <summary>The type of the phone number.Possible values: **Landline**, **Mobile**, **SIP**, **Fax**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneNumberPhoneType? PhoneType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

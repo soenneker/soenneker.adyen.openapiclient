@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string NotifyUsername { get; set; }
 #endif
-        /// <summary>&quot;The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.&quot;</summary>
+        /// <summary>The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol? SslProtocol { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

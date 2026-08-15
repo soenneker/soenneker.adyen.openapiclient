@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of entity that owns the bank account or card.Possible values: **individual**, **organization**, or **unknown**.Required when `category` is **card**. In this case, the value must be **individual**.&quot;</summary>
+    /// <summary>The type of entity that owns the bank account or card.Possible values: **individual**, **organization**, or **unknown**.Required when `category` is **card**. In this case, the value must be **individual**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransferServiceV4UltimatePartyIdentificationType
     {

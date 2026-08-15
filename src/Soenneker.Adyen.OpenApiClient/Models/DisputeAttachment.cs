@@ -24,7 +24,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>&quot;The name of the attachment, including its filename extension. Supported filename extensions: **jpeg**, **pdf**, **tiff**.&quot;</summary>
+        /// <summary>The name of the attachment, including its filename extension. Supported filename extensions: **jpeg**, **pdf**, **tiff**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }

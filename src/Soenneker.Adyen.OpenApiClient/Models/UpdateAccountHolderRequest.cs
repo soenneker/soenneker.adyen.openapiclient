@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;The legal entity type of the account holder. This determines the information that should be provided in the request.Possible values: **Business**, **Individual**, or **NonProfit**.* If set to **Business** or **NonProfit**, then `accountHolderDetails.businessDetails` must be provided, with at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.* If set to **Individual**, then `accountHolderDetails.individualDetails` must be provided.&quot;</summary>
+        /// <summary>The legal entity type of the account holder. This determines the information that should be provided in the request.Possible values: **Business**, **Individual**, or **NonProfit**.* If set to **Business** or **NonProfit**, then `accountHolderDetails.businessDetails` must be provided, with at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.* If set to **Individual**, then `accountHolderDetails.individualDetails` must be provided.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestLegalEntity? LegalEntity { get; set; }
         /// <summary>The primary three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes), to which the account holder should be updated.</summary>
         [Obsolete("")]

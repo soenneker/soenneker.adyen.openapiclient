@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Password { get; set; }
 #endif
-        /// <summary>&quot;The URL in the format: http(s)://domain.com.&quot;</summary>
+        /// <summary>The URL in the format: http(s)://domain.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UrlProp { get; set; }

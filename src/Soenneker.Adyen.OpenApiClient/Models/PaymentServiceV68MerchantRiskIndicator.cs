@@ -25,7 +25,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DeliveryEmail { get; set; }
 #endif
-        /// <summary>&quot;For Electronic delivery, the email address to which the merchandise was delivered. Maximum length: 254 characters.&quot;</summary>
+        /// <summary>For Electronic delivery, the email address to which the merchandise was delivered. Maximum length: 254 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeliveryEmailAddress { get; set; }

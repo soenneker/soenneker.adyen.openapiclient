@@ -36,7 +36,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>&quot;The city and country/region where the financier is currently located. For example: Chicago, USA&quot;</summary>
+        /// <summary>The city and country/region where the financier is currently located. For example: Chicago, USA</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }

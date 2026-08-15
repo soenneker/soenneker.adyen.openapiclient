@@ -44,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CheckoutAttemptId { get; set; }
 #endif
-        /// <summary>&quot;The name of the bank account holder.If you submit a name with non-Latin characters, we automatically replace some of them with corresponding Latin characters to meet the FATF recommendations. For example:* χ12 is converted to ch12.* üA is converted to euA.* Peter Møller is converted to Peter Mller, because banks don&apos;t accept &apos;ø&apos;.After replacement, the ownerName must have at least three alphanumeric characters (A-Z, a-z, 0-9), and at least one of them must be a valid Latin character (A-Z, a-z). For example:* John17 - allowed.* J17 - allowed.* 171 - not allowed.* John-7 - allowed.&gt; If provided details don&apos;t match the required format, the response returns the error message: 203 &apos;Invalid bank account holder name&apos;.&quot;</summary>
+        /// <summary>The name of the bank account holder.If you submit a name with non-Latin characters, we automatically replace some of them with corresponding Latin characters to meet the FATF recommendations. For example:* χ12 is converted to ch12.* üA is converted to euA.* Peter Møller is converted to Peter Mller, because banks don&apos;t accept &apos;ø&apos;.After replacement, the ownerName must have at least three alphanumeric characters (A-Z, a-z, 0-9), and at least one of them must be a valid Latin character (A-Z, a-z). For example:* John17 - allowed.* J17 - allowed.* 171 - not allowed.* John-7 - allowed.&gt; If provided details don&apos;t match the required format, the response returns the error message: 203 &apos;Invalid bank account holder name&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerName { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>**eft**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.EftDetailsType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EftDirectdebitCaType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EftDetailsType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EftDirectdebitCaType>(); } },
             };
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EftDetailsType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EftDirectdebitCaType>("type", Type);
         }
     }
 }
