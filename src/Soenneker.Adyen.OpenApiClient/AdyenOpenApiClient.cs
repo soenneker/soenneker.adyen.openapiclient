@@ -16,6 +16,7 @@ using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72;
 using Soenneker.Adyen.OpenApiClient.CloudDeviceServiceV1;
 using Soenneker.Adyen.OpenApiClient.DataProtectionServiceV1;
 using Soenneker.Adyen.OpenApiClient.DisputeServiceV30;
+using Soenneker.Adyen.OpenApiClient.DocumentCollectorServiceV1;
 using Soenneker.Adyen.OpenApiClient.ForeignExchangeServiceV1;
 using Soenneker.Adyen.OpenApiClient.FundServiceV6;
 using Soenneker.Adyen.OpenApiClient.HopServiceV6;
@@ -98,6 +99,11 @@ namespace Soenneker.Adyen.OpenApiClient
         public global::Soenneker.Adyen.OpenApiClient.DisputeServiceV30.DisputeServiceV30RequestBuilder DisputeServiceV30
         {
             get => new global::Soenneker.Adyen.OpenApiClient.DisputeServiceV30.DisputeServiceV30RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The DocumentCollectorServiceV1 property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.DocumentCollectorServiceV1.DocumentCollectorServiceV1RequestBuilder DocumentCollectorServiceV1
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.DocumentCollectorServiceV1.DocumentCollectorServiceV1RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ForeignExchangeServiceV1 property</summary>
         public global::Soenneker.Adyen.OpenApiClient.ForeignExchangeServiceV1.ForeignExchangeServiceV1RequestBuilder ForeignExchangeServiceV1

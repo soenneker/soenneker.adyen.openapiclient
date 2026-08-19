@@ -68,6 +68,14 @@
       "url": "https://ca-test.adyen.com/ca/services/DisputeService/v30"
     },
     {
+      "url": "https://document-collector-test.adyen.com/v1",
+      "description": "Test Environment"
+    },
+    {
+      "url": "https://document-collector-live.adyen.com/v1",
+      "description": "Live Environment"
+    },
+    {
       "url": "https://balanceplatform-api-test.adyen.com/fx/api/v1",
       "description": "Test Environment"
     },
@@ -21468,6 +21476,200 @@
         "x-addedInVersion": "1",
         "x-sortIndex": 1,
         "x-methodName": "supplyDefenseDocument"
+      }
+    },
+    "/DocumentCollectorService-v1/crossBorderInvoices": {
+      "post": {
+        "tags": [
+          "Documents"
+        ],
+        "summary": "Upload a document",
+        "description": "Uploads a document for a merchant account.",
+        "operationId": "DocumentCollectorService_v1_post_crossBorderInvoices",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "context",
+                  "file",
+                  "merchantAccount"
+                ],
+                "type": "object",
+                "properties": {
+                  "context": {
+                    "$ref": "#/components/schemas/DocumentContext"
+                  },
+                  "file": {
+                    "type": "string",
+                    "description": "The PDF file to upload. Filename must be {pspReference}.pdf",
+                    "format": "binary"
+                  },
+                  "merchantAccount": {
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9_]*$",
+                    "type": "string",
+                    "description": "The merchant account that the document belongs to",
+                    "example": "YourMerchantAccount"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Document uploaded successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentUploadResponse"
+                },
+                "examples": {
+                  "upload-document-201": {
+                    "summary": "Document uploaded successfully",
+                    "description": "upload-document-201",
+                    "value": {
+                      "pspReference": "QRMJC25GDZRKDM92",
+                      "merchantAccount": "YourMerchantAccount",
+                      "context": "paCbInvoice",
+                      "fileName": "QRMJC25GDZRKDM92.pdf"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentCollectorService_v1_DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "upload-document-400": {
+                    "summary": "Bad request — malformed multipart request",
+                    "description": "upload-document-400",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/invalid-request",
+                      "title": "Bad Request",
+                      "status": 400,
+                      "errorCode": "00_400"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentCollectorService_v1_DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "upload-document-401": {
+                    "summary": "Unauthorized — missing or invalid credentials",
+                    "description": "upload-document-401",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/unauthorized",
+                      "title": "Unauthorized",
+                      "status": 401,
+                      "errorCode": "00_401"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentCollectorService_v1_DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "upload-document-403": {
+                    "summary": "Forbidden — insufficient permissions",
+                    "description": "upload-document-403",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/forbidden",
+                      "title": "Forbidden",
+                      "detail": "Caller does not have access to the requested account",
+                      "status": 403,
+                      "errorCode": "00_403"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity. The request contains invalid fields.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentCollectorService_v1_DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "upload-document-422": {
+                    "summary": "Unprocessable entity — validation failed",
+                    "description": "upload-document-422",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/validation",
+                      "title": "The request is missing required fields or contains invalid data.",
+                      "status": 422,
+                      "errorCode": "29_001",
+                      "invalidFields": [
+                        {
+                          "name": "file",
+                          "value": "",
+                          "message": "File must be a PDF named {pspReference}.pdf"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentCollectorService_v1_DefaultErrorResponseEntity"
+                },
+                "examples": {
+                  "upload-document-500": {
+                    "summary": "Internal server error",
+                    "description": "upload-document-500",
+                    "value": {
+                      "type": "https://docs.adyen.com/errors/internal-server-error",
+                      "title": "Internal Server Error",
+                      "status": 500,
+                      "errorCode": "00_500"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "DocumentCollectorService_v1_ApiKeyAuth": [ ]
+          },
+          {
+            "DocumentCollectorService_v1_BasicAuth": [ ]
+          }
+        ],
+        "x-methodName": "uploadCrossBorderInvoice",
+        "x-sortIndex": 0
       }
     },
     "/ForeignExchangeService-v1/rates/calculate": {
@@ -90204,6 +90406,106 @@
         "properties": {
           "disputeServiceResult": {
             "$ref": "#/components/schemas/DisputeServiceResult"
+          }
+        }
+      },
+      "DocumentCollectorService_v1_DefaultErrorResponseEntity": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "A human-readable explanation specific to this occurrence of the problem."
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "Unique business error code."
+          },
+          "instance": {
+            "type": "string",
+            "description": "A URI that identifies the specific occurrence of the problem if applicable."
+          },
+          "invalidFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentCollectorService_v1_InvalidField"
+            },
+            "description": "Array of fields with validation errors when applicable."
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The unique reference for the request."
+          },
+          "status": {
+            "type": "integer",
+            "description": "The HTTP status code.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem type."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          }
+        },
+        "description": "Standardized error response following RFC-7807 format",
+        "externalDocs": {
+          "url": "https://www.rfc-editor.org/rfc/rfc7807"
+        }
+      },
+      "DocumentContext": {
+        "enum": [
+          "paCbInvoice"
+        ],
+        "type": "string",
+        "description": "The document context indicating the type of document being uploaded"
+      },
+      "DocumentUploadResponse": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "type": "string",
+            "description": "The document context indicating the type of document.",
+            "example": "paCbInvoice"
+          },
+          "fileName": {
+            "type": "string",
+            "description": "The name of the uploaded file.",
+            "example": "QRMJC25GDZRKDM92.pdf"
+          },
+          "merchantAccount": {
+            "type": "string",
+            "description": "The merchant account that the document belongs to.",
+            "example": "YourMerchantAccount"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "The PSP reference extracted from the filename.",
+            "example": "QRMJC25GDZRKDM92"
+          }
+        },
+        "description": "The uploaded document resource"
+      },
+      "DocumentCollectorService_v1_InvalidField": {
+        "required": [
+          "message",
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Description of the validation error."
+          },
+          "name": {
+            "type": "string",
+            "description": "The field that has an invalid value."
+          },
+          "value": {
+            "type": "string",
+            "description": "The invalid value."
           }
         }
       },
@@ -160389,6 +160691,15 @@
         "type": "http",
         "scheme": "basic"
       },
+      "DocumentCollectorService_v1_ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      },
+      "DocumentCollectorService_v1_BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      },
       "ForeignExchangeService_v1_ApiKeyAuth": {
         "type": "apiKey",
         "name": "X-API-Key",
@@ -160770,6 +161081,9 @@
       "name": "Cloud endpoints and connection"
     },
     {
+      "name": "Documents"
+    },
+    {
       "name": "Rates"
     },
     {
@@ -160789,9 +161103,6 @@
     },
     {
       "name": "Business lines"
-    },
-    {
-      "name": "Documents"
     },
     {
       "name": "Terms of Service"
