@@ -21046,7 +21046,18 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/DocumentCollectorServiceV1PostCrossBorderInvoicesFormDataRequest"
+                "$ref": "#/components/schemas/DocumentUploadRequest"
+              },
+              "examples": {
+                "upload-document": {
+                  "summary": "Upload a cross-border invoice document",
+                  "description": "upload-document",
+                  "value": {
+                    "file": "(binary PDF named {pspReference}.pdf)",
+                    "context": "paCbInvoice",
+                    "merchantAccount": "YourMerchantAccount"
+                  }
+                }
               }
             }
           }
@@ -82751,7 +82762,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The document context indicating the type of document being uploaded",
+        "description": "The document context indicating the type of document being uploaded.\n Possible values: **paCbInvoice**.",
         "x-ms-enum": {
           "name": "DocumentContext",
           "modelAsString": false,
@@ -82761,6 +82772,32 @@
               "name": "PaCbInvoice"
             }
           ]
+        }
+      },
+      "DocumentUploadRequest": {
+        "required": [
+          "context",
+          "file",
+          "merchantAccount"
+        ],
+        "type": "object",
+        "properties": {
+          "context": {
+            "$ref": "#/components/schemas/DocumentContext"
+          },
+          "file": {
+            "type": "string",
+            "description": "The PDF file to upload. Filename must be {pspReference}.pdf",
+            "format": "binary"
+          },
+          "merchantAccount": {
+            "maxLength": 255,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_]*$",
+            "type": "string",
+            "description": "The merchant account that the document belongs to.",
+            "example": "YourMerchantAccount"
+          }
         }
       },
       "DocumentUploadResponse": {
@@ -127175,32 +127212,6 @@
       },
       "CloudDeviceServiceV1PostMerchantsMerchantAccountDevicesDeviceIdSync200Response": {
         "type": "string"
-      },
-      "DocumentCollectorServiceV1PostCrossBorderInvoicesFormDataRequest": {
-        "required": [
-          "context",
-          "file",
-          "merchantAccount"
-        ],
-        "type": "object",
-        "properties": {
-          "context": {
-            "$ref": "#/components/schemas/DocumentContext"
-          },
-          "file": {
-            "type": "string",
-            "description": "The PDF file to upload. Filename must be {pspReference}.pdf",
-            "format": "binary"
-          },
-          "merchantAccount": {
-            "maxLength": 255,
-            "minLength": 1,
-            "pattern": "^[a-zA-Z0-9_]*$",
-            "type": "string",
-            "description": "The merchant account that the document belongs to",
-            "example": "YourMerchantAccount"
-          }
-        }
       },
       "RaiseDisputesServiceV4GetDisputes200Response": {
         "type": "array",

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The document context indicating the type of document being uploaded</summary>
+    /// <summary>The document context indicating the type of document being uploaded. Possible values: **paCbInvoice**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DocumentContext
     {
