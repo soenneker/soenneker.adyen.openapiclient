@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A .NET client generated from the Adyen OpenAPI schema, updated daily</Description>
+        <Description>A Kiota-generated .NET client for Adyen APIs</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Adyen.OpenApiClient</AssemblyName>
