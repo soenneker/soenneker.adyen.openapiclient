@@ -15265,9 +15265,7 @@
               "WWW-Authenticate": {
                 "description": "Authentication header, a string that you must pass to the authentication SDK to continue with the deletion process.",
                 "style": "simple",
-                "schema": {
-                  "type": "object"
-                }
+                "schema": {}
               }
             },
             "content": {
@@ -15376,9 +15374,7 @@
               "WWW-Authenticate": {
                 "description": "Authentication header, a string that you must pass to the authentication SDK to continue with the association approval process.",
                 "style": "simple",
-                "schema": {
-                  "type": "object"
-                }
+                "schema": {}
               }
             },
             "content": {
@@ -41968,7 +41964,6 @@
               "X-State": {
                 "style": "simple",
                 "schema": {
-                  "type": "object",
                   "description": "The state provided in the routes generation request.",
                   "example": "123A-456B-789C-10D"
                 }
