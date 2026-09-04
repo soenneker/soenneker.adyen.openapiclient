@@ -90720,11 +90720,11 @@
         "properties": {
           "amountCurrency": {
             "type": "string",
-            "description": "The transaction amount 3 character ISO currency code."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
           },
           "amountValue": {
             "type": "integer",
-            "description": "The transaction amount in minor currency units.",
+            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
             "format": "int64"
           },
           "eventDateTime": {
@@ -90734,59 +90734,59 @@
           },
           "externalNetworkTxReferenceFound": {
             "type": "boolean",
-            "description": "Confirms that the provided networkTxReference path successfully matched a reference in the third-party response."
+            "description": "Indicates if the `networkTxReferencePaths` matched a reference in the third-party response."
           },
           "externalNetworkTxReferenceRequested": {
             "type": "boolean",
-            "description": "It's being populated when networkTxReferencePaths is provided"
+            "description": "Indicates if a `networkTxReferencePaths` value was provided in the request."
           },
           "externalPartyResponseBody": {
             "type": "string",
-            "description": "The External Party response body."
+            "description": "The raw response body returned by the third-party service."
           },
           "externalPsp": {
             "type": "string",
-            "description": "The External Psp."
+            "description": "The third-party service that processed the payment request."
           },
           "externalPspTransactionStatus": {
             "type": "string",
-            "description": "The External Psp transaction status."
+            "description": "The transaction status returned by the third-party service."
           },
           "externalTransactionLinkIdFound": {
             "type": "boolean",
-            "description": "Confirms that the provided transactionLinkId path successfully matched a reference in the third-party response."
+            "description": "Indicates if the `transactionLinkIdPaths` matched a reference in the third-party response."
           },
           "externalTransactionLinkIdRequested": {
             "type": "boolean",
-            "description": "It's being populated when transactionLinkIdPaths is provided"
+            "description": "Indicates if a `transactionLinkIdPaths` value was provided in the request."
           },
           "merchantAccountCode": {
             "type": "string",
-            "description": "The merchant account code."
+            "description": "The merchant account that is used to process the payment."
           },
           "merchantCountryCode": {
             "type": "string",
-            "description": "The merchant country code."
+            "description": "The country of the merchant account."
           },
           "merchantReference": {
             "type": "string",
-            "description": "Merchant transaction reference."
+            "description": "Your reference to uniquely identify the payment."
           },
           "pspReference": {
             "type": "string",
-            "description": "PSP Reference."
+            "description": "Adyen's 16-character reference associated with the request. This value is globally unique, so you can use it as the reference when you communicate with us about this request."
           },
           "scheme": {
             "type": "string",
-            "description": "Card transaction scheme."
+            "description": "The card network used for the transaction. For example, **visa** or **mc**."
           },
           "shopperReference": {
             "type": "string",
-            "description": "Shopper reference."
+            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID."
           },
           "storedPaymentMethodId": {
             "type": "string",
-            "description": "Stored Payment Method Id."
+            "description": "The unique identifier of the token."
           }
         },
         "additionalProperties": false
@@ -90800,7 +90800,7 @@
         "properties": {
           "createdAt": {
             "type": "string",
-            "description": "Timestamp for when the webhook was created.",
+            "description": "The date and time when the webhook was created.",
             "format": "date-time"
           },
           "data": {
@@ -90812,7 +90812,7 @@
           },
           "type": {
             "type": "string",
-            "description": "Type of notification."
+            "description": "The type of notification."
           },
           "version": {
             "type": "string",

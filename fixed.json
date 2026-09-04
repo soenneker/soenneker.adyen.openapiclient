@@ -66309,6 +66309,9 @@
         }
       },
       "MandateBankAccountAccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -69436,6 +69439,9 @@
         }
       },
       "BankAccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "properties": {
           "type": {
@@ -83078,11 +83084,11 @@
         "properties": {
           "amountCurrency": {
             "type": "string",
-            "description": "The transaction amount 3 character ISO currency code."
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
           },
           "amountValue": {
             "type": "integer",
-            "description": "The transaction amount in minor currency units.",
+            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
             "format": "int64"
           },
           "eventDateTime": {
@@ -83092,59 +83098,59 @@
           },
           "externalNetworkTxReferenceFound": {
             "type": "boolean",
-            "description": "Confirms that the provided networkTxReference path successfully matched a reference in the third-party response."
+            "description": "Indicates if the \u0060networkTxReferencePaths\u0060 matched a reference in the third-party response."
           },
           "externalNetworkTxReferenceRequested": {
             "type": "boolean",
-            "description": "It\u0027s being populated when networkTxReferencePaths is provided"
+            "description": "Indicates if a \u0060networkTxReferencePaths\u0060 value was provided in the request."
           },
           "externalPartyResponseBody": {
             "type": "string",
-            "description": "The External Party response body."
+            "description": "The raw response body returned by the third-party service."
           },
           "externalPsp": {
             "type": "string",
-            "description": "The External Psp."
+            "description": "The third-party service that processed the payment request."
           },
           "externalPspTransactionStatus": {
             "type": "string",
-            "description": "The External Psp transaction status."
+            "description": "The transaction status returned by the third-party service."
           },
           "externalTransactionLinkIdFound": {
             "type": "boolean",
-            "description": "Confirms that the provided transactionLinkId path successfully matched a reference in the third-party response."
+            "description": "Indicates if the \u0060transactionLinkIdPaths\u0060 matched a reference in the third-party response."
           },
           "externalTransactionLinkIdRequested": {
             "type": "boolean",
-            "description": "It\u0027s being populated when transactionLinkIdPaths is provided"
+            "description": "Indicates if a \u0060transactionLinkIdPaths\u0060 value was provided in the request."
           },
           "merchantAccountCode": {
             "type": "string",
-            "description": "The merchant account code."
+            "description": "The merchant account that is used to process the payment."
           },
           "merchantCountryCode": {
             "type": "string",
-            "description": "The merchant country code."
+            "description": "The country of the merchant account."
           },
           "merchantReference": {
             "type": "string",
-            "description": "Merchant transaction reference."
+            "description": "Your reference to uniquely identify the payment."
           },
           "pspReference": {
             "type": "string",
-            "description": "PSP Reference."
+            "description": "Adyen\u0027s 16-character reference associated with the request. This value is globally unique, so you can use it as the reference when you communicate with us about this request."
           },
           "scheme": {
             "type": "string",
-            "description": "Card transaction scheme."
+            "description": "The card network used for the transaction. For example, **visa** or **mc**."
           },
           "shopperReference": {
             "type": "string",
-            "description": "Shopper reference."
+            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID."
           },
           "storedPaymentMethodId": {
             "type": "string",
-            "description": "Stored Payment Method Id."
+            "description": "The unique identifier of the token."
           }
         },
         "additionalProperties": false
@@ -83158,7 +83164,7 @@
         "properties": {
           "createdAt": {
             "type": "string",
-            "description": "Timestamp for when the webhook was created.",
+            "description": "The date and time when the webhook was created.",
             "format": "date-time"
           },
           "data": {
@@ -83170,7 +83176,7 @@
           },
           "type": {
             "type": "string",
-            "description": "Type of notification."
+            "description": "The type of notification."
           },
           "version": {
             "type": "string",
@@ -106050,6 +106056,9 @@
         }
       },
       "SessionAuthenticationServiceV1Resource": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "properties": {
           "type": {
@@ -120934,6 +120943,9 @@
         "additionalProperties": false
       },
       "BalancePlatformConfigurationNotificationV2PaymentInstrumentAdditionalBankAccountIdentificationsItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -120962,6 +120974,9 @@
         }
       },
       "BalancePlatformRelayedAuthorisationNotificationV4PaymentInstrumentAdditionalBankAccountIdentificationsItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -120990,6 +121005,9 @@
         }
       },
       "BankAccountAccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121118,6 +121136,9 @@
             "minLength": 9,
             "type": "string",
             "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
@@ -121160,6 +121181,9 @@
         }
       },
       "BankAccountIdentificationValidationRequestAccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121288,6 +121312,9 @@
             "minLength": 9,
             "type": "string",
             "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Bank account identification.",
@@ -121330,6 +121357,9 @@
         }
       },
       "BalancePlatformServiceV2PaymentInstrumentAdditionalBankAccountIdentificationsItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121358,6 +121388,9 @@
         }
       },
       "TransferRouteRequirementsItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121447,6 +121480,9 @@
           },
           "paymentInstrumentType": {
             "$ref": "#/components/schemas/PaymentInstrumentRequirementPaymentInstrumentType"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "discriminator": {
@@ -121476,6 +121512,9 @@
         }
       },
       "UpdatePaymentInstrumentAdditionalBankAccountIdentificationsItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121610,6 +121649,9 @@
         }
       },
       "TransferViewCategoryData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121686,6 +121728,9 @@
             "type": "string",
             "description": "The payment reference included in the transfer.",
             "x-addedInVersion": "4"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The relevant data according to the transfer category.",
@@ -121705,6 +121750,9 @@
         "x-addedInVersion": "4"
       },
       "BalancePlatformTransferNotificationV4BankAccountV3AccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121833,6 +121881,9 @@
             "minLength": 9,
             "type": "string",
             "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
@@ -121875,6 +121926,9 @@
         }
       },
       "TransferDataCategoryData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121951,6 +122005,9 @@
             "type": "string",
             "description": "The payment reference included in the transfer.",
             "x-addedInVersion": "4"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The relevant data according to the transfer category.",
@@ -121970,6 +122027,9 @@
         "x-addedInVersion": "4"
       },
       "TransferDataTracing": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -121987,6 +122047,9 @@
           "traceNumber": {
             "type": "string",
             "description": "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach)."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Contains information for tracing the transfer after Adyen forwards it to the network.",
@@ -122002,6 +122065,9 @@
         "x-addedInVersion": "4"
       },
       "TransferDataTracking": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -122022,6 +122088,9 @@
           },
           "reason": {
             "$ref": "#/components/schemas/RefusedForRegulatoryReasonsReason"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The latest tracking information of the transfer.",
@@ -122039,6 +122108,9 @@
         "x-addedInVersion": "3"
       },
       "BalancePlatformTransferNotificationV4TransferEventEventsDataItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -122072,6 +122144,9 @@
               "$ref": "#/components/schemas/Lodging"
             },
             "description": "Lodging information."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "discriminator": {
@@ -122087,6 +122162,9 @@
         }
       },
       "BalancePlatformTransferNotificationV4TransferEventTracingData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -122104,6 +122182,9 @@
           "traceNumber": {
             "type": "string",
             "description": "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach)."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Additional tracing information for the tracing event.",
@@ -122119,6 +122200,9 @@
         "x-addedInVersion": "4"
       },
       "BalancePlatformTransferNotificationV4TransferEventTrackingData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -122139,6 +122223,9 @@
           },
           "reason": {
             "$ref": "#/components/schemas/RefusedForRegulatoryReasonsReason"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Additional information for the tracking event.",
@@ -122506,6 +122593,9 @@
         }
       },
       "DonationPaymentRequestPaymentMethod": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -122664,6 +122754,9 @@
           "issuer": {
             "type": "string",
             "description": "The iDEAL issuer value of the shopper\u0027s selected bank. Set this to an **id** of an iDEAL issuer to preselect it."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The type and required details of a payment method to use.\n\nWhen \u0060donationToken\u0060 is provided, the payment method is derived from the token and this field becomes optional.\n\nIf you are [PCI compliant](https://docs.adyen.com/development-resources/pci-dss-compliance-guide), and make donations using raw card details, you must explicitly provide the payment method details.",
@@ -122688,6 +122781,9 @@
         }
       },
       "CheckoutServiceV72PaymentDetailsResponseAction": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -122734,6 +122830,9 @@
         "x-addedInVersion": "49"
       },
       "PaymentRequestPaymentMethod": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -123267,6 +123366,9 @@
           "clickAndCollect": {
             "type": "string",
             "description": "Set this to **true** if the shopper would like to pick up and collect their order, instead of having the goods delivered to them."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The type and required details of a payment method to use.",
@@ -123578,6 +123680,9 @@
         }
       },
       "PaymentResponseAction": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -123745,6 +123850,9 @@
           },
           "surcharge": {
             "$ref": "#/components/schemas/CheckoutServiceV72Amount"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Action to be taken for completing the payment.",
@@ -123914,6 +124022,9 @@
         "x-addedInVersion": "3"
       },
       "ScheduleTerminalActionsRequestActionDetails": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -123947,6 +124058,9 @@
           "updateAtFirstMaintenanceCall": {
             "type": "boolean",
             "description": "Boolean flag that tells if the terminal should update at the first next maintenance call. If false, terminal will update on its configured reboot time."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Information about the action to take.",
@@ -123969,6 +124083,9 @@
         }
       },
       "ScheduleTerminalActionsResponseActionDetails": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -124002,6 +124119,9 @@
           "updateAtFirstMaintenanceCall": {
             "type": "boolean",
             "description": "Boolean flag that tells if the terminal should update at the first next maintenance call. If false, terminal will update on its configured reboot time."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Information about the action to take.",
@@ -124669,6 +124789,9 @@
         "description": "The party that initiated the cancellation of the transaction.\n\nPossible values: **merchant**, **cardholder**."
       },
       "TransferServiceV4BankAccountV3AccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -124797,6 +124920,9 @@
             "minLength": 9,
             "type": "string",
             "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
@@ -124839,6 +124965,9 @@
         }
       },
       "TransferCategoryData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -124915,6 +125044,9 @@
             "type": "string",
             "description": "The payment reference included in the transfer.",
             "x-addedInVersion": "4"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The relevant data according to the transfer category.",
@@ -124934,6 +125066,9 @@
         "x-addedInVersion": "4"
       },
       "TransferServiceV4TransferDataCategoryData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125010,6 +125145,9 @@
             "type": "string",
             "description": "The payment reference included in the transfer.",
             "x-addedInVersion": "4"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The relevant data according to the transfer category.",
@@ -125029,6 +125167,9 @@
         "x-addedInVersion": "4"
       },
       "TransferServiceV4TransferDataTracing": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125046,6 +125187,9 @@
           "traceNumber": {
             "type": "string",
             "description": "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach)."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Contains information for tracing the transfer after Adyen forwards it to the network.",
@@ -125061,6 +125205,9 @@
         "x-addedInVersion": "4"
       },
       "TransferServiceV4TransferDataTracking": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125081,6 +125228,9 @@
           },
           "reason": {
             "$ref": "#/components/schemas/RefusedForRegulatoryReasonsReason"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The latest tracking information of the transfer.",
@@ -125098,6 +125248,9 @@
         "x-addedInVersion": "3"
       },
       "TransferServiceV4TransferEventEventsDataItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125131,6 +125284,9 @@
               "$ref": "#/components/schemas/TransferServiceV4Lodging"
             },
             "description": "Lodging information."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "discriminator": {
@@ -125146,6 +125302,9 @@
         }
       },
       "TransferServiceV4TransferEventTracingData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125163,6 +125322,9 @@
           "traceNumber": {
             "type": "string",
             "description": "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach)."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Additional tracing information for the tracing event.",
@@ -125178,6 +125340,9 @@
         "x-addedInVersion": "4"
       },
       "TransferServiceV4TransferEventTrackingData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125198,6 +125363,9 @@
           },
           "reason": {
             "$ref": "#/components/schemas/RefusedForRegulatoryReasonsReason"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Additional information for the tracking event.",
@@ -125215,6 +125383,9 @@
         "x-addedInVersion": "3"
       },
       "TransferServiceV4TransferViewCategoryData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -125291,6 +125462,9 @@
             "type": "string",
             "description": "The payment reference included in the transfer.",
             "x-addedInVersion": "4"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The relevant data according to the transfer category.",

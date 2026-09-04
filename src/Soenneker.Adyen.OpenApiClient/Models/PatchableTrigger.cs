@@ -17,10 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains the details about the schedule that determines when the top up is executed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableTriggerSchedule? Schedule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableSchedule? Schedule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableTriggerSchedule Schedule { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableSchedule Schedule { get; set; }
 #endif
         /// <summary>The threshold property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableTriggerSchedule>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableTriggerSchedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableSchedule>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableSchedule.CreateFromDiscriminatorValue); } },
                 { "threshold", n => { Threshold = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableTriggerSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableSchedule>("schedule", Schedule);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }

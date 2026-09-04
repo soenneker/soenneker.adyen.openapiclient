@@ -17,42 +17,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestDuplicateInfo? DuplicateInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo? DuplicateInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestDuplicateInfo DuplicateInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo DuplicateInfo { get; set; }
 #endif
         /// <summary>Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo? FraudInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo? FraudInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo FraudInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo FraudInfo { get; set; }
 #endif
         /// <summary>Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestNotDeliveredInfo? NotDeliveredInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo? NotDeliveredInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestNotDeliveredInfo NotDeliveredInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo NotDeliveredInfo { get; set; }
 #endif
         /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo? OtherInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo? OtherInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo OtherInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo OtherInfo { get; set; }
 #endif
         /// <summary>The current status of the dispute.When you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestStatus? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestStatus Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequest"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestDuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestDuplicateInfo.CreateFromDiscriminatorValue); } },
-                { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo.CreateFromDiscriminatorValue); } },
-                { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestNotDeliveredInfo.CreateFromDiscriminatorValue); } },
-                { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestStatus>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestStatus.CreateFromDiscriminatorValue); } },
+                { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo.CreateFromDiscriminatorValue); } },
+                { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo.CreateFromDiscriminatorValue); } },
+                { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo.CreateFromDiscriminatorValue); } },
+                { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestDuplicateInfo>("duplicateInfo", DuplicateInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestFraudInfo>("fraudInfo", FraudInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestOtherInfo>("otherInfo", OtherInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequestStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo>("duplicateInfo", DuplicateInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo>("fraudInfo", FraudInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>("otherInfo", OtherInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
