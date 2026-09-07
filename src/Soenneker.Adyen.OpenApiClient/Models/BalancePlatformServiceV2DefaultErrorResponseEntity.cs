@@ -49,7 +49,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField> InvalidFields { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>The unique reference for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "instance", n => { Instance = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -122,6 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("instance", Instance);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField>("invalidFields", InvalidFields);
+            writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("requestId", RequestId);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);

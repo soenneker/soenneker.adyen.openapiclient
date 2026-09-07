@@ -46,7 +46,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField> InvalidFields { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>A unique reference for the request, essentially the same as `pspReference`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +119,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "instance", n => { Instance = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse.CreateFromDiscriminatorValue); } },
                 { "routingDetails", n => { RoutingDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails>(global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -130,6 +139,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("instance", Instance);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField>("invalidFields", InvalidFields);
+            writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("requestId", RequestId);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse>("response", Response);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails>("routingDetails", RoutingDetails);

@@ -50507,6 +50507,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -53324,6 +53328,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -63596,6 +63604,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the problem type, pointing to human-readable documentation on this problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "additionalProperties": false
@@ -65588,6 +65600,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -69699,6 +69715,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -82319,6 +82339,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -82750,6 +82774,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -83039,6 +83067,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -91927,6 +91959,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the problem type, pointing to human-readable documentation on this problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "additionalProperties": false
@@ -94491,6 +94527,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -98830,6 +98870,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -99107,6 +99151,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -104618,6 +104666,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -105943,6 +105995,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -106237,6 +106293,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -111852,6 +111912,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -113815,6 +113879,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the problem type, pointing to human-readable documentation on this problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "additionalProperties": false
@@ -114711,6 +114779,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the problem type, pointing to human-readable documentation on this problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "additionalProperties": false
@@ -115027,6 +115099,10 @@
           "type": {
             "type": "string",
             "description": "A URI that identifies the validation error type. It points to human-readable documentation for the problem type."
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         },
         "description": "Standardized error response following RFC-7807 format",
@@ -134662,11 +134738,11 @@
             },
             {
               "value": "encryptedPaymentInstrumentDataIsBeingPushedByTheIssuerToTheSameDeviceThatIssuerApplicationAuthenticatedButWithSuccessfulUpfrontAuthentication",
-              "name": "EncryptedPaymentInstrumentDataIsBeingPushedByTheIssuerToTheSameDeviceThatIssuerApplicationAuthenticatedButWithSuccessfulUpfrontAuthentication"
+              "name": "ValueB807A9335FF6E4BA"
             },
             {
               "value": "encryptedPaymentInstrumentDataIsBeingPushedByTheIssuerToTheSameDeviceThatIssuerApplicationAuthenticatedButWithoutAnyUpfrontAuthentication",
-              "name": "EncryptedPaymentInstrumentDataIsBeingPushedByTheIssuerToTheSameDeviceThatIssuerApplicationAuthenticatedButWithoutAnyUpfrontAuthentication"
+              "name": "ValueC9BC25FB9E260AE3"
             },
             {
               "value": "encryptedPaymentInstrumentDataIsPushedToADifferentDeviceThanTheOneThatIssuerApplicationAuthenticated",
