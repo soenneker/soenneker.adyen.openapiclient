@@ -120349,6 +120349,151 @@
         },
         "additionalProperties": false
       },
+      "RefundNotClearedNotificationRequest": {
+        "type": "object",
+        "properties": {
+          "live": {
+            "type": "string",
+            "description": "Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment."
+          },
+          "notificationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RefundNotClearedNotificationRequestItemWrapper"
+            },
+            "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefundNotClearedNotificationRequestItem": {
+        "required": [
+          "pspReference",
+          "merchantReference",
+          "merchantAccountCode",
+          "eventDate",
+          "amount",
+          "success",
+          "eventCode",
+          "originalReference"
+        ],
+        "type": "object",
+        "properties": {
+          "additionalData": {
+            "$ref": "#/components/schemas/SettlementReversalAdditionalData"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/WebhooksV1Amount"
+          },
+          "eventCode": {
+            "$ref": "#/components/schemas/RefundNotClearedEventCode"
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
+            "format": "date-time",
+            "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefundNotClearedNotificationRequestItemRecursive": {
+        "required": [
+          "pspReference",
+          "merchantReference",
+          "merchantAccountCode",
+          "eventDate",
+          "amount",
+          "success",
+          "eventCode",
+          "originalReference"
+        ],
+        "type": "object",
+        "properties": {
+          "eventCode": {
+            "$ref": "#/components/schemas/RefundNotClearedEventCode"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "amount": {
+            "$ref": "#/components/schemas/WebhooksV1Amount"
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "additionalData": {
+            "$ref": "#/components/schemas/SettlementReversalAdditionalData"
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
+            "format": "date-time",
+            "example": "2021-07-17T13:42:40\u002B01:00"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefundNotClearedNotificationRequestItemWrapper": {
+        "type": "object",
+        "properties": {
+          "NotificationRequestItem": {
+            "$ref": "#/components/schemas/RefundNotClearedNotificationRequestItem"
+          }
+        }
+      },
       "RefundNotificationRequest": {
         "type": "object",
         "properties": {
@@ -121014,6 +121159,174 @@
               "$ref": "#/components/schemas/DisputesNotificationRequestItemWrapper"
             },
             "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SettledReversedNotificationRequest": {
+        "type": "object",
+        "properties": {
+          "live": {
+            "type": "string",
+            "description": "Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment."
+          },
+          "notificationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SettledReversedNotificationRequestItemWrapper"
+            },
+            "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SettledReversedNotificationRequestItem": {
+        "required": [
+          "pspReference",
+          "merchantReference",
+          "merchantAccountCode",
+          "eventDate",
+          "amount",
+          "success",
+          "eventCode",
+          "originalReference"
+        ],
+        "type": "object",
+        "properties": {
+          "additionalData": {
+            "$ref": "#/components/schemas/SettlementReversalAdditionalData"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/WebhooksV1Amount"
+          },
+          "eventCode": {
+            "$ref": "#/components/schemas/SettledReversedEventCode"
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
+            "format": "date-time",
+            "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SettledReversedNotificationRequestItemRecursive": {
+        "required": [
+          "pspReference",
+          "merchantReference",
+          "merchantAccountCode",
+          "eventDate",
+          "amount",
+          "success",
+          "eventCode",
+          "originalReference"
+        ],
+        "type": "object",
+        "properties": {
+          "eventCode": {
+            "$ref": "#/components/schemas/SettledReversedEventCode"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "amount": {
+            "$ref": "#/components/schemas/WebhooksV1Amount"
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "additionalData": {
+            "$ref": "#/components/schemas/SettlementReversalAdditionalData"
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
+            "format": "date-time",
+            "example": "2021-07-17T13:42:40\u002B01:00"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SettledReversedNotificationRequestItemWrapper": {
+        "type": "object",
+        "properties": {
+          "NotificationRequestItem": {
+            "$ref": "#/components/schemas/SettledReversedNotificationRequestItem"
+          }
+        }
+      },
+      "SettlementReversalAdditionalData": {
+        "type": "object",
+        "properties": {
+          "bookingDate": {
+            "type": "string"
+          },
+          "expectedValueDate": {
+            "type": "string",
+            "description": "The expected value date of the settlement. Format: yyyy-MM-dd. To receive this field in the webhook, you must enable **Include Settlement Reference** in the additional settings when you [configure the webhook in your Customer Area](https://docs.adyen.com/development-resources/webhooks/configure-and-manage#set-up-webhooks-in-your-customer-area). This setting also enables the \u0060settlementReference\u0060 field."
+          },
+          "hmacSignature": {
+            "type": "string"
+          },
+          "paymentMethodVariant": {
+            "type": "string"
+          },
+          "settlementReference": {
+            "type": "string",
+            "description": "The reference of the original settlement. To receive this field in the webhook, you must enable **Include Settlement Reference** in the additional settings when you [configure the webhook in your Customer Area](https://docs.adyen.com/development-resources/webhooks/configure-and-manage#set-up-webhooks-in-your-customer-area). This setting also enables the \u0060expectedValueDate\u0060 field."
           }
         },
         "additionalProperties": false
@@ -168825,9 +169138,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -168979,6 +169294,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -168989,6 +169308,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -169038,9 +169361,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -169192,6 +169517,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -169202,6 +169531,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -169389,9 +169722,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -169543,6 +169878,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -169553,6 +169892,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -169602,9 +169945,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -169756,6 +170101,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -169766,6 +170115,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -169815,9 +170168,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -169969,6 +170324,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -169979,6 +170338,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -170028,9 +170391,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -170182,6 +170547,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -170192,6 +170561,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -170279,9 +170652,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -170433,6 +170808,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -170443,6 +170822,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -170492,9 +170875,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -170646,6 +171031,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -170656,6 +171045,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -170705,9 +171098,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -170859,6 +171254,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -170869,6 +171268,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -170918,9 +171321,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -171072,6 +171477,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -171082,6 +171491,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -171228,9 +171641,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -171382,6 +171797,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -171392,6 +171811,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -171441,9 +171864,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -171595,6 +172020,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -171605,6 +172034,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -171672,9 +172105,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -171826,6 +172261,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -171836,6 +172275,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -171885,9 +172328,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -172039,6 +172484,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -172049,6 +172498,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -172113,9 +172566,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -172267,6 +172722,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -172277,6 +172736,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -172326,9 +172789,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -172480,6 +172945,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -172490,6 +172959,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -172539,9 +173012,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -172693,6 +173168,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -172703,6 +173182,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -172752,9 +173235,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -172906,6 +173391,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -172916,6 +173405,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -173003,9 +173496,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -173157,6 +173652,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -173167,6 +173666,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -173216,9 +173719,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -173370,6 +173875,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -173380,6 +173889,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -173447,9 +173960,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -173601,6 +174116,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -173611,6 +174130,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -173660,9 +174183,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -173814,6 +174339,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -173824,6 +174353,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -173929,9 +174462,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -174083,6 +174618,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -174093,6 +174632,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -174142,9 +174685,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -174296,6 +174841,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -174308,12 +174857,34 @@
               "name": "SecondChargeback"
             },
             {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
+            },
+            {
               "value": "TECHNICAL_CANCEL",
               "name": "TechnicalCancel"
             },
             {
               "value": "VOID_PENDING_REFUND",
               "name": "VoidPendingRefund"
+            }
+          ]
+        }
+      },
+      "RefundNotClearedEventCode": {
+        "enum": [
+          "REFUND_NOT_CLEARED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of event for which you receive the webhook.",
+        "x-ms-enum": {
+          "name": "RefundNotClearedEventCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
             }
           ]
         }
@@ -174355,9 +174926,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -174509,6 +175082,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -174519,6 +175096,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -174568,9 +175149,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -174722,6 +175305,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -174732,6 +175319,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -174781,9 +175372,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -174935,6 +175528,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -174945,6 +175542,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -174994,9 +175595,11 @@
           "REFUND",
           "REFUNDED_REVERSED",
           "REFUND_FAILED",
+          "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
           "SECOND_CHARGEBACK",
+          "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
           "VOID_PENDING_REFUND"
         ],
@@ -175148,6 +175751,10 @@
               "name": "RefundFailed"
             },
             {
+              "value": "REFUND_NOT_CLEARED",
+              "name": "RefundNotCleared"
+            },
+            {
               "value": "REFUND_WITH_DATA",
               "name": "RefundWithData"
             },
@@ -175158,6 +175765,10 @@
             {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
+            },
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             },
             {
               "value": "TECHNICAL_CANCEL",
@@ -175184,6 +175795,24 @@
             {
               "value": "REPORT_AVAILABLE",
               "name": "ReportAvailable"
+            }
+          ]
+        }
+      },
+      "SettledReversedEventCode": {
+        "enum": [
+          "SETTLED_REVERSED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of event for which you receive the webhook.",
+        "x-ms-enum": {
+          "name": "SettledReversedEventCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "SETTLED_REVERSED",
+              "name": "SettledReversed"
             }
           ]
         }
@@ -200544,6 +201173,35 @@
           ]
         }
       },
+      "post-REFUND_NOT_CLEARED-refund_not_cleared": {
+        "summary": "REFUND_NOT_CLEARED example",
+        "value": {
+          "live": "false",
+          "notificationItems": [
+            {
+              "NotificationRequestItem": {
+                "additionalData": {
+                  "settlementReference": "OBK5EUCZL6BDL3RW",
+                  "expectedValueDate": "2026-08-20"
+                },
+                "amount": {
+                  "currency": "USD",
+                  "value": 10000
+                },
+                "eventCode": "REFUND_NOT_CLEARED",
+                "eventDate": "2026-07-20T21:40:59\u002B02:00",
+                "merchantAccountCode": "YOUR_MERCHANT_ACCOUNT",
+                "merchantReference": "YOUR_MERCHANT_REFERENCE",
+                "originalReference": "ZTRB7QZPHD4Z8F75",
+                "paymentMethod": "visa",
+                "pspReference": "VND3Q7F9F3PNXT75",
+                "reason": "",
+                "success": "true"
+              }
+            }
+          ]
+        }
+      },
       "post-REFUND_WITH_DATA-refund_with_data": {
         "summary": "REFUND_WITH_DATA example",
         "value": {
@@ -200647,6 +201305,35 @@
                 "paymentMethod": "jcb",
                 "pspReference": "QFQTPCQ8HXSKGK82",
                 "reason": "502:Cardmember Dispute",
+                "success": "true"
+              }
+            }
+          ]
+        }
+      },
+      "post-SETTLED_REVERSED-settled_reversed": {
+        "summary": "SETTLED_REVERSED example",
+        "value": {
+          "live": "false",
+          "notificationItems": [
+            {
+              "NotificationRequestItem": {
+                "additionalData": {
+                  "settlementReference": "OBK5EUCZL6BDL3RW",
+                  "expectedValueDate": "2026-08-20"
+                },
+                "amount": {
+                  "currency": "USD",
+                  "value": 10000
+                },
+                "eventCode": "SETTLED_REVERSED",
+                "eventDate": "2026-07-20T21:40:59\u002B02:00",
+                "merchantAccountCode": "YOUR_MERCHANT_ACCOUNT",
+                "merchantReference": "YOUR_MERCHANT_REFERENCE",
+                "originalReference": "ZTRB7QZPHD4Z8F75",
+                "paymentMethod": "visa",
+                "pspReference": "VND3Q7F9F3PNXT75",
+                "reason": "",
                 "success": "true"
               }
             }
