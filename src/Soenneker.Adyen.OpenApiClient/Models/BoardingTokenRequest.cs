@@ -22,6 +22,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BoardingRequestToken { get; set; }
 #endif
+        /// <summary>The subMerchantData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1SubMerchantData? SubMerchantData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1SubMerchantData SubMerchantData { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequest"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "boardingRequestToken", n => { BoardingRequestToken = n.GetStringValue(); } },
+                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1SubMerchantData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("boardingRequestToken", BoardingRequestToken);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentsAppServiceV1SubMerchantData>("subMerchantData", SubMerchantData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
