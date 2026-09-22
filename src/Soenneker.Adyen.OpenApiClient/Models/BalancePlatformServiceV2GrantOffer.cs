@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BalancePlatformServiceV2GrantOffer : IParsable
+    public partial class BalancePlatformServiceV2GrantOffer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier of the account holder to which the grant is offered.</summary>
@@ -20,25 +20,27 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderId { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The principal amount of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferAmount Amount { get; set; }
 #endif
         /// <summary>The contract type of the grant offer. Possible value: **cashAdvance**, **loan**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferContractType? ContractType { get; set; }
         /// <summary>The end date of the grant offer validity period.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The fee property</summary>
+        /// <summary>Details of the fee configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Fee? Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferFee? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Fee Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferFee Fee { get; set; }
 #endif
         /// <summary>The unique identifier of the grant offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,16 +50,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The repayment property</summary>
+        /// <summary>Details of the repayment configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Repayment? Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferRepayment? Repayment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Repayment Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferRepayment Repayment { get; set; }
 #endif
         /// <summary>The starting date of the grant offer validity period.</summary>
         public DateTimeOffset? StartsAt { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer"/> and sets the default values.
+        /// </summary>
+        public BalancePlatformServiceV2GrantOffer()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,12 +86,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferAmount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferAmount.CreateFromDiscriminatorValue); } },
                 { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferContractType>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Fee>(global::Soenneker.Adyen.OpenApiClient.Models.Fee.CreateFromDiscriminatorValue); } },
+                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferFee>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferFee.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Repayment>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Repayment.CreateFromDiscriminatorValue); } },
+                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferRepayment>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferRepayment.CreateFromDiscriminatorValue); } },
                 { "startsAt", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -94,13 +103,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderId", AccountHolderId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferContractType>("contractType", ContractType);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Fee>("fee", Fee);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferFee>("fee", Fee);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Repayment>("repayment", Repayment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOfferRepayment>("repayment", Repayment);
             writer.WriteDateTimeOffsetValue("startsAt", StartsAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

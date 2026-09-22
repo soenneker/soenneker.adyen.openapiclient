@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentResult : IParsable
+    public partial class PaymentResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
         /// <summary>Authorisation code:* When the payment is authorised successfully, this field holds the authorisation code for the payment.* When the payment is not authorised, this field is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,13 +30,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AuthCode { get; set; }
 #endif
-        /// <summary>The dccAmount property</summary>
+        /// <summary>Includes the currency of the conversion and the value of the transaction.&gt; This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https://www.adyen.help/hc/en-us/requests/new).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount? DccAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultDccAmount? DccAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount DccAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultDccAmount DccAmount { get; set; }
 #endif
         /// <summary>Cryptographic signature used to verify `dccQuote`.&gt; This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https://www.adyen.help/hc/en-us/requests/new).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,13 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DccSignature { get; set; }
 #endif
-        /// <summary>The fraudResult property</summary>
+        /// <summary>The fraud result properties of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68FraudResult? FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultFraudResult? FraudResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68FraudResult FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultFraudResult FraudResult { get; set; }
 #endif
         /// <summary>The URL to direct the shopper to.&gt; In case of SecurePlus, do not redirect a shopper to this URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,6 +97,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The result of the payment. For more information, see [Result codes](https://docs.adyen.com/online-payments/payment-result-codes).Possible values:* **AuthenticationFinished** – The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.* **AuthenticationNotRequired** – The transaction does not require 3D Secure authentication. Returned for [standalone authentication-only integrations](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only).* **Authorised** – The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.* **Cancelled** – Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.* **ChallengeShopper** – The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.* **Error** – There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.* **IdentifyShopper** – The issuer requires the shopper&apos;s device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.* **PartiallyAuthorised** – The payment has been authorised for a partial amount.This happens for card payments when the merchant supports Partial Authorisations and the cardholder has insufficient funds.* **Pending** – Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment.* **PresentToShopper** – Indicates that the response contains additional information that you need to present to a shopper, so that they can use it to complete a payment.* **Received** – Indicates the payment has successfully been received by Adyen, and will be processed. This is the initial state for all payments.* **RedirectShopper** – Indicates the shopper should be redirected to an external web page or app to complete the authorisation.* **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultResultCode? ResultCode { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentResult"/> and sets the default values.
+        /// </summary>
+        public PaymentResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentResult"/></returns>
@@ -112,11 +121,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
                 { "authCode", n => { AuthCode = n.GetStringValue(); } },
-                { "dccAmount", n => { DccAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount.CreateFromDiscriminatorValue); } },
+                { "dccAmount", n => { DccAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultDccAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultDccAmount.CreateFromDiscriminatorValue); } },
                 { "dccSignature", n => { DccSignature = n.GetStringValue(); } },
-                { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68FraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68FraudResult.CreateFromDiscriminatorValue); } },
+                { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultFraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultFraudResult.CreateFromDiscriminatorValue); } },
                 { "issuerUrl", n => { IssuerUrl = n.GetStringValue(); } },
                 { "md", n => { Md = n.GetStringValue(); } },
                 { "paRequest", n => { PaRequest = n.GetStringValue(); } },
@@ -132,17 +141,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("authCode", AuthCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount>("dccAmount", DccAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultDccAmount>("dccAmount", DccAmount);
             writer.WriteStringValue("dccSignature", DccSignature);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68FraudResult>("fraudResult", FraudResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultFraudResult>("fraudResult", FraudResult);
             writer.WriteStringValue("issuerUrl", IssuerUrl);
             writer.WriteStringValue("md", Md);
             writer.WriteStringValue("paRequest", PaRequest);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultResultCode>("resultCode", ResultCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

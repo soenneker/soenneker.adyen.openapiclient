@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BalancePlatformServiceV2CaLocalAccountIdentification : IParsable
+    public partial class BalancePlatformServiceV2CaLocalAccountIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The 5- to 12-digit bank account number, without separators or whitespace.</summary>
@@ -21,7 +21,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AccountNumber { get; set; }
 #endif
         /// <summary>The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationAccountType? AccountType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaLocalAccountIdentificationAccountType? AccountType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 3-digit institution number, without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +41,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransitNumber { get; set; }
 #endif
         /// <summary>**caLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentification"/> and sets the default values.
+        /// </summary>
+        public BalancePlatformServiceV2CaLocalAccountIdentification()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,10 +68,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
-                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationAccountType>(); } },
+                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalAccountIdentificationAccountType>(); } },
                 { "institutionNumber", n => { InstitutionNumber = n.GetStringValue(); } },
                 { "transitNumber", n => { TransitNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalType>(); } },
             };
         }
         /// <summary>
@@ -73,10 +82,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountNumber", AccountNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalAccountIdentificationAccountType>("accountType", AccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalAccountIdentificationAccountType>("accountType", AccountType);
             writer.WriteStringValue("institutionNumber", InstitutionNumber);
             writer.WriteStringValue("transitNumber", TransitNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2CaLocalType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

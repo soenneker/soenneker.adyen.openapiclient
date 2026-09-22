@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VisaCheckoutDetails : IParsable
+    public partial class VisaCheckoutDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The checkout attempt identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +42,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string VisaCheckoutCallId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VisaCheckoutDetails"/> and sets the default values.
+        /// </summary>
+        public VisaCheckoutDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,6 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VisacheckoutType>("type", Type);
             writer.WriteStringValue("visaCheckoutCallId", VisaCheckoutCallId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

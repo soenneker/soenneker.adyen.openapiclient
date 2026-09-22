@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NotifyShopperRequest : IParsable
+    public partial class NotifyShopperRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount of the upcoming payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequestAmount Amount { get; set; }
 #endif
         /// <summary>Date on which the subscription amount will be debited from the shopper. In YYYY-MM-DD format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,6 +87,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequest"/> and sets the default values.
+        /// </summary>
+        public NotifyShopperRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequest"/></returns>
@@ -102,7 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Amount>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequestAmount.CreateFromDiscriminatorValue); } },
                 { "billingDate", n => { BillingDate = n.GetStringValue(); } },
                 { "billingSequenceNumber", n => { BillingSequenceNumber = n.GetStringValue(); } },
                 { "displayedReference", n => { DisplayedReference = n.GetStringValue(); } },
@@ -120,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotifyShopperRequestAmount>("amount", Amount);
             writer.WriteStringValue("billingDate", BillingDate);
             writer.WriteStringValue("billingSequenceNumber", BillingSequenceNumber);
             writer.WriteStringValue("displayedReference", DisplayedReference);
@@ -129,6 +138,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

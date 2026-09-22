@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalEntityServiceV4SeLocalAccountIdentification : IParsable
+    public partial class LegalEntityServiceV4SeLocalAccountIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The 7- to 10-digit bank account number ([Bankkontonummer](https://sv.wikipedia.org/wiki/Bankkonto)), without the clearing number, separators, or whitespace.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 4- to 5-digit clearing number ([Clearingnummer](https://sv.wikipedia.org/wiki/Clearingnummer)), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ClearingNumber { get; set; }
 #endif
         /// <summary>**seLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SeLocalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SeLocalType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SeLocalAccountIdentification"/> and sets the default values.
+        /// </summary>
+        public LegalEntityServiceV4SeLocalAccountIdentification()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "clearingNumber", n => { ClearingNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SeLocalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SeLocalType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteStringValue("clearingNumber", ClearingNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SeLocalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SeLocalType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalEntityAssociation : IParsable
+    public partial class LegalEntityAssociation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of another legal entity with which the `legalEntityId` is associated. When the `legalEntityId` is associated to legal entities other than the current one, the response returns all the associations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +75,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Defines the relationship of the legal entity to the current legal entity.Possible value for individuals: **legalRepresentative**.Possible values for organizations: **director**, **signatory**, **trustOwnership**, **uboThroughOwnership**, **uboThroughControl**, **ultimateParentCompany**, or **immediateParentCompany**.Possible values for sole proprietorships: **soleProprietorship**.Possible value for trusts: **trust**.Possible values for trust members: **definedBeneficiary**, **protector**, **secondaryTrustee**, **settlor**, **uboThroughControl**, or **uboThroughOwnership**.Possible value for unincorporated partnership: **unincorporatedPartnership**.Possible values for unincorporated partnership members: **secondaryPartner**, **uboThroughControl**, **uboThroughOwnership**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation"/> and sets the default values.
+        /// </summary>
+        public LegalEntityAssociation()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation"/></returns>
@@ -114,6 +123,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("relationship", Relationship);
             writer.WriteCollectionOfPrimitiveValues<string>("settlorExemptionReason", SettlorExemptionReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociationType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

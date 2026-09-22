@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MinorUnitsMonetaryValue : IParsable
+    public partial class MinorUnitsMonetaryValue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The transaction amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
         public int? Amount { get; set; }
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
@@ -22,6 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CurrencyCode { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue"/> and sets the default values.
+        /// </summary>
+        public MinorUnitsMonetaryValue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("amount", Amount);
             writer.WriteStringValue("currencyCode", CurrencyCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

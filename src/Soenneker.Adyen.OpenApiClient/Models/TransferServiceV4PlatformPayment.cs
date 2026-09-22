@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4PlatformPayment : IParsable
+    public partial class TransferServiceV4PlatformPayment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The capture&apos;s merchant reference included in the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>**platformPayment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPaymentType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPayment"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4PlatformPayment()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,6 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPaymentPlatformPaymentType>("platformPaymentType", PlatformPaymentType);
             writer.WriteStringValue("pspPaymentReference", PspPaymentReference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PlatformPaymentType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

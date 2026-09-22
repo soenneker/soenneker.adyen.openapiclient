@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayoutAccountHolderRequest : IParsable
+    public partial class PayoutAccountHolderRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the account from which the payout is to be made.</summary>
@@ -28,13 +28,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An object containing the currency and value of the payout.If the account has multiple currencies, specify the currency to be used.If the `bankAccountUUID` is provided in the request, the currency supported by the bank is used.If the `payoutMethodCode` is provided in the request, the specified payout method is selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestAmount Amount { get; set; }
 #endif
         /// <summary>The unique ID of the Bank Account held by the Account Holder to which the payout is to be made.If left blank, a bank account is automatically selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,6 +73,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Speed with which payouts for this account are processed. Permitted values: `STANDARD`, `SAME_DAY`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestPayoutSpeed? PayoutSpeed { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest"/> and sets the default values.
+        /// </summary>
+        public PayoutAccountHolderRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequest"/></returns>
@@ -90,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountCode", n => { AccountCode = n.GetStringValue(); } },
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestAmount.CreateFromDiscriminatorValue); } },
                 { "bankAccountUUID", n => { BankAccountUUID = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
@@ -107,12 +116,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountCode", AccountCode);
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestAmount>("amount", Amount);
             writer.WriteStringValue("bankAccountUUID", BankAccountUUID);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("merchantReference", MerchantReference);
             writer.WriteStringValue("payoutMethodCode", PayoutMethodCode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutAccountHolderRequestPayoutSpeed>("payoutSpeed", PayoutSpeed);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

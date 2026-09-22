@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4MerchantPurchaseData : IParsable
+    public partial class TransferServiceV4MerchantPurchaseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The airline property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Airline information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Airline? Airline { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataAirline? Airline { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Airline Airline { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataAirline Airline { get; set; }
 #endif
         /// <summary>Lodging information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,7 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Lodging> Lodging { get; set; }
 #endif
         /// <summary>The type of events data. Possible values:  - **merchantPurchaseData**: merchant purchase data</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseData"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4MerchantPurchaseData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,9 +57,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "airline", n => { Airline = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Airline>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Airline.CreateFromDiscriminatorValue); } },
+                { "airline", n => { Airline = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataAirline>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataAirline.CreateFromDiscriminatorValue); } },
                 { "lodging", n => { Lodging = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Lodging>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Lodging.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataType>(); } },
             };
         }
         /// <summary>
@@ -60,9 +69,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Airline>("airline", Airline);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataAirline>("airline", Airline);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Lodging>("lodging", Lodging);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4MerchantPurchaseDataType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListWebhooksResponse : IParsable
+    public partial class ListWebhooksResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reference to the account.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountReference { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of webhooks configured for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,16 +32,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Total number of items.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks Links { get; set; }
 #endif
         /// <summary>Total number of pages.</summary>
         public int? PagesTotal { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponse"/> and sets the default values.
+        /// </summary>
+        public ListWebhooksResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountReference", n => { AccountReference = n.GetStringValue(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Webhook>(global::Soenneker.Adyen.OpenApiClient.Models.Webhook.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
             };
         }
@@ -75,8 +84,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountReference", AccountReference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Webhook>("data", Data);
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListWebhooksResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

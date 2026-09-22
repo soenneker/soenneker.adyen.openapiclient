@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TestWebhookRequest : IParsable
+    public partial class TestWebhookRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The notification property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Custom test notification object. Required when the [`types`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_types) list contains **CUSTOM**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification? Notification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestWebhookRequestNotification? Notification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification Notification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestWebhookRequestNotification Notification { get; set; }
 #endif
         /// <summary>List of event codes for which to send test notifications. Only the webhook types below are supported. Possible values if webhook `type`: **standard**:* **AUTHORISATION*** **CHARGEBACK_REVERSED*** **ORDER_CLOSED*** **ORDER_OPENED*** **PAIDOUT_REVERSED*** **PAYOUT_THIRDPARTY*** **REFUNDED_REVERSED*** **REFUND_WITH_DATA*** **REPORT_AVAILABLE*** **CUSTOM** - set your custom notification fields in the [`notification`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_notification) object.Possible values if webhook `type`: **banktransfer-notification**:* **PENDING**Possible values if webhook `type`: **report-notification**:* **REPORT_AVAILABLE**Possible values if webhook `type`: **ideal-notification**:* **AUTHORISATION**Possible values if webhook `type`: **pending-notification**:* **PENDING**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,6 +30,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> Types { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TestWebhookRequest"/> and sets the default values.
+        /// </summary>
+        public TestWebhookRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notification", n => { Notification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification>(global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification.CreateFromDiscriminatorValue); } },
+                { "notification", n => { Notification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestWebhookRequestNotification>(global::Soenneker.Adyen.OpenApiClient.Models.TestWebhookRequestNotification.CreateFromDiscriminatorValue); } },
                 { "types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -57,8 +66,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification>("notification", Notification);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestWebhookRequestNotification>("notification", Notification);
             writer.WriteCollectionOfPrimitiveValues<string>("types", Types);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,16 +9,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ThreeDs2RequestFields : IParsable
+    public partial class ThreeDs2RequestFields : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The acctInfo property</summary>
+        /// <summary>Additional information about the cardholder’s account provided by the 3DS Requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo? AcctInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo? AcctInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo AcctInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo AcctInfo { get; set; }
 #endif
         /// <summary>Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:* **01** — Not applicable* **02** — Credit* **03** — Debit</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctType? AcctType { get; set; }
@@ -38,6 +38,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AcquirerMerchantID { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the cardholder shipping Address and cardholder billing address are the same. Allowed values:* **Y** — Shipping Address matches Billing Address.* **N** — Shipping Address does not match Billing Address.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAddrMatch? AddrMatch { get; set; }
         /// <summary>If set to true, you will only perform the [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only), and not the payment authorisation.</summary>
@@ -46,21 +48,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Possibility to specify a preference for receiving a challenge from the issuer.Allowed values:* `noPreference`* `requestNoChallenge`* `requestChallenge`* `requestChallengeAsMandate`</summary>
         [Obsolete("")]
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsChallengeIndicator? ChallengeIndicator { get; set; }
-        /// <summary>The deviceRenderOptions property</summary>
+        /// <summary>Display options for the 3D Secure 2 SDK.Optional and only for `deviceChannel` **app**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceRenderOptions? DeviceRenderOptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsDeviceRenderOptions? DeviceRenderOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceRenderOptions DeviceRenderOptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsDeviceRenderOptions DeviceRenderOptions { get; set; }
 #endif
-        /// <summary>The homePhone property</summary>
+        /// <summary>The home phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone? HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsHomePhone? HomePhone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsHomePhone HomePhone { get; set; }
 #endif
         /// <summary>Required for merchants that have been enrolled for 3D Secure 2 by another party than Adyen, mostly [authentication-only integrations](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The `mcc` is a four-digit code with which the previously given `acquirerMerchantID` is registered at the scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,13 +88,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MessageVersion { get; set; }
 #endif
-        /// <summary>The mobilePhone property</summary>
+        /// <summary>The mobile phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone? MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsMobilePhone? MobilePhone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsMobilePhone MobilePhone { get; set; }
 #endif
         /// <summary>URL to where the issuer should send the `CRes`. Required if you are not using components for `channel` **Web** or if you are using classic integration `deviceChannel` **browser**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,19 +242,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string WhiteListStatus { get; set; }
 #endif
-        /// <summary>The workPhone property</summary>
+        /// <summary>The work phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone? WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsWorkPhone? WorkPhone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsWorkPhone WorkPhone { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields"/> and sets the default values.
         /// </summary>
         public ThreeDs2RequestFields()
         {
+            AdditionalData = new Dictionary<string, object>();
             AuthenticationOnly = false;
             SdkMaxTimeout = 60;
         }
@@ -274,19 +277,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "acctInfo", n => { AcctInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo.CreateFromDiscriminatorValue); } },
+                { "acctInfo", n => { AcctInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo.CreateFromDiscriminatorValue); } },
                 { "acctType", n => { AcctType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctType>(); } },
                 { "acquirerBIN", n => { AcquirerBIN = n.GetStringValue(); } },
                 { "acquirerMerchantID", n => { AcquirerMerchantID = n.GetStringValue(); } },
                 { "addrMatch", n => { AddrMatch = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAddrMatch>(); } },
                 { "authenticationOnly", n => { AuthenticationOnly = n.GetBoolValue(); } },
                 { "challengeIndicator", n => { ChallengeIndicator = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsChallengeIndicator>(); } },
-                { "deviceRenderOptions", n => { DeviceRenderOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceRenderOptions>(global::Soenneker.Adyen.OpenApiClient.Models.DeviceRenderOptions.CreateFromDiscriminatorValue); } },
-                { "homePhone", n => { HomePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone.CreateFromDiscriminatorValue); } },
+                { "deviceRenderOptions", n => { DeviceRenderOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsDeviceRenderOptions>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsDeviceRenderOptions.CreateFromDiscriminatorValue); } },
+                { "homePhone", n => { HomePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsHomePhone>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsHomePhone.CreateFromDiscriminatorValue); } },
                 { "mcc", n => { Mcc = n.GetStringValue(); } },
                 { "merchantName", n => { MerchantName = n.GetStringValue(); } },
                 { "messageVersion", n => { MessageVersion = n.GetStringValue(); } },
-                { "mobilePhone", n => { MobilePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone.CreateFromDiscriminatorValue); } },
+                { "mobilePhone", n => { MobilePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsMobilePhone>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsMobilePhone.CreateFromDiscriminatorValue); } },
                 { "notificationURL", n => { NotificationURL = n.GetStringValue(); } },
                 { "payTokenInd", n => { PayTokenInd = n.GetBoolValue(); } },
                 { "paymentAuthenticationUseCase", n => { PaymentAuthenticationUseCase = n.GetStringValue(); } },
@@ -309,7 +312,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "transType", n => { TransType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsTransType>(); } },
                 { "transactionType", n => { TransactionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsTransactionType>(); } },
                 { "whiteListStatus", n => { WhiteListStatus = n.GetStringValue(); } },
-                { "workPhone", n => { WorkPhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone.CreateFromDiscriminatorValue); } },
+                { "workPhone", n => { WorkPhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsWorkPhone>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsWorkPhone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -319,19 +322,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AcctInfo>("acctInfo", AcctInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctInfo>("acctInfo", AcctInfo);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAcctType>("acctType", AcctType);
             writer.WriteStringValue("acquirerBIN", AcquirerBIN);
             writer.WriteStringValue("acquirerMerchantID", AcquirerMerchantID);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsAddrMatch>("addrMatch", AddrMatch);
             writer.WriteBoolValue("authenticationOnly", AuthenticationOnly);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsChallengeIndicator>("challengeIndicator", ChallengeIndicator);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceRenderOptions>("deviceRenderOptions", DeviceRenderOptions);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>("homePhone", HomePhone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsDeviceRenderOptions>("deviceRenderOptions", DeviceRenderOptions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsHomePhone>("homePhone", HomePhone);
             writer.WriteStringValue("mcc", Mcc);
             writer.WriteStringValue("merchantName", MerchantName);
             writer.WriteStringValue("messageVersion", MessageVersion);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>("mobilePhone", MobilePhone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsMobilePhone>("mobilePhone", MobilePhone);
             writer.WriteStringValue("notificationURL", NotificationURL);
             writer.WriteStringValue("paymentAuthenticationUseCase", PaymentAuthenticationUseCase);
             writer.WriteBoolValue("payTokenInd", PayTokenInd);
@@ -354,7 +357,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsTransactionType>("transactionType", TransactionType);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsTransType>("transType", TransType);
             writer.WriteStringValue("whiteListStatus", WhiteListStatus);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>("workPhone", WorkPhone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFieldsWorkPhone>("workPhone", WorkPhone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

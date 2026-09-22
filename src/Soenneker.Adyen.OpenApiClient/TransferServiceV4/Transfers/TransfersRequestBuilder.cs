@@ -206,7 +206,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
 #endif
             /// <summary>The category of the transfer.Possible values: - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.- **card**: A transfer involving a third-party card.- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.- **issuedCard**: A transfer initiated by an Adyen-issued card.- **platformPayment**: Funds movements related to payments that are acquired for your users.- **topUp**: An incoming transfer initiated by your user to top up their balance account.</summary>
             [QueryParameter("category")]
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GetTransfersCategoryParameter? Category { get; set; }
+            public global::Soenneker.Adyen.OpenApiClient.Models.GetTransfersCategoryParameter? Category { get; set; }
             /// <summary>Only include transfers that have been created on or after this point in time. The value must be in ISO 8601 format and not earlier than 6 months before the `createdUntil` date. For example, **2021-05-30T15:07:40Z**.</summary>
             [QueryParameter("createdSince")]
             public DateTimeOffset? CreatedSince { get; set; }
@@ -248,7 +248,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
 #endif
             /// <summary>Determines the sort order of the returned transfers. The sort order is based on the creation date of the transfers.Possible values: - **asc**: Ascending order, from oldest to most recent.- **desc**: Descending order, from most recent to oldest.Default value: **asc**.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GetTransfersSortOrderParameter? SortOrder { get; set; }
+            public global::Soenneker.Adyen.OpenApiClient.Models.GetTransfersSortOrderParameter? SortOrder { get; set; }
         }
     }
 }

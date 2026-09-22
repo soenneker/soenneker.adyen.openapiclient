@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferRouteRequest : IParsable
+    public partial class TransferRouteRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the source [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts__resParam_id).Required if `counterparty` is **transferInstrumentId**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,13 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary> The type of transfer. Possible values:  - **bank**: Transfer to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments__resParam_id) or a bank account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BankCategory? Category { get; set; }
-        /// <summary>The counterparty property</summary>
+        /// <summary>The recipient of the funds transfer. A bank account or a transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCounterparty Counterparty { get; set; }
 #endif
         /// <summary>The two-character ISO-3166-1 alpha-2 country code of the counterparty. For example, **US** or **NL**. &gt; Either `counterparty` or `country` field must be provided in a transfer route request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,6 +65,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem?> Priorities { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest"/> and sets the default values.
+        /// </summary>
+        public TransferRouteRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequest"/></returns>
@@ -83,7 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankCategory>(); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCounterparty.CreateFromDiscriminatorValue); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "priorities", n => { Priorities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem>()?.AsList(); } },
@@ -99,10 +108,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
             writer.WriteStringValue("balancePlatform", BalancePlatform);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankCategory>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Counterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestCounterparty>("counterparty", Counterparty);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("currency", Currency);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferRouteRequestPrioritiesItem>("priorities", Priorities);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

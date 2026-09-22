@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TerminalOrder : IParsable
+    public partial class TerminalOrder : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The billingEntity property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The details of the entity that the order is billed to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BillingEntity? BillingEntity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity? BillingEntity { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BillingEntity BillingEntity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity BillingEntity { get; set; }
 #endif
         /// <summary>The merchant-defined purchase order number. This will be printed on the packing list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,13 +54,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string OrderDate { get; set; }
 #endif
-        /// <summary>The shippingLocation property</summary>
+        /// <summary>The details of the location where the order is shipped to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShippingLocation? ShippingLocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderShippingLocation? ShippingLocation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShippingLocation ShippingLocation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderShippingLocation ShippingLocation { get; set; }
 #endif
         /// <summary>The processing status of the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,6 +79,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TrackingUrl { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrder"/> and sets the default values.
+        /// </summary>
+        public TerminalOrder()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrder"/></returns>
@@ -94,12 +103,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billingEntity", n => { BillingEntity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BillingEntity>(global::Soenneker.Adyen.OpenApiClient.Models.BillingEntity.CreateFromDiscriminatorValue); } },
+                { "billingEntity", n => { BillingEntity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity.CreateFromDiscriminatorValue); } },
                 { "customerOrderReference", n => { CustomerOrderReference = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem>(global::Soenneker.Adyen.OpenApiClient.Models.OrderItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "orderDate", n => { OrderDate = n.GetStringValue(); } },
-                { "shippingLocation", n => { ShippingLocation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShippingLocation>(global::Soenneker.Adyen.OpenApiClient.Models.ShippingLocation.CreateFromDiscriminatorValue); } },
+                { "shippingLocation", n => { ShippingLocation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderShippingLocation>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderShippingLocation.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "trackingUrl", n => { TrackingUrl = n.GetStringValue(); } },
             };
@@ -111,14 +120,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BillingEntity>("billingEntity", BillingEntity);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderBillingEntity>("billingEntity", BillingEntity);
             writer.WriteStringValue("customerOrderReference", CustomerOrderReference);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OrderItem>("items", Items);
             writer.WriteStringValue("orderDate", OrderDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShippingLocation>("shippingLocation", ShippingLocation);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalOrderShippingLocation>("shippingLocation", ShippingLocation);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("trackingUrl", TrackingUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

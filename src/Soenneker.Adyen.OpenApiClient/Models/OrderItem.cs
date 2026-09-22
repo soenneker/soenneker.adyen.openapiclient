@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OrderItem : IParsable
+    public partial class OrderItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +34,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The number of items with the specified product `id` included in the order.</summary>
         public int? Quantity { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OrderItem"/> and sets the default values.
+        /// </summary>
+        public OrderItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("installments", Installments);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("quantity", Quantity);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -23,17 +23,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get; set; }
 #endif
-        /// <summary>Reason of the payment or loyalty reversal.Possible values:* **CustCancel*** **MerchantCancel*** **Malfunction*** **Unable2Compl**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalReason? ReversalReason { get; set; }
+        /// <summary>Reason of the payment or loyalty reversal.Possible values:* **CustCancel*** **Malfunction*** **MerchantCancel*** **Unable2Compl**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? ReversalReason { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason ReversalReason { get; set; }
+#endif
         /// <summary>Amount of the payment or loyalty to reverse.ReversedAmount is implicitly equal to the AuthorizedAmount if absent.</summary>
         public double? ReversedAmount { get; set; }
         /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData? SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? SaleData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData SaleData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequest"/> and sets the default values.
@@ -61,9 +67,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "OriginalPOITransaction", n => { OriginalPOITransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction.CreateFromDiscriminatorValue); } },
-                { "ReversalReason", n => { ReversalReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalReason>(); } },
+                { "ReversalReason", n => { ReversalReason = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason>(global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason.CreateFromDiscriminatorValue); } },
                 { "ReversedAmount", n => { ReversedAmount = n.GetDoubleValue(); } },
-                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>(global::Soenneker.Adyen.OpenApiClient.Models.SaleData.CreateFromDiscriminatorValue); } },
+                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData>(global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,9 +80,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction>("OriginalPOITransaction", OriginalPOITransaction);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalReason>("ReversalReason", ReversalReason);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason>("ReversalReason", ReversalReason);
             writer.WriteDoubleValue("ReversedAmount", ReversedAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>("SaleData", SaleData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData>("SaleData", SaleData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

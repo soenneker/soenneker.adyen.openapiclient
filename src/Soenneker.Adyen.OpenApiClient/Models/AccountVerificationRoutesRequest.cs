@@ -14,8 +14,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The country property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationCountry? Country { get; set; }
+        /// <summary>The location where the third-party individual&apos;s bank account is registered. Adyen uses this information to determine an available open banking provider, and to configure the open banking flow for that respective location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationRoutesRequestCountry? Country { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationRoutesRequestCountry Country { get; set; }
+#endif
         /// <summary>The language to use in the open banking flow UI, specified by a combination of a two-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) language code and an [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code.This information is used to configure the open banking flow with the same language for a consistent user experience.Default value: **en-US**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationCountry>(); } },
+                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationRoutesRequestCountry>(global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationRoutesRequestCountry.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "redirectUrl", n => { RedirectUrl = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
@@ -78,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationCountry>("country", Country);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationRoutesRequestCountry>("country", Country);
             writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("redirectUrl", RedirectUrl);
             writer.WriteStringValue("state", State);

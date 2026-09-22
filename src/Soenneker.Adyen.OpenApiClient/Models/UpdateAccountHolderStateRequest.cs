@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateAccountHolderStateRequest : IParsable
+    public partial class UpdateAccountHolderStateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the Account Holder on which to update the state.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, disable the requested state.  If false, enable the requested state.</summary>
         public bool? Disable { get; set; }
         /// <summary>The reason that the state is being updated.&gt;Required if the state is being disabled.</summary>
@@ -32,6 +34,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The state to be updated.&gt;Permitted values are: `Processing`, `Payout`</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType? StateType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequest"/> and sets the default values.
+        /// </summary>
+        public UpdateAccountHolderStateRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("disable", Disable);
             writer.WriteStringValue("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType>("stateType", StateType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

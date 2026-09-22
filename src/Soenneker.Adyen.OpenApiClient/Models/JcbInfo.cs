@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class JcbInfo : IParsable
+    public partial class JcbInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>MID (Merchant ID) number. Required for merchants operating in Japan or merchants operating in Canada, Australia and New Zealand when requesting `gatewayContract` or `paymentDesignatorContract` service levels.Format: 14 numeric characters for Japan, 10 numeric characters for Canada, Australia and New Zealand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,19 +26,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? ReuseMidNumber { get; set; }
         /// <summary>Specifies the service level (settlement type) of this payment method. Required for merchants operating in Japan.Possible values:* **noContract**: Adyen holds the contract with JCB for merchants operating in Japan or American Express for merchants operating in Canada, Australia and New Zealand.* **gatewayContract**: JCB or American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Available only for merchants operating in Canada, Australia and New Zealand. Adyen receives the settlement, and handles disputes and payouts.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoServiceLevel? ServiceLevel { get; set; }
-        /// <summary>The transactionDescription property</summary>
+        /// <summary>Information regarding the transaction description.&gt; You cannot configure the transaction description in the test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo? TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoTransactionDescription? TransactionDescription { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoTransactionDescription TransactionDescription { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.JcbInfo"/> and sets the default values.
         /// </summary>
         public JcbInfo()
         {
+            AdditionalData = new Dictionary<string, object>();
             ReuseMidNumber = false;
         }
         /// <summary>
@@ -60,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "midNumber", n => { MidNumber = n.GetStringValue(); } },
                 { "reuseMidNumber", n => { ReuseMidNumber = n.GetBoolValue(); } },
                 { "serviceLevel", n => { ServiceLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoServiceLevel>(); } },
-                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo.CreateFromDiscriminatorValue); } },
+                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoTransactionDescription>(global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoTransactionDescription.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,7 +76,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("midNumber", MidNumber);
             writer.WriteBoolValue("reuseMidNumber", ReuseMidNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoServiceLevel>("serviceLevel", ServiceLevel);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionInfo>("transactionDescription", TransactionDescription);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JcbInfoTransactionDescription>("transactionDescription", TransactionDescription);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

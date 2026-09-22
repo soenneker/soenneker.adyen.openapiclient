@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetTerminalsUnderAccountRequest : IParsable
+    public partial class GetTerminalsUnderAccountRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Your company account. If you only specify this parameter, the response includes all terminals at all account levels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Store { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalsUnderAccountRequest"/> and sets the default values.
+        /// </summary>
+        public GetTerminalsUnderAccountRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("companyAccount", CompanyAccount);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("store", Store);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

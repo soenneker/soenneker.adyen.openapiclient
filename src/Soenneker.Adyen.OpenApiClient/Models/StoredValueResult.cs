@@ -37,16 +37,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public double? ItemAmount { get; set; }
         /// <summary>Product code of item purchased with the transaction.Copy.</summary>
         public int? ProductCode { get; set; }
-        /// <summary>The StoredValueAccountStatus property</summary>
+        /// <summary>Data related to the result of the stored value card transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus? StoredValueAccountStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus? StoredValueAccountStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus StoredValueAccountStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus StoredValueAccountStatus { get; set; }
 #endif
-        /// <summary>Possible values:* **Reserve*** **Activate*** **Load*** **Unload*** **Reverse*** **Duplicate**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType? StoredValueTransactionType { get; set; }
+        /// <summary>Identification of operation to proceed on the stored value account or the stored value card.Copy.Possible values:* **Activate*** **Duplicate*** **Load*** **Reserve*** **Reverse*** **Unload**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueTransactionType? StoredValueTransactionType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueTransactionType StoredValueTransactionType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResult"/> and sets the default values.
         /// </summary>
@@ -77,8 +83,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "HostTransactionID", n => { HostTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "ItemAmount", n => { ItemAmount = n.GetDoubleValue(); } },
                 { "ProductCode", n => { ProductCode = n.GetIntValue(); } },
-                { "StoredValueAccountStatus", n => { StoredValueAccountStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus.CreateFromDiscriminatorValue); } },
-                { "StoredValueTransactionType", n => { StoredValueTransactionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType>(); } },
+                { "StoredValueAccountStatus", n => { StoredValueAccountStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus.CreateFromDiscriminatorValue); } },
+                { "StoredValueTransactionType", n => { StoredValueTransactionType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueTransactionType>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueTransactionType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,8 +99,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("HostTransactionID", HostTransactionID);
             writer.WriteDoubleValue("ItemAmount", ItemAmount);
             writer.WriteIntValue("ProductCode", ProductCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountStatus>("StoredValueAccountStatus", StoredValueAccountStatus);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType>("StoredValueTransactionType", StoredValueTransactionType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueAccountStatus>("StoredValueAccountStatus", StoredValueAccountStatus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueResultStoredValueTransactionType>("StoredValueTransactionType", StoredValueTransactionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

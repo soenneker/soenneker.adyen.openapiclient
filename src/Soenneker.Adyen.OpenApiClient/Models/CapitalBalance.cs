@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CapitalBalance : IParsable
+    public partial class CapitalBalance : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,6 +28,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public long? Principal { get; set; }
         /// <summary>Total amount. A sum of principal amount and fee amount.</summary>
         public long? Total { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalBalance"/> and sets the default values.
+        /// </summary>
+        public CapitalBalance()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("fee", Fee);
             writer.WriteLongValue("principal", Principal);
             writer.WriteLongValue("total", Total);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

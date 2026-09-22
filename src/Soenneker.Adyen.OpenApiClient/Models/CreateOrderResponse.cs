@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateOrderResponse : IParsable
+    public partial class CreateOrderResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>The initial amount of the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAmount Amount { get; set; }
 #endif
         /// <summary>The date that the order will expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,13 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ExpiresAt { get; set; }
 #endif
-        /// <summary>The fraudResult property</summary>
+        /// <summary>The fraud result properties of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FraudResult? FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseFraudResult? FraudResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FraudResult FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseFraudResult FraudResult { get; set; }
 #endif
         /// <summary>The encrypted data that will be used by merchant for adding payments to the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,16 +78,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RefusalReason { get; set; }
 #endif
-        /// <summary>The remainingAmount property</summary>
+        /// <summary>The remaining amount in the order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? RemainingAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseRemainingAmount? RemainingAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount RemainingAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseRemainingAmount RemainingAmount { get; set; }
 #endif
         /// <summary>The result of the order creation request. The value is always **Success**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SuccessResultCode? ResultCode { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponse"/> and sets the default values.
+        /// </summary>
+        public CreateOrderResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -104,15 +113,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty.CreateFromDiscriminatorValue); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAmount.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
-                { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.FraudResult.CreateFromDiscriminatorValue); } },
+                { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseFraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseFraudResult.CreateFromDiscriminatorValue); } },
                 { "orderData", n => { OrderData = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
-                { "remainingAmount", n => { RemainingAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "remainingAmount", n => { RemainingAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseRemainingAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseRemainingAmount.CreateFromDiscriminatorValue); } },
                 { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SuccessResultCode>(); } },
             };
         }
@@ -123,16 +132,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty>("additionalData", AdditionalDataProperty);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseAmount>("amount", Amount);
             writer.WriteStringValue("expiresAt", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>("fraudResult", FraudResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseFraudResult>("fraudResult", FraudResult);
             writer.WriteStringValue("orderData", OrderData);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("refusalReason", RefusalReason);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("remainingAmount", RemainingAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateOrderResponseRemainingAmount>("remainingAmount", RemainingAmount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SuccessResultCode>("resultCode", ResultCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

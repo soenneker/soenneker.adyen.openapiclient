@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentInstrumentGroupInfo : IParsable
+    public partial class PaymentInstrumentGroupInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the [balance platform](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balancePlatforms/{id}__queryParam_id) to which the payment instrument group belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,10 +33,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Properties of the payment instrument group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty? Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2 Properties { get; set; }
 #endif
         /// <summary>Your reference for the payment instrument group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +54,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TxVariant { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfo"/> and sets the default values.
+        /// </summary>
+        public PaymentInstrumentGroupInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "txVariant", n => { TxVariant = n.GetStringValue(); } },
             };
@@ -86,9 +95,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentGroupInfoPropertiesProperty2>("properties", Properties);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("txVariant", TxVariant);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

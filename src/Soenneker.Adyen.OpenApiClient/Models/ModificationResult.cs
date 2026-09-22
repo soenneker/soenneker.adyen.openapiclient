@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ModificationResult : IParsable
+    public partial class ModificationResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field contains additional data, which may be returned in a particular modification response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,6 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates if the modification request has been received for processing.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse? Response { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ModificationResult"/> and sets the default values.
+        /// </summary>
+        public ModificationResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse>(); } },
             };
@@ -60,9 +69,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ModificationResultResponse>("response", Response);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

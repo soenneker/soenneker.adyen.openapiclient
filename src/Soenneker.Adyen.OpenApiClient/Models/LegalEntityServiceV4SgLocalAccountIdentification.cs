@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalEntityServiceV4SgLocalAccountIdentification : IParsable
+    public partial class LegalEntityServiceV4SgLocalAccountIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The 4- to 19-digit bank account number, without separators or whitespace.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bank&apos;s 8- or 11-character BIC or SWIFT code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Bic { get; set; }
 #endif
         /// <summary>**sgLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SgLocalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SgLocalType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SgLocalAccountIdentification"/> and sets the default values.
+        /// </summary>
+        public LegalEntityServiceV4SgLocalAccountIdentification()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "bic", n => { Bic = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SgLocalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SgLocalType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteStringValue("bic", Bic);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SgLocalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4SgLocalType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateStoreRequest : IParsable
+    public partial class UpdateStoreRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the store. It is not possible to update the country of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatableAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatableAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestAddress Address { get; set; }
 #endif
         /// <summary>The unique identifiers of the [business lines](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__resParam_id) that the store is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,24 +54,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>The splitConfiguration property</summary>
+        /// <summary>Rules for Adyen for Platforms merchants to split the transaction amount and fees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration? SplitConfiguration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSplitConfiguration? SplitConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration SplitConfiguration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSplitConfiguration SplitConfiguration { get; set; }
 #endif
         /// <summary>The status of the store. Possible values are:- **active**: This value is assigned automatically when a store is created. - **inactive**: The maximum [transaction limits and number of Store-and-Forward transactions](https://docs.adyen.com/point-of-sale/determine-account-structure/configure-features#payment-features) for the store are set to 0. This blocks new transactions, but captures are still possible.- **closed**: The terminals of the store are reassigned to the merchant inventory, so they can&apos;t process payments.You can change the status from **active** to **inactive**, and from **inactive** to **active** or **closed**. Once **closed**, a store can&apos;t be reopened.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestStatus? Status { get; set; }
-        /// <summary>The subMerchantData property</summary>
+        /// <summary>The sub-merchant data relevant for registered payment facilitators transacting on standalone terminals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData? SubMerchantData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSubMerchantData? SubMerchantData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData SubMerchantData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSubMerchantData SubMerchantData { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequest"/> and sets the default values.
+        /// </summary>
+        public UpdateStoreRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,14 +97,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatableAddress>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatableAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestAddress>(global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestAddress.CreateFromDiscriminatorValue); } },
                 { "businessLineIds", n => { BusinessLineIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "externalReferenceId", n => { ExternalReferenceId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                { "splitConfiguration", n => { SplitConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration.CreateFromDiscriminatorValue); } },
+                { "splitConfiguration", n => { SplitConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSplitConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSplitConfiguration.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestStatus>(); } },
-                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData.CreateFromDiscriminatorValue); } },
+                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSubMerchantData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,14 +114,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatableAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestAddress>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("businessLineIds", BusinessLineIds);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("externalReferenceId", ExternalReferenceId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>("splitConfiguration", SplitConfiguration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSplitConfiguration>("splitConfiguration", SplitConfiguration);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>("subMerchantData", SubMerchantData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateStoreRequestSubMerchantData>("subMerchantData", SubMerchantData);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

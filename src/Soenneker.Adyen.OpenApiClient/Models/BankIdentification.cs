@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BankIdentification : IParsable
+    public partial class BankIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Two-character [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The type of the identification.Possible values: **iban**, **routingNumber**, **sortCode**, **bic**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BankIdentificationIdentificationType? IdentificationType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankIdentification"/> and sets the default values.
+        /// </summary>
+        public BankIdentification()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("identification", Identification);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankIdentificationIdentificationType>("identificationType", IdentificationType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

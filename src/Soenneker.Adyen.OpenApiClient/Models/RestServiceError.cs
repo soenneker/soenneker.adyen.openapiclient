@@ -10,9 +10,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RestServiceError : ApiException, IParsable
+    public partial class RestServiceError : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A human-readable explanation specific to this occurrence of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,10 +68,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponse? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponseProperty? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponse Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponseProperty Response { get; set; }
 #endif
         /// <summary>The HTTP status code.</summary>
         public int? Status { get; set; }
@@ -89,6 +91,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RestServiceError"/> and sets the default values.
+        /// </summary>
+        public RestServiceError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -113,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponse>(global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponse.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponseProperty>(global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponseProperty.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -132,10 +141,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2InvalidField>("invalidFields", InvalidFields);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("requestId", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponse>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RestServiceErrorResponseProperty>("response", Response);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

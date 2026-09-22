@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NetworkToken : IParsable
+    public partial class NetworkToken : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The card brand variant of the payment instrument associated with the network token. For example, **mc_prepaid_mrw**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,13 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Date and time when the network token was created, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) extended format. For example, **2025-03-19T10:15:30+01:00**..</summary>
         public DateTimeOffset? CreationDate { get; set; }
-        /// <summary>The device property</summary>
+        /// <summary>Contains information about the device used to provision the network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo? Device { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenDevice? Device { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo Device { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenDevice Device { get; set; }
 #endif
         /// <summary>The unique identifier of the network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,13 +58,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TokenLastFour { get; set; }
 #endif
-        /// <summary>The tokenRequestor property</summary>
+        /// <summary>The token requestor is an entity who requested tokenization of the card for secure payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor? TokenRequestor { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenTokenRequestor? TokenRequestor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor TokenRequestor { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenTokenRequestor TokenRequestor { get; set; }
 #endif
         /// <summary>The type of network token. For example, **wallet**, **cof**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,6 +74,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken"/> and sets the default values.
+        /// </summary>
+        public NetworkToken()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -92,12 +101,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "brandVariant", n => { BrandVariant = n.GetStringValue(); } },
                 { "creationDate", n => { CreationDate = n.GetDateTimeOffsetValue(); } },
-                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenDevice>(global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenDevice.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenStatus>(); } },
                 { "tokenLastFour", n => { TokenLastFour = n.GetStringValue(); } },
-                { "tokenRequestor", n => { TokenRequestor = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor.CreateFromDiscriminatorValue); } },
+                { "tokenRequestor", n => { TokenRequestor = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenTokenRequestor>(global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenTokenRequestor.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -110,13 +119,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("brandVariant", BrandVariant);
             writer.WriteDateTimeOffsetValue("creationDate", CreationDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceInfo>("device", Device);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenDevice>("device", Device);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenStatus>("status", Status);
             writer.WriteStringValue("tokenLastFour", TokenLastFour);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2NetworkTokenRequestor>("tokenRequestor", TokenRequestor);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkTokenTokenRequestor>("tokenRequestor", TokenRequestor);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

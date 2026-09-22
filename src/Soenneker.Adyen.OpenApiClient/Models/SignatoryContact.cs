@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SignatoryContact : IParsable
+    public partial class SignatoryContact : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactAddress Address { get; set; }
 #endif
         /// <summary>The e-mail address of the person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,29 +46,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string JobTitle { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasName? Name { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasName Name { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactName Name { get; set; }
 #endif
-        /// <summary>The personalData property</summary>
+        /// <summary>Contains information about the person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPersonalData? PersonalData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPersonalData? PersonalData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPersonalData PersonalData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPersonalData PersonalData { get; set; }
 #endif
-        /// <summary>The phoneNumber property</summary>
+        /// <summary>The phone number of the person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber? PhoneNumber { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPhoneNumber? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber PhoneNumber { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPhoneNumber PhoneNumber { get; set; }
 #endif
         /// <summary>The unique identifier (UUID) of the signatory.&gt;**If, during an Account Holder create or update request, this field is left blank (but other fields provided), a new Signatory will be created with a procedurally-generated UUID.**&gt;**If, during an Account Holder create request, a UUID is provided, the creation of the Signatory will fail while the creation of the Account Holder will continue.**&gt;**If, during an Account Holder update request, a UUID that is not correlated with an existing Signatory is provided, the update of the Signatory will fail.**&gt;**If, during an Account Holder update request, a UUID that is correlated with an existing Signatory is provided, the existing Signatory will be updated.**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,6 +95,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string WebAddress { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContact"/> and sets the default values.
+        /// </summary>
+        public SignatoryContact()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContact"/></returns>
@@ -110,13 +119,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>(global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactAddress>(global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactAddress.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "fullPhoneNumber", n => { FullPhoneNumber = n.GetStringValue(); } },
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasName>(global::Soenneker.Adyen.OpenApiClient.Models.ViasName.CreateFromDiscriminatorValue); } },
-                { "personalData", n => { PersonalData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPersonalData>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPersonalData.CreateFromDiscriminatorValue); } },
-                { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactName>(global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactName.CreateFromDiscriminatorValue); } },
+                { "personalData", n => { PersonalData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPersonalData>(global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPersonalData.CreateFromDiscriminatorValue); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPhoneNumber.CreateFromDiscriminatorValue); } },
                 { "signatoryCode", n => { SignatoryCode = n.GetStringValue(); } },
                 { "signatoryReference", n => { SignatoryReference = n.GetStringValue(); } },
                 { "webAddress", n => { WebAddress = n.GetStringValue(); } },
@@ -129,16 +138,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactAddress>("address", Address);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("fullPhoneNumber", FullPhoneNumber);
             writer.WriteStringValue("jobTitle", JobTitle);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPersonalData>("personalData", PersonalData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>("phoneNumber", PhoneNumber);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPersonalData>("personalData", PersonalData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SignatoryContactPhoneNumber>("phoneNumber", PhoneNumber);
             writer.WriteStringValue("signatoryCode", SignatoryCode);
             writer.WriteStringValue("signatoryReference", SignatoryReference);
             writer.WriteStringValue("webAddress", WebAddress);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

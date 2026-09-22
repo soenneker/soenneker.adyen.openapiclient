@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BankAccountDetail : IParsable
+    public partial class BankAccountDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bank account number (without separators).&gt;Refer to [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information) for details on field requirements.</summary>
@@ -28,6 +28,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountType { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,6 +218,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string UrlForVerification { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail"/> and sets the default values.
+        /// </summary>
+        public BankAccountDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail"/></returns>
@@ -294,6 +303,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("primaryAccount", PrimaryAccount);
             writer.WriteStringValue("taxId", TaxId);
             writer.WriteStringValue("urlForVerification", UrlForVerification);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

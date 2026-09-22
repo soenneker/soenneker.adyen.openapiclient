@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountTransactionList : IParsable
+    public partial class AccountTransactionList : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the account.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountCode { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether there is a next page of transactions available.</summary>
         public bool? HasNextPage { get; set; }
         /// <summary>The list of transactions.</summary>
@@ -30,6 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Transaction> Transactions { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountTransactionList"/> and sets the default values.
+        /// </summary>
+        public AccountTransactionList()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountCode", AccountCode);
             writer.WriteBoolValue("hasNextPage", HasNextPage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Transaction>("transactions", Transactions);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

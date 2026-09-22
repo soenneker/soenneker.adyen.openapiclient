@@ -3,15 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
+    /// <summary>The status of the mandate.Possible values: **pending**, **approved**, **cancelled**.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MandateStatus
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "pending")]
-        #pragma warning disable CS1591
-        Pending,
-        #pragma warning restore CS1591
         [EnumMember(Value = "approved")]
         #pragma warning disable CS1591
         Approved,
@@ -19,6 +14,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "cancelled")]
         #pragma warning disable CS1591
         Cancelled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
+        Pending,
         #pragma warning restore CS1591
     }
 }

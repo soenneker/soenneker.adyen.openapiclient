@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalArrangementEntityDetail : IParsable
+    public partial class LegalArrangementEntityDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailAddress Address { get; set; }
 #endif
-        /// <summary>The businessDetails property</summary>
+        /// <summary>Required when creating an entity with `legalEntityType` **Business**, **NonProfit**, **PublicCompany**, or **Partnership**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessDetails? BusinessDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailBusinessDetails? BusinessDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessDetails BusinessDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailBusinessDetails BusinessDetails { get; set; }
 #endif
         /// <summary>The e-mail address of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,13 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FullPhoneNumber { get; set; }
 #endif
-        /// <summary>The individualDetails property</summary>
+        /// <summary>Required when creating an entity with `legalEntityType` **Individual**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetails? IndividualDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails? IndividualDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetails IndividualDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails IndividualDetails { get; set; }
 #endif
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the entry, returned in the response when you create a legal arrangement entity.Use only when updating an account holder. If you include this field when creating an account holder, the request will fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,13 +80,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The legal entity type.Possible values: **Business**, **Individual**, **NonProfit**, **PublicCompany**, or **Partnership**. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalEntityType? LegalEntityType { get; set; }
-        /// <summary>The phoneNumber property</summary>
+        /// <summary>The phone number of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber? PhoneNumber { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailPhoneNumber? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber PhoneNumber { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailPhoneNumber PhoneNumber { get; set; }
 #endif
         /// <summary>The URL of the website of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +96,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string WebAddress { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail"/> and sets the default values.
+        /// </summary>
+        public LegalArrangementEntityDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -112,16 +121,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>(global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress.CreateFromDiscriminatorValue); } },
-                { "businessDetails", n => { BusinessDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessDetails>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessDetails.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailAddress>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailAddress.CreateFromDiscriminatorValue); } },
+                { "businessDetails", n => { BusinessDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailBusinessDetails>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailBusinessDetails.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "fullPhoneNumber", n => { FullPhoneNumber = n.GetStringValue(); } },
-                { "individualDetails", n => { IndividualDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetails>(global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetails.CreateFromDiscriminatorValue); } },
+                { "individualDetails", n => { IndividualDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails.CreateFromDiscriminatorValue); } },
                 { "legalArrangementEntityCode", n => { LegalArrangementEntityCode = n.GetStringValue(); } },
                 { "legalArrangementEntityReference", n => { LegalArrangementEntityReference = n.GetStringValue(); } },
                 { "legalArrangementMembers", n => { LegalArrangementMembers = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalArrangementMembersItem>()?.AsList(); } },
                 { "legalEntityType", n => { LegalEntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalEntityType>(); } },
-                { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber.CreateFromDiscriminatorValue); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailPhoneNumber.CreateFromDiscriminatorValue); } },
                 { "webAddress", n => { WebAddress = n.GetStringValue(); } },
             };
         }
@@ -132,17 +141,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessDetails>("businessDetails", BusinessDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailBusinessDetails>("businessDetails", BusinessDetails);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("fullPhoneNumber", FullPhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IndividualDetails>("individualDetails", IndividualDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailIndividualDetails>("individualDetails", IndividualDetails);
             writer.WriteStringValue("legalArrangementEntityCode", LegalArrangementEntityCode);
             writer.WriteStringValue("legalArrangementEntityReference", LegalArrangementEntityReference);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalArrangementMembersItem>("legalArrangementMembers", LegalArrangementMembers);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailLegalEntityType>("legalEntityType", LegalEntityType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>("phoneNumber", PhoneNumber);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetailPhoneNumber>("phoneNumber", PhoneNumber);
             writer.WriteStringValue("webAddress", WebAddress);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

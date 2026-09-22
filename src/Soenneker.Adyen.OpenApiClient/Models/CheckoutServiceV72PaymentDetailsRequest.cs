@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutServiceV72PaymentDetailsRequest : IParsable
+    public partial class CheckoutServiceV72PaymentDetailsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The authenticationData property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Data for 3DS authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData? AuthenticationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestAuthenticationData? AuthenticationData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData AuthenticationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestAuthenticationData AuthenticationData { get; set; }
 #endif
-        /// <summary>The details property</summary>
+        /// <summary>Use this collection to submit the details that were returned as a result of the `/payments` call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCompletionDetails? Details { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails? Details { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCompletionDetails Details { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails Details { get; set; }
 #endif
         /// <summary>Encoded payment data. For [authorizing a payment after using 3D Secure 2 Authentication-only](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only/#authorise-the-payment-with-adyen):If you received `resultCode`: **AuthenticationNotRequired** in the `/payments` response, use the `threeDSPaymentData` from the same response.If you received `resultCode`: **AuthenticationFinished** in the `/payments` response, use the `action.paymentData` from the same response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,6 +41,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Change the `authenticationOnly` indicator originally set in the `/payments` request. Only needs to be set if you want to modify the value set previously.</summary>
         [Obsolete("")]
         public bool? ThreeDSAuthenticationOnly { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequest"/> and sets the default values.
+        /// </summary>
+        public CheckoutServiceV72PaymentDetailsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,8 +66,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationData", n => { AuthenticationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData.CreateFromDiscriminatorValue); } },
-                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCompletionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentCompletionDetails.CreateFromDiscriminatorValue); } },
+                { "authenticationData", n => { AuthenticationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestAuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestAuthenticationData.CreateFromDiscriminatorValue); } },
+                { "details", n => { Details = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails.CreateFromDiscriminatorValue); } },
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
                 { "threeDSAuthenticationOnly", n => { ThreeDSAuthenticationOnly = n.GetBoolValue(); } },
             };
@@ -70,10 +79,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DetailsRequestAuthenticationData>("authenticationData", AuthenticationData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCompletionDetails>("details", Details);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestAuthenticationData>("authenticationData", AuthenticationData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestDetails>("details", Details);
             writer.WriteStringValue("paymentData", PaymentData);
             writer.WriteBoolValue("threeDSAuthenticationOnly", ThreeDSAuthenticationOnly);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

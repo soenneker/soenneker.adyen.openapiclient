@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The disputeServiceResult property</summary>
+        /// <summary>The result of the dispute service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult? DisputeServiceResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcceptDisputeResponseDisputeServiceResult? DisputeServiceResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult DisputeServiceResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AcceptDisputeResponseDisputeServiceResult DisputeServiceResult { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AcceptDisputeResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disputeServiceResult", n => { DisputeServiceResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult.CreateFromDiscriminatorValue); } },
+                { "disputeServiceResult", n => { DisputeServiceResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptDisputeResponseDisputeServiceResult>(global::Soenneker.Adyen.OpenApiClient.Models.AcceptDisputeResponseDisputeServiceResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult>("disputeServiceResult", DisputeServiceResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptDisputeResponseDisputeServiceResult>("disputeServiceResult", DisputeServiceResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

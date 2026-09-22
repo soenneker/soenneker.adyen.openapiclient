@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchRegisteredDevicesResponse : IParsable
+    public partial class SearchRegisteredDevicesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains a list of registered SCA devices and their corresponding details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,16 +24,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The total amount of registered SCA devices that match the query parameters.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The link property</summary>
+        /// <summary>Contains links to the list pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link? Link { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink? Link { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link Link { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink Link { get; set; }
 #endif
         /// <summary>The total amount of list pages.</summary>
         public int? PagesTotal { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponse"/> and sets the default values.
+        /// </summary>
+        public SearchRegisteredDevicesResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "link", n => { Link = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>(global::Soenneker.Adyen.OpenApiClient.Models.Link.CreateFromDiscriminatorValue); } },
+                { "link", n => { Link = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink>(global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
             };
         }
@@ -65,8 +74,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device>("data", Data);
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>("link", Link);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink>("link", Link);
             writer.WriteIntValue("pagesTotal", PagesTotal);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

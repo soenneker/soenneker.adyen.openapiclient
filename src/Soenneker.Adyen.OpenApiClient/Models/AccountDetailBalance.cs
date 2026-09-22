@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountDetailBalance : IParsable
+    public partial class AccountDetailBalance : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the account that holds the balance.</summary>
@@ -20,14 +20,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountCode { get; set; }
 #endif
-        /// <summary>The detailBalance property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Details of the balance held by the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DetailBalance? DetailBalance { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalanceDetailBalance? DetailBalance { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DetailBalance DetailBalance { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalanceDetailBalance DetailBalance { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalance"/> and sets the default values.
+        /// </summary>
+        public AccountDetailBalance()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountCode", n => { AccountCode = n.GetStringValue(); } },
-                { "detailBalance", n => { DetailBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DetailBalance>(global::Soenneker.Adyen.OpenApiClient.Models.DetailBalance.CreateFromDiscriminatorValue); } },
+                { "detailBalance", n => { DetailBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalanceDetailBalance>(global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalanceDetailBalance.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountCode", AccountCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DetailBalance>("detailBalance", DetailBalance);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountDetailBalanceDetailBalance>("detailBalance", DetailBalance);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

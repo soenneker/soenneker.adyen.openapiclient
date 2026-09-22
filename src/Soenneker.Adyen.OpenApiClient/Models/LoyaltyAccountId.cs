@@ -23,10 +23,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.EntryModeItem?> EntryMode { get; set; }
 #endif
-        /// <summary>Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.Possible values:* **NoCard*** **LoyaltyCard*** **HybridCard*** **LinkedCard**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.IdentificationSupport? IdentificationSupport { get; set; }
-        /// <summary>Possible values:* **PAN*** **ISOTrack2*** **BarCode*** **AccountNumber*** **PhoneNumber**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType? IdentificationType { get; set; }
+        /// <summary>Support of the loyalty account identification. Allows knowing where and how you have found the loyalty account identification.Possible values:* **HybridCard*** **LinkedCard*** **LoyaltyCard*** **NoCard**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport? IdentificationSupport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport IdentificationSupport { get; set; }
+#endif
+        /// <summary>Type of account identification. In a request message, it informs the POI System the type of the account or card identification, when provided by the Sale Terminal. (e.g. because the card information is a barcode read by the Cashier on a scanner device). In a response message, it informs the Sale System the type of the account or card identification.Possible values:* **AccountNumber*** **BarCode*** **ISOTrack2*** **PAN*** **PhoneNumber**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType? IdentificationType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType IdentificationType { get; set; }
+#endif
         /// <summary>Loyalty account identification conforming to the IdentificationType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,8 +73,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.EntryModeItem>()?.AsList(); } },
-                { "IdentificationSupport", n => { IdentificationSupport = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationSupport>(); } },
-                { "IdentificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>(); } },
+                { "IdentificationSupport", n => { IdentificationSupport = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport.CreateFromDiscriminatorValue); } },
+                { "IdentificationType", n => { IdentificationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType.CreateFromDiscriminatorValue); } },
                 { "LoyaltyID", n => { LoyaltyID = n.GetStringValue(); } },
             };
         }
@@ -74,8 +86,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.EntryModeItem>("EntryMode", EntryMode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationSupport>("IdentificationSupport", IdentificationSupport);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>("IdentificationType", IdentificationType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationSupport>("IdentificationSupport", IdentificationSupport);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountIdIdentificationType>("IdentificationType", IdentificationType);
             writer.WriteStringValue("LoyaltyID", LoyaltyID);
             writer.WriteAdditionalData(AdditionalData);
         }

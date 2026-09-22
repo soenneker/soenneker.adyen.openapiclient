@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The counterparty property</summary>
+        /// <summary>Contains the details of the party that receives the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantInfoCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantInfoCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed Counterparty { get; set; }
 #endif
         /// <summary>The unique identifier of the grant account that tracks this grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantInfoCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantInfoCounterparty.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed>(global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed.CreateFromDiscriminatorValue); } },
                 { "grantAccountId", n => { GrantAccountId = n.GetStringValue(); } },
                 { "grantOfferId", n => { GrantOfferId = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantInfoCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GrantInfoCounterpartyComposed>("counterparty", Counterparty);
             writer.WriteStringValue("grantAccountId", GrantAccountId);
             writer.WriteStringValue("grantOfferId", GrantOfferId);
             writer.WriteAdditionalData(AdditionalData);

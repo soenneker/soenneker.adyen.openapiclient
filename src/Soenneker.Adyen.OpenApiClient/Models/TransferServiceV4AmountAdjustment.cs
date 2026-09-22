@@ -9,21 +9,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4AmountAdjustment : IParsable
+    public partial class TransferServiceV4AmountAdjustment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The adjustment amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount Amount { get; set; }
 #endif
         /// <summary>The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get; set; }
         /// <summary>The basepoints associated with the applied markup.</summary>
         public int? Basepoints { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4AmountAdjustment()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount.CreateFromDiscriminatorValue); } },
                 { "amountAdjustmentType", n => { AmountAdjustmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType>(); } },
                 { "basepoints", n => { Basepoints = n.GetIntValue(); } },
             };
@@ -54,9 +63,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustmentAmountAdjustmentType>("amountAdjustmentType", AmountAdjustmentType);
             writer.WriteIntValue("basepoints", Basepoints);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

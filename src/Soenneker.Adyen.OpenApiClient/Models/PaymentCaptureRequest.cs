@@ -9,32 +9,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentCaptureRequest : IParsable
+    public partial class PaymentCaptureRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount that you want to capture. The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestAmount Amount { get; set; }
 #endif
-        /// <summary>The applicationInfo property</summary>
+        /// <summary>Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo? ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestApplicationInfo? ApplicationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestApplicationInfo ApplicationInfo { get; set; }
 #endif
-        /// <summary>The enhancedSchemeData property</summary>
+        /// <summary>Enhanced scheme data that may be required for processing the payment. For example, airline information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData? EnhancedSchemeData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestEnhancedSchemeData? EnhancedSchemeData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData EnhancedSchemeData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestEnhancedSchemeData EnhancedSchemeData { get; set; }
 #endif
         /// <summary>Price and product information of the refunded items, required for [partial refunds](https://docs.adyen.com/online-payments/refund#refund-a-payment).&gt; This field is required for partial refunds with 3x 4x Oney, Affirm, Afterpay, Atome, Clearpay, Klarna, Ratepay, Walley, and Zip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,13 +54,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The platformChargebackLogic property</summary>
+        /// <summary>Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/adyen-for-platforms-model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic? PlatformChargebackLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestPlatformChargebackLogic? PlatformChargebackLogic { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic PlatformChargebackLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestPlatformChargebackLogic PlatformChargebackLogic { get; set; }
 #endif
         /// <summary>Your reference for the capture request. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,6 +87,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo> SubMerchants { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequest"/> and sets the default values.
+        /// </summary>
+        public PaymentCaptureRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequest"/></returns>
@@ -102,12 +111,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo.CreateFromDiscriminatorValue); } },
-                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestAmount.CreateFromDiscriminatorValue); } },
+                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestApplicationInfo.CreateFromDiscriminatorValue); } },
+                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestEnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestEnhancedSchemeData.CreateFromDiscriminatorValue); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic.CreateFromDiscriminatorValue); } },
+                { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestPlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestPlatformChargebackLogic.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subMerchants", n => { SubMerchants = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -120,15 +129,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>("applicationInfo", ApplicationInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestApplicationInfo>("applicationInfo", ApplicationInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestEnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentCaptureRequestPlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>("subMerchants", SubMerchants);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

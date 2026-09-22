@@ -22,15 +22,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The result property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult? Result { get; set; }
-        /// <summary>The resultDetails property</summary>
+        /// <summary>The status of the payout execution.Possible values:- **succeeded**: The payout was sent successfully.- **failed**: The payout could not be sent because an error occurred.- **skipped**: The payout was not triggered as expected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionDetails? ResultDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionDetails ResultDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult Result { get; set; }
+#endif
+        /// <summary>Contains information about the result of the payout execution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails? ResultDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails ResultDetails { get; set; }
 #endif
         /// <summary>The date and time when the payout execution was initiated.</summary>
         public DateTimeOffset? TriggeredAt { get; set; }
@@ -60,8 +66,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult>(); } },
-                { "resultDetails", n => { ResultDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionDetails>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionDetails.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult.CreateFromDiscriminatorValue); } },
+                { "resultDetails", n => { ResultDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails.CreateFromDiscriminatorValue); } },
                 { "triggeredAt", n => { TriggeredAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -73,8 +79,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionDetails>("resultDetails", ResultDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails>("resultDetails", ResultDetails);
             writer.WriteDateTimeOffsetValue("triggeredAt", TriggeredAt);
             writer.WriteAdditionalData(AdditionalData);
         }

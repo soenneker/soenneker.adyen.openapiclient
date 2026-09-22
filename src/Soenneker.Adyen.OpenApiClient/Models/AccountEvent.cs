@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AccountEvent : IParsable
+    public partial class AccountEvent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The event.&gt;Permitted values: `InactivateAccount`, `RefundNotPaidOutTransfers`.For more information, refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-process).</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountEventEvent? Event { get; set; }
         /// <summary>The date on which the event will take place.</summary>
@@ -24,6 +26,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent"/> and sets the default values.
+        /// </summary>
+        public AccountEvent()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountEventEvent>("event", Event);
             writer.WriteDateTimeOffsetValue("executionDate", ExecutionDate);
             writer.WriteStringValue("reason", Reason);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

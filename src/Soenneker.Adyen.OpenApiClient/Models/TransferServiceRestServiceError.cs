@@ -10,9 +10,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceRestServiceError : ApiException, IParsable
+    public partial class TransferServiceRestServiceError : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A human-readable explanation specific to this occurrence of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,10 +68,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponseProperty? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponseProperty Response { get; set; }
 #endif
         /// <summary>Detailed explanation of each attempt to route the transfer with the priorities from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,6 +100,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError"/> and sets the default values.
+        /// </summary>
+        public TransferServiceRestServiceError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceError"/></returns>
@@ -121,7 +130,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponseProperty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponseProperty.CreateFromDiscriminatorValue); } },
                 { "routingDetails", n => { RoutingDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails>(global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -141,11 +150,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InvalidField>("invalidFields", InvalidFields);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("requestId", RequestId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponse>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceRestServiceErrorResponseProperty>("response", Response);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RoutingDetails>("routingDetails", RoutingDetails);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

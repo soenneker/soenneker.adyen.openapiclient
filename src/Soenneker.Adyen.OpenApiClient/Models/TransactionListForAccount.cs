@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransactionListForAccount : IParsable
+    public partial class TransactionListForAccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account for which to retrieve the transactions.</summary>
@@ -20,8 +20,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountCode { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The page of transactions to retrieve.Each page lists fifty (50) transactions.  The most recent transactions are included on page 1.</summary>
         public int? Page { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount"/> and sets the default values.
+        /// </summary>
+        public TransactionListForAccount()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountCode", AccountCode);
             writer.WriteIntValue("page", Page);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

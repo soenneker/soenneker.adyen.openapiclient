@@ -9,13 +9,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4EstimationTrackingData : IParsable
+    public partial class TransferServiceV4EstimationTrackingData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated time the beneficiary should have access to the funds.</summary>
         public DateTimeOffset? EstimatedArrivalTime { get; set; }
         /// <summary>The type of tracking event. Possible values: - **estimation**: the estimated date and time of when the funds will be credited has been determined.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.EstimationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4EstimationTrackingData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "estimatedArrivalTime", n => { EstimatedArrivalTime = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EstimationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +55,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("estimatedArrivalTime", EstimatedArrivalTime);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EstimationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

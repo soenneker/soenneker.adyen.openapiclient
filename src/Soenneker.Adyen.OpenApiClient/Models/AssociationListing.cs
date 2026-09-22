@@ -24,8 +24,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EntityId { get; set; }
 #endif
-        /// <summary>The entityType property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType? EntityType { get; set; }
+        /// <summary>The type of the entity. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType? EntityType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType EntityType { get; set; }
+#endif
         /// <summary>The unique identifier of the SCA device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,10 +48,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ScaDeviceName { get; set; }
 #endif
-        /// <summary>The scaDeviceType property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceType? ScaDeviceType { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatus? Status { get; set; }
+        /// <summary>The type of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType? ScaDeviceType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType ScaDeviceType { get; set; }
+#endif
+        /// <summary>The status of the association. Possible values: **active** or **pendingApproval**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing"/> and sets the default values.
         /// </summary>
@@ -73,11 +91,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "entityId", n => { EntityId = n.GetStringValue(); } },
-                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType>(); } },
+                { "entityType", n => { EntityType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType.CreateFromDiscriminatorValue); } },
                 { "scaDeviceId", n => { ScaDeviceId = n.GetStringValue(); } },
                 { "scaDeviceName", n => { ScaDeviceName = n.GetStringValue(); } },
-                { "scaDeviceType", n => { ScaDeviceType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceType>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatus>(); } },
+                { "scaDeviceType", n => { ScaDeviceType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,11 +107,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("entityId", EntityId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType>("entityType", EntityType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingEntityType>("entityType", EntityType);
             writer.WriteStringValue("scaDeviceId", ScaDeviceId);
             writer.WriteStringValue("scaDeviceName", ScaDeviceName);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceType>("scaDeviceType", ScaDeviceType);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingScaDeviceType>("scaDeviceType", ScaDeviceType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListingStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

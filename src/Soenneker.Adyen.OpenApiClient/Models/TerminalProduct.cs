@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TerminalProduct : IParsable
+    public partial class TerminalProduct : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about items included and integration options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,14 +46,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The price property</summary>
+        /// <summary>The price of the product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPrice? Price { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPriceComposed? Price { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPrice Price { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPriceComposed Price { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalProduct"/> and sets the default values.
+        /// </summary>
+        public TerminalProduct()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "itemsIncluded", n => { ItemsIncluded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPrice>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPrice.CreateFromDiscriminatorValue); } },
+                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPriceComposed>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPriceComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +97,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("itemsIncluded", ItemsIncluded);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPrice>("price", Price);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalProductPriceComposed>("price", Price);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -32,13 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The status of the webhook setting. Possible values:* **active**: You receive a balance webhook if any of the conditions in this setting are met.* **inactive**: You do not receive a balance webhook even if the conditions in this settings are met.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateStatus? Status { get; set; }
-        /// <summary>The target property</summary>
+        /// <summary>The type and ID of the resource about whose balance changes you want to be notified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate? Target { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateTarget? Target { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate Target { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateTarget Target { get; set; }
 #endif
         /// <summary>The type of the webhook you are configuring. Set to **balance**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BalanceType? Type { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Condition>(global::Soenneker.Adyen.OpenApiClient.Models.Condition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateStatus>(); } },
-                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateTarget>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateTarget.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceType>(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Condition>("conditions", Conditions);
             writer.WriteStringValue("currency", Currency);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TargetUpdate>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceWebhookSettingInfoUpdateTarget>("target", Target);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

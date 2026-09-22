@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The amount to update for the payment session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SessionAmountUpdate? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SessionAmountUpdate Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount Amount { get; set; }
 #endif
         /// <summary>Indicates if the session is payable. If the payment amount is final, set this to **true** to indicate that the session is payable, so that the shopper can proceed to submit the payment. When you set this to **true**, you can no longer update the session.If you set this to **false**, you must make another request to update the session and set this to **true** before the shopper can submit the payment.</summary>
         public bool? Payable { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAmountUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.SessionAmountUpdate.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount.CreateFromDiscriminatorValue); } },
                 { "payable", n => { Payable = n.GetBoolValue(); } },
                 { "sessionData", n => { SessionData = n.GetStringValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAmountUpdate>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount>("amount", Amount);
             writer.WriteBoolValue("payable", Payable);
             writer.WriteStringValue("sessionData", SessionData);
             writer.WriteAdditionalData(AdditionalData);

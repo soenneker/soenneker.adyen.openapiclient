@@ -15,21 +15,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Information to display and how to process it.Contains a complete display operation for a Display or an Input Device type. For the Input Devices, Diagnosis and `EnableService`, `ResponseRequiredFlag`, and `MinimumDisplayTime` shall be absent.</summary>
+        /// <summary>Information to display and the way to process the display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput? DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput? DisplayOutput { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput DisplayOutput { get; set; }
 #endif
-        /// <summary>The InputData property</summary>
+        /// <summary>Information related to an Input request. It conveys the target input logical device, the type of input command, and possible minimum and maximum length of the input. In addition, if the requestor might require to receive an Event Notification if a card is inserted in a card reader, with the `NotifyCardInputFlag`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputData? InputData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData? InputData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputData InputData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData InputData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InputRequest"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput.CreateFromDiscriminatorValue); } },
-                { "InputData", n => { InputData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputData>(global::Soenneker.Adyen.OpenApiClient.Models.InputData.CreateFromDiscriminatorValue); } },
+                { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput.CreateFromDiscriminatorValue); } },
+                { "InputData", n => { InputData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData>(global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput>("DisplayOutput", DisplayOutput);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputData>("InputData", InputData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput>("DisplayOutput", DisplayOutput);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData>("InputData", InputData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

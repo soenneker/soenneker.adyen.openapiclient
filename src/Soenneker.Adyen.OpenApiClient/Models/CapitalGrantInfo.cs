@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CapitalGrantInfo : IParsable
+    public partial class CapitalGrantInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The counterparty property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An object containing the details of the receiving party of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantInfoCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantInfoCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty Counterparty { get; set; }
 #endif
         /// <summary>The identifier of the grant account used for the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +39,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string GrantOfferId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfo"/> and sets the default values.
+        /// </summary>
+        public CapitalGrantInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfo"/></returns>
@@ -54,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantInfoCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantInfoCounterparty.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty.CreateFromDiscriminatorValue); } },
                 { "grantAccountId", n => { GrantAccountId = n.GetStringValue(); } },
                 { "grantOfferId", n => { GrantOfferId = n.GetStringValue(); } },
             };
@@ -66,9 +75,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantInfoCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty>("counterparty", Counterparty);
             writer.WriteStringValue("grantAccountId", GrantAccountId);
             writer.WriteStringValue("grantOfferId", GrantOfferId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

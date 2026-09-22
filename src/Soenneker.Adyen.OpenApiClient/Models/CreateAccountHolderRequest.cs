@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateAccountHolderRequest : IParsable
+    public partial class CreateAccountHolderRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Your unique identifier for the prospective account holder.The length must be between three (3) and fifty (50) characters long. Only letters, digits, and hyphens (-) are allowed.</summary>
@@ -20,14 +20,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
-        /// <summary>The accountHolderDetails property</summary>
+        /// <summary>The details of the prospective account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails? AccountHolderDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestAccountHolderDetails? AccountHolderDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails AccountHolderDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestAccountHolderDetails AccountHolderDetails { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If set to **true**, an account with the default options is automatically created for the account holder.By default, this field is set to **true**.</summary>
         public bool? CreateDefaultAccount { get; set; }
         /// <summary>A description of the prospective account holder, maximum 256 characters. You can use alphanumeric characters (A-Z, a-z, 0-9), white spaces, and underscores `_`.</summary>
@@ -60,6 +62,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string VerificationProfile { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequest"/> and sets the default values.
+        /// </summary>
+        public CreateAccountHolderRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequest"/></returns>
@@ -78,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails.CreateFromDiscriminatorValue); } },
+                { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestAccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestAccountHolderDetails.CreateFromDiscriminatorValue); } },
                 { "createDefaultAccount", n => { CreateDefaultAccount = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestLegalEntity>(); } },
@@ -95,13 +104,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestAccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
             writer.WriteBoolValue("createDefaultAccount", CreateDefaultAccount);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateAccountHolderRequestLegalEntity>("legalEntity", LegalEntity);
             writer.WriteStringValue("primaryCurrency", PrimaryCurrency);
             writer.WriteIntValue("processingTier", ProcessingTier);
             writer.WriteStringValue("verificationProfile", VerificationProfile);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

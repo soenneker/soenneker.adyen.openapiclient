@@ -17,13 +17,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commission for a currency conversion.</summary>
         public double? Commission { get; set; }
-        /// <summary>The ConvertedAmount property</summary>
+        /// <summary>Amount after a currency conversion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount? ConvertedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount? ConvertedAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount ConvertedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount ConvertedAmount { get; set; }
 #endif
         /// <summary>Notify if the customer has approved something. Indicates if the customer has accepted a currency conversion.</summary>
         public bool? CustomerApprovedFlag { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Commission", n => { Commission = n.GetDoubleValue(); } },
-                { "ConvertedAmount", n => { ConvertedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount>(global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount.CreateFromDiscriminatorValue); } },
+                { "ConvertedAmount", n => { ConvertedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount.CreateFromDiscriminatorValue); } },
                 { "CustomerApprovedFlag", n => { CustomerApprovedFlag = n.GetBoolValue(); } },
                 { "Declaration", n => { Declaration = n.GetStringValue(); } },
                 { "Markup", n => { Markup = n.GetDoubleValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("Commission", Commission);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConvertedAmount>("ConvertedAmount", ConvertedAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount>("ConvertedAmount", ConvertedAmount);
             writer.WriteBoolValue("CustomerApprovedFlag", CustomerApprovedFlag);
             writer.WriteStringValue("Declaration", Declaration);
             writer.WriteDoubleValue("Markup", Markup);

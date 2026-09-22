@@ -14,21 +14,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Contains the amount of the cashout, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutAmount Amount { get; set; }
 #endif
-        /// <summary>The counterparty property</summary>
+        /// <summary>Contains information about the counterparty of the cashout transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutCounterparty Counterparty { get; set; }
 #endif
         /// <summary>Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.Your description of the cashout transfer. This description is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.If you do not provide a description, Adyen generates a description automatically. This generated description is not returned in the response.Supported characters: **[a-z] [A-Z] [0-9] / - ? : ( ) . , &apos; + Space**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,13 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The fee property</summary>
+        /// <summary>Contains the currency and value of the cashout fee, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee? Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutFee? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutFee Fee { get; set; }
 #endif
         /// <summary>The unique identifier of the cashout reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,10 +112,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterparty.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CashOutAmount.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CashOutCounterparty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee.CreateFromDiscriminatorValue); } },
+                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutFee>(global::Soenneker.Adyen.OpenApiClient.Models.CashOutFee.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instructingBalanceAccountId", n => { InstructingBalanceAccountId = n.GetStringValue(); } },
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
@@ -130,10 +130,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutCounterparty>("counterparty", Counterparty);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee>("fee", Fee);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CashOutFee>("fee", Fee);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("instructingBalanceAccountId", InstructingBalanceAccountId);
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);

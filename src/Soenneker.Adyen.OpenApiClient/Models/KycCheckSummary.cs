@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class KycCheckSummary : IParsable
+    public partial class KycCheckSummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code of the check. For possible values, refer to [Verification codes](https://docs.adyen.com/classic-platforms/verification-process/verification-codes).</summary>
         public int? KycCheckCode { get; set; }
         /// <summary>A description of the check.</summary>
@@ -22,6 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string KycCheckDescription { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary"/> and sets the default values.
+        /// </summary>
+        public KycCheckSummary()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("kycCheckCode", KycCheckCode);
             writer.WriteStringValue("kycCheckDescription", KycCheckDescription);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

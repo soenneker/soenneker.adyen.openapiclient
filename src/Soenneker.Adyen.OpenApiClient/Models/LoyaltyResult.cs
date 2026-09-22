@@ -17,21 +17,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Balance of an account.If known (provided by the card or an external host).</summary>
         public double? CurrentBalance { get; set; }
-        /// <summary>This data structure conveys the identification of the account and the associated loyalty brand.Data related to a loyalty account processed in the transaction.</summary>
+        /// <summary>Data related to a loyalty account processed in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount? LoyaltyAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount? LoyaltyAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount LoyaltyAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount LoyaltyAccount { get; set; }
 #endif
-        /// <summary>The LoyaltyAcquirerData property</summary>
+        /// <summary>Data related to the loyalty Acquirer during a loyalty transaction.If content not empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAcquirerData? LoyaltyAcquirerData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData? LoyaltyAcquirerData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAcquirerData LoyaltyAcquirerData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData LoyaltyAcquirerData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult"/> and sets the default values.
@@ -59,8 +59,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "CurrentBalance", n => { CurrentBalance = n.GetDoubleValue(); } },
-                { "LoyaltyAccount", n => { LoyaltyAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount.CreateFromDiscriminatorValue); } },
-                { "LoyaltyAcquirerData", n => { LoyaltyAcquirerData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAcquirerData>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAcquirerData.CreateFromDiscriminatorValue); } },
+                { "LoyaltyAccount", n => { LoyaltyAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount.CreateFromDiscriminatorValue); } },
+                { "LoyaltyAcquirerData", n => { LoyaltyAcquirerData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,8 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("CurrentBalance", CurrentBalance);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount>("LoyaltyAccount", LoyaltyAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAcquirerData>("LoyaltyAcquirerData", LoyaltyAcquirerData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount>("LoyaltyAccount", LoyaltyAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData>("LoyaltyAcquirerData", LoyaltyAcquirerData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

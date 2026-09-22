@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RecurringDetailsResult : IParsable
+    public partial class RecurringDetailsResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the recurring details were created.</summary>
         public DateTimeOffset? CreationDate { get; set; }
         /// <summary>Payment details stored for recurring payments.</summary>
@@ -38,6 +40,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperReference { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsResult"/> and sets the default values.
+        /// </summary>
+        public RecurringDetailsResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailWrapper>("details", Details);
             writer.WriteStringValue("lastKnownShopperEmail", LastKnownShopperEmail);
             writer.WriteStringValue("shopperReference", ShopperReference);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

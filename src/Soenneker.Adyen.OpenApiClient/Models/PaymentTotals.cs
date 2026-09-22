@@ -19,8 +19,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public double? TransactionAmount { get; set; }
         /// <summary>Number of processed transaction during the period.</summary>
         public int? TransactionCount { get; set; }
-        /// <summary>Possible values:* **Debit*** **Credit*** **ReverseDebit*** **ReverseCredit*** **OneTimeReservation*** **CompletedDeffered*** **FirstReservation*** **UpdateReservation*** **CompletedReservation*** **CashAdvance*** **IssuerInstalment*** **Declined*** **Failed*** **Award*** **ReverseAward*** **Redemption*** **ReverseRedemption*** **Rebate*** **ReverseRebate**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionType? TransactionType { get; set; }
+        /// <summary>Type of transaction for which totals are grouped.Debit, Credit, ReverseDebit, ReverseCredit, OneTimeReservation, CompletedDeffered, FirstReservation, UpdateReservation, CompletedReservation, CashAdvance.Possible values:* **Award*** **CashAdvance*** **CompletedDeffered*** **CompletedReservation*** **Credit*** **Debit*** **Declined*** **Failed*** **FirstReservation*** **IssuerInstalment*** **OneTimeReservation*** **Rebate*** **Redemption*** **ReverseAward*** **ReverseCredit*** **ReverseDebit*** **ReverseRebate*** **ReverseRedemption*** **UpdateReservation**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType? TransactionType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType TransactionType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotals"/> and sets the default values.
         /// </summary>
@@ -48,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "TransactionAmount", n => { TransactionAmount = n.GetDoubleValue(); } },
                 { "TransactionCount", n => { TransactionCount = n.GetIntValue(); } },
-                { "TransactionType", n => { TransactionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionType>(); } },
+                { "TransactionType", n => { TransactionType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("TransactionAmount", TransactionAmount);
             writer.WriteIntValue("TransactionCount", TransactionCount);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionType>("TransactionType", TransactionType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType>("TransactionType", TransactionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

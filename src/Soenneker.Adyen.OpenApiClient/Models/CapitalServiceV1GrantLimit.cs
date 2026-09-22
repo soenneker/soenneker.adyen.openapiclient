@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The limit amount of the grant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantLimitAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantLimitAmount Amount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantLimit"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantLimitAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantLimitAmount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantLimitAmount>("amount", Amount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

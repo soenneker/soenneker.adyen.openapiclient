@@ -14,8 +14,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attachmentType property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachmentType? AttachmentType { get; set; }
+        /// <summary>The type of information contained in the attachment: **receipt**, **correspondence**, **other**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachmentAttachmentType? AttachmentType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachmentAttachmentType AttachmentType { get; set; }
+#endif
         /// <summary>The content of the image. An attachment must be base64-encoded data. Make sure that all base64-encoded data strings are generated without line breaks or &quot;wrapping&quot;. For example, do not use `Base64.NO_WRAP` in Java, or its equivalent in other languages. Newline characters at the end of the base64-encoded data string will also result in a malformed input error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachmentType", n => { AttachmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachmentType>(); } },
+                { "attachmentType", n => { AttachmentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachmentAttachmentType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachmentAttachmentType.CreateFromDiscriminatorValue); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -78,7 +84,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4AttachmentType>("attachmentType", AttachmentType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeAttachmentAttachmentType>("attachmentType", AttachmentType);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteAdditionalData(AdditionalData);

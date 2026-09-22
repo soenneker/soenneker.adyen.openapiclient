@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentInstrumentRevealInfo : IParsable
+    public partial class PaymentInstrumentRevealInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CVC2 value of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Cvc { get; set; }
 #endif
-        /// <summary>The expiration property</summary>
+        /// <summary>The expiration date of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry? Expiration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration? Expiration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry Expiration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration Expiration { get; set; }
 #endif
         /// <summary>The primary account number (PAN) of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Pan { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfo"/> and sets the default values.
+        /// </summary>
+        public PaymentInstrumentRevealInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
-                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration.CreateFromDiscriminatorValue); } },
                 { "pan", n => { Pan = n.GetStringValue(); } },
             };
         }
@@ -67,8 +76,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cvc", Cvc);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Expiry>("expiration", Expiration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration>("expiration", Expiration);
             writer.WriteStringValue("pan", Pan);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

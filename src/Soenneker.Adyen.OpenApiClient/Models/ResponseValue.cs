@@ -23,10 +23,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AdditionalResponse { get; set; }
 #endif
-        /// <summary>Possible values:* **Aborted*** **Busy*** **Cancel*** **DeviceOut*** **InsertedCard*** **InProgress*** **LoggedOut*** **MessageFormat*** **NotAllowed*** **NotFound*** **PaymentRestriction*** **Refusal*** **UnavailableDevice*** **UnavailableService*** **InvalidCard*** **UnreachableHost*** **WrongPIN**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ErrorCondition? ErrorCondition { get; set; }
+        /// <summary>Condition that has produced an error on the processing of a message request.Returned if Result is not Success.Possible values:* **Aborted*** **Busy*** **Cancel*** **DeviceOut*** **InProgress*** **InsertedCard*** **InvalidCard*** **LoggedOut*** **MessageFormat*** **NotAllowed*** **NotFound*** **PaymentRestriction*** **Refusal*** **UnavailableDevice*** **UnavailableService*** **UnreachableHost*** **WrongPIN**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition? ErrorCondition { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition ErrorCondition { get; set; }
+#endif
         /// <summary>Possible values:* **Success*** **Failure*** **Partial**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Result? Result { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue? Result { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue"/> and sets the default values.
         /// </summary>
@@ -53,8 +59,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AdditionalResponse", n => { AdditionalResponse = n.GetStringValue(); } },
-                { "ErrorCondition", n => { ErrorCondition = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ErrorCondition>(); } },
-                { "Result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Result>(); } },
+                { "ErrorCondition", n => { ErrorCondition = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition.CreateFromDiscriminatorValue); } },
+                { "Result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue>(); } },
             };
         }
         /// <summary>
@@ -65,8 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AdditionalResponse", AdditionalResponse);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ErrorCondition>("ErrorCondition", ErrorCondition);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Result>("Result", Result);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValueErrorCondition>("ErrorCondition", ErrorCondition);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1ResultValue>("Result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

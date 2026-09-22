@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentResponse : IParsable
+    public partial class PaymentResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Action to be taken for completing the payment.</summary>
@@ -20,21 +20,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction Action { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains additional information about the payment. Some data fields are included only if you select them first: Go to **Customer Area** &gt; **Developers** &gt; **Additional data**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>Authorised amount in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAmount Amount { get; set; }
 #endif
         /// <summary>Donation Token containing payment details for Adyen Giving.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,13 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DonationToken { get; set; }
 #endif
-        /// <summary>The fraudResult property</summary>
+        /// <summary>The fraud result properties of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FraudResult? FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult? FraudResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FraudResult FraudResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult FraudResult { get; set; }
 #endif
         /// <summary>The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.If you need to provide multiple references for a transaction, separate them with hyphens (&quot;-&quot;).Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,29 +62,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantReference { get; set; }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>Contains updated information regarding the order in case order information was provided in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOrderResponse? Order { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder? Order { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOrderResponse Order { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder Order { get; set; }
 #endif
-        /// <summary>The paymentMethod property</summary>
+        /// <summary>Details about the payment method used in the transaction. Only returned if `resultCode` is **Authorised**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod? PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod? PaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod PaymentMethod { get; set; }
 #endif
-        /// <summary>The paymentValidations property</summary>
+        /// <summary>The object that contains the validation outcomes.Only returned if `resultCode` is **Authorised** and if you have requested a payment validation in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponse? PaymentValidations { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations? PaymentValidations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponse PaymentValidations { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations PaymentValidations { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.&gt; For payment methods that require a redirect or additional action, you will get this value in the `/payments/details` response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,6 +137,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ThreeDSPaymentData { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse"/> and sets the default values.
+        /// </summary>
+        public PaymentResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponse"/></returns>
@@ -153,14 +162,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction.CreateFromDiscriminatorValue); } },
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty.CreateFromDiscriminatorValue); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAmount.CreateFromDiscriminatorValue); } },
                 { "donationToken", n => { DonationToken = n.GetStringValue(); } },
-                { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.FraudResult.CreateFromDiscriminatorValue); } },
+                { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult.CreateFromDiscriminatorValue); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
-                { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOrderResponse>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOrderResponse.CreateFromDiscriminatorValue); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod.CreateFromDiscriminatorValue); } },
-                { "paymentValidations", n => { PaymentValidations = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponse>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponse.CreateFromDiscriminatorValue); } },
+                { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod.CreateFromDiscriminatorValue); } },
+                { "paymentValidations", n => { PaymentValidations = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
                 { "refusalReasonCode", n => { RefusalReasonCode = n.GetStringValue(); } },
@@ -178,14 +187,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty>("additionalData", AdditionalDataProperty);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseAmount>("amount", Amount);
             writer.WriteStringValue("donationToken", DonationToken);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FraudResult>("fraudResult", FraudResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult>("fraudResult", FraudResult);
             writer.WriteStringValue("merchantReference", MerchantReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOrderResponse>("order", Order);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponsePaymentMethod>("paymentMethod", PaymentMethod);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidationsResponse>("paymentValidations", PaymentValidations);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder>("order", Order);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations>("paymentValidations", PaymentValidations);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
             writer.WriteStringValue("refusalReasonCode", RefusalReasonCode);
@@ -193,6 +202,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2ResponseData>("threeDS2ResponseData", ThreeDS2ResponseData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2Result>("threeDS2Result", ThreeDS2Result);
             writer.WriteStringValue("threeDSPaymentData", ThreeDSPaymentData);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

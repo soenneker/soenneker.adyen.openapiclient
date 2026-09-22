@@ -22,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The inPerson property</summary>
+        /// <summary>The settings for in-person donations collected as part of the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettings? InPerson { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestInPerson? InPerson { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettings InPerson { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestInPerson InPerson { get; set; }
 #endif
         /// <summary>The name of the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,13 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string NonprofitCauseId { get; set; }
 #endif
-        /// <summary>The online property</summary>
+        /// <summary>The settings for online donations collected as part of the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettings? Online { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline? Online { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettings Online { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline Online { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequest"/> and sets the default values.
@@ -80,10 +80,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderIds", n => { AccountHolderIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "inPerson", n => { InPerson = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettings>(global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettings.CreateFromDiscriminatorValue); } },
+                { "inPerson", n => { InPerson = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestInPerson>(global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestInPerson.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nonprofitCauseId", n => { NonprofitCauseId = n.GetStringValue(); } },
-                { "online", n => { Online = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettings>(global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettings.CreateFromDiscriminatorValue); } },
+                { "online", n => { Online = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline>(global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,10 +94,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("accountHolderIds", AccountHolderIds);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettings>("inPerson", InPerson);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestInPerson>("inPerson", InPerson);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("nonprofitCauseId", NonprofitCauseId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettings>("online", Online);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignRequestOnline>("online", Online);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

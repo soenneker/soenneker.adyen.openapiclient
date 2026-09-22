@@ -17,10 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A resource that contains information about a device, including its unique ID, name, and type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice? ScaDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BeginScaDeviceRegistrationResponseScaDevice? ScaDevice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice ScaDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BeginScaDeviceRegistrationResponseScaDevice ScaDevice { get; set; }
 #endif
         /// <summary>A string that you must pass to the authentication SDK to continue with the registration process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scaDevice", n => { ScaDevice = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice>(global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice.CreateFromDiscriminatorValue); } },
+                { "scaDevice", n => { ScaDevice = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BeginScaDeviceRegistrationResponseScaDevice>(global::Soenneker.Adyen.OpenApiClient.Models.BeginScaDeviceRegistrationResponseScaDevice.CreateFromDiscriminatorValue); } },
                 { "sdkInput", n => { SdkInput = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice>("scaDevice", ScaDevice);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BeginScaDeviceRegistrationResponseScaDevice>("scaDevice", ScaDevice);
             writer.WriteStringValue("sdkInput", SdkInput);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -25,8 +25,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.Absent if ReconciliationType is not PreviousReconciliation.</summary>
         public int? POIReconciliationID { get; set; }
-        /// <summary>Possible values:* **SaleReconciliation*** **AcquirerSynchronisation*** **AcquirerReconciliation*** **PreviousReconciliation**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationType? ReconciliationType { get; set; }
+        /// <summary>Type of Reconciliation requested by the Sale to the POI.Possible values:* **AcquirerReconciliation*** **AcquirerSynchronisation*** **PreviousReconciliation*** **SaleReconciliation**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType? ReconciliationType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType ReconciliationType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequest"/> and sets the default values.
         /// </summary>
@@ -54,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "AcquirerID", n => { AcquirerID = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "POIReconciliationID", n => { POIReconciliationID = n.GetIntValue(); } },
-                { "ReconciliationType", n => { ReconciliationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationType>(); } },
+                { "ReconciliationType", n => { ReconciliationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType>(global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("AcquirerID", AcquirerID);
             writer.WriteIntValue("POIReconciliationID", POIReconciliationID);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationType>("ReconciliationType", ReconciliationType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReconciliationRequestReconciliationType>("ReconciliationType", ReconciliationType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

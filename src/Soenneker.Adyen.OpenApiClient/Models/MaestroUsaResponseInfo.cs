@@ -9,17 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MaestroUsaResponseInfo : IParsable
+    public partial class MaestroUsaResponseInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The transactionDescription property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Information regarding the transaction description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo? TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MaestroUsaResponseInfoTransactionDescription? TransactionDescription { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MaestroUsaResponseInfoTransactionDescription TransactionDescription { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MaestroUsaResponseInfo"/> and sets the default values.
+        /// </summary>
+        public MaestroUsaResponseInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo.CreateFromDiscriminatorValue); } },
+                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MaestroUsaResponseInfoTransactionDescription>(global::Soenneker.Adyen.OpenApiClient.Models.MaestroUsaResponseInfoTransactionDescription.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo>("transactionDescription", TransactionDescription);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MaestroUsaResponseInfoTransactionDescription>("transactionDescription", TransactionDescription);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

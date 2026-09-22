@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CardDetailsRequest : IParsable
+    public partial class CardDetailsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A minimum of the first six digits of the card number. The full card number gives the best result. You must be [fully PCI compliant](https://docs.adyen.com/development-resources/pci-dss-compliance-guide) to collect raw card data. Alternatively, you can use the `encryptedCardNumber` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> SupportedBrands { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsRequest"/> and sets the default values.
+        /// </summary>
+        public CardDetailsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardDetailsRequest"/></returns>
@@ -89,6 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("encryptedCardNumber", EncryptedCardNumber);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedBrands", SupportedBrands);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

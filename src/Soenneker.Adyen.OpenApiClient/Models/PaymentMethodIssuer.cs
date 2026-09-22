@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentMethodIssuer : IParsable
+    public partial class PaymentMethodIssuer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A boolean value indicating whether this issuer is unavailable. Can be `true` whenever the issuer is offline.</summary>
         public bool? Disabled { get; set; }
         /// <summary>The unique identifier of this issuer, to submit in requests to /payments.</summary>
@@ -35,6 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// </summary>
         public PaymentMethodIssuer()
         {
+            AdditionalData = new Dictionary<string, object>();
             Disabled = false;
         }
         /// <summary>
@@ -70,6 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

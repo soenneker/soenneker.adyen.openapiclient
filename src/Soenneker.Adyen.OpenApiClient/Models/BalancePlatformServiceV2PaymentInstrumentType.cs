@@ -3,17 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The type of payment instrument.Possible values: **card**, **bankAccount**.</summary>
+    /// <summary>The type of resource that you are associating with the SCA device.Possible value: **PaymentInstrument**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BalancePlatformServiceV2PaymentInstrumentType
     {
-        [EnumMember(Value = "bankAccount")]
+        [EnumMember(Value = "PaymentInstrument")]
         #pragma warning disable CS1591
-        BankAccount,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "card")]
-        #pragma warning disable CS1591
-        Card,
+        PaymentInstrument,
         #pragma warning restore CS1591
     }
 }

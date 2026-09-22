@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentInstrumentUpdateRequest : IParsable
+    public partial class PaymentInstrumentUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the balance account associated with this payment instrument.&gt;You can only change the balance account ID if the payment instrument has **inactive** status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BalanceAccountId { get; set; }
 #endif
-        /// <summary>The card property</summary>
+        /// <summary>Object that contains information about the card payment instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardInfo? Card { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard? Card { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardInfo Card { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard Card { get; set; }
 #endif
         /// <summary>The status of the payment instrument. If a status is not specified when creating a payment instrument, it is set to **active** by default. However, there can be exceptions for cards based on the `card.formFactor` and the `issuingCountryCode`. For example, when issuing physical cards in the US, the default status is **inactive**.Possible values:  * **active**:  The payment instrument is active and can be used to make payments.  * **inactive**: The payment instrument is inactive and cannot be used to make payments.  * **suspended**: The payment instrument is suspended, either because it was stolen or lost.  * **closed**: The payment instrument is permanently closed. This action cannot be undone. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus? Status { get; set; }
@@ -40,6 +42,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The reason for updating the status of the payment instrument.Possible values: **lost**, **stolen**, **damaged**, **suspectedFraud**, **expired**, **endOfLife**, **accountClosure**, **other**.If the reason is **other**, you must also send the `statusComment` parameter describing the status change.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason? StatusReason { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequest"/> and sets the default values.
+        /// </summary>
+        public PaymentInstrumentUpdateRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
-                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CardInfo.CreateFromDiscriminatorValue); } },
+                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus>(); } },
                 { "statusComment", n => { StatusComment = n.GetStringValue(); } },
                 { "statusReason", n => { StatusReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason>(); } },
@@ -73,10 +82,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfo>("card", Card);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard>("card", Card);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus>("status", Status);
             writer.WriteStringValue("statusComment", StatusComment);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason>("statusReason", StatusReason);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

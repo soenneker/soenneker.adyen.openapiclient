@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentServiceV68Split : IParsable
+    public partial class PaymentServiceV68Split : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier of the account to which the split amount is booked. Required if `type` is **MarketPlace** or **BalanceAccount**.* [Classic Platforms integration](https://docs.adyen.com/classic-platforms): The [`accountCode`](https://docs.adyen.com/api-explorer/Account/latest/post/updateAccount#request-accountCode) of the account to which the split amount is booked.* [Balance Platform](https://docs.adyen.com/adyen-for-platforms-model): The [`balanceAccountId`](https://docs.adyen.com/api-explorer/balanceplatform/latest/get/balanceAccounts/_id_#path-id) of the account to which the split amount is booked.</summary>
@@ -20,13 +20,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Account { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount of the split item.* Required for all split types in the [Classic Platforms integration](https://docs.adyen.com/classic-platforms).* Required if `type` is **BalanceAccount**, **Commission**, **Surcharge**, **Default**, or **VAT** in your [Balance Platform](https://docs.adyen.com/adyen-for-platforms-model) integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmountComposed? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmountComposed Amount { get; set; }
 #endif
         /// <summary>Your description for the split item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +49,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The part of the payment you want to book to the specified `account`.Possible values for the [Balance Platform](https://docs.adyen.com/adyen-for-platforms-model):* **BalanceAccount**: Books part of the payment (specified in `amount`) to the specified `account`.* Transaction fees types that you can book to the specified `account`:   * **AcquiringFees**: The aggregated amount of the interchange and scheme fees.   * **PaymentFee**: The aggregated amount of all transaction fees.   * **AdyenFees**: The aggregated amount of Adyen&apos;s commission and markup fees.   * **AdyenCommission**: The transaction fees due to Adyen under [blended rates](https://www.adyen.com/knowledge-hub/interchange-fees-explained).   * **AdyenMarkup**: The transaction fees due to Adyen under [Interchange ++ pricing](https://www.adyen.com/knowledge-hub/interchange-fees-explained).   * **Interchange**: The fees paid to the issuer for each payment made with the card network.   * **SchemeFee**: The fees paid to the card scheme for using their network. * **Commission**: Your platform&apos;s commission on the payment (specified in `amount`), booked to your liable balance account.* **Remainder**: The amount left over after a currency conversion, booked to the specified `account`.* **Surcharge**: The payment acceptance fee imposed by the card scheme or debit network provider, paid by your user&apos;s customer.* **TopUp**: Allows you and your users to top up balance accounts using direct debit, card payments, or other payment methods.* **VAT**: The value-added tax charged on the payment, booked to your platforms liable balance account.* **Default**: In very specific use cases, allows you to book the specified `amount` to the specified `account`. For more information, contact Adyen support.Possible values for the [Classic Platforms integration](https://docs.adyen.com/classic-platforms): **Commission**, **Default**, **MarketPlace**, **PaymentFee**, **VAT**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split"/> and sets the default values.
+        /// </summary>
+        public PaymentServiceV68Split()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split"/></returns>
@@ -65,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmountComposed>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmountComposed.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitType>(); } },
@@ -79,10 +88,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitAmountComposed>("amount", Amount);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68SplitType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

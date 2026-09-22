@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TermsOfServiceAcceptanceInfo : IParsable
+    public partial class TermsOfServiceAcceptanceInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier of the user that accepted the Terms of Service.</summary>
@@ -28,6 +28,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AcceptedFor { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the Terms of Service were accepted, in ISO 8601 extended format. For example, 2022-12-18T10:15:30+01:00.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>An Adyen-generated reference for the accepted Terms of Service.</summary>
@@ -42,6 +44,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType? Type { get; set; }
         /// <summary>The expiration date for the Terms of Service acceptance, in ISO 8601 extended format. For example, 2022-12-18T00:00:00+01:00.</summary>
         public DateTimeOffset? ValidTo { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfo"/> and sets the default values.
+        /// </summary>
+        public TermsOfServiceAcceptanceInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType>("type", Type);
             writer.WriteDateTimeOffsetValue("validTo", ValidTo);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

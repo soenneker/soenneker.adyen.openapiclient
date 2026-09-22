@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StoredValueBalanceMergeRequest : IParsable
+    public partial class StoredValueBalanceMergeRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount information for the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestAmount Amount { get; set; }
 #endif
         /// <summary>The merchant account identifier, with which you want to process the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,10 +33,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the type of the payment method and its specific information if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty? PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty2? PaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty2 PaymentMethod { get; set; }
 #endif
         /// <summary>The recurringDetailReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +67,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The collection that contains the source payment method and its specific information if available. Note that type should not be included since it is inferred from the (target) payment method</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty? SourcePaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty2? SourcePaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty SourcePaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty2 SourcePaymentMethod { get; set; }
 #endif
         /// <summary>The physical store, for which this payment is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,6 +80,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Store { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequest"/> and sets the default values.
+        /// </summary>
+        public StoredValueBalanceMergeRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,14 +105,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestAmount.CreateFromDiscriminatorValue); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty2.CreateFromDiscriminatorValue); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestShopperInteraction>(); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
-                { "sourcePaymentMethod", n => { SourcePaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty.CreateFromDiscriminatorValue); } },
+                { "sourcePaymentMethod", n => { SourcePaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty2.CreateFromDiscriminatorValue); } },
                 { "store", n => { Store = n.GetStringValue(); } },
             };
         }
@@ -114,15 +123,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestAmount>("amount", Amount);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestPaymentMethodProperty2>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("shopperReference", ShopperReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty>("sourcePaymentMethod", SourcePaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueBalanceMergeRequestSourcePaymentMethodProperty2>("sourcePaymentMethod", SourcePaymentMethod);
             writer.WriteStringValue("store", Store);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,32 +9,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4Transaction : IParsable
+    public partial class TransferServiceV4Transaction : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountHolder property</summary>
+        /// <summary>Contains information about the account holder associated with the `balanceAccount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference? AccountHolder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAccountHolder? AccountHolder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference AccountHolder { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAccountHolder AccountHolder { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains information about the amount of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAmount Amount { get; set; }
 #endif
-        /// <summary>The balanceAccount property</summary>
+        /// <summary>Contains information about the balance account involved in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference? BalanceAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionBalanceAccount? BalanceAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference BalanceAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionBalanceAccount BalanceAccount { get; set; }
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,13 +66,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The paymentInstrument property</summary>
+        /// <summary>Contains information about the payment instrument that was used for the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument? PaymentInstrument { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionPaymentInstrument? PaymentInstrument { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument PaymentInstrument { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionPaymentInstrument PaymentInstrument { get; set; }
 #endif
         /// <summary>The reference sent to or received from the counterparty.* For outgoing funds, this is the [`referenceForBeneficiary`](https://docs.adyen.com/api-explorer/#/transfers/latest/post/transfers__resParam_referenceForBeneficiary) from the  [`/transfers`](https://docs.adyen.com/api-explorer/#/transfers/latest/post/transfers__reqParam_referenceForBeneficiary) request. * For incoming funds, this is the reference from the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,16 +84,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The status of the transaction. Possible values:* **pending**: The transaction is still pending.* **booked**: The transaction has been booked to the balance account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus? Status { get; set; }
-        /// <summary>The transfer property</summary>
+        /// <summary>Contains information about the transfer related to the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView? Transfer { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionTransfer? Transfer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView Transfer { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionTransfer Transfer { get; set; }
 #endif
         /// <summary>The date the transfer amount becomes available in the balance account.</summary>
         public DateTimeOffset? ValueDate { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4Transaction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -110,18 +119,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountHolder", n => { AccountHolder = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference.CreateFromDiscriminatorValue); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
-                { "balanceAccount", n => { BalanceAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference.CreateFromDiscriminatorValue); } },
+                { "accountHolder", n => { AccountHolder = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAccountHolder>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAccountHolder.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAmount.CreateFromDiscriminatorValue); } },
+                { "balanceAccount", n => { BalanceAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionBalanceAccount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionBalanceAccount.CreateFromDiscriminatorValue); } },
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
                 { "bookingDate", n => { BookingDate = n.GetDateTimeOffsetValue(); } },
                 { "creationDate", n => { CreationDate = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "paymentInstrument", n => { PaymentInstrument = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument.CreateFromDiscriminatorValue); } },
+                { "paymentInstrument", n => { PaymentInstrument = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionPaymentInstrument>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionPaymentInstrument.CreateFromDiscriminatorValue); } },
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus>(); } },
-                { "transfer", n => { Transfer = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView.CreateFromDiscriminatorValue); } },
+                { "transfer", n => { Transfer = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionTransfer>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionTransfer.CreateFromDiscriminatorValue); } },
                 { "valueDate", n => { ValueDate = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -132,19 +141,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference>("accountHolder", AccountHolder);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ResourceReference>("balanceAccount", BalanceAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAccountHolder>("accountHolder", AccountHolder);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionBalanceAccount>("balanceAccount", BalanceAccount);
             writer.WriteStringValue("balancePlatform", BalancePlatform);
             writer.WriteDateTimeOffsetValue("bookingDate", BookingDate);
             writer.WriteDateTimeOffsetValue("creationDate", CreationDate);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4PaymentInstrument>("paymentInstrument", PaymentInstrument);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionPaymentInstrument>("paymentInstrument", PaymentInstrument);
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferView>("transfer", Transfer);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransactionTransfer>("transfer", Transfer);
             writer.WriteDateTimeOffsetValue("valueDate", ValueDate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

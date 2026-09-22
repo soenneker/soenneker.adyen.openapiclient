@@ -25,8 +25,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY.</summary>
         public int? ExpiryDate { get; set; }
-        /// <summary>Possible values:* **PAN*** **ISOTrack2*** **BarCode*** **AccountNumber*** **PhoneNumber**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType? IdentificationType { get; set; }
+        /// <summary>Type of account identification. In a request message, it informs the POI System the type of the account or card identification, when provided by the Sale Terminal. (e.g. because the card information is a barcode read by the Cashier on a scanner device). In a response message, it informs the Sale System the type of the account or card identification.Possible values:* **AccountNumber*** **BarCode*** **ISOTrack2*** **PAN*** **PhoneNumber**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType? IdentificationType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType IdentificationType { get; set; }
+#endif
         /// <summary>Name of the owner of a stored value account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,8 +41,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string OwnerName { get; set; }
 #endif
-        /// <summary>Possible values:* **GiftCard*** **PhoneCard*** **Other**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountType? StoredValueAccountType { get; set; }
+        /// <summary>Type of stored value account. Allows the distinction of the stored value instrument to access the stored value account.Possible values:* **GiftCard*** **Other*** **PhoneCard**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType? StoredValueAccountType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType StoredValueAccountType { get; set; }
+#endif
         /// <summary>Stored value account identification. The identification of the stored value account conforming to the IdentificationType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,9 +92,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.EntryModeItem>()?.AsList(); } },
                 { "ExpiryDate", n => { ExpiryDate = n.GetIntValue(); } },
-                { "IdentificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>(); } },
+                { "IdentificationType", n => { IdentificationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType.CreateFromDiscriminatorValue); } },
                 { "OwnerName", n => { OwnerName = n.GetStringValue(); } },
-                { "StoredValueAccountType", n => { StoredValueAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountType>(); } },
+                { "StoredValueAccountType", n => { StoredValueAccountType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType.CreateFromDiscriminatorValue); } },
                 { "StoredValueID", n => { StoredValueID = n.GetStringValue(); } },
                 { "StoredValueProvider", n => { StoredValueProvider = n.GetStringValue(); } },
             };
@@ -96,9 +108,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.EntryModeItem>("EntryMode", EntryMode);
             writer.WriteIntValue("ExpiryDate", ExpiryDate);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.IdentificationType>("IdentificationType", IdentificationType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType>("IdentificationType", IdentificationType);
             writer.WriteStringValue("OwnerName", OwnerName);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountType>("StoredValueAccountType", StoredValueAccountType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType>("StoredValueAccountType", StoredValueAccountType);
             writer.WriteStringValue("StoredValueID", StoredValueID);
             writer.WriteStringValue("StoredValueProvider", StoredValueProvider);
             writer.WriteAdditionalData(AdditionalData);

@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SessionResultResponse : IParsable
+    public partial class SessionResultResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains additional information about the payment. Some fields are included only if you enable them. To enable these fields in your Customer Area, go to **Developers** &gt; **Additional data**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
         /// <summary>A unique identifier of the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +49,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The status of the session. The status included in the response doesn&apos;t get updated. Don&apos;t make the request again to check for payment status updates.Possible values:* **completed**: the shopper completed the payment, and the payment was authorized.* **paymentPending**: the shopper is in the process of making the payment. This applies to payment methods with an asynchronous flow, like voucher payments where the shopper completes the payment in a physical shop.* **refused**: the session has been refused, because of too many refused payment attempts. The shopper can no longer complete the payment with this session.* **canceled**: the shopper canceled the payment.* **expired**: the session expired. The shopper can no longer complete the payment with this session. By default, the session expires one hour after it is created.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseStatus? Status { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse"/> and sets the default values.
+        /// </summary>
+        public SessionResultResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponse"/></returns>
@@ -64,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>(global::Soenneker.Adyen.OpenApiClient.Models.Payment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -78,11 +87,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Payment>("payments", Payments);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionResultResponseStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

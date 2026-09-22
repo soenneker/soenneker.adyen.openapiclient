@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListMerchantResponse : IParsable
+    public partial class ListMerchantResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of merchant accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,16 +24,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Total number of items.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks Links { get; set; }
 #endif
         /// <summary>Total number of pages.</summary>
         public int? PagesTotal { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponse"/> and sets the default values.
+        /// </summary>
+        public ListMerchantResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Merchant>(global::Soenneker.Adyen.OpenApiClient.Models.Merchant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
             };
         }
@@ -65,8 +74,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Merchant>("data", Data);
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

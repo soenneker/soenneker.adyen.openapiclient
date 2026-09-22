@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalEntityInfoRequiredType : IParsable
+    public partial class LegalEntityInfoRequiredType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains key-value pairs that specify the actions that the legal entity can do in your platform.The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty2? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty2 Capabilities { get; set; }
 #endif
         /// <summary>List of legal entities associated with the current legal entity.For example, ultimate beneficial owners associated with an organization through ownership or control, or as signatories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,21 +30,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation> EntityAssociations { get; set; }
 #endif
-        /// <summary>The individual property</summary>
+        /// <summary>Information about the individual. Required if `type` is **individual**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Individual? Individual { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeIndividual? Individual { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Individual Individual { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeIndividual Individual { get; set; }
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>Information about the organization. Required if `type` is **organization**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Organization? Organization { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeOrganization? Organization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Organization Organization { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeOrganization Organization { get; set; }
 #endif
         /// <summary>Your reference for the legal entity, maximum 150 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,31 +54,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The soleProprietorship property</summary>
+        /// <summary>Information about the sole proprietorship. Required if `type` is **soleProprietorship**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship? SoleProprietorship { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeSoleProprietorship? SoleProprietorship { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship SoleProprietorship { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeSoleProprietorship SoleProprietorship { get; set; }
 #endif
-        /// <summary>The trust property</summary>
+        /// <summary>Information about the trust. Required if `type` is **trust**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Trust? Trust { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust? Trust { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Trust Trust { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust Trust { get; set; }
 #endif
         /// <summary>The type of legal entity. Possible values: **individual**, **organization**, **soleProprietorship**, or **trust**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeType? Type { get; set; }
-        /// <summary>The unincorporatedPartnership property</summary>
+        /// <summary>Information about the unincorporated partnership. Required if `type` is **unincorporatedPartnership**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership? UnincorporatedPartnership { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeUnincorporatedPartnership? UnincorporatedPartnership { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership UnincorporatedPartnership { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeUnincorporatedPartnership UnincorporatedPartnership { get; set; }
 #endif
         /// <summary>A key-value pair that specifies the verification process for a legal entity. Set to **upfront** for upfront verification for [marketplaces](https://docs.adyen.com/marketplaces/verification-overview/verification-types/#upfront-verification).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,6 +88,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string VerificationPlan { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredType"/> and sets the default values.
+        /// </summary>
+        public LegalEntityInfoRequiredType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -104,15 +113,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
                 { "entityAssociations", n => { EntityAssociations = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "individual", n => { Individual = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Individual>(global::Soenneker.Adyen.OpenApiClient.Models.Individual.CreateFromDiscriminatorValue); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization>(global::Soenneker.Adyen.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue); } },
+                { "individual", n => { Individual = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeIndividual>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeIndividual.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeOrganization>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeOrganization.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "soleProprietorship", n => { SoleProprietorship = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship>(global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship.CreateFromDiscriminatorValue); } },
-                { "trust", n => { Trust = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Trust>(global::Soenneker.Adyen.OpenApiClient.Models.Trust.CreateFromDiscriminatorValue); } },
+                { "soleProprietorship", n => { SoleProprietorship = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeSoleProprietorship>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeSoleProprietorship.CreateFromDiscriminatorValue); } },
+                { "trust", n => { Trust = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeType>(); } },
-                { "unincorporatedPartnership", n => { UnincorporatedPartnership = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership>(global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership.CreateFromDiscriminatorValue); } },
+                { "unincorporatedPartnership", n => { UnincorporatedPartnership = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeUnincorporatedPartnership>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeUnincorporatedPartnership.CreateFromDiscriminatorValue); } },
                 { "verificationPlan", n => { VerificationPlan = n.GetStringValue(); } },
             };
         }
@@ -123,16 +132,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeCapabilitiesProperty2>("capabilities", Capabilities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityAssociation>("entityAssociations", EntityAssociations);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Individual>("individual", Individual);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Organization>("organization", Organization);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeIndividual>("individual", Individual);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeOrganization>("organization", Organization);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SoleProprietorship>("soleProprietorship", SoleProprietorship);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Trust>("trust", Trust);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeSoleProprietorship>("soleProprietorship", SoleProprietorship);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeTrust>("trust", Trust);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnership>("unincorporatedPartnership", UnincorporatedPartnership);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityInfoRequiredTypeUnincorporatedPartnership>("unincorporatedPartnership", UnincorporatedPartnership);
             writer.WriteStringValue("verificationPlan", VerificationPlan);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

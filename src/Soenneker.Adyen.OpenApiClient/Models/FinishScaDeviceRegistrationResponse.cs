@@ -17,10 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A resource that contains information about a device, including its unique ID, name, and type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice? ScaDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice? ScaDevice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice ScaDevice { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice ScaDevice { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scaDevice", n => { ScaDevice = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice>(global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice.CreateFromDiscriminatorValue); } },
+                { "scaDevice", n => { ScaDevice = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice>(global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDevice>("scaDevice", ScaDevice);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice>("scaDevice", ScaDevice);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ScheduleTerminalActionsResponse : IParsable
+    public partial class ScheduleTerminalActionsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Information about the action to take.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseActionDetails ActionDetails { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list containing a terminal ID and an action ID for each terminal that the action was scheduled for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,15 +49,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The validation errors that occurred in the list of terminals, and for each error the IDs of the terminals that the error applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty? TerminalsWithErrors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2? TerminalsWithErrors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty TerminalsWithErrors { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2 TerminalsWithErrors { get; set; }
 #endif
         /// <summary>The number of terminals for which scheduling the action failed.</summary>
         public int? TotalErrors { get; set; }
         /// <summary>The number of terminals for which the action was successfully scheduled. This doesn&apos;t mean the action has happened yet.</summary>
         public int? TotalScheduled { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponse"/> and sets the default values.
+        /// </summary>
+        public ScheduleTerminalActionsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetStringValue(); } },
                 { "storeId", n => { StoreId = n.GetStringValue(); } },
-                { "terminalsWithErrors", n => { TerminalsWithErrors = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty.CreateFromDiscriminatorValue); } },
+                { "terminalsWithErrors", n => { TerminalsWithErrors = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2.CreateFromDiscriminatorValue); } },
                 { "totalErrors", n => { TotalErrors = n.GetIntValue(); } },
                 { "totalScheduled", n => { TotalScheduled = n.GetIntValue(); } },
             };
@@ -94,9 +103,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TerminalActionScheduleDetail>("items", Items);
             writer.WriteStringValue("scheduledAt", ScheduledAt);
             writer.WriteStringValue("storeId", StoreId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty>("terminalsWithErrors", TerminalsWithErrors);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTerminalActionsResponseTerminalsWithErrorsProperty2>("terminalsWithErrors", TerminalsWithErrors);
             writer.WriteIntValue("totalErrors", TotalErrors);
             writer.WriteIntValue("totalScheduled", TotalScheduled);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

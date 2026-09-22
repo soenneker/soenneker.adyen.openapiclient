@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetAccountHolderResponse : IParsable
+    public partial class GetAccountHolderResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the account holder.</summary>
@@ -20,21 +20,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
-        /// <summary>The accountHolderDetails property</summary>
+        /// <summary>Details of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails? AccountHolderDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderDetails? AccountHolderDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails AccountHolderDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderDetails AccountHolderDetails { get; set; }
 #endif
-        /// <summary>The accountHolderStatus property</summary>
+        /// <summary>The status of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus? AccountHolderStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderStatus? AccountHolderStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus AccountHolderStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderStatus AccountHolderStatus { get; set; }
 #endif
         /// <summary>A list of the accounts under the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,6 +44,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Account> Accounts { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,13 +64,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The legal entity of the account holder.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseLegalEntity? LegalEntity { get; set; }
-        /// <summary>The migrationData property</summary>
+        /// <summary>Details of the account holder migrated to the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MigrationData? MigrationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseMigrationData? MigrationData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MigrationData MigrationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseMigrationData MigrationData { get; set; }
 #endif
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes), with which the prospective account holder primarily deals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,6 +115,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string VerificationProfile { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponse"/> and sets the default values.
+        /// </summary>
+        public GetAccountHolderResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponse"/></returns>
@@ -131,13 +140,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails.CreateFromDiscriminatorValue); } },
-                { "accountHolderStatus", n => { AccountHolderStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus.CreateFromDiscriminatorValue); } },
+                { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderDetails.CreateFromDiscriminatorValue); } },
+                { "accountHolderStatus", n => { AccountHolderStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderStatus>(global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderStatus.CreateFromDiscriminatorValue); } },
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Account>(global::Soenneker.Adyen.OpenApiClient.Models.Account.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseLegalEntity>(); } },
-                { "migrationData", n => { MigrationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MigrationData>(global::Soenneker.Adyen.OpenApiClient.Models.MigrationData.CreateFromDiscriminatorValue); } },
+                { "migrationData", n => { MigrationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseMigrationData>(global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseMigrationData.CreateFromDiscriminatorValue); } },
                 { "primaryCurrency", n => { PrimaryCurrency = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetStringValue(); } },
@@ -154,19 +163,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatus>("accountHolderStatus", AccountHolderStatus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseAccountHolderStatus>("accountHolderStatus", AccountHolderStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Account>("accounts", Accounts);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ErrorFieldType>("invalidFields", InvalidFields);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseLegalEntity>("legalEntity", LegalEntity);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MigrationData>("migrationData", MigrationData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseMigrationData>("migrationData", MigrationData);
             writer.WriteStringValue("primaryCurrency", PrimaryCurrency);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("resultCode", ResultCode);
             writer.WriteDateTimeOffsetValue("systemUpToDateTime", SystemUpToDateTime);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KycVerificationResult>("verification", Verification);
             writer.WriteStringValue("verificationProfile", VerificationProfile);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

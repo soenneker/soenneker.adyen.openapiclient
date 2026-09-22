@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The amount of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestAmount Amount { get; set; }
 #endif
         /// <summary>The unique identifier of the source merchant account from which funds are deducted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,8 +46,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ToMerchant { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferType? Type { get; set; }
+        /// <summary>The type of balance transfer. Possible values: **tax**, **fee**, **terminalSale**, **credit**, **debit**, and **adjustment**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequest"/> and sets the default values.
         /// </summary>
@@ -73,11 +79,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestAmount.CreateFromDiscriminatorValue); } },
                 { "fromMerchant", n => { FromMerchant = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "toMerchant", n => { ToMerchant = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,11 +93,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestAmount>("amount", Amount);
             writer.WriteStringValue("fromMerchant", FromMerchant);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("toMerchant", ToMerchant);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

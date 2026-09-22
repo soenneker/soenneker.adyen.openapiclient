@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PersonalDocumentData : IParsable
+    public partial class PersonalDocumentData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expiry date of the document,  in ISO-8601 YYYY-MM-DD format. For example, **2000-01-31**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The type of the document. Possible values: **ID**, **DRIVINGLICENSE**, **PASSPORT**, **SOCIALSECURITY**, **VISA**.To delete an existing entry for a document `type`, send only the `type` field in your request. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentData"/> and sets the default values.
+        /// </summary>
+        public PersonalDocumentData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,6 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("issuerState", IssuerState);
             writer.WriteStringValue("number", Number);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

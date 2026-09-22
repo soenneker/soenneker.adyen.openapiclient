@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalArrangementDetail : IParsable
+    public partial class LegalArrangementDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the legal arrangement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress Address { get; set; }
 #endif
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the entry, returned in the response when you create a legal arrangement.Use only when updating an account holder. If you include this field when creating an account holder, the request will fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,6 +75,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The [type of legal arrangement](https://docs.adyen.com/classic-platforms/verification-process/legal-arrangements#types-of-legal-arrangements).Possible values:- **Association** - **Partnership** - **SoleProprietorship** - **Trust** </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail"/> and sets the default values.
+        /// </summary>
+        public LegalArrangementDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail"/></returns>
@@ -90,7 +99,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>(global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress.CreateFromDiscriminatorValue); } },
                 { "legalArrangementCode", n => { LegalArrangementCode = n.GetStringValue(); } },
                 { "legalArrangementEntities", n => { LegalArrangementEntities = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legalArrangementReference", n => { LegalArrangementReference = n.GetStringValue(); } },
@@ -108,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress>("address", Address);
             writer.WriteStringValue("legalArrangementCode", LegalArrangementCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>("legalArrangementEntities", LegalArrangementEntities);
             writer.WriteStringValue("legalArrangementReference", LegalArrangementReference);
@@ -117,6 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
             writer.WriteStringValue("taxNumber", TaxNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

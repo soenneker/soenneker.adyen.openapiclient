@@ -9,11 +9,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NotificationConfigurationDetails : IParsable
+    public partial class NotificationConfigurationDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the notification subscription is active.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of the notification to which you are subscribing. To make sure that your integration can properly process the notification, subscribe to the same version as the API that you&apos;re using.</summary>
         public int? ApiVersion { get; set; }
         /// <summary>A description of the notification subscription configuration.</summary>
@@ -69,6 +71,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol? SslProtocol { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails"/> and sets the default values.
+        /// </summary>
+        public NotificationConfigurationDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails"/></returns>
@@ -115,6 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("notifyURL", NotifyURL);
             writer.WriteStringValue("notifyUsername", NotifyUsername);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol>("sslProtocol", SslProtocol);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

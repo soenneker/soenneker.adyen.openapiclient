@@ -9,17 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetNetworkTokenResponse : IParsable
+    public partial class GetNetworkTokenResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The token property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The details of the network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken? Token { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetNetworkTokenResponseToken? Token { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken Token { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetNetworkTokenResponseToken Token { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetNetworkTokenResponse"/> and sets the default values.
+        /// </summary>
+        public GetNetworkTokenResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "token", n => { Token = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken>(global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken.CreateFromDiscriminatorValue); } },
+                { "token", n => { Token = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetNetworkTokenResponseToken>(global::Soenneker.Adyen.OpenApiClient.Models.GetNetworkTokenResponseToken.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken>("token", Token);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetNetworkTokenResponseToken>("token", Token);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransactionSearchResponse : IParsable
+    public partial class TransactionSearchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains the transactions that match the query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +22,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction> Data { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>Contains links to the next and previous page whenever applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Links? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionSearchResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Links Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionSearchResponseLinks Links { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionSearchResponse"/> and sets the default values.
+        /// </summary>
+        public TransactionSearchResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Links>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Links.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionSearchResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionSearchResponseLinks.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Transaction>("data", Data);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Links>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionSearchResponseLinks>("_links", Links);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

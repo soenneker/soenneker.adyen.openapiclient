@@ -49,8 +49,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentCurrency { get; set; }
 #endif
-        /// <summary>Possible values:* **Card*** **Check*** **Mobile*** **StoredValue*** **Cash**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentType? PaymentInstrumentType { get; set; }
+        /// <summary>Type of payment instrument.Possible values:* **Card*** **Cash*** **Check*** **Mobile*** **StoredValue**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotalsPaymentInstrumentType? PaymentInstrumentType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotalsPaymentInstrumentType PaymentInstrumentType { get; set; }
+#endif
         /// <summary>Totals of the payment transaction during the reconciliation period.If both `TransactionCount` and `TransactionAmount` are not equal to zero.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "OperatorID", n => { OperatorID = n.GetStringValue(); } },
                 { "POIID", n => { POIID = n.GetStringValue(); } },
                 { "PaymentCurrency", n => { PaymentCurrency = n.GetStringValue(); } },
-                { "PaymentInstrumentType", n => { PaymentInstrumentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentType>(); } },
+                { "PaymentInstrumentType", n => { PaymentInstrumentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotalsPaymentInstrumentType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotalsPaymentInstrumentType.CreateFromDiscriminatorValue); } },
                 { "PaymentTotals", n => { PaymentTotals = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotals>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotals.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SaleID", n => { SaleID = n.GetStringValue(); } },
                 { "ShiftNumber", n => { ShiftNumber = n.GetStringValue(); } },
@@ -141,7 +147,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("HostReconciliationID", HostReconciliationID);
             writer.WriteStringValue("OperatorID", OperatorID);
             writer.WriteStringValue("PaymentCurrency", PaymentCurrency);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentType>("PaymentInstrumentType", PaymentInstrumentType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTotalsPaymentInstrumentType>("PaymentInstrumentType", PaymentInstrumentType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotals>("PaymentTotals", PaymentTotals);
             writer.WriteStringValue("POIID", POIID);
             writer.WriteStringValue("SaleID", SaleID);

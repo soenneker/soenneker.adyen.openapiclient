@@ -15,21 +15,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The CardAcquisitionTransaction property</summary>
+        /// <summary>Data related to the payment and loyalty card acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction? CardAcquisitionTransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestCardAcquisitionTransaction? CardAcquisitionTransaction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction CardAcquisitionTransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestCardAcquisitionTransaction CardAcquisitionTransaction { get; set; }
 #endif
-        /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
+        /// <summary>Data related to the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData? SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestSaleData? SaleData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestSaleData SaleData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequest"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CardAcquisitionTransaction", n => { CardAcquisitionTransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction.CreateFromDiscriminatorValue); } },
-                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>(global::Soenneker.Adyen.OpenApiClient.Models.SaleData.CreateFromDiscriminatorValue); } },
+                { "CardAcquisitionTransaction", n => { CardAcquisitionTransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestCardAcquisitionTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestCardAcquisitionTransaction.CreateFromDiscriminatorValue); } },
+                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestSaleData>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestSaleData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransaction>("CardAcquisitionTransaction", CardAcquisitionTransaction);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>("SaleData", SaleData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestCardAcquisitionTransaction>("CardAcquisitionTransaction", CardAcquisitionTransaction);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionRequestSaleData>("SaleData", SaleData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

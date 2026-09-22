@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AmazonPayDetails : IParsable
+    public partial class AmazonPayDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This is the `amazonPayToken` that you obtained from the [Get Checkout Session](https://amazon-pay-acquirer-guide.s3-eu-west-1.amazonaws.com/v1/amazon-pay-api-v2/checkout-session.html#get-checkout-session) response. This token is used for API only integration specifically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>**amazonpay**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails"/> and sets the default values.
+        /// </summary>
+        public AmazonPayDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,6 +92,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("checkoutSessionId", CheckoutSessionId);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

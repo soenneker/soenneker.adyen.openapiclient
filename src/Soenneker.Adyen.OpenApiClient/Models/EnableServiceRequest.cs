@@ -15,13 +15,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Information to display and how to process it.Contains a complete display operation for a Display or an Input Device type. For the Input Devices, Diagnosis and `EnableService`, `ResponseRequiredFlag`, and `MinimumDisplayTime` shall be absent.</summary>
+        /// <summary>Information to display and the way to process the display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput? DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput? DisplayOutput { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput DisplayOutput { get; set; }
 #endif
         /// <summary>Services which are enabled before the start-up of a transaction.Mandatory if `TransactionAction` is `StartTransaction`, absent if not.Possible values:* **CardAcquisition*** **Loyalty*** **Payment**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,8 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.ServicesEnabledItem?> ServicesEnabled { get; set; }
 #endif
-        /// <summary>Action to realise on a transaction. In an `EnableService` request message:  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.Possible values:* **StartTransaction*** **AbortTransaction**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionAction? TransactionAction { get; set; }
+        /// <summary>Action to realise on a transaction. In an `EnableService` request message:  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.Possible values:* **AbortTransaction*** **StartTransaction**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction? TransactionAction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction TransactionAction { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequest"/> and sets the default values.
         /// </summary>
@@ -58,9 +64,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput.CreateFromDiscriminatorValue); } },
+                { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput.CreateFromDiscriminatorValue); } },
                 { "ServicesEnabled", n => { ServicesEnabled = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.ServicesEnabledItem>()?.AsList(); } },
-                { "TransactionAction", n => { TransactionAction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionAction>(); } },
+                { "TransactionAction", n => { TransactionAction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction>(global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +76,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput>("DisplayOutput", DisplayOutput);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput>("DisplayOutput", DisplayOutput);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.ServicesEnabledItem>("ServicesEnabled", ServicesEnabled);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionAction>("TransactionAction", TransactionAction);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction>("TransactionAction", TransactionAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

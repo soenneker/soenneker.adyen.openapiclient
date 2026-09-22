@@ -15,21 +15,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The LoyaltyAccountReq property</summary>
+        /// <summary>Data related to a requested Loyalty program or account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountReq? LoyaltyAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq? LoyaltyAccountReq { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountReq LoyaltyAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq LoyaltyAccountReq { get; set; }
 #endif
-        /// <summary>The PaymentAccountReq property</summary>
+        /// <summary>Data related to the account pointed by the payment card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReq? PaymentAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq? PaymentAccountReq { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReq PaymentAccountReq { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq PaymentAccountReq { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequest"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "LoyaltyAccountReq", n => { LoyaltyAccountReq = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountReq>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountReq.CreateFromDiscriminatorValue); } },
-                { "PaymentAccountReq", n => { PaymentAccountReq = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReq>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReq.CreateFromDiscriminatorValue); } },
+                { "LoyaltyAccountReq", n => { LoyaltyAccountReq = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq.CreateFromDiscriminatorValue); } },
+                { "PaymentAccountReq", n => { PaymentAccountReq = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountReq>("LoyaltyAccountReq", LoyaltyAccountReq);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReq>("PaymentAccountReq", PaymentAccountReq);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestLoyaltyAccountReq>("LoyaltyAccountReq", LoyaltyAccountReq);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryRequestPaymentAccountReq>("PaymentAccountReq", PaymentAccountReq);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

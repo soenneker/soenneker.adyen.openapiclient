@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StoredPaymentMethodResource : IParsable
+    public partial class StoredPaymentMethodResource : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alias of the credit card number.Applies only to recurring contracts storing credit card details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,13 +30,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AliasType { get; set; }
 #endif
-        /// <summary>The billingAddress property</summary>
+        /// <summary>The billing address associated with the stored payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address? BillingAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceBillingAddress? BillingAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address BillingAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceBillingAddress BillingAddress { get; set; }
 #endif
         /// <summary>The brand of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,13 +136,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LastFour { get; set; }
 #endif
-        /// <summary>The mandate property</summary>
+        /// <summary>Mandate details for the stored payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate? Mandate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate? Mandate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate Mandate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate Mandate { get; set; }
 #endif
         /// <summary>The display name of the stored payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -199,6 +201,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResource"/> and sets the default values.
+        /// </summary>
+        public StoredPaymentMethodResource()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResource"/></returns>
@@ -218,7 +227,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "aliasType", n => { AliasType = n.GetStringValue(); } },
-                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address.CreateFromDiscriminatorValue); } },
+                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceBillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceBillingAddress.CreateFromDiscriminatorValue); } },
                 { "brand", n => { Brand = n.GetStringValue(); } },
                 { "cardBin", n => { CardBin = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -232,7 +241,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issuerName", n => { IssuerName = n.GetStringValue(); } },
                 { "lastFour", n => { LastFour = n.GetStringValue(); } },
-                { "mandate", n => { Mandate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate>(global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate.CreateFromDiscriminatorValue); } },
+                { "mandate", n => { Mandate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networkTxReference", n => { NetworkTxReference = n.GetStringValue(); } },
                 { "ownerName", n => { OwnerName = n.GetStringValue(); } },
@@ -251,7 +260,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
             writer.WriteStringValue("aliasType", AliasType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Address>("billingAddress", BillingAddress);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceBillingAddress>("billingAddress", BillingAddress);
             writer.WriteStringValue("brand", Brand);
             writer.WriteStringValue("cardBin", CardBin);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
@@ -265,7 +274,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("issuerName", IssuerName);
             writer.WriteStringValue("lastFour", LastFour);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenMandate>("mandate", Mandate);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate>("mandate", Mandate);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("networkTxReference", NetworkTxReference);
             writer.WriteStringValue("ownerName", OwnerName);
@@ -273,6 +282,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedRecurringProcessingModels", SupportedRecurringProcessingModels);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

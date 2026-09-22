@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4UkLocalAccountIdentification : IParsable
+    public partial class TransferServiceV4UkLocalAccountIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The 8-digit bank account number, without separators or whitespace.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountNumber { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 6-digit [sort code](https://en.wikipedia.org/wiki/Sort_code), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SortCode { get; set; }
 #endif
         /// <summary>**ukLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UkLocalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UkLocalType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UkLocalAccountIdentification"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4UkLocalAccountIdentification()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "sortCode", n => { SortCode = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UkLocalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UkLocalType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteStringValue("sortCode", SortCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UkLocalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UkLocalType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

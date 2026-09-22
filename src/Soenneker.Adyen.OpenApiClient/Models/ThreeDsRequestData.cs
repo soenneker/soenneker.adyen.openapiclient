@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ThreeDsRequestData : IParsable
+    public partial class ThreeDsRequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dimensions of the 3DS2 challenge window to be displayed to the cardholder.Possible values:* **01** - size of 250x400 * **02** - size of 390x400* **03** - size of 500x600* **04** - size of 600x400* **05** - Fullscreen</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataChallengeWindowSize? ChallengeWindowSize { get; set; }
         /// <summary>Required to trigger the [data-only flow](https://docs.adyen.com/online-payments/3d-secure/data-only/). When set to **true**, forces the 3D Secure 2 data-only flow for all transactions where it is possible. </summary>
@@ -20,6 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataNativeThreeDs? NativeThreeDS { get; set; }
         /// <summary>The version of 3D Secure to use.Possible values:* **2.1.0*** **2.2.0**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataThreeDsVersion? ThreeDSVersion { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData"/> and sets the default values.
+        /// </summary>
+        public ThreeDsRequestData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,6 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataDataOnly>("dataOnly", DataOnly);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataNativeThreeDs>("nativeThreeDS", NativeThreeDS);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestDataThreeDsVersion>("threeDSVersion", ThreeDSVersion);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

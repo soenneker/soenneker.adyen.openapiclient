@@ -15,10 +15,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device? Device { get; set; }
-        /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify? InfoQualify { get; set; }
+        /// <summary>Logical device located on a Sale Terminal or a POI Terminal, in terms of class of information to output (display, print, or store), or input (keyboard) for the Cashier or the Customer.Possible values:* **CashierDisplay*** **CashierInput*** **CustomerDisplay*** **CustomerInput**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice? Device { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice Device { get; set; }
+#endif
+        /// <summary>Qualification of the information to sent to an output logical device, to display or print to the Cashier or the Customer. Allows the manager of the device, Sale or POI Terminal, to send the information to a particular physical device or to present the information accordingly.Possible values:* **CustomerAssistance*** **Display*** **Document*** **Error*** **Input*** **POIReplication*** **Receipt*** **Sound*** **Status*** **Voucher**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify? InfoQualify { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify InfoQualify { get; set; }
+#endif
         /// <summary>An entry of the menu to present to the Cashier. It conveys the message text and parameters of the menu entry. This output data could be only provided for an input command, in order to choose an entryof the menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,13 +41,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Number of seconds the message has to be displayed.</summary>
         public int? MinimumDisplayTime { get; set; }
-        /// <summary>Content to display or print.This is a sequence of elements if they have different formats.</summary>
+        /// <summary>Content to display or print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContent? OutputContent { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent? OutputContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContent OutputContent { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent OutputContent { get; set; }
 #endif
         /// <summary>Vendor-specific signature of the text message to display or print.If protection has to be provided to the vendor on the text to display or print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,11 +86,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device>(); } },
-                { "InfoQualify", n => { InfoQualify = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify>(); } },
+                { "Device", n => { Device = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice>(global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice.CreateFromDiscriminatorValue); } },
+                { "InfoQualify", n => { InfoQualify = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify>(global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify.CreateFromDiscriminatorValue); } },
                 { "MenuEntry", n => { MenuEntry = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>(global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "MinimumDisplayTime", n => { MinimumDisplayTime = n.GetIntValue(); } },
-                { "OutputContent", n => { OutputContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContent>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContent.CreateFromDiscriminatorValue); } },
+                { "OutputContent", n => { OutputContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent>(global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent.CreateFromDiscriminatorValue); } },
                 { "OutputSignature", n => { OutputSignature = n.GetByteArrayValue(); } },
                 { "ResponseRequiredFlag", n => { ResponseRequiredFlag = n.GetBoolValue(); } },
             };
@@ -90,11 +102,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1Device>("Device", Device);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InfoQualify>("InfoQualify", InfoQualify);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputDevice>("Device", Device);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputInfoQualify>("InfoQualify", InfoQualify);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntry>("MenuEntry", MenuEntry);
             writer.WriteIntValue("MinimumDisplayTime", MinimumDisplayTime);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContent>("OutputContent", OutputContent);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutputOutputContent>("OutputContent", OutputContent);
             writer.WriteByteArrayValue("OutputSignature", OutputSignature);
             writer.WriteBoolValue("ResponseRequiredFlag", ResponseRequiredFlag);
             writer.WriteAdditionalData(AdditionalData);

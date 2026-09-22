@@ -22,8 +22,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EntityId { get; set; }
 #endif
-        /// <summary>The entityType property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType? EntityType { get; set; }
+        /// <summary>The type of the entity.  Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequestEntityType? EntityType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequestEntityType EntityType { get; set; }
+#endif
         /// <summary>A list of device ids associated with the entity that should be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entityId", n => { EntityId = n.GetStringValue(); } },
-                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType>(); } },
+                { "entityType", n => { EntityType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequestEntityType>(global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequestEntityType.CreateFromDiscriminatorValue); } },
                 { "scaDeviceIds", n => { ScaDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -70,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("entityId", EntityId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityType>("entityType", EntityType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RemoveAssociationRequestEntityType>("entityType", EntityType);
             writer.WriteCollectionOfPrimitiveValues<string>("scaDeviceIds", ScaDeviceIds);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PixRecurring : IParsable
+    public partial class PixRecurring : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date on which the shopper&apos;s payment method will be charged, in YYYY-MM-DD format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +34,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The frequency at which the shopper will be charged.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringFrequency? Frequency { get; set; }
-        /// <summary>The minAmount property</summary>
+        /// <summary>For a billing plan where the payment amounts are variable, the minimum amount to charge the shopper for each recurring payment. When a shopper approves the billing plan, they can also specify a maximum amount in their banking app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? MinAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringMinAmount? MinAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount MinAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringMinAmount MinAmount { get; set; }
 #endif
         /// <summary>The pspReference for the failed recurring payment. Find this in AUTHORISATION webhook you received after the billing date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,13 +50,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string OriginalPspReference { get; set; }
 #endif
-        /// <summary>The recurringAmount property</summary>
+        /// <summary>For a billing plan where the payment amount is fixed, the amount the shopper will be charged for each recurring payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? RecurringAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringRecurringAmount? RecurringAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount RecurringAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringRecurringAmount RecurringAmount { get; set; }
 #endif
         /// <summary>The text that that will be shown on the shopper&apos;s bank statement for the recurring payments. We recommend to add a descriptive text about the subscription to let your shoppers recognize your recurring payments.Maximum length: 35 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,6 +76,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StartsAt { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PixRecurring"/> and sets the default values.
+        /// </summary>
+        public PixRecurring()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,9 +105,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "businessDayOnly", n => { BusinessDayOnly = n.GetBoolValue(); } },
                 { "endsAt", n => { EndsAt = n.GetStringValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringFrequency>(); } },
-                { "minAmount", n => { MinAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "minAmount", n => { MinAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringMinAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringMinAmount.CreateFromDiscriminatorValue); } },
                 { "originalPspReference", n => { OriginalPspReference = n.GetStringValue(); } },
-                { "recurringAmount", n => { RecurringAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "recurringAmount", n => { RecurringAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringRecurringAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringRecurringAmount.CreateFromDiscriminatorValue); } },
                 { "recurringStatement", n => { RecurringStatement = n.GetStringValue(); } },
                 { "retryPolicy", n => { RetryPolicy = n.GetBoolValue(); } },
                 { "startsAt", n => { StartsAt = n.GetStringValue(); } },
@@ -115,12 +124,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("businessDayOnly", BusinessDayOnly);
             writer.WriteStringValue("endsAt", EndsAt);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringFrequency>("frequency", Frequency);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("minAmount", MinAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringMinAmount>("minAmount", MinAmount);
             writer.WriteStringValue("originalPspReference", OriginalPspReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("recurringAmount", RecurringAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PixRecurringRecurringAmount>("recurringAmount", RecurringAmount);
             writer.WriteStringValue("recurringStatement", RecurringStatement);
             writer.WriteBoolValue("retryPolicy", RetryPolicy);
             writer.WriteStringValue("startsAt", StartsAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

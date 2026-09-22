@@ -23,13 +23,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?> DocumentQualifier { get; set; }
 #endif
-        /// <summary>Identification of a previous POI transaction.To abort a transaction in progress or to request the status of a transaction from which no response has been received. It identifies the message header of the message request to abort or request the status.</summary>
+        /// <summary>Identification of a previous POI transaction.Present if it contains any data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReference? MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference? MessageReference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReference MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference MessageReference { get; set; }
 #endif
         /// <summary>Request to reprint the POI receipt(s). Allows reprinting a receipt with a `TransactionStatus` message</summary>
         public bool? ReceiptReprintFlag { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "DocumentQualifier", n => { DocumentQualifier = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier>()?.AsList(); } },
-                { "MessageReference", n => { MessageReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReference>(global::Soenneker.Adyen.OpenApiClient.Models.MessageReference.CreateFromDiscriminatorValue); } },
+                { "MessageReference", n => { MessageReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference.CreateFromDiscriminatorValue); } },
                 { "ReceiptReprintFlag", n => { ReceiptReprintFlag = n.GetBoolValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier>("DocumentQualifier", DocumentQualifier);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReference>("MessageReference", MessageReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference>("MessageReference", MessageReference);
             writer.WriteBoolValue("ReceiptReprintFlag", ReceiptReprintFlag);
             writer.WriteAdditionalData(AdditionalData);
         }

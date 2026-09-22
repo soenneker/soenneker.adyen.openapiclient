@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RecurringDetailsRequest : IParsable
+    public partial class RecurringDetailsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The merchant account identifier you want to process the (transaction) request with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The recurring property</summary>
+        /// <summary>A container for the type of a recurring contract to be retrieved.The contract value needs to match the contract value submitted in the payment transaction used to create a recurring contract.However, if `ONECLICK,RECURRING` is the original contract definition in the initial payment, then `contract` should take either `ONECLICK` or `RECURRING`, depending on whether or not you want the shopper to enter their card&apos;s security code when they finalize their purchase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring? Recurring { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsRequestRecurring? Recurring { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring Recurring { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsRequestRecurring Recurring { get; set; }
 #endif
         /// <summary>The reference you use to uniquely identify the shopper (e.g. user ID or account ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperReference { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsRequest"/> and sets the default values.
+        /// </summary>
+        public RecurringDetailsRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "recurring", n => { Recurring = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring.CreateFromDiscriminatorValue); } },
+                { "recurring", n => { Recurring = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsRequestRecurring>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsRequestRecurring.CreateFromDiscriminatorValue); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
             };
         }
@@ -67,8 +76,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Recurring>("recurring", Recurring);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailsRequestRecurring>("recurring", Recurring);
             writer.WriteStringValue("shopperReference", ShopperReference);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

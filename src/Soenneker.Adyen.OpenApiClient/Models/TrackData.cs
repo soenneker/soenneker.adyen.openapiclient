@@ -15,8 +15,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **ISO*** **JIS-I*** **JIS-II*** **AAMVA*** **CMC-7*** **E-13B**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrackFormat? TrackFormat { get; set; }
+        /// <summary>Card track format.Possible values:* **AAMVA*** **ISO**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? TrackFormat { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat TrackFormat { get; set; }
+#endif
         /// <summary>Card track number.</summary>
         public int? TrackNumb { get; set; }
         /// <summary>Card track content.</summary>
@@ -53,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TrackFormat", n => { TrackFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackFormat>(); } },
+                { "TrackFormat", n => { TrackFormat = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat>(global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat.CreateFromDiscriminatorValue); } },
                 { "TrackNumb", n => { TrackNumb = n.GetIntValue(); } },
                 { "TrackValue", n => { TrackValue = n.GetStringValue(); } },
             };
@@ -65,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackFormat>("TrackFormat", TrackFormat);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat>("TrackFormat", TrackFormat);
             writer.WriteIntValue("TrackNumb", TrackNumb);
             writer.WriteStringValue("TrackValue", TrackValue);
             writer.WriteAdditionalData(AdditionalData);

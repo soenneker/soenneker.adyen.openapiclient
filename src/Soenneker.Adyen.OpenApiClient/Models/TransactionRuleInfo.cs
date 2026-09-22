@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransactionRuleInfo : IParsable
+    public partial class TransactionRuleInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The level at which data must be accumulated, used in rules with `type` **velocity** or **maxUsage**. The level must be the [same or lower in hierarchy](https://docs.adyen.com/issuing/transaction-rules#accumulate-data) than the `entityKey`.If not provided, by default, the rule will accumulate data at the **paymentInstrument** level.Possible values: **paymentInstrument**, **paymentInstrumentGroup**, **balanceAccount**, **accountHolder**, **balancePlatform**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,21 +38,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EndDate { get; set; }
 #endif
-        /// <summary>The entityKey property</summary>
+        /// <summary>The type and unique identifier of the resource to which the rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKey? EntityKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoEntityKey? EntityKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKey EntityKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoEntityKey EntityKey { get; set; }
 #endif
-        /// <summary>The interval property</summary>
+        /// <summary>The [time interval](https://docs.adyen.com/issuing/transaction-rules#time-intervals) when the rule conditions apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInterval? Interval { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoInterval? Interval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInterval Interval { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoInterval Interval { get; set; }
 #endif
         /// <summary>The [outcome](https://docs.adyen.com/issuing/transaction-rules#outcome) that will be applied when a transaction meets the conditions of the rule.Possible values:* **hardBlock** (default): the transaction is declined.* **scoreBased**: the transaction is assigned the `score` you specified. Adyen calculates the total score and if it exceeds 100, the transaction is declined. This value is not allowed when `requestType` is **bankTransfer**.* **enforceSCA**: your user is prompted to verify their identity using [3D Secure authentication](https://docs.adyen.com/issuing/3d-secure/). If the authentication fails or times out, the transaction is declined. This value is only allowed when `requestType` is **authentication**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoOutcomeType? OutcomeType { get; set; }
@@ -74,13 +76,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates the type of request to which the rule applies. If not provided, by default, this is set to **authorization**.Possible values: **authorization**, **authentication**, **tokenization**, **bankTransfer**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRequestType? RequestType { get; set; }
-        /// <summary>The ruleRestrictions property</summary>
+        /// <summary>Contains one or more objects that define the [rule conditions](https://docs.adyen.com/issuing/transaction-rules#conditions). Each object must have a value and an operation which determines how the values must be evaluated.For example, a `countries` object can have a list of country codes **[&quot;US&quot;, &quot;CA&quot;]** in the `value` field and **anyMatch** in the `operation` field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictions? RuleRestrictions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions? RuleRestrictions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictions RuleRestrictions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions RuleRestrictions { get; set; }
 #endif
         /// <summary>A positive or negative score applied to the transaction if it meets the conditions of the rule. Required when `outcomeType` is **scoreBased**.  The value must be between **-100** and **100**.</summary>
         public int? Score { get; set; }
@@ -96,6 +98,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoStatus? Status { get; set; }
         /// <summary>The [type of rule](https://docs.adyen.com/issuing/transaction-rules#rule-types), which defines if a rule blocks transactions based on individual characteristics or accumulates data.Possible values: * **blockList**: decline a transaction when the conditions are met. * **maxUsage**: add the amount or number of transactions for the lifetime of a payment instrument, and then decline a transaction when the specified limits are met. * **velocity**: add the amount or number of transactions based on a specified time interval, and then decline a transaction when the specified limits are met. * **bypass**: bypass or skip a rule for the specified `entityKey`. Transactions processed to that entity are no longer evaluated by the bypassed rule.  You must provide the `id` of the rule to bypass in `overridesRule` and leave the `ruleRestrictions` object empty.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfo"/> and sets the default values.
+        /// </summary>
+        public TransactionRuleInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -117,14 +126,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "aggregationLevel", n => { AggregationLevel = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "endDate", n => { EndDate = n.GetStringValue(); } },
-                { "entityKey", n => { EntityKey = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKey>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKey.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInterval>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInterval.CreateFromDiscriminatorValue); } },
+                { "entityKey", n => { EntityKey = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoEntityKey>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoEntityKey.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoInterval>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoInterval.CreateFromDiscriminatorValue); } },
                 { "outcomeType", n => { OutcomeType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoOutcomeType>(); } },
                 { "overridesRule", n => { OverridesRule = n.GetStringValue(); } },
                 { "purpose", n => { Purpose = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoPurpose>(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "requestType", n => { RequestType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRequestType>(); } },
-                { "ruleRestrictions", n => { RuleRestrictions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictions>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictions.CreateFromDiscriminatorValue); } },
+                { "ruleRestrictions", n => { RuleRestrictions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetIntValue(); } },
                 { "startDate", n => { StartDate = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoStatus>(); } },
@@ -141,18 +150,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("aggregationLevel", AggregationLevel);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("endDate", EndDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleEntityKey>("entityKey", EntityKey);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInterval>("interval", Interval);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoEntityKey>("entityKey", EntityKey);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoInterval>("interval", Interval);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoOutcomeType>("outcomeType", OutcomeType);
             writer.WriteStringValue("overridesRule", OverridesRule);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoPurpose>("purpose", Purpose);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRequestType>("requestType", RequestType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleRestrictions>("ruleRestrictions", RuleRestrictions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoRuleRestrictions>("ruleRestrictions", RuleRestrictions);
             writer.WriteIntValue("score", Score);
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleInfoType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

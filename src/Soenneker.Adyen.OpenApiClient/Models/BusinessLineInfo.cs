@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BusinessLineInfo : IParsable
+    public partial class BusinessLineInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A code that represents the industry of the legal entity for [marketplaces](https://docs.adyen.com/marketplaces/verification-requirements/reference-additional-products/#list-industry-codes) or [platforms](https://docs.adyen.com/platforms/verification-requirements/reference-additional-products/#list-industry-codes). For example, **4431A** for computer software stores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,13 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The service for which you are creating the business line.Possible values:*  **paymentProcessing***  **issuing***  **banking**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoService? Service { get; set; }
-        /// <summary>The sourceOfFunds property</summary>
+        /// <summary>Contains information about the source of your user&apos;s funds. Required only if the `service` is **banking** or **issuing**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds? SourceOfFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoSourceOfFunds? SourceOfFunds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds SourceOfFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoSourceOfFunds SourceOfFunds { get; set; }
 #endif
         /// <summary>List of website URLs where your user&apos;s goods or services are sold. When this is required for a service but your user does not have an online presence, provide the reason in the `webDataExemption` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,14 +64,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.WebData> WebData { get; set; }
 #endif
-        /// <summary>The webDataExemption property</summary>
+        /// <summary>The reason why the web data is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption? WebDataExemption { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoWebDataExemption? WebDataExemption { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption WebDataExemption { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoWebDataExemption WebDataExemption { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfo"/> and sets the default values.
+        /// </summary>
+        public BusinessLineInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -93,9 +102,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "salesChannels", n => { SalesChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "service", n => { Service = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoService>(); } },
-                { "sourceOfFunds", n => { SourceOfFunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds>(global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds.CreateFromDiscriminatorValue); } },
+                { "sourceOfFunds", n => { SourceOfFunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoSourceOfFunds>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoSourceOfFunds.CreateFromDiscriminatorValue); } },
                 { "webData", n => { WebData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>(global::Soenneker.Adyen.OpenApiClient.Models.WebData.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "webDataExemption", n => { WebDataExemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption>(global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption.CreateFromDiscriminatorValue); } },
+                { "webDataExemption", n => { WebDataExemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoWebDataExemption>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoWebDataExemption.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,9 +118,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteCollectionOfPrimitiveValues<string>("salesChannels", SalesChannels);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoService>("service", Service);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds>("sourceOfFunds", SourceOfFunds);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoSourceOfFunds>("sourceOfFunds", SourceOfFunds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>("webData", WebData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption>("webDataExemption", WebDataExemption);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoWebDataExemption>("webDataExemption", WebDataExemption);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

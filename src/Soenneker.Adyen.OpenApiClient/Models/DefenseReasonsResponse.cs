@@ -22,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason> DefenseReasons { get; set; }
 #endif
-        /// <summary>The disputeServiceResult property</summary>
+        /// <summary>The result of the dispute service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult? DisputeServiceResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult? DisputeServiceResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult DisputeServiceResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult DisputeServiceResult { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "defenseReasons", n => { DefenseReasons = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason>(global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "disputeServiceResult", n => { DisputeServiceResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult.CreateFromDiscriminatorValue); } },
+                { "disputeServiceResult", n => { DisputeServiceResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult>(global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason>("defenseReasons", DefenseReasons);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeServiceResult>("disputeServiceResult", DisputeServiceResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult>("disputeServiceResult", DisputeServiceResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

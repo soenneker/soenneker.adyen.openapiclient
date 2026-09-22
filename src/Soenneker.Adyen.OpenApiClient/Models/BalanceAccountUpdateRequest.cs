@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BalanceAccountUpdateRequest : IParsable
+    public partial class BalanceAccountUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier of the [account holder](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/accountHolders#responses-200-id) associated with the balance account.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderId { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A human-readable description of the balance account. You can use this parameter to distinguish between multiple balance accounts under an account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,18 +33,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty2 Metadata { get; set; }
 #endif
-        /// <summary>The platformPaymentConfiguration property</summary>
+        /// <summary>Contains key-value pairs to configure the sales day closing time and settlement delay for a balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration? PlatformPaymentConfiguration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestPlatformPaymentConfiguration? PlatformPaymentConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration PlatformPaymentConfiguration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestPlatformPaymentConfiguration PlatformPaymentConfiguration { get; set; }
 #endif
         /// <summary>Your reference to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,6 +65,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TimeZone { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequest"/> and sets the default values.
+        /// </summary>
+        public BalanceAccountUpdateRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequest"/></returns>
@@ -82,8 +91,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty.CreateFromDiscriminatorValue); } },
-                { "platformPaymentConfiguration", n => { PlatformPaymentConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "platformPaymentConfiguration", n => { PlatformPaymentConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestPlatformPaymentConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestPlatformPaymentConfiguration.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestStatus>(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
@@ -98,11 +107,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderId", AccountHolderId);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PlatformPaymentConfiguration>("platformPaymentConfiguration", PlatformPaymentConfiguration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestPlatformPaymentConfiguration>("platformPaymentConfiguration", PlatformPaymentConfiguration);
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountUpdateRequestStatus>("status", Status);
             writer.WriteStringValue("timeZone", TimeZone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

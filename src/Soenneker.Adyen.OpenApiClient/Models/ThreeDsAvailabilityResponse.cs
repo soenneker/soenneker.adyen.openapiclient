@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ThreeDsAvailabilityResponse : IParsable
+    public partial class ThreeDsAvailabilityResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The binDetails property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Bin Group Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BinDetail? BinDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails? BinDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BinDetail BinDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails BinDetails { get; set; }
 #endif
         /// <summary>List of Directory Server (DS) public keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,6 +43,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicator if 3D Secure 2 is supported.</summary>
         public bool? ThreeDS2supported { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse"/> and sets the default values.
+        /// </summary>
+        public ThreeDsAvailabilityResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponse"/></returns>
@@ -58,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "binDetails", n => { BinDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BinDetail>(global::Soenneker.Adyen.OpenApiClient.Models.BinDetail.CreateFromDiscriminatorValue); } },
+                { "binDetails", n => { BinDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails.CreateFromDiscriminatorValue); } },
                 { "dsPublicKeys", n => { DsPublicKeys = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail>(global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "threeDS1Supported", n => { ThreeDS1Supported = n.GetBoolValue(); } },
                 { "threeDS2CardRangeDetails", n => { ThreeDS2CardRangeDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -72,11 +81,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BinDetail>("binDetails", BinDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityResponseBinDetails>("binDetails", BinDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DsPublicKeyDetail>("dsPublicKeys", DsPublicKeys);
             writer.WriteBoolValue("threeDS1Supported", ThreeDS1Supported);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail>("threeDS2CardRangeDetails", ThreeDS2CardRangeDetails);
             writer.WriteBoolValue("threeDS2supported", ThreeDS2supported);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

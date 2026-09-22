@@ -22,25 +22,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The amount that would be paid out to the user for business financing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferAmount Amount { get; set; }
 #endif
         /// <summary>The contract type of the offer.Possible values:* **loan*** **cashAdvance**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferContractType? ContractType { get; set; }
         /// <summary>The expiration date and time of the offer validity period.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The fee property</summary>
+        /// <summary>Contains information about the fee that your user would pay for the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee? Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFeeComposed? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFeeComposed Fee { get; set; }
 #endif
         /// <summary>The unique identifier of the offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,13 +50,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The repayment property</summary>
+        /// <summary>Contains information about the repayment configuration of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Repayment? Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferRepayment? Repayment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Repayment Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferRepayment Repayment { get; set; }
 #endif
         /// <summary>The starting date and time of the offer validity period.</summary>
         public DateTimeOffset? StartsAt { get; set; }
@@ -86,12 +86,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferAmount.CreateFromDiscriminatorValue); } },
                 { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferContractType>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee.CreateFromDiscriminatorValue); } },
+                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFeeComposed>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFeeComposed.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Repayment>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Repayment.CreateFromDiscriminatorValue); } },
+                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferRepayment>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferRepayment.CreateFromDiscriminatorValue); } },
                 { "startsAt", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -103,12 +103,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderId", AccountHolderId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferContractType>("contractType", ContractType);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFee>("fee", Fee);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferFeeComposed>("fee", Fee);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Repayment>("repayment", Repayment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantOfferRepayment>("repayment", Repayment);
             writer.WriteDateTimeOffsetValue("startsAt", StartsAt);
             writer.WriteAdditionalData(AdditionalData);
         }

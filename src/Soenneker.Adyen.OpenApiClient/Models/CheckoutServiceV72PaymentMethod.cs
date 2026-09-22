@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutServiceV72PaymentMethod : IParsable
+    public partial class CheckoutServiceV72PaymentMethod : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of apps for this payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,20 +41,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The configuration of the payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfigurationProperty? Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfiguration? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfigurationProperty Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfiguration Configuration { get; set; }
 #endif
         /// <summary>The funding source of the payment method.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodFundingSource? FundingSource { get; set; }
-        /// <summary>The group property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodFundingSource? FundingSource { get; set; }
+        /// <summary>The group where this payment method belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodGroup? Group { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodGroup? Group { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodGroup Group { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodGroup Group { get; set; }
 #endif
         /// <summary>All input details to be provided to complete the payment with this payment method.</summary>
         [Obsolete("")]
@@ -90,6 +92,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod"/> and sets the default values.
+        /// </summary>
+        public CheckoutServiceV72PaymentMethod()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethod"/></returns>
@@ -110,9 +119,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "apps", n => { Apps = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiApps>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiApps.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "brand", n => { Brand = n.GetStringValue(); } },
                 { "brands", n => { Brands = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfigurationProperty>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfigurationProperty.CreateFromDiscriminatorValue); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodFundingSource>(); } },
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodGroup>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodGroup.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfiguration.CreateFromDiscriminatorValue); } },
+                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodFundingSource>(); } },
+                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodGroup>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodGroup.CreateFromDiscriminatorValue); } },
                 { "inputDetails", n => { InputDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InputDetail>(global::Soenneker.Adyen.OpenApiClient.Models.InputDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "issuers", n => { Issuers = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodIssuer>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodIssuer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -130,14 +139,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiApps>("apps", Apps);
             writer.WriteStringValue("brand", Brand);
             writer.WriteCollectionOfPrimitiveValues<string>("brands", Brands);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfigurationProperty>("configuration", Configuration);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodFundingSource>("fundingSource", FundingSource);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodGroup>("group", Group);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodConfiguration>("configuration", Configuration);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodFundingSource>("fundingSource", FundingSource);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentMethodGroup>("group", Group);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.InputDetail>("inputDetails", InputDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodIssuer>("issuers", Issuers);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("promoted", Promoted);
             writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

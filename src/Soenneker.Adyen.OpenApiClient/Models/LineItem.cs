@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LineItem : IParsable
+    public partial class LineItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Item amount excluding the tax, in [minor units](https://docs.adyen.com/development-resources/currency-codes/#minor-units).</summary>
         public long? AmountExcludingTax { get; set; }
         /// <summary>Item amount including the tax, in [minor units](https://docs.adyen.com/development-resources/currency-codes/#minor-units).</summary>
@@ -183,6 +185,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Upc { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LineItem"/> and sets the default values.
+        /// </summary>
+        public LineItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LineItem"/></returns>
@@ -259,6 +268,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("trackingNumber", TrackingNumber);
             writer.WriteStringValue("trackingUri", TrackingUri);
             writer.WriteStringValue("upc", Upc);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

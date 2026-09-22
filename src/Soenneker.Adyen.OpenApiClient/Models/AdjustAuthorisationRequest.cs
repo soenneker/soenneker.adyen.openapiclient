@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AdjustAuthorisationRequest : IParsable
+    public partial class AdjustAuthorisationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field contains additional data, which may be required for a particular modification request.The additionalData object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The merchant account that is used to process the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,21 +30,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The modificationAmount property</summary>
+        /// <summary>The currency and value of the new total amount in minor units. For example, to increase the amount, the value is the sum of the pre-authorized amount and the additional amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount? ModificationAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestModificationAmount? ModificationAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount ModificationAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestModificationAmount ModificationAmount { get; set; }
 #endif
-        /// <summary>The mpiData property</summary>
+        /// <summary>Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData? MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestMpiData? MpiData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestMpiData MpiData { get; set; }
 #endif
         /// <summary>The original merchant reference to cancel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,13 +62,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string OriginalReference { get; set; }
 #endif
-        /// <summary>The platformChargebackLogic property</summary>
+        /// <summary>Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/adyen-for-platforms-model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PlatformChargebackLogic? PlatformChargebackLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestPlatformChargebackLogic? PlatformChargebackLogic { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PlatformChargebackLogic PlatformChargebackLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestPlatformChargebackLogic PlatformChargebackLogic { get; set; }
 #endif
         /// <summary>Your reference for the payment modification. This reference is visible in Customer Area and in reports.Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,6 +103,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string UniqueTerminalId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequest"/> and sets the default values.
+        /// </summary>
+        public AdjustAuthorisationRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequest"/></returns>
@@ -118,13 +127,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "modificationAmount", n => { ModificationAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount.CreateFromDiscriminatorValue); } },
-                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData.CreateFromDiscriminatorValue); } },
+                { "modificationAmount", n => { ModificationAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestModificationAmount>(global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestModificationAmount.CreateFromDiscriminatorValue); } },
+                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestMpiData.CreateFromDiscriminatorValue); } },
                 { "originalMerchantReference", n => { OriginalMerchantReference = n.GetStringValue(); } },
                 { "originalReference", n => { OriginalReference = n.GetStringValue(); } },
-                { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PlatformChargebackLogic.CreateFromDiscriminatorValue); } },
+                { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestPlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestPlatformChargebackLogic.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tenderReference", n => { TenderReference = n.GetStringValue(); } },
@@ -138,17 +147,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Amount>("modificationAmount", ModificationAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68ThreeDSecureData>("mpiData", MpiData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestModificationAmount>("modificationAmount", ModificationAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestMpiData>("mpiData", MpiData);
             writer.WriteStringValue("originalMerchantReference", OriginalMerchantReference);
             writer.WriteStringValue("originalReference", OriginalReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68PlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdjustAuthorisationRequestPlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>("splits", Splits);
             writer.WriteStringValue("tenderReference", TenderReference);
             writer.WriteStringValue("uniqueTerminalId", UniqueTerminalId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

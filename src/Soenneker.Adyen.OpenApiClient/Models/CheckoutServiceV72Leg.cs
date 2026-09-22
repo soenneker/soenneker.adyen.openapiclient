@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutServiceV72Leg : IParsable
+    public partial class CheckoutServiceV72Leg : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.This field is required if the airline data includes leg details.* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].carrier_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +75,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StopOverCode { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg"/> and sets the default values.
+        /// </summary>
+        public CheckoutServiceV72Leg()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg"/></returns>
@@ -117,6 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("fareBasisCode", FareBasisCode);
             writer.WriteStringValue("flightNumber", FlightNumber);
             writer.WriteStringValue("stopOverCode", StopOverCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FundServiceV6Transaction : IParsable
+    public partial class FundServiceV6Transaction : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionAmount Amount { get; set; }
 #endif
-        /// <summary>The bankAccountDetail property</summary>
+        /// <summary>The details of the bank account to where a payout was made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6BankAccountDetail? BankAccountDetail { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionBankAccountDetail? BankAccountDetail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6BankAccountDetail BankAccountDetail { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionBankAccountDetail BankAccountDetail { get; set; }
 #endif
         /// <summary>The merchant reference of a related capture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +121,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SourceAccountCode { get; set; }
 #endif
         /// <summary>The status of the transaction.&gt;Permitted values: `PendingCredit`, `CreditFailed`, `CreditClosed`, `CreditSuspended`, `Credited`, `Converted`, `PendingDebit`, `DebitFailed`, `Debited`, `DebitReversedReceived`, `DebitedReversed`, `ChargebackReceived`, `Chargeback`, `ChargebackReversedReceived`, `ChargebackReversed`, `Payout`, `PayoutReversed`, `FundTransfer`, `PendingFundTransfer`, `ManualCorrected`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus? TransactionStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionTransactionStatus? TransactionStatus { get; set; }
         /// <summary>The transfer code of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +130,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TransferCode { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Transaction"/> and sets the default values.
+        /// </summary>
+        public FundServiceV6Transaction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -146,8 +155,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount.CreateFromDiscriminatorValue); } },
-                { "bankAccountDetail", n => { BankAccountDetail = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6BankAccountDetail>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6BankAccountDetail.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionAmount>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionAmount.CreateFromDiscriminatorValue); } },
+                { "bankAccountDetail", n => { BankAccountDetail = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionBankAccountDetail>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionBankAccountDetail.CreateFromDiscriminatorValue); } },
                 { "captureMerchantReference", n => { CaptureMerchantReference = n.GetStringValue(); } },
                 { "capturePspReference", n => { CapturePspReference = n.GetStringValue(); } },
                 { "creationDate", n => { CreationDate = n.GetDateTimeOffsetValue(); } },
@@ -160,7 +169,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "payoutPspReference", n => { PayoutPspReference = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "sourceAccountCode", n => { SourceAccountCode = n.GetStringValue(); } },
-                { "transactionStatus", n => { TransactionStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus>(); } },
+                { "transactionStatus", n => { TransactionStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTransactionStatus>(); } },
                 { "transferCode", n => { TransferCode = n.GetStringValue(); } },
             };
         }
@@ -171,8 +180,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6BankAccountDetail>("bankAccountDetail", BankAccountDetail);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionBankAccountDetail>("bankAccountDetail", BankAccountDetail);
             writer.WriteStringValue("captureMerchantReference", CaptureMerchantReference);
             writer.WriteStringValue("capturePspReference", CapturePspReference);
             writer.WriteDateTimeOffsetValue("creationDate", CreationDate);
@@ -185,8 +194,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("payoutPspReference", PayoutPspReference);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("sourceAccountCode", SourceAccountCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6TransactionTransactionStatus>("transactionStatus", TransactionStatus);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionTransactionStatus>("transactionStatus", TransactionStatus);
             writer.WriteStringValue("transferCode", TransferCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

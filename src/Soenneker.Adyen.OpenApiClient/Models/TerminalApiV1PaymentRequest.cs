@@ -23,29 +23,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData> LoyaltyData { get; set; }
 #endif
-        /// <summary>The PaymentData property</summary>
+        /// <summary>Data related to the payment transaction.If one data element is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentData? PaymentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData? PaymentData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentData PaymentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData PaymentData { get; set; }
 #endif
-        /// <summary>The PaymentTransaction property</summary>
+        /// <summary>Data related to the payment and loyalty transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransaction? PaymentTransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentTransaction? PaymentTransaction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransaction PaymentTransaction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentTransaction PaymentTransaction { get; set; }
 #endif
-        /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
+        /// <summary>Data related to the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData? SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestSaleData? SaleData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestSaleData SaleData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequest"/> and sets the default values.
@@ -73,9 +73,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "LoyaltyData", n => { LoyaltyData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "PaymentData", n => { PaymentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentData.CreateFromDiscriminatorValue); } },
-                { "PaymentTransaction", n => { PaymentTransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransaction.CreateFromDiscriminatorValue); } },
-                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>(global::Soenneker.Adyen.OpenApiClient.Models.SaleData.CreateFromDiscriminatorValue); } },
+                { "PaymentData", n => { PaymentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData.CreateFromDiscriminatorValue); } },
+                { "PaymentTransaction", n => { PaymentTransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentTransaction.CreateFromDiscriminatorValue); } },
+                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestSaleData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestSaleData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyData>("LoyaltyData", LoyaltyData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentData>("PaymentData", PaymentData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransaction>("PaymentTransaction", PaymentTransaction);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>("SaleData", SaleData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentData>("PaymentData", PaymentData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestPaymentTransaction>("PaymentTransaction", PaymentTransaction);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentRequestSaleData>("SaleData", SaleData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,56 +9,58 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DonationPaymentRequest : IParsable
+    public partial class DonationPaymentRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountInfo property</summary>
+        /// <summary>Shopper account information for 3D Secure 2.&gt; For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo? AccountInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo? AccountInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo AccountInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo AccountInfo { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount information for the transaction (in [minor units](https://docs.adyen.com/development-resources/currency-codes)). For [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) requests, set amount to 0 (zero).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount Amount { get; set; }
 #endif
-        /// <summary>The applicationInfo property</summary>
+        /// <summary>Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo? ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestApplicationInfo? ApplicationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestApplicationInfo ApplicationInfo { get; set; }
 #endif
-        /// <summary>The authenticationData property</summary>
+        /// <summary>Data for 3DS authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData? AuthenticationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAuthenticationData? AuthenticationData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData AuthenticationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAuthenticationData AuthenticationData { get; set; }
 #endif
-        /// <summary>The billingAddress property</summary>
+        /// <summary>The address where to send the invoice.&gt; The `billingAddress` object is required in the following scenarios. Include all of the fields within this object.&gt;* For 3D Secure 2 transactions in all browser-based and mobile implementations.&gt;* For cross-border payouts to and from Canada.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress? BillingAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress? BillingAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress BillingAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress BillingAddress { get; set; }
 #endif
-        /// <summary>The browserInfo property</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo? BrowserInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBrowserInfo? BrowserInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo BrowserInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBrowserInfo BrowserInfo { get; set; }
 #endif
         /// <summary>The platform where a payment transaction takes place. This field is optional for filtering out payment methods that are only available on specific platforms. If this value is not set, then we will try to infer it from the `sdkVersion` or `token`.Possible values:* iOS* Android* Web</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestChannel? Channel { get; set; }
@@ -80,13 +82,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD</summary>
         public DateTimeOffset? DateOfBirth { get; set; }
-        /// <summary>The deliveryAddress property</summary>
+        /// <summary>The address where the purchased goods should be delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress? DeliveryAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestDeliveryAddress? DeliveryAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress DeliveryAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestDeliveryAddress DeliveryAddress { get; set; }
 #endif
         /// <summary>A string containing the shopper&apos;s device fingerprint. For more information, refer to [Device fingerprinting](https://docs.adyen.com/risk-management/device-fingerprinting).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,29 +146,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The merchantRiskIndicator property</summary>
+        /// <summary>Additional risk fields for 3D Secure 2.&gt; For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator? MerchantRiskIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator? MerchantRiskIndicator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator MerchantRiskIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator MerchantRiskIndicator { get; set; }
 #endif
         /// <summary>Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the &quot;177&quot; error occurs: &quot;Metadata size exceeds limit&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2 Metadata { get; set; }
 #endif
-        /// <summary>The mpiData property</summary>
+        /// <summary>Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData? MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData? MpiData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData MpiData { get; set; }
 #endif
         /// <summary>&gt; Required for browser-based (`channel` **Web**) 3D Secure 2 transactions.Set this to the origin URL of the page where you are rendering the Drop-in/Component. Do not include subdirectories and a trailing slash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -252,13 +254,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperLocale { get; set; }
 #endif
-        /// <summary>The shopperName property</summary>
+        /// <summary>The shopper&apos;s full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperName? ShopperName { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperName? ShopperName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperName ShopperName { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperName ShopperName { get; set; }
 #endif
         /// <summary>Required for recurring payments. Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.&gt; Your reference must not include personally identifiable information (PII), for example name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -301,6 +303,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields ThreeDS2RequestData { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequest"/> and sets the default values.
+        /// </summary>
+        public DonationPaymentRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequest"/></returns>
@@ -318,17 +327,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo.CreateFromDiscriminatorValue); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo.CreateFromDiscriminatorValue); } },
-                { "authenticationData", n => { AuthenticationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData.CreateFromDiscriminatorValue); } },
-                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress.CreateFromDiscriminatorValue); } },
-                { "browserInfo", n => { BrowserInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo.CreateFromDiscriminatorValue); } },
+                { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount.CreateFromDiscriminatorValue); } },
+                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestApplicationInfo.CreateFromDiscriminatorValue); } },
+                { "authenticationData", n => { AuthenticationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAuthenticationData.CreateFromDiscriminatorValue); } },
+                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress.CreateFromDiscriminatorValue); } },
+                { "browserInfo", n => { BrowserInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBrowserInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBrowserInfo.CreateFromDiscriminatorValue); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestChannel>(); } },
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateTimeOffsetValue(); } },
-                { "deliveryAddress", n => { DeliveryAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress.CreateFromDiscriminatorValue); } },
+                { "deliveryAddress", n => { DeliveryAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestDeliveryAddress>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestDeliveryAddress.CreateFromDiscriminatorValue); } },
                 { "deviceFingerprint", n => { DeviceFingerprint = n.GetStringValue(); } },
                 { "donationAccount", n => { DonationAccount = n.GetStringValue(); } },
                 { "donationCampaignId", n => { DonationCampaignId = n.GetStringValue(); } },
@@ -336,9 +345,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "donationToken", n => { DonationToken = n.GetStringValue(); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty.CreateFromDiscriminatorValue); } },
-                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData.CreateFromDiscriminatorValue); } },
+                { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData.CreateFromDiscriminatorValue); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod.CreateFromDiscriminatorValue); } },
                 { "recurringProcessingModel", n => { RecurringProcessingModel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestRecurringProcessingModel>(); } },
@@ -351,7 +360,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "shopperIP", n => { ShopperIP = n.GetStringValue(); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperInteraction>(); } },
                 { "shopperLocale", n => { ShopperLocale = n.GetStringValue(); } },
-                { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperName>(global::Soenneker.Adyen.OpenApiClient.Models.ShopperName.CreateFromDiscriminatorValue); } },
+                { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperName>(global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperName.CreateFromDiscriminatorValue); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
                 { "socialSecurityNumber", n => { SocialSecurityNumber = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
@@ -366,17 +375,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo>("accountInfo", AccountInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>("applicationInfo", ApplicationInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData>("authenticationData", AuthenticationData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress>("billingAddress", BillingAddress);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo>("browserInfo", BrowserInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAccountInfo>("accountInfo", AccountInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestApplicationInfo>("applicationInfo", ApplicationInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestAuthenticationData>("authenticationData", AuthenticationData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBillingAddress>("billingAddress", BillingAddress);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestBrowserInfo>("browserInfo", BrowserInfo);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestChannel>("channel", Channel);
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
             writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteDateTimeOffsetValue("dateOfBirth", DateOfBirth);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress>("deliveryAddress", DeliveryAddress);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestDeliveryAddress>("deliveryAddress", DeliveryAddress);
             writer.WriteStringValue("deviceFingerprint", DeviceFingerprint);
             writer.WriteStringValue("donationAccount", DonationAccount);
             writer.WriteStringValue("donationCampaignId", DonationCampaignId);
@@ -384,9 +393,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("donationToken", DonationToken);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData>("mpiData", MpiData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestMpiData>("mpiData", MpiData);
             writer.WriteStringValue("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestPaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestRecurringProcessingModel>("recurringProcessingModel", RecurringProcessingModel);
@@ -399,12 +408,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("shopperIP", ShopperIP);
             writer.WriteStringValue("shopperLocale", ShopperLocale);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperName>("shopperName", ShopperName);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationPaymentRequestShopperName>("shopperName", ShopperName);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("socialSecurityNumber", SocialSecurityNumber);
             writer.WriteStringValue("store", Store);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>("threeDS2RequestData", ThreeDS2RequestData);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

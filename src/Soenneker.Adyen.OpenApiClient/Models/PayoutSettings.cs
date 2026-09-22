@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PayoutSettings : IParsable
+    public partial class PayoutSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if payouts to the bank account are allowed. This value is set automatically based on the status of the verification process. The value is:* **true** if `verificationStatus` is **valid**.* **false** for all other values.</summary>
         public bool? Allowed { get; set; }
         /// <summary>Indicates if payouts to this bank account are enabled. Default: **true**.To receive payouts into this bank account, both `enabled` and `allowed` must be **true**.</summary>
@@ -44,6 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The status of the verification process for the bank account.Possible values:* **valid**: the verification was successful.* **pending**: the verification is in progress.* **invalid**: the information provided is not complete.* **rejected**:  there are reasons to refuse working with this entity.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus? VerificationStatus { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettings"/> and sets the default values.
+        /// </summary>
+        public PayoutSettings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,6 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsPriority>("priority", Priority);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSettingsVerificationStatus>("verificationStatus", VerificationStatus);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

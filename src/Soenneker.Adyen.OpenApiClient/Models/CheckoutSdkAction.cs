@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutSdkAction : IParsable
+    public partial class CheckoutSdkAction : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Encoded payment data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,10 +33,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The data to pass to the SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty? SdkData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2? SdkData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty SdkData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2 SdkData { get; set; }
 #endif
         /// <summary>The type of the action.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType? Type { get; set; }
@@ -46,6 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkAction"/> and sets the default values.
+        /// </summary>
+        public CheckoutSdkAction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
                 { "paymentMethodType", n => { PaymentMethodType = n.GetStringValue(); } },
-                { "sdkData", n => { SdkData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty.CreateFromDiscriminatorValue); } },
+                { "sdkData", n => { SdkData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -80,9 +89,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("paymentData", PaymentData);
             writer.WriteStringValue("paymentMethodType", PaymentMethodType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty>("sdkData", SdkData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2>("sdkData", SdkData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType>("type", Type);
             writer.WriteStringValue("url", Url);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

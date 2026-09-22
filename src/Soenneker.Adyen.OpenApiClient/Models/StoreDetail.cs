@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StoreDetail : IParsable
+    public partial class StoreDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the physical store where the account holder will process payments from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAddress Address { get; set; }
 #endif
         /// <summary>The phone number of the store provided as a single string.  It will be handled as a landline phone.Examples: &quot;0031 6 11 22 33 44&quot;, &quot;+316/1122-3344&quot;, &quot;(0031) 611223344&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,13 +62,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantHouseNumber { get; set; }
 #endif
-        /// <summary>The phoneNumber property</summary>
+        /// <summary>The phone number of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber? PhoneNumber { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailPhoneNumber? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber PhoneNumber { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailPhoneNumber PhoneNumber { get; set; }
 #endif
         /// <summary>The sales channel. Possible values: **Ecommerce**, **POS**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction? ShopperInteraction { get; set; }
@@ -121,6 +123,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string WebAddress { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail"/> and sets the default values.
+        /// </summary>
+        public StoreDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail"/></returns>
@@ -138,13 +147,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>(global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAddress>(global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAddress.CreateFromDiscriminatorValue); } },
                 { "fullPhoneNumber", n => { FullPhoneNumber = n.GetStringValue(); } },
                 { "logo", n => { Logo = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantCategoryCode", n => { MerchantCategoryCode = n.GetStringValue(); } },
                 { "merchantHouseNumber", n => { MerchantHouseNumber = n.GetStringValue(); } },
-                { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber.CreateFromDiscriminatorValue); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailPhoneNumber>(global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailPhoneNumber.CreateFromDiscriminatorValue); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction>(); } },
                 { "splitConfigurationUUID", n => { SplitConfigurationUUID = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailStatus>(); } },
@@ -162,13 +171,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailAddress>("address", Address);
             writer.WriteStringValue("fullPhoneNumber", FullPhoneNumber);
             writer.WriteStringValue("logo", Logo);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("merchantCategoryCode", MerchantCategoryCode);
             writer.WriteStringValue("merchantHouseNumber", MerchantHouseNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumber>("phoneNumber", PhoneNumber);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailPhoneNumber>("phoneNumber", PhoneNumber);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("splitConfigurationUUID", SplitConfigurationUUID);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetailStatus>("status", Status);
@@ -177,6 +186,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("storeReference", StoreReference);
             writer.WriteStringValue("virtualAccount", VirtualAccount);
             writer.WriteStringValue("webAddress", WebAddress);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

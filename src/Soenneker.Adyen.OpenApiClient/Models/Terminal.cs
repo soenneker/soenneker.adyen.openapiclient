@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Terminal : IParsable
+    public partial class Terminal : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The assignment property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates the account level to which the terminal is assigned, the [assignment status](https://docs.adyen.com/point-of-sale/automating-terminal-management/assign-terminals-api), and where the terminals is in the process of being reassigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment? Assignment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed? Assignment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment Assignment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed Assignment { get; set; }
 #endif
         /// <summary>The [regional base URL](https://docs.adyen.com/api-explorer/terminal-api/1/overview#endpoints-for-cloud-communications) to use for sending Terminal API requests when using cloud communications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,13 +30,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CloudDeviceApiEndpoint { get; set; }
 #endif
-        /// <summary>The connectivity property</summary>
+        /// <summary>Information about bluetooth, cellular, ethernet and wifi connectivity for the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity? Connectivity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed? Connectivity { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity Connectivity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed Connectivity { get; set; }
 #endif
         /// <summary>The country code of the country where the terminal is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,6 +99,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string SerialNumber { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Terminal"/> and sets the default values.
+        /// </summary>
+        public Terminal()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Terminal"/></returns>
@@ -114,9 +123,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignment", n => { Assignment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment.CreateFromDiscriminatorValue); } },
+                { "assignment", n => { Assignment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed.CreateFromDiscriminatorValue); } },
                 { "cloudDeviceApiEndpoint", n => { CloudDeviceApiEndpoint = n.GetStringValue(); } },
-                { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity.CreateFromDiscriminatorValue); } },
+                { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed.CreateFromDiscriminatorValue); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "firmwareVersion", n => { FirmwareVersion = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -135,9 +144,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignment>("assignment", Assignment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed>("assignment", Assignment);
             writer.WriteStringValue("cloudDeviceApiEndpoint", CloudDeviceApiEndpoint);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivity>("connectivity", Connectivity);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed>("connectivity", Connectivity);
             writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteStringValue("firmwareVersion", FirmwareVersion);
             writer.WriteStringValue("id", Id);
@@ -147,6 +156,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("restartLocalTime", RestartLocalTime);
             writer.WriteStringValue("serialNumber", SerialNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

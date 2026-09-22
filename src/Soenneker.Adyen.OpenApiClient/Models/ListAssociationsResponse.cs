@@ -24,13 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The total number of items available.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>A list of hyperlinks to resources related to this response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponseLinks Links { get; set; }
 #endif
         /// <summary>The total number of pages available.</summary>
         public int? PagesTotal { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>(global::Soenneker.Adyen.OpenApiClient.Models.Link.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponseLinks.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AssociationListing>("data", Data);
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListAssociationsResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
             writer.WriteAdditionalData(AdditionalData);
         }

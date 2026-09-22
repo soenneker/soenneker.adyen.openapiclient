@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4InterchangeData : IParsable
+    public partial class TransferServiceV4InterchangeData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The interchangeAmount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The currency and value of the adjusted interchange fee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? InterchangeAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataInterchangeAmount? InterchangeAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount InterchangeAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataInterchangeAmount InterchangeAmount { get; set; }
 #endif
         /// <summary>A 3-character alphanumeric code assigned by Visa that identifies the specific interchange reimbursement program a transaction qualified for. The code is assigned based on the card type, entry mode, and security data provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,7 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string InterchangeRateIndicator { get; set; }
 #endif
         /// <summary>The type of events data. Possible values:  - **interchangeData**: information about the interchange fee applied to a transaction.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.InterchangeDataType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeData"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4InterchangeData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,9 +57,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "interchangeAmount", n => { InterchangeAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
+                { "interchangeAmount", n => { InterchangeAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataInterchangeAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataInterchangeAmount.CreateFromDiscriminatorValue); } },
                 { "interchangeRateIndicator", n => { InterchangeRateIndicator = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InterchangeDataType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataType>(); } },
             };
         }
         /// <summary>
@@ -60,9 +69,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("interchangeAmount", InterchangeAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataInterchangeAmount>("interchangeAmount", InterchangeAmount);
             writer.WriteStringValue("interchangeRateIndicator", InterchangeRateIndicator);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InterchangeDataType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4InterchangeDataType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

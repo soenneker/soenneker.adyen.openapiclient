@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RefundFundsTransferRequest : IParsable
+    public partial class RefundFundsTransferRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount to be transferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequestAmount Amount { get; set; }
 #endif
         /// <summary>A value that can be supplied at the discretion of the executing user in order to link multiple transactions to one another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +39,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string OriginalReference { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequest"/> and sets the default values.
+        /// </summary>
+        public RefundFundsTransferRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequest"/></returns>
@@ -54,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>(global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequestAmount.CreateFromDiscriminatorValue); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
                 { "originalReference", n => { OriginalReference = n.GetStringValue(); } },
             };
@@ -66,9 +75,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RefundFundsTransferRequestAmount>("amount", Amount);
             writer.WriteStringValue("merchantReference", MerchantReference);
             writer.WriteStringValue("originalReference", OriginalReference);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -15,13 +15,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The amount for the transfer limit. This is the maximum amount allowed per transfer or per day based on the `scope` of the limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitAmount Amount { get; set; }
 #endif
         /// <summary>The date and time when the transfer limit becomes inactive. If you do not specify an end date, the limit stays active until you override it with a new limit.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): **YYYY-MM-DDThh:mm:ss.sssTZD**</summary>
         public DateTimeOffset? EndsAt { get; set; }
@@ -34,7 +34,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The status of the transfer limit. Possible values:   * **active**: the limit is currently active.* **inactive**: the limit is currently inactive.* **pendingSCA**: the limit is pending until your user performs SCA.* **scheduled**: the limit is scheduled to become active at a future date.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LimitStatus? LimitStatus { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitLimitStatus? LimitStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitLimitStatus LimitStatus { get; set; }
+#endif
         /// <summary>Your reference for the transfer limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,20 +49,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Reference { get; set; }
 #endif
-        /// <summary>The scaInformation property</summary>
+        /// <summary>Information for the Strong Customer Authentication (SCA)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformation? ScaInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation? ScaInformation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformation ScaInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation ScaInformation { get; set; }
 #endif
         /// <summary>The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Scope? Scope { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScope? Scope { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScope Scope { get; set; }
+#endif
         /// <summary>The date and time when the transfer limit becomes active. If you specify a date in the future, we will schedule a transfer limit.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): **YYYY-MM-DDThh:mm:ss.sssTZD**</summary>
         public DateTimeOffset? StartsAt { get; set; }
         /// <summary>The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferType? TransferType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitTransferType? TransferType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitTransferType TransferType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit"/> and sets the default values.
         /// </summary>
@@ -82,15 +100,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitAmount.CreateFromDiscriminatorValue); } },
                 { "endsAt", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "limitStatus", n => { LimitStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LimitStatus>(); } },
+                { "limitStatus", n => { LimitStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitLimitStatus>(global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitLimitStatus.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "scaInformation", n => { ScaInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformation>(global::Soenneker.Adyen.OpenApiClient.Models.ScaInformation.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Scope>(); } },
+                { "scaInformation", n => { ScaInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation>(global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScope>(global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScope.CreateFromDiscriminatorValue); } },
                 { "startsAt", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
-                { "transferType", n => { TransferType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferType>(); } },
+                { "transferType", n => { TransferType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitTransferType>(global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitTransferType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,15 +118,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitAmount>("amount", Amount);
             writer.WriteDateTimeOffsetValue("endsAt", EndsAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LimitStatus>("limitStatus", LimitStatus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitLimitStatus>("limitStatus", LimitStatus);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformation>("scaInformation", ScaInformation);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Scope>("scope", Scope);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation>("scaInformation", ScaInformation);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScope>("scope", Scope);
             writer.WriteDateTimeOffsetValue("startsAt", StartsAt);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferType>("transferType", TransferType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitTransferType>("transferType", TransferType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

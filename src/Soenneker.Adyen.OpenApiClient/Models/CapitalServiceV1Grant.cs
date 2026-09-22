@@ -14,21 +14,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The balances property</summary>
+        /// <summary>Contains information about the balances of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance? Balances { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantBalances? Balances { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance Balances { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantBalances Balances { get; set; }
 #endif
-        /// <summary>The counterparty property</summary>
+        /// <summary>Contains the details of the party that receives the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterpartyComposed? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterpartyComposed Counterparty { get; set; }
 #endif
         /// <summary>The unique identifier of the grant account that tracks this grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,13 +54,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Contains the status of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status? Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantStatus? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status Status { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantStatus Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Grant"/> and sets the default values.
@@ -87,12 +87,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance.CreateFromDiscriminatorValue); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterparty.CreateFromDiscriminatorValue); } },
+                { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantBalances>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantBalances.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterpartyComposed>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterpartyComposed.CreateFromDiscriminatorValue); } },
                 { "grantAccountId", n => { GrantAccountId = n.GetStringValue(); } },
                 { "grantOfferId", n => { GrantOfferId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantStatus>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,12 +102,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance>("balances", Balances);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantBalances>("balances", Balances);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantCounterpartyComposed>("counterparty", Counterparty);
             writer.WriteStringValue("grantAccountId", GrantAccountId);
             writer.WriteStringValue("grantOfferId", GrantOfferId);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1GrantStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

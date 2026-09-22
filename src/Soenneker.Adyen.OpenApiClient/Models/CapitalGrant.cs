@@ -9,40 +9,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CapitalGrant : IParsable
+    public partial class CapitalGrant : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An object containing the amount of the grant, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantAmount Amount { get; set; }
 #endif
-        /// <summary>The balances property</summary>
+        /// <summary>An object containing the details of the existing grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CapitalBalance? Balances { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantBalances? Balances { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CapitalBalance Balances { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantBalances Balances { get; set; }
 #endif
-        /// <summary>The counterparty property</summary>
+        /// <summary>An object containing the details of the receiving party of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantCounterparty Counterparty { get; set; }
 #endif
-        /// <summary>The fee property</summary>
+        /// <summary>An object containing the fee currency and value, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee? Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantFee? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantFee Fee { get; set; }
 #endif
         /// <summary>The identifier of the grant account used for the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,16 +70,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The repayment property</summary>
+        /// <summary>An object containing the details of the 30-day repayment threshold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Repayment? Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantRepayment? Repayment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Repayment Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantRepayment Repayment { get; set; }
 #endif
         /// <summary>The current status of the grant. Possible values: **Pending**, **Active**, **Repaid**, **WrittenOff**, **Failed**, **Revoked**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant"/> and sets the default values.
+        /// </summary>
+        public CapitalGrant()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,14 +105,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
-                { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CapitalBalance>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CapitalBalance.CreateFromDiscriminatorValue); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantCounterparty.CreateFromDiscriminatorValue); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantAmount.CreateFromDiscriminatorValue); } },
+                { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantBalances>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantBalances.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantCounterparty.CreateFromDiscriminatorValue); } },
+                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantFee>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantFee.CreateFromDiscriminatorValue); } },
                 { "grantAccountId", n => { GrantAccountId = n.GetStringValue(); } },
                 { "grantOfferId", n => { GrantOfferId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Repayment>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Repayment.CreateFromDiscriminatorValue); } },
+                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantRepayment>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantRepayment.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantStatus>(); } },
             };
         }
@@ -114,15 +123,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CapitalBalance>("balances", Balances);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4GrantCounterparty>("counterparty", Counterparty);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Fee>("fee", Fee);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantBalances>("balances", Balances);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantFee>("fee", Fee);
             writer.WriteStringValue("grantAccountId", GrantAccountId);
             writer.WriteStringValue("grantOfferId", GrantOfferId);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Repayment>("repayment", Repayment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantRepayment>("repayment", Repayment);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

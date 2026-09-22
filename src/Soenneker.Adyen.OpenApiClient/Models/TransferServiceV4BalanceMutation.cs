@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4BalanceMutation : IParsable
+    public partial class TransferServiceV4BalanceMutation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount in the payment&apos;s currency that is debited or credited on the balance accounting register.</summary>
         public long? Balance { get; set; }
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
@@ -26,6 +28,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public long? Received { get; set; }
         /// <summary>The amount in the payment&apos;s currency that is debited or credited on the reserved accounting register.</summary>
         public long? Reserved { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4BalanceMutation()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteLongValue("received", Received);
             writer.WriteLongValue("reserved", Reserved);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

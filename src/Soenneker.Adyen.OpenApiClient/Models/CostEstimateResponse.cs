@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CostEstimateResponse : IParsable
+    public partial class CostEstimateResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The cardBin property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Card BIN details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardBin? CardBin { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin? CardBin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardBin CardBin { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin CardBin { get; set; }
 #endif
-        /// <summary>The costEstimateAmount property</summary>
+        /// <summary>The estimated cost (scheme fee + interchange) in the settlement currency. If the settlement currency cannot be determined, the fee in EUR is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount? CostEstimateAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount? CostEstimateAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount CostEstimateAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount CostEstimateAmount { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character reference associated with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +47,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ResultCode { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponse"/> and sets the default values.
+        /// </summary>
+        public CostEstimateResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponse"/></returns>
@@ -62,8 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cardBin", n => { CardBin = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardBin>(global::Soenneker.Adyen.OpenApiClient.Models.CardBin.CreateFromDiscriminatorValue); } },
-                { "costEstimateAmount", n => { CostEstimateAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount.CreateFromDiscriminatorValue); } },
+                { "cardBin", n => { CardBin = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin.CreateFromDiscriminatorValue); } },
+                { "costEstimateAmount", n => { CostEstimateAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount.CreateFromDiscriminatorValue); } },
                 { "costEstimateReference", n => { CostEstimateReference = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetStringValue(); } },
             };
@@ -75,10 +84,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardBin>("cardBin", CardBin);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount>("costEstimateAmount", CostEstimateAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCardBin>("cardBin", CardBin);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateResponseCostEstimateAmount>("costEstimateAmount", CostEstimateAmount);
             writer.WriteStringValue("costEstimateReference", CostEstimateReference);
             writer.WriteStringValue("resultCode", ResultCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ScheduleAccountUpdaterRequest : IParsable
+    public partial class ScheduleAccountUpdaterRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field contains additional data, which may be required for a particular request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
-        /// <summary>The card property</summary>
+        /// <summary>Credit card data.Optional if `shopperReference` and `selectedRecurringDetailReference` are provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Card? Card { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestCard? Card { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Card Card { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestCard Card { get; set; }
 #endif
         /// <summary>Account of the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +63,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperReference { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequest"/> and sets the default values.
+        /// </summary>
+        public ScheduleAccountUpdaterRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequest"/></returns>
@@ -78,8 +87,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty.CreateFromDiscriminatorValue); } },
-                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Card>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Card.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestCard>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestCard.CreateFromDiscriminatorValue); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "selectedRecurringDetailReference", n => { SelectedRecurringDetailReference = n.GetStringValue(); } },
@@ -93,12 +102,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty>("additionalData", AdditionalDataProperty);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringServiceV68Card>("card", Card);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleAccountUpdaterRequestCard>("card", Card);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("selectedRecurringDetailReference", SelectedRecurringDetailReference);
             writer.WriteStringValue("shopperReference", ShopperReference);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

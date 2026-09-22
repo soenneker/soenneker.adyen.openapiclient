@@ -15,21 +15,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The InputResult property</summary>
+        /// <summary>Contains the result and the content of the input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputResult? InputResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputResponseInputResult? InputResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputResult InputResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputResponseInputResult InputResult { get; set; }
 #endif
-        /// <summary>In the message response, it contains the result of the output, if required in the message request.Information related to the result the output (display, print, input).</summary>
+        /// <summary>Information related to the result the output (display, print, input).If DisplayOutput present in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputResult? OutputResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputResponseOutputResult? OutputResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputResult OutputResult { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputResponseOutputResult OutputResult { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InputResponse"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "InputResult", n => { InputResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResult>(global::Soenneker.Adyen.OpenApiClient.Models.InputResult.CreateFromDiscriminatorValue); } },
-                { "OutputResult", n => { OutputResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult>(global::Soenneker.Adyen.OpenApiClient.Models.OutputResult.CreateFromDiscriminatorValue); } },
+                { "InputResult", n => { InputResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResponseInputResult>(global::Soenneker.Adyen.OpenApiClient.Models.InputResponseInputResult.CreateFromDiscriminatorValue); } },
+                { "OutputResult", n => { OutputResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResponseOutputResult>(global::Soenneker.Adyen.OpenApiClient.Models.InputResponseOutputResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResult>("InputResult", InputResult);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult>("OutputResult", OutputResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResponseInputResult>("InputResult", InputResult);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputResponseOutputResult>("OutputResult", OutputResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

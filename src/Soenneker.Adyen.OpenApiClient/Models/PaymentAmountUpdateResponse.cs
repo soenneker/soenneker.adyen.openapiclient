@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentAmountUpdateResponse : IParsable
+    public partial class PaymentAmountUpdateResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data blob for subsequent synchronous adjust authorisation calls. Returned when the synchronous flow is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AdjustAuthorisationData { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>The updated amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseAmount Amount { get; set; }
 #endif
         /// <summary>The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseIndustryUsage? IndustryUsage { get; set; }
@@ -81,6 +83,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The status of your request. If you included `adjustAuthorisationData` in your request, possible values are the following: * **authorised** * **refused** Otherwise, the value is **received**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseStatus? Status { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponse"/> and sets the default values.
+        /// </summary>
+        public PaymentAmountUpdateResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponse"/></returns>
@@ -99,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "adjustAuthorisationData", n => { AdjustAuthorisationData = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseAmount.CreateFromDiscriminatorValue); } },
                 { "industryUsage", n => { IndustryUsage = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseIndustryUsage>(); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
@@ -118,7 +127,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("adjustAuthorisationData", AdjustAuthorisationData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseAmount>("amount", Amount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseIndustryUsage>("industryUsage", IndustryUsage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
@@ -127,6 +136,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateResponseStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

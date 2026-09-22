@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BusinessLineInfoUpdate : IParsable
+    public partial class BusinessLineInfoUpdate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A code that represents the industry of your legal entity. For example, **4431A** for computer software stores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,13 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> SalesChannels { get; set; }
 #endif
-        /// <summary>The sourceOfFunds property</summary>
+        /// <summary>Contains information about the source of your user&apos;s funds. Required only if the `service` is **banking** or **issuing**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds? SourceOfFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateSourceOfFunds? SourceOfFunds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds SourceOfFunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateSourceOfFunds SourceOfFunds { get; set; }
 #endif
         /// <summary>List of website URLs where your user&apos;s goods or services are sold. When this is required for a service but your user does not have an online presence, provide the reason in the `webDataExemption` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,14 +54,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.WebData> WebData { get; set; }
 #endif
-        /// <summary>The webDataExemption property</summary>
+        /// <summary>The reason why the web data is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption? WebDataExemption { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateWebDataExemption? WebDataExemption { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption WebDataExemption { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateWebDataExemption WebDataExemption { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdate"/> and sets the default values.
+        /// </summary>
+        public BusinessLineInfoUpdate()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,9 +90,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "industryCode", n => { IndustryCode = n.GetStringValue(); } },
                 { "industryCodeDescription", n => { IndustryCodeDescription = n.GetStringValue(); } },
                 { "salesChannels", n => { SalesChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sourceOfFunds", n => { SourceOfFunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds>(global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds.CreateFromDiscriminatorValue); } },
+                { "sourceOfFunds", n => { SourceOfFunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateSourceOfFunds>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateSourceOfFunds.CreateFromDiscriminatorValue); } },
                 { "webData", n => { WebData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>(global::Soenneker.Adyen.OpenApiClient.Models.WebData.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "webDataExemption", n => { WebDataExemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption>(global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption.CreateFromDiscriminatorValue); } },
+                { "webDataExemption", n => { WebDataExemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateWebDataExemption>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateWebDataExemption.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -95,9 +104,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("industryCode", IndustryCode);
             writer.WriteCollectionOfPrimitiveValues<string>("salesChannels", SalesChannels);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SourceOfFunds>("sourceOfFunds", SourceOfFunds);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateSourceOfFunds>("sourceOfFunds", SourceOfFunds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>("webData", WebData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebDataExemption>("webDataExemption", WebDataExemption);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineInfoUpdateWebDataExemption>("webDataExemption", WebDataExemption);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

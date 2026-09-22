@@ -14,8 +14,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResourceType? Type { get; set; }
+        /// <summary>The resource type.Possible values: **accountHolder**, **legalEntity**.You must also include the corresponding unique identifier of the resource. For example, the account holder ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource"/> and sets the default values.
         /// </summary>
@@ -35,8 +41,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return mappingValue switch
             {
                 "accountHolder" => new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderResource(),
+                "AccountHolderResource" => new global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderResource(),
                 "legalEntity" => new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityResource(),
+                "LegalEntityResource" => new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityResource(),
                 "paymentInstrument" => new global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentResource(),
+                "PaymentInstrumentResource" => new global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentResource(),
                 _ => new global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource(),
             };
         }
@@ -48,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResourceType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType>(global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResourceType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

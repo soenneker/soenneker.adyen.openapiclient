@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentAmountUpdateRequest : IParsable
+    public partial class PaymentAmountUpdateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The required data to make a [synchronous authorization adjustment](https://docs.adyen.com/online-payments/adjust-authorisation). Pass the corresponding value from the `/payments` response or webhook message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,21 +24,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The type of adjustment. Possible values: * **cardholderInitiatedTransaction** * **merchantInitiatedTransaction** </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAdjustAuthType? AdjustAuthType { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The updated amount. The `currency` must match the currency used in authorisation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAmount Amount { get; set; }
 #endif
-        /// <summary>The applicationInfo property</summary>
+        /// <summary>Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo? ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestApplicationInfo? ApplicationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestApplicationInfo ApplicationInfo { get; set; }
 #endif
         /// <summary>The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestIndustryUsage? IndustryUsage { get; set; }
@@ -56,13 +58,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The mpiData property</summary>
+        /// <summary>Authentication data from a [merchant plug-in (MPI)](https://en.wikipedia.org/wiki/Merchant_plug-in) like Mastercard SecureCode, Visa Secure, or Cartes Bancaires. Required for cardholder-initiated transaction (CIT) adjustments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData? MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestMpiData? MpiData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestMpiData MpiData { get; set; }
 #endif
         /// <summary>Your reference for the amount update request. Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,6 +82,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Split> Splits { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequest"/> and sets the default values.
+        /// </summary>
+        public PaymentAmountUpdateRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -100,12 +109,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "adjustAuthType", n => { AdjustAuthType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAdjustAuthType>(); } },
                 { "adjustAuthorisationData", n => { AdjustAuthorisationData = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAmount.CreateFromDiscriminatorValue); } },
+                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestApplicationInfo.CreateFromDiscriminatorValue); } },
                 { "industryUsage", n => { IndustryUsage = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestIndustryUsage>(); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData.CreateFromDiscriminatorValue); } },
+                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestMpiData.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -119,14 +128,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("adjustAuthorisationData", AdjustAuthorisationData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAdjustAuthType>("adjustAuthType", AdjustAuthType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>("applicationInfo", ApplicationInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestApplicationInfo>("applicationInfo", ApplicationInfo);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestIndustryUsage>("industryUsage", IndustryUsage);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData>("mpiData", MpiData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAmountUpdateRequestMpiData>("mpiData", MpiData);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

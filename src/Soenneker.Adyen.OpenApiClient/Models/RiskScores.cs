@@ -9,13 +9,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RiskScores : IParsable
+    public partial class RiskScores : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Transaction risk score provided by Mastercard. Values provided by Mastercard range between 0 (lowest risk) to 998 (highest risk).</summary>
         public int? Mastercard { get; set; }
         /// <summary>Transaction risk score provided by Visa. Values provided by Visa range between 01 (lowest risk) to 99 (highest risk).</summary>
         public int? Visa { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RiskScores"/> and sets the default values.
+        /// </summary>
+        public RiskScores()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("mastercard", Mastercard);
             writer.WriteIntValue("visa", Visa);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

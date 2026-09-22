@@ -22,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration> BalanceAccountPayoutSchedules { get; set; }
 #endif
-        /// <summary>The link property</summary>
+        /// <summary>Contains links to the next and previous page whenever applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link? Link { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink? Link { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link Link { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink Link { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurations"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balanceAccountPayoutSchedules", n => { BalanceAccountPayoutSchedules = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "link", n => { Link = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>(global::Soenneker.Adyen.OpenApiClient.Models.Link.CreateFromDiscriminatorValue); } },
+                { "link", n => { Link = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration>("balanceAccountPayoutSchedules", BalanceAccountPayoutSchedules);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>("link", Link);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink>("link", Link);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BalancePlatformServiceV2Balance : IParsable
+    public partial class BalancePlatformServiceV2Balance : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The balance available for use.</summary>
         public long? Available { get; set; }
         /// <summary>The sum of the transactions that have already been settled.</summary>
@@ -30,6 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public long? PendingAvailable { get; set; }
         /// <summary>The balance currently held in reserve.</summary>
         public long? Reserved { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Balance"/> and sets the default values.
+        /// </summary>
+        public BalancePlatformServiceV2Balance()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("pending", Pending);
             writer.WriteLongValue("pendingAvailable", PendingAvailable);
             writer.WriteLongValue("reserved", Reserved);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

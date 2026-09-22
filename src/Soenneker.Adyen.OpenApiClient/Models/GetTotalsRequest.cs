@@ -23,13 +23,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem?> TotalDetails { get; set; }
 #endif
-        /// <summary>The TotalFilter property</summary>
+        /// <summary>Filter to compute the totals.Used for the Get Totals, to request totals for a (or a combination of) particular value of the POI Terminal, Sale Terminal, Cashier, Shift, or TotalsGroupID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TotalFilter? TotalFilter { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter? TotalFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TotalFilter TotalFilter { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter TotalFilter { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequest"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "TotalDetails", n => { TotalDetails = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem>()?.AsList(); } },
-                { "TotalFilter", n => { TotalFilter = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TotalFilter>(global::Soenneker.Adyen.OpenApiClient.Models.TotalFilter.CreateFromDiscriminatorValue); } },
+                { "TotalFilter", n => { TotalFilter = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter>(global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem>("TotalDetails", TotalDetails);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TotalFilter>("TotalFilter", TotalFilter);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter>("TotalFilter", TotalFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

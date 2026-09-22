@@ -12,18 +12,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class FundsCollection : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountIdentification property</summary>
+        /// <summary>Contains the identification information of the account to which you can transfer funds related to repayments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentification? AccountIdentification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification? AccountIdentification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentification AccountIdentification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification AccountIdentification { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fundsCollectionType property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionType? FundsCollectionType { get; set; }
+        /// <summary>The type of funds collection.Possible values: **UnscheduledRepayment**, **Revocation**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType? FundsCollectionType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType FundsCollectionType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FundsCollection"/> and sets the default values.
         /// </summary>
@@ -49,8 +55,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountIdentification", n => { AccountIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentification.CreateFromDiscriminatorValue); } },
-                { "fundsCollectionType", n => { FundsCollectionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionType>(); } },
+                { "accountIdentification", n => { AccountIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification.CreateFromDiscriminatorValue); } },
+                { "fundsCollectionType", n => { FundsCollectionType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType>(global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,8 +66,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountIdentification>("accountIdentification", AccountIdentification);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionType>("fundsCollectionType", FundsCollectionType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification>("accountIdentification", AccountIdentification);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType>("fundsCollectionType", FundsCollectionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

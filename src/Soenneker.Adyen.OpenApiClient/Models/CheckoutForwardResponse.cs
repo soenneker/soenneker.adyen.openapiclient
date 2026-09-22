@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutForwardResponse : IParsable
+    public partial class CheckoutForwardResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Merchant defined payment reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,13 +30,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PspReference { get; set; }
 #endif
-        /// <summary>The response property</summary>
+        /// <summary>The details of the response Adyen received from the third party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl? Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl Response { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse Response { get; set; }
 #endif
         /// <summary>The unique identifier of the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,6 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StoredPaymentMethodId { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponse"/> and sets the default values.
+        /// </summary>
+        public CheckoutForwardResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse.CreateFromDiscriminatorValue); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
             };
         }
@@ -77,8 +86,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("merchantReference", MerchantReference);
             writer.WriteStringValue("pspReference", PspReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseFromUrl>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse>("response", Response);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -22,48 +22,54 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The disputedAmount property</summary>
+        /// <summary>The amount for which you dispute the transaction. The disputed amount cannot be greater than the transaction amount. If you do not provide an amount, the entire transaction amount will be disputed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount? DisputedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDisputedAmount? DisputedAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount DisputedAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDisputedAmount DisputedAmount { get; set; }
 #endif
-        /// <summary>The duplicateInfo property</summary>
+        /// <summary>Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DuplicateInfo? DuplicateInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDuplicateInfo? DuplicateInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DuplicateInfo DuplicateInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDuplicateInfo DuplicateInfo { get; set; }
 #endif
-        /// <summary>The fraudInfo property</summary>
+        /// <summary>Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4FraudInfo? FraudInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestFraudInfo? FraudInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4FraudInfo FraudInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestFraudInfo FraudInfo { get; set; }
 #endif
-        /// <summary>The notDeliveredInfo property</summary>
+        /// <summary>Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4NotDeliveredInfo? NotDeliveredInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestNotDeliveredInfo? NotDeliveredInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4NotDeliveredInfo NotDeliveredInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestNotDeliveredInfo NotDeliveredInfo { get; set; }
 #endif
-        /// <summary>The otherInfo property</summary>
+        /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfo? OtherInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestOtherInfo? OtherInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfo OtherInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestOtherInfo OtherInfo { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeStatus? Status { get; set; }
+        /// <summary>The current status of the dispute.When you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestStatus Status { get; set; }
+#endif
         /// <summary>The unique reference of the transaction for which you are raising the dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,12 +112,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "disputedAmount", n => { DisputedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount.CreateFromDiscriminatorValue); } },
-                { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DuplicateInfo.CreateFromDiscriminatorValue); } },
-                { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4FraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4FraudInfo.CreateFromDiscriminatorValue); } },
-                { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4NotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4NotDeliveredInfo.CreateFromDiscriminatorValue); } },
-                { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeStatus>(); } },
+                { "disputedAmount", n => { DisputedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDisputedAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDisputedAmount.CreateFromDiscriminatorValue); } },
+                { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDuplicateInfo.CreateFromDiscriminatorValue); } },
+                { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestFraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestFraudInfo.CreateFromDiscriminatorValue); } },
+                { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestNotDeliveredInfo.CreateFromDiscriminatorValue); } },
+                { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestOtherInfo.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestStatus>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestStatus.CreateFromDiscriminatorValue); } },
                 { "transactionId", n => { TransactionId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -124,12 +130,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4Amount>("disputedAmount", DisputedAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DuplicateInfo>("duplicateInfo", DuplicateInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4FraudInfo>("fraudInfo", FraudInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4NotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4OtherInfo>("otherInfo", OtherInfo);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDisputedAmount>("disputedAmount", DisputedAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestDuplicateInfo>("duplicateInfo", DuplicateInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestFraudInfo>("fraudInfo", FraudInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestOtherInfo>("otherInfo", OtherInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4DisputeRequestStatus>("status", Status);
             writer.WriteStringValue("transactionId", TransactionId);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

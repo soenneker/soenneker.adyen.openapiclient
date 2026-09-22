@@ -16,13 +16,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of items.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListNonprofitsResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListNonprofitsResponseLinks Links { get; set; }
 #endif
         /// <summary>The supported nonprofit organizations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListNonprofitsResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ListNonprofitsResponseLinks.CreateFromDiscriminatorValue); } },
                 { "nonprofits", n => { Nonprofits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Nonprofit>(global::Soenneker.Adyen.OpenApiClient.Models.Nonprofit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListNonprofitsResponseLinks>("_links", Links);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Nonprofit>("nonprofits", Nonprofits);
             writer.WriteIntValue("pagesTotal", PagesTotal);
             writer.WriteAdditionalData(AdditionalData);

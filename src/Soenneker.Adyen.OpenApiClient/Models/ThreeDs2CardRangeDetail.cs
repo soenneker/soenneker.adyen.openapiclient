@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ThreeDs2CardRangeDetail : IParsable
+    public partial class ThreeDs2CardRangeDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Provides additional information to the 3DS Server.Possible values:- 01 (Authentication is available at ACS)- 02 (Attempts supported by ACS or DS)- 03 (Decoupled authentication supported)- 04 (Whitelisting supported)</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> AcsInfoInd { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card brand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ThreeDSMethodURL { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail"/> and sets the default values.
+        /// </summary>
+        public ThreeDs2CardRangeDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2CardRangeDetail"/></returns>
@@ -99,6 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("startRange", StartRange);
             writer.WriteCollectionOfPrimitiveValues<string>("threeDS2Versions", ThreeDS2Versions);
             writer.WriteStringValue("threeDSMethodURL", ThreeDSMethodURL);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

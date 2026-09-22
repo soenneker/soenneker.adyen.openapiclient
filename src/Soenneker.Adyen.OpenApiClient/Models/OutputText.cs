@@ -15,16 +15,40 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Possible values:* **Left*** **Right*** **Centred*** **Justified**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.Alignment? Alignment { get; set; }
-        /// <summary>Possible values:* **SingleHeight*** **DoubleHeight*** **HalfHeight**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CharacterHeight? CharacterHeight { get; set; }
+        /// <summary>Alignment of the text string on the display line or print line. Absence of this data element means the characters have normal alignment.Possible values:* **Centred*** **Justified*** **Left*** **Right**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment? Alignment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment Alignment { get; set; }
+#endif
+        /// <summary>Character height of the text string to display or print. Absence of this data element means the characters have normal height.Possible values:* **DoubleHeight*** **HalfHeight*** **SingleHeight**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight? CharacterHeight { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight CharacterHeight { get; set; }
+#endif
         /// <summary>Character height of the text string to display or print. Absence of this data element means the characters have normal height.</summary>
         public int? CharacterSet { get; set; }
-        /// <summary>Possible values:* **Normal*** **Bold*** **Italic*** **Underline**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CharacterStyle? CharacterStyle { get; set; }
-        /// <summary>Possible values:* **SingleWidth*** **DoubleWidth**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CharacterWidth? CharacterWidth { get; set; }
+        /// <summary>Typographic style of the sequence of characters to display or print. Absence of this data element means the characters have normal style.Possible values:* **Bold*** **Italic*** **Normal*** **Underline**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle? CharacterStyle { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle CharacterStyle { get; set; }
+#endif
+        /// <summary>Character width of the text string to display or print. Absence of this data element means the characters have normal width.Possible values:* **DoubleWidth*** **SingleWidth**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth? CharacterWidth { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth CharacterWidth { get; set; }
+#endif
         /// <summary>Indicates if the text is at the end of a line. Allows the display or the print of a new line and a carry-over return characters after the formatted text.</summary>
         public bool? EndOfLineFlag { get; set; }
         /// <summary>Column where the text string has to be displayed or printed.</summary>
@@ -65,11 +89,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Alignment", n => { Alignment = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Alignment>(); } },
-                { "CharacterHeight", n => { CharacterHeight = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CharacterHeight>(); } },
+                { "Alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment>(global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment.CreateFromDiscriminatorValue); } },
+                { "CharacterHeight", n => { CharacterHeight = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight>(global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight.CreateFromDiscriminatorValue); } },
                 { "CharacterSet", n => { CharacterSet = n.GetIntValue(); } },
-                { "CharacterStyle", n => { CharacterStyle = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CharacterStyle>(); } },
-                { "CharacterWidth", n => { CharacterWidth = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CharacterWidth>(); } },
+                { "CharacterStyle", n => { CharacterStyle = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle>(global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle.CreateFromDiscriminatorValue); } },
+                { "CharacterWidth", n => { CharacterWidth = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth>(global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth.CreateFromDiscriminatorValue); } },
                 { "EndOfLineFlag", n => { EndOfLineFlag = n.GetBoolValue(); } },
                 { "StartColumn", n => { StartColumn = n.GetIntValue(); } },
                 { "StartRow", n => { StartRow = n.GetIntValue(); } },
@@ -83,11 +107,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.Alignment>("Alignment", Alignment);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CharacterHeight>("CharacterHeight", CharacterHeight);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextAlignment>("Alignment", Alignment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterHeight>("CharacterHeight", CharacterHeight);
             writer.WriteIntValue("CharacterSet", CharacterSet);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CharacterStyle>("CharacterStyle", CharacterStyle);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CharacterWidth>("CharacterWidth", CharacterWidth);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterStyle>("CharacterStyle", CharacterStyle);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputTextCharacterWidth>("CharacterWidth", CharacterWidth);
             writer.WriteBoolValue("EndOfLineFlag", EndOfLineFlag);
             writer.WriteIntValue("StartColumn", StartColumn);
             writer.WriteIntValue("StartRow", StartRow);

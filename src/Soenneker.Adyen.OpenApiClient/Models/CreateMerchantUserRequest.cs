@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateMerchantUserRequest : IParsable
+    public partial class CreateMerchantUserRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of [account groups](https://docs.adyen.com/account/account-structure#account-groups) associated with this user.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> AccountGroups { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The email address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,13 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LoginMethod { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The user&apos;s full name.Allowed length: 1—80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name? Name { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequestName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name Name { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequestName Name { get; set; }
 #endif
         /// <summary>The list of [roles](https://docs.adyen.com/account/user-roles) for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,6 +71,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Username { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequest"/> and sets the default values.
+        /// </summary>
+        public CreateMerchantUserRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequest"/></returns>
@@ -89,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountGroups", n => { AccountGroups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "loginMethod", n => { LoginMethod = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequestName>(global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequestName.CreateFromDiscriminatorValue); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "timeZoneCode", n => { TimeZoneCode = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -105,10 +114,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("accountGroups", AccountGroups);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("loginMethod", LoginMethod);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateMerchantUserRequestName>("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteStringValue("timeZoneCode", TimeZoneCode);
             writer.WriteStringValue("username", Username);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

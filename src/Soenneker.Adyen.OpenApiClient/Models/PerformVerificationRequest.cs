@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PerformVerificationRequest : IParsable
+    public partial class PerformVerificationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the account holder to verify.</summary>
@@ -22,8 +22,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType? AccountStateType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tier required for the account holder.</summary>
         public int? Tier { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequest"/> and sets the default values.
+        /// </summary>
+        public PerformVerificationRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType>("accountStateType", AccountStateType);
             writer.WriteIntValue("tier", Tier);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

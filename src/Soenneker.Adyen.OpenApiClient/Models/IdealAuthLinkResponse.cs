@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The redirectUrl property</summary>
+        /// <summary>A short-lived URL that redirects the user to the iDEAL profile management page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href? RedirectUrl { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdealAuthLinkResponseRedirectUrl? RedirectUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Href RedirectUrl { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdealAuthLinkResponseRedirectUrl RedirectUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.IdealAuthLinkResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "redirectUrl", n => { RedirectUrl = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>(global::Soenneker.Adyen.OpenApiClient.Models.Href.CreateFromDiscriminatorValue); } },
+                { "redirectUrl", n => { RedirectUrl = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealAuthLinkResponseRedirectUrl>(global::Soenneker.Adyen.OpenApiClient.Models.IdealAuthLinkResponseRedirectUrl.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Href>("redirectUrl", RedirectUrl);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealAuthLinkResponseRedirectUrl>("redirectUrl", RedirectUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

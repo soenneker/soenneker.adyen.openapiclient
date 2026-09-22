@@ -9,16 +9,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Document : IParsable
+    public partial class Document : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The attachment property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Object that contains the document.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Attachment? Attachment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentAttachment? Attachment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Attachment Attachment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentAttachment Attachment { get; set; }
 #endif
         /// <summary>Array that contains the document. The array supports multiple attachments for uploading different sides or pages of a document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,16 +94,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Contains information about the resource that owns the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OwnerEntity? Owner { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OwnerEntity Owner { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentOwner Owner { get; set; }
 #endif
         /// <summary>Type of document, used when providing an ID number or uploading a document. The possible values depend on the legal entity type.* For **organization**, the `type` values can be **proofOfAddress**, **registrationDocument**, **vatDocument**, **proofOfOrganizationTaxInfo**, **proofOfOwnership**, **proofOfIndustry**, **proofOfSignatory**, **proofOfDirector**, or **proofOfFundingOrWealthSource**.* For **individual**, the `type` values can be **identityCard**, **driversLicense**, **passport**, **liveSelfie**, **proofOfNationalIdNumber**, **proofOfResidency**, **proofOfIndustry**, **proofOfIndividualTaxId**, **proofOfFundingOrWealthSource** or **proofOfRelationship**.* For **soleProprietorship**, the `type` values can be **constitutionalDocument**, **proofOfAddress**, or **proofOfIndustry**.* For **trust**, the `type` value is **constitutionalDocument**.* For **unincorporatedPartnership**, the `type` value is **constitutionalDocument**.* Use **bankStatement** to upload documents for a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments__resParam_id).</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.DocumentType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Document"/> and sets the default values.
+        /// </summary>
+        public Document()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -119,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachment", n => { Attachment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Attachment>(global::Soenneker.Adyen.OpenApiClient.Models.Attachment.CreateFromDiscriminatorValue); } },
+                { "attachment", n => { Attachment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentAttachment>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentAttachment.CreateFromDiscriminatorValue); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Attachment>(global::Soenneker.Adyen.OpenApiClient.Models.Attachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "creationDate", n => { CreationDate = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -130,7 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "issuerState", n => { IssuerState = n.GetStringValue(); } },
                 { "modificationDate", n => { ModificationDate = n.GetDateTimeOffsetValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OwnerEntity>(global::Soenneker.Adyen.OpenApiClient.Models.OwnerEntity.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentOwner>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentOwner.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentType>(); } },
             };
         }
@@ -141,7 +151,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Attachment>("attachment", Attachment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentAttachment>("attachment", Attachment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Attachment>("attachments", Attachments);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("expiryDate", ExpiryDate);
@@ -149,8 +159,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("issuerCountry", IssuerCountry);
             writer.WriteStringValue("issuerState", IssuerState);
             writer.WriteStringValue("number", Number);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OwnerEntity>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentOwner>("owner", Owner);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

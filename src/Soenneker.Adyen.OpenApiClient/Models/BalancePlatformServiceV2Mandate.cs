@@ -22,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BalanceAccountId { get; set; }
 #endif
-        /// <summary>The counterparty property</summary>
+        /// <summary>Contains information to identify the counterparty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateBankAccount? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateBankAccount Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateCounterparty Counterparty { get; set; }
 #endif
         /// <summary>The date when the mandate was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -48,10 +48,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentInstrumentId { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MandateStatus? Status { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MandateType? Type { get; set; }
+        /// <summary>The status of the mandate.Possible values: **pending**, **approved**, **cancelled**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed Status { get; set; }
+#endif
+        /// <summary>The type of mandate. Possible value: **bacs**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType Type { get; set; }
+#endif
         /// <summary>The date when the mandate was updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -80,12 +92,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateBankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateBankAccount.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateCounterparty.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MandateStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MandateType>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -97,12 +109,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateBankAccount>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateCounterparty>("counterparty", Counterparty);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MandateStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MandateType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

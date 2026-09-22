@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetNotificationConfigurationResponse : IParsable
+    public partial class GetNotificationConfigurationResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configurationDetails property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Details of the notification subscription configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails? ConfigurationDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponseConfigurationDetails? ConfigurationDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails ConfigurationDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponseConfigurationDetails ConfigurationDetails { get; set; }
 #endif
         /// <summary>Contains field validation errors that would prevent requests from being processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +47,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ResultCode { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponse"/> and sets the default values.
+        /// </summary>
+        public GetNotificationConfigurationResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponse"/></returns>
@@ -62,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configurationDetails", n => { ConfigurationDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails.CreateFromDiscriminatorValue); } },
+                { "configurationDetails", n => { ConfigurationDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponseConfigurationDetails>(global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponseConfigurationDetails.CreateFromDiscriminatorValue); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetStringValue(); } },
@@ -75,10 +84,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetails>("configurationDetails", ConfigurationDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationResponseConfigurationDetails>("configurationDetails", ConfigurationDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType>("invalidFields", InvalidFields);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("resultCode", ResultCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

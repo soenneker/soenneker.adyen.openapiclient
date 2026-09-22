@@ -15,13 +15,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
+        /// <summary>Data related to the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData? SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData? SaleData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData SaleData { get; set; }
 #endif
         /// <summary>Data related to the stored value card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>(global::Soenneker.Adyen.OpenApiClient.Models.SaleData.CreateFromDiscriminatorValue); } },
+                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData.CreateFromDiscriminatorValue); } },
                 { "StoredValueData", n => { StoredValueData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>("SaleData", SaleData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData>("SaleData", SaleData);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData>("StoredValueData", StoredValueData);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateAccountHolderRequest : IParsable
+    public partial class UpdateAccountHolderRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the Account Holder to be updated.</summary>
@@ -20,14 +20,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
-        /// <summary>The accountHolderDetails property</summary>
+        /// <summary>The details to which the Account Holder should be updated.Required if a processingTier is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails? AccountHolderDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestAccountHolderDetails? AccountHolderDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails AccountHolderDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestAccountHolderDetails AccountHolderDetails { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A description of the account holder, maximum 256 characters. You can use alphanumeric characters (A-Z, a-z, 0-9), white spaces, and underscores `_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string VerificationProfile { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequest"/> and sets the default values.
+        /// </summary>
+        public UpdateAccountHolderRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequest"/></returns>
@@ -76,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails.CreateFromDiscriminatorValue); } },
+                { "accountHolderDetails", n => { AccountHolderDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestAccountHolderDetails>(global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestAccountHolderDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "legalEntity", n => { LegalEntity = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestLegalEntity>(); } },
                 { "primaryCurrency", n => { PrimaryCurrency = n.GetStringValue(); } },
@@ -92,12 +101,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestAccountHolderDetails>("accountHolderDetails", AccountHolderDetails);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderRequestLegalEntity>("legalEntity", LegalEntity);
             writer.WriteStringValue("primaryCurrency", PrimaryCurrency);
             writer.WriteIntValue("processingTier", ProcessingTier);
             writer.WriteStringValue("verificationProfile", VerificationProfile);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

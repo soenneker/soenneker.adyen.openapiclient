@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AcceptTermsOfServiceResponse : IParsable
+    public partial class AcceptTermsOfServiceResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier of the user that accepted the Terms of Service.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AcceptedBy { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the Terms of Service acceptance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +56,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponseType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponse"/> and sets the default values.
+        /// </summary>
+        public AcceptTermsOfServiceResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -93,6 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("termsOfServiceDocumentId", TermsOfServiceDocumentId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AcceptTermsOfServiceResponseType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

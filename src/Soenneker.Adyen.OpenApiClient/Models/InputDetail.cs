@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InputDetail : IParsable
+    public partial class InputDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration parameters for the required input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty? Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty Configuration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2 Configuration { get; set; }
 #endif
         /// <summary>Input details can also be provided recursively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,6 +82,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Value { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InputDetail"/> and sets the default values.
+        /// </summary>
+        public InputDetail()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.InputDetail"/></returns>
@@ -97,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty>(global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inputDetails", n => { InputDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>(global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemSearchUrl", n => { ItemSearchUrl = n.GetStringValue(); } },
@@ -115,7 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2>("configuration", Configuration);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>("details", Details);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>("inputDetails", InputDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>("items", Items);
@@ -124,6 +133,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("optional", Optional);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

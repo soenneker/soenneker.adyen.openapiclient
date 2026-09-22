@@ -10,9 +10,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Passenger : IParsable
+    public partial class Passenger : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The passenger&apos;s date of birth.* Format `yyyy-MM-dd`* minLength: 10* maxLength: 10* **additionalData key:** `airline.passenger[N].date_of_birth`</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>The passenger&apos;s first name.&gt; This field is required if the airline data includes passenger details or leg details.* Encoding: ASCII* **additionalData key:** `airline.passenger[N].first_name`</summary>
@@ -47,6 +49,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TravellerType { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Passenger"/> and sets the default values.
+        /// </summary>
+        public Passenger()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("travellerType", TravellerType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

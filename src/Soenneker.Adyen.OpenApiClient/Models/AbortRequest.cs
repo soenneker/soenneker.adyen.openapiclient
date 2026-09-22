@@ -23,21 +23,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Information to display and how to process it.Contains a complete display operation for a Display or an Input Device type. For the Input Devices, Diagnosis and `EnableService`, `ResponseRequiredFlag`, and `MinimumDisplayTime` shall be absent.</summary>
+        /// <summary>Information to display and the way to process the display.To display an abort message to the Customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput? DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? DisplayOutput { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput DisplayOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput DisplayOutput { get; set; }
 #endif
-        /// <summary>Identification of a previous POI transaction.To abort a transaction in progress or to request the status of a transaction from which no response has been received. It identifies the message header of the message request to abort or request the status.</summary>
+        /// <summary>Identification of a previous POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReference? MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? MessageReference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReference MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference MessageReference { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AbortRequest"/> and sets the default values.
@@ -65,8 +65,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AbortReason", n => { AbortReason = n.GetStringValue(); } },
-                { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput.CreateFromDiscriminatorValue); } },
-                { "MessageReference", n => { MessageReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReference>(global::Soenneker.Adyen.OpenApiClient.Models.MessageReference.CreateFromDiscriminatorValue); } },
+                { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput.CreateFromDiscriminatorValue); } },
+                { "MessageReference", n => { MessageReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference>(global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,8 +77,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("AbortReason", AbortReason);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisplayOutput>("DisplayOutput", DisplayOutput);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReference>("MessageReference", MessageReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput>("DisplayOutput", DisplayOutput);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference>("MessageReference", MessageReference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

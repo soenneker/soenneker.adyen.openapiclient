@@ -21,12 +21,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? CommunicationOKFlag { get; set; }
         /// <summary>Indicates a suspicion of fraud by the POI System.Could be set to True by the POI system to notify to the Sale system and the Cashier that a suspicion of fraud had been detected on the POI as an unexpected reboot of the POI.</summary>
         public bool? FraudPreventionFlag { get; set; }
-        /// <summary>Possible values:* **OK*** **Busy*** **Maintenance*** **Unreachable**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GlobalStatus? GlobalStatus { get; set; }
+        /// <summary>Global status of a POI Server or POI Terminal.Possible values:* **Busy*** **Maintenance*** **OK*** **Unreachable**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus? GlobalStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus GlobalStatus { get; set; }
+#endif
         /// <summary>Indicates if the PED is working and usable.If PED present.</summary>
         public bool? PEDOKFlag { get; set; }
-        /// <summary>Indicates if the printer is working and usable.Possible values:* **OK*** **PaperLow*** **NoPaper*** **PaperJam*** **OutOfOrder**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrinterStatus? PrinterStatus { get; set; }
+        /// <summary>Possible values:* **NoPaper*** **OK*** **OutOfOrder*** **PaperJam*** **PaperLow**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus? PrinterStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus PrinterStatus { get; set; }
+#endif
         /// <summary>Indicates if the security module of the POI is working and usable.If security module present.</summary>
         public bool? SecurityOKFlag { get; set; }
         /// <summary>
@@ -57,9 +69,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CardReaderOKFlag", n => { CardReaderOKFlag = n.GetBoolValue(); } },
                 { "CommunicationOKFlag", n => { CommunicationOKFlag = n.GetBoolValue(); } },
                 { "FraudPreventionFlag", n => { FraudPreventionFlag = n.GetBoolValue(); } },
-                { "GlobalStatus", n => { GlobalStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GlobalStatus>(); } },
+                { "GlobalStatus", n => { GlobalStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus>(global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus.CreateFromDiscriminatorValue); } },
                 { "PEDOKFlag", n => { PEDOKFlag = n.GetBoolValue(); } },
-                { "PrinterStatus", n => { PrinterStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrinterStatus>(); } },
+                { "PrinterStatus", n => { PrinterStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus>(global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus.CreateFromDiscriminatorValue); } },
                 { "SecurityOKFlag", n => { SecurityOKFlag = n.GetBoolValue(); } },
             };
         }
@@ -73,9 +85,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("CardReaderOKFlag", CardReaderOKFlag);
             writer.WriteBoolValue("CommunicationOKFlag", CommunicationOKFlag);
             writer.WriteBoolValue("FraudPreventionFlag", FraudPreventionFlag);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GlobalStatus>("GlobalStatus", GlobalStatus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusGlobalStatus>("GlobalStatus", GlobalStatus);
             writer.WriteBoolValue("PEDOKFlag", PEDOKFlag);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrinterStatus>("PrinterStatus", PrinterStatus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiStatusPrinterStatus>("PrinterStatus", PrinterStatus);
             writer.WriteBoolValue("SecurityOKFlag", SecurityOKFlag);
             writer.WriteAdditionalData(AdditionalData);
         }

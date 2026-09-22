@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CostEstimateRequest : IParsable
+    public partial class CostEstimateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The transaction amount used as a base for the cost estimation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAmount Amount { get; set; }
 #endif
-        /// <summary>The assumptions property</summary>
+        /// <summary>Assumptions made for the expected characteristics of the transaction, for which the charges are being estimated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateAssumptions? Assumptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions? Assumptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateAssumptions Assumptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions Assumptions { get; set; }
 #endif
         /// <summary>The card number (4-19 characters) for PCI compliant use cases. Do not use any separators.&gt; Either the `cardNumber` or `encryptedCardNumber` field must be provided in a payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,21 +54,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The merchantDetails property</summary>
+        /// <summary>Additional data for merchants who don&apos;t use Adyen as the payment authorisation gateway.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantDetails? MerchantDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestMerchantDetails? MerchantDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantDetails MerchantDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestMerchantDetails MerchantDetails { get; set; }
 #endif
-        /// <summary>The recurring property</summary>
+        /// <summary>The recurring settings for the payment. Use this property when you want to enable [recurring payments](https://docs.adyen.com/online-payments/tokenization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Recurring? Recurring { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestRecurring? Recurring { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Recurring Recurring { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestRecurring Recurring { get; set; }
 #endif
         /// <summary>The `recurringDetailReference` you want to use for this cost estimate. The value `LATEST` can be used to select the most recently stored recurring detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,6 +89,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperReference { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequest"/> and sets the default values.
+        /// </summary>
+        public CostEstimateRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequest"/></returns>
@@ -104,13 +113,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount>(global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount.CreateFromDiscriminatorValue); } },
-                { "assumptions", n => { Assumptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateAssumptions>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateAssumptions.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAmount.CreateFromDiscriminatorValue); } },
+                { "assumptions", n => { Assumptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions.CreateFromDiscriminatorValue); } },
                 { "cardNumber", n => { CardNumber = n.GetStringValue(); } },
                 { "encryptedCardNumber", n => { EncryptedCardNumber = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "merchantDetails", n => { MerchantDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantDetails>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantDetails.CreateFromDiscriminatorValue); } },
-                { "recurring", n => { Recurring = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Recurring>(global::Soenneker.Adyen.OpenApiClient.Models.Recurring.CreateFromDiscriminatorValue); } },
+                { "merchantDetails", n => { MerchantDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestMerchantDetails>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestMerchantDetails.CreateFromDiscriminatorValue); } },
+                { "recurring", n => { Recurring = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestRecurring>(global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestRecurring.CreateFromDiscriminatorValue); } },
                 { "selectedRecurringDetailReference", n => { SelectedRecurringDetailReference = n.GetStringValue(); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestShopperInteraction>(); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
@@ -123,16 +132,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BinLookupServiceV54Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateAssumptions>("assumptions", Assumptions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestAssumptions>("assumptions", Assumptions);
             writer.WriteStringValue("cardNumber", CardNumber);
             writer.WriteStringValue("encryptedCardNumber", EncryptedCardNumber);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantDetails>("merchantDetails", MerchantDetails);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Recurring>("recurring", Recurring);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestMerchantDetails>("merchantDetails", MerchantDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestRecurring>("recurring", Recurring);
             writer.WriteStringValue("selectedRecurringDetailReference", SelectedRecurringDetailReference);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CostEstimateRequestShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("shopperReference", ShopperReference);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

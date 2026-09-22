@@ -22,8 +22,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DeviceId { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatus? Status { get; set; }
+        /// <summary>Indicates if the device has an active cloud connection. Possible values: * **ONLINE** * **OFFLINE** </summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatusResponseStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatusResponseStatus Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatusResponse"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatusResponseStatus>(global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatusResponseStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceId", DeviceId);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DeviceStatusResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

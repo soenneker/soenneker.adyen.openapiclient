@@ -9,13 +9,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4ConfirmationTrackingData : IParsable
+    public partial class TransferServiceV4ConfirmationTrackingData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status of the transfer.Possible values: - **credited**: the funds are credited to your user&apos;s transfer instrument or bank account.- **accepted**: the request is accepted by the integration.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataStatus? Status { get; set; }
         /// <summary>The type of the tracking event.Possible values: - **confirmation**: the transfer passed Adyen&apos;s internal review.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ConfirmationType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingData"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4ConfirmationTrackingData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +44,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConfirmationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +55,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationTrackingDataStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ConfirmationType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ConfirmationType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

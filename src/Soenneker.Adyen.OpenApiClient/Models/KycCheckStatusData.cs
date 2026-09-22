@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class KycCheckStatusData : IParsable
+    public partial class KycCheckStatusData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of the fields required for execution of the check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +34,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The type of check.Possible values: * **BANK_ACCOUNT_VERIFICATION**: Used in v5 and earlier. Replaced by **PAYOUT_METHOD_VERIFICATION** in v6 and later. * **COMPANY_VERIFICATION**  * **CARD_VERIFICATION*** **IDENTITY_VERIFICATION*** **LEGAL_ARRANGEMENT_VERIFICATION*** **NONPROFIT_VERIFICATION** * **PASSPORT_VERIFICATION*** **PAYOUT_METHOD_VERIFICATION**: Used in v6 and later.* **PCI_VERIFICATION**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData"/> and sets the default values.
+        /// </summary>
+        public KycCheckStatusData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary>("summary", Summary);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

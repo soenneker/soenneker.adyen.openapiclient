@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UninstallAndroidAppDetails : IParsable
+    public partial class UninstallAndroidAppDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the app to be uninstalled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Type of terminal action: Uninstall an Android app.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppDetails"/> and sets the default values.
+        /// </summary>
+        public UninstallAndroidAppDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,6 +62,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UninstallAndroidAppType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

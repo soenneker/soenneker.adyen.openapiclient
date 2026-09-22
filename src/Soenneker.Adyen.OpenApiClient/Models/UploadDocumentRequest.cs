@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UploadDocumentRequest : IParsable
+    public partial class UploadDocumentRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content of the document, in Base64-encoded string format.To learn about document requirements, refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-checks).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +22,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public byte[] DocumentContent { get; set; }
 #endif
-        /// <summary>The documentDetail property</summary>
+        /// <summary>Details of the document being submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail? DocumentDetail { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail? DocumentDetail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail DocumentDetail { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail DocumentDetail { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequest"/> and sets the default values.
+        /// </summary>
+        public UploadDocumentRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "documentContent", n => { DocumentContent = n.GetByteArrayValue(); } },
-                { "documentDetail", n => { DocumentDetail = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail.CreateFromDiscriminatorValue); } },
+                { "documentDetail", n => { DocumentDetail = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail>(global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("documentContent", DocumentContent);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentDetail>("documentDetail", DocumentDetail);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail>("documentDetail", DocumentDetail);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

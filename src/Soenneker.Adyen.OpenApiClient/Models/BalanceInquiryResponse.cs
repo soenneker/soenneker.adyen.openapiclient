@@ -15,13 +15,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The PaymentAccountStatus property</summary>
+        /// <summary>Data related to the result of a Balance Inquiry request.If BalanceInquiryRequest. PaymentAccount present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus? PaymentAccountStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponsePaymentAccountStatus? PaymentAccountStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus PaymentAccountStatus { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponsePaymentAccountStatus PaymentAccountStatus { get; set; }
 #endif
         /// <summary>The PaymentReceipt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "PaymentAccountStatus", n => { PaymentAccountStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus.CreateFromDiscriminatorValue); } },
+                { "PaymentAccountStatus", n => { PaymentAccountStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponsePaymentAccountStatus>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponsePaymentAccountStatus.CreateFromDiscriminatorValue); } },
                 { "PaymentReceipt", n => { PaymentReceipt = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountStatus>("PaymentAccountStatus", PaymentAccountStatus);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceInquiryResponsePaymentAccountStatus>("PaymentAccountStatus", PaymentAccountStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>("PaymentReceipt", PaymentReceipt);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteAdditionalData(AdditionalData);

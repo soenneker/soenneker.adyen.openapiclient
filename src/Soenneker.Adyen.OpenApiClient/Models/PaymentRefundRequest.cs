@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentRefundRequest : IParsable
+    public partial class PaymentRefundRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount that you want to refund. The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestAmount Amount { get; set; }
 #endif
-        /// <summary>The applicationInfo property</summary>
+        /// <summary>Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo? ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestApplicationInfo? ApplicationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestApplicationInfo ApplicationInfo { get; set; }
 #endif
         /// <summary>This is only available for PayPal refunds. The [`pspReference`](https://docs.adyen.com/api-explorer/Checkout/latest/post/payments#responses-200-pspReference) of the specific capture to refund.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,13 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CapturePspReference { get; set; }
 #endif
-        /// <summary>The enhancedSchemeData property</summary>
+        /// <summary>Enhanced scheme data that may be required for processing the payment. For example, airline information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData? EnhancedSchemeData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestEnhancedSchemeData? EnhancedSchemeData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData EnhancedSchemeData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestEnhancedSchemeData EnhancedSchemeData { get; set; }
 #endif
         /// <summary>Price and product information of the refunded items, required for [partial refunds](https://docs.adyen.com/online-payments/refund#refund-a-payment).&gt; This field is required for partial refunds with 3x 4x Oney, Affirm, Afterpay, Atome, Clearpay, Klarna, Ratepay, Walley, and Zip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,6 +89,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Store { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequest"/> and sets the default values.
+        /// </summary>
+        public PaymentRefundRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequest"/></returns>
@@ -104,10 +113,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestAmount.CreateFromDiscriminatorValue); } },
+                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestApplicationInfo.CreateFromDiscriminatorValue); } },
                 { "capturePspReference", n => { CapturePspReference = n.GetStringValue(); } },
-                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData.CreateFromDiscriminatorValue); } },
+                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestEnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestEnhancedSchemeData.CreateFromDiscriminatorValue); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantRefundReason", n => { MerchantRefundReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestMerchantRefundReason>(); } },
@@ -123,16 +132,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>("applicationInfo", ApplicationInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestApplicationInfo>("applicationInfo", ApplicationInfo);
             writer.WriteStringValue("capturePspReference", CapturePspReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestEnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRefundRequestMerchantRefundReason>("merchantRefundReason", MerchantRefundReason);
             writer.WriteStringValue("reference", Reference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
             writer.WriteStringValue("store", Store);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

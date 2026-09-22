@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OnboardingTheme : IParsable
+    public partial class OnboardingTheme : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creation date of the theme.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description of the theme.</summary>
@@ -33,13 +35,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The properties of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty? Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty2? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty Properties { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty2 Properties { get; set; }
 #endif
         /// <summary>The date when the theme was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme"/> and sets the default values.
+        /// </summary>
+        public OnboardingTheme()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty2.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -75,8 +84,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingThemePropertiesProperty2>("properties", Properties);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetTerminalDetailsResponse : IParsable
+    public partial class GetTerminalDetailsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Bluetooth IP address of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,13 +150,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Store { get; set; }
 #endif
-        /// <summary>The storeDetails property</summary>
+        /// <summary>The store that the terminal is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store? StoreDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseStoreDetails? StoreDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store StoreDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseStoreDetails StoreDetails { get; set; }
 #endif
         /// <summary>The unique terminal ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,6 +184,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string WifiMac { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponse"/> and sets the default values.
+        /// </summary>
+        public GetTerminalDetailsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -220,7 +229,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 { "simStatus", n => { SimStatus = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
-                { "storeDetails", n => { StoreDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>(global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store.CreateFromDiscriminatorValue); } },
+                { "storeDetails", n => { StoreDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseStoreDetails>(global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseStoreDetails.CreateFromDiscriminatorValue); } },
                 { "terminal", n => { Terminal = n.GetStringValue(); } },
                 { "terminalStatus", n => { TerminalStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseTerminalStatus>(); } },
                 { "wifiIp", n => { WifiIp = n.GetStringValue(); } },
@@ -254,11 +263,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("simStatus", SimStatus);
             writer.WriteStringValue("store", Store);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>("storeDetails", StoreDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseStoreDetails>("storeDetails", StoreDetails);
             writer.WriteStringValue("terminal", Terminal);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTerminalDetailsResponseTerminalStatus>("terminalStatus", TerminalStatus);
             writer.WriteStringValue("wifiIp", WifiIp);
             writer.WriteStringValue("wifiMac", WifiMac);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

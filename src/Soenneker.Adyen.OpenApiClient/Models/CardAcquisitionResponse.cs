@@ -31,13 +31,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> PaymentBrand { get; set; }
 #endif
-        /// <summary>Data related to the instrument of payment for the transaction.Sent in the result of the payment transaction. For a card, it could also be sent in the `CardAcquisition` response, to be processed by the Sale System.</summary>
+        /// <summary>Data related to the instrument of payment for the transaction.If this type of payment card is configured to send information if the CardAcquisition response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData? PaymentInstrumentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponsePaymentInstrumentData? PaymentInstrumentData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData PaymentInstrumentData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponsePaymentInstrumentData PaymentInstrumentData { get; set; }
 #endif
         /// <summary>Data related to the POI System.In the Message Response, identification of the POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,13 +55,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get; set; }
 #endif
-        /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
+        /// <summary>Data related to the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData? SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponseSaleData? SaleData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleData SaleData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponseSaleData SaleData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponse"/> and sets the default values.
@@ -91,9 +91,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "LoyaltyAccount", n => { LoyaltyAccount = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount>(global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "POIData", n => { POIData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiData>(global::Soenneker.Adyen.OpenApiClient.Models.PoiData.CreateFromDiscriminatorValue); } },
                 { "PaymentBrand", n => { PaymentBrand = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData.CreateFromDiscriminatorValue); } },
+                { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponsePaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponsePaymentInstrumentData.CreateFromDiscriminatorValue); } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
-                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>(global::Soenneker.Adyen.OpenApiClient.Models.SaleData.CreateFromDiscriminatorValue); } },
+                { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponseSaleData>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponseSaleData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,10 +105,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccount>("LoyaltyAccount", LoyaltyAccount);
             writer.WriteCollectionOfPrimitiveValues<string>("PaymentBrand", PaymentBrand);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponsePaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PoiData>("POIData", POIData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleData>("SaleData", SaleData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionResponseSaleData>("SaleData", SaleData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

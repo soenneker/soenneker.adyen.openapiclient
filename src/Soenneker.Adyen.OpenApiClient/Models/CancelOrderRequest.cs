@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CancelOrderRequest : IParsable
+    public partial class CancelOrderRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The merchant account identifier that orderData belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +22,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>The order request object that contains a pspReference that represents the order and the matching encrypted order data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData? Order { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderRequestOrder? Order { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData Order { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderRequestOrder Order { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderRequest"/> and sets the default values.
+        /// </summary>
+        public CancelOrderRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
-                { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData>(global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData.CreateFromDiscriminatorValue); } },
+                { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderRequestOrder>(global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderRequestOrder.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("merchantAccount", MerchantAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData>("order", Order);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelOrderRequestOrder>("order", Order);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

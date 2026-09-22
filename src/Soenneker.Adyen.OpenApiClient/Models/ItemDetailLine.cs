@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemDetailLine : IParsable
+    public partial class ItemDetailLine : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code that identifies the item in a standardized commodity coding scheme. There are different commodity coding schemes:* [UNSPSC commodity codes](https://www.ungm.org/public/unspsc)* [HS commodity codes](https://www.wcoomd.org/en/topics/nomenclature/overview.aspx)* [NAICS commodity codes](https://www.census.gov/naics/)* [NAPCS commodity codes](https://www.census.gov/naics/napcs/)* Encoding: ASCII* Max length: 12 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].commodityCode`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +54,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The unit price, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.itemDetailLine[N].unitPrice`</summary>
         public long? UnitPrice { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ItemDetailLine"/> and sets the default values.
+        /// </summary>
+        public ItemDetailLine()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -95,6 +104,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("totalAmount", TotalAmount);
             writer.WriteStringValue("unitOfMeasure", UnitOfMeasure);
             writer.WriteLongValue("unitPrice", UnitPrice);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

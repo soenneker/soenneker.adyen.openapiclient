@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Contains redirection URLs to guide the user to the appropriate page, after a successful payment or a cancellation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Links? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConfirmPaymentResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Links Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ConfirmPaymentResponseLinks Links { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ConfirmPaymentResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Links>(global::Soenneker.Adyen.OpenApiClient.Models.Links.CreateFromDiscriminatorValue); } },
+                { "links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConfirmPaymentResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ConfirmPaymentResponseLinks.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Links>("links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ConfirmPaymentResponseLinks>("links", Links);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

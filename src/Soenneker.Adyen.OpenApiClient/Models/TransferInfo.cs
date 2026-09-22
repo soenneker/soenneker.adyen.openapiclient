@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferInfo : IParsable
+    public partial class TransferInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount Amount { get; set; }
 #endif
         /// <summary>The unique identifier of the source [balance account](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id).If you want to make a transfer using a **virtual** **bankAccount** assigned to the balance account, you must specify the [payment instrument ID](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/paymentInstruments#responses-200-id) of the **virtual** **bankAccount**. If you only specify a balance account ID, Adyen uses the default **physical** **bankAccount** payment instrument assigned to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,13 +32,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The category of the transfer.Possible values: - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.- **card**: A transfer involving a third-party card.- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.- **issuedCard**: A transfer initiated by an Adyen-issued card.- **platformPayment**: Funds movements related to payments that are acquired for your users.- **topUp**: An incoming transfer initiated by your user to top up their balance account.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCategory? Category { get; set; }
-        /// <summary>The counterparty property</summary>
+        /// <summary>The other party involved in the funds transfer. A bank account, a balance account, a card, or a transfer instrument is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3 Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty Counterparty { get; set; }
 #endif
         /// <summary>Your description for the transfer. It is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.Supported characters: **[a-z] [A-Z] [0-9] / - ?** **: ( ) . , &apos; + Space**Supported characters for **regular** and **fast** transfers to a US counterparty: **[a-z] [A-Z] [0-9] &amp; $ % # @** **~ = + - _ &apos; &quot; ! ?**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,13 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The executionDate property</summary>
+        /// <summary>The date when the transfer will be processed. This date must be within 30 days of the current date.Until the `executionDate`:- The `status` of the transfer remains as **received**.- The `reason` of the transfer remains as **pending**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExecutionDate? ExecutionDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate? ExecutionDate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExecutionDate ExecutionDate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate ExecutionDate { get; set; }
 #endif
         /// <summary>The unique identifier of the source [payment instrument](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/paymentInstruments#responses-200-id).If you want to make a transfer using a **virtual** **bankAccount**, you must specify the payment instrument ID of the **virtual** **bankAccount**. If you only specify a balance account ID, Adyen uses the default **physical** **bankAccount** payment instrument assigned to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,24 +90,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReferenceForBeneficiary { get; set; }
 #endif
-        /// <summary>The review property</summary>
+        /// <summary>Contains information required for triggering transfer reviews. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview? Review { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview? Review { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview Review { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview Review { get; set; }
 #endif
         /// <summary>The type of transfer.Possible values: - **bankTransfer**: for push transfers to a transfer instrument or a bank account. The `category` must be **bank**.- **internalTransfer**: for push transfers between balance accounts. The `category` must be **internal**.- **internalDirectDebit**: for pull transfers (direct debits) between balance accounts. The `category` must be **internal**. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType? Type { get; set; }
-        /// <summary>The ultimateParty property</summary>
+        /// <summary>The ultimate sender of the funds of the transfer (ultimate debtor).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification? UltimateParty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty? UltimateParty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification UltimateParty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty UltimateParty { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferInfo"/> and sets the default values.
+        /// </summary>
+        public TransferInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -124,20 +133,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount.CreateFromDiscriminatorValue); } },
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCategory>(); } },
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3>(global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "executionDate", n => { ExecutionDate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExecutionDate>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExecutionDate.CreateFromDiscriminatorValue); } },
+                { "executionDate", n => { ExecutionDate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate.CreateFromDiscriminatorValue); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
                 { "priorities", n => { Priorities = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem>()?.AsList(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPriority>(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
-                { "review", n => { Review = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview>(global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview.CreateFromDiscriminatorValue); } },
+                { "review", n => { Review = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType>(); } },
-                { "ultimateParty", n => { UltimateParty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification.CreateFromDiscriminatorValue); } },
+                { "ultimateParty", n => { UltimateParty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,20 +156,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoAmount>("amount", Amount);
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCategory>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoCounterparty>("counterparty", Counterparty);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExecutionDate>("executionDate", ExecutionDate);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoExecutionDate>("executionDate", ExecutionDate);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPrioritiesItem>("priorities", Priorities);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoPriority>("priority", Priority);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferRequestReview>("review", Review);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoReview>("review", Review);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentification>("ultimateParty", UltimateParty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInfoUltimateParty>("ultimateParty", UltimateParty);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

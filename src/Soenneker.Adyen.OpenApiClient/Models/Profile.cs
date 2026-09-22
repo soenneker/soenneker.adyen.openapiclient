@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Profile : IParsable
+    public partial class Profile : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of Wi-Fi network. Possible values: **wpa-psk**, **wpa2-psk**, **wpa-eap**, **wpa2-eap**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,29 +52,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Eap { get; set; }
 #endif
-        /// <summary>The eapCaCert property</summary>
+        /// <summary>For `authType` **wpa-eap** or **wpa2-eap**. The root certificate from the CA that signed the certificate of the RADIUS server that is part of your wireless network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject? EapCaCert { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert? EapCaCert { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject EapCaCert { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert EapCaCert { get; set; }
 #endif
-        /// <summary>The eapClientCert property</summary>
+        /// <summary>For `eap` **tls**. The certificate chain for the terminals. All terminals in the same network will use the same EAP client certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject? EapClientCert { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert? EapClientCert { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject EapClientCert { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert EapClientCert { get; set; }
 #endif
-        /// <summary>The eapClientKey property</summary>
+        /// <summary>For `eap` **tls**. The RSA private key for the client. Include the lines BEGIN RSA PRIVATE KEY and END RSA PRIVATE KEY.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject? EapClientKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey? EapClientKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject EapClientKey { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey EapClientKey { get; set; }
 #endif
         /// <summary>For `eap` **tls**. The password of the RSA key file, if that file is password-protected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,13 +92,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string EapIdentity { get; set; }
 #endif
-        /// <summary>The eapIntermediateCert property</summary>
+        /// <summary>For `eap` **tls**. The EAP intermediate certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject? EapIntermediateCert { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert? EapIntermediateCert { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FileObject EapIntermediateCert { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert EapIntermediateCert { get; set; }
 #endif
         /// <summary>For `eap` **peap**. The EAP-PEAP password from your MS-CHAP account. Must match the configuration of your RADIUS server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,6 +143,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Wsec { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Profile"/> and sets the default values.
+        /// </summary>
+        public Profile()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Profile"/></returns>
@@ -165,12 +174,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "defaultProfile", n => { DefaultProfile = n.GetBoolValue(); } },
                 { "domainSuffix", n => { DomainSuffix = n.GetStringValue(); } },
                 { "eap", n => { Eap = n.GetStringValue(); } },
-                { "eapCaCert", n => { EapCaCert = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>(global::Soenneker.Adyen.OpenApiClient.Models.FileObject.CreateFromDiscriminatorValue); } },
-                { "eapClientCert", n => { EapClientCert = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>(global::Soenneker.Adyen.OpenApiClient.Models.FileObject.CreateFromDiscriminatorValue); } },
-                { "eapClientKey", n => { EapClientKey = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>(global::Soenneker.Adyen.OpenApiClient.Models.FileObject.CreateFromDiscriminatorValue); } },
+                { "eapCaCert", n => { EapCaCert = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert>(global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert.CreateFromDiscriminatorValue); } },
+                { "eapClientCert", n => { EapClientCert = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert>(global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert.CreateFromDiscriminatorValue); } },
+                { "eapClientKey", n => { EapClientKey = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey>(global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey.CreateFromDiscriminatorValue); } },
                 { "eapClientPwd", n => { EapClientPwd = n.GetStringValue(); } },
                 { "eapIdentity", n => { EapIdentity = n.GetStringValue(); } },
-                { "eapIntermediateCert", n => { EapIntermediateCert = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>(global::Soenneker.Adyen.OpenApiClient.Models.FileObject.CreateFromDiscriminatorValue); } },
+                { "eapIntermediateCert", n => { EapIntermediateCert = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert>(global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert.CreateFromDiscriminatorValue); } },
                 { "eapPwd", n => { EapPwd = n.GetStringValue(); } },
                 { "hiddenSsid", n => { HiddenSsid = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -193,18 +202,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("defaultProfile", DefaultProfile);
             writer.WriteStringValue("domainSuffix", DomainSuffix);
             writer.WriteStringValue("eap", Eap);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>("eapCaCert", EapCaCert);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>("eapClientCert", EapClientCert);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>("eapClientKey", EapClientKey);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert>("eapCaCert", EapCaCert);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert>("eapClientCert", EapClientCert);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey>("eapClientKey", EapClientKey);
             writer.WriteStringValue("eapClientPwd", EapClientPwd);
             writer.WriteStringValue("eapIdentity", EapIdentity);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FileObject>("eapIntermediateCert", EapIntermediateCert);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert>("eapIntermediateCert", EapIntermediateCert);
             writer.WriteStringValue("eapPwd", EapPwd);
             writer.WriteBoolValue("hiddenSsid", HiddenSsid);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("psk", Psk);
             writer.WriteStringValue("ssid", Ssid);
             writer.WriteStringValue("wsec", Wsec);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -15,15 +15,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The exchangeSide property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ExchangeSide? ExchangeSide { get; set; }
-        /// <summary>The sourceAmount property</summary>
+        /// <summary>The operation performed on the source amount. Possible values:* **buy*** **sell**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1Amount? SourceAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide? ExchangeSide { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1Amount SourceAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide ExchangeSide { get; set; }
+#endif
+        /// <summary>An object specifying the currency and value for which you want to perform an exchange calculation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount? SourceAmount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount SourceAmount { get; set; }
 #endif
         /// <summary>The currency to which you want to convert the source amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,8 +39,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TargetCurrency { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.RateType? Type { get; set; }
+        /// <summary>The type of transaction. Possible values:* **splitPayment**: for payments* **splitRefund**: for refunds</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItem"/> and sets the default values.
         /// </summary>
@@ -60,10 +72,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exchangeSide", n => { ExchangeSide = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeSide>(); } },
-                { "sourceAmount", n => { SourceAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1Amount>(global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1Amount.CreateFromDiscriminatorValue); } },
+                { "exchangeSide", n => { ExchangeSide = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide>(global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide.CreateFromDiscriminatorValue); } },
+                { "sourceAmount", n => { SourceAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount.CreateFromDiscriminatorValue); } },
                 { "targetCurrency", n => { TargetCurrency = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RateType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType>(global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,10 +85,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExchangeSide>("exchangeSide", ExchangeSide);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ForeignExchangeServiceV1Amount>("sourceAmount", SourceAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemExchangeSide>("exchangeSide", ExchangeSide);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemSourceAmount>("sourceAmount", SourceAmount);
             writer.WriteStringValue("targetCurrency", TargetCurrency);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.RateType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateRequestItemType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

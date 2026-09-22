@@ -15,13 +15,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The PrintOutput property</summary>
+        /// <summary>Information to print and how to process it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintOutput? PrintOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput? PrintOutput { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintOutput PrintOutput { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput PrintOutput { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PrintRequest"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "PrintOutput", n => { PrintOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutput>(global::Soenneker.Adyen.OpenApiClient.Models.PrintOutput.CreateFromDiscriminatorValue); } },
+                { "PrintOutput", n => { PrintOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput>(global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutput>("PrintOutput", PrintOutput);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput>("PrintOutput", PrintOutput);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

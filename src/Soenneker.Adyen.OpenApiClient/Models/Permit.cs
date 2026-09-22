@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Permit : IParsable
+    public partial class Permit : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Partner ID (when using the permit-per-partner token sharing model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,13 +30,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ProfileReference { get; set; }
 #endif
-        /// <summary>The restriction property</summary>
+        /// <summary>Permit level restriction overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestriction? Restriction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed? Restriction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestriction Restriction { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed Restriction { get; set; }
 #endif
         /// <summary>The key to link permit requests to permit results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The expiry date for this permit.</summary>
         public DateTimeOffset? ValidTillDate { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Permit"/> and sets the default values.
+        /// </summary>
+        public Permit()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "partnerId", n => { PartnerId = n.GetStringValue(); } },
                 { "profileReference", n => { ProfileReference = n.GetStringValue(); } },
-                { "restriction", n => { Restriction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PermitRestriction>(global::Soenneker.Adyen.OpenApiClient.Models.PermitRestriction.CreateFromDiscriminatorValue); } },
+                { "restriction", n => { Restriction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed>(global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed.CreateFromDiscriminatorValue); } },
                 { "resultKey", n => { ResultKey = n.GetStringValue(); } },
                 { "validTillDate", n => { ValidTillDate = n.GetDateTimeOffsetValue(); } },
             };
@@ -80,9 +89,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("partnerId", PartnerId);
             writer.WriteStringValue("profileReference", ProfileReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PermitRestriction>("restriction", Restriction);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed>("restriction", Restriction);
             writer.WriteStringValue("resultKey", ResultKey);
             writer.WriteDateTimeOffsetValue("validTillDate", ValidTillDate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

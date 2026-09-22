@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentInstrumentInfo : IParsable
+    public partial class PaymentInstrumentInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/v1/post/balanceAccounts__resParam_id) associated with the payment instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,21 +22,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BalanceAccountId { get; set; }
 #endif
-        /// <summary>The bankAccount property</summary>
+        /// <summary>Contains the business account details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel? BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoBankAccount? BankAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoBankAccount BankAccount { get; set; }
 #endif
-        /// <summary>The card property</summary>
+        /// <summary>Contains information about the card. Required when you create a payment instrument of `type` **card**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardInfo? Card { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoCard? Card { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardInfo Card { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoCard Card { get; set; }
 #endif
         /// <summary>Your description for the payment instrument, maximum 300 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,6 +85,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of payment instrument.Possible values: **card**, **bankAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo"/> and sets the default values.
+        /// </summary>
+        public PaymentInstrumentInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfo"/></returns>
@@ -101,8 +110,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
-                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel>(global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel.CreateFromDiscriminatorValue); } },
-                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfo>(global::Soenneker.Adyen.OpenApiClient.Models.CardInfo.CreateFromDiscriminatorValue); } },
+                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoBankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoBankAccount.CreateFromDiscriminatorValue); } },
+                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoCard>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoCard.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "issuingCountryCode", n => { IssuingCountryCode = n.GetStringValue(); } },
                 { "paymentInstrumentGroupId", n => { PaymentInstrumentGroupId = n.GetStringValue(); } },
@@ -121,8 +130,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModel>("bankAccount", BankAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardInfo>("card", Card);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoBankAccount>("bankAccount", BankAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoCard>("card", Card);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("issuingCountryCode", IssuingCountryCode);
             writer.WriteStringValue("paymentInstrumentGroupId", PaymentInstrumentGroupId);
@@ -131,6 +140,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("statusComment", StatusComment);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoStatusReason>("statusReason", StatusReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

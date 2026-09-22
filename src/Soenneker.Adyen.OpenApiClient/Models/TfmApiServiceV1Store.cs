@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TfmApiServiceV1Store : IParsable
+    public partial class TfmApiServiceV1Store : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Address? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1StoreAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Address Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1StoreAddress Address { get; set; }
 #endif
         /// <summary>The description of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +63,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Store { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store"/> and sets the default values.
+        /// </summary>
+        public TfmApiServiceV1Store()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store"/></returns>
@@ -78,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Address>(global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1StoreAddress>(global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1StoreAddress.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "inStoreTerminals", n => { InStoreTerminals = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "merchantAccountCode", n => { MerchantAccountCode = n.GetStringValue(); } },
@@ -93,12 +102,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1StoreAddress>("address", Address);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("inStoreTerminals", InStoreTerminals);
             writer.WriteStringValue("merchantAccountCode", MerchantAccountCode);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("store", Store);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

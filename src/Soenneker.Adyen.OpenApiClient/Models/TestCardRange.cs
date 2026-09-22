@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address property</summary>
+        /// <summary>Contains the billing address of the card holder. The address details need to be AVS-compliant, which means that you need to provide at least street address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress Address { get; set; }
 #endif
         /// <summary>The name of the card holder, as it appears on the card, for the test card range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress>(global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress>(global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress.CreateFromDiscriminatorValue); } },
                 { "cardHolderName", n => { CardHolderName = n.GetStringValue(); } },
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
                 { "expiryMonth", n => { ExpiryMonth = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth>(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AvsAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress>("address", Address);
             writer.WriteStringValue("cardHolderName", CardHolderName);
             writer.WriteStringValue("cvc", Cvc);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth>("expiryMonth", ExpiryMonth);

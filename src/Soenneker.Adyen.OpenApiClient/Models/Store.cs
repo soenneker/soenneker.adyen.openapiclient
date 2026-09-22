@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Store : IParsable
+    public partial class Store : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The address of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreLocation? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreLocation Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreAddress Address { get; set; }
 #endif
         /// <summary>The unique identifiers of the [business lines](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businesslines__resParam_id) that the store is associated with. If not specified, the business line of the merchant account is used. Required when there are multiple business lines under the merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,21 +54,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>Reference to resources connected with the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreLinks Links { get; set; }
 #endif
-        /// <summary>The localizedInformation property</summary>
+        /// <summary>The localized information of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformation? LocalizedInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreLocalizedInformation? LocalizedInformation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformation LocalizedInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreLocalizedInformation LocalizedInformation { get; set; }
 #endif
         /// <summary>The unique identifier of the merchant account that the store belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,24 +102,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperStatement { get; set; }
 #endif
-        /// <summary>The splitConfiguration property</summary>
+        /// <summary>Rules for Adyen for Platforms merchants to split the transaction amount and fees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration? SplitConfiguration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfigurationComposed? SplitConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration SplitConfiguration { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfigurationComposed SplitConfiguration { get; set; }
 #endif
         /// <summary>The status of the store. Possible values are:- **active**. This value is assigned automatically when a store is created. - **inactive**. The terminals under the store are blocked from accepting new transactions, but capturing outstanding transactions is still possible.- **closed**. This status is irreversible. The terminals under the store are reassigned to the merchant inventory.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.StoreStatus? Status { get; set; }
-        /// <summary>The subMerchantData property</summary>
+        /// <summary>The sub-merchant data relevant for registered payment facilitators transacting on standalone terminals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData? SubMerchantData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSubMerchantData? SubMerchantData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData SubMerchantData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreSubMerchantData SubMerchantData { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Store"/> and sets the default values.
+        /// </summary>
+        public Store()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -136,20 +145,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreLocation>(global::Soenneker.Adyen.OpenApiClient.Models.StoreLocation.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreAddress>(global::Soenneker.Adyen.OpenApiClient.Models.StoreAddress.CreateFromDiscriminatorValue); } },
                 { "businessLineIds", n => { BusinessLineIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "externalReferenceId", n => { ExternalReferenceId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links.CreateFromDiscriminatorValue); } },
-                { "localizedInformation", n => { LocalizedInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformation>(global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformation.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreLinks>(global::Soenneker.Adyen.OpenApiClient.Models.StoreLinks.CreateFromDiscriminatorValue); } },
+                { "localizedInformation", n => { LocalizedInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreLocalizedInformation>(global::Soenneker.Adyen.OpenApiClient.Models.StoreLocalizedInformation.CreateFromDiscriminatorValue); } },
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "shopperStatement", n => { ShopperStatement = n.GetStringValue(); } },
-                { "splitConfiguration", n => { SplitConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>(global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration.CreateFromDiscriminatorValue); } },
+                { "splitConfiguration", n => { SplitConfiguration = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfigurationComposed>(global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfigurationComposed.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreStatus>(); } },
-                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData.CreateFromDiscriminatorValue); } },
+                { "subMerchantData", n => { SubMerchantData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSubMerchantData>(global::Soenneker.Adyen.OpenApiClient.Models.StoreSubMerchantData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -159,20 +168,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreLocation>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreAddress>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("businessLineIds", BusinessLineIds);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("externalReferenceId", ExternalReferenceId);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Links>("_links", Links);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LocalizedInformation>("localizedInformation", LocalizedInformation);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreLocalizedInformation>("localizedInformation", LocalizedInformation);
             writer.WriteStringValue("merchantId", MerchantId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("shopperStatement", ShopperStatement);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfiguration>("splitConfiguration", SplitConfiguration);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSplitConfigurationComposed>("splitConfiguration", SplitConfiguration);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantData>("subMerchantData", SubMerchantData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoreSubMerchantData>("subMerchantData", SubMerchantData);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

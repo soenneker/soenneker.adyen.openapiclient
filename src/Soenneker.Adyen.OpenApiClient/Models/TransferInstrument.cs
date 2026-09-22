@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferInstrument : IParsable
+    public partial class TransferInstrument : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The bankAccount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains information about the legal entity&apos;s bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo? BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount? BankAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount BankAccount { get; set; }
 #endif
         /// <summary>List of capabilities for this transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2 Capabilities { get; set; }
 #endif
         /// <summary>List of documents uploaded for the transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,6 +65,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of transfer instrument.Possible value: **bankAccount**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument"/> and sets the default values.
+        /// </summary>
+        public TransferInstrument()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument"/></returns>
@@ -80,8 +89,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo.CreateFromDiscriminatorValue); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty.CreateFromDiscriminatorValue); } },
+                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
                 { "documentDetails", n => { DocumentDetails = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>(global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
@@ -96,12 +105,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4BankAccountInfo>("bankAccount", BankAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount>("bankAccount", BankAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2>("capabilities", Capabilities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>("documentDetails", DocumentDetails);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>("problems", Problems);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

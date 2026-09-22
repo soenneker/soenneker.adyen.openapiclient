@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentMethodUpiApps : IParsable
+    public partial class PaymentMethodUpiApps : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appIdentifierInfo property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The app identifier information containing iOS scheme and Android package ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AppIdentifierInfo? AppIdentifierInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiAppsAppIdentifierInfo? AppIdentifierInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AppIdentifierInfo AppIdentifierInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiAppsAppIdentifierInfo AppIdentifierInfo { get; set; }
 #endif
         /// <summary>The unique identifier of this app, to submit in requests to /payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +39,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiApps"/> and sets the default values.
+        /// </summary>
+        public PaymentMethodUpiApps()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiApps"/></returns>
@@ -54,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appIdentifierInfo", n => { AppIdentifierInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AppIdentifierInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AppIdentifierInfo.CreateFromDiscriminatorValue); } },
+                { "appIdentifierInfo", n => { AppIdentifierInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiAppsAppIdentifierInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiAppsAppIdentifierInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -66,9 +75,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AppIdentifierInfo>("appIdentifierInfo", AppIdentifierInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodUpiAppsAppIdentifierInfo>("appIdentifierInfo", AppIdentifierInfo);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

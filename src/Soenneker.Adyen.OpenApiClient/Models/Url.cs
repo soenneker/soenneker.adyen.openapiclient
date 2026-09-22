@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Url : IParsable
+    public partial class Url : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the message sent to this URL should be encrypted.</summary>
         public bool? Encrypted { get; set; }
         /// <summary>The password for authentication of the notifications.</summary>
@@ -38,6 +40,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Username { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Url"/> and sets the default values.
+        /// </summary>
+        public Url()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("password", Password);
             writer.WriteStringValue("url", UrlProp);
             writer.WriteStringValue("username", Username);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

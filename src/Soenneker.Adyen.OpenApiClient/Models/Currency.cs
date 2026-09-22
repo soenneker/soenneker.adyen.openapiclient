@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Currency : IParsable
+    public partial class Currency : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Surcharge amount per transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
         public int? Amount { get; set; }
         /// <summary>Three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes). For example, **AUD**.</summary>
@@ -26,6 +28,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public int? MaxAmount { get; set; }
         /// <summary>Surcharge percentage per transaction. The maximum number of decimal places is two. For example, **1%** or **2.27%**.</summary>
         public double? Percentage { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Currency"/> and sets the default values.
+        /// </summary>
+        public Currency()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteIntValue("maxAmount", MaxAmount);
             writer.WriteDoubleValue("percentage", Percentage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

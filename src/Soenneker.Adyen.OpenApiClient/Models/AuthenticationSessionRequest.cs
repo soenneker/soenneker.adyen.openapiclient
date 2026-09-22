@@ -22,16 +22,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AllowOrigin { get; set; }
 #endif
-        /// <summary>The policy property</summary>
+        /// <summary>An object that contains a description of the allowed resources and roles for the requested session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Policy? Policy { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy? Policy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Policy Policy { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy Policy { get; set; }
 #endif
-        /// <summary>The product property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ProductType? Product { get; set; }
+        /// <summary>The type of component.For [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), set this to **onboarding**.For [Platform Experience components](https://docs.adyen.com/platforms/build-user-dashboards), set this to **platform**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct? Product { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct Product { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequest"/> and sets the default values.
         /// </summary>
@@ -58,8 +64,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowOrigin", n => { AllowOrigin = n.GetStringValue(); } },
-                { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Policy>(global::Soenneker.Adyen.OpenApiClient.Models.Policy.CreateFromDiscriminatorValue); } },
-                { "product", n => { Product = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ProductType>(); } },
+                { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,8 +76,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("allowOrigin", AllowOrigin);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Policy>("policy", Policy);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ProductType>("product", Product);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy>("policy", Policy);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>("product", Product);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

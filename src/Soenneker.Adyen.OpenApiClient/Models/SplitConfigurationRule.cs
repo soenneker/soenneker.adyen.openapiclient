@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SplitConfigurationRule : IParsable
+    public partial class SplitConfigurationRule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The card region condition that determines whether the [split logic](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic) applies to the transaction.&gt; This condition is in pilot phase, and not yet available for all platforms.Possible values:* **domestic**: The card issuer and the store where the transaction is processed are registered in the same country.* **international**: The card issuer and the store where the transaction is processed are registered in different countries or regions. Includes all **interRegional** and **intraRegional** transactions.* **interRegional**: The card issuer and the store where the transaction is processed are registered in different regions.* **intraRegional**: The card issuer and the store where the transaction is processed are registered in different countries, but in the same region.* **intraEEA**: The card issuer and the store where the transaction is processed are registered in different countries, but in the European Economic Area (EEA).* **ANY**: Applies to all transactions, regardless of the processing and issuing country/region.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion? CardRegion { get; set; }
         /// <summary>The currency condition that defines whether the split logic applies.Its value must be a three-character [ISO currency code](https://en.wikipedia.org/wiki/ISO_4217).</summary>
@@ -42,14 +44,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The sales channel condition that defines whether the split logic applies.Possible values:* **Ecommerce**: Online transactions where the cardholder is present.* **ContAuth**: Card on file and/or subscription transactions, where the cardholder is known to the merchant (returning customer).* **Moto**: Mail-order and telephone-order transactions where the customer is in contact with the merchant via email or telephone.* **POS**: Point-of-sale transactions where the customer is physically present to make a payment using a secure payment terminal.* **ANY**: All sales channels.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction? ShopperInteraction { get; set; }
-        /// <summary>The splitLogic property</summary>
+        /// <summary>Contains the split logic that is applied if the rule conditions are met.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic? SplitLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic? SplitLogic { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic SplitLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic SplitLogic { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRule"/> and sets the default values.
+        /// </summary>
+        public SplitConfigurationRule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "paymentMethod", n => { PaymentMethod = n.GetStringValue(); } },
                 { "ruleId", n => { RuleId = n.GetStringValue(); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction>(); } },
-                { "splitLogic", n => { SplitLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic>(global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic.CreateFromDiscriminatorValue); } },
+                { "splitLogic", n => { SplitLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic>(global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +98,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("paymentMethod", PaymentMethod);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleShopperInteraction>("shopperInteraction", ShopperInteraction);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogic>("splitLogic", SplitLogic);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleSplitLogic>("splitLogic", SplitLogic);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

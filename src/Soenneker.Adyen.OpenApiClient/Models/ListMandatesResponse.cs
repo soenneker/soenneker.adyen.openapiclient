@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The link property</summary>
+        /// <summary>Contains links to the next and previous page whenever applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link? Link { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListMandatesResponseLink? Link { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link Link { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListMandatesResponseLink Link { get; set; }
 #endif
         /// <summary>Contains a list of the mandates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "link", n => { Link = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>(global::Soenneker.Adyen.OpenApiClient.Models.Link.CreateFromDiscriminatorValue); } },
+                { "link", n => { Link = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListMandatesResponseLink>(global::Soenneker.Adyen.OpenApiClient.Models.ListMandatesResponseLink.CreateFromDiscriminatorValue); } },
                 { "mandates", n => { Mandates = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Mandate>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Mandate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Link>("link", Link);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListMandatesResponseLink>("link", Link);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Mandate>("mandates", Mandates);
             writer.WriteAdditionalData(AdditionalData);
         }

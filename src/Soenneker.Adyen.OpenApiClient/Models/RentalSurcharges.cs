@@ -9,15 +9,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RentalSurcharges : IParsable
+    public partial class RentalSurcharges : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fuel charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.fuelCharges`</summary>
         public long? Fuel { get; set; }
         /// <summary>Any insurance charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.insuranceCharges`</summary>
         public long? Insurance { get; set; }
         /// <summary>The charge for not returning a car to the original rental location, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.oneWayDropOffCharges`</summary>
         public long? OneWayDropOff { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges"/> and sets the default values.
+        /// </summary>
+        public RentalSurcharges()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,6 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("fuel", Fuel);
             writer.WriteLongValue("insurance", Insurance);
             writer.WriteLongValue("oneWayDropOff", OneWayDropOff);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4CaLocalAccountIdentification : IParsable
+    public partial class TransferServiceV4CaLocalAccountIdentification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The 5- to 12-digit bank account number, without separators or whitespace.</summary>
@@ -22,6 +22,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The bank account type.Possible values: **checking** or **savings**. Defaults to **checking**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalAccountIdentificationAccountType? AccountType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 3-digit institution number, without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +41,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TransitNumber { get; set; }
 #endif
         /// <summary>**caLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType? Type { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalAccountIdentification"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4CaLocalAccountIdentification()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalAccountIdentificationAccountType>(); } },
                 { "institutionNumber", n => { InstitutionNumber = n.GetStringValue(); } },
                 { "transitNumber", n => { TransitNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalType>(); } },
             };
         }
         /// <summary>
@@ -76,7 +85,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalAccountIdentificationAccountType>("accountType", AccountType);
             writer.WriteStringValue("institutionNumber", InstitutionNumber);
             writer.WriteStringValue("transitNumber", TransitNumber);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CaLocalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4CaLocalType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

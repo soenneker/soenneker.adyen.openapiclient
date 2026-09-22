@@ -9,24 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UltimateParentCompany : IParsable
+    public partial class UltimateParentCompany : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The address property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Address of the ultimate parent company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress? Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress Address { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyAddress Address { get; set; }
 #endif
-        /// <summary>The businessDetails property</summary>
+        /// <summary>Details about the ultimate parent company&apos;s business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetails? BusinessDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetailsComposed? BusinessDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetails BusinessDetails { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetailsComposed BusinessDetails { get; set; }
 #endif
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the entry, returned in the response when you create an ultimate parent company. Required when updating an existing entry in an `/updateAccountHolder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string UltimateParentCompanyCode { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompany"/> and sets the default values.
+        /// </summary>
+        public UltimateParentCompany()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,8 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>(global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress.CreateFromDiscriminatorValue); } },
-                { "businessDetails", n => { BusinessDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetails>(global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetails.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyAddress>(global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyAddress.CreateFromDiscriminatorValue); } },
+                { "businessDetails", n => { BusinessDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetailsComposed>(global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetailsComposed.CreateFromDiscriminatorValue); } },
                 { "ultimateParentCompanyCode", n => { UltimateParentCompanyCode = n.GetStringValue(); } },
             };
         }
@@ -66,9 +75,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetails>("businessDetails", BusinessDetails);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UltimateParentCompanyBusinessDetailsComposed>("businessDetails", BusinessDetails);
             writer.WriteStringValue("ultimateParentCompanyCode", UltimateParentCompanyCode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

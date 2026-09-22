@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CardOrder : IParsable
+    public partial class CardOrder : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the card order is created.</summary>
         public DateTimeOffset? BeginDate { get; set; }
         /// <summary>The unique identifier of the card manufacturer profile.</summary>
@@ -46,6 +48,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The status of the card order.Possible values: **Open**, **Closed**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CardOrder"/> and sets the default values.
+        /// </summary>
+        public CardOrder()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -89,6 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lockDate", LockDate);
             writer.WriteStringValue("serviceCenter", ServiceCenter);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrderStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

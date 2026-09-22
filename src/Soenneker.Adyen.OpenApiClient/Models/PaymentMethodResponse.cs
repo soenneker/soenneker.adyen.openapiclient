@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentMethodResponse : IParsable
+    public partial class PaymentMethodResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of supported payment methods and their details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,13 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Total number of items.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks Links { get; set; }
 #endif
         /// <summary>Total number of pages.</summary>
         public int? PagesTotal { get; set; }
@@ -40,6 +42,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem?> TypesWithErrors { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponse"/> and sets the default values.
+        /// </summary>
+        public PaymentMethodResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
                 { "typesWithErrors", n => { TypesWithErrors = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem>()?.AsList(); } },
             };
@@ -74,9 +83,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3PaymentMethod>("data", Data);
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodResponseTypesWithErrorsItem>("typesWithErrors", TypesWithErrors);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

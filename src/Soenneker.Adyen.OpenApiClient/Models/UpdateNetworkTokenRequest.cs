@@ -9,11 +9,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateNetworkTokenRequest : IParsable
+    public partial class UpdateNetworkTokenRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The new status of the network token. Possible values: **active**, **suspended**, **closed**. The **closed** status is final and cannot be changed.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequestStatus? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequest"/> and sets the default values.
+        /// </summary>
+        public UpdateNetworkTokenRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateNetworkTokenRequestStatus>("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

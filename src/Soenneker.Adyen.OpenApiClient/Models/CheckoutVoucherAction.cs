@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutVoucherAction : IParsable
+    public partial class CheckoutVoucherAction : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The voucher alternative reference code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,13 +54,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ExpiresAt { get; set; }
 #endif
-        /// <summary>The initialAmount property</summary>
+        /// <summary>The initial amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? InitialAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionInitialAmount? InitialAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount InitialAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionInitialAmount InitialAmount { get; set; }
 #endif
         /// <summary>The URL to the detailed instructions to make payment using the voucher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,21 +150,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperName { get; set; }
 #endif
-        /// <summary>The surcharge property</summary>
+        /// <summary>The surcharge amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionSurcharge? Surcharge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionSurcharge Surcharge { get; set; }
 #endif
-        /// <summary>The totalAmount property</summary>
+        /// <summary>The total amount (initial plus surcharge amount).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? TotalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionTotalAmount? TotalAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount TotalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionTotalAmount TotalAmount { get; set; }
 #endif
         /// <summary>**voucher**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.VoucherType? Type { get; set; }
@@ -174,6 +176,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherAction"/> and sets the default values.
+        /// </summary>
+        public CheckoutVoucherAction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -197,7 +206,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
                 { "entity", n => { Entity = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetStringValue(); } },
-                { "initialAmount", n => { InitialAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "initialAmount", n => { InitialAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionInitialAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionInitialAmount.CreateFromDiscriminatorValue); } },
                 { "instructionsUrl", n => { InstructionsUrl = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "maskedTelephoneNumber", n => { MaskedTelephoneNumber = n.GetStringValue(); } },
@@ -209,8 +218,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
                 { "shopperName", n => { ShopperName = n.GetStringValue(); } },
-                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "totalAmount", n => { TotalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionSurcharge>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionSurcharge.CreateFromDiscriminatorValue); } },
+                { "totalAmount", n => { TotalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionTotalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionTotalAmount.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VoucherType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -227,7 +236,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("downloadUrl", DownloadUrl);
             writer.WriteStringValue("entity", Entity);
             writer.WriteStringValue("expiresAt", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("initialAmount", InitialAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionInitialAmount>("initialAmount", InitialAmount);
             writer.WriteStringValue("instructionsUrl", InstructionsUrl);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("maskedTelephoneNumber", MaskedTelephoneNumber);
@@ -239,10 +248,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
             writer.WriteStringValue("shopperName", ShopperName);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("surcharge", Surcharge);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("totalAmount", TotalAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionSurcharge>("surcharge", Surcharge);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutVoucherActionTotalAmount>("totalAmount", TotalAmount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VoucherType>("type", Type);
             writer.WriteStringValue("url", Url);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class JcbResponseInfo : IParsable
+    public partial class JcbResponseInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>MID (Merchant ID) number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,14 +32,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ServiceLevel { get; set; }
 #endif
-        /// <summary>The transactionDescription property</summary>
+        /// <summary>Information regarding the transaction description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo? TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.JcbResponseInfoTransactionDescription? TransactionDescription { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo TransactionDescription { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.JcbResponseInfoTransactionDescription TransactionDescription { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.JcbResponseInfo"/> and sets the default values.
+        /// </summary>
+        public JcbResponseInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "midNumber", n => { MidNumber = n.GetStringValue(); } },
                 { "reuseMidNumber", n => { ReuseMidNumber = n.GetBoolValue(); } },
                 { "serviceLevel", n => { ServiceLevel = n.GetStringValue(); } },
-                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo.CreateFromDiscriminatorValue); } },
+                { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JcbResponseInfoTransactionDescription>(global::Soenneker.Adyen.OpenApiClient.Models.JcbResponseInfoTransactionDescription.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +81,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("midNumber", MidNumber);
             writer.WriteBoolValue("reuseMidNumber", ReuseMidNumber);
             writer.WriteStringValue("serviceLevel", ServiceLevel);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfo>("transactionDescription", TransactionDescription);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.JcbResponseInfoTransactionDescription>("transactionDescription", TransactionDescription);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

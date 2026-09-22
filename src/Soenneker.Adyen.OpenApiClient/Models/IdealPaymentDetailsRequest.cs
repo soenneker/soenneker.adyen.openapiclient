@@ -20,8 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Payload { get; set; }
 #endif
-        /// <summary>The source property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentSource? Source { get; set; }
+        /// <summary>The source used to obtain the payload. Possible values: `qr`, `redirect`, and `pushNotification`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdealPaymentDetailsRequestSource? Source { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.IdealPaymentDetailsRequestSource Source { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "payload", n => { Payload = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentSource>(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealPaymentDetailsRequestSource>(global::Soenneker.Adyen.OpenApiClient.Models.IdealPaymentDetailsRequestSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -53,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("payload", Payload);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentSource>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.IdealPaymentDetailsRequestSource>("source", Source);
         }
     }
 }

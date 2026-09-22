@@ -53,8 +53,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StoredValueProvider { get; set; }
 #endif
-        /// <summary>Possible values:* **Reserve*** **Activate*** **Load*** **Unload*** **Reverse*** **Duplicate**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType? StoredValueTransactionType { get; set; }
+        /// <summary>Identification of operation to proceed on the stored value account or the stored value card.Possible values:* **Activate*** **Duplicate*** **Load*** **Reserve*** **Reverse*** **Unload**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType? StoredValueTransactionType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType StoredValueTransactionType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData"/> and sets the default values.
         /// </summary>
@@ -87,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "ProductCode", n => { ProductCode = n.GetIntValue(); } },
                 { "StoredValueAccountID", n => { StoredValueAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId.CreateFromDiscriminatorValue); } },
                 { "StoredValueProvider", n => { StoredValueProvider = n.GetStringValue(); } },
-                { "StoredValueTransactionType", n => { StoredValueTransactionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType>(); } },
+                { "StoredValueTransactionType", n => { StoredValueTransactionType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,7 +110,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteIntValue("ProductCode", ProductCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>("StoredValueAccountID", StoredValueAccountID);
             writer.WriteStringValue("StoredValueProvider", StoredValueProvider);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueTransactionType>("StoredValueTransactionType", StoredValueTransactionType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueDataStoredValueTransactionType>("StoredValueTransactionType", StoredValueTransactionType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

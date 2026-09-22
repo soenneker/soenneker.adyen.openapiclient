@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransferServiceV4TransferEvent : IParsable
+    public partial class TransferServiceV4TransferEvent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The original journal amount. Only applicable for [issuing](https://docs.adyen.com/issuing/) integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount Amount { get; set; }
 #endif
         /// <summary>The amount adjustments in this transfer. Only applicable for [issuing](https://docs.adyen.com/issuing/) integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,13 +50,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem> EventsData { get; set; }
 #endif
-        /// <summary>The externalReason property</summary>
+        /// <summary>The external reason for the transfer status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason? ExternalReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventExternalReason? ExternalReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason ExternalReason { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventExternalReason ExternalReason { get; set; }
 #endif
         /// <summary>The unique identifier of the transfer event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,13 +66,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The modification property</summary>
+        /// <summary>The payment modification. Only applicable for [returned internal transfers](https://docs.adyen.com/platforms/internal-fund-transfers/internal-transfer-webhooks/#returned-internal-transfer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification? Modification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventModification? Modification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification Modification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventModification Modification { get; set; }
 #endif
         /// <summary>The list of balance mutations per event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,13 +82,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation> Mutations { get; set; }
 #endif
-        /// <summary>The originalAmount property</summary>
+        /// <summary>The amount in the original currency. Only applicable for [issuing](https://docs.adyen.com/issuing/) integrations. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount? OriginalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventOriginalAmount? OriginalAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount OriginalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventOriginalAmount OriginalAmount { get; set; }
 #endif
         /// <summary>The reason for the transfer status.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventReason? Reason { get; set; }
@@ -123,6 +125,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The date when the funds are expected to be deducted from or credited to the balance account. This date can be in either the past or future.</summary>
         public DateTimeOffset? ValueDate { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent"/> and sets the default values.
+        /// </summary>
+        public TransferServiceV4TransferEvent()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEvent"/></returns>
@@ -140,17 +149,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount.CreateFromDiscriminatorValue); } },
                 { "amountAdjustments", n => { AmountAdjustments = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "arn", n => { Arn = n.GetStringValue(); } },
                 { "bookingDate", n => { BookingDate = n.GetDateTimeOffsetValue(); } },
                 { "estimatedArrivalTime", n => { EstimatedArrivalTime = n.GetDateTimeOffsetValue(); } },
                 { "eventsData", n => { EventsData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "externalReason", n => { ExternalReason = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason.CreateFromDiscriminatorValue); } },
+                { "externalReason", n => { ExternalReason = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventExternalReason>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventExternalReason.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modification", n => { Modification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification.CreateFromDiscriminatorValue); } },
+                { "modification", n => { Modification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventModification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventModification.CreateFromDiscriminatorValue); } },
                 { "mutations", n => { Mutations = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "originalAmount", n => { OriginalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount.CreateFromDiscriminatorValue); } },
+                { "originalAmount", n => { OriginalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventOriginalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventOriginalAmount.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventReason>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventStatus>(); } },
                 { "tracingData", n => { TracingData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData.CreateFromDiscriminatorValue); } },
@@ -168,17 +177,17 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventAmount>("amount", Amount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4AmountAdjustment>("amountAdjustments", AmountAdjustments);
             writer.WriteStringValue("arn", Arn);
             writer.WriteDateTimeOffsetValue("bookingDate", BookingDate);
             writer.WriteDateTimeOffsetValue("estimatedArrivalTime", EstimatedArrivalTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventEventsDataItem>("eventsData", EventsData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4ExternalReason>("externalReason", ExternalReason);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventExternalReason>("externalReason", ExternalReason);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Modification>("modification", Modification);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventModification>("modification", Modification);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4BalanceMutation>("mutations", Mutations);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Amount>("originalAmount", OriginalAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventOriginalAmount>("originalAmount", OriginalAmount);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventReason>("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData>("tracingData", TracingData);
@@ -187,6 +196,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventType>("type", Type);
             writer.WriteDateTimeOffsetValue("updateDate", UpdateDate);
             writer.WriteDateTimeOffsetValue("valueDate", ValueDate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

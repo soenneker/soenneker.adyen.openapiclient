@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LegalEntityServiceV4VerificationError : IParsable
+    public partial class LegalEntityServiceV4VerificationError : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Contains key-value pairs that specify the actions that the legal entity can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing.The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +57,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of error.Possible values:*  **invalidInput***  **dataMissing***  **pendingStatus***  **rejected***  **dataReview**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError"/> and sets the default values.
+        /// </summary>
+        public LegalEntityServiceV4VerificationError()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError"/></returns>
@@ -93,6 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction>("remediatingActions", RemediatingActions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursive>("subErrors", SubErrors);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -15,21 +15,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identification of a previous POI transaction.To abort a transaction in progress or to request the status of a transaction from which no response has been received. It identifies the message header of the message request to abort or request the status.</summary>
+        /// <summary>Identification of a previous POI transaction.If `Response.Result` is Success.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReference? MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference? MessageReference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReference MessageReference { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference MessageReference { get; set; }
 #endif
-        /// <summary>The RepeatedMessageResponse property</summary>
+        /// <summary>Content of the requested Message Response.If Result is Success (process completed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponse? RepeatedMessageResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse? RepeatedMessageResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponse RepeatedMessageResponse { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse RepeatedMessageResponse { get; set; }
 #endif
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,8 +64,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "MessageReference", n => { MessageReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReference>(global::Soenneker.Adyen.OpenApiClient.Models.MessageReference.CreateFromDiscriminatorValue); } },
-                { "RepeatedMessageResponse", n => { RepeatedMessageResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponse>(global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponse.CreateFromDiscriminatorValue); } },
+                { "MessageReference", n => { MessageReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference.CreateFromDiscriminatorValue); } },
+                { "RepeatedMessageResponse", n => { RepeatedMessageResponse = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse.CreateFromDiscriminatorValue); } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -76,8 +76,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReference>("MessageReference", MessageReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponse>("RepeatedMessageResponse", RepeatedMessageResponse);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference>("MessageReference", MessageReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse>("RepeatedMessageResponse", RepeatedMessageResponse);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteAdditionalData(AdditionalData);
         }

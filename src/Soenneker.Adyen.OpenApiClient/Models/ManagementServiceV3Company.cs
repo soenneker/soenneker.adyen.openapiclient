@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ManagementServiceV3Company : IParsable
+    public partial class ManagementServiceV3Company : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of available data centers.Adyen has several data centers around the world.In the URL that you use for making API requests, we recommend you use the live URL prefix from the data center closest to your shoppers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,13 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>References to resources connected with this company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CompanyLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3CompanyLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CompanyLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3CompanyLinks Links { get; set; }
 #endif
         /// <summary>The legal or trading name of the company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,6 +71,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Company"/> and sets the default values.
+        /// </summary>
+        public ManagementServiceV3Company()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3Company"/></returns>
@@ -89,7 +98,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "dataCenters", n => { DataCenters = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DataCenter>(global::Soenneker.Adyen.OpenApiClient.Models.DataCenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CompanyLinks>(global::Soenneker.Adyen.OpenApiClient.Models.CompanyLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3CompanyLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3CompanyLinks.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -105,10 +114,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DataCenter>("dataCenters", DataCenters);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CompanyLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3CompanyLinks>("_links", Links);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

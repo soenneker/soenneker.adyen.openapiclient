@@ -9,17 +9,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssignTerminalsResponse : IParsable
+    public partial class AssignTerminalsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array that returns a list of the terminals, and for each terminal the result of assigning it to an account or store.The results can be:  - `Done`: The terminal has been assigned. - `AssignmentScheduled`: The terminal will be assigned asynschronously. - `RemoveConfigScheduled`: The terminal was previously assigned and boarded. Wait for the terminal to synchronize with the Adyen platform. For more information, refer to [Reassigning boarded terminals](https://docs.adyen.com/point-of-sale/managing-terminals/assign-terminals#reassign-boarded-terminals). - `Error`: There was an error when assigning the terminal. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty? Results { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2? Results { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty Results { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2 Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponse"/> and sets the default values.
+        /// </summary>
+        public AssignTerminalsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty>(global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty>("results", Results);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssignTerminalsResponseResultsProperty2>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

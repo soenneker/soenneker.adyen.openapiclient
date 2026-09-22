@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaginatedAccountHoldersResponse : IParsable
+    public partial class PaginatedAccountHoldersResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of account holders.</summary>
@@ -20,10 +20,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder> AccountHolders { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether there are more items on the next page.</summary>
         public bool? HasNext { get; set; }
         /// <summary>Indicates whether there are more items on the previous page.</summary>
         public bool? HasPrevious { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaginatedAccountHoldersResponse"/> and sets the default values.
+        /// </summary>
+        public PaginatedAccountHoldersResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder>("accountHolders", AccountHolders);
             writer.WriteBoolValue("hasNext", HasNext);
             writer.WriteBoolValue("hasPrevious", HasPrevious);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

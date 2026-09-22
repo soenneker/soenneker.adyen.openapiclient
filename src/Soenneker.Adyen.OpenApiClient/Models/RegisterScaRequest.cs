@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RegisterScaRequest : IParsable
+    public partial class RegisterScaRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the SCA device that you are registering. You can use it to help your users identify the device.If you do not specify a `name`, Adyen automatically generates one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,14 +30,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string PaymentInstrumentId { get; set; }
 #endif
-        /// <summary>The strongCustomerAuthentication property</summary>
+        /// <summary>Contains information required to register the SCA device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DelegatedAuthenticationData? StrongCustomerAuthentication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication? StrongCustomerAuthentication { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DelegatedAuthenticationData StrongCustomerAuthentication { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication StrongCustomerAuthentication { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequest"/> and sets the default values.
+        /// </summary>
+        public RegisterScaRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
-                { "strongCustomerAuthentication", n => { StrongCustomerAuthentication = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DelegatedAuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.DelegatedAuthenticationData.CreateFromDiscriminatorValue); } },
+                { "strongCustomerAuthentication", n => { StrongCustomerAuthentication = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication>(global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +77,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DelegatedAuthenticationData>("strongCustomerAuthentication", StrongCustomerAuthentication);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication>("strongCustomerAuthentication", StrongCustomerAuthentication);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

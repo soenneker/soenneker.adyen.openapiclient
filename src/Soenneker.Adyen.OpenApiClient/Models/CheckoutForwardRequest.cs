@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutForwardRequest : IParsable
+    public partial class CheckoutForwardRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amount property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount of the forwarded payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount Amount { get; set; }
 #endif
         /// <summary>The base URL of the third party API, where Adyen will send the request to forward the payment details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,29 +46,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantReference { get; set; }
 #endif
-        /// <summary>The options property</summary>
+        /// <summary>The customizations that can be applied when making a forward request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptions? Options { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptions Options { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed Options { get; set; }
 #endif
-        /// <summary>The paymentMethod property</summary>
+        /// <summary>The card details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard? PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestPaymentMethod? PaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard PaymentMethod { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestPaymentMethod PaymentMethod { get; set; }
 #endif
-        /// <summary>The request property</summary>
+        /// <summary>The [details of the request](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#request-to-adyen-card) that you want to forward to the third-party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest? Request { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest? Request { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest Request { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest Request { get; set; }
 #endif
         /// <summary>Your reference to uniquely identify this shopper, for example user ID or account ID. The value is case-sensitive and must be at least three characters.&gt; Your reference must not include personally identifiable information (PII) such as name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,6 +87,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string StoredPaymentMethodId { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequest"/> and sets the default values.
+        /// </summary>
+        public CheckoutForwardRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequest"/></returns>
@@ -102,13 +111,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount.CreateFromDiscriminatorValue); } },
                 { "baseUrl", n => { BaseUrl = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptions>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptions.CreateFromDiscriminatorValue); } },
-                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard.CreateFromDiscriminatorValue); } },
-                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed.CreateFromDiscriminatorValue); } },
+                { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestPaymentMethod.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest.CreateFromDiscriminatorValue); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
             };
@@ -120,15 +129,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestAmount>("amount", Amount);
             writer.WriteStringValue("baseUrl", BaseUrl);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("merchantReference", MerchantReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptions>("options", Options);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestCard>("paymentMethod", PaymentMethod);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequest>("request", Request);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsComposed>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestPaymentMethod>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestRequest>("request", Request);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

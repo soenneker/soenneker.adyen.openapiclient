@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Merchant : IParsable
+    public partial class Merchant : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The [capture delay](https://docs.adyen.com/online-payments/capture#capture-delay) set for the merchant account.Possible values:* **Immediate*** **Manual*** Number of days from **1** to **29**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,13 +62,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>References to resources connected with this merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinksComposed? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinksComposed Links { get; set; }
 #endif
         /// <summary>The city where the legal entity of this merchant account is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,6 +127,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Merchant"/> and sets the default values.
+        /// </summary>
+        public Merchant()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Merchant"/></returns>
@@ -148,7 +157,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "defaultShopperInteraction", n => { DefaultShopperInteraction = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinks>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinksComposed>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinksComposed.CreateFromDiscriminatorValue); } },
                 { "merchantCity", n => { MerchantCity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pricingPlan", n => { PricingPlan = n.GetStringValue(); } },
@@ -171,7 +180,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("defaultShopperInteraction", DefaultShopperInteraction);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantLinksComposed>("_links", Links);
             writer.WriteStringValue("merchantCity", MerchantCity);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("pricingPlan", PricingPlan);
@@ -179,6 +188,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("shopWebAddress", ShopWebAddress);
             writer.WriteStringValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -24,13 +24,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Total number of items.</summary>
         public int? ItemsTotal { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListDonationCampaignsResponseLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListDonationCampaignsResponseLinks Links { get; set; }
 #endif
         /// <summary>Total number of pages.</summary>
         public int? PagesTotal { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "campaigns", n => { Campaigns = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsTotal", n => { ItemsTotal = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>(global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListDonationCampaignsResponseLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ListDonationCampaignsResponseLinks.CreateFromDiscriminatorValue); } },
                 { "pagesTotal", n => { PagesTotal = n.GetIntValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign>("campaigns", Campaigns);
             writer.WriteIntValue("itemsTotal", ItemsTotal);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaginationLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ListDonationCampaignsResponseLinks>("_links", Links);
             writer.WriteIntValue("pagesTotal", PagesTotal);
             writer.WriteAdditionalData(AdditionalData);
         }

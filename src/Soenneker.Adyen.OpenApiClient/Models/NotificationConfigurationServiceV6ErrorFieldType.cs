@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class NotificationConfigurationServiceV6ErrorFieldType : IParsable
+    public partial class NotificationConfigurationServiceV6ErrorFieldType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The validation error code.</summary>
         public int? ErrorCode { get; set; }
         /// <summary>A description of the validation error.</summary>
@@ -22,14 +24,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ErrorDescription { get; set; }
 #endif
-        /// <summary>The fieldType property</summary>
+        /// <summary>The type of error field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldType? FieldType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldTypeFieldType? FieldType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldType FieldType { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldTypeFieldType FieldType { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldType"/> and sets the default values.
+        /// </summary>
+        public NotificationConfigurationServiceV6ErrorFieldType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 { "errorDescription", n => { ErrorDescription = n.GetStringValue(); } },
-                { "fieldType", n => { FieldType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldType>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldType.CreateFromDiscriminatorValue); } },
+                { "fieldType", n => { FieldType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldTypeFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldTypeFieldType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorDescription", ErrorDescription);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldType>("fieldType", FieldType);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6ErrorFieldTypeFieldType>("fieldType", FieldType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

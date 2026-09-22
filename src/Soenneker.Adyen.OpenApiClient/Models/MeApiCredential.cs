@@ -9,11 +9,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MeApiCredential : IParsable
+    public partial class MeApiCredential : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates if the API credential is enabled. Must be set to **true** to use the credential in your integration.</summary>
         public bool? Active { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of IP addresses from which your client can make requests.If the list is empty, we allow requests from any IP.If the list is not empty and we get a request from an IP which is not on the list, you get a security error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,13 +64,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>References to resources linked to the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks Links { get; set; }
 #endif
         /// <summary>List of [roles](https://docs.adyen.com/development-resources/api-credentials#roles-1) for the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,6 +97,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Username { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredential"/> and sets the default values.
+        /// </summary>
+        public MeApiCredential()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredential"/></returns>
@@ -119,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks>(global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks>(global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks.CreateFromDiscriminatorValue); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subjectDN", n => { SubjectDN = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -139,10 +148,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApiCredentialLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks>("_links", Links);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteStringValue("subjectDN", SubjectDN);
             writer.WriteStringValue("username", Username);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

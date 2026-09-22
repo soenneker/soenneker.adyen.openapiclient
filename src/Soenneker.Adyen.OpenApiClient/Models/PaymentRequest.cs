@@ -9,80 +9,82 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PaymentRequest : IParsable
+    public partial class PaymentRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountInfo property</summary>
+        /// <summary>Shopper account information for 3D Secure 2.&gt; For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo? AccountInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo? AccountInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo AccountInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo AccountInfo { get; set; }
 #endif
-        /// <summary>The additionalAmount property</summary>
+        /// <summary>If you want a [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) request to use a non-zero value, assign this value to `additionalAmount` (while the amount must be still set to 0 to trigger BIN or card verification).Required to be in the same currency as the `amount`. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? AdditionalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount? AdditionalAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount AdditionalAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount AdditionalAmount { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field contains additional data, which may be required for a particular payment request.The `additionalData` object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
-        /// <summary>The amount property</summary>
+        /// <summary>The amount information for the transaction (in [minor units](https://docs.adyen.com/development-resources/currency-codes)). For [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) requests, set amount to 0 (zero).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAmount Amount { get; set; }
 #endif
-        /// <summary>The applicationInfo property</summary>
+        /// <summary>Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo? ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo? ApplicationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo ApplicationInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo ApplicationInfo { get; set; }
 #endif
-        /// <summary>The authenticationData property</summary>
+        /// <summary>Data for 3DS authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData? AuthenticationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAuthenticationData? AuthenticationData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData AuthenticationData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAuthenticationData AuthenticationData { get; set; }
 #endif
-        /// <summary>The bankAccount property</summary>
+        /// <summary>The details of the bank account, from which the payment should be made.&gt; Either `bankAccount` or `card` field must be provided in a payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount? BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBankAccount? BankAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount BankAccount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBankAccount BankAccount { get; set; }
 #endif
-        /// <summary>The billingAddress property</summary>
+        /// <summary>The address where to send the invoice.&gt; The `billingAddress` object is required in the following scenarios. Include all of the fields within this object.&gt;* For 3D Secure 2 transactions in all browser-based and mobile implementations.&gt;* For cross-border payouts to and from Canada.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress? BillingAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress? BillingAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress BillingAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress BillingAddress { get; set; }
 #endif
-        /// <summary>The browserInfo property</summary>
+        /// <summary>The shopper&apos;s browser information.&gt; For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 2 redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo? BrowserInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBrowserInfo? BrowserInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo BrowserInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBrowserInfo BrowserInfo { get; set; }
 #endif
         /// <summary>The [delay between the authorization and automatic capture](https://docs.adyen.com/online-payments/capture?tab=delayed-individual_2#delayed-automatic-capture) of the payment, specified in hours.Maximum value: **672** (28 days).</summary>
         public int? CaptureDelayHours { get; set; }
@@ -96,13 +98,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CheckoutAttemptId { get; set; }
 #endif
-        /// <summary>The company property</summary>
+        /// <summary>Information regarding the company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Company? Company { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestCompany? Company { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Company Company { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestCompany Company { get; set; }
 #endif
         /// <summary>The shopper country code.Format: [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)Example: NL or DE</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,23 +116,23 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The shopper&apos;s date of birth.Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD</summary>
         public DateTimeOffset? DateOfBirth { get; set; }
-        /// <summary>The dccQuote property</summary>
+        /// <summary>The forex quote as returned in the response of the forex service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ForexQuote? DccQuote { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDccQuote? DccQuote { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ForexQuote DccQuote { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDccQuote DccQuote { get; set; }
 #endif
         /// <summary>The date and time the purchased goods should be delivered.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZDExample: 2017-07-17T13:42:40.428+01:00</summary>
         public DateTimeOffset? DeliverAt { get; set; }
-        /// <summary>The deliveryAddress property</summary>
+        /// <summary>The address where the purchased goods should be delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress? DeliveryAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDeliveryAddress? DeliveryAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress DeliveryAddress { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDeliveryAddress DeliveryAddress { get; set; }
 #endif
         /// <summary>The date and time the purchased goods should be delivered.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZDExample: 2017-07-17T13:42:40.428+01:00</summary>
         [Obsolete("")]
@@ -149,43 +151,43 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? EnablePayOut { get; set; }
         /// <summary>When true and `shopperReference` is provided, the payment details will be stored for [recurring payments](https://docs.adyen.com/online-payments/tokenization/#recurring-payment-types) where the shopper is not present, such as subscription or automatic top-up payments.</summary>
         public bool? EnableRecurring { get; set; }
-        /// <summary>The enhancedSchemeData property</summary>
+        /// <summary>[Enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/) that may be required for processing the payment and/or interchange savings can apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData? EnhancedSchemeData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEnhancedSchemeData? EnhancedSchemeData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData EnhancedSchemeData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEnhancedSchemeData EnhancedSchemeData { get; set; }
 #endif
         /// <summary>The type of the entity the payment is processed for.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEntityType? EntityType { get; set; }
         /// <summary>An integer value that is added to the normal fraud score. The value can be either positive or negative.</summary>
         public int? FraudOffset { get; set; }
-        /// <summary>The fundOrigin property</summary>
+        /// <summary>The person or entity funding the money.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundOrigin? FundOrigin { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundOrigin? FundOrigin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundOrigin FundOrigin { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundOrigin FundOrigin { get; set; }
 #endif
-        /// <summary>The fundRecipient property</summary>
+        /// <summary>the person or entity receiving the money</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient? FundRecipient { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundRecipient? FundRecipient { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient FundRecipient { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundRecipient FundRecipient { get; set; }
 #endif
         /// <summary>The reason for the amount update. Possible values: * **delayedCharge** * **noShow** * **installment**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestIndustryUsage? IndustryUsage { get; set; }
-        /// <summary>The installments property</summary>
+        /// <summary>Contains installment settings. For more information, refer to [Installments](https://docs.adyen.com/payment-methods/cards/credit-card-installments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Installments? Installments { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestInstallments? Installments { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Installments Installments { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestInstallments Installments { get; set; }
 #endif
         /// <summary>Price and product information about the purchased items, to be included on the invoice sent to the shopper.&gt; This field is required for 3x 4x Oney, Affirm, Afterpay, Clearpay, Klarna, Ratepay, and Riverty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,18 +200,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set. If this parameter is left empty, not provided, or not applicable (in case of cross-border transactions), then **shopperStatement** is used.Currently, `localizedShopperStatement` is only supported for payments with Visa, Mastercard, JCB, Diners, and Discover.**Supported characters**: Hiragana, Katakana, Kanji, and alphanumeric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty? LocalizedShopperStatement { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty2? LocalizedShopperStatement { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty LocalizedShopperStatement { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty2 LocalizedShopperStatement { get; set; }
 #endif
-        /// <summary>The mandate property</summary>
+        /// <summary>The mandate details to initiate recurring transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Mandate? Mandate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMandate? Mandate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Mandate Mandate { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMandate Mandate { get; set; }
 #endif
         /// <summary>The [merchant category code](https://en.wikipedia.org/wiki/Merchant_category_code) (MCC) is a four-digit number, which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -235,37 +237,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantOrderReference { get; set; }
 #endif
-        /// <summary>The merchantRiskIndicator property</summary>
+        /// <summary>Additional risk fields for 3D Secure 2.&gt; For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator? MerchantRiskIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator? MerchantRiskIndicator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator MerchantRiskIndicator { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator MerchantRiskIndicator { get; set; }
 #endif
         /// <summary>Metadata consists of entries, each of which includes a key and a value.Limits:* Maximum 20 key-value pairs per request. When exceeding, the &quot;177&quot; error occurs: &quot;Metadata size exceeds limit&quot;.* Maximum 20 characters per key.* Maximum 80 characters per value. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2 Metadata { get; set; }
 #endif
-        /// <summary>The mpiData property</summary>
+        /// <summary>Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData? MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData? MpiData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData MpiData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData MpiData { get; set; }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>The order information required for partial payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData? Order { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder? Order { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData Order { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder Order { get; set; }
 #endif
         /// <summary>When you are doing multiple partial (gift card) payments, this is the `pspReference` of the first payment. We use this to link the multiple payments to each other. As your own reference for linking multiple payments, use the `merchantOrderReference`instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -291,21 +293,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentMethod PaymentMethod { get; set; }
 #endif
-        /// <summary>The paymentValidations property</summary>
+        /// <summary>The object that you can use to enable payment validations for a transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidations? PaymentValidations { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentValidations? PaymentValidations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidations PaymentValidations { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentValidations PaymentValidations { get; set; }
 #endif
-        /// <summary>The platformChargebackLogic property</summary>
+        /// <summary>Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/adyen-for-platforms-model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic? PlatformChargebackLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPlatformChargebackLogic? PlatformChargebackLogic { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic PlatformChargebackLogic { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPlatformChargebackLogic PlatformChargebackLogic { get; set; }
 #endif
         /// <summary>Date after which no further authorisations shall be performed. Only for 3D Secure 2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -357,13 +359,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReturnUrl { get; set; }
 #endif
-        /// <summary>The riskData property</summary>
+        /// <summary>Contains risk data, such as client-side data, used to identify risk for a transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RiskData? RiskData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRiskData? RiskData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RiskData RiskData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRiskData RiskData { get; set; }
 #endif
         /// <summary>The date and time until when the session remains valid, in [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format.For example: 2020-07-18T15:42:40.428+01:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -407,13 +409,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperLocale { get; set; }
 #endif
-        /// <summary>The shopperName property</summary>
+        /// <summary>The shopper&apos;s full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperName? ShopperName { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName? ShopperName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperName ShopperName { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName ShopperName { get; set; }
 #endif
         /// <summary>Required for recurring payments. Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.&gt; Your reference must not include personally identifiable information (PII), for example name or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -431,13 +433,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperStatement { get; set; }
 #endif
-        /// <summary>The shopperTaxInfo property</summary>
+        /// <summary>The tax info of the shopper</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxInfo? ShopperTaxInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo? ShopperTaxInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxInfo ShopperTaxInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo ShopperTaxInfo { get; set; }
 #endif
         /// <summary>The shopper&apos;s social security number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -473,13 +475,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo> SubMerchants { get; set; }
 #endif
-        /// <summary>The surcharge property</summary>
+        /// <summary>The [surcharge](https://docs.adyen.com/online-payments/surcharge/) amount to apply to the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes). When you apply surcharge, include the surcharge in the `amount.value` field.Review our [Surcharge compliance guide](https://docs.adyen.com/development-resources/surcharge-compliance/) to learn about how to comply with regulatory requirements when applying surcharge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Surcharge? Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge? Surcharge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Surcharge Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge Surcharge { get; set; }
 #endif
         /// <summary>The shopper&apos;s telephone number. The phone number must include a plus sign (+) and a country code (1-3 digits), followed by the number (4-15 digits). If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -489,13 +491,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TelephoneNumber { get; set; }
 #endif
-        /// <summary>The thirdPartyTokenRedundancyInfo property</summary>
+        /// <summary>Configuration for creating redundant payment tokens with third-party token vaults using the Adyen Forward API. This feature requires Forward API webhook integration and pre-configured templates in your Adyen account. Contact your Adyen account manager for setup and availability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo? ThirdPartyTokenRedundancyInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo? ThirdPartyTokenRedundancyInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo ThirdPartyTokenRedundancyInfo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo ThirdPartyTokenRedundancyInfo { get; set; }
 #endif
         /// <summary>The threeDS2RequestData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -515,6 +517,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// </summary>
         public PaymentRequest()
         {
+            AdditionalData = new Dictionary<string, object>();
             ThreeDSAuthenticationOnly = false;
         }
         /// <summary>
@@ -535,51 +538,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo.CreateFromDiscriminatorValue); } },
-                { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty.CreateFromDiscriminatorValue); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount.CreateFromDiscriminatorValue); } },
-                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo.CreateFromDiscriminatorValue); } },
-                { "authenticationData", n => { AuthenticationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData.CreateFromDiscriminatorValue); } },
-                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount.CreateFromDiscriminatorValue); } },
-                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress.CreateFromDiscriminatorValue); } },
-                { "browserInfo", n => { BrowserInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo>(global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo.CreateFromDiscriminatorValue); } },
+                { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo.CreateFromDiscriminatorValue); } },
+                { "additionalAmount", n => { AdditionalAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAmount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAmount.CreateFromDiscriminatorValue); } },
+                { "applicationInfo", n => { ApplicationInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo.CreateFromDiscriminatorValue); } },
+                { "authenticationData", n => { AuthenticationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAuthenticationData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAuthenticationData.CreateFromDiscriminatorValue); } },
+                { "bankAccount", n => { BankAccount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBankAccount>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBankAccount.CreateFromDiscriminatorValue); } },
+                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress.CreateFromDiscriminatorValue); } },
+                { "browserInfo", n => { BrowserInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBrowserInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBrowserInfo.CreateFromDiscriminatorValue); } },
                 { "captureDelayHours", n => { CaptureDelayHours = n.GetIntValue(); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestChannel>(); } },
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "company", n => { Company = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Company>(global::Soenneker.Adyen.OpenApiClient.Models.Company.CreateFromDiscriminatorValue); } },
+                { "company", n => { Company = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestCompany>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestCompany.CreateFromDiscriminatorValue); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateTimeOffsetValue(); } },
-                { "dccQuote", n => { DccQuote = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ForexQuote>(global::Soenneker.Adyen.OpenApiClient.Models.ForexQuote.CreateFromDiscriminatorValue); } },
+                { "dccQuote", n => { DccQuote = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDccQuote>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDccQuote.CreateFromDiscriminatorValue); } },
                 { "deliverAt", n => { DeliverAt = n.GetDateTimeOffsetValue(); } },
-                { "deliveryAddress", n => { DeliveryAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress.CreateFromDiscriminatorValue); } },
+                { "deliveryAddress", n => { DeliveryAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDeliveryAddress>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDeliveryAddress.CreateFromDiscriminatorValue); } },
                 { "deliveryDate", n => { DeliveryDate = n.GetDateTimeOffsetValue(); } },
                 { "deviceFingerprint", n => { DeviceFingerprint = n.GetStringValue(); } },
                 { "enableOneClick", n => { EnableOneClick = n.GetBoolValue(); } },
                 { "enablePayOut", n => { EnablePayOut = n.GetBoolValue(); } },
                 { "enableRecurring", n => { EnableRecurring = n.GetBoolValue(); } },
-                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData.CreateFromDiscriminatorValue); } },
+                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEnhancedSchemeData.CreateFromDiscriminatorValue); } },
                 { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEntityType>(); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
-                { "fundOrigin", n => { FundOrigin = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundOrigin>(global::Soenneker.Adyen.OpenApiClient.Models.FundOrigin.CreateFromDiscriminatorValue); } },
-                { "fundRecipient", n => { FundRecipient = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient>(global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient.CreateFromDiscriminatorValue); } },
+                { "fundOrigin", n => { FundOrigin = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundOrigin>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundOrigin.CreateFromDiscriminatorValue); } },
+                { "fundRecipient", n => { FundRecipient = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundRecipient>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundRecipient.CreateFromDiscriminatorValue); } },
                 { "industryUsage", n => { IndustryUsage = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestIndustryUsage>(); } },
-                { "installments", n => { Installments = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Installments>(global::Soenneker.Adyen.OpenApiClient.Models.Installments.CreateFromDiscriminatorValue); } },
+                { "installments", n => { Installments = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestInstallments>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestInstallments.CreateFromDiscriminatorValue); } },
                 { "lineItems", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>(global::Soenneker.Adyen.OpenApiClient.Models.LineItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "localizedShopperStatement", n => { LocalizedShopperStatement = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty.CreateFromDiscriminatorValue); } },
-                { "mandate", n => { Mandate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Mandate>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Mandate.CreateFromDiscriminatorValue); } },
+                { "localizedShopperStatement", n => { LocalizedShopperStatement = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty2.CreateFromDiscriminatorValue); } },
+                { "mandate", n => { Mandate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMandate>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMandate.CreateFromDiscriminatorValue); } },
                 { "mcc", n => { Mcc = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
                 { "merchantOrderReference", n => { MerchantOrderReference = n.GetStringValue(); } },
-                { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty.CreateFromDiscriminatorValue); } },
-                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData.CreateFromDiscriminatorValue); } },
-                { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData>(global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData.CreateFromDiscriminatorValue); } },
+                { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData.CreateFromDiscriminatorValue); } },
+                { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder.CreateFromDiscriminatorValue); } },
                 { "orderReference", n => { OrderReference = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentMethod.CreateFromDiscriminatorValue); } },
-                { "paymentValidations", n => { PaymentValidations = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidations>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidations.CreateFromDiscriminatorValue); } },
-                { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic.CreateFromDiscriminatorValue); } },
+                { "paymentValidations", n => { PaymentValidations = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentValidations>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentValidations.CreateFromDiscriminatorValue); } },
+                { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPlatformChargebackLogic.CreateFromDiscriminatorValue); } },
                 { "recurringExpiry", n => { RecurringExpiry = n.GetStringValue(); } },
                 { "recurringFrequency", n => { RecurringFrequency = n.GetStringValue(); } },
                 { "recurringProcessingModel", n => { RecurringProcessingModel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRecurringProcessingModel>(); } },
@@ -587,25 +590,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "redirectToIssuerMethod", n => { RedirectToIssuerMethod = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "returnUrl", n => { ReturnUrl = n.GetStringValue(); } },
-                { "riskData", n => { RiskData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskData>(global::Soenneker.Adyen.OpenApiClient.Models.RiskData.CreateFromDiscriminatorValue); } },
+                { "riskData", n => { RiskData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRiskData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRiskData.CreateFromDiscriminatorValue); } },
                 { "sessionValidity", n => { SessionValidity = n.GetStringValue(); } },
                 { "shopperConversionId", n => { ShopperConversionId = n.GetStringValue(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
                 { "shopperIP", n => { ShopperIP = n.GetStringValue(); } },
                 { "shopperInteraction", n => { ShopperInteraction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperInteraction>(); } },
                 { "shopperLocale", n => { ShopperLocale = n.GetStringValue(); } },
-                { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperName>(global::Soenneker.Adyen.OpenApiClient.Models.ShopperName.CreateFromDiscriminatorValue); } },
+                { "shopperName", n => { ShopperName = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName.CreateFromDiscriminatorValue); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
                 { "shopperStatement", n => { ShopperStatement = n.GetStringValue(); } },
-                { "shopperTaxInfo", n => { ShopperTaxInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxInfo.CreateFromDiscriminatorValue); } },
+                { "shopperTaxInfo", n => { ShopperTaxInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo.CreateFromDiscriminatorValue); } },
                 { "socialSecurityNumber", n => { SocialSecurityNumber = n.GetStringValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>(global::Soenneker.Adyen.OpenApiClient.Models.Split.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "store", n => { Store = n.GetStringValue(); } },
                 { "storePaymentMethod", n => { StorePaymentMethod = n.GetBoolValue(); } },
                 { "subMerchants", n => { SubMerchants = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>(global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Surcharge>(global::Soenneker.Adyen.OpenApiClient.Models.Surcharge.CreateFromDiscriminatorValue); } },
+                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge.CreateFromDiscriminatorValue); } },
                 { "telephoneNumber", n => { TelephoneNumber = n.GetStringValue(); } },
-                { "thirdPartyTokenRedundancyInfo", n => { ThirdPartyTokenRedundancyInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo>(global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo.CreateFromDiscriminatorValue); } },
+                { "thirdPartyTokenRedundancyInfo", n => { ThirdPartyTokenRedundancyInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo.CreateFromDiscriminatorValue); } },
                 { "threeDS2RequestData", n => { ThreeDS2RequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields.CreateFromDiscriminatorValue); } },
                 { "threeDSAuthenticationOnly", n => { ThreeDSAuthenticationOnly = n.GetBoolValue(); } },
                 { "trustedShopper", n => { TrustedShopper = n.GetBoolValue(); } },
@@ -618,51 +621,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountInfo>("accountInfo", AccountInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("additionalAmount", AdditionalAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty>("additionalData", AdditionalDataProperty);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationInfo>("applicationInfo", ApplicationInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationData>("authenticationData", AuthenticationData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutBankAccount>("bankAccount", BankAccount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BillingAddress>("billingAddress", BillingAddress);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BrowserInfo>("browserInfo", BrowserInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAccountInfo>("accountInfo", AccountInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalAmount>("additionalAmount", AdditionalAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAmount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestApplicationInfo>("applicationInfo", ApplicationInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestAuthenticationData>("authenticationData", AuthenticationData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBankAccount>("bankAccount", BankAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBillingAddress>("billingAddress", BillingAddress);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestBrowserInfo>("browserInfo", BrowserInfo);
             writer.WriteIntValue("captureDelayHours", CaptureDelayHours);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestChannel>("channel", Channel);
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Company>("company", Company);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestCompany>("company", Company);
             writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteDateTimeOffsetValue("dateOfBirth", DateOfBirth);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ForexQuote>("dccQuote", DccQuote);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDccQuote>("dccQuote", DccQuote);
             writer.WriteDateTimeOffsetValue("deliverAt", DeliverAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72DeliveryAddress>("deliveryAddress", DeliveryAddress);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestDeliveryAddress>("deliveryAddress", DeliveryAddress);
             writer.WriteDateTimeOffsetValue("deliveryDate", DeliveryDate);
             writer.WriteStringValue("deviceFingerprint", DeviceFingerprint);
             writer.WriteBoolValue("enableOneClick", EnableOneClick);
             writer.WriteBoolValue("enablePayOut", EnablePayOut);
             writer.WriteBoolValue("enableRecurring", EnableRecurring);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestEntityType>("entityType", EntityType);
             writer.WriteIntValue("fraudOffset", FraudOffset);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundOrigin>("fundOrigin", FundOrigin);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundRecipient>("fundRecipient", FundRecipient);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundOrigin>("fundOrigin", FundOrigin);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestFundRecipient>("fundRecipient", FundRecipient);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestIndustryUsage>("industryUsage", IndustryUsage);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Installments>("installments", Installments);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestInstallments>("installments", Installments);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LineItem>("lineItems", LineItems);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty>("localizedShopperStatement", LocalizedShopperStatement);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Mandate>("mandate", Mandate);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestLocalizedShopperStatementProperty2>("localizedShopperStatement", LocalizedShopperStatement);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMandate>("mandate", Mandate);
             writer.WriteStringValue("mcc", Mcc);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("merchantOrderReference", MerchantOrderReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureData>("mpiData", MpiData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EncryptedOrderData>("order", Order);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData>("mpiData", MpiData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder>("order", Order);
             writer.WriteStringValue("orderReference", OrderReference);
             writer.WriteStringValue("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentMethod>("paymentMethod", PaymentMethod);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentValidations>("paymentValidations", PaymentValidations);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPaymentValidations>("paymentValidations", PaymentValidations);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestPlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
             writer.WriteStringValue("recurringExpiry", RecurringExpiry);
             writer.WriteStringValue("recurringFrequency", RecurringFrequency);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRecurringProcessingModel>("recurringProcessingModel", RecurringProcessingModel);
@@ -670,28 +673,29 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("redirectToIssuerMethod", RedirectToIssuerMethod);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("returnUrl", ReturnUrl);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskData>("riskData", RiskData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestRiskData>("riskData", RiskData);
             writer.WriteStringValue("sessionValidity", SessionValidity);
             writer.WriteStringValue("shopperConversionId", ShopperConversionId);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperInteraction>("shopperInteraction", ShopperInteraction);
             writer.WriteStringValue("shopperIP", ShopperIP);
             writer.WriteStringValue("shopperLocale", ShopperLocale);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperName>("shopperName", ShopperName);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperName>("shopperName", ShopperName);
             writer.WriteStringValue("shopperReference", ShopperReference);
             writer.WriteStringValue("shopperStatement", ShopperStatement);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxInfo>("shopperTaxInfo", ShopperTaxInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo>("shopperTaxInfo", ShopperTaxInfo);
             writer.WriteStringValue("socialSecurityNumber", SocialSecurityNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Split>("splits", Splits);
             writer.WriteStringValue("store", Store);
             writer.WriteBoolValue("storePaymentMethod", StorePaymentMethod);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.SubMerchantInfo>("subMerchants", SubMerchants);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Surcharge>("surcharge", Surcharge);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestSurcharge>("surcharge", Surcharge);
             writer.WriteStringValue("telephoneNumber", TelephoneNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfo>("thirdPartyTokenRedundancyInfo", ThirdPartyTokenRedundancyInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestThirdPartyTokenRedundancyInfo>("thirdPartyTokenRedundancyInfo", ThirdPartyTokenRedundancyInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDs2RequestFields>("threeDS2RequestData", ThreeDS2RequestData);
             writer.WriteBoolValue("threeDSAuthenticationOnly", ThreeDSAuthenticationOnly);
             writer.WriteBoolValue("trustedShopper", TrustedShopper);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,35 +9,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckoutSessionThreeDs2RequestData : IParsable
+    public partial class CheckoutSessionThreeDs2RequestData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The homePhone property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The home phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone? HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone? HomePhone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone HomePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone HomePhone { get; set; }
 #endif
-        /// <summary>The mobilePhone property</summary>
+        /// <summary>The mobile phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone? MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone? MobilePhone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone MobilePhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone MobilePhone { get; set; }
 #endif
         /// <summary>Indicates whether a challenge is requested for this transaction. Possible values:* **01** — No preference* **02** — No challenge requested* **03** — Challenge requested (3DS Requestor preference)* **04** — Challenge requested (Mandate)* **05** — No challenge (transactional risk analysis is already performed)* **06** — Data Only</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd? ThreeDSRequestorChallengeInd { get; set; }
-        /// <summary>The workPhone property</summary>
+        /// <summary>The work phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.&gt; Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the `shopperEmail`, and did not send the shopper&apos;s phone number in `telephoneNumber`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone? WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone? WorkPhone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone WorkPhone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone WorkPhone { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestData"/> and sets the default values.
+        /// </summary>
+        public CheckoutSessionThreeDs2RequestData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,10 +65,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "homePhone", n => { HomePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone.CreateFromDiscriminatorValue); } },
-                { "mobilePhone", n => { MobilePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone.CreateFromDiscriminatorValue); } },
+                { "homePhone", n => { HomePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone.CreateFromDiscriminatorValue); } },
+                { "mobilePhone", n => { MobilePhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone.CreateFromDiscriminatorValue); } },
                 { "threeDSRequestorChallengeInd", n => { ThreeDSRequestorChallengeInd = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd>(); } },
-                { "workPhone", n => { WorkPhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone.CreateFromDiscriminatorValue); } },
+                { "workPhone", n => { WorkPhone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,10 +78,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>("homePhone", HomePhone);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>("mobilePhone", MobilePhone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataHomePhone>("homePhone", HomePhone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataMobilePhone>("mobilePhone", MobilePhone);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataThreeDsRequestorChallengeInd>("threeDSRequestorChallengeInd", ThreeDSRequestorChallengeInd);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Phone>("workPhone", WorkPhone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionThreeDs2RequestDataWorkPhone>("workPhone", WorkPhone);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

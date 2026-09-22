@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DonationCampaign : IParsable
+    public partial class DonationCampaign : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The amounts property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The object that contains the fixed donation amounts that the shopper can select from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amounts? Amounts { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts? Amounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Amounts Amounts { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts Amounts { get; set; }
 #endif
         /// <summary>The URL for the banner of the nonprofit or campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,13 +46,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string CauseName { get; set; }
 #endif
-        /// <summary>The donation property</summary>
+        /// <summary>The object that contains the details of the donation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Donation? Donation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation? Donation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Donation Donation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation Donation { get; set; }
 #endif
         /// <summary>The unique campaign ID of the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,6 +103,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TermsAndConditionsUrl { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign"/> and sets the default values.
+        /// </summary>
+        public DonationCampaign()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign"/></returns>
@@ -118,11 +127,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amounts", n => { Amounts = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amounts>(global::Soenneker.Adyen.OpenApiClient.Models.Amounts.CreateFromDiscriminatorValue); } },
+                { "amounts", n => { Amounts = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts>(global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts.CreateFromDiscriminatorValue); } },
                 { "bannerUrl", n => { BannerUrl = n.GetStringValue(); } },
                 { "campaignName", n => { CampaignName = n.GetStringValue(); } },
                 { "causeName", n => { CauseName = n.GetStringValue(); } },
-                { "donation", n => { Donation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Donation>(global::Soenneker.Adyen.OpenApiClient.Models.Donation.CreateFromDiscriminatorValue); } },
+                { "donation", n => { Donation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation>(global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 { "nonprofitDescription", n => { NonprofitDescription = n.GetStringValue(); } },
@@ -138,17 +147,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Amounts>("amounts", Amounts);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts>("amounts", Amounts);
             writer.WriteStringValue("bannerUrl", BannerUrl);
             writer.WriteStringValue("campaignName", CampaignName);
             writer.WriteStringValue("causeName", CauseName);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Donation>("donation", Donation);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation>("donation", Donation);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("nonprofitDescription", NonprofitDescription);
             writer.WriteStringValue("nonprofitName", NonprofitName);
             writer.WriteStringValue("nonprofitUrl", NonprofitUrl);
             writer.WriteStringValue("termsAndConditionsUrl", TermsAndConditionsUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

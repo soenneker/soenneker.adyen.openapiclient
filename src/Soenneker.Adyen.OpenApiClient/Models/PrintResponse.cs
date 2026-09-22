@@ -15,8 +15,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier? DocumentQualifier { get; set; }
+        /// <summary>Qualification of the document to print to the Cashier or the Customer. Allows the manager of the printer, Sale or POI Terminal, to send information to a physical printer or to use the paper type accordingly.Possible values:* **CashierReceipt*** **CustomerReceipt*** **Document*** **Journal*** **SaleReceipt*** **Voucher**</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier? DocumentQualifier { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier DocumentQualifier { get; set; }
+#endif
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DocumentQualifier", n => { DocumentQualifier = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier>(); } },
+                { "DocumentQualifier", n => { DocumentQualifier = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier>(global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier.CreateFromDiscriminatorValue); } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -61,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier>("DocumentQualifier", DocumentQualifier);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier>("DocumentQualifier", DocumentQualifier);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>("Response", Response);
             writer.WriteAdditionalData(AdditionalData);
         }

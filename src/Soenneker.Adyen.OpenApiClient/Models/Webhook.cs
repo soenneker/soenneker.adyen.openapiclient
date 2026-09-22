@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Webhook : IParsable
+    public partial class Webhook : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates if expired SSL certificates are accepted. Default value: **false**.</summary>
@@ -28,13 +28,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates if the webhook configuration is active. The field must be **true** for you to receive webhooks about events related an account.</summary>
         public bool? Active { get; set; }
-        /// <summary>The additionalSettings property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Additional shopper and transaction information to be included in your [standard webhooks](https://docs.adyen.com/development-resources/webhooks/webhook-types/#event-codes). Find out more about the available [additional settings](https://docs.adyen.com/development-resources/webhooks/additional-settings).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse? AdditionalSettings { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings? AdditionalSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse AdditionalSettings { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings AdditionalSettings { get; set; }
 #endif
         /// <summary>The alias of our SSL certificate. When you receive a notification from us, the alias from the HMAC signature will match this alias.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,13 +88,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>References to resources connected with this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks? Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks Links { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed Links { get; set; }
 #endif
         /// <summary>Network type for Terminal API details webhooks.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType? NetworkType { get; set; }
@@ -123,6 +125,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Username { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Webhook"/> and sets the default values.
+        /// </summary>
+        public Webhook()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Webhook"/></returns>
@@ -145,7 +154,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "acceptsUntrustedRootCertificate", n => { AcceptsUntrustedRootCertificate = n.GetBoolValue(); } },
                 { "accountReference", n => { AccountReference = n.GetStringValue(); } },
                 { "active", n => { Active = n.GetBoolValue(); } },
-                { "additionalSettings", n => { AdditionalSettings = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse>(global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse.CreateFromDiscriminatorValue); } },
+                { "additionalSettings", n => { AdditionalSettings = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings.CreateFromDiscriminatorValue); } },
                 { "certificateAlias", n => { CertificateAlias = n.GetStringValue(); } },
                 { "communicationFormat", n => { CommunicationFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -156,7 +165,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "hasPassword", n => { HasPassword = n.GetBoolValue(); } },
                 { "hmacKeyCheckValue", n => { HmacKeyCheckValue = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed.CreateFromDiscriminatorValue); } },
                 { "networkType", n => { NetworkType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType>(); } },
                 { "populateSoapActionHeader", n => { PopulateSoapActionHeader = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -176,7 +185,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("acceptsUntrustedRootCertificate", AcceptsUntrustedRootCertificate);
             writer.WriteStringValue("accountReference", AccountReference);
             writer.WriteBoolValue("active", Active);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsResponse>("additionalSettings", AdditionalSettings);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookAdditionalSettings>("additionalSettings", AdditionalSettings);
             writer.WriteStringValue("certificateAlias", CertificateAlias);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookCommunicationFormat>("communicationFormat", CommunicationFormat);
             writer.WriteStringValue("description", Description);
@@ -187,12 +196,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("hasPassword", HasPassword);
             writer.WriteStringValue("hmacKeyCheckValue", HmacKeyCheckValue);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinks>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksComposed>("_links", Links);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookNetworkType>("networkType", NetworkType);
             writer.WriteBoolValue("populateSoapActionHeader", PopulateSoapActionHeader);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("username", Username);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

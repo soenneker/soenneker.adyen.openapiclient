@@ -22,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Contains information about the amount of the disbursement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount? Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount Amount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementAmount Amount { get; set; }
 #endif
         /// <summary>The unique identifier of the balance account that received the disbursement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,21 +38,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BalanceAccountId { get; set; }
 #endif
-        /// <summary>The balances property</summary>
+        /// <summary>Contains information about the balances of the disbursement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance? Balances { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementBalances? Balances { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance Balances { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementBalances Balances { get; set; }
 #endif
-        /// <summary>The fee property</summary>
+        /// <summary>Contains information about the fee that your user must pay for the disbursement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Fee? Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementFee? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Fee Fee { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementFee Fee { get; set; }
 #endif
         /// <summary>Contains information about the accounts that Adyen uses to collect funds related to repayments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,13 +78,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The repayment property</summary>
+        /// <summary>Contains information about the basis points configured for repaying the disbursement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepayment? Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepaymentComposed? Repayment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepayment Repayment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepaymentComposed Repayment { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Disbursement"/> and sets the default values.
@@ -112,14 +112,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementAmount>(global::Soenneker.Adyen.OpenApiClient.Models.DisbursementAmount.CreateFromDiscriminatorValue); } },
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
-                { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance.CreateFromDiscriminatorValue); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Fee>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Fee.CreateFromDiscriminatorValue); } },
+                { "balances", n => { Balances = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementBalances>(global::Soenneker.Adyen.OpenApiClient.Models.DisbursementBalances.CreateFromDiscriminatorValue); } },
+                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementFee>(global::Soenneker.Adyen.OpenApiClient.Models.DisbursementFee.CreateFromDiscriminatorValue); } },
                 { "fundsCollections", n => { FundsCollections = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollection>(global::Soenneker.Adyen.OpenApiClient.Models.FundsCollection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "grantId", n => { GrantId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepayment>(global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepayment.CreateFromDiscriminatorValue); } },
+                { "repayment", n => { Repayment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepaymentComposed>(global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepaymentComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,14 +130,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderId", AccountHolderId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Amount>("amount", Amount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementAmount>("amount", Amount);
             writer.WriteStringValue("balanceAccountId", BalanceAccountId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Balance>("balances", Balances);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Fee>("fee", Fee);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementBalances>("balances", Balances);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementFee>("fee", Fee);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollection>("fundsCollections", FundsCollections);
             writer.WriteStringValue("grantId", GrantId);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepayment>("repayment", Repayment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisbursementRepaymentComposed>("repayment", Repayment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

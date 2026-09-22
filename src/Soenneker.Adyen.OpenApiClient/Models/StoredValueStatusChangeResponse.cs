@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class StoredValueStatusChangeResponse : IParsable
+    public partial class StoredValueStatusChangeResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Authorisation code:* When the payment is authorised, this field holds the authorisation code for the payment.* When the payment is not authorised, this field is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AuthCode { get; set; }
 #endif
-        /// <summary>The currentBalance property</summary>
+        /// <summary>The balance currently on the payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount? CurrentBalance { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseCurrentBalance? CurrentBalance { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount CurrentBalance { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseCurrentBalance CurrentBalance { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +57,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ThirdPartyRefusalReason { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponse"/> and sets the default values.
+        /// </summary>
+        public StoredValueStatusChangeResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponse"/></returns>
@@ -73,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authCode", n => { AuthCode = n.GetStringValue(); } },
-                { "currentBalance", n => { CurrentBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount.CreateFromDiscriminatorValue); } },
+                { "currentBalance", n => { CurrentBalance = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseCurrentBalance>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseCurrentBalance.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "refusalReason", n => { RefusalReason = n.GetStringValue(); } },
                 { "resultCode", n => { ResultCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseResultCode>(); } },
@@ -88,11 +97,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authCode", AuthCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueServiceV46Amount>("currentBalance", CurrentBalance);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseCurrentBalance>("currentBalance", CurrentBalance);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteStringValue("refusalReason", RefusalReason);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueStatusChangeResponseResultCode>("resultCode", ResultCode);
             writer.WriteStringValue("thirdPartyRefusalReason", ThirdPartyRefusalReason);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

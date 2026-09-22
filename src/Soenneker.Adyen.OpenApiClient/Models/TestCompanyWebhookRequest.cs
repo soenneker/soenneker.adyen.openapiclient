@@ -9,9 +9,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TestCompanyWebhookRequest : IParsable
+    public partial class TestCompanyWebhookRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of `merchantId` values for which test webhooks will be sent. The list can have a maximum of 20 `merchantId` values.If not specified, we send sample notifications to all the merchant accounts that the webhook is configured for. If this is more than 20 merchant accounts, use this list to specify a subset of the merchant accounts for which to send test notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,13 +22,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> MerchantIds { get; set; }
 #endif
-        /// <summary>The notification property</summary>
+        /// <summary>Custom test notification object. Required when the [`types`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_types) list contains **CUSTOM**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification? Notification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? Notification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification Notification { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification Notification { get; set; }
 #endif
         /// <summary>List of event codes for which to send test notifications. Only the webhook types below are supported. Possible values if webhook `type`: **standard**:* **AUTHORISATION*** **CHARGEBACK_REVERSED*** **ORDER_CLOSED*** **ORDER_OPENED*** **PAIDOUT_REVERSED*** **PAYOUT_THIRDPARTY*** **REFUNDED_REVERSED*** **REFUND_WITH_DATA*** **REPORT_AVAILABLE*** **CUSTOM** - set your custom notification fields in the [`notification`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_notification) object.Possible values if webhook `type`: **banktransfer-notification**:* **PENDING**Possible values if webhook `type`: **report-notification**:* **REPORT_AVAILABLE**Possible values if webhook `type`: **ideal-notification**:* **AUTHORISATION**Possible values if webhook `type`: **pending-notification**:* **PENDING**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +38,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> Types { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequest"/> and sets the default values.
+        /// </summary>
+        public TestCompanyWebhookRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "merchantIds", n => { MerchantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "notification", n => { Notification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification>(global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification.CreateFromDiscriminatorValue); } },
+                { "notification", n => { Notification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification>(global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification.CreateFromDiscriminatorValue); } },
                 { "types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -67,8 +76,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("merchantIds", MerchantIds);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CustomNotification>("notification", Notification);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification>("notification", Notification);
             writer.WriteCollectionOfPrimitiveValues<string>("types", Types);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

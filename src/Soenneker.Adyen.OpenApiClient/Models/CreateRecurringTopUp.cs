@@ -14,13 +14,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The counterparty property</summary>
+        /// <summary>The details about the counterparty that is funding the top-up. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TopUpCounterparty? Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpCounterparty? Counterparty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TopUpCounterparty Counterparty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpCounterparty Counterparty { get; set; }
 #endif
         /// <summary>Your description for the recurring top-up.Maximum length is 140 characters. If you set a longer description, it will be cut off at 140 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,21 +40,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>The status of the recurring top-up. If not provided, by default, this is set to **active**.Possible values:  * **active**:  the top up is enabled and funds will be pulled in. * **inactive**: the top up is disabled and cannot be triggered. </summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpStatus? Status { get; set; }
-        /// <summary>The topUpAmount property</summary>
+        /// <summary>The currency and value to be added to the balance account, specified in minor units. This can be a fixed amount or a target amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TopUpAmount? TopUpAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTopUpAmount? TopUpAmount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TopUpAmount TopUpAmount { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTopUpAmount TopUpAmount { get; set; }
 #endif
-        /// <summary>The trigger property</summary>
+        /// <summary>The condition that triggers the top-up. This can be a recurring schedule or a minimum balance threshold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Trigger? Trigger { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTrigger? Trigger { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Trigger Trigger { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTrigger Trigger { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUp"/> and sets the default values.
@@ -81,12 +81,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TopUpCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.TopUpCounterparty.CreateFromDiscriminatorValue); } },
+                { "counterparty", n => { Counterparty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpCounterparty>(global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpCounterparty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "referenceForBeneficiary", n => { ReferenceForBeneficiary = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpStatus>(); } },
-                { "topUpAmount", n => { TopUpAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TopUpAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TopUpAmount.CreateFromDiscriminatorValue); } },
-                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Trigger>(global::Soenneker.Adyen.OpenApiClient.Models.Trigger.CreateFromDiscriminatorValue); } },
+                { "topUpAmount", n => { TopUpAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTopUpAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTopUpAmount.CreateFromDiscriminatorValue); } },
+                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTrigger>(global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTrigger.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,12 +96,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TopUpCounterparty>("counterparty", Counterparty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpCounterparty>("counterparty", Counterparty);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("referenceForBeneficiary", ReferenceForBeneficiary);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TopUpAmount>("topUpAmount", TopUpAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.Trigger>("trigger", Trigger);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTopUpAmount>("topUpAmount", TopUpAmount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateRecurringTopUpTrigger>("trigger", Trigger);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

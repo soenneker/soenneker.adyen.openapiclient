@@ -9,16 +9,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ThreeDsAvailabilityRequest : IParsable
+    public partial class ThreeDsAvailabilityRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field contains additional data, which may be required for a particular request.The `additionalData` object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty? AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty2? AdditionalDataProperty { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty AdditionalDataProperty { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty2 AdditionalDataProperty { get; set; }
 #endif
         /// <summary>List of brands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +63,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperReference { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequest"/> and sets the default values.
+        /// </summary>
+        public ThreeDsAvailabilityRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequest"/></returns>
@@ -78,7 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty.CreateFromDiscriminatorValue); } },
+                { "additionalData", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty2.CreateFromDiscriminatorValue); } },
                 { "brands", n => { Brands = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "cardNumber", n => { CardNumber = n.GetStringValue(); } },
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
@@ -93,12 +102,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty>("additionalData", AdditionalDataProperty);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsAvailabilityRequestAdditionalDataProperty2>("additionalData", AdditionalDataProperty);
             writer.WriteCollectionOfPrimitiveValues<string>("brands", Brands);
             writer.WriteStringValue("cardNumber", CardNumber);
             writer.WriteStringValue("merchantAccount", MerchantAccount);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("shopperReference", ShopperReference);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

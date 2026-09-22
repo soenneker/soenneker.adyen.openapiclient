@@ -9,7 +9,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetOnboardingUrlRequest : IParsable
+    public partial class GetOnboardingUrlRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account holder code you provided when you created the account holder.</summary>
@@ -20,13 +20,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AccountHolderCode { get; set; }
 #endif
-        /// <summary>The collectInformation property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains indicators whether the page should only collect information for specific [KYC checks](https://docs.adyen.com/classic-platforms/verification-checks). By default, the page collects information for all KYC checks that apply to the [legal entity type](https://docs.adyen.com/classic-platforms/account-holders-and-accounts#legal-entity-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CollectInformation? CollectInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation? CollectInformation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CollectInformation CollectInformation { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation CollectInformation { get; set; }
 #endif
         /// <summary>Indicates if editing checks is allowed even if all the checks have passed.</summary>
         public bool? EditMode { get; set; }
@@ -62,14 +64,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShopperLocale { get; set; }
 #endif
-        /// <summary>The showPages property</summary>
+        /// <summary>Contains indicators whether specific pages must be shown to the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShowPages? ShowPages { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages? ShowPages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShowPages ShowPages { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages ShowPages { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequest"/> and sets the default values.
+        /// </summary>
+        public GetOnboardingUrlRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -89,13 +98,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "collectInformation", n => { CollectInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CollectInformation>(global::Soenneker.Adyen.OpenApiClient.Models.CollectInformation.CreateFromDiscriminatorValue); } },
+                { "collectInformation", n => { CollectInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation>(global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation.CreateFromDiscriminatorValue); } },
                 { "editMode", n => { EditMode = n.GetBoolValue(); } },
                 { "mobileOAuthCallbackUrl", n => { MobileOAuthCallbackUrl = n.GetStringValue(); } },
                 { "platformName", n => { PlatformName = n.GetStringValue(); } },
                 { "returnUrl", n => { ReturnUrl = n.GetStringValue(); } },
                 { "shopperLocale", n => { ShopperLocale = n.GetStringValue(); } },
-                { "showPages", n => { ShowPages = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShowPages>(global::Soenneker.Adyen.OpenApiClient.Models.ShowPages.CreateFromDiscriminatorValue); } },
+                { "showPages", n => { ShowPages = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages>(global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,13 +115,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountHolderCode", AccountHolderCode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CollectInformation>("collectInformation", CollectInformation);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestCollectInformation>("collectInformation", CollectInformation);
             writer.WriteBoolValue("editMode", EditMode);
             writer.WriteStringValue("mobileOAuthCallbackUrl", MobileOAuthCallbackUrl);
             writer.WriteStringValue("platformName", PlatformName);
             writer.WriteStringValue("returnUrl", ReturnUrl);
             writer.WriteStringValue("shopperLocale", ShopperLocale);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShowPages>("showPages", ShowPages);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetOnboardingUrlRequestShowPages>("showPages", ShowPages);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

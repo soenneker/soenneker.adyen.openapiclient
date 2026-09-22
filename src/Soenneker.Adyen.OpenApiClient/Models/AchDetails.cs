@@ -9,11 +9,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AchDetails : IParsable
+    public partial class AchDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account holder type (personal or business).</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsAccountHolderType? AccountHolderType { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bank account number (without separators).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +102,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>**ach**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchDetails"/> and sets the default values.
+        /// </summary>
+        public AchDetails()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AchDetails"/></returns>
@@ -152,6 +161,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
             writer.WriteStringValue("transferInstrumentId", TransferInstrumentId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AchDetailsType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
