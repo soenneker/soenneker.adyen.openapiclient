@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The namespace that corresponds to the reason code.Possible values:*  **ukFpsRejectionCode***  **ukFpsReturnReasonCode***  **usAchReturnReasonCode***  **iso8583ResponseCode**</summary>
+    /// <summary>The namespace that corresponds to the reason code.Possible values:*  **ukFpsRejectionCode***  **ukFpsReturnReasonCode***  **usAchReturnReasonCode***  **usAchCorrectionReasonCode***  **iso8583ResponseCode**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NetworkReasonNamespace
     {
@@ -22,6 +22,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "usAchReturnReasonCode")]
         #pragma warning disable CS1591
         UsAchReturnReasonCode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "usAchCorrectionReasonCode")]
+        #pragma warning disable CS1591
+        UsAchCorrectionReasonCode,
         #pragma warning restore CS1591
     }
 }

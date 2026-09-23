@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// **cartesbancaire** details
+    /// **cartesbancaires** details
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagementServiceV3PaymentMethodCartesBancaires : IAdditionalDataHolder, IParsable

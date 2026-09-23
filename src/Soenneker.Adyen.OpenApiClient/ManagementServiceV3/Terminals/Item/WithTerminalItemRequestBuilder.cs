@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.Reassign;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalLogos;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalSettings;
+using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalThemes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalSettings.TerminalSettingsRequestBuilder TerminalSettings
         {
             get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalSettings.TerminalSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The terminalThemes property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalThemes.TerminalThemesRequestBuilder TerminalThemes
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.TerminalThemes.TerminalThemesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Terminals.Item.WithTerminalItemRequestBuilder"/> and sets the default values.

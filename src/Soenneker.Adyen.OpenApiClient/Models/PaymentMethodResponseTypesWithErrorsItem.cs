@@ -108,6 +108,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Amex,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ancv")]
+        #pragma warning disable CS1591
+        Ancv,
+        #pragma warning restore CS1591
         [EnumMember(Value = "applepay")]
         #pragma warning disable CS1591
         Applepay,
@@ -239,6 +243,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "ebanking_FI")]
         #pragma warning disable CS1591
         EbankingFi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ebt")]
+        #pragma warning disable CS1591
+        Ebt,
         #pragma warning restore CS1591
         [EnumMember(Value = "eft_directdebit_CA")]
         #pragma warning disable CS1591
@@ -599,6 +607,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "wechatpay_pos")]
         #pragma warning disable CS1591
         WechatpayPos,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "wero")]
+        #pragma warning disable CS1591
+        Wero,
         #pragma warning restore CS1591
     }
 }

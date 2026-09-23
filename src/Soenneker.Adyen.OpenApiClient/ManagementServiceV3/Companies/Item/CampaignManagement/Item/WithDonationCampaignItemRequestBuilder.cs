@@ -49,6 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,6 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -81,6 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign?> PatchAsync(global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,6 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Campa
                 { "403", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign>(requestInfo, global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

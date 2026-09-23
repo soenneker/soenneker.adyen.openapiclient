@@ -26,6 +26,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<global::Soenneker.Adyen.OpenApiClient.Models.Configuration> Configurations { get; set; }
 #endif
         /// <summary>Show the maximum surcharge rate to the shopper on the present card screen before they tap.</summary>
+        [Obsolete("")]
         public bool? DisclosureOnPresentCard { get; set; }
         /// <summary>Exclude the tip amount from the surcharge calculation.</summary>
         public bool? ExcludeGratuityFromSurcharge { get; set; }

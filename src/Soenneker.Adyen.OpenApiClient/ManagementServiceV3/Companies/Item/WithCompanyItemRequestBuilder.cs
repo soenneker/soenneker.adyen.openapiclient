@@ -8,6 +8,7 @@ using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.AndroidCe
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ApiCredentials;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.BillingEntities;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement;
+using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ClientCertificates;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Merchants;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Nonprofits;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ShippingLocations;
@@ -17,6 +18,7 @@ using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalM
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalOrders;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalProducts;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalSettings;
+using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Users;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Webhooks;
 using Soenneker.Adyen.OpenApiClient.Models;
@@ -57,6 +59,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement.CampaignManagementRequestBuilder CampaignManagement
         {
             get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.CampaignManagement.CampaignManagementRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The clientCertificates property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ClientCertificates.ClientCertificatesRequestBuilder ClientCertificates
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.ClientCertificates.ClientCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The merchants property</summary>
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Merchants.MerchantsRequestBuilder Merchants
@@ -102,6 +109,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalSettings.TerminalSettingsRequestBuilder TerminalSettings
         {
             get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalSettings.TerminalSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The terminalThemes property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.TerminalThemesRequestBuilder TerminalThemes
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.TerminalThemes.TerminalThemesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Users.UsersRequestBuilder Users

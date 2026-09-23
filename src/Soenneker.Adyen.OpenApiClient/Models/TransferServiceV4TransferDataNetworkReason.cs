@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The namespace that corresponds to the reason code.Possible values:*  **ukFpsRejectionCode***  **ukFpsReturnReasonCode***  **usAchReturnReasonCode***  **iso8583ResponseCode**</summary>
+        /// <summary>The namespace that corresponds to the reason code.Possible values:*  **ukFpsRejectionCode***  **ukFpsReturnReasonCode***  **usAchReturnReasonCode***  **usAchCorrectionReasonCode***  **iso8583ResponseCode**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace? Namespace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataNetworkReason"/> and sets the default values.

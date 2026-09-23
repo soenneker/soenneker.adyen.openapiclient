@@ -16,6 +16,7 @@ using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalM
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalOrders;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalProducts;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalSettings;
+using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalThemes;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Users;
 using Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Webhooks;
 using Soenneker.Adyen.OpenApiClient.Models;
@@ -96,6 +97,11 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalSettings.TerminalSettingsRequestBuilder TerminalSettings
         {
             get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalSettings.TerminalSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The terminalThemes property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalThemes.TerminalThemesRequestBuilder TerminalThemes
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.TerminalThemes.TerminalThemesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
         public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Users.UsersRequestBuilder Users

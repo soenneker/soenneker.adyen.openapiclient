@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).</summary>
+    /// <summary>Payment method [variant](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api).For payment method variant **cartebancaire**, method-specific details are returned in the [`cartesBancaires`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/paymentMethodSettings#responses-200-cartesBancaires) object of the response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PaymentMethodSetupInfoType
     {
@@ -106,6 +106,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "amex")]
         #pragma warning disable CS1591
         Amex,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ancv")]
+        #pragma warning disable CS1591
+        Ancv,
         #pragma warning restore CS1591
         [EnumMember(Value = "applepay")]
         #pragma warning disable CS1591
@@ -238,6 +242,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "ebanking_FI")]
         #pragma warning disable CS1591
         EbankingFi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ebt")]
+        #pragma warning disable CS1591
+        Ebt,
         #pragma warning restore CS1591
         [EnumMember(Value = "eft_directdebit_CA")]
         #pragma warning disable CS1591
@@ -598,6 +606,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "wechatpay_pos")]
         #pragma warning disable CS1591
         WechatpayPos,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "wero")]
+        #pragma warning disable CS1591
+        Wero,
         #pragma warning restore CS1591
     }
 }

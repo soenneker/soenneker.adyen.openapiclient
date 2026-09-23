@@ -271,6 +271,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Returned,
         #pragma warning restore CS1591
+        [EnumMember(Value = "reversalReceived")]
+        #pragma warning disable CS1591
+        ReversalReceived,
+        #pragma warning restore CS1591
         [EnumMember(Value = "reversed")]
         #pragma warning disable CS1591
         Reversed,

@@ -14,6 +14,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The card usage type condition that determines whether the split logic applies to commercial cards, consumer cards, or all cards.* **ANY** (default): The split logic applies to all cards, regardless of its usage type.* **commercial**: The split logic applies to commercial cards only.* **consumer**: The split logic applies to consumer cards only.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateSplitConfigurationRuleRequestCardUsageType? CardUsageType { get; set; }
         /// <summary>The currency condition that defines whether the split logic applies.Its value must be a three-character [ISO currency code](https://en.wikipedia.org/wiki/ISO_4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cardUsageType", n => { CardUsageType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSplitConfigurationRuleRequestCardUsageType>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "fundingSource", n => { FundingSource = n.GetStringValue(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetStringValue(); } },
@@ -84,6 +87,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateSplitConfigurationRuleRequestCardUsageType>("cardUsageType", CardUsageType);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("fundingSource", FundingSource);
             writer.WriteStringValue("paymentMethod", PaymentMethod);

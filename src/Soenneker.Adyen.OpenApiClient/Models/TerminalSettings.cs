@@ -158,6 +158,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1 Refunds { get; set; }
 #endif
+        /// <summary>Show the tipping amount calculated from the percentage next to each tipping percentage option on the terminal screen, for example `10 % | 10 EUR` for a 100 EUR payment.</summary>
+        public bool? ShowCalculatedPercentageTippingAmount { get; set; }
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -265,6 +267,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "receiptOptions", n => { ReceiptOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "receiptPrinting", n => { ReceiptPrinting = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1.CreateFromDiscriminatorValue); } },
                 { "refunds", n => { Refunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1.CreateFromDiscriminatorValue); } },
+                { "showCalculatedPercentageTippingAmount", n => { ShowCalculatedPercentageTippingAmount = n.GetBoolValue(); } },
                 { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1.CreateFromDiscriminatorValue); } },
                 { "standalone", n => { Standalone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1.CreateFromDiscriminatorValue); } },
                 { "storeAndForward", n => { StoreAndForward = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1.CreateFromDiscriminatorValue); } },
@@ -300,6 +303,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1>("receiptOptions", ReceiptOptions);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1>("receiptPrinting", ReceiptPrinting);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1>("refunds", Refunds);
+            writer.WriteBoolValue("showCalculatedPercentageTippingAmount", ShowCalculatedPercentageTippingAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1>("signature", Signature);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1>("standalone", Standalone);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1>("storeAndForward", StoreAndForward);

@@ -22,6 +22,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string AuthorisationType { get; set; }
 #endif
+        /// <summary>The card variant associated with the payment network used to route or process the transaction. For single-network cards, this matches the `brandVariant`. For US dual-network cards routed over an alternate network, this value reflects the specific tier or sub-type under that processing network.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardNetworkVariant? NetworkVariant { get; set; }
         /// <summary>Indicates the method used for entering the PAN to initiate a transaction.Possible values: **manual**, **chip**, **magstripe**, **contactless**, **cof**, **ecommerce**, **token**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode? PanEntryMode { get; set; }
         /// <summary>Contains information about how the payment was processed.Possible values: **atmWithdraw**, **balanceInquiry**, **ecommerce**, **moto**, **pos**, **purchaseWithCashback**, **recurring**, **token**.</summary>
@@ -94,6 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authorisationType", n => { AuthorisationType = n.GetStringValue(); } },
+                { "networkVariant", n => { NetworkVariant = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardNetworkVariant>(); } },
                 { "panEntryMode", n => { PanEntryMode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode>(); } },
                 { "processingType", n => { ProcessingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardProcessingType>(); } },
                 { "relayedAuthorisationData", n => { RelayedAuthorisationData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData.CreateFromDiscriminatorValue); } },
@@ -112,6 +115,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authorisationType", AuthorisationType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardNetworkVariant>("networkVariant", NetworkVariant);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardPanEntryMode>("panEntryMode", PanEntryMode);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardProcessingType>("processingType", ProcessingType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4IssuedCardRelayedAuthorisationData>("relayedAuthorisationData", RelayedAuthorisationData);

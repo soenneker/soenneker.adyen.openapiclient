@@ -15,6 +15,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Alternate Merchant Number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AlternateMerchantNumber { get; set; }
+#nullable restore
+#else
+        public string AlternateMerchantNumber { get; set; }
+#endif
         /// <summary>Authorisation Mid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,14 +33,6 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>PIN Support. For ecommerce, PIN is required.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport? PinSupport { get; set; }
-        /// <summary>Submitter ID</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SubmitterId { get; set; }
-#nullable restore
-#else
-        public string SubmitterId { get; set; }
-#endif
         /// <summary>Terminal ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,9 +66,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alternateMerchantNumber", n => { AlternateMerchantNumber = n.GetStringValue(); } },
                 { "authorisationMid", n => { AuthorisationMid = n.GetStringValue(); } },
                 { "pinSupport", n => { PinSupport = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport>(); } },
-                { "submitterId", n => { SubmitterId = n.GetStringValue(); } },
                 { "terminalId", n => { TerminalId = n.GetStringValue(); } },
             };
         }
@@ -79,9 +79,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("alternateMerchantNumber", AlternateMerchantNumber);
             writer.WriteStringValue("authorisationMid", AuthorisationMid);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport>("pinSupport", PinSupport);
-            writer.WriteStringValue("submitterId", SubmitterId);
             writer.WriteStringValue("terminalId", TerminalId);
             writer.WriteAdditionalData(AdditionalData);
         }

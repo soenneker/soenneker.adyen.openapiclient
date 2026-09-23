@@ -14,8 +14,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The card region condition that determines whether the [split logic](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic) applies to the transaction.&gt; This condition is in pilot phase, and not yet available for all platforms.Possible values:* **domestic**: The card issuer and the store where the transaction is processed are registered in the same country.* **international**: The card issuer and the store where the transaction is processed are registered in different countries or regions. Includes all **interRegional** and **intraRegional** transactions.* **interRegional**: The card issuer and the store where the transaction is processed are registered in different regions.* **intraRegional**: The card issuer and the store where the transaction is processed are registered in different countries, but in the same region.* **intraEEA**: The card issuer and the store where the transaction is processed are registered in different countries, but in the European Economic Area (EEA).* **ANY**: Applies to all transactions, regardless of the processing and issuing country/region.</summary>
+        /// <summary>The card region condition that determines whether the [split logic](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/(merchantId)/splitConfigurations#request-rules-splitLogic) applies to the transaction.Possible values:* **domestic**: The card issuer and the store where the transaction is processed are registered in the same country.* **international**: The card issuer and the store where the transaction is processed are registered in different countries or regions. Includes all **interRegional** and **intraRegional** transactions.* **interRegional**: The card issuer and the store where the transaction is processed are registered in different regions.* **intraRegional**: The card issuer and the store where the transaction is processed are registered in different countries, but in the same region.* **intraEEA**: The card issuer and the store where the transaction is processed are registered in different countries, but in the European Economic Area (EEA).* **ANY**: Applies to all transactions, regardless of the processing and issuing country/region.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion? CardRegion { get; set; }
+        /// <summary>The card usage type condition that determines whether the split logic applies to commercial cards, consumer cards, or all cards.* **ANY** (default): The split logic applies to all cards, regardless of its usage type.* **commercial**: The split logic applies to commercial cards only.* **consumer**: The split logic applies to consumer cards only.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType? CardUsageType { get; set; }
         /// <summary>The currency condition that defines whether the split logic applies.Its value must be a three-character [ISO currency code](https://en.wikipedia.org/wiki/ISO_4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cardRegion", n => { CardRegion = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion>(); } },
+                { "cardUsageType", n => { CardUsageType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleFundingSource>(); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetStringValue(); } },
@@ -94,6 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardRegion>("cardRegion", CardRegion);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleCardUsageType>("cardUsageType", CardUsageType);
             writer.WriteStringValue("currency", Currency);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationRuleFundingSource>("fundingSource", FundingSource);
             writer.WriteStringValue("paymentMethod", PaymentMethod);

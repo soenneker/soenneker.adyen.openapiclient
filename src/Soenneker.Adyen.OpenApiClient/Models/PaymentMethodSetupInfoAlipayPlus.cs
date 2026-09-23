@@ -15,6 +15,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The name of the company branch. Required for TrueMoney.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BranchName { get; set; }
+#nullable restore
+#else
+        public string BranchName { get; set; }
+#endif
+        /// <summary>The name of your mobile app. Required for TrueMoney.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MerchantMobileAppName { get; set; }
+#nullable restore
+#else
+        public string MerchantMobileAppName { get; set; }
+#endif
+        /// <summary>The description of the product or service. Required for TrueMoney.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProductServiceDescription { get; set; }
+#nullable restore
+#else
+        public string ProductServiceDescription { get; set; }
+#endif
         /// <summary>The currency used for settlement. Defaults to USD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +72,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "branchName", n => { BranchName = n.GetStringValue(); } },
+                { "merchantMobileAppName", n => { MerchantMobileAppName = n.GetStringValue(); } },
+                { "productServiceDescription", n => { ProductServiceDescription = n.GetStringValue(); } },
                 { "settlementCurrencyCode", n => { SettlementCurrencyCode = n.GetStringValue(); } },
             };
         }
@@ -58,6 +85,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("branchName", BranchName);
+            writer.WriteStringValue("merchantMobileAppName", MerchantMobileAppName);
+            writer.WriteStringValue("productServiceDescription", ProductServiceDescription);
             writer.WriteStringValue("settlementCurrencyCode", SettlementCurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }

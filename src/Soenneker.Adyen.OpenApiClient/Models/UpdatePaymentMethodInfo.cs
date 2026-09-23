@@ -110,6 +110,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiscover Discover { get; set; }
 #endif
+        /// <summary>Details to provide if `type` is **ebt**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEbt? Ebt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEbt Ebt { get; set; }
+#endif
         /// <summary>Details to provide if `type` is **eft_directdebit_CA** (EFT PAD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -286,6 +294,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "customRoutingFlags", n => { CustomRoutingFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "diners", n => { Diners = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiners>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiners.CreateFromDiscriminatorValue); } },
                 { "discover", n => { Discover = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiscover>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiscover.CreateFromDiscriminatorValue); } },
+                { "ebt", n => { Ebt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEbt>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEbt.CreateFromDiscriminatorValue); } },
                 { "eft_directdebit_CA", n => { EftDirectdebitCA = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEftDirectdebitCa>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEftDirectdebitCa.CreateFromDiscriminatorValue); } },
                 { "eftpos_australia", n => { EftposAustralia = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEftposAustralia>(global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEftposAustralia.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -325,6 +334,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("customRoutingFlags", CustomRoutingFlags);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiners>("diners", Diners);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoDiscover>("discover", Discover);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEbt>("ebt", Ebt);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEftDirectdebitCa>("eft_directdebit_CA", EftDirectdebitCA);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePaymentMethodInfoEftposAustralia>("eftpos_australia", EftposAustralia);
             writer.WriteBoolValue("enabled", Enabled);
