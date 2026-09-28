@@ -209,6 +209,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMpiData MpiData { get; set; }
 #endif
+        /// <summary>Indicates if the session is payable. If the payment amount is final, set this to **true** to indicate that the session is payable, so that the shopper can proceed to submit the payment. When you set this to **true**, you can no longer update the session.If you set this to **false**, you must make another request to update the session and set this to **true** before the shopper can submit the payment.If not specified, this defaults to **true**.</summary>
+        public bool? Payable { get; set; }
         /// <summary>Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/adyen-for-platforms-model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -464,6 +466,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMode>(); } },
                 { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMpiData.CreateFromDiscriminatorValue); } },
+                { "payable", n => { Payable = n.GetBoolValue(); } },
                 { "platformChargebackLogic", n => { PlatformChargebackLogic = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestPlatformChargebackLogic>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestPlatformChargebackLogic.CreateFromDiscriminatorValue); } },
                 { "recurringExpiry", n => { RecurringExpiry = n.GetStringValue(); } },
                 { "recurringFrequency", n => { RecurringFrequency = n.GetStringValue(); } },
@@ -536,6 +539,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMetadataProperty2>("metadata", Metadata);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMode>("mode", Mode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestMpiData>("mpiData", MpiData);
+            writer.WriteBoolValue("payable", Payable);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestPlatformChargebackLogic>("platformChargebackLogic", PlatformChargebackLogic);
             writer.WriteStringValue("recurringExpiry", RecurringExpiry);
             writer.WriteStringValue("recurringFrequency", RecurringFrequency);

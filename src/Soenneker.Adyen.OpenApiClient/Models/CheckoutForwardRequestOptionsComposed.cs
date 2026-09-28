@@ -13,7 +13,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutForwardRequestOptionsComposed : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Whether to check for a card account update (true) or not (false)</summary>
+        /// <summary>Set to **true** to check if the account tied to the card has been updated.</summary>
         public bool? AccountUpdate { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken NetworkToken { get; set; }
 #endif
-        /// <summary>Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of networkTxReference in the incoming 3rd party response</summary>
+        /// <summary>Only include when `tokenize` is set to **true**.&lt;br&gt;&lt;br&gt;A list of addresses to possible location(s) of the `networkTxReference` that will be returned in the third party response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? NetworkTxReferencePaths { get; set; }
@@ -35,9 +35,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<string> NetworkTxReferencePaths { get; set; }
 #endif
-        /// <summary>Set to **true**, the payment details are [tokenized](https://docs.adyen.com/online-payments/tokenization).</summary>
+        /// <summary>Set to **true** to [tokenize](https://docs.adyen.com/online-payments/tokenization) the payment details.</summary>
         public bool? Tokenize { get; set; }
-        /// <summary>Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of transactionLinkId in the incoming 3rd party response</summary>
+        /// <summary>Only include when `tokenize` is set to **true**.&lt;br&gt;&lt;br&gt;A list of addresses to possible location(s) of the `transactionLinkId` that will be returned in the third party response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TransactionLinkIdPaths { get; set; }

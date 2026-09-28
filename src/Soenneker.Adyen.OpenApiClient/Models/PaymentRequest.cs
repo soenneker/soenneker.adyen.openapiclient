@@ -229,7 +229,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
-        /// <summary>You can use this reference to link multiple transactions to one another (for example, to track order authorization rate).For each billing cycle, this reference should be unique. After the first authorized payment attempt, do not reuse the reference. If you use this parameter, include it in all of the payment requests that you make.  We strongly recommend that you:* Always include this parameter, so that you can benefit from linking payment requests to one another, in case of authorization retries. * Additionally include the following parameters in the `additionalData` object: [`retry.orderAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-orderAttemptNumber), [`retry.chainAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-chainAttemptNumber), and [`retry.skipRetry`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-skipRetry)</summary>
+        /// <summary>You can use this reference to link multiple transactions to one another (for example, to track order authorization rate). For each billing cycle, this reference should be unique. After the first authorized payment attempt, do not reuse the reference. If you use this parameter, include it in all of the payment requests that you make.  We strongly recommend that you:* Always include this parameter, so that you can benefit from linking payment requests to one another, in case of authorization retries. * Additionally include the following parameters in the `additionalData` object: [`retry.orderAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-orderAttemptNumber), [`retry.chainAttemptNumber`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-chainAttemptNumber), and [`retry.skipRetry`](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-skipRetry)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MerchantOrderReference { get; set; }
@@ -260,6 +260,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData MpiData { get; set; }
+#endif
+        /// <summary>Configuration for Oracle Payment Interface (OPI) integrations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOpi? Opi { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOpi Opi { get; set; }
 #endif
         /// <summary>The order information required for partial payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -343,7 +351,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RedirectToIssuerMethod { get; set; }
 #endif
-        /// <summary>The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. To provide multiple references for one transaction, separate the reference values with the hyphen (`-`) character.We strongly recommend that you use a unique value for each transaction.Maximum length: 80 characters.</summary>
+        /// <summary>The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. To provide multiple references for one transaction, separate the reference values with the hyphen (`-`) character. We strongly recommend that you use a unique value for each transaction.Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -577,6 +585,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantRiskIndicator", n => { MerchantRiskIndicator = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2.CreateFromDiscriminatorValue); } },
                 { "mpiData", n => { MpiData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData.CreateFromDiscriminatorValue); } },
+                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOpi>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOpi.CreateFromDiscriminatorValue); } },
                 { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder.CreateFromDiscriminatorValue); } },
                 { "orderReference", n => { OrderReference = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
@@ -660,6 +669,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMerchantRiskIndicator>("merchantRiskIndicator", MerchantRiskIndicator);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMetadataProperty2>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestMpiData>("mpiData", MpiData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOpi>("opi", Opi);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestOrder>("order", Order);
             writer.WriteStringValue("orderReference", OrderReference);
             writer.WriteStringValue("origin", Origin);

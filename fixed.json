@@ -18228,12 +18228,6 @@
               "examples": {
                 "donations-campaigns": {
                   "$ref": "#/components/examples/post-donations-donations-campaigns"
-                },
-                "donations-classic": {
-                  "$ref": "#/components/examples/post-donations-donations-classic"
-                },
-                "donations-with-token": {
-                  "$ref": "#/components/examples/post-donations-donations-with-token"
                 }
               }
             }
@@ -18255,12 +18249,6 @@
                 "examples": {
                   "donations-campaigns": {
                     "$ref": "#/components/examples/post-donations-donations-campaigns-200"
-                  },
-                  "donations-classic": {
-                    "$ref": "#/components/examples/post-donations-donations-classic-200"
-                  },
-                  "donations-with-token": {
-                    "$ref": "#/components/examples/post-donations-donations-with-token-200"
                   }
                 }
               }
@@ -18324,9 +18312,6 @@
                   "$ref": "#/components/schemas/CheckoutServiceV72ServiceError"
                 },
                 "examples": {
-                  "donations-with-token": {
-                    "$ref": "#/components/examples/post-donations-donations-with-token-422"
-                  },
                   "generic": {
                     "$ref": "#/components/examples/CheckoutService_v72_generic-422"
                   }
@@ -21132,7 +21117,7 @@
           "Recurring"
         ],
         "summary": "Get tokens for stored payment details",
-        "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper\u0027s payment. A summary of the stored details is included.\n\n",
+        "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper\u0027s payment. A summary of the stored details is included.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* API tokenise payment details",
         "operationId": "CheckoutServiceV72GetStoredPaymentMethods",
         "parameters": [
           {
@@ -21191,7 +21176,7 @@
           "Recurring"
         ],
         "summary": "Create a token to store payment details",
-        "description": "Creates a token to store the shopper\u0027s payment details. This token can be used for the shopper\u0027s future payments.",
+        "description": "Creates a token to store the shopper\u0027s payment details. This token can be used for the shopper\u0027s future payments.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* API tokenise payment details",
         "operationId": "CheckoutServiceV72PostStoredPaymentMethods",
         "parameters": [
           {
@@ -21264,7 +21249,7 @@
           "Recurring"
         ],
         "summary": "Delete a token for stored payment details",
-        "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.",
+        "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.\n\nTo make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):\n\n* API tokenise payment details",
         "operationId": "CheckoutServiceV72DeleteStoredPaymentMethodsStoredPaymentMethodId",
         "parameters": [
           {
@@ -102772,6 +102757,31 @@
           "$ref": "#/components/schemas/CheckoutDelegatedAuthenticationActionAdditionalProperties"
         }
       },
+      "CheckoutForwardAccountUpdateResult": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "description": "The result of the [Real Time Account Updater](https://docs.adyen.com/online-payments/account-updater/real-time-account-updater).\nPossible values:\n* NoChange\n* CardChanged\n* CardExpiryChanged\n* CloseAccount\n* ContactCardAccountHolder\n* Error",
+            "$ref": "#/components/schemas/CheckoutForwardAccountUpdateResultResult"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CheckoutForwardAccountUpdateResultAdditionalProperties"
+        }
+      },
+      "CheckoutForwardNetworkTokenResult": {
+        "type": "object",
+        "properties": {
+          "swapped": {
+            "type": "boolean",
+            "description": "Indicates whether a network token was used in the forwarded request. When \u0060true\u0060, the Primary Account Number (PAN) was successfully swapped for a network token. When \u0060false\u0060, the request fell back to the PAN.",
+            "x-addedInVersion": "72"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CheckoutForwardNetworkTokenResultAdditionalProperties"
+        }
+      },
       "CheckoutForwardRequest": {
         "required": [
           "baseUrl",
@@ -102871,7 +102881,7 @@
         "properties": {
           "accountUpdate": {
             "type": "boolean",
-            "description": "Whether to check for a card account update (true) or not (false)"
+            "description": "Set to **true** to check if the account tied to the card has been updated."
           },
           "dryRun": {
             "type": "boolean",
@@ -102885,18 +102895,18 @@
             "items": {
               "type": "string"
             },
-            "description": "Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of networkTxReference in the incoming 3rd party response"
+            "description": "Only include when \u0060tokenize\u0060 is set to **true**.\u003Cbr\u003E\u003Cbr\u003EA list of addresses to possible location(s) of the \u0060networkTxReference\u0060 that will be returned in the third party response."
           },
           "tokenize": {
             "type": "boolean",
-            "description": "Set to **true**, the payment details are [tokenized](https://docs.adyen.com/online-payments/tokenization)."
+            "description": "Set to **true** to [tokenize](https://docs.adyen.com/online-payments/tokenization) the payment details."
           },
           "transactionLinkIdPaths": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of transactionLinkId in the incoming 3rd party response"
+            "description": "Only include when \u0060tokenize\u0060 is set to **true**.\u003Cbr\u003E\u003Cbr\u003EA list of addresses to possible location(s) of the \u0060transactionLinkId\u0060 that will be returned in the third party response."
           }
         },
         "additionalProperties": {
@@ -102909,9 +102919,15 @@
         ],
         "type": "object",
         "properties": {
+          "accountUpdate": {
+            "$ref": "#/components/schemas/CheckoutForwardResponseAccountUpdate"
+          },
           "merchantReference": {
             "type": "string",
             "description": "Merchant defined payment reference."
+          },
+          "networkToken": {
+            "$ref": "#/components/schemas/CheckoutForwardResponseNetworkToken"
           },
           "pspReference": {
             "type": "string",
@@ -103168,7 +103184,7 @@
             "items": {
               "$ref": "#/components/schemas/CheckoutSessionInstallmentOptionPlansItem"
             },
-            "description": "Defines the type of installment plan. If not set, defaults to **regular**.\n\nPossible values:\n* **regular**\n* **revolving**\n* **bonus**\n* **with_interest**\n* **buynow_paylater**\n* **nointerest_bonus**\n* **interest_bonus**\n* **refund_prctg**\n* **nointeres_refund_prctg**\n* **interes_refund_prctg**"
+            "description": "Defines the type of installment plan. If not set, defaults to **regular**.\n\nPossible values:\n* **regular**\n* **revolving**\n* **bonus**"
           },
           "preselectedValue": {
             "type": "integer",
@@ -103181,7 +103197,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "description": "An array of the number of installments that the shopper can choose from. For example, **[2,3,5]**. This cannot be specified simultaneously with \u0060maxValue\u0060."
+            "description": "An array of the number of installments that the shopper can choose from. For example, **[2,3,5]**."
           }
         },
         "additionalProperties": {
@@ -103538,6 +103554,11 @@
           "mpiData": {
             "$ref": "#/components/schemas/CreateCheckoutSessionRequestMpiData"
           },
+          "payable": {
+            "type": "boolean",
+            "description": "Indicates if the session is payable. If the payment amount is final, set this to **true** to indicate that the session is payable, so that the shopper can proceed to submit the payment. When you set this to **true**, you can no longer update the session.\n\nIf you set this to **false**, you must make another request to update the session and set this to **true** before the shopper can submit the payment.\n\nIf not specified, this defaults to **true**.\n",
+            "x-addedInVersion": "72"
+          },
           "platformChargebackLogic": {
             "$ref": "#/components/schemas/CreateCheckoutSessionRequestPlatformChargebackLogic"
           },
@@ -103816,6 +103837,11 @@
           },
           "mpiData": {
             "$ref": "#/components/schemas/CreateCheckoutSessionResponseMpiData"
+          },
+          "payable": {
+            "type": "boolean",
+            "description": "Indicates if the session is payable. If the payment amount is final, set this to **true** to indicate that the session is payable, so that the shopper can proceed to submit the payment. When you set this to **true**, you can no longer update the session.\n\nIf you set this to **false**, you must make another request to update the session and set this to **true** before the shopper can submit the payment.\n\nIf not specified, this defaults to **true**.\n",
+            "x-addedInVersion": "72"
           },
           "platformChargebackLogic": {
             "$ref": "#/components/schemas/CreateCheckoutSessionResponsePlatformChargebackLogic"
@@ -105702,6 +105728,11 @@
             "type": "string",
             "description": "A string containing a structured JSON object. This is a passthrough field used to enable custom features or data exchange with Klarna."
           },
+          "klarnaNetworkPaymentAccountId": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "The Klarna Network Payment Account identifier to use for the transaction. Required when \u0060klarnaNetworkSessionToken\u0060 is provided."
+          },
           "klarnaNetworkSessionToken": {
             "maxLength": 10240,
             "type": "string",
@@ -105905,6 +105936,11 @@
             "type": "string",
             "description": "Tracking URI for the return of the item.",
             "x-addedInVersion": "72"
+          },
+          "riskCategory": {
+            "type": "string",
+            "description": "An optional, free-text category for the item to be used in the risk evaluation. When provided, Protect uses this value to evaluate custom risk rules.",
+            "x-addedInVersion": "71"
           },
           "shippingCompany": {
             "type": "string",
@@ -106385,6 +106421,38 @@
         },
         "additionalProperties": {
           "$ref": "#/components/schemas/OpenInvoiceDetailsAdditionalProperties"
+        }
+      },
+      "OpiRequest": {
+        "type": "object",
+        "properties": {
+          "includeIssuerId": {
+            "type": "boolean",
+            "description": "When set to true, includes the OPI issuer ID in the response."
+          },
+          "includeTransToken": {
+            "type": "boolean",
+            "description": "When set to true, includes an OPI transaction token in the response when the payment creates a stored payment method."
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OpiRequestAdditionalProperties"
+        }
+      },
+      "OpiResponse": {
+        "type": "object",
+        "properties": {
+          "issuerId": {
+            "type": "string",
+            "description": "The OPI issuer id."
+          },
+          "transToken": {
+            "type": "string",
+            "description": "The OPI transaction token."
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OpiResponseAdditionalProperties"
         }
       },
       "Passenger": {
@@ -107262,6 +107330,9 @@
             "type": "string",
             "description": "The reference used during the /payments request.",
             "x-addedInVersion": "49"
+          },
+          "opi": {
+            "$ref": "#/components/schemas/CheckoutServiceV72PaymentDetailsResponseOpi"
           },
           "order": {
             "$ref": "#/components/schemas/CheckoutServiceV72PaymentDetailsResponseOrder"
@@ -108340,7 +108411,7 @@
           "merchantOrderReference": {
             "maxLength": 1000,
             "type": "string",
-            "description": "You can use this reference to link multiple transactions to one another (for example, to track order authorization rate).For each billing cycle, this reference should be unique. After the first authorized payment attempt, do not reuse the reference. If you use this parameter, include it in all of the payment requests that you make. \n We strongly recommend that you:\n* Always include this parameter, so that you can benefit from linking payment requests to one another, in case of authorization retries. \n* Additionally include the following parameters in the \u0060additionalData\u0060 object: [\u0060retry.orderAttemptNumber\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-orderAttemptNumber), [\u0060retry.chainAttemptNumber\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-chainAttemptNumber), and [\u0060retry.skipRetry\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-skipRetry)"
+            "description": "You can use this reference to link multiple transactions to one another (for example, to track order authorization rate). For each billing cycle, this reference should be unique. After the first authorized payment attempt, do not reuse the reference. If you use this parameter, include it in all of the payment requests that you make. \n We strongly recommend that you:\n* Always include this parameter, so that you can benefit from linking payment requests to one another, in case of authorization retries. \n* Additionally include the following parameters in the \u0060additionalData\u0060 object: [\u0060retry.orderAttemptNumber\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-orderAttemptNumber), [\u0060retry.chainAttemptNumber\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-chainAttemptNumber), and [\u0060retry.skipRetry\u0060](https://docs.adyen.com/api-explorer/Checkout/latest/post/sessions#request-additionalData-AdditionalDataRetry-retry-skipRetry)"
           },
           "merchantRiskIndicator": {
             "$ref": "#/components/schemas/PaymentRequestMerchantRiskIndicator"
@@ -108350,6 +108421,9 @@
           },
           "mpiData": {
             "$ref": "#/components/schemas/PaymentRequestMpiData"
+          },
+          "opi": {
+            "$ref": "#/components/schemas/PaymentRequestOpi"
           },
           "order": {
             "$ref": "#/components/schemas/PaymentRequestOrder"
@@ -108399,7 +108473,7 @@
           "reference": {
             "maxLength": 80,
             "type": "string",
-            "description": "The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. To provide multiple references for one transaction, separate the reference values with the hyphen (\u0060-\u0060) character.We strongly recommend that you use a unique value for each transaction.\nMaximum length: 80 characters."
+            "description": "The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. To provide multiple references for one transaction, separate the reference values with the hyphen (\u0060-\u0060) character. We strongly recommend that you use a unique value for each transaction.\nMaximum length: 80 characters."
           },
           "returnUrl": {
             "maxLength": 1024,
@@ -108542,6 +108616,9 @@
             "type": "string",
             "description": "The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens (\u0022-\u0022).\nMaximum length: 80 characters.",
             "x-addedInVersion": "49"
+          },
+          "opi": {
+            "$ref": "#/components/schemas/PaymentResponseOpi"
           },
           "order": {
             "$ref": "#/components/schemas/PaymentResponseOrder"
@@ -110477,6 +110554,9 @@
             "type": "string",
             "description": "The merchant account identifier, with which you want to process the transaction."
           },
+          "opi": {
+            "$ref": "#/components/schemas/StoredPaymentMethodRequestOpi"
+          },
           "paymentMethod": {
             "$ref": "#/components/schemas/StoredPaymentMethodRequestPaymentMethod"
           },
@@ -110583,6 +110663,9 @@
           "networkTxReference": {
             "type": "string",
             "description": "Returned in the response if you are not tokenizing with Adyen and are using the Merchant-initiated transactions (MIT) framework from Mastercard or Visa.\n\nThis contains either the Mastercard Trace ID or the Visa Transaction ID."
+          },
+          "opi": {
+            "$ref": "#/components/schemas/StoredPaymentMethodResourceOpi"
           },
           "ownerName": {
             "type": "string",
@@ -112872,6 +112955,11 @@
             "type": "string",
             "description": "A string containing a structured JSON object. This is a passthrough field used to enable custom features or data exchange with Klarna."
           },
+          "klarnaNetworkPaymentAccountId": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "The Klarna Network Payment Account identifier to use for the transaction. Required when \u0060klarnaNetworkSessionToken\u0060 is provided."
+          },
           "klarnaNetworkSessionToken": {
             "maxLength": 10240,
             "type": "string",
@@ -113130,6 +113218,7 @@
             "alma": "#/components/schemas/AlmaDetails",
             "ancv": "#/components/schemas/AncvDetails",
             "paypo": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "satispay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "scalapay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "scalapay_3x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "scalapay_4x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
@@ -115676,6 +115765,20 @@
           ]
         }
       },
+      "CheckoutForwardAccountUpdateResultResult": {
+        "enum": [
+          "CardChanged",
+          "CardExpiryChanged",
+          "CloseAccount",
+          "ContactCardAccountHolder",
+          "Error",
+          "NoChange"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The result of the [Real Time Account Updater](https://docs.adyen.com/online-payments/account-updater/real-time-account-updater).\nPossible values:\n* NoChange\n* CardChanged\n* CardExpiryChanged\n* CloseAccount\n* ContactCardAccountHolder\n* Error",
+        "x-addedInVersion": "72"
+      },
       "SchemeType": {
         "enum": [
           "scheme"
@@ -117723,6 +117826,7 @@
           "walley",
           "walley_b2b",
           "paypo",
+          "satispay",
           "scalapay",
           "scalapay_3x",
           "scalapay_4x",
@@ -117926,6 +118030,10 @@
             {
               "value": "paypo",
               "name": "Paypo"
+            },
+            {
+              "value": "satispay",
+              "name": "Satispay"
             },
             {
               "value": "scalapay",
@@ -166353,7 +166461,6 @@
       },
       "AuthenticationSessionRequest": {
         "required": [
-          "allowOrigin",
           "policy",
           "product"
         ],
@@ -166361,7 +166468,7 @@
         "properties": {
           "allowOrigin": {
             "type": "string",
-            "description": "The URL where the component will appear. In your live environment, you must protect the URL with an SSL certificate and ensure that it starts with \u0060https://\u0060."
+            "description": "The URL where the component will appear. In your live environment, you must protect the URL with an SSL certificate and ensure that it starts with \u0060https://\u0060.\n\nRequired for creating a session for Platform Experience and Onboarding components. Omitting this parameter results in an unusable session token."
           },
           "policy": {
             "$ref": "#/components/schemas/AuthenticationSessionRequestPolicy"
@@ -210040,7 +210147,7 @@
         "properties": {
           "accountUpdate": {
             "type": "boolean",
-            "description": "Whether to check for a card account update (true) or not (false)"
+            "description": "Set to **true** to check if the account tied to the card has been updated."
           },
           "dryRun": {
             "type": "boolean",
@@ -210054,18 +210161,18 @@
             "items": {
               "type": "string"
             },
-            "description": "Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of networkTxReference in the incoming 3rd party response"
+            "description": "Only include when \u0060tokenize\u0060 is set to **true**.\u003Cbr\u003E\u003Cbr\u003EA list of addresses to possible location(s) of the \u0060networkTxReference\u0060 that will be returned in the third party response."
           },
           "tokenize": {
             "type": "boolean",
-            "description": "Set to **true**, the payment details are [tokenized](https://docs.adyen.com/online-payments/tokenization)."
+            "description": "Set to **true** to [tokenize](https://docs.adyen.com/online-payments/tokenization) the payment details."
           },
           "transactionLinkIdPaths": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Set in tokenize:true case when forwarding PAN. Addresses to the possible location(s) of transactionLinkId in the incoming 3rd party response"
+            "description": "Only include when \u0060tokenize\u0060 is set to **true**.\u003Cbr\u003E\u003Cbr\u003EA list of addresses to possible location(s) of the \u0060transactionLinkId\u0060 that will be returned in the third party response."
           }
         },
         "description": "The customizations that can be applied when making a forward request."
@@ -210159,6 +210266,29 @@
           }
         },
         "description": "The object that contains the details for forwarding a network token."
+      },
+      "CheckoutForwardResponseAccountUpdate": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "description": "The result of the [Real Time Account Updater](https://docs.adyen.com/online-payments/account-updater/real-time-account-updater).\nPossible values:\n* NoChange\n* CardChanged\n* CardExpiryChanged\n* CloseAccount\n* ContactCardAccountHolder\n* Error",
+            "$ref": "#/components/schemas/CheckoutForwardAccountUpdateResultResult"
+          }
+        },
+        "description": "Account update details for the forwarded request, including the result of the [Real Time Account Updater](https://docs.adyen.com/online-payments/account-updater/real-time-account-updater).\nReturning the result of the Real Time Account Updater is in [pilot phase](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#handle-the-result), and not yet widely available.",
+        "x-addedInVersion": "72"
+      },
+      "CheckoutForwardResponseNetworkToken": {
+        "type": "object",
+        "properties": {
+          "swapped": {
+            "type": "boolean",
+            "description": "Indicates whether a network token was used in the forwarded request. When \u0060true\u0060, the Primary Account Number (PAN) was successfully swapped for a network token. When \u0060false\u0060, the request fell back to the PAN.",
+            "x-addedInVersion": "72"
+          }
+        },
+        "description": "Network token details for the forwarded request, including whether the Primary Account Number (PAN) was successfully swapped for a network token.",
+        "x-addedInVersion": "72"
       },
       "CheckoutForwardResponseResponse": {
         "type": "object",
@@ -212167,6 +212297,9 @@
             "description": "The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.\nIf you need to provide multiple references for a transaction, separate them with hyphens (\u0022-\u0022).\nMaximum length: 80 characters.",
             "x-addedInVersion": "49"
           },
+          "opi": {
+            "$ref": "#/components/schemas/PaymentResponseOpi"
+          },
           "order": {
             "$ref": "#/components/schemas/PaymentResponseOrder"
           },
@@ -213397,6 +213530,21 @@
           }
         },
         "description": "The fraud result properties of the payment."
+      },
+      "CheckoutServiceV72PaymentDetailsResponseOpi": {
+        "type": "object",
+        "properties": {
+          "issuerId": {
+            "type": "string",
+            "description": "The OPI issuer id."
+          },
+          "transToken": {
+            "type": "string",
+            "description": "The OPI transaction token."
+          }
+        },
+        "description": "Oracle Payment Interface (OPI) response fields such as \u0060transToken\u0060 and \u0060issuerId\u0060.",
+        "x-addedInVersion": "71"
       },
       "CheckoutServiceV72PaymentDetailsResponseOrder": {
         "required": [
@@ -214998,6 +215146,21 @@
         },
         "description": "Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires)."
       },
+      "PaymentRequestOpi": {
+        "type": "object",
+        "properties": {
+          "includeIssuerId": {
+            "type": "boolean",
+            "description": "When set to true, includes the OPI issuer ID in the response."
+          },
+          "includeTransToken": {
+            "type": "boolean",
+            "description": "When set to true, includes an OPI transaction token in the response when the payment creates a stored payment method."
+          }
+        },
+        "description": "Configuration for Oracle Payment Interface (OPI) integrations.",
+        "x-addedInVersion": "71"
+      },
       "PaymentRequestOrder": {
         "required": [
           "orderData",
@@ -215184,6 +215347,21 @@
           }
         },
         "description": "The fraud result properties of the payment."
+      },
+      "PaymentResponseOpi": {
+        "type": "object",
+        "properties": {
+          "issuerId": {
+            "type": "string",
+            "description": "The OPI issuer id."
+          },
+          "transToken": {
+            "type": "string",
+            "description": "The OPI transaction token."
+          }
+        },
+        "description": "Oracle Payment Interface (OPI) response fields such as \u0060transToken\u0060 and \u0060issuerId\u0060.",
+        "x-addedInVersion": "71"
       },
       "PaymentResponseOrder": {
         "required": [
@@ -215535,6 +215713,21 @@
         },
         "description": "Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions)."
       },
+      "StoredPaymentMethodRequestOpi": {
+        "type": "object",
+        "properties": {
+          "includeIssuerId": {
+            "type": "boolean",
+            "description": "When set to true, includes the OPI issuer ID in the response."
+          },
+          "includeTransToken": {
+            "type": "boolean",
+            "description": "When set to true, includes an OPI transaction token in the response when the payment creates a stored payment method."
+          }
+        },
+        "description": "Configuration for Oracle Payment Interface (OPI) integrations.",
+        "x-addedInVersion": "71"
+      },
       "StoredPaymentMethodRequestPaymentMethod": {
         "type": "object",
         "properties": {
@@ -215731,6 +215924,21 @@
           }
         },
         "description": "Mandate details for the stored payment method.",
+        "x-addedInVersion": "71"
+      },
+      "StoredPaymentMethodResourceOpi": {
+        "type": "object",
+        "properties": {
+          "issuerId": {
+            "type": "string",
+            "description": "The OPI issuer id."
+          },
+          "transToken": {
+            "type": "string",
+            "description": "The OPI transaction token."
+          }
+        },
+        "description": "Oracle Payment Interface (OPI) response fields such as \u0060transToken\u0060 and \u0060issuerId\u0060.",
         "x-addedInVersion": "71"
       },
       "SubMerchantInfoAddress": {
@@ -252161,6 +252369,14 @@
         "type": "object",
         "not": {}
       },
+      "CheckoutForwardAccountUpdateResultAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "CheckoutForwardNetworkTokenResultAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
       "CheckoutForwardRequestAdditionalProperties": {
         "type": "object",
         "not": {}
@@ -252572,6 +252788,14 @@
         "not": {}
       },
       "OpenInvoiceDetailsAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "OpiRequestAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "OpiResponseAdditionalProperties": {
         "type": "object",
         "not": {}
       },
@@ -264478,100 +264702,6 @@
             },
             "merchantReference": "YOUR_DONATION_REFERENCE"
           }
-        }
-      },
-      "post-donations-donations-classic": {
-        "summary": "Make a donation to a donation account",
-        "value": {
-          "amount": {
-            "currency": "EUR",
-            "value": 1000
-          },
-          "reference": "YOUR_DONATION_REFERENCE",
-          "paymentMethod": {
-            "type": "scheme"
-          },
-          "donationToken": "YOUR_DONATION_TOKEN",
-          "donationOriginalPspReference": "991559660454807J",
-          "donationAccount": "NONPROFIT_ACCOUNT",
-          "returnUrl": "https://your-company.example.com/...",
-          "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
-          "shopperInteraction": "ContAuth"
-        }
-      },
-      "post-donations-donations-classic-200": {
-        "summary": "Successful donation transaction",
-        "value": {
-          "id": "UNIQUE_RESOURCE_ID",
-          "status": "completed",
-          "donationAccount": "NONPROFIT_ACCOUNT",
-          "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
-          "amount": {
-            "currency": "EUR",
-            "value": 1000
-          },
-          "reference": "YOUR_DONATION_REFERENCE",
-          "payment": {
-            "pspReference": "8535762347980628",
-            "resultCode": "Authorised",
-            "amount": {
-              "currency": "EUR",
-              "value": 1000
-            },
-            "merchantReference": "YOUR_DONATION_REFERENCE"
-          }
-        }
-      },
-      "post-donations-donations-with-token": {
-        "summary": "Make a donation to a donation account with a token",
-        "value": {
-          "amount": {
-            "currency": "EUR",
-            "value": 1000
-          },
-          "reference": "YOUR_DONATION_REFERENCE",
-          "paymentMethod": {
-            "type": "scheme",
-            "recurringDetailReference": "7219687191761347"
-          },
-          "returnUrl": "https://your-company.example.com/...",
-          "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
-          "donationAccount": "NONPROFIT_ACCOUNT",
-          "shopperInteraction": "ContAuth",
-          "shopperReference": "YOUR_SHOPPER_REFERENCE",
-          "recurringProcessingModel": "CardOnFile"
-        }
-      },
-      "post-donations-donations-with-token-200": {
-        "summary": "Successful donation transaction with a token",
-        "value": {
-          "amount": {
-            "currency": "EUR",
-            "value": 500
-          },
-          "donationAccount": "NONPROFIT_ACCOUNT",
-          "id": "UNIQUE_RESOURCE_ID",
-          "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
-          "payment": {
-            "pspReference": "FJM726V375BV9D82",
-            "resultCode": "Authorised",
-            "amount": {
-              "currency": "EUR",
-              "value": 500
-            },
-            "merchantReference": "YOUR_DONATION_REFERENCE"
-          },
-          "reference": "1412563167350061",
-          "status": "completed"
-        }
-      },
-      "post-donations-donations-with-token-422": {
-        "summary": "Example error response when the donation account isn\u0027t valid",
-        "value": {
-          "status": 422,
-          "errorCode": "187",
-          "message": "Field \u0027additionalData.donationAccount\u0027 is not valid.",
-          "errorType": "validation"
         }
       },
       "post-forward-forward-card": {

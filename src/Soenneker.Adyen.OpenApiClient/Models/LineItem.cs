@@ -124,6 +124,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ReturnTrackingUri { get; set; }
 #endif
+        /// <summary>An optional, free-text category for the item to be used in the risk evaluation. When provided, Protect uses this value to evaluate custom risk rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RiskCategory { get; set; }
+#nullable restore
+#else
+        public string RiskCategory { get; set; }
+#endif
         /// <summary>Shipping company handling the delivery of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -225,6 +233,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "returnShippingCompany", n => { ReturnShippingCompany = n.GetStringValue(); } },
                 { "returnTrackingNumber", n => { ReturnTrackingNumber = n.GetStringValue(); } },
                 { "returnTrackingUri", n => { ReturnTrackingUri = n.GetStringValue(); } },
+                { "riskCategory", n => { RiskCategory = n.GetStringValue(); } },
                 { "shippingCompany", n => { ShippingCompany = n.GetStringValue(); } },
                 { "shippingMethod", n => { ShippingMethod = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetStringValue(); } },
@@ -259,6 +268,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("returnShippingCompany", ReturnShippingCompany);
             writer.WriteStringValue("returnTrackingNumber", ReturnTrackingNumber);
             writer.WriteStringValue("returnTrackingUri", ReturnTrackingUri);
+            writer.WriteStringValue("riskCategory", RiskCategory);
             writer.WriteStringValue("shippingCompany", ShippingCompany);
             writer.WriteStringValue("shippingMethod", ShippingMethod);
             writer.WriteStringValue("size", Size);

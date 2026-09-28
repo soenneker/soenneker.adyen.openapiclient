@@ -33,7 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods.
         {
         }
         /// <summary>
-        /// Deletes the token identified in the path. The token can no longer be used with payment requests.
+        /// Deletes the token identified in the path. The token can no longer be used with payment requests.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* API tokenise payment details
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods.
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the token identified in the path. The token can no longer be used with payment requests.
+        /// Deletes the token identified in the path. The token can no longer be used with payment requests.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* API tokenise payment details
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods.
             return new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods.Item.WithStoredPaymentMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Deletes the token identified in the path. The token can no longer be used with payment requests.
+        /// Deletes the token identified in the path. The token can no longer be used with payment requests.To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):* API tokenise payment details
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithStoredPaymentMethodItemRequestBuilderDeleteQueryParameters 

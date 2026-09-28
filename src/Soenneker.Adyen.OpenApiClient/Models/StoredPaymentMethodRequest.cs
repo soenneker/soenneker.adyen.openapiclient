@@ -22,6 +22,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantAccount { get; set; }
 #endif
+        /// <summary>Configuration for Oracle Payment Interface (OPI) integrations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestOpi? Opi { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestOpi Opi { get; set; }
+#endif
         /// <summary>Contains the information required to store a payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "merchantAccount", n => { MerchantAccount = n.GetStringValue(); } },
+                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestOpi>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestOpi.CreateFromDiscriminatorValue); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestPaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestPaymentMethod.CreateFromDiscriminatorValue); } },
                 { "recurringProcessingModel", n => { RecurringProcessingModel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestRecurringProcessingModel>(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
@@ -97,6 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("merchantAccount", MerchantAccount);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestOpi>("opi", Opi);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestPaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestRecurringProcessingModel>("recurringProcessingModel", RecurringProcessingModel);
             writer.WriteStringValue("shopperEmail", ShopperEmail);

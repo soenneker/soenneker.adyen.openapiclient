@@ -62,6 +62,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantReference { get; set; }
 #endif
+        /// <summary>Oracle Payment Interface (OPI) response fields such as `transToken` and `issuerId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOpi? Opi { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOpi Opi { get; set; }
+#endif
         /// <summary>Contains updated information regarding the order in case order information was provided in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,6 +175,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "donationToken", n => { DonationToken = n.GetStringValue(); } },
                 { "fraudResult", n => { FraudResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult.CreateFromDiscriminatorValue); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
+                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOpi>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOpi.CreateFromDiscriminatorValue); } },
                 { "order", n => { Order = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder.CreateFromDiscriminatorValue); } },
                 { "paymentMethod", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod.CreateFromDiscriminatorValue); } },
                 { "paymentValidations", n => { PaymentValidations = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations.CreateFromDiscriminatorValue); } },
@@ -192,6 +201,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("donationToken", DonationToken);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseFraudResult>("fraudResult", FraudResult);
             writer.WriteStringValue("merchantReference", MerchantReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOpi>("opi", Opi);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponseOrder>("order", Order);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResponsePaymentValidations>("paymentValidations", PaymentValidations);

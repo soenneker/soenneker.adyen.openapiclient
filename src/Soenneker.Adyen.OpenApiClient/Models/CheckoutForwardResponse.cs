@@ -12,6 +12,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     public partial class CheckoutForwardResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Account update details for the forwarded request, including the result of the [Real Time Account Updater](https://docs.adyen.com/online-payments/account-updater/real-time-account-updater).Returning the result of the Real Time Account Updater is in [pilot phase](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#handle-the-result), and not yet widely available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate? AccountUpdate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate AccountUpdate { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Merchant defined payment reference.</summary>
@@ -21,6 +29,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public string MerchantReference { get; set; }
+#endif
+        /// <summary>Network token details for the forwarded request, including whether the Primary Account Number (PAN) was successfully swapped for a network token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken? NetworkToken { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken NetworkToken { get; set; }
 #endif
         /// <summary>Adyen&apos;s 16-character reference associated with the transaction/request. This value is globally unique. Use this reference when you communicate with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +87,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accountUpdate", n => { AccountUpdate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate.CreateFromDiscriminatorValue); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
+                { "networkToken", n => { NetworkToken = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken.CreateFromDiscriminatorValue); } },
                 { "pspReference", n => { PspReference = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse.CreateFromDiscriminatorValue); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
@@ -84,7 +102,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseAccountUpdate>("accountUpdate", AccountUpdate);
             writer.WriteStringValue("merchantReference", MerchantReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken>("networkToken", NetworkToken);
             writer.WriteStringValue("pspReference", PspReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseResponse>("response", Response);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);

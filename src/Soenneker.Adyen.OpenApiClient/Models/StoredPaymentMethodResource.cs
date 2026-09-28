@@ -160,6 +160,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string NetworkTxReference { get; set; }
 #endif
+        /// <summary>Oracle Payment Interface (OPI) response fields such as `transToken` and `issuerId`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceOpi? Opi { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceOpi Opi { get; set; }
+#endif
         /// <summary>The name of the bank account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -244,6 +252,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "mandate", n => { Mandate = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networkTxReference", n => { NetworkTxReference = n.GetStringValue(); } },
+                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceOpi>(global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceOpi.CreateFromDiscriminatorValue); } },
                 { "ownerName", n => { OwnerName = n.GetStringValue(); } },
                 { "shopperEmail", n => { ShopperEmail = n.GetStringValue(); } },
                 { "shopperReference", n => { ShopperReference = n.GetStringValue(); } },
@@ -277,6 +286,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceMandate>("mandate", Mandate);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("networkTxReference", NetworkTxReference);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodResourceOpi>("opi", Opi);
             writer.WriteStringValue("ownerName", OwnerName);
             writer.WriteStringValue("shopperEmail", ShopperEmail);
             writer.WriteStringValue("shopperReference", ShopperReference);

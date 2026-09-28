@@ -30,6 +30,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string KlarnaNetworkData { get; set; }
 #endif
+        /// <summary>The Klarna Network Payment Account identifier to use for the transaction. Required when `klarnaNetworkSessionToken` is provided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? KlarnaNetworkPaymentAccountId { get; set; }
+#nullable restore
+#else
+        public string KlarnaNetworkPaymentAccountId { get; set; }
+#endif
         /// <summary>The token obtained from the Klarna SDK during an Express Checkout flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "klarnaNetworkData", n => { KlarnaNetworkData = n.GetStringValue(); } },
+                { "klarnaNetworkPaymentAccountId", n => { KlarnaNetworkPaymentAccountId = n.GetStringValue(); } },
                 { "klarnaNetworkSessionToken", n => { KlarnaNetworkSessionToken = n.GetStringValue(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
@@ -108,6 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checkoutAttemptId", CheckoutAttemptId);
             writer.WriteStringValue("klarnaNetworkData", KlarnaNetworkData);
+            writer.WriteStringValue("klarnaNetworkPaymentAccountId", KlarnaNetworkPaymentAccountId);
             writer.WriteStringValue("klarnaNetworkSessionToken", KlarnaNetworkSessionToken);
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
