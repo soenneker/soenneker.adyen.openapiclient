@@ -67796,8 +67796,8 @@
       },
       "BalancePlatformAcsNotification_v1_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -67833,17 +67833,17 @@
       },
       "AuthenticationInfo": {
         "required": [
+          "acsTransId",
           "challengeIndicator",
+          "createdAt",
+          "deviceChannel",
           "dsTransID",
+          "inPSD2Scope",
+          "messageCategory",
           "messageVersion",
           "threeDSServerTransID",
           "transStatus",
-          "createdAt",
-          "type",
-          "inPSD2Scope",
-          "deviceChannel",
-          "messageCategory",
-          "acsTransId"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -67913,11 +67913,11 @@
       },
       "AuthenticationNotificationData": {
         "required": [
+          "authentication",
           "id",
           "paymentInstrumentId",
-          "status",
-          "authentication",
-          "purchase"
+          "purchase",
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -67959,9 +67959,9 @@
       },
       "AuthenticationNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -68071,8 +68071,8 @@
       },
       "PurchaseInfo": {
         "required": [
-          "merchantName",
           "date",
+          "merchantName",
           "originalAmount"
         ],
         "type": "object",
@@ -68100,11 +68100,11 @@
       },
       "RelayedAuthenticationRequest": {
         "required": [
+          "environment",
           "id",
-          "purchase",
           "paymentInstrumentId",
-          "type",
-          "environment"
+          "purchase",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -100239,7 +100239,7 @@
         "additionalProperties": {
           "not": { }
         },
-        "description": "The type of the transfer event. Possible values: **accounting**, **tracking**.",
+        "description": "The type of the transfer event. Possible values: **accounting**, **tracing**, **tracking**.",
         "x-addedInVersion": "3",
         "x-ms-enum": {
           "name": "TransferEventType",
@@ -110207,6 +110207,44 @@
           "not": { }
         }
       },
+      "PayByBankCaDirectDebitDetails": {
+        "title": "Pay By Bank CA Direct Debit",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "checkoutAttemptId": {
+            "type": "string",
+            "description": "The checkout attempt identifier."
+          },
+          "recurringDetailReference": {
+            "type": "string",
+            "description": "This is the `recurringDetailReference` returned in the response when you created the token.",
+            "deprecated": true,
+            "x-deprecatedInVersion": "49",
+            "x-deprecatedMessage": "Use `storedPaymentMethodId` instead."
+          },
+          "sdkData": {
+            "maxLength": 50000,
+            "type": "string",
+            "description": "Base64-encoded JSON object containing SDK related parameters required by the SDK",
+            "x-addedInVersion": "67"
+          },
+          "storedPaymentMethodId": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "This is the `recurringDetailReference` returned in the response when you created the token.",
+            "x-addedInVersion": "49"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PaybybankCaType"
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        }
+      },
       "PayByBankDetails": {
         "title": "PayByBank",
         "required": [
@@ -116807,6 +116845,9 @@
             "$ref": "#/components/schemas/PayByBankAisDirectDebitDetails"
           },
           {
+            "$ref": "#/components/schemas/PayByBankCaDirectDebitDetails"
+          },
+          {
             "$ref": "#/components/schemas/PayByBankDetails"
           },
           {
@@ -117376,6 +117417,7 @@
             "eps": "#/components/schemas/GenericIssuerPaymentMethodDetails",
             "paybybank": "#/components/schemas/PayByBankDetails",
             "paybybank_AIS_DD": "#/components/schemas/PayByBankAisDirectDebitDetails",
+            "paybybank_ca": "#/components/schemas/PayByBankCaDirectDebitDetails",
             "onlineBanking_SK": "#/components/schemas/GenericIssuerPaymentMethodDetails",
             "onlineBanking_CZ": "#/components/schemas/GenericIssuerPaymentMethodDetails",
             "openinvoice": "#/components/schemas/OpenInvoiceDetails",
@@ -117523,6 +117565,7 @@
             "MolPayDetails": "#/components/schemas/MolPayDetails",
             "OpenInvoiceDetails": "#/components/schemas/OpenInvoiceDetails",
             "PayByBankAisDirectDebitDetails": "#/components/schemas/PayByBankAisDirectDebitDetails",
+            "PayByBankCaDirectDebitDetails": "#/components/schemas/PayByBankCaDirectDebitDetails",
             "PayByBankDetails": "#/components/schemas/PayByBankDetails",
             "PayPalDetails": "#/components/schemas/PayPalDetails",
             "PayPayDetails": "#/components/schemas/PayPayDetails",
@@ -121876,6 +121919,26 @@
             {
               "value": "paybybank_AIS_DD",
               "name": "PaybybankAisDd"
+            }
+          ]
+        }
+      },
+      "PaybybankCaType": {
+        "enum": [
+          "paybybank_ca"
+        ],
+        "type": "string",
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "The type of payment method",
+        "x-ms-enum": {
+          "name": "PaybybankCaType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "paybybank_ca",
+              "name": "PaybybankCa"
             }
           ]
         }
@@ -192527,7 +192590,7 @@
         "additionalProperties": {
           "not": { }
         },
-        "description": "The type of the transfer event. Possible values: **accounting**, **tracking**.",
+        "description": "The type of the transfer event. Possible values: **accounting**, **tracing**, **tracking**.",
         "x-addedInVersion": "3",
         "x-ms-enum": {
           "name": "TransferEventType",
