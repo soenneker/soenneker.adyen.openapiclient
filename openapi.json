@@ -126273,15 +126273,15 @@
       },
       "ForwardApiNotificationData": {
         "required": [
-          "pspReference",
-          "shopperReference",
-          "storedPaymentMethodId",
-          "scheme",
-          "externalPsp",
-          "merchantReference",
           "eventDateTime",
+          "externalPsp",
           "merchantAccountCode",
-          "merchantCountryCode"
+          "merchantCountryCode",
+          "merchantReference",
+          "pspReference",
+          "scheme",
+          "shopperReference",
+          "storedPaymentMethodId"
         ],
         "type": "object",
         "properties": {
@@ -126362,8 +126362,8 @@
       },
       "ForwardApiNotificationRequest": {
         "required": [
-          "type",
-          "createdAt"
+          "createdAt",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -174065,11 +174065,11 @@
       },
       "RecurringService_v68_Address": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -174107,8 +174107,8 @@
       },
       "RecurringService_v68_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -174233,9 +174233,9 @@
       "CreatePermitRequest": {
         "required": [
           "merchantAccount",
-          "shopperReference",
+          "permits",
           "recurringDetailReference",
-          "permits"
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -174383,10 +174383,10 @@
       },
       "NotifyShopperRequest": {
         "required": [
-          "merchantAccount",
-          "shopperReference",
           "amount",
-          "reference"
+          "merchantAccount",
+          "reference",
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -182552,8 +182552,8 @@
         "required": [
           "merchantAccount",
           "shopperReference",
-          "type",
-          "storedPaymentMethodId"
+          "storedPaymentMethodId",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -182581,10 +182581,10 @@
       "RecurringTokenStoreOperation": {
         "required": [
           "merchantAccount",
+          "operation",
           "shopperReference",
-          "type",
           "storedPaymentMethodId",
-          "operation"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -182615,10 +182615,10 @@
       },
       "TokenizationAlreadyExistingDetailsNotificationRequest": {
         "required": [
-          "environment",
           "createdAt",
-          "eventId",
           "data",
+          "environment",
+          "eventId",
           "type"
         ],
         "type": "object",
@@ -182659,10 +182659,10 @@
       },
       "TokenizationCreatedDetailsNotificationRequest": {
         "required": [
-          "environment",
           "createdAt",
-          "eventId",
           "data",
+          "environment",
+          "eventId",
           "type"
         ],
         "type": "object",
@@ -182703,10 +182703,10 @@
       },
       "TokenizationDisabledDetailsNotificationRequest": {
         "required": [
-          "environment",
           "createdAt",
-          "eventId",
           "data",
+          "environment",
+          "eventId",
           "type"
         ],
         "type": "object",
@@ -182759,10 +182759,10 @@
       },
       "TokenizationUpdatedDetailsNotificationRequest": {
         "required": [
-          "environment",
           "createdAt",
-          "eventId",
           "data",
+          "environment",
+          "eventId",
           "type"
         ],
         "type": "object",
