@@ -49,7 +49,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Set this to **true** if the legal arrangement does not have a `Doing business as` name.</summary>
         public bool? DoingBusinessAsAbsent { get; set; }
-        /// <summary>The legal name.</summary>
+        /// <summary>The legal name. Must be at least 3 characters.Only the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&amp;**, **?**, **@**, **(**, **)**, **&quot;**, **&apos;**, **!**, **\**, **+**, **/**. Accents and non-Latin scripts are allowed.The field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipPrincipalPlaceOfBusiness PrincipalPlaceOfBusiness { get; set; }
 #endif
-        /// <summary>The address registered at the registrar, such as the Chamber of Commerce.</summary>
+        /// <summary>The address registered at the registrar, such as the Chamber of Commerce. If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.Address fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipRegisteredAddress? RegisteredAddress { get; set; }
@@ -81,6 +81,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string RegistrationNumber { get; set; }
 #endif
+        /// <summary>Indicates if the `registeredAddress` is a place of residence, instead of a business address.Set to **true** if the address is a place of residence. The default value is **false**.</summary>
+        public bool? ResidentialAddressIndicator { get; set; }
         /// <summary>The tax information of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +137,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "principalPlaceOfBusiness", n => { PrincipalPlaceOfBusiness = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipPrincipalPlaceOfBusiness>(global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipPrincipalPlaceOfBusiness.CreateFromDiscriminatorValue); } },
                 { "registeredAddress", n => { RegisteredAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipRegisteredAddress>(global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipRegisteredAddress.CreateFromDiscriminatorValue); } },
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
+                { "residentialAddressIndicator", n => { ResidentialAddressIndicator = n.GetBoolValue(); } },
                 { "taxInformation", n => { TaxInformation = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>(global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipType>(); } },
                 { "vatAbsenceReason", n => { VatAbsenceReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipVatAbsenceReason>(); } },
@@ -157,6 +160,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipPrincipalPlaceOfBusiness>("principalPlaceOfBusiness", PrincipalPlaceOfBusiness);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipRegisteredAddress>("registeredAddress", RegisteredAddress);
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
+            writer.WriteBoolValue("residentialAddressIndicator", ResidentialAddressIndicator);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation>("taxInformation", TaxInformation);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UnincorporatedPartnershipVatAbsenceReason>("vatAbsenceReason", VatAbsenceReason);
             writer.WriteStringValue("vatNumber", VatNumber);

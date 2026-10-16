@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string TermsOfServiceDocumentFormat { get; set; }
 #endif
-        /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite**</summary>
+        /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenCapitalCashAdvance***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite***  **directDebit**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequest"/> and sets the default values.

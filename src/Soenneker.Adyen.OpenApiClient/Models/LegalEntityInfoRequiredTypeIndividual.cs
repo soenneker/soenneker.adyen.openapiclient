@@ -39,7 +39,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.IndividualIdentificationData IdentificationData { get; set; }
 #endif
-        /// <summary>The individual&apos;s name.</summary>
+        /// <summary>The individual&apos;s name. The combined length of `firstName` and `lastName` must be at least 3 characters.Only **-**, **—**, **.**, **/** are allowed as special characters.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.IndividualName? Name { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.IndividualPhone Phone { get; set; }
 #endif
-        /// <summary>The residential address of the individual.</summary>
+        /// <summary>The residential address of the individual. Individuals cannot use a PO box as their residential address.Address fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.IndividualResidentialAddress? ResidentialAddress { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite**</summary>
+    /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenCapitalCashAdvance***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite***  **directDebit**</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TermsOfServiceAcceptanceInfoType
     {
@@ -14,6 +14,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "adyenCapital")]
         #pragma warning disable CS1591
         AdyenCapital,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "adyenCapitalCashAdvance")]
+        #pragma warning disable CS1591
+        AdyenCapitalCashAdvance,
         #pragma warning restore CS1591
         [EnumMember(Value = "adyenCard")]
         #pragma warning disable CS1591
@@ -42,6 +46,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "adyenPccr")]
         #pragma warning disable CS1591
         AdyenPccr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "directDebit")]
+        #pragma warning disable CS1591
+        DirectDebit,
         #pragma warning restore CS1591
         [EnumMember(Value = "kycOnInvite")]
         #pragma warning disable CS1591

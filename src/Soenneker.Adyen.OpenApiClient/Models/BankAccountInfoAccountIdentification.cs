@@ -141,33 +141,33 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public static global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAccountIdentification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAccountIdentification();
-            if("LegalEntityServiceV4AuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("auLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4AuLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4AuLocalAccountIdentification();
             }
-            else if("LegalEntityServiceV4CaLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("caLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4CaLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CaLocalAccountIdentification();
             }
-            else if("LegalEntityServiceV4CzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("czLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4CzLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CzLocalAccountIdentification();
             }
-            else if("LegalEntityServiceV4DkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("dkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4DkLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4DkLocalAccountIdentification();
             }
-            else if("LegalEntityServiceV4HkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("hkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4HkLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4HkLocalAccountIdentification();
             }
-            else if("LegalEntityServiceV4HuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("huLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4HuLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4HuLocalAccountIdentification();
             }
-            else if("LegalEntityServiceV4IbanAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("iban".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LegalEntityServiceV4IbanAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4IbanAccountIdentification();
             }

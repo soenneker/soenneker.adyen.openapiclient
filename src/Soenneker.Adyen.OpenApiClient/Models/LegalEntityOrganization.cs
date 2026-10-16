@@ -101,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string LegalForm { get; set; }
 #endif
-        /// <summary>The organization&apos;s legal name.</summary>
+        /// <summary>The organization&apos;s legal name. Must be at least 3 characters.Only the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&amp;**, **?**, **@**, **(**, **)**, **&quot;**, **&apos;**, **!**, **\**, **+**, **/**. Accents and non-Latin scripts are allowed.The field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LegalName { get; set; }
@@ -125,7 +125,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationPrincipalPlaceOfBusiness PrincipalPlaceOfBusiness { get; set; }
 #endif
-        /// <summary>The address of the organization registered at their registrar (such as the Chamber of Commerce).</summary>
+        /// <summary>The address of the organization registered at their registrar (such as the Chamber of Commerce). If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.Address fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationRegisteredAddress? RegisteredAddress { get; set; }
@@ -143,6 +143,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Set this to **true** if the organization does not have a registration number available. Only applicable for organizations in New Zealand, and incorporated partnerships and government organizations in Australia.</summary>
         public bool? RegistrationNumberAbsent { get; set; }
+        /// <summary>Indicates if the `registeredAddress` is a place of residence, instead of a business address.Set to **true** if the address is a place of residence. The default value is **false**.</summary>
+        public bool? ResidentialAddressIndicator { get; set; }
         /// <summary>The status of any current or past legal action taken against the legal entity.Possible values: **noLegalActionsTaken**, **underJudicialAdministration**, **bankruptcyInsolvency**, **otherLegalMeasures**If the value of this field is **noLegalActionsTaken**, then `dateOfInitiationOfLegalProceeding` is not required. Otherwise, it is required.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding? StatusOfLegalProceeding { get; set; }
         /// <summary>Information about the organization&apos;s publicly traded stock. Provide this object only if `type` is **listedPublicCompany**.</summary>
@@ -169,7 +171,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public List<global::Soenneker.Adyen.OpenApiClient.Models.TaxInformation> TaxInformation { get; set; }
 #endif
-        /// <summary>The tax reporting classification (FATCA/CRS self-certification) of the organization.</summary>
+        /// <summary>The tax reporting classification (FATCA/CRS self-certification) of the organization. Not required if your organization is US-based and requests business bank account capabilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.OrganizationTaxReportingClassification? TaxReportingClassification { get; set; }
@@ -242,6 +244,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "registeredAddress", n => { RegisteredAddress = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationRegisteredAddress>(global::Soenneker.Adyen.OpenApiClient.Models.OrganizationRegisteredAddress.CreateFromDiscriminatorValue); } },
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
                 { "registrationNumberAbsent", n => { RegistrationNumberAbsent = n.GetBoolValue(); } },
+                { "residentialAddressIndicator", n => { ResidentialAddressIndicator = n.GetBoolValue(); } },
                 { "statusOfLegalProceeding", n => { StatusOfLegalProceeding = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding>(); } },
                 { "stockData", n => { StockData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStockData>(global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStockData.CreateFromDiscriminatorValue); } },
                 { "support", n => { Support = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationSupport>(global::Soenneker.Adyen.OpenApiClient.Models.OrganizationSupport.CreateFromDiscriminatorValue); } },
@@ -279,6 +282,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationRegisteredAddress>("registeredAddress", RegisteredAddress);
             writer.WriteStringValue("registrationNumber", RegistrationNumber);
             writer.WriteBoolValue("registrationNumberAbsent", RegistrationNumberAbsent);
+            writer.WriteBoolValue("residentialAddressIndicator", ResidentialAddressIndicator);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStatusOfLegalProceeding>("statusOfLegalProceeding", StatusOfLegalProceeding);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationStockData>("stockData", StockData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OrganizationSupport>("support", Support);

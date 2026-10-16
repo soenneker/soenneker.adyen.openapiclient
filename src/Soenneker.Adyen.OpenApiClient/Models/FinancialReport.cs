@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string BalanceSheetTotal { get; set; }
 #endif
-        /// <summary>The currency used for the annual turnover, balance sheet total, and net assets.</summary>
+        /// <summary>The currency used for the financial data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyOfFinancialData { get; set; }

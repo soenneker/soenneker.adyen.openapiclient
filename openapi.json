@@ -100452,8 +100452,8 @@
       },
       "BinLookupService_v54_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -129626,7 +129626,7 @@
         "properties": {
           "city": {
             "type": "string",
-            "description": "The name of the city. Required if `stateOrProvince` is provided.\n\nIf you specify the city, you must also send `postalCode` and `street`."
+            "description": "The name of the city. Required if `stateOrProvince` is provided.\n\nIf you specify the city, you must also send `postalCode` and `street`.\n\nThe city name must be at least 3 characters. If the city name contains only repeated characters, the minimum length is two characters. For example, Aa is accepted, but Aaaa is not.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "country": {
             "type": "string",
@@ -129642,7 +129642,7 @@
           },
           "street": {
             "type": "string",
-            "description": "The name of the street, and the house or building number. Required if `stateOrProvince` and/or `city` is provided."
+            "description": "The name of the street, and the house or building number. Must be at least 3 characters. Required if `stateOrProvince` and/or `city` is provided. For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "street2": {
             "type": "string",
@@ -130374,7 +130374,7 @@
           },
           "currencyOfFinancialData": {
             "type": "string",
-            "description": "The currency used for the annual turnover, balance sheet total, and net assets.",
+            "description": "The currency used for the financial data.",
             "x-addedInVersion": "3"
           },
           "dateOfFinancialData": {
@@ -130755,7 +130755,7 @@
                 "$ref": "#/components/schemas/LegalEntityService_v4_Name"
               }
             ],
-            "description": "The individual's name."
+            "description": "The individual's name. The combined length of `firstName` and `lastName` must be at least 3 characters.\n\nOnly **-**, **—**, **.**, **/** are allowed as special characters.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "nationality": {
             "type": "string",
@@ -130775,7 +130775,7 @@
                 "$ref": "#/components/schemas/LegalEntityService_v4_Address"
               }
             ],
-            "description": "The residential address of the individual."
+            "description": "The residential address of the individual. Individuals cannot use a PO box as their residential address.\n\nAddress fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "support": {
             "allOf": [
@@ -131236,15 +131236,15 @@
         "properties": {
           "firstName": {
             "type": "string",
-            "description": "The individual's first name. Must not be blank."
+            "description": "The individual's first name. Must not be blank.\n\nThe combined length of `firstName` and `lastName` must be at least 3 characters. For example, a `firstName` of N and `lastName` of Ha is accepted.\n\nOnly the following special characters are allowed: **-**, **—**, **.**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "infix": {
             "type": "string",
-            "description": "The infix in the individual's name, if any."
+            "description": "The infix in the individual's name, if any.\n\nOnly the following special characters are allowed: **-**, **—**, **.**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only symbols, only numbers, or only spaces.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "lastName": {
             "type": "string",
-            "description": "The individual's last name. Must not be blank."
+            "description": "The individual's last name. Must not be blank.\n\nThe combined length of `firstName` and `lastName` must be at least 3 characters.\n\nOnly the following special characters are allowed: **-**, **—**, **.**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           }
         },
         "additionalProperties": {
@@ -131541,7 +131541,7 @@
           },
           "legalName": {
             "type": "string",
-            "description": "The organization's legal name."
+            "description": "The organization's legal name. Must be at least 3 characters.\n\nOnly the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&**, **?**, **@**, **(**, **)**, **\"**, **'**, **!**, **\\**, **+**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "phone": {
             "allOf": [
@@ -131565,7 +131565,7 @@
                 "$ref": "#/components/schemas/LegalEntityService_v4_Address"
               }
             ],
-            "description": "The address of the organization registered at their registrar (such as the Chamber of Commerce)."
+            "description": "The address of the organization registered at their registrar (such as the Chamber of Commerce). If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.\n\nAddress fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "registrationNumber": {
             "type": "string",
@@ -131578,6 +131578,14 @@
             ],
             "description": "Set this to **true** if the organization does not have a registration number available. Only applicable for organizations in New Zealand, and incorporated partnerships and government organizations in Australia.",
             "x-addedInVersion": "4"
+          },
+          "residentialAddressIndicator": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Indicates if the `registeredAddress` is a place of residence, instead of a business address.\n\nSet to **true** if the address is a place of residence. The default value is **false**.",
+            "x-addedInVersion": "2"
           },
           "statusOfLegalProceeding": {
             "$ref": "#/components/schemas/OrganizationStatusOfLegalProceeding"
@@ -131613,7 +131621,7 @@
                 "$ref": "#/components/schemas/TaxReportingClassification"
               }
             ],
-            "description": "The tax reporting classification (FATCA/CRS self-certification) of the organization.",
+            "description": "The tax reporting classification (FATCA/CRS self-certification) of the organization. Not required if your organization is US-based and requests business bank account capabilities.",
             "x-addedInVersion": "2"
           },
           "type": {
@@ -131884,7 +131892,6 @@
       },
       "SoleProprietorship": {
         "required": [
-          "countryOfGoverningLaw",
           "name",
           "registeredAddress"
         ],
@@ -131921,7 +131928,7 @@
           },
           "name": {
             "type": "string",
-            "description": "The legal name."
+            "description": "The legal name. Must be at least 3 characters.\n\nOnly the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&**, **?**, **@**, **(**, **)**, **\"**, **'**, **!**, **\\**, **+**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "principalPlaceOfBusiness": {
             "allOf": [
@@ -131937,11 +131944,19 @@
                 "$ref": "#/components/schemas/LegalEntityService_v4_Address"
               }
             ],
-            "description": "The address registered at the registrar, such as the Chamber of Commerce."
+            "description": "The address registered at the registrar, such as the Chamber of Commerce. If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.\n\nAddress fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "registrationNumber": {
             "type": "string",
             "description": "The registration number."
+          },
+          "residentialAddressIndicator": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Indicates if the `registeredAddress` is a place of residence, instead of a business address.\n\nSet to **true** if the address is a place of residence. The default value is **false**.",
+            "x-addedInVersion": "2"
           },
           "taxAbsent": {
             "type": [
@@ -132351,7 +132366,7 @@
           },
           "name": {
             "type": "string",
-            "description": "The legal name."
+            "description": "The legal name. Must be at least 3 characters.\n\nOnly the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&**, **?**, **@**, **(**, **)**, **\"**, **'**, **!**, **\\**, **+**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "principalPlaceOfBusiness": {
             "allOf": [
@@ -132367,11 +132382,19 @@
                 "$ref": "#/components/schemas/LegalEntityService_v4_Address"
               }
             ],
-            "description": "The address registered at the registrar, such as the Chamber of Commerce."
+            "description": "The address registered at the registrar, such as the Chamber of Commerce. If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.\n\nAddress fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "registrationNumber": {
             "type": "string",
             "description": "The registration number."
+          },
+          "residentialAddressIndicator": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Indicates if the `registeredAddress` is a place of residence, instead of a business address.\n\nSet to **true** if the address is a place of residence. The default value is **false**.",
+            "x-addedInVersion": "2"
           },
           "taxInformation": {
             "type": "array",
@@ -132516,7 +132539,7 @@
           },
           "name": {
             "type": "string",
-            "description": "The legal name."
+            "description": "The legal name. Must be at least 3 characters.\n\nOnly the following special characters are allowed: **,**, **-**, **—**, **.**, **;**, **:**, **&**, **?**, **@**, **(**, **)**, **\"**, **'**, **!**, **\\**, **+**, **/**. Accents and non-Latin scripts are allowed.\n\nThe field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "principalPlaceOfBusiness": {
             "allOf": [
@@ -132532,11 +132555,19 @@
                 "$ref": "#/components/schemas/LegalEntityService_v4_Address"
               }
             ],
-            "description": "The address registered at the registrar, such as the Chamber of Commerce."
+            "description": "The address registered at the registrar, such as the Chamber of Commerce. If you use a PO box, you must also provide a `principalPlaceOfBusiness`. The principal place of business cannot be a PO box.\n\nAddress fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.\n\nFor more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations)."
           },
           "registrationNumber": {
             "type": "string",
             "description": "The registration number."
+          },
+          "residentialAddressIndicator": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Indicates if the `registeredAddress` is a place of residence, instead of a business address.\n\nSet to **true** if the address is a place of residence. The default value is **false**.",
+            "x-addedInVersion": "2"
           },
           "taxInformation": {
             "type": "array",
@@ -132713,6 +132744,9 @@
         }
       },
       "BankAccountInfoAccountIdentification": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -132831,9 +132865,47 @@
             "minLength": 9,
             "type": "string",
             "description": "The 9-digit [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace."
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Identification of the bank account.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "iban": "#/components/schemas/LegalEntityService_v4_IbanAccountIdentification",
+            "numberAndBic": "#/components/schemas/LegalEntityService_v4_NumberAndBicAccountIdentification",
+            "auLocal": "#/components/schemas/LegalEntityService_v4_AuLocalAccountIdentification",
+            "sgLocal": "#/components/schemas/LegalEntityService_v4_SgLocalAccountIdentification",
+            "nzLocal": "#/components/schemas/LegalEntityService_v4_NzLocalAccountIdentification",
+            "hkLocal": "#/components/schemas/LegalEntityService_v4_HkLocalAccountIdentification",
+            "czLocal": "#/components/schemas/LegalEntityService_v4_CzLocalAccountIdentification",
+            "noLocal": "#/components/schemas/LegalEntityService_v4_NoLocalAccountIdentification",
+            "plLocal": "#/components/schemas/LegalEntityService_v4_PlLocalAccountIdentification",
+            "huLocal": "#/components/schemas/LegalEntityService_v4_HuLocalAccountIdentification",
+            "seLocal": "#/components/schemas/LegalEntityService_v4_SeLocalAccountIdentification",
+            "ukLocal": "#/components/schemas/LegalEntityService_v4_UkLocalAccountIdentification",
+            "usLocal": "#/components/schemas/LegalEntityService_v4_UsLocalAccountIdentification",
+            "dkLocal": "#/components/schemas/LegalEntityService_v4_DkLocalAccountIdentification",
+            "caLocal": "#/components/schemas/LegalEntityService_v4_CaLocalAccountIdentification",
+            "AuLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_AuLocalAccountIdentification",
+            "CaLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_CaLocalAccountIdentification",
+            "CzLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_CzLocalAccountIdentification",
+            "DkLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_DkLocalAccountIdentification",
+            "HkLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_HkLocalAccountIdentification",
+            "HuLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_HuLocalAccountIdentification",
+            "IbanAccountIdentification": "#/components/schemas/LegalEntityService_v4_IbanAccountIdentification",
+            "NoLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_NoLocalAccountIdentification",
+            "NzLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_NzLocalAccountIdentification",
+            "NumberAndBicAccountIdentification": "#/components/schemas/LegalEntityService_v4_NumberAndBicAccountIdentification",
+            "PlLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_PlLocalAccountIdentification",
+            "SeLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_SeLocalAccountIdentification",
+            "SgLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_SgLocalAccountIdentification",
+            "UkLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_UkLocalAccountIdentification",
+            "UsLocalAccountIdentification": "#/components/schemas/LegalEntityService_v4_UsLocalAccountIdentification"
+          }
+        },
         "x-addedInVersion": "3"
       },
       "LegalEntityService_v4_CapabilitySettingsAmountPerIndustry": {
@@ -132949,6 +133021,7 @@
         "enum": [
           "adyenAccount",
           "adyenCapital",
+          "adyenCapitalCashAdvance",
           "adyenCard",
           "adyenChargeCard",
           "adyenForPlatformsAdvanced",
@@ -132956,13 +133029,14 @@
           "adyenFranchisee",
           "adyenIssuing",
           "adyenPccr",
+          "directDebit",
           "kycOnInvite"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n\n",
+        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenCapitalCashAdvance**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n*  **directDebit**\n\n",
         "x-ms-enum": {
           "name": "AcceptTermsOfServiceResponseType",
           "modelAsString": false,
@@ -132974,6 +133048,10 @@
             {
               "value": "adyenCapital",
               "name": "AdyenCapital"
+            },
+            {
+              "value": "adyenCapitalCashAdvance",
+              "name": "AdyenCapitalCashAdvance"
             },
             {
               "value": "adyenCard",
@@ -133002,6 +133080,10 @@
             {
               "value": "adyenPccr",
               "name": "AdyenPccr"
+            },
+            {
+              "value": "directDebit",
+              "name": "DirectDebit"
             },
             {
               "value": "kycOnInvite",
@@ -133210,6 +133292,7 @@
         "enum": [
           "adyenAccount",
           "adyenCapital",
+          "adyenCapitalCashAdvance",
           "adyenCard",
           "adyenChargeCard",
           "adyenForPlatformsAdvanced",
@@ -133217,6 +133300,7 @@
           "adyenFranchisee",
           "adyenIssuing",
           "adyenPccr",
+          "directDebit",
           "kycOnInvite"
         ],
         "type": "string",
@@ -133234,6 +133318,10 @@
             {
               "value": "adyenCapital",
               "name": "AdyenCapital"
+            },
+            {
+              "value": "adyenCapitalCashAdvance",
+              "name": "AdyenCapitalCashAdvance"
             },
             {
               "value": "adyenCard",
@@ -133262,6 +133350,10 @@
             {
               "value": "adyenPccr",
               "name": "AdyenPccr"
+            },
+            {
+              "value": "directDebit",
+              "name": "DirectDebit"
             },
             {
               "value": "kycOnInvite",
@@ -133605,6 +133697,7 @@
         "enum": [
           "adyenAccount",
           "adyenCapital",
+          "adyenCapitalCashAdvance",
           "adyenCard",
           "adyenChargeCard",
           "adyenForPlatformsAdvanced",
@@ -133612,13 +133705,14 @@
           "adyenFranchisee",
           "adyenIssuing",
           "adyenPccr",
+          "directDebit",
           "kycOnInvite"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n\n",
+        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenCapitalCashAdvance**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n*  **directDebit**\n\n",
         "x-ms-enum": {
           "name": "GetTermsOfServiceDocumentRequestType",
           "modelAsString": false,
@@ -133632,6 +133726,10 @@
               "name": "AdyenCapital"
             },
             {
+              "value": "adyenCapitalCashAdvance",
+              "name": "AdyenCapitalCashAdvance"
+            },
+            {
               "value": "adyenCard",
               "name": "AdyenCard"
             },
@@ -133660,6 +133758,10 @@
               "name": "AdyenPccr"
             },
             {
+              "value": "directDebit",
+              "name": "DirectDebit"
+            },
+            {
               "value": "kycOnInvite",
               "name": "KycOnInvite"
             }
@@ -133670,6 +133772,7 @@
         "enum": [
           "adyenAccount",
           "adyenCapital",
+          "adyenCapitalCashAdvance",
           "adyenCard",
           "adyenChargeCard",
           "adyenForPlatformsAdvanced",
@@ -133677,13 +133780,14 @@
           "adyenFranchisee",
           "adyenIssuing",
           "adyenPccr",
+          "directDebit",
           "kycOnInvite"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n\n",
+        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenCapitalCashAdvance**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n*  **directDebit**\n\n",
         "x-ms-enum": {
           "name": "GetTermsOfServiceDocumentResponseType",
           "modelAsString": false,
@@ -133697,6 +133801,10 @@
               "name": "AdyenCapital"
             },
             {
+              "value": "adyenCapitalCashAdvance",
+              "name": "AdyenCapitalCashAdvance"
+            },
+            {
               "value": "adyenCard",
               "name": "AdyenCard"
             },
@@ -133723,6 +133831,10 @@
             {
               "value": "adyenPccr",
               "name": "AdyenPccr"
+            },
+            {
+              "value": "directDebit",
+              "name": "DirectDebit"
             },
             {
               "value": "kycOnInvite",
@@ -134690,6 +134802,7 @@
         "enum": [
           "adyenAccount",
           "adyenCapital",
+          "adyenCapitalCashAdvance",
           "adyenCard",
           "adyenChargeCard",
           "adyenForPlatformsAdvanced",
@@ -134697,13 +134810,14 @@
           "adyenFranchisee",
           "adyenIssuing",
           "adyenPccr",
+          "directDebit",
           "kycOnInvite"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n\n",
+        "description": "The type of Terms of Service.\n\nPossible values:\n*  **adyenForPlatformsManage**\n*  **adyenIssuing**\n*  **adyenForPlatformsAdvanced**\n*  **adyenCapital**\n*  **adyenCapitalCashAdvance**\n*  **adyenAccount**\n*  **adyenCard**\n*  **adyenFranchisee**\n*  **adyenPccr**\n*  **adyenChargeCard**\n*  **kycOnInvite**\n*  **directDebit**\n\n",
         "x-ms-enum": {
           "name": "TermsOfServiceAcceptanceInfoType",
           "modelAsString": false,
@@ -134715,6 +134829,10 @@
             {
               "value": "adyenCapital",
               "name": "AdyenCapital"
+            },
+            {
+              "value": "adyenCapitalCashAdvance",
+              "name": "AdyenCapitalCashAdvance"
             },
             {
               "value": "adyenCard",
@@ -134743,6 +134861,10 @@
             {
               "value": "adyenPccr",
               "name": "AdyenPccr"
+            },
+            {
+              "value": "directDebit",
+              "name": "DirectDebit"
             },
             {
               "value": "kycOnInvite",

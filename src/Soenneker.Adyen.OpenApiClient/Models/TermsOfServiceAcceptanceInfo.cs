@@ -40,7 +40,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite**</summary>
+        /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenCapitalCashAdvance***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite***  **directDebit**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TermsOfServiceAcceptanceInfoType? Type { get; set; }
         /// <summary>The expiration date for the Terms of Service acceptance, in ISO 8601 extended format. For example, 2022-12-18T00:00:00+01:00.</summary>
         public DateTimeOffset? ValidTo { get; set; }

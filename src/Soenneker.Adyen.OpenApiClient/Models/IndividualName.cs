@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The individual&apos;s name.
+    /// The individual&apos;s name. The combined length of `firstName` and `lastName` must be at least 3 characters.Only **-**, **—**, **.**, **/** are allowed as special characters.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndividualName : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The individual&apos;s first name. Must not be blank.</summary>
+        /// <summary>The individual&apos;s first name. Must not be blank.The combined length of `firstName` and `lastName` must be at least 3 characters. For example, a `firstName` of N and `lastName` of Ha is accepted.Only the following special characters are allowed: **-**, **—**, **.**, **/**. Accents and non-Latin scripts are allowed.The field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The infix in the individual&apos;s name, if any.</summary>
+        /// <summary>The infix in the individual&apos;s name, if any.Only the following special characters are allowed: **-**, **—**, **.**, **/**. Accents and non-Latin scripts are allowed.The field cannot contain emojis, only symbols, only numbers, or only spaces.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Infix { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Infix { get; set; }
 #endif
-        /// <summary>The individual&apos;s last name. Must not be blank.</summary>
+        /// <summary>The individual&apos;s last name. Must not be blank.The combined length of `firstName` and `lastName` must be at least 3 characters.Only the following special characters are allowed: **-**, **—**, **.**, **/**. Accents and non-Latin scripts are allowed.The field cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious names** such as **John Doe** or **N/A**.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }

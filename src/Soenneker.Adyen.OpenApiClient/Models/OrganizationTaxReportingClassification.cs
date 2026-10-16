@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The tax reporting classification (FATCA/CRS self-certification) of the organization.
+    /// The tax reporting classification (FATCA/CRS self-certification) of the organization. Not required if your organization is US-based and requests business bank account capabilities.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationTaxReportingClassification : IAdditionalDataHolder, IParsable

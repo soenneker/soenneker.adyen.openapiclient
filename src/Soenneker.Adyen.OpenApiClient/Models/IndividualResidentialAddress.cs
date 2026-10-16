@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The residential address of the individual.
+    /// The residential address of the individual. Individuals cannot use a PO box as their residential address.Address fields cannot contain emojis, only one repeated character (unless two characters long), only symbols, only numbers, only spaces, or **fictitious values** such as **John Doe** or **N/A**. All parts of the address must be different. For example, Spain, Spain, Spain is not allowed.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndividualResidentialAddress : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name of the city. Required if `stateOrProvince` is provided.If you specify the city, you must also send `postalCode` and `street`.</summary>
+        /// <summary>The name of the city. Required if `stateOrProvince` is provided.If you specify the city, you must also send `postalCode` and `street`.The city name must be at least 3 characters. If the city name contains only repeated characters, the minimum length is two characters. For example, Aa is accepted, but Aaaa is not.For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StateOrProvince { get; set; }
 #endif
-        /// <summary>The name of the street, and the house or building number. Required if `stateOrProvince` and/or `city` is provided.</summary>
+        /// <summary>The name of the street, and the house or building number. Must be at least 3 characters. Required if `stateOrProvince` and/or `city` is provided. For more information, see [validations on fields](https://docs.adyen.com/platforms/onboard-users/onboarding-versions/onboarding-v4/#validations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Street { get; set; }

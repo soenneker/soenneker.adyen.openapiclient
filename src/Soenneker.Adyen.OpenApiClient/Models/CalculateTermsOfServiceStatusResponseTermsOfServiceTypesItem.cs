@@ -16,6 +16,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         AdyenCapital,
         #pragma warning restore CS1591
+        [EnumMember(Value = "adyenCapitalCashAdvance")]
+        #pragma warning disable CS1591
+        AdyenCapitalCashAdvance,
+        #pragma warning restore CS1591
         [EnumMember(Value = "adyenCard")]
         #pragma warning disable CS1591
         AdyenCard,
@@ -43,6 +47,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "adyenPccr")]
         #pragma warning disable CS1591
         AdyenPccr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "directDebit")]
+        #pragma warning disable CS1591
+        DirectDebit,
         #pragma warning restore CS1591
         [EnumMember(Value = "kycOnInvite")]
         #pragma warning disable CS1591
