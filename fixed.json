@@ -167168,8 +167168,8 @@
       },
       "StoredValueServiceV46Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -167224,8 +167224,8 @@
       "StoredValueBalanceCheckRequest": {
         "required": [
           "merchantAccount",
-          "reference",
-          "paymentMethod"
+          "paymentMethod",
+          "reference"
         ],
         "type": "object",
         "properties": {
@@ -167294,8 +167294,8 @@
       "StoredValueBalanceMergeRequest": {
         "required": [
           "merchantAccount",
-          "reference",
           "paymentMethod",
+          "reference",
           "sourcePaymentMethod"
         ],
         "type": "object",
@@ -167372,8 +167372,8 @@
       "StoredValueIssueRequest": {
         "required": [
           "merchantAccount",
-          "reference",
-          "paymentMethod"
+          "paymentMethod",
+          "reference"
         ],
         "type": "object",
         "properties": {
@@ -167448,10 +167448,10 @@
       },
       "StoredValueLoadRequest": {
         "required": [
+          "amount",
           "merchantAccount",
-          "reference",
           "paymentMethod",
-          "amount"
+          "reference"
         ],
         "type": "object",
         "properties": {
@@ -167528,8 +167528,8 @@
       "StoredValueStatusChangeRequest": {
         "required": [
           "merchantAccount",
-          "reference",
           "paymentMethod",
+          "reference",
           "status"
         ],
         "type": "object",
@@ -183041,8 +183041,8 @@
       },
       "AchNotificationOfChangeNotificationRequest": {
         "required": [
-          "type",
-          "createdAt"
+          "createdAt",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -183073,9 +183073,9 @@
       },
       "AchNotificationOfChangeNotificationRequestData": {
         "required": [
+          "notificationOfChange",
           "pspReference",
-          "shopperReference",
-          "notificationOfChange"
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -183124,8 +183124,8 @@
       },
       "WebhooksV1Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -183192,12 +183192,12 @@
       },
       "AuthorisationAdjustmentNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -183254,60 +183254,60 @@
       },
       "AuthorisationAdjustmentNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/AuthorisationAdjustmentNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/AuthorisationAdjustmentNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/AuthorisationAdjustmentNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/AuthorisationAdjustmentNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/AuthorisationAdjustmentNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -184118,12 +184118,12 @@
       },
       "AuthorisationNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
           "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -184157,7 +184157,7 @@
             "items": {
               "$ref": "#/components/schemas/AuthorisationNotificationRequestItemOperationsItem"
             },
-            "description": "The operations indicate the supported follow-up actions concerning the payment.\n\u003E This is an **experimental field**. Do not base your code on this field. Not all specific cases are covered yet. It\u0027s possible that the field is empty or contains generic information."
+            "description": "The possible follow-up actions for the payment. For example, an authorized payment that has been captured can only have the refund action as a follow-up.\n\nPossible values:\n\n * **CAPTURE**: The funds for the authorized payment can be captured.\n\n * **CANCEL**: The authorized payment can be cancelled.\n\n * **REFUND**: The payment can be refunded.\n\nThe list can be empty, for example for a payment that was declined."
           },
           "paymentMethod": {
             "type": "string",
@@ -184184,64 +184184,64 @@
       },
       "AuthorisationNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
           "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/AuthorisationEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060true\u0060 and \u0060paymentMethod\u0060 = \u0060visa\u0060, \u0060mc\u0060, or \u0060amex\u0060 then this field contains the following details: \nAuthorisation code, last 4 digits of the card, card expiry date. \n In case of failure, this contains information about the authorisation failure",
-            "example": "874574:1935:11/2012"
+          "additionalData": {
+            "$ref": "#/components/schemas/AuthorisationNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/AuthorisationNotificationRequestItemRecursiveAmount"
           },
-          "operations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AuthorisationNotificationRequestItemRecursiveOperationsItem"
-            },
-            "description": "The operations indicate the supported follow-up actions concerning the payment.\n\u003E This is an **experimental field**. Do not base your code on this field. Not all specific cases are covered yet. It\u0027s possible that the field is empty or contains generic information."
-          },
-          "success": {
-            "type": "string",
-            "description": "If \u0060true\u0060: The payment request was successful. \n If \u0060false\u0060: The payment request failed. \n Check the \u0060reason\u0060 field for failure information."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/AuthorisationNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/AuthorisationEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AuthorisationNotificationRequestItemRecursiveOperationsItem"
+            },
+            "description": "The possible follow-up actions for the payment. For example, an authorized payment that has been captured can only have the refund action as a follow-up.\n\nPossible values:\n\n * **CAPTURE**: The funds for the authorized payment can be captured.\n\n * **CANCEL**: The authorized payment can be cancelled.\n\n * **REFUND**: The payment can be refunded.\n\nThe list can be empty, for example for a payment that was declined."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060true\u0060 and \u0060paymentMethod\u0060 = \u0060visa\u0060, \u0060mc\u0060, or \u0060amex\u0060 then this field contains the following details: \nAuthorisation code, last 4 digits of the card, card expiry date. \n In case of failure, this contains information about the authorisation failure",
+            "example": "874574:1935:11/2012"
+          },
+          "success": {
+            "type": "string",
+            "description": "If \u0060true\u0060: The payment request was successful. \n If \u0060false\u0060: The payment request failed. \n Check the \u0060reason\u0060 field for failure information."
           }
         },
         "additionalProperties": {
@@ -184300,12 +184300,12 @@
       },
       "AutoRescueNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -184362,60 +184362,60 @@
       },
       "AutoRescueNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/AutoRescueNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/AutoRescueNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/AutoRescueNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/AutoRescueNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/AutoRescueNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -184536,12 +184536,12 @@
       },
       "CancelOrRefundNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -184598,60 +184598,60 @@
       },
       "CancelOrRefundNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/CancelOrRefundNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/CancelOrRefundNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/CancelOrRefundNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/CancelOrRefundNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/CancelOrRefundNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -184891,12 +184891,12 @@
       },
       "CancellationNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -184953,60 +184953,60 @@
       },
       "CancellationNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/CancellationNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/CancellationNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/CancellationNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/CancellationNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/CancellationNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -185099,12 +185099,12 @@
       },
       "CaptureNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -185161,60 +185161,60 @@
       },
       "CaptureNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/CaptureNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/CaptureNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/CaptureNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/CaptureNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/CaptureNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -185269,8 +185269,8 @@
       },
       "DirectDebitNoticeOfChangeNotificationRequest": {
         "required": [
-          "type",
-          "createdAt"
+          "createdAt",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -185334,9 +185334,9 @@
       },
       "DirectDebitNotificationOfChangeNotificationRequestData": {
         "required": [
+          "notificationOfChange",
           "pspReference",
-          "shopperReference",
-          "notificationOfChange"
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -185462,12 +185462,12 @@
       },
       "DisputesNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -185524,60 +185524,60 @@
       },
       "DisputesNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/DisputesNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/DisputesNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/DisputesNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/DisputesNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/DisputesNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -185613,12 +185613,12 @@
       },
       "ExpireNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -185675,60 +185675,60 @@
       },
       "ExpireNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/ExpireEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/ExpireNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/ExpireNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Always \u0060true\u0060."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/ExpireNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/ExpireEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Always \u0060true\u0060."
           }
         },
         "additionalProperties": {
@@ -185745,12 +185745,12 @@
       },
       "GenericNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -185807,12 +185807,12 @@
       },
       "GenericNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -186087,12 +186087,12 @@
       },
       "IssuerCommentsNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -186149,60 +186149,60 @@
       },
       "IssuerCommentsNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/IssuerCommentsNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/IssuerCommentsNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/IssuerCommentsNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/IssuerCommentsNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/IssuerCommentsNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -186257,12 +186257,12 @@
       },
       "ModificationNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -186319,60 +186319,60 @@
       },
       "ModificationNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/ModificationNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/ModificationNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/ModificationNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/ModificationNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/ModificationNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -186953,12 +186953,12 @@
       },
       "NotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -187015,60 +187015,60 @@
       },
       "NotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/NotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/NotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/NotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/NotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/NotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -187104,13 +187104,13 @@
       },
       "PaidoutReversedNotificationRequestItem": {
         "required": [
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
-          "pspReference"
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
@@ -187166,60 +187166,60 @@
       },
       "PaidoutReversedNotificationRequestItemRecursive": {
         "required": [
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
-          "pspReference"
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/PaidoutReversedEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "Contains the bank statement description if present, else it contains \u0060PaidOutReversed\u0060."
+          "additionalData": {
+            "$ref": "#/components/schemas/PaidoutReversedNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/PaidoutReversedNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/PaidoutReversedNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "The PSP reference for the Capture\u0027s PSP reference."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/PaidoutReversedEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "The PSP reference for the Capture\u0027s PSP reference."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Contains the bank statement description if present, else it contains \u0060PaidOutReversed\u0060."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -187290,12 +187290,12 @@
       },
       "PayoutNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -187352,60 +187352,60 @@
       },
       "PayoutNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/PayoutNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/PayoutNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/PayoutNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/PayoutNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/PayoutNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -188089,14 +188089,14 @@
       },
       "RecurringContractNotificationRequestItem": {
         "required": [
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
           "originalPsp",
-          "pspReference"
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
@@ -188156,65 +188156,65 @@
       },
       "RecurringContractNotificationRequestItemRecursive": {
         "required": [
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
           "originalPsp",
-          "pspReference"
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/RecurringContractEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/RecurringContractNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/RecurringContractNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "originalPsp": {
-            "type": "string",
-            "description": "The \u0060pspReference\u0060 of the initial payment."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/RecurringContractNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "The [token for stored payment details](https://docs.adyen.com/online-payments/tokenization/create-and-use-tokens/) to make recurring payments. This is the same as the \u0060recurringDetailReference\u0060."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/RecurringContractEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalPsp": {
+            "type": "string",
+            "description": "The \u0060pspReference\u0060 of the initial payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "The [token for stored payment details](https://docs.adyen.com/online-payments/tokenization/create-and-use-tokens/) to make recurring payments. This is the same as the \u0060recurringDetailReference\u0060."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -188317,12 +188317,12 @@
       },
       "RefundCaptureFailedNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -188379,60 +188379,60 @@
       },
       "RefundCaptureFailedNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/RefundCaptureFailedNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/RefundCaptureFailedNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/RefundCaptureFailedNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/RefundCaptureFailedNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/RefundCaptureFailedNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -188506,14 +188506,14 @@
       },
       "RefundNotClearedNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
-          "originalReference"
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "originalReference",
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
@@ -188569,61 +188569,61 @@
       },
       "RefundNotClearedNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
-          "originalReference"
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "originalReference",
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event for which you receive the webhook.",
-            "$ref": "#/components/schemas/RefundNotClearedEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/RefundNotClearedNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/RefundNotClearedNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/RefundNotClearedNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event for which you receive the webhook.",
+            "$ref": "#/components/schemas/RefundNotClearedEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -188659,12 +188659,12 @@
       },
       "RefundNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -188721,60 +188721,60 @@
       },
       "RefundNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/RefundNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/RefundNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/RefundNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/RefundNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/RefundNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -188973,12 +188973,12 @@
       },
       "RefundWithDataNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
@@ -189035,60 +189035,60 @@
       },
       "RefundWithDataNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
-          "eventCode",
           "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/RefundWithDataNotificationRequestItemRecursiveEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/RefundWithDataNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/RefundWithDataNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/RefundWithDataNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/RefundWithDataNotificationRequestItemRecursiveEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -189135,14 +189135,14 @@
       },
       "ReportAvailableNotificationRequestItem": {
         "required": [
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
           "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "reason",
-          "success",
-          "pspReference"
+          "success"
         ],
         "type": "object",
         "properties": {
@@ -189198,61 +189198,61 @@
       },
       "ReportAvailableNotificationRequestItemRecursive": {
         "required": [
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
           "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
           "reason",
-          "success",
-          "pspReference"
+          "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event the notification item is for.",
-            "$ref": "#/components/schemas/ReportAvailableEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "Contains the download URL where you can obtain a copy of the report."
+          "additionalData": {
+            "$ref": "#/components/schemas/ReportAvailableNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/ReportAvailableNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Always \u0060true\u0060."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/ReportAvailableNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Contains the file name of the report."
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/ReportAvailableEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Contains the file name of the report."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Contains the download URL where you can obtain a copy of the report."
+          },
+          "success": {
+            "type": "string",
+            "description": "Always \u0060true\u0060."
           }
         },
         "additionalProperties": {
@@ -189284,6 +189284,226 @@
         },
         "additionalProperties": {
           "$ref": "#/components/schemas/RequestForInformationNotificationRequestAdditionalProperties"
+        }
+      },
+      "ReversalAdditionalData": {
+        "type": "object",
+        "properties": {
+          "acquirerReference": {
+            "type": "string"
+          },
+          "acsRenderingType.acsInterface": {
+            "type": "string"
+          },
+          "acsRenderingType.acsUiTemplate": {
+            "type": "string"
+          },
+          "arn": {
+            "type": "string"
+          },
+          "authenticationType": {
+            "type": "string"
+          },
+          "bookingDate": {
+            "type": "string"
+          },
+          "cancellableUntil": {
+            "type": "string",
+            "description": "The UTC date and time until which the refund can still be cancelled. Format: ISO 8601, for example **2024-05-21T14:32:00Z**. Only present while the refund is actually being held."
+          },
+          "checkoutSessionId": {
+            "type": "string"
+          },
+          "coBrandedWith": {
+            "type": "string"
+          },
+          "hmacSignature": {
+            "type": "string"
+          },
+          "interactionCounter": {
+            "type": "string"
+          },
+          "merchantOrderReference": {
+            "type": "string"
+          },
+          "modification.action": {
+            "description": "The operation the reversal resolved to.",
+            "$ref": "#/components/schemas/ReversalAdditionalDataModificationAction"
+          },
+          "modification.status": {
+            "description": "The status of the operation the reversal resolved to.",
+            "$ref": "#/components/schemas/ReversalAdditionalDataModificationStatus"
+          },
+          "paymentLinkId": {
+            "type": "string"
+          },
+          "paymentMethodVariant": {
+            "type": "string"
+          },
+          "refundPspReference": {
+            "type": "string",
+            "description": "The PSP reference of the refund targeted by a reversal cancellation."
+          },
+          "shopperCountry": {
+            "type": "string"
+          },
+          "store": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReversalAdditionalDataAdditionalProperties"
+        }
+      },
+      "ReversalNotificationRequest": {
+        "type": "object",
+        "properties": {
+          "live": {
+            "type": "string",
+            "description": "Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment."
+          },
+          "notificationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReversalNotificationRequestItemWrapper"
+            },
+            "description": "A container object for the details included in the notification."
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReversalNotificationRequestAdditionalProperties"
+        }
+      },
+      "ReversalNotificationRequestItem": {
+        "required": [
+          "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
+          "success"
+        ],
+        "type": "object",
+        "properties": {
+          "additionalData": {
+            "$ref": "#/components/schemas/ReversalNotificationRequestItemAdditionalData"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/ReversalNotificationRequestItemAmount"
+          },
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/ReversalEventCode"
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
+            "format": "date-time",
+            "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReversalNotificationRequestItemAdditionalProperties"
+        }
+      },
+      "ReversalNotificationRequestItemRecursive": {
+        "required": [
+          "amount",
+          "eventCode",
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "pspReference",
+          "success"
+        ],
+        "type": "object",
+        "properties": {
+          "additionalData": {
+            "$ref": "#/components/schemas/ReversalNotificationRequestItemRecursiveAdditionalData"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/ReversalNotificationRequestItemRecursiveAmount"
+          },
+          "eventCode": {
+            "description": "The type of event the notification item is for.",
+            "$ref": "#/components/schemas/ReversalEventCode"
+          },
+          "eventDate": {
+            "type": "string",
+            "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
+            "format": "date-time",
+            "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReversalNotificationRequestItemRecursiveAdditionalProperties"
+        }
+      },
+      "ReversalNotificationRequestItemWrapper": {
+        "type": "object",
+        "properties": {
+          "NotificationRequestItem": {
+            "$ref": "#/components/schemas/ReversalNotificationRequestItem"
+          }
         }
       },
       "SchemeArbitrationLostNotificationRequest": {
@@ -189364,14 +189584,14 @@
       },
       "SettledReversedNotificationRequestItem": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
-          "originalReference"
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "originalReference",
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
@@ -189427,61 +189647,61 @@
       },
       "SettledReversedNotificationRequestItemRecursive": {
         "required": [
-          "pspReference",
-          "merchantReference",
-          "merchantAccountCode",
-          "eventDate",
           "amount",
-          "success",
           "eventCode",
-          "originalReference"
+          "eventDate",
+          "merchantAccountCode",
+          "merchantReference",
+          "originalReference",
+          "pspReference",
+          "success"
         ],
         "type": "object",
         "properties": {
-          "eventCode": {
-            "description": "The type of event for which you receive the webhook.",
-            "$ref": "#/components/schemas/SettledReversedEventCode"
-          },
-          "merchantAccountCode": {
-            "type": "string",
-            "description": "The merchant account identifier used in the transaction the notification item is for."
-          },
-          "originalReference": {
-            "type": "string",
-            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
-          },
-          "reason": {
-            "type": "string",
-            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          "additionalData": {
+            "$ref": "#/components/schemas/SettledReversedNotificationRequestItemRecursiveAdditionalData"
           },
           "amount": {
             "$ref": "#/components/schemas/SettledReversedNotificationRequestItemRecursiveAmount"
           },
-          "success": {
-            "type": "string",
-            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
-          },
-          "paymentMethod": {
-            "type": "string",
-            "description": "The payment method used in the transaction.",
-            "example": "visa, mc, iDeal"
-          },
-          "additionalData": {
-            "$ref": "#/components/schemas/SettledReversedNotificationRequestItemRecursiveAdditionalData"
-          },
-          "merchantReference": {
-            "type": "string",
-            "description": "Your reference to uniquely identify the payment."
-          },
-          "pspReference": {
-            "type": "string",
-            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          "eventCode": {
+            "description": "The type of event for which you receive the webhook.",
+            "$ref": "#/components/schemas/SettledReversedEventCode"
           },
           "eventDate": {
             "type": "string",
             "description": "The time when the event was generated. Format: ISO 8601; yyyy-MM-DDThh:mm:ssTZD",
             "format": "date-time",
             "example": "2021-07-17T13:42:40\u002B01:00"
+          },
+          "merchantAccountCode": {
+            "type": "string",
+            "description": "The merchant account identifier used in the transaction the notification item is for."
+          },
+          "merchantReference": {
+            "type": "string",
+            "description": "Your reference to uniquely identify the payment."
+          },
+          "originalReference": {
+            "type": "string",
+            "description": "For modifications, this field corresponds to the payment request reference assigned to the original payment."
+          },
+          "paymentMethod": {
+            "type": "string",
+            "description": "The payment method used in the transaction.",
+            "example": "visa, mc, iDeal"
+          },
+          "pspReference": {
+            "type": "string",
+            "description": "Adyen\u0027s 16-character unique reference associated with the transaction or request. This value is globally unique. Use it when communicating with us about this request."
+          },
+          "reason": {
+            "type": "string",
+            "description": "If \u0060success\u0060 = \u0060false\u0060, then this includes a short message with an explanation for the refusal."
+          },
+          "success": {
+            "type": "string",
+            "description": "Informs about the outcome of the event (\u0060eventCode\u0060) the notification is for. \nIf \u0060true\u0060: the event was executed successfully. \nIf \u0060false\u0060: the event was not executed successfully."
           }
         },
         "additionalProperties": {
@@ -189634,6 +189854,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -189799,6 +190020,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -189857,6 +190082,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -190020,6 +190246,10 @@
             {
               "value": "REQUEST_FOR_INFORMATION",
               "name": "RequestForInformation"
+            },
+            {
+              "value": "REVERSAL",
+              "name": "Reversal"
             },
             {
               "value": "SECOND_CHARGEBACK",
@@ -190218,6 +190448,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -190383,6 +190614,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -190441,6 +190676,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -190606,6 +190842,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -190664,6 +190904,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -190829,6 +191070,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -190887,6 +191132,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -191052,6 +191298,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -191148,6 +191398,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -191313,6 +191564,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -191371,6 +191626,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -191536,6 +191792,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -191594,6 +191854,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -191759,6 +192020,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -191817,6 +192082,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -191982,6 +192248,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -192137,6 +192407,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -192302,6 +192573,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -192360,6 +192635,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -192525,6 +192801,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -192601,6 +192881,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -192766,6 +193047,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -192824,6 +193109,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -192989,6 +193275,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -193062,6 +193352,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -193227,6 +193518,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -193285,6 +193580,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -193450,6 +193746,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -193508,6 +193808,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -193673,6 +193974,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -193731,6 +194036,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -193896,6 +194202,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -193992,6 +194302,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -194157,6 +194468,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -194215,6 +194530,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -194380,6 +194696,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -194456,6 +194776,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -194621,6 +194942,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -194679,6 +195004,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -194844,6 +195170,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -194958,6 +195288,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -195123,6 +195454,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -195181,6 +195516,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -195346,6 +195682,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -195422,6 +195762,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -195587,6 +195928,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -195645,6 +195990,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -195810,6 +196156,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -195868,6 +196218,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -196033,6 +196384,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -196091,6 +196446,7 @@
           "REFUND_NOT_CLEARED",
           "REFUND_WITH_DATA",
           "REQUEST_FOR_INFORMATION",
+          "REVERSAL",
           "SECOND_CHARGEBACK",
           "SETTLED_REVERSED",
           "TECHNICAL_CANCEL",
@@ -196256,6 +196612,10 @@
               "name": "RequestForInformation"
             },
             {
+              "value": "REVERSAL",
+              "name": "Reversal"
+            },
+            {
               "value": "SECOND_CHARGEBACK",
               "name": "SecondChargeback"
             },
@@ -196288,6 +196648,95 @@
             {
               "value": "REPORT_AVAILABLE",
               "name": "ReportAvailable"
+            }
+          ]
+        }
+      },
+      "ReversalAdditionalDataModificationAction": {
+        "enum": [
+          "cancel",
+          "refund",
+          "cancelRefund"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The operation the reversal resolved to.",
+        "x-ms-enum": {
+          "name": "ReversalAdditionalDataModificationAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "cancel",
+              "name": "Cancel"
+            },
+            {
+              "value": "refund",
+              "name": "Refund"
+            },
+            {
+              "value": "cancelRefund",
+              "name": "CancelRefund"
+            }
+          ]
+        }
+      },
+      "ReversalAdditionalDataModificationStatus": {
+        "enum": [
+          "authorised",
+          "submitted",
+          "cancelled",
+          "refused",
+          "error",
+          "failed"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The status of the operation the reversal resolved to.",
+        "x-ms-enum": {
+          "name": "ReversalAdditionalDataModificationStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "authorised",
+              "name": "Authorised"
+            },
+            {
+              "value": "submitted",
+              "name": "Submitted"
+            },
+            {
+              "value": "cancelled",
+              "name": "Cancelled"
+            },
+            {
+              "value": "refused",
+              "name": "Refused"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
+      "ReversalEventCode": {
+        "enum": [
+          "REVERSAL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of event the notification item is for.",
+        "x-ms-enum": {
+          "name": "ReversalEventCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "REVERSAL",
+              "name": "Reversal"
             }
           ]
         }
@@ -232942,8 +233391,8 @@
       },
       "StoredValueBalanceCheckRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -232963,8 +233412,8 @@
       },
       "StoredValueBalanceCheckResponseCurrentBalance": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -232984,8 +233433,8 @@
       },
       "StoredValueBalanceMergeRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233005,8 +233454,8 @@
       },
       "StoredValueBalanceMergeResponseCurrentBalance": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233026,8 +233475,8 @@
       },
       "StoredValueIssueRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233047,8 +233496,8 @@
       },
       "StoredValueIssueResponseCurrentBalance": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233068,8 +233517,8 @@
       },
       "StoredValueLoadRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233089,8 +233538,8 @@
       },
       "StoredValueLoadResponseCurrentBalance": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233110,8 +233559,8 @@
       },
       "StoredValueStatusChangeRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233131,8 +233580,8 @@
       },
       "StoredValueStatusChangeResponseCurrentBalance": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -233152,8 +233601,8 @@
       },
       "StoredValueVoidResponseCurrentBalance": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -240077,9 +240526,9 @@
       },
       "AchNotificationOfChangeNotificationRequestDataComposed": {
         "required": [
+          "notificationOfChange",
           "pspReference",
-          "shopperReference",
-          "notificationOfChange"
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -240148,29 +240597,8 @@
       },
       "AuthorisationAdjustmentNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "AuthorisationAdjustmentNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -240211,6 +240639,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "AuthorisationAdjustmentNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "AuthorisationNotificationRequestItemAdditionalData": {
         "type": "object",
@@ -240987,29 +241436,8 @@
       },
       "AuthorisationNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "AuthorisationNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -241800,6 +242228,27 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "AuthorisationNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "AutoRescueNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -241823,29 +242272,8 @@
       },
       "AutoRescueNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "AutoRescueNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -241883,6 +242311,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "AutoRescueNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "CancelOrRefundNotificationRequestItemAdditionalData": {
         "type": "object",
@@ -241952,29 +242401,8 @@
       },
       "CancelOrRefundNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "CancelOrRefundNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -242057,6 +242485,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "CancelOrRefundNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "CancellationNotificationRequestItemAdditionalData": {
         "type": "object",
@@ -242262,29 +242711,8 @@
       },
       "CancellationNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "CancellationNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -242504,6 +242932,27 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "CancellationNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "CaptureNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -242561,29 +243010,8 @@
       },
       "CaptureNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "CaptureNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -242656,11 +243084,32 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "CaptureNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "DirectDebitNoticeOfChangeNotificationRequestData": {
         "required": [
+          "notificationOfChange",
           "pspReference",
-          "shopperReference",
-          "notificationOfChange"
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -242792,29 +243241,8 @@
       },
       "DisputesNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "DisputesNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -242915,6 +243343,27 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "DisputesNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "ExpireNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -242932,29 +243381,8 @@
       },
       "ExpireNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The amount that was originally authorised."
-      },
-      "ExpireNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -242987,10 +243415,31 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "ExpireNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The amount that was originally authorised."
+      },
       "GenericNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -243010,8 +243459,8 @@
       },
       "GenericNotificationRequestItemRecursiveAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -243204,29 +243653,8 @@
       },
       "IssuerCommentsNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "IssuerCommentsNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -243417,25 +243845,10 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
-      "ModificationNotificationRequestItemAdditionalData": {
-        "type": "object",
-        "properties": {
-          "bookingDate": {
-            "type": "string"
-          },
-          "hmacSignature": {
-            "type": "string"
-          },
-          "paymentMethodVariant": {
-            "type": "string"
-          }
-        },
-        "description": "This object is a generic container that can hold extra fields."
-      },
-      "ModificationNotificationRequestItemAmount": {
+      "IssuerCommentsNotificationRequestItemRecursiveAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -243453,10 +243866,25 @@
         },
         "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
-      "ModificationNotificationRequestItemRecursiveAmount": {
+      "ModificationNotificationRequestItemAdditionalData": {
+        "type": "object",
+        "properties": {
+          "bookingDate": {
+            "type": "string"
+          },
+          "hmacSignature": {
+            "type": "string"
+          },
+          "paymentMethodVariant": {
+            "type": "string"
+          }
+        },
+        "description": "This object is a generic container that can hold extra fields."
+      },
+      "ModificationNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -243488,6 +243916,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "ModificationNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "NotificationRequestItemAdditionalData": {
         "type": "object",
@@ -243996,29 +244445,8 @@
       },
       "NotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "NotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -244541,6 +244969,27 @@
         },
         "description": "A generic container for extra fields."
       },
+      "NotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "PaidoutReversedNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -245048,29 +245497,8 @@
       },
       "PaidoutReversedNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "PaidoutReversedNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -245593,6 +246021,27 @@
         },
         "description": "A generic container for extra fields."
       },
+      "PaidoutReversedNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "PayoutNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -245628,29 +246077,8 @@
       },
       "PayoutNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "PayoutNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -245700,6 +246128,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "PayoutNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "RecurringContractNotificationRequestItemAdditionalData": {
         "type": "object",
@@ -246216,29 +246665,8 @@
       },
       "RecurringContractNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "RecurringContractNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -246769,6 +247197,27 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "RecurringContractNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "RefundCaptureFailedNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -246807,29 +247256,8 @@
       },
       "RefundCaptureFailedNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "RefundCaptureFailedNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -246883,6 +247311,27 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "RefundCaptureFailedNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "RefundNotClearedNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -246908,29 +247357,8 @@
       },
       "RefundNotClearedNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "RefundNotClearedNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -246970,6 +247398,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "RefundNotClearedNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "RefundNotificationRequestItemAdditionalData": {
         "type": "object",
@@ -247038,29 +247487,8 @@
       },
       "RefundNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "RefundNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -247142,6 +247570,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "RefundNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "RefundWithDataNotificationRequestItemAdditionalData": {
         "type": "object",
@@ -247306,29 +247755,8 @@
       },
       "RefundWithDataNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "RefundWithDataNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -247507,19 +247935,10 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
-      "ReportAvailableNotificationRequestItemAdditionalData": {
-        "type": "object",
-        "properties": {
-          "hmacSignature": {
-            "type": "string"
-          }
-        },
-        "description": "This object is a generic container that can hold extra fields."
-      },
-      "ReportAvailableNotificationRequestItemAmount": {
+      "RefundWithDataNotificationRequestItemRecursiveAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -247537,10 +247956,19 @@
         },
         "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
-      "ReportAvailableNotificationRequestItemRecursiveAmount": {
+      "ReportAvailableNotificationRequestItemAdditionalData": {
+        "type": "object",
+        "properties": {
+          "hmacSignature": {
+            "type": "string"
+          }
+        },
+        "description": "This object is a generic container that can hold extra fields."
+      },
+      "ReportAvailableNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -247567,6 +247995,203 @@
         },
         "description": "This object is a generic container that can hold extra fields."
       },
+      "ReportAvailableNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
+      "ReversalNotificationRequestItemAdditionalData": {
+        "type": "object",
+        "properties": {
+          "acquirerReference": {
+            "type": "string"
+          },
+          "acsRenderingType.acsInterface": {
+            "type": "string"
+          },
+          "acsRenderingType.acsUiTemplate": {
+            "type": "string"
+          },
+          "arn": {
+            "type": "string"
+          },
+          "authenticationType": {
+            "type": "string"
+          },
+          "bookingDate": {
+            "type": "string"
+          },
+          "cancellableUntil": {
+            "type": "string",
+            "description": "The UTC date and time until which the refund can still be cancelled. Format: ISO 8601, for example **2024-05-21T14:32:00Z**. Only present while the refund is actually being held."
+          },
+          "checkoutSessionId": {
+            "type": "string"
+          },
+          "coBrandedWith": {
+            "type": "string"
+          },
+          "hmacSignature": {
+            "type": "string"
+          },
+          "interactionCounter": {
+            "type": "string"
+          },
+          "merchantOrderReference": {
+            "type": "string"
+          },
+          "modification.action": {
+            "description": "The operation the reversal resolved to.",
+            "$ref": "#/components/schemas/ReversalAdditionalDataModificationAction"
+          },
+          "modification.status": {
+            "description": "The status of the operation the reversal resolved to.",
+            "$ref": "#/components/schemas/ReversalAdditionalDataModificationStatus"
+          },
+          "paymentLinkId": {
+            "type": "string"
+          },
+          "paymentMethodVariant": {
+            "type": "string"
+          },
+          "refundPspReference": {
+            "type": "string",
+            "description": "The PSP reference of the refund targeted by a reversal cancellation."
+          },
+          "shopperCountry": {
+            "type": "string"
+          },
+          "store": {
+            "type": "string"
+          }
+        },
+        "description": "This object is a generic container that can hold extra fields."
+      },
+      "ReversalNotificationRequestItemAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
+      "ReversalNotificationRequestItemRecursiveAdditionalData": {
+        "type": "object",
+        "properties": {
+          "acquirerReference": {
+            "type": "string"
+          },
+          "acsRenderingType.acsInterface": {
+            "type": "string"
+          },
+          "acsRenderingType.acsUiTemplate": {
+            "type": "string"
+          },
+          "arn": {
+            "type": "string"
+          },
+          "authenticationType": {
+            "type": "string"
+          },
+          "bookingDate": {
+            "type": "string"
+          },
+          "cancellableUntil": {
+            "type": "string",
+            "description": "The UTC date and time until which the refund can still be cancelled. Format: ISO 8601, for example **2024-05-21T14:32:00Z**. Only present while the refund is actually being held."
+          },
+          "checkoutSessionId": {
+            "type": "string"
+          },
+          "coBrandedWith": {
+            "type": "string"
+          },
+          "hmacSignature": {
+            "type": "string"
+          },
+          "interactionCounter": {
+            "type": "string"
+          },
+          "merchantOrderReference": {
+            "type": "string"
+          },
+          "modification.action": {
+            "description": "The operation the reversal resolved to.",
+            "$ref": "#/components/schemas/ReversalAdditionalDataModificationAction"
+          },
+          "modification.status": {
+            "description": "The status of the operation the reversal resolved to.",
+            "$ref": "#/components/schemas/ReversalAdditionalDataModificationStatus"
+          },
+          "paymentLinkId": {
+            "type": "string"
+          },
+          "paymentMethodVariant": {
+            "type": "string"
+          },
+          "refundPspReference": {
+            "type": "string",
+            "description": "The PSP reference of the refund targeted by a reversal cancellation."
+          },
+          "shopperCountry": {
+            "type": "string"
+          },
+          "store": {
+            "type": "string"
+          }
+        },
+        "description": "This object is a generic container that can hold extra fields."
+      },
+      "ReversalNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
+      },
       "SettledReversedNotificationRequestItemAdditionalData": {
         "type": "object",
         "properties": {
@@ -247592,29 +248217,8 @@
       },
       "SettledReversedNotificationRequestItemAmount": {
         "required": [
-          "value",
-          "currency"
-        ],
-        "type": "object",
-        "properties": {
-          "currency": {
-            "maxLength": 3,
-            "minLength": 3,
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
-            "format": "int64"
-          }
-        },
-        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
-      },
-      "SettledReversedNotificationRequestItemRecursiveAmount": {
-        "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -247654,6 +248258,27 @@
           }
         },
         "description": "This object is a generic container that can hold extra fields."
+      },
+      "SettledReversedNotificationRequestItemRecursiveAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes) of the amount."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The numeric value of the amount, in [minor units](https://docs.adyen.com/development-resources/currency-codes#minor-units).",
+            "format": "int64"
+          }
+        },
+        "description": "The payment amount. For HTTP POST notifications, currency and value are returned as URL parameters."
       },
       "BalancePlatformServiceV2DeleteBalanceAccountsBalanceAccountIdRecurringTopUpsTopUpId204Response": {
         "type": "object",
@@ -257690,6 +258315,22 @@
         "not": {}
       },
       "RequestForInformationNotificationRequestAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "ReversalAdditionalDataAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "ReversalNotificationRequestAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "ReversalNotificationRequestItemAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "ReversalNotificationRequestItemRecursiveAdditionalProperties": {
         "type": "object",
         "not": {}
       },
@@ -290894,6 +291535,42 @@
         ],
         "x-sortIndex": 0,
         "x-methodName": "issuerOpenedRequestForInformationrfi"
+      }
+    },
+    "Webhooks_v1_/REVERSAL": {
+      "post": {
+        "tags": [
+          "Standard"
+        ],
+        "summary": "Result of reversal request",
+        "description": "The result of a reversal request. The \u0060modification.action\u0060 field indicates whether the original payment was cancelled or refunded, or an authorised refund was cancelled.",
+        "operationId": "WebhooksV1PostReversal",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReversalNotificationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "No Content - webhook events are accepted on the basis of the HTTP status code."
+          }
+        },
+        "security": [
+          {
+            "Webhooks_v1_BasicAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "/"
+          }
+        ],
+        "x-sortIndex": 0,
+        "x-methodName": "resultOfReversalRequest"
       }
     },
     "Webhooks_v1_/SCHEME_ARBITRATION": {

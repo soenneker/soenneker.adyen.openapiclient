@@ -50,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MerchantReference { get; set; }
 #endif
-        /// <summary>The operations indicate the supported follow-up actions concerning the payment.&gt; This is an **experimental field**. Do not base your code on this field. Not all specific cases are covered yet. It&apos;s possible that the field is empty or contains generic information.</summary>
+        /// <summary>The possible follow-up actions for the payment. For example, an authorized payment that has been captured can only have the refund action as a follow-up.Possible values: * **CAPTURE**: The funds for the authorized payment can be captured. * **CANCEL**: The authorized payment can be cancelled. * **REFUND**: The payment can be refunded.The list can be empty, for example for a payment that was declined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationRequestItemOperationsItem?>? Operations { get; set; }

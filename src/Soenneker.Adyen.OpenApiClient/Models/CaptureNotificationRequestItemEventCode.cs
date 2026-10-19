@@ -159,6 +159,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         RequestForInformation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "REVERSAL")]
+        #pragma warning disable CS1591
+        Reversal,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SECOND_CHARGEBACK")]
         #pragma warning disable CS1591
         SecondChargeback,
