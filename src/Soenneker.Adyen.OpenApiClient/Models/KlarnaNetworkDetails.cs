@@ -71,6 +71,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string StoredPaymentMethodId { get; set; }
 #endif
+        /// <summary>The type of flow to initiate. Defaults to redirect when omitted.</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetailsSubtype? Subtype { get; set; }
         /// <summary>**klarna_network**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkType? Type { get; set; }
         /// <summary>
@@ -105,6 +107,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
+                { "subtype", n => { Subtype = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetailsSubtype>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkType>(); } },
             };
         }
@@ -122,6 +125,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("recurringDetailReference", RecurringDetailReference);
             writer.WriteStringValue("sdkData", SdkData);
             writer.WriteStringValue("storedPaymentMethodId", StoredPaymentMethodId);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkDetailsSubtype>("subtype", Subtype);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaNetworkType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

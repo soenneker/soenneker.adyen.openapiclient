@@ -75,6 +75,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         MomoWalletApp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "revolutpay")]
+        #pragma warning disable CS1591
+        Revolutpay,
+        #pragma warning restore CS1591
         [EnumMember(Value = "paymaya_wallet")]
         #pragma warning disable CS1591
         PaymayaWallet,

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ApplePay;
+using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.CalculateTax;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Cancels;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.CardDetails;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.DonationCampaigns;
@@ -17,6 +18,7 @@ using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Paypal;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Sessions;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods;
 using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ValidateShopperId;
+using Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.VerifyShopperTaxIdentification;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -33,6 +35,11 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72
         public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ApplePay.ApplePayRequestBuilder ApplePay
         {
             get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ApplePay.ApplePayRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The calculateTax property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.CalculateTax.CalculateTaxRequestBuilder CalculateTax
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.CalculateTax.CalculateTaxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancels property</summary>
         public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.Cancels.CancelsRequestBuilder Cancels
@@ -103,6 +110,11 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72
         public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ValidateShopperId.ValidateShopperIdRequestBuilder ValidateShopperId
         {
             get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.ValidateShopperId.ValidateShopperIdRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The verifyShopperTaxIdentification property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.VerifyShopperTaxIdentification.VerifyShopperTaxIdentificationRequestBuilder VerifyShopperTaxIdentification
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.VerifyShopperTaxIdentification.VerifyShopperTaxIdentificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.CheckoutServiceV72RequestBuilder"/> and sets the default values.

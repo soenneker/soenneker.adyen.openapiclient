@@ -93,6 +93,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string MinAmount { get; set; }
 #endif
+        /// <summary>The previous value of the `mandateId`, if the scheme has replaced it.For UPI mandates, the `mandateId` is the Unique Mandate Number (UMN), which the scheme replaces when the mandate moves to another payment provider. In that case, this field holds the UMN the mandate was registered with before the move.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousMandateId { get; set; }
+#nullable restore
+#else
+        public string PreviousMandateId { get; set; }
+#endif
         /// <summary>The provider-specific identifier for this mandate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #nullable restore
 #else
         public string ProviderId { get; set; }
+#endif
+        /// <summary>The purpose code the mandate is registered with at the scheme.Possible values for UPI mandates: * **14**: The mandate can only be debited by the payment provider that registered it. * **AZ**: The mandate can be debited by any payment provider.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PurposeCode { get; set; }
+#nullable restore
+#else
+        public string PurposeCode { get; set; }
 #endif
         /// <summary>For a billing plan where the payment amount is fixed, the amount the shopper will be charged for each recurring payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,7 +204,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "mandateId", n => { MandateId = n.GetStringValue(); } },
                 { "maskedAccountId", n => { MaskedAccountId = n.GetStringValue(); } },
                 { "minAmount", n => { MinAmount = n.GetStringValue(); } },
+                { "previousMandateId", n => { PreviousMandateId = n.GetStringValue(); } },
                 { "providerId", n => { ProviderId = n.GetStringValue(); } },
+                { "purposeCode", n => { PurposeCode = n.GetStringValue(); } },
                 { "recurringAmount", n => { RecurringAmount = n.GetStringValue(); } },
                 { "recurringStatement", n => { RecurringStatement = n.GetStringValue(); } },
                 { "remarks", n => { Remarks = n.GetStringValue(); } },
@@ -217,7 +235,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("mandateId", MandateId);
             writer.WriteStringValue("maskedAccountId", MaskedAccountId);
             writer.WriteStringValue("minAmount", MinAmount);
+            writer.WriteStringValue("previousMandateId", PreviousMandateId);
             writer.WriteStringValue("providerId", ProviderId);
+            writer.WriteStringValue("purposeCode", PurposeCode);
             writer.WriteStringValue("recurringAmount", RecurringAmount);
             writer.WriteStringValue("recurringStatement", RecurringStatement);
             writer.WriteStringValue("remarks", Remarks);

@@ -21303,6 +21303,96 @@
         "x-methodName": "deleteTokenForStoredPaymentDetails"
       }
     },
+    "/CheckoutService-v72/calculateTax": {
+      "post": {
+        "tags": [
+          "Utility"
+        ],
+        "summary": "Calculate the tax for a transaction.",
+        "description": "Calculates the applicable tax, for example the India Liberalised Remittance Scheme Tax Collected at Source, based on the taxable amount and the tax calculation context. The response returns the canonical calculation and an opaque token that you submit in /payments. Use taxCalculation.totalAmount as the amount in /payments.",
+        "operationId": "CheckoutServiceV72PostCalculateTax",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculateTaxRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculateTaxResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "servers": [
+          {
+            "url": "https://checkout-test.adyen.com/v72"
+          }
+        ],
+        "x-methodName": "calculateTax",
+        "x-sortIndex": 7
+      }
+    },
     "/CheckoutService-v72/validateShopperId": {
       "post": {
         "tags": [
@@ -21391,6 +21481,96 @@
         ],
         "x-methodName": "validateShopperId",
         "x-sortIndex": 4
+      }
+    },
+    "/CheckoutService-v72/verifyShopperTaxIdentification": {
+      "post": {
+        "tags": [
+          "Utility"
+        ],
+        "summary": "Verify the shopper\u0027s tax identification.",
+        "description": "In some countries, collecting and verifying tax information is required for regulatory compliance. Submit the shopper\u0027s tax identification for verification; when the verification succeeds, the response returns an opaque token that you submit in /payments.",
+        "operationId": "CheckoutServiceV72PostVerifyShopperTaxIdentification",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyShopperTaxIdentificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifyShopperTaxIdentificationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - a problem reading or understanding the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - insufficient permissions to process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckoutErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "servers": [
+          {
+            "url": "https://checkout-test.adyen.com/v72"
+          }
+        ],
+        "x-methodName": "verifyShopperTaxIdentification",
+        "x-sortIndex": 6
       }
     },
     "/CloudDeviceService-v1/merchants/{merchantAccount}/connectedDevices": {
@@ -103508,6 +103688,9 @@
             "type": "boolean",
             "description": "When true and \u0060shopperReference\u0060 is provided, the payment details will be stored for [recurring payments](https://docs.adyen.com/online-payments/tokenization/#recurring-payment-types) where the shopper is not present, such as subscription or automatic top-up payments."
           },
+          "enhancedSchemeData": {
+            "$ref": "#/components/schemas/CreateCheckoutSessionRequestEnhancedSchemeData"
+          },
           "expiresAt": {
             "type": "string",
             "description": "The date the session expires in [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. When not specified, the expiry date is set to 1 hour after session creation. You cannot set the session expiry to more than 24 hours after session creation.",
@@ -103786,6 +103969,9 @@
           "enableRecurring": {
             "type": "boolean",
             "description": "When true and \u0060shopperReference\u0060 is provided, the payment details will be stored for [recurring payments](https://docs.adyen.com/online-payments/tokenization/#recurring-payment-types) where the shopper is not present, such as subscription or automatic top-up payments."
+          },
+          "enhancedSchemeData": {
+            "$ref": "#/components/schemas/CreateCheckoutSessionResponseEnhancedSchemeData"
           },
           "expiresAt": {
             "type": "string",
@@ -105756,6 +105942,10 @@
             "type": "string",
             "description": "This is the \u0060recurringDetailReference\u0060 returned in the response when you created the token.",
             "x-addedInVersion": "49"
+          },
+          "subtype": {
+            "description": "The type of flow to initiate. Defaults to redirect when omitted.",
+            "$ref": "#/components/schemas/KlarnaNetworkDetailsSubtype"
           },
           "type": {
             "description": "**klarna_network**",
@@ -111630,9 +111820,17 @@
             "type": "string",
             "description": "For a billing plan where the payment amounts are variable, the minimum amount to charge the shopper for each recurring payment. When a shopper approves the billing plan, they can also specify a maximum amount in their banking app."
           },
+          "previousMandateId": {
+            "type": "string",
+            "description": "The previous value of the \u0060mandateId\u0060, if the scheme has replaced it.\n\nFor UPI mandates, the \u0060mandateId\u0060 is the Unique Mandate Number (UMN), which the scheme replaces when the mandate moves to another payment provider. In that case, this field holds the UMN the mandate was registered with before the move."
+          },
           "providerId": {
             "type": "string",
             "description": "The provider-specific identifier for this mandate."
+          },
+          "purposeCode": {
+            "type": "string",
+            "description": "The purpose code the mandate is registered with at the scheme.\n\nPossible values for UPI mandates:\n\n * **14**: The mandate can only be debited by the payment provider that registered it.\n\n * **AZ**: The mandate can be debited by any payment provider.\n\n"
           },
           "recurringAmount": {
             "type": "string",
@@ -112099,6 +112297,61 @@
           "$ref": "#/components/schemas/ZipDetailsAdditionalProperties"
         }
       },
+      "CalculateTaxRequest": {
+        "required": [
+          "merchantAccount",
+          "taxCalculationContext",
+          "taxableAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "merchantAccount": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "description": "The merchant account identifier requesting the tax calculation."
+          },
+          "taxCalculationContext": {
+            "$ref": "#/components/schemas/CalculateTaxRequestTaxCalculationContext"
+          },
+          "taxableAmount": {
+            "$ref": "#/components/schemas/CalculateTaxRequestTaxableAmount"
+          }
+        }
+      },
+      "CalculateTaxResponse": {
+        "type": "object",
+        "properties": {
+          "taxCalculation": {
+            "$ref": "#/components/schemas/CalculateTaxResponseTaxCalculation"
+          },
+          "taxCalculationReference": {
+            "type": "string",
+            "description": "The unique reference for this calculation attempt."
+          },
+          "taxCalculationToken": {
+            "type": "string",
+            "description": "The opaque, encrypted, and signed token that represents the complete canonical calculation. Required in /payments."
+          }
+        }
+      },
+      "CalculationType": {
+        "enum": [
+          "LRS_TCS"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CalculationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "LRS_TCS",
+              "name": "LrsTcs"
+            }
+          ]
+        }
+      },
       "CheckoutErrorResponseEntity": {
         "required": [
           "errorCode",
@@ -112154,6 +112407,21 @@
           }
         }
       },
+      "LrsContext": {
+        "required": [
+          "remittancePurpose",
+          "sublimitStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "remittancePurpose": {
+            "$ref": "#/components/schemas/LrsContextRemittancePurpose"
+          },
+          "sublimitStatus": {
+            "$ref": "#/components/schemas/LrsContextSublimitStatus"
+          }
+        }
+      },
       "PayToPaymentMethod": {
         "required": [
           "type"
@@ -112170,6 +112438,38 @@
             "minLength": 0,
             "type": "string"
           }
+        }
+      },
+      "RemittancePurpose": {
+        "enum": [
+          "TOUR_PROGRAMME",
+          "TRAVEL_NON_TOUR",
+          "EDUCATION",
+          "DIGITAL"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RemittancePurpose",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "TOUR_PROGRAMME",
+              "name": "TourProgramme"
+            },
+            {
+              "value": "TRAVEL_NON_TOUR",
+              "name": "TravelNonTour"
+            },
+            {
+              "value": "EDUCATION",
+              "name": "Education"
+            },
+            {
+              "value": "DIGITAL",
+              "name": "Digital"
+            }
+          ]
         }
       },
       "ResultValue": {
@@ -112245,6 +112545,171 @@
           }
         }
       },
+      "ShopperTaxIdentification": {
+        "required": [
+          "taxCountryCode",
+          "taxIdentificationNumber",
+          "taxIdentificationType"
+        ],
+        "type": "object",
+        "properties": {
+          "taxCountryCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The country governing the shopper\u0027s tax processing. Initially only IN is supported."
+          },
+          "taxIdentificationNumber": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The tax identification number submitted for verification."
+          },
+          "taxIdentificationType": {
+            "$ref": "#/components/schemas/ShopperTaxIdentificationTaxIdentificationType"
+          }
+        }
+      },
+      "SublimitStatus": {
+        "enum": [
+          "EXCEEDED",
+          "NOT_EXCEEDED"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SublimitStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "EXCEEDED",
+              "name": "Exceeded"
+            },
+            {
+              "value": "NOT_EXCEEDED",
+              "name": "NotExceeded"
+            }
+          ]
+        }
+      },
+      "TaxAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        }
+      },
+      "TaxCalculation": {
+        "type": "object",
+        "properties": {
+          "merchantAccount": {
+            "type": "string",
+            "description": "The merchant account for which the calculation was made."
+          },
+          "taxCalculationContext": {
+            "$ref": "#/components/schemas/TaxCalculationTaxCalculationContext"
+          },
+          "taxCalculations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaxCalculationComponent"
+            },
+            "description": "The individual tax components calculated by Adyen."
+          },
+          "taxableAmount": {
+            "$ref": "#/components/schemas/TaxCalculationTaxableAmount"
+          },
+          "totalAmount": {
+            "$ref": "#/components/schemas/TaxCalculationTotalAmount"
+          },
+          "totalTaxAmount": {
+            "$ref": "#/components/schemas/TaxCalculationTotalTaxAmount"
+          }
+        }
+      },
+      "TaxCalculationComponent": {
+        "type": "object",
+        "properties": {
+          "taxAmount": {
+            "$ref": "#/components/schemas/TaxCalculationComponentTaxAmount"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TaxCalculationComponentType"
+          }
+        }
+      },
+      "TaxCalculationContext": {
+        "required": [
+          "calculationType",
+          "lrs",
+          "taxCountryCode"
+        ],
+        "type": "object",
+        "properties": {
+          "calculationType": {
+            "$ref": "#/components/schemas/TaxCalculationContextCalculationType"
+          },
+          "lrs": {
+            "$ref": "#/components/schemas/TaxCalculationContextLrs"
+          },
+          "taxCountryCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The country governing tax processing. Initially only IN is supported."
+          }
+        }
+      },
+      "TaxIdentificationType": {
+        "enum": [
+          "PAN"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TaxIdentificationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PAN",
+              "name": "Pan"
+            }
+          ]
+        }
+      },
+      "TaxableAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "maximum": 10000000000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        }
+      },
       "UpiPaymentMethod": {
         "required": [
           "type"
@@ -112305,6 +112770,74 @@
           },
           "result": {
             "$ref": "#/components/schemas/ResultValue"
+          }
+        }
+      },
+      "VerifiedShopperTaxIdentification": {
+        "type": "object",
+        "properties": {
+          "maskedName": {
+            "type": "string",
+            "description": "The masked name of the tax identification holder."
+          },
+          "taxCountryCode": {
+            "type": "string",
+            "description": "The country governing the shopper\u0027s tax processing."
+          },
+          "taxIdentificationType": {
+            "$ref": "#/components/schemas/VerifiedShopperTaxIdentificationTaxIdentificationType"
+          }
+        }
+      },
+      "VerifyShopperTaxIdentificationRequest": {
+        "required": [
+          "merchantAccount",
+          "shopperReference",
+          "shopperTaxIdentification"
+        ],
+        "type": "object",
+        "properties": {
+          "merchantAccount": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "description": "The merchant account identifier requesting the tax verification."
+          },
+          "shopperReference": {
+            "maxLength": 256,
+            "minLength": 3,
+            "type": "string",
+            "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. Used to bind the verification to the shopper context.\n\n\u003E Your reference must not include personally identifiable information (PII), for example name or email address."
+          },
+          "shopperTaxIdentification": {
+            "$ref": "#/components/schemas/VerifyShopperTaxIdentificationRequestShopperTaxIdentification"
+          }
+        }
+      },
+      "VerifyShopperTaxIdentificationResponse": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The human-readable reason for the unsuccessful result."
+          },
+          "reasonCode": {
+            "type": "string",
+            "description": "The reason code for the unsuccessful result, when available."
+          },
+          "result": {
+            "$ref": "#/components/schemas/ResultValue"
+          },
+          "taxVerificationReference": {
+            "type": "string",
+            "description": "The unique reference for the verification attempt."
+          },
+          "verifiedShopperTaxIdentification": {
+            "$ref": "#/components/schemas/VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification"
+          },
+          "verifiedShopperTaxIdentificationToken": {
+            "type": "string",
+            "description": "The opaque, encrypted, and signed token representing the successful verification. Required in /payments."
           }
         }
       },
@@ -113150,6 +113683,7 @@
             "paynow": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "afterpay_default": "#/components/schemas/AfterpayDetails",
             "afterpaytouch": "#/components/schemas/AfterpayDetails",
+            "afterpaytouch_US": "#/components/schemas/AfterpayDetails",
             "afterpaytouch_pos": "#/components/schemas/AfterpayDetails",
             "clearpay": "#/components/schemas/AfterpayDetails",
             "afterpay_b2b": "#/components/schemas/AfterpayDetails",
@@ -113261,6 +113795,7 @@
             "alma": "#/components/schemas/AlmaDetails",
             "ancv": "#/components/schemas/AncvDetails",
             "paypo": "#/components/schemas/CheckoutServiceV72PaymentDetails",
+            "revolutpay": "#/components/schemas/StoredPaymentMethodDetails",
             "satispay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "scalapay": "#/components/schemas/CheckoutServiceV72PaymentDetails",
             "scalapay_3x": "#/components/schemas/CheckoutServiceV72PaymentDetails",
@@ -115157,6 +115692,7 @@
         "enum": [
           "afterpay_default",
           "afterpaytouch",
+          "afterpaytouch_US",
           "afterpay_b2b",
           "clearpay"
         ],
@@ -115174,6 +115710,10 @@
             {
               "value": "afterpaytouch",
               "name": "Afterpaytouch"
+            },
+            {
+              "value": "afterpaytouch_US",
+              "name": "AfterpaytouchUs"
             },
             {
               "value": "afterpay_b2b",
@@ -117115,6 +117655,29 @@
             {
               "value": "klarna_b2b",
               "name": "KlarnaB2B"
+            }
+          ]
+        }
+      },
+      "KlarnaNetworkDetailsSubtype": {
+        "enum": [
+          "redirect",
+          "sdk"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of flow to initiate. Defaults to redirect when omitted.",
+        "x-ms-enum": {
+          "name": "KlarnaNetworkDetailsSubtype",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "redirect",
+              "name": "Redirect"
+            },
+            {
+              "value": "sdk",
+              "name": "Sdk"
             }
           ]
         }
@@ -119383,6 +119946,7 @@
           "bcmc_mobile_app",
           "momo_wallet",
           "momo_wallet_app",
+          "revolutpay",
           "paymaya_wallet",
           "grabpay_SG",
           "grabpay_MY",
@@ -119472,6 +120036,10 @@
             {
               "value": "momo_wallet_app",
               "name": "MomoWalletApp"
+            },
+            {
+              "value": "revolutpay",
+              "name": "Revolutpay"
             },
             {
               "value": "paymaya_wallet",
@@ -157148,11 +157716,11 @@
       },
       "PaymentServiceV68Address": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -157250,8 +157818,8 @@
       },
       "PaymentServiceV68Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -157379,14 +157947,14 @@
       },
       "PaymentServiceV68BrowserInfo": {
         "required": [
-          "userAgent",
           "acceptHeader",
-          "javaEnabled",
           "colorDepth",
+          "javaEnabled",
+          "language",
           "screenHeight",
           "screenWidth",
           "timeZoneOffset",
-          "language"
+          "userAgent"
         ],
         "type": "object",
         "properties": {
@@ -157699,8 +158267,8 @@
       },
       "DonationRequest": {
         "required": [
-          "merchantAccount",
           "donationAccount",
+          "merchantAccount",
           "modificationAmount"
         ],
         "type": "object",
@@ -157754,8 +158322,8 @@
       },
       "PaymentServiceV68ForexQuote": {
         "required": [
-          "validTill",
-          "basePoints"
+          "basePoints",
+          "validTill"
         ],
         "type": "object",
         "properties": {
@@ -157812,9 +158380,9 @@
       },
       "PaymentServiceV68FraudCheckResult": {
         "required": [
+          "accountScore",
           "checkId",
-          "name",
-          "accountScore"
+          "name"
         ],
         "type": "object",
         "properties": {
@@ -157971,9 +158539,9 @@
       },
       "PaymentServiceV68Mandate": {
         "required": [
-          "frequency",
           "amount",
-          "endsAt"
+          "endsAt",
+          "frequency"
         ],
         "type": "object",
         "properties": {
@@ -158109,8 +158677,8 @@
       },
       "ModificationResult": {
         "required": [
-          "response",
-          "pspReference"
+          "pspReference",
+          "response"
         ],
         "type": "object",
         "properties": {
@@ -158154,9 +158722,9 @@
       },
       "PaymentServiceV68PaymentRequest": {
         "required": [
+          "amount",
           "merchantAccount",
-          "reference",
-          "amount"
+          "reference"
         ],
         "type": "object",
         "properties": {
@@ -158385,9 +158953,9 @@
       },
       "PaymentRequest3D": {
         "required": [
+          "md",
           "merchantAccount",
-          "paResponse",
-          "md"
+          "paResponse"
         ],
         "type": "object",
         "properties": {
@@ -158589,9 +159157,9 @@
       },
       "PaymentRequest3Ds2": {
         "required": [
+          "amount",
           "merchantAccount",
-          "reference",
-          "amount"
+          "reference"
         ],
         "type": "object",
         "properties": {
@@ -163024,11 +163592,11 @@
       },
       "PayoutServiceV68Address": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -163066,8 +163634,8 @@
       },
       "PayoutServiceV68Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -163191,9 +163759,9 @@
       },
       "PayoutServiceV68FraudCheckResult": {
         "required": [
+          "accountScore",
           "checkId",
-          "name",
-          "accountScore"
+          "name"
         ],
         "type": "object",
         "properties": {
@@ -163345,9 +163913,9 @@
       },
       "PayoutRequest": {
         "required": [
+          "amount",
           "merchantAccount",
-          "reference",
-          "amount"
+          "reference"
         ],
         "type": "object",
         "properties": {
@@ -164043,15 +164611,15 @@
       },
       "StoreDetailAndSubmitRequest": {
         "required": [
-          "merchantAccount",
-          "shopperEmail",
-          "shopperReference",
-          "recurring",
+          "amount",
           "dateOfBirth",
-          "nationality",
           "entityType",
+          "merchantAccount",
+          "nationality",
+          "recurring",
           "reference",
-          "amount"
+          "shopperEmail",
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -164167,13 +164735,13 @@
       },
       "StoreDetailRequest": {
         "required": [
-          "merchantAccount",
-          "shopperEmail",
-          "shopperReference",
-          "recurring",
           "dateOfBirth",
+          "entityType",
+          "merchantAccount",
           "nationality",
-          "entityType"
+          "recurring",
+          "shopperEmail",
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -164278,13 +164846,13 @@
       },
       "SubmitRequest": {
         "required": [
-          "merchantAccount",
-          "reference",
           "amount",
-          "shopperEmail",
-          "shopperReference",
+          "merchantAccount",
           "recurring",
-          "selectedRecurringDetailReference"
+          "reference",
+          "selectedRecurringDetailReference",
+          "shopperEmail",
+          "shopperReference"
         ],
         "type": "object",
         "properties": {
@@ -211418,6 +211986,31 @@
         },
         "description": "The address where the purchased goods should be delivered."
       },
+      "CreateCheckoutSessionRequestEnhancedSchemeData": {
+        "type": "object",
+        "properties": {
+          "airline": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataAirline"
+          },
+          "carRental": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataCarRental"
+          },
+          "healthcare": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataHealthcare"
+          },
+          "levelTwoThree": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataLevelTwoThree"
+          },
+          "lodging": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataLodging"
+          },
+          "temporaryServices": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataTemporaryServices"
+          }
+        },
+        "description": "[Enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/) that may be required for processing the payment and/or interchange savings can apply.",
+        "x-addedInVersion": "72"
+      },
       "CreateCheckoutSessionRequestFundOrigin": {
         "type": "object",
         "properties": {
@@ -211989,6 +212582,31 @@
           }
         },
         "description": "The address where the purchased goods should be delivered."
+      },
+      "CreateCheckoutSessionResponseEnhancedSchemeData": {
+        "type": "object",
+        "properties": {
+          "airline": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataAirline"
+          },
+          "carRental": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataCarRental"
+          },
+          "healthcare": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataHealthcare"
+          },
+          "levelTwoThree": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataLevelTwoThree"
+          },
+          "lodging": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataLodging"
+          },
+          "temporaryServices": {
+            "$ref": "#/components/schemas/EnhancedSchemeDataTemporaryServices"
+          }
+        },
+        "description": "[Enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/) that may be required for processing the payment and/or interchange savings can apply.",
+        "x-addedInVersion": "72"
       },
       "CreateCheckoutSessionResponseFundOrigin": {
         "type": "object",
@@ -216537,9 +217155,17 @@
             "type": "string",
             "description": "For a billing plan where the payment amounts are variable, the minimum amount to charge the shopper for each recurring payment. When a shopper approves the billing plan, they can also specify a maximum amount in their banking app."
           },
+          "previousMandateId": {
+            "type": "string",
+            "description": "The previous value of the \u0060mandateId\u0060, if the scheme has replaced it.\n\nFor UPI mandates, the \u0060mandateId\u0060 is the Unique Mandate Number (UMN), which the scheme replaces when the mandate moves to another payment provider. In that case, this field holds the UMN the mandate was registered with before the move."
+          },
           "providerId": {
             "type": "string",
             "description": "The provider-specific identifier for this mandate."
+          },
+          "purposeCode": {
+            "type": "string",
+            "description": "The purpose code the mandate is registered with at the scheme.\n\nPossible values for UPI mandates:\n\n * **14**: The mandate can only be debited by the payment provider that registered it.\n\n * **AZ**: The mandate can be debited by any payment provider.\n\n"
           },
           "recurringAmount": {
             "type": "string",
@@ -216940,6 +217566,80 @@
         "description": "The work phone number provided by the cardholder. The phone number must consist of a country code, followed by the number. If the value you provide does not follow the guidelines, we do not submit it for authentication.\n\u003E Required for Visa and JCB transactions that require 3D Secure 2 authentication, if you did not include the \u0060shopperEmail\u0060, and did not send the shopper\u0027s phone number in \u0060telephoneNumber\u0060.",
         "x-addedInVersion": "68"
       },
+      "CalculateTaxRequestTaxCalculationContext": {
+        "required": [
+          "calculationType",
+          "lrs",
+          "taxCountryCode"
+        ],
+        "type": "object",
+        "properties": {
+          "calculationType": {
+            "$ref": "#/components/schemas/TaxCalculationContextCalculationType"
+          },
+          "lrs": {
+            "$ref": "#/components/schemas/TaxCalculationContextLrs"
+          },
+          "taxCountryCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The country governing tax processing. Initially only IN is supported."
+          }
+        },
+        "description": "The context used to calculate the tax."
+      },
+      "CalculateTaxRequestTaxableAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "maximum": 10000000000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        },
+        "description": "The amount on which Adyen calculates the tax."
+      },
+      "CalculateTaxResponseTaxCalculation": {
+        "type": "object",
+        "properties": {
+          "merchantAccount": {
+            "type": "string",
+            "description": "The merchant account for which the calculation was made."
+          },
+          "taxCalculationContext": {
+            "$ref": "#/components/schemas/TaxCalculationTaxCalculationContext"
+          },
+          "taxCalculations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TaxCalculationComponent"
+            },
+            "description": "The individual tax components calculated by Adyen."
+          },
+          "taxableAmount": {
+            "$ref": "#/components/schemas/TaxCalculationTaxableAmount"
+          },
+          "totalAmount": {
+            "$ref": "#/components/schemas/TaxCalculationTotalAmount"
+          },
+          "totalTaxAmount": {
+            "$ref": "#/components/schemas/TaxCalculationTotalTaxAmount"
+          }
+        },
+        "description": "The canonical calculation accepted and produced by Adyen. Informational in the initial release."
+      },
       "CheckoutSessionPatchSessionRequestAmount": {
         "required": [
           "currency",
@@ -216959,6 +217659,192 @@
         },
         "description": "The amount to update for the payment session."
       },
+      "LrsContextRemittancePurpose": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/RemittancePurpose"
+          }
+        },
+        "description": "The remittance category, for example TOUR_PROGRAMME or EDUCATION."
+      },
+      "LrsContextSublimitStatus": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/SublimitStatus"
+          }
+        },
+        "description": "The status of the INR 1 million LRS sublimit, for example EXCEEDED."
+      },
+      "ShopperTaxIdentificationTaxIdentificationType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TaxIdentificationType"
+          }
+        },
+        "description": "The type of the tax identification. Initially only PAN is supported."
+      },
+      "TaxCalculationTaxCalculationContext": {
+        "required": [
+          "calculationType",
+          "lrs",
+          "taxCountryCode"
+        ],
+        "type": "object",
+        "properties": {
+          "calculationType": {
+            "$ref": "#/components/schemas/TaxCalculationContextCalculationType"
+          },
+          "lrs": {
+            "$ref": "#/components/schemas/TaxCalculationContextLrs"
+          },
+          "taxCountryCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The country governing tax processing. Initially only IN is supported."
+          }
+        },
+        "description": "The tax country, calculation type, and LRS declarations accepted by Adyen."
+      },
+      "TaxCalculationTaxableAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        },
+        "description": "The taxable amount accepted by Adyen."
+      },
+      "TaxCalculationTotalAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        },
+        "description": "The taxable amount plus the calculated tax. Use this amount in /payments.amount."
+      },
+      "TaxCalculationTotalTaxAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        },
+        "description": "The total tax amount calculated by Adyen."
+      },
+      "TaxCalculationComponentTaxAmount": {
+        "required": [
+          "currency",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "currency": {
+            "minLength": 1,
+            "pattern": "^[A-Z]{3}$",
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "The amount in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        },
+        "description": "The calculated tax amount of this component."
+      },
+      "TaxCalculationComponentType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CalculationType"
+          }
+        },
+        "description": "The type of the calculated tax component, for example LRS_TCS."
+      },
+      "TaxCalculationContextCalculationType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CalculationType"
+          }
+        },
+        "description": "The type of calculation requested. Initially only LRS_TCS is supported."
+      },
+      "TaxCalculationContextLrs": {
+        "required": [
+          "remittancePurpose",
+          "sublimitStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "remittancePurpose": {
+            "$ref": "#/components/schemas/LrsContextRemittancePurpose"
+          },
+          "sublimitStatus": {
+            "$ref": "#/components/schemas/LrsContextSublimitStatus"
+          }
+        },
+        "description": "India-specific LRS declarations."
+      },
       "ValidateShopperIdRequestPaymentMethod": {
         "type": "object",
         "allOf": [
@@ -216967,6 +217853,59 @@
           }
         ],
         "description": "paymentMethod"
+      },
+      "VerifiedShopperTaxIdentificationTaxIdentificationType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TaxIdentificationType"
+          }
+        },
+        "description": "The type of the verified tax identification."
+      },
+      "VerifyShopperTaxIdentificationRequestShopperTaxIdentification": {
+        "required": [
+          "taxCountryCode",
+          "taxIdentificationNumber",
+          "taxIdentificationType"
+        ],
+        "type": "object",
+        "properties": {
+          "taxCountryCode": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The country governing the shopper\u0027s tax processing. Initially only IN is supported."
+          },
+          "taxIdentificationNumber": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The tax identification number submitted for verification."
+          },
+          "taxIdentificationType": {
+            "$ref": "#/components/schemas/ShopperTaxIdentificationTaxIdentificationType"
+          }
+        },
+        "description": "The shopper tax identification to verify."
+      },
+      "VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification": {
+        "type": "object",
+        "properties": {
+          "maskedName": {
+            "type": "string",
+            "description": "The masked name of the tax identification holder."
+          },
+          "taxCountryCode": {
+            "type": "string",
+            "description": "The country governing the shopper\u0027s tax processing."
+          },
+          "taxIdentificationType": {
+            "$ref": "#/components/schemas/VerifiedShopperTaxIdentificationTaxIdentificationType"
+          }
+        },
+        "description": "The masked representation of the verified tax identification."
       },
       "PaymentResponseActionTotalAmount": {
         "required": [
@@ -228405,8 +229344,8 @@
       },
       "AdjustAuthorisationRequestModificationAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228762,8 +229701,8 @@
       },
       "CaptureRequestModificationAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228863,8 +229802,8 @@
       },
       "DonationRequestModificationAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228904,8 +229843,8 @@
       },
       "PaymentServiceV68ForexQuoteBaseAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228925,8 +229864,8 @@
       },
       "PaymentServiceV68ForexQuoteBuy": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228946,8 +229885,8 @@
       },
       "PaymentServiceV68ForexQuoteInterbank": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228967,8 +229906,8 @@
       },
       "PaymentServiceV68ForexQuoteSell": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -228988,11 +229927,11 @@
       },
       "FundDestinationBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -229128,11 +230067,11 @@
       },
       "FundSourceBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -229242,8 +230181,8 @@
       },
       "PaymentServiceV68MerchantRiskIndicatorGiftCardAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -229358,8 +230297,8 @@
       },
       "PaymentServiceV68PaymentRequestAdditionalAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -229379,8 +230318,8 @@
       },
       "PaymentServiceV68PaymentRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -229469,11 +230408,11 @@
       },
       "PaymentServiceV68PaymentRequestBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -229510,14 +230449,14 @@
       },
       "PaymentServiceV68PaymentRequestBrowserInfo": {
         "required": [
-          "userAgent",
           "acceptHeader",
-          "javaEnabled",
           "colorDepth",
+          "javaEnabled",
+          "language",
           "screenHeight",
           "screenWidth",
           "timeZoneOffset",
-          "language"
+          "userAgent"
         ],
         "type": "object",
         "properties": {
@@ -229628,8 +230567,8 @@
       },
       "PaymentServiceV68PaymentRequestDccQuote": {
         "required": [
-          "validTill",
-          "basePoints"
+          "basePoints",
+          "validTill"
         ],
         "type": "object",
         "properties": {
@@ -229684,11 +230623,11 @@
       },
       "PaymentServiceV68PaymentRequestDeliveryAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -229822,9 +230761,9 @@
       },
       "PaymentServiceV68PaymentRequestMandate": {
         "required": [
-          "frequency",
           "amount",
-          "endsAt"
+          "endsAt",
+          "frequency"
         ],
         "type": "object",
         "properties": {
@@ -230197,8 +231136,8 @@
       },
       "PaymentRequest3DAdditionalAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -230218,8 +231157,8 @@
       },
       "PaymentRequest3DAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -230264,11 +231203,11 @@
       },
       "PaymentRequest3DBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -230305,14 +231244,14 @@
       },
       "PaymentRequest3DBrowserInfo": {
         "required": [
-          "userAgent",
           "acceptHeader",
-          "javaEnabled",
           "colorDepth",
+          "javaEnabled",
+          "language",
           "screenHeight",
           "screenWidth",
           "timeZoneOffset",
-          "language"
+          "userAgent"
         ],
         "type": "object",
         "properties": {
@@ -230369,8 +231308,8 @@
       },
       "PaymentRequest3DDccQuote": {
         "required": [
-          "validTill",
-          "basePoints"
+          "basePoints",
+          "validTill"
         ],
         "type": "object",
         "properties": {
@@ -230425,11 +231364,11 @@
       },
       "PaymentRequest3DDeliveryAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -230703,8 +231642,8 @@
       },
       "PaymentRequest3Ds2AdditionalAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -230724,8 +231663,8 @@
       },
       "PaymentRequest3Ds2Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -230770,11 +231709,11 @@
       },
       "PaymentRequest3Ds2BillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -230811,14 +231750,14 @@
       },
       "PaymentRequest3Ds2BrowserInfo": {
         "required": [
-          "userAgent",
           "acceptHeader",
-          "javaEnabled",
           "colorDepth",
+          "javaEnabled",
+          "language",
           "screenHeight",
           "screenWidth",
           "timeZoneOffset",
-          "language"
+          "userAgent"
         ],
         "type": "object",
         "properties": {
@@ -230875,8 +231814,8 @@
       },
       "PaymentRequest3Ds2DccQuote": {
         "required": [
-          "validTill",
-          "basePoints"
+          "basePoints",
+          "validTill"
         ],
         "type": "object",
         "properties": {
@@ -230931,11 +231870,11 @@
       },
       "PaymentRequest3Ds2DeliveryAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -231114,8 +232053,8 @@
       },
       "PaymentResultDccAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -231156,8 +232095,8 @@
       },
       "RefundRequestModificationAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -231277,8 +232216,8 @@
       },
       "TechnicalCancelRequestModificationAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -231514,8 +232453,8 @@
       },
       "VoidPendingRefundRequestModificationAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -231680,11 +232619,11 @@
       },
       "PayoutServiceV68FundSourceBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -231794,8 +232733,8 @@
       },
       "PayoutRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -231815,11 +232754,11 @@
       },
       "PayoutRequestBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -231985,8 +232924,8 @@
       },
       "PayoutResponseDccAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -232027,8 +232966,8 @@
       },
       "StoreDetailAndSubmitRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -232092,11 +233031,11 @@
       },
       "StoreDetailAndSubmitRequestBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -232279,11 +233218,11 @@
       },
       "StoreDetailRequestBillingAddress": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -232422,8 +233361,8 @@
       },
       "SubmitRequestAmount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -248890,6 +249829,72 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/FundsCollectionType"
+          }
+        }
+      },
+      "RemittancePurposeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/RemittancePurpose"
+          }
+        }
+      },
+      "SublimitStatusWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/SublimitStatus"
+          }
+        }
+      },
+      "TaxIdentificationTypeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TaxIdentificationType"
+          }
+        }
+      },
+      "CalculationTypeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CalculationType"
+          }
+        }
+      },
+      "CalculationTypeWrapper2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CalculationType"
+          }
+        }
+      },
+      "TaxIdentificationTypeWrapper2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TaxIdentificationType"
           }
         }
       },

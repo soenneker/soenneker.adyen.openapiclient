@@ -125,6 +125,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? EnablePayOut { get; set; }
         /// <summary>When true and `shopperReference` is provided, the payment details will be stored for [recurring payments](https://docs.adyen.com/online-payments/tokenization/#recurring-payment-types) where the shopper is not present, such as subscription or automatic top-up payments.</summary>
         public bool? EnableRecurring { get; set; }
+        /// <summary>[Enhanced scheme data](https://docs.adyen.com/payment-methods/cards/enhanced-scheme-data/) that may be required for processing the payment and/or interchange savings can apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestEnhancedSchemeData? EnhancedSchemeData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestEnhancedSchemeData EnhancedSchemeData { get; set; }
+#endif
         /// <summary>The date the session expires in [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. When not specified, the expiry date is set to 1 hour after session creation. You cannot set the session expiry to more than 24 hours after session creation.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The person or entity funding the money.</summary>
@@ -454,6 +462,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "enableOneClick", n => { EnableOneClick = n.GetBoolValue(); } },
                 { "enablePayOut", n => { EnablePayOut = n.GetBoolValue(); } },
                 { "enableRecurring", n => { EnableRecurring = n.GetBoolValue(); } },
+                { "enhancedSchemeData", n => { EnhancedSchemeData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestEnhancedSchemeData>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestEnhancedSchemeData.CreateFromDiscriminatorValue); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "fundOrigin", n => { FundOrigin = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestFundOrigin>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestFundOrigin.CreateFromDiscriminatorValue); } },
                 { "fundRecipient", n => { FundRecipient = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestFundRecipient>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestFundRecipient.CreateFromDiscriminatorValue); } },
@@ -527,6 +536,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("enableOneClick", EnableOneClick);
             writer.WriteBoolValue("enablePayOut", EnablePayOut);
             writer.WriteBoolValue("enableRecurring", EnableRecurring);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestEnhancedSchemeData>("enhancedSchemeData", EnhancedSchemeData);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestFundOrigin>("fundOrigin", FundOrigin);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestFundRecipient>("fundRecipient", FundRecipient);

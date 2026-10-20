@@ -15,6 +15,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Afterpaytouch,
         #pragma warning restore CS1591
+        [EnumMember(Value = "afterpaytouch_US")]
+        #pragma warning disable CS1591
+        AfterpaytouchUs,
+        #pragma warning restore CS1591
         [EnumMember(Value = "afterpay_b2b")]
         #pragma warning disable CS1591
         AfterpayB2B,
