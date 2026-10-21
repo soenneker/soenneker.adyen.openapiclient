@@ -8,45 +8,45 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The currency and value to be added to the balance account, specified in minor units. This can be a fixed amount or a target amount.
+    /// The condition that triggers the top-up. This can be a recurring schedule or a minimum balance threshold.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchableCreateRecurringTopUpTopUpAmount : IAdditionalDataHolder, IParsable
+    public partial class RecurringTopUpUpdateTrigger : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fixed amount with which you want to top up the balance account.</summary>
+        /// <summary>Contains the details about the schedule that determines when the top up is executed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto? Fixed { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleUpdate? Schedule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto Fixed { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleUpdate Schedule { get; set; }
 #endif
-        /// <summary>The target balance for the balance account that the top-up must achieve.</summary>
+        /// <summary>The balance threshold that triggers the top-up. If the balance falls below this amount, a top-up is initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto? Target { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TriggerUpdateThreshold? Threshold { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto Target { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TriggerUpdateThreshold Threshold { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUpTopUpAmount"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUpUpdateTrigger"/> and sets the default values.
         /// </summary>
-        public PatchableCreateRecurringTopUpTopUpAmount()
+        public RecurringTopUpUpdateTrigger()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUpTopUpAmount"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUpUpdateTrigger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUpTopUpAmount CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUpUpdateTrigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.PatchableCreateRecurringTopUpTopUpAmount();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUpUpdateTrigger();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +56,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fixed", n => { Fixed = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleUpdate.CreateFromDiscriminatorValue); } },
+                { "threshold", n => { Threshold = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TriggerUpdateThreshold>(global::Soenneker.Adyen.OpenApiClient.Models.TriggerUpdateThreshold.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>("fixed", Fixed);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableAmountDto>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleUpdate>("schedule", Schedule);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TriggerUpdateThreshold>("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

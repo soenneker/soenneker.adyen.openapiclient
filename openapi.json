@@ -11348,16 +11348,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -11389,7 +11379,14 @@
             }
           }
         },
-        "security": [ ],
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
         "servers": [
           {
             "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
@@ -11491,16 +11488,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -11532,7 +11519,14 @@
             }
           }
         },
-        "security": [ ],
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
         "servers": [
           {
             "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
@@ -11614,16 +11608,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -11655,7 +11639,14 @@
             }
           }
         },
-        "security": [ ],
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
         "servers": [
           {
             "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
@@ -11705,16 +11696,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -11746,7 +11727,14 @@
             }
           }
         },
-        "security": [ ],
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
         "servers": [
           {
             "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
@@ -11848,16 +11836,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -11889,7 +11867,14 @@
             }
           }
         },
-        "security": [ ],
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
         "servers": [
           {
             "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
@@ -11951,13 +11936,10 @@
           {
             "name": "results",
             "in": "query",
-            "description": "Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.\n\nPossible statuses:\n- **succeeded**: The payout was sent successfully.\n- **failed**: The payout was not sent due to an error.\n- **skipped**: The payout was not triggered as expected.",
+            "description": "Contains a comma-separated list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.\n\nPossible statuses:\n- **succeeded**: The payout was sent successfully.\n- **failed**: The payout was not sent due to an error.\n- **skipped**: The payout was not triggered as expected.\n\nExamples: `results=succeeded`, `results=failed,skipped`",
             "explode": false,
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/ExecutionResult"
-              }
+              "type": "string"
             }
           }
         ],
@@ -12009,16 +11991,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -12050,7 +12022,14 @@
             }
           }
         },
-        "security": [ ],
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
         "servers": [
           {
             "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
@@ -12745,7 +12724,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatchableCreateRecurringTopUp"
+                "$ref": "#/components/schemas/RecurringTopUpUpdate"
               },
               "examples": {
                 "update-recurring-topup": {
@@ -12965,6 +12944,155 @@
         "x-group-parameters": "true",
         "x-methodName": "updateRecurringTopUps",
         "x-sortIndex": 13
+      }
+    },
+    "/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/sweeps/{sweepId}/executions": {
+      "get": {
+        "tags": [
+          "Custom payout schedules (sweeps)"
+        ],
+        "summary": "View executions of a custom payout schedule",
+        "description": "Returns a paginated list of executions of a custom payout schedule on a balance account. You can use query parameters to filter the executions that are returned in the list.",
+        "operationId": "BalancePlatformService_v2_GetBalanceAccountsBalanceAccountIdSweepsSweepIdExecutions",
+        "parameters": [
+          {
+            "name": "balanceAccountId",
+            "in": "path",
+            "description": "The unique identifier of the balance account.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sweepId",
+            "in": "path",
+            "description": "The unique identifier of the sweep configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor from the `next` or `previous` pagination link in the previous response.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of items returned per page. By default, the response returns 10 items per page.",
+            "schema": {
+              "minimum": 10,
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "results",
+            "in": "query",
+            "description": "Contains a comma-separated list of sweep execution results. If included, the response returns only sweep executions with the specified results.\n\nPossible results:\n- **succeeded**: The sweep payout was completed successfully.\n- **failed**: The sweep payout was not completed due to an error.\n- **skipped**: The sweep payout was not triggered as expected.",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayoutSweepExecutions"
+                },
+                "examples": {
+                  "list-sweep-executions": {
+                    "summary": "Sweep executions retrieved",
+                    "description": "Example response when retrieving executions of a sweep.",
+                    "value": {
+                      "sweepExecutions": [
+                        {
+                          "id": "SWPE12345678901234567890123456",
+                          "triggeredAt": "2026-02-16T08:00:00Z",
+                          "result": "succeeded",
+                          "resultDetails": {
+                            "transferId": "4VXLNP68FCFE5FQ1"
+                          }
+                        }
+                      ],
+                      "link": {
+                        "next": {
+                          "href": "https://balanceplatform-api-test.adyen.com/bcl/v2/balanceAccounts/BA000000000000000000001/sweeps/SWPC000000000000000000001/executions?limit=10&cursor=eyJvZmZzZXQiOjEwfQ"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - authentication required.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - the resource was not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity - a request validation error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error - the server could not process the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BalancePlatformService_v2_BasicAuth": [ ]
+          },
+          {
+            "BalancePlatformService_v2_ApiKeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://balanceplatform-api-test.adyen.com/bcl/v2"
+          }
+        ],
+        "x-group-parameters": "false",
+        "x-methodName": "getSweepExecutions",
+        "x-sortIndex": 6
       }
     },
     "/BalancePlatformService-v2/balanceAccounts/{id}/transferLimits": {
@@ -13657,16 +13785,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found - the resource was not found",
             "content": {
@@ -13750,16 +13868,6 @@
           },
           "401": {
             "description": "Unauthorized - authentication required.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BalancePlatformService_v2_DefaultErrorResponseEntity"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden - insufficient permissions to process the request.",
             "content": {
               "application/json": {
                 "schema": {
@@ -16583,7 +16691,7 @@
           "SCA device management"
         ],
         "summary": "Create a new SCA association for a device",
-        "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices.",
+        "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices. If the entity is configured to allow only a single associated device and single-device replacement is enabled for your account, the new association immediately replaces the existing one: its status is `active` and the previously associated device is no longer associated.",
         "operationId": "BalancePlatformService_v2_PostScaDevicesDeviceIdScaAssociations",
         "parameters": [
           {
@@ -68936,13 +69044,15 @@
         "enum": [
           "PWD_OTP_PHONE_FL",
           "PWD_OTP_EMAIL_FL",
-          "OOB_TRIGGER_FL"
+          "OOB_TRIGGER_FL",
+          "OTP_PHONE_FL",
+          "PASSKEY_TRIGGER_FL"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The flow used in the challenge. Possible values:\n\n* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS\n* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email\n* **OOB_TRIGGER_FL**: out-of-band (OOB) flow",
+        "description": "The flow used in the challenge. Possible values:\n\n* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS\n* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email\n* **OOB_TRIGGER_FL**: out-of-band (OOB) flow\n* **OTP_PHONE_FL**: one-time password (OTP) flow via SMS with no passcode\n* **PASSKEY_TRIGGER_FL**: passkey flow",
         "x-ms-enum": {
           "name": "ChallengeInfoFlow",
           "modelAsString": false,
@@ -68958,6 +69068,14 @@
             {
               "value": "OOB_TRIGGER_FL",
               "name": "OobTriggerFl"
+            },
+            {
+              "value": "OTP_PHONE_FL",
+              "name": "OtpPhoneFl"
+            },
+            {
+              "value": "PASSKEY_TRIGGER_FL",
+              "name": "PasskeyTriggerFl"
             }
           ]
         }
@@ -69278,8 +69396,8 @@
       },
       "BalancePlatformConfigurationNotification_v2_AccountHolder": {
         "required": [
-          "legalEntityId",
-          "id"
+          "id",
+          "legalEntityId"
         ],
         "type": "object",
         "properties": {
@@ -69428,9 +69546,9 @@
       },
       "AccountHolderNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -69461,9 +69579,9 @@
       },
       "AccountPayoutAutoApplicationNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -69629,11 +69747,11 @@
       },
       "Address": {
         "required": [
-          "street",
-          "houseNumberOrName",
           "city",
+          "country",
+          "houseNumberOrName",
           "postalCode",
-          "country"
+          "street"
         ],
         "type": "object",
         "properties": {
@@ -69671,8 +69789,8 @@
       },
       "BalancePlatformConfigurationNotification_v2_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -69720,10 +69838,10 @@
       },
       "Balance": {
         "required": [
-          "currency",
+          "available",
           "balance",
-          "reserved",
-          "available"
+          "currency",
+          "reserved"
         ],
         "type": "object",
         "properties": {
@@ -69841,9 +69959,9 @@
       },
       "BalanceAccountNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -70156,10 +70274,10 @@
       },
       "Card": {
         "required": [
-          "formFactor",
-          "cardholderName",
           "brand",
-          "brandVariant"
+          "brandVariant",
+          "cardholderName",
+          "formFactor"
         ],
         "type": "object",
         "properties": {
@@ -70387,9 +70505,9 @@
       },
       "CardOrderNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -70420,9 +70538,9 @@
       },
       "ContactDetails": {
         "required": [
+          "address",
           "email",
-          "phone",
-          "address"
+          "phone"
         ],
         "type": "object",
         "properties": {
@@ -70497,8 +70615,8 @@
       },
       "DeliveryContact": {
         "required": [
-          "name",
-          "address"
+          "address",
+          "name"
         ],
         "type": "object",
         "properties": {
@@ -70587,8 +70705,8 @@
       },
       "BalancePlatformConfigurationNotification_v2_IbanAccountIdentification": {
         "required": [
-          "type",
-          "iban"
+          "iban",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -70697,9 +70815,9 @@
       },
       "MandateNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -70850,9 +70968,9 @@
       },
       "NetworkTokenNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71001,9 +71119,9 @@
       "BalancePlatformConfigurationNotification_v2_PaymentInstrument": {
         "required": [
           "balanceAccountId",
+          "id",
           "issuingCountryCode",
-          "type",
-          "id"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71108,9 +71226,9 @@
       },
       "PaymentNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71141,9 +71259,9 @@
       },
       "PayoutScheduleBaNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71174,9 +71292,9 @@
       },
       "PayoutScheduleBpNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71207,9 +71325,9 @@
       },
       "PayoutScheduleStateNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71444,9 +71562,9 @@
       },
       "ScoreNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71501,9 +71619,9 @@
       },
       "SweepConfigurationNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71534,10 +71652,10 @@
       },
       "SweepConfigurationV2": {
         "required": [
-          "id",
-          "schedule",
+          "counterparty",
           "currency",
-          "counterparty"
+          "id",
+          "schedule"
         ],
         "type": "object",
         "properties": {
@@ -71652,6 +71770,74 @@
           "not": { }
         }
       },
+      "SweepExecutionNotificationData": {
+        "type": "object",
+        "properties": {
+          "balanceAccountId": {
+            "type": "string",
+            "description": "The unique identifier of the balance account from which the sweep is initiated."
+          },
+          "balanceAccountSweepId": {
+            "type": "string",
+            "description": "The unique identifier of the sweep configuration."
+          },
+          "balancePlatform": {
+            "type": "string",
+            "description": "The unique identifier of the balance platform."
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the resource."
+          },
+          "result": {
+            "$ref": "#/components/schemas/SweepExecutionNotificationDataResult"
+          },
+          "resultDetails": {
+            "$ref": "#/components/schemas/SweepResultDetails"
+          },
+          "triggeredAt": {
+            "type": "string",
+            "description": "The timestamp of when the execution was triggered.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        }
+      },
+      "SweepExecutionNotificationRequest": {
+        "required": [
+          "data",
+          "environment",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SweepExecutionNotificationData"
+              }
+            ],
+            "description": "Contains event details."
+          },
+          "environment": {
+            "type": "string",
+            "description": "The environment from which the webhook originated.\n\nPossible values: **test**, **live**."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event was queued.",
+            "format": "date-time"
+          },
+          "type": {
+            "$ref": "#/components/schemas/SweepExecutionNotificationRequestType"
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        }
+      },
       "SweepSchedule": {
         "required": [
           "type"
@@ -71688,9 +71874,9 @@
       },
       "TopUpConfigurationEventRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71721,9 +71907,9 @@
       },
       "TopUpConfigurationUpdatedEventRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71828,9 +72014,9 @@
       },
       "UkLocalMandateAccountIdentification": {
         "required": [
-          "type",
           "accountNumber",
-          "sortCode"
+          "sortCode",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -71878,8 +72064,8 @@
       },
       "VerificationDeadline": {
         "required": [
-          "expiresAt",
-          "capabilities"
+          "capabilities",
+          "expiresAt"
         ],
         "type": "object",
         "properties": {
@@ -72069,12 +72255,12 @@
       },
       "WebhookTopUpConfiguration": {
         "required": [
-          "id",
           "counterparty",
           "description",
+          "id",
+          "status",
           "topUpAmount",
-          "trigger",
-          "status"
+          "trigger"
         ],
         "type": "object",
         "properties": {
@@ -72134,12 +72320,12 @@
       },
       "WebhookTopUpConfigurationUpdated": {
         "required": [
-          "id",
           "counterparty",
           "description",
+          "id",
+          "status",
           "topUpAmount",
-          "trigger",
-          "status"
+          "trigger"
         ],
         "type": "object",
         "properties": {
@@ -72267,6 +72453,30 @@
           "transferId": {
             "type": "string",
             "description": "The unique identifier of the transfer created for this execution."
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        }
+      },
+      "SweepResultDetails": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Human readable reason for why execution was not successful if applicable."
+          },
+          "reasonCode": {
+            "type": "string",
+            "description": "Reason Code for why execution was not successful if applicable."
+          },
+          "sweepConfigurationDisabled": {
+            "type": "boolean",
+            "description": "Is true if the sweep configuration was disabled."
+          },
+          "transferId": {
+            "type": "string",
+            "description": "The id of the transfer from executing the sweep."
           }
         },
         "additionalProperties": {
@@ -73638,6 +73848,66 @@
             {
               "value": "push",
               "name": "Push"
+            }
+          ]
+        }
+      },
+      "SweepExecutionNotificationDataResult": {
+        "enum": [
+          "failed",
+          "skipped",
+          "succeeded"
+        ],
+        "type": "string",
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "The outcome of the sweep execution.\n\nPossible results:\n- **succeeded**: The sweep payout was completed successfully.\n- **failed**: The sweep payout was not completed due to an error.\n- **skipped**: The sweep payout was not triggered as expected.",
+        "x-ms-enum": {
+          "name": "SweepExecutionNotificationDataResult",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "skipped",
+              "name": "Skipped"
+            },
+            {
+              "value": "succeeded",
+              "name": "Succeeded"
+            }
+          ]
+        }
+      },
+      "SweepExecutionNotificationRequestType": {
+        "enum": [
+          "balancePlatform.balanceAccountSweepExecution.succeeded",
+          "balancePlatform.balanceAccountSweepExecution.skipped",
+          "balancePlatform.balanceAccountSweepExecution.failed"
+        ],
+        "type": "string",
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "Type of webhook.",
+        "x-ms-enum": {
+          "name": "SweepExecutionNotificationRequestType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "balancePlatform.balanceAccountSweepExecution.succeeded",
+              "name": "BalancePlatformBalanceAccountSweepExecutionSucceeded"
+            },
+            {
+              "value": "balancePlatform.balanceAccountSweepExecution.skipped",
+              "name": "BalancePlatformBalanceAccountSweepExecutionSkipped"
+            },
+            {
+              "value": "balancePlatform.balanceAccountSweepExecution.failed",
+              "name": "BalancePlatformBalanceAccountSweepExecutionFailed"
             }
           ]
         }
@@ -76714,8 +76984,8 @@
       },
       "BalancePlatformNegativeBalanceCompensationWarningNotification_v1_Amount": {
         "required": [
-          "value",
-          "currency"
+          "currency",
+          "value"
         ],
         "type": "object",
         "properties": {
@@ -76788,9 +77058,9 @@
       },
       "NegativeBalanceCompensationWarningNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -79851,9 +80121,9 @@
       },
       "ReportNotificationData": {
         "required": [
+          "downloadUrl",
           "fileName",
-          "reportType",
-          "downloadUrl"
+          "reportType"
         ],
         "type": "object",
         "properties": {
@@ -79905,9 +80175,9 @@
       },
       "ReportNotificationRequest": {
         "required": [
+          "data",
           "environment",
-          "type",
-          "data"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -85343,6 +85613,20 @@
           }
         }
       },
+      "AmountUpdate": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
+            "format": "int64"
+          }
+        }
+      },
       "ApproveAssociationRequest": {
         "required": [
           "entityId",
@@ -85652,7 +85936,6 @@
       "BalanceAccountConfigurationRequest": {
         "required": [
           "balancePlatformPayoutScheduleId",
-          "frequency",
           "transferInstrumentId"
         ],
         "type": "object",
@@ -85906,12 +86189,8 @@
             "format": "int32"
           },
           "userSettlementTime": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/LocalTime"
-              }
-            ],
-            "description": "The time when the payout funds are settled in your user's transfer instrument."
+            "type": "string",
+            "description": "The time when the payout funds are settled in your user's transfer instrument. For example, 11:30:00."
           },
           "userSettlementTimeZone": {
             "type": "string",
@@ -86418,27 +86697,6 @@
           }
         }
       },
-      "LocalTime": {
-        "type": "object",
-        "properties": {
-          "hour": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "minute": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nano": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "second": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
       "BalancePlatformService_v2_Mandate": {
         "type": "object",
         "properties": {
@@ -86602,94 +86860,6 @@
           }
         }
       },
-      "PatchableAmountDto": {
-        "type": "object",
-        "properties": {
-          "currency": {
-            "type": "string",
-            "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes)."
-          },
-          "value": {
-            "type": "integer",
-            "description": "The amount of the transaction, in [minor units](https://docs.adyen.com/development-resources/currency-codes).",
-            "format": "int64"
-          }
-        }
-      },
-      "PatchableCreateRecurringTopUp": {
-        "type": "object",
-        "properties": {
-          "description": {
-            "maxLength": 140,
-            "minLength": 0,
-            "type": "string",
-            "description": "Your description for the recurring top-up.\n\nMaximum length is 140 characters. If you set a longer description, it will be cut off at 140 characters."
-          },
-          "referenceForBeneficiary": {
-            "maxLength": 80,
-            "minLength": 0,
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": " A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**."
-          },
-          "status": {
-            "$ref": "#/components/schemas/PatchableCreateRecurringTopUpStatus"
-          },
-          "topUpAmount": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PatchableTopUpAmount"
-              }
-            ],
-            "description": "The currency and value to be added to the balance account, specified in minor units. This can be a fixed amount or a target amount."
-          },
-          "trigger": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/PatchableTrigger"
-              }
-            ],
-            "description": "The condition that triggers the top-up. This can be a recurring schedule or a minimum balance threshold."
-          }
-        }
-      },
-      "PatchableSchedule": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/ScheduleType"
-              }
-            ],
-            "description": "The type of schedule at which the top up is executed.\n* **weekdays**: pull in funds Monday-Friday at 07:00 AM in the local timezone of the balance account.\n\n* **weekly**: pull in funds every Monday at 07:00 AM in the local timezone of the balance account.\n\n* **monthly**: pull in funds every first of the month at 07:00 AM in the local timezone of the balance account.\n* **null** (default): continuous monitoring."
-          }
-        }
-      },
-      "PatchableTopUpAmount": {
-        "type": "object",
-        "properties": {
-          "fixed": {
-            "$ref": "#/components/schemas/PatchableTopUpAmountFixed"
-          },
-          "target": {
-            "$ref": "#/components/schemas/PatchableTopUpAmountTarget"
-          }
-        }
-      },
-      "PatchableTrigger": {
-        "type": "object",
-        "properties": {
-          "schedule": {
-            "$ref": "#/components/schemas/PatchableTriggerSchedule"
-          },
-          "threshold": {
-            "$ref": "#/components/schemas/PatchableAmountDto"
-          }
-        }
-      },
       "PayoutScheduleExecution": {
         "type": "object",
         "properties": {
@@ -86752,6 +86922,81 @@
           }
         }
       },
+      "PayoutSweepExecution": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the sweep execution."
+          },
+          "result": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ExecutionResult"
+              }
+            ],
+            "description": "The outcome of the sweep execution.\n\nPossible results:\n- **succeeded**: The sweep payout was completed successfully.\n- **failed**: The sweep payout was not completed due to an error.\n- **skipped**: The sweep payout was not triggered as expected."
+          },
+          "resultDetails": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PayoutSweepExecutionDetails"
+              }
+            ],
+            "description": "Details about the outcome of the sweep execution."
+          },
+          "triggeredAt": {
+            "type": "string",
+            "description": "The timestamp of when the execution was triggered.",
+            "format": "date-time"
+          }
+        }
+      },
+      "PayoutSweepExecutionDetails": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The human-readable reason for why the sweep execution was not successful, if applicable."
+          },
+          "reasonCode": {
+            "type": "string",
+            "description": "The reason code for why the sweep execution was not successful, if applicable."
+          },
+          "sweepConfigurationDisabled": {
+            "type": "boolean",
+            "description": "Indicates whether the sweep configuration was disabled."
+          },
+          "transferId": {
+            "type": "string",
+            "description": "The unique identifier of the transfer created by the sweep execution, if applicable."
+          }
+        }
+      },
+      "PayoutSweepExecutions": {
+        "required": [
+          "link",
+          "sweepExecutions"
+        ],
+        "type": "object",
+        "properties": {
+          "link": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Link"
+              }
+            ],
+            "description": "Contains links to the next and previous page whenever applicable."
+          },
+          "sweepExecutions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PayoutSweepExecution"
+            },
+            "description": "Contains a list of executions of the sweep configuration."
+          }
+        }
+      },
       "RecurringTopUp": {
         "required": [
           "counterparty",
@@ -86802,6 +87047,45 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/Trigger"
+              }
+            ],
+            "description": "The condition that triggers the top-up. This can be a recurring schedule or a minimum balance threshold."
+          }
+        }
+      },
+      "RecurringTopUpUpdate": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "maxLength": 140,
+            "minLength": 0,
+            "type": "string",
+            "description": "Your description for the recurring top-up.\n\nMaximum length is 140 characters. If you set a longer description, it will be cut off at 140 characters."
+          },
+          "referenceForBeneficiary": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": " A reference that is sent to the recipient. This reference is also sent in all webhooks related to the transfer, so you can use it to track statuses for both parties involved in the funds movement.\n\n Supported characters: **a-z**, **A-Z**, **0-9**."
+          },
+          "status": {
+            "$ref": "#/components/schemas/RecurringTopUpUpdateStatus"
+          },
+          "topUpAmount": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TopUpAmountUpdate"
+              }
+            ],
+            "description": "The currency and value to be added to the balance account, specified in minor units. This can be a fixed amount or a target amount."
+          },
+          "trigger": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/TriggerUpdate"
               }
             ],
             "description": "The condition that triggers the top-up. This can be a recurring schedule or a minimum balance threshold."
@@ -87113,6 +87397,19 @@
           ]
         }
       },
+      "ScheduleUpdate": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ScheduleType"
+              }
+            ],
+            "description": "The type of schedule at which the top up is executed.\n* **weekdays**: pull in funds Monday-Friday at 07:00 AM in the local timezone of the balance account.\n\n* **weekly**: pull in funds every Monday at 07:00 AM in the local timezone of the balance account.\n\n* **monthly**: pull in funds every first of the month at 07:00 AM in the local timezone of the balance account.\n* **null** (default): continuous monitoring."
+          }
+        }
+      },
       "ScheduledPayoutFrequency": {
         "type": "string",
         "x-extensible-enum": [
@@ -87283,6 +87580,17 @@
           }
         }
       },
+      "TopUpAmountUpdate": {
+        "type": "object",
+        "properties": {
+          "fixed": {
+            "$ref": "#/components/schemas/TopUpAmountUpdateFixed"
+          },
+          "target": {
+            "$ref": "#/components/schemas/TopUpAmountUpdateTarget"
+          }
+        }
+      },
       "TopUpCounterparty": {
         "required": [
           "transferInstrumentId"
@@ -87423,6 +87731,22 @@
           },
           "threshold": {
             "$ref": "#/components/schemas/AmountDto"
+          }
+        }
+      },
+      "TriggerUpdate": {
+        "type": "object",
+        "properties": {
+          "schedule": {
+            "$ref": "#/components/schemas/TriggerUpdateSchedule"
+          },
+          "threshold": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AmountUpdate"
+              }
+            ],
+            "description": "The balance threshold that triggers the top-up. If the balance falls below this amount, a top-up is initiated."
           }
         }
       },
@@ -88077,11 +88401,11 @@
           }
         }
       },
-      "PatchableTopUpAmountFixed": {
+      "TopUpAmountUpdateFixed": {
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/PatchableAmountDto"
+            "$ref": "#/components/schemas/AmountUpdate"
           },
           {
             "type": "null"
@@ -88100,11 +88424,11 @@
         },
         "description": "The fixed amount with which you want to top up the balance account."
       },
-      "PatchableTopUpAmountTarget": {
+      "TopUpAmountUpdateTarget": {
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/PatchableAmountDto"
+            "$ref": "#/components/schemas/AmountUpdate"
           },
           {
             "type": "null"
@@ -88123,11 +88447,11 @@
         },
         "description": "The target balance for the balance account that the top-up must achieve."
       },
-      "PatchableTriggerSchedule": {
+      "TriggerUpdateSchedule": {
         "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/PatchableSchedule"
+            "$ref": "#/components/schemas/ScheduleUpdate"
           },
           {
             "type": "null"
@@ -93436,21 +93760,18 @@
           ]
         }
       },
-      "PatchableCreateRecurringTopUpStatus": {
+      "RecurringTopUpStatus": {
         "enum": [
           "active",
           "inactive"
         ],
-        "type": [
-          "null",
-          "string"
-        ],
+        "type": "string",
         "additionalProperties": {
           "not": { }
         },
         "description": "The status of the recurring top-up. If not provided, by default, this is set to **active**.\n\nPossible values: \n\n * **active**:  the top up is enabled and funds will be pulled in.\n\n * **inactive**: the top up is disabled and cannot be triggered. \n\n",
         "x-ms-enum": {
-          "name": "PatchableCreateRecurringTopUpStatus",
+          "name": "RecurringTopUpStatus",
           "modelAsString": false,
           "values": [
             {
@@ -93464,18 +93785,21 @@
           ]
         }
       },
-      "RecurringTopUpStatus": {
+      "RecurringTopUpUpdateStatus": {
         "enum": [
           "active",
           "inactive"
         ],
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "additionalProperties": {
           "not": { }
         },
         "description": "The status of the recurring top-up. If not provided, by default, this is set to **active**.\n\nPossible values: \n\n * **active**:  the top up is enabled and funds will be pulled in.\n\n * **inactive**: the top up is disabled and cannot be triggered. \n\n",
         "x-ms-enum": {
-          "name": "RecurringTopUpStatus",
+          "name": "RecurringTopUpUpdateStatus",
           "modelAsString": false,
           "values": [
             {
@@ -95560,11 +95884,11 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "The reason code provided by the network."
+            "description": "The network-specific reason code. Use `namespace` to identify the code set."
           },
           "description": {
             "type": "string",
-            "description": "The description of the reason code."
+            "description": "A human-readable description of the reason code."
           },
           "namespace": {
             "$ref": "#/components/schemas/NetworkReasonNamespace"
@@ -98282,14 +98606,14 @@
           "iso8583ResponseCode",
           "ukFpsRejectionCode",
           "ukFpsReturnReasonCode",
-          "usAchReturnReasonCode",
-          "usAchCorrectionReasonCode"
+          "usAchCorrectionReasonCode",
+          "usAchReturnReasonCode"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The namespace that corresponds to the reason code.\n\nPossible values:\n*  **ukFpsRejectionCode**\n*  **ukFpsReturnReasonCode**\n*  **usAchReturnReasonCode**\n*  **usAchCorrectionReasonCode**\n*  **iso8583ResponseCode**\n\n",
+        "description": "The category of codes that `code` belongs to. The `namespace` identifies the payment network and the type of reason\n\nPossible values:\n*  **ukFpsRejectionCode** : Reason code for a rejected Faster Payments transfer.\n*  **ukFpsReturnReasonCode** : Reason code for a returned Faster Payments transfer.\n*  **usAchReturnReasonCode** : Reason code for a returned ACH transfer.\n*  **usAchCorrectionReasonCode** : Reason code for an ACH Notification of Change.\n*  **iso8583ResponseCode** : ISO 8583 response code for a card transfer.\n\n",
         "x-ms-enum": {
           "name": "NetworkReasonNamespace",
           "modelAsString": false,
@@ -98307,12 +98631,12 @@
               "name": "UkFpsReturnReasonCode"
             },
             {
-              "value": "usAchReturnReasonCode",
-              "name": "UsAchReturnReasonCode"
-            },
-            {
               "value": "usAchCorrectionReasonCode",
               "name": "UsAchCorrectionReasonCode"
+            },
+            {
+              "value": "usAchReturnReasonCode",
+              "name": "UsAchReturnReasonCode"
             }
           ]
         }
@@ -186224,11 +186548,11 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "The reason code provided by the network."
+            "description": "The network-specific reason code. Use `namespace` to identify the code set."
           },
           "description": {
             "type": "string",
-            "description": "The description of the reason code."
+            "description": "A human-readable description of the reason code."
           },
           "namespace": {
             "$ref": "#/components/schemas/TransferService_v4_NetworkReasonNamespace"
@@ -190067,14 +190391,14 @@
           "iso8583ResponseCode",
           "ukFpsRejectionCode",
           "ukFpsReturnReasonCode",
-          "usAchReturnReasonCode",
-          "usAchCorrectionReasonCode"
+          "usAchCorrectionReasonCode",
+          "usAchReturnReasonCode"
         ],
         "type": "string",
         "additionalProperties": {
           "not": { }
         },
-        "description": "The namespace that corresponds to the reason code.\n\nPossible values:\n*  **ukFpsRejectionCode**\n*  **ukFpsReturnReasonCode**\n*  **usAchReturnReasonCode**\n*  **usAchCorrectionReasonCode**\n*  **iso8583ResponseCode**\n\n",
+        "description": "The category of codes that `code` belongs to. The `namespace` identifies the payment network and the type of reason\n\nPossible values:\n*  **ukFpsRejectionCode** : Reason code for a rejected Faster Payments transfer.\n*  **ukFpsReturnReasonCode** : Reason code for a returned Faster Payments transfer.\n*  **usAchReturnReasonCode** : Reason code for a returned ACH transfer.\n*  **usAchCorrectionReasonCode** : Reason code for an ACH Notification of Change.\n*  **iso8583ResponseCode** : ISO 8583 response code for a card transfer.\n\n",
         "x-ms-enum": {
           "name": "NetworkReasonNamespace",
           "modelAsString": false,
@@ -190092,12 +190416,12 @@
               "name": "UkFpsReturnReasonCode"
             },
             {
-              "value": "usAchReturnReasonCode",
-              "name": "UsAchReturnReasonCode"
-            },
-            {
               "value": "usAchCorrectionReasonCode",
               "name": "UsAchCorrectionReasonCode"
+            },
+            {
+              "value": "usAchReturnReasonCode",
+              "name": "UsAchReturnReasonCode"
             }
           ]
         }
@@ -209850,6 +210174,68 @@
           "environment": "test",
           "timestamp": "2024-12-15T15:42:03+01:00",
           "type": "balancePlatform.balanceAccountSweep.updated"
+        }
+      },
+      "post-balancePlatform.balanceAccountSweepExecution.failed-balancePlatform-sweep-execution-failed": {
+        "summary": "Sweep execution failed",
+        "description": "Example webhook when a sweep execution fails",
+        "value": {
+          "data": {
+            "balancePlatform": "YOUR_BALANCE_PLATFORM",
+            "id": "SWPE00000000000000000000000003",
+            "balanceAccountId": "BA00000000000000000001",
+            "balanceAccountSweepId": "SWPC4227C224555B5FTD2NT2JV4WN5",
+            "result": "failed",
+            "resultDetails": {
+              "reason": "Missing capabilities",
+              "reasonCode": "missingCapabilities"
+            },
+            "triggeredAt": "2026-05-11T12:52:00Z"
+          },
+          "environment": "test",
+          "timestamp": "2026-05-11T12:52:00.727Z",
+          "type": "balancePlatform.balanceAccountSweepExecution.failed"
+        }
+      },
+      "post-balancePlatform.balanceAccountSweepExecution.skipped-balancePlatform-sweep-execution-skipped": {
+        "summary": "Sweep execution skipped",
+        "description": "Example webhook when a sweep execution is skipped",
+        "value": {
+          "data": {
+            "balancePlatform": "YOUR_BALANCE_PLATFORM",
+            "id": "SWPE00000000000000000000000002",
+            "balanceAccountId": "BA00000000000000000001",
+            "balanceAccountSweepId": "SWPC4227C224555B5FTD2NT2JV4WN5",
+            "result": "skipped",
+            "resultDetails": {
+              "reason": "No balance to pay out",
+              "reasonCode": "noBalanceToPayOut"
+            },
+            "triggeredAt": "2026-05-11T13:02:00Z"
+          },
+          "environment": "test",
+          "timestamp": "2026-05-11T13:02:00.982Z",
+          "type": "balancePlatform.balanceAccountSweepExecution.skipped"
+        }
+      },
+      "post-balancePlatform.balanceAccountSweepExecution.succeeded-balancePlatform-sweep-execution-succeeded": {
+        "summary": "Sweep execution succeeded",
+        "description": "Example webhook when a sweep execution succeeds",
+        "value": {
+          "data": {
+            "balancePlatform": "YOUR_BALANCE_PLATFORM",
+            "id": "SWPE00000000000000000000000001",
+            "balanceAccountId": "BA00000000000000000001",
+            "balanceAccountSweepId": "SWPC4227C224555B5FTD2NT2JV4WN5",
+            "result": "succeeded",
+            "resultDetails": {
+              "transferId": "1VVF0D5U66PIUIVP"
+            },
+            "triggeredAt": "2026-05-11T12:57:00Z"
+          },
+          "environment": "test",
+          "timestamp": "2026-05-11T12:57:01.346Z",
+          "type": "balancePlatform.balanceAccountSweepExecution.succeeded"
         }
       },
       "post-balancePlatform.cardorder.created-balancePlatform-cardorder-created-processing": {
@@ -235606,6 +235992,150 @@
         ],
         "x-sortIndex": 4,
         "x-methodName": "sweepUpdated"
+      }
+    },
+    "BalancePlatformConfigurationNotification_v2_balancePlatform.balanceAccountSweepExecution.failed": {
+      "post": {
+        "tags": [
+          "Balance account"
+        ],
+        "summary": "Sweep execution failed",
+        "description": "Adyen sends this webhook when a sweep execution fails.",
+        "operationId": "BalancePlatformConfigurationNotification_v2_PostBalancePlatformBalanceAccountSweepExecutionFailed",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SweepExecutionNotificationRequest"
+              },
+              "examples": {
+                "balancePlatform-sweep-execution-failed": {
+                  "$ref": "#/components/examples/post-balancePlatform.balanceAccountSweepExecution.failed-balancePlatform-sweep-execution-failed"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_BalancePlatformNotificationResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BalancePlatformConfigurationNotification_v2_BasicAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "/"
+          }
+        ],
+        "x-sortIndex": 9,
+        "x-methodName": "sweepExecutionFailed"
+      }
+    },
+    "BalancePlatformConfigurationNotification_v2_balancePlatform.balanceAccountSweepExecution.skipped": {
+      "post": {
+        "tags": [
+          "Balance account"
+        ],
+        "summary": "Sweep skipped",
+        "description": "Adyen sends this webhook when a sweep execution is skipped.",
+        "operationId": "BalancePlatformConfigurationNotification_v2_PostBalancePlatformBalanceAccountSweepExecutionSkipped",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SweepExecutionNotificationRequest"
+              },
+              "examples": {
+                "balancePlatform-sweep-execution-skipped": {
+                  "$ref": "#/components/examples/post-balancePlatform.balanceAccountSweepExecution.skipped-balancePlatform-sweep-execution-skipped"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_BalancePlatformNotificationResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BalancePlatformConfigurationNotification_v2_BasicAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "/"
+          }
+        ],
+        "x-sortIndex": 10,
+        "x-methodName": "sweepSkipped"
+      }
+    },
+    "BalancePlatformConfigurationNotification_v2_balancePlatform.balanceAccountSweepExecution.succeeded": {
+      "post": {
+        "tags": [
+          "Balance account"
+        ],
+        "summary": "Sweep execution succeeded",
+        "description": "Adyen sends this webhook when a sweep execution succeeds.",
+        "operationId": "BalancePlatformConfigurationNotification_v2_PostBalancePlatformBalanceAccountSweepExecutionSucceeded",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SweepExecutionNotificationRequest"
+              },
+              "examples": {
+                "balancePlatform-sweep-execution-succeeded": {
+                  "$ref": "#/components/examples/post-balancePlatform.balanceAccountSweepExecution.succeeded-balancePlatform-sweep-execution-succeeded"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK - the request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancePlatformConfigurationNotification_v2_BalancePlatformNotificationResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BalancePlatformConfigurationNotification_v2_BasicAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "/"
+          }
+        ],
+        "x-sortIndex": 8,
+        "x-methodName": "sweepExecutionSucceeded"
       }
     },
     "BalancePlatformConfigurationNotification_v2_balancePlatform.balancePlatformPayoutSchedule.created": {

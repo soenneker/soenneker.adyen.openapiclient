@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The flow used in the challenge. Possible values:* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email* **OOB_TRIGGER_FL**: out-of-band (OOB) flow</summary>
+    /// <summary>The flow used in the challenge. Possible values:* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email* **OOB_TRIGGER_FL**: out-of-band (OOB) flow* **OTP_PHONE_FL**: one-time password (OTP) flow via SMS with no passcode* **PASSKEY_TRIGGER_FL**: passkey flow</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ChallengeInfoFlow
     {
@@ -18,6 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [EnumMember(Value = "OOB_TRIGGER_FL")]
         #pragma warning disable CS1591
         OobTriggerFl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OTP_PHONE_FL")]
+        #pragma warning disable CS1591
+        OtpPhoneFl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PASSKEY_TRIGGER_FL")]
+        #pragma warning disable CS1591
+        PasskeyTriggerFl,
         #pragma warning restore CS1591
     }
 }

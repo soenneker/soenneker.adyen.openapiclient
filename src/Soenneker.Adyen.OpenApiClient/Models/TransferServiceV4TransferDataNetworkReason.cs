@@ -15,7 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reason code provided by the network.</summary>
+        /// <summary>The network-specific reason code. Use `namespace` to identify the code set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>The description of the reason code.</summary>
+        /// <summary>A human-readable description of the reason code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The namespace that corresponds to the reason code.Possible values:*  **ukFpsRejectionCode***  **ukFpsReturnReasonCode***  **usAchReturnReasonCode***  **usAchCorrectionReasonCode***  **iso8583ResponseCode**</summary>
+        /// <summary>The category of codes that `code` belongs to. The `namespace` identifies the payment network and the type of reasonPossible values:*  **ukFpsRejectionCode** : Reason code for a rejected Faster Payments transfer.*  **ukFpsReturnReasonCode** : Reason code for a returned Faster Payments transfer.*  **usAchReturnReasonCode** : Reason code for a returned ACH transfer.*  **usAchCorrectionReasonCode** : Reason code for an ACH Notification of Change.*  **iso8583ResponseCode** : ISO 8583 response code for a card transfer.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace? Namespace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataNetworkReason"/> and sets the default values.

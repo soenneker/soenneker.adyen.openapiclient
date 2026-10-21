@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
-    /// <summary>The namespace that corresponds to the reason code.Possible values:*  **ukFpsRejectionCode***  **ukFpsReturnReasonCode***  **usAchReturnReasonCode***  **usAchCorrectionReasonCode***  **iso8583ResponseCode**</summary>
+    /// <summary>The category of codes that `code` belongs to. The `namespace` identifies the payment network and the type of reasonPossible values:*  **ukFpsRejectionCode** : Reason code for a rejected Faster Payments transfer.*  **ukFpsReturnReasonCode** : Reason code for a returned Faster Payments transfer.*  **usAchReturnReasonCode** : Reason code for a returned ACH transfer.*  **usAchCorrectionReasonCode** : Reason code for an ACH Notification of Change.*  **iso8583ResponseCode** : ISO 8583 response code for a card transfer.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NetworkReasonNamespace
     {
@@ -19,13 +19,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         UkFpsReturnReasonCode,
         #pragma warning restore CS1591
-        [EnumMember(Value = "usAchReturnReasonCode")]
-        #pragma warning disable CS1591
-        UsAchReturnReasonCode,
-        #pragma warning restore CS1591
         [EnumMember(Value = "usAchCorrectionReasonCode")]
         #pragma warning disable CS1591
         UsAchCorrectionReasonCode,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "usAchReturnReasonCode")]
+        #pragma warning disable CS1591
+        UsAchReturnReasonCode,
         #pragma warning restore CS1591
     }
 }

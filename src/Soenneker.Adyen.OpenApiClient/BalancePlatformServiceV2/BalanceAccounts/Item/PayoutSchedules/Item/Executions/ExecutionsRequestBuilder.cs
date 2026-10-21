@@ -40,7 +40,6 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity">When receiving a 500 status code</exception>
@@ -57,7 +56,6 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2DefaultErrorResponseEntity.CreateFromDiscriminatorValue },
@@ -104,15 +102,15 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
             /// <summary>The page number to be returned.Default: **1**</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.Possible statuses:- **succeeded**: The payout was sent successfully.- **failed**: The payout was not sent due to an error.- **skipped**: The payout was not triggered as expected.</summary>
+            /// <summary>Contains a comma-separated list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.Possible statuses:- **succeeded**: The payout was sent successfully.- **failed**: The payout was not sent due to an error.- **skipped**: The payout was not triggered as expected.Examples: `results=succeeded`, `results=failed,skipped`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("results")]
-            public global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult[]? Results { get; set; }
+            public string? Results { get; set; }
 #nullable restore
 #else
             [QueryParameter("results")]
-            public global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult[] Results { get; set; }
+            public string Results { get; set; }
 #endif
         }
     }

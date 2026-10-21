@@ -8,37 +8,31 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>
-    /// The time when the payout funds are settled in your user&apos;s transfer instrument.
+    /// The outcome of the sweep execution.Possible results:- **succeeded**: The sweep payout was completed successfully.- **failed**: The sweep payout was not completed due to an error.- **skipped**: The sweep payout was not triggered as expected.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BalancePlatformConfigurationUserSettlementTime : IAdditionalDataHolder, IParsable
+    public partial class PayoutSweepExecutionResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The hour property</summary>
-        public int? Hour { get; set; }
-        /// <summary>The minute property</summary>
-        public int? Minute { get; set; }
-        /// <summary>The nano property</summary>
-        public int? Nano { get; set; }
-        /// <summary>The second property</summary>
-        public int? Second { get; set; }
+        /// <summary>The value property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult"/> and sets the default values.
         /// </summary>
-        public BalancePlatformConfigurationUserSettlementTime()
+        public PayoutSweepExecutionResult()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime();
+            return new global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,10 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hour", n => { Hour = n.GetIntValue(); } },
-                { "minute", n => { Minute = n.GetIntValue(); } },
-                { "nano", n => { Nano = n.GetIntValue(); } },
-                { "second", n => { Second = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult>(); } },
             };
         }
         /// <summary>
@@ -61,10 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("hour", Hour);
-            writer.WriteIntValue("minute", Minute);
-            writer.WriteIntValue("nano", Nano);
-            writer.WriteIntValue("second", Second);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ExecutionResult>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

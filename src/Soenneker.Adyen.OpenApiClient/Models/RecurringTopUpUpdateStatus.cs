@@ -5,7 +5,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 {
     /// <summary>The status of the recurring top-up. If not provided, by default, this is set to **active**.Possible values:  * **active**:  the top up is enabled and funds will be pulled in. * **inactive**: the top up is disabled and cannot be triggered. </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PatchableCreateRecurringTopUpStatus
+    public enum RecurringTopUpUpdateStatus
     {
         [EnumMember(Value = "active")]
         #pragma warning disable CS1591

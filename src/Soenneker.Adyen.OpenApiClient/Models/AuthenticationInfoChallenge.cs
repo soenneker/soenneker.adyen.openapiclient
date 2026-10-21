@@ -17,7 +17,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicator informing the Access Control Server (ACS) and the Directory Server (DS) that the authentication has been cancelled. Possible values:* **00**: Data element is absent or value has been sent back with the key `challengeCancel`.* **01**: Cardholder selected **Cancel**.* **02**: 3DS Requestor cancelled Authentication.* **03**: Transaction abandoned.* **04**: Transaction timed out at ACS — other timeouts.* **05**: Transaction timed out at ACS — first CReq not received by ACS.* **06**: Transaction error.* **07**: Unknown.* **08**: Transaction time out at SDK.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel? ChallengeCancel { get; set; }
-        /// <summary>The flow used in the challenge. Possible values:* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email* **OOB_TRIGGER_FL**: out-of-band (OOB) flow</summary>
+        /// <summary>The flow used in the challenge. Possible values:* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email* **OOB_TRIGGER_FL**: out-of-band (OOB) flow* **OTP_PHONE_FL**: one-time password (OTP) flow via SMS with no passcode* **PASSKEY_TRIGGER_FL**: passkey flow</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow? Flow { get; set; }
         /// <summary>The last time of interaction with the challenge.</summary>
         public DateTimeOffset? LastInteraction { get; set; }

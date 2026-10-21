@@ -104,13 +104,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The default [settlement delay](https://docs.adyen.com/platforms/settle-funds/#settlement-delay) for this payout schedule.</summary>
         public int? UserSettlementDelay { get; set; }
-        /// <summary>The time when the payout funds are settled in your user&apos;s transfer instrument.</summary>
+        /// <summary>The time when the payout funds are settled in your user&apos;s transfer instrument. For example, 11:30:00.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime? UserSettlementTime { get; set; }
+        public string? UserSettlementTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime UserSettlementTime { get; set; }
+        public string UserSettlementTime { get; set; }
 #endif
         /// <summary>The timezone of the `userSettlementTime`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,7 +163,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "retainedAmount", n => { RetainedAmount = n.GetLongValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "userSettlementDelay", n => { UserSettlementDelay = n.GetIntValue(); } },
-                { "userSettlementTime", n => { UserSettlementTime = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime.CreateFromDiscriminatorValue); } },
+                { "userSettlementTime", n => { UserSettlementTime = n.GetStringValue(); } },
                 { "userSettlementTimeZone", n => { UserSettlementTimeZone = n.GetStringValue(); } },
             };
         }
@@ -192,7 +192,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteLongValue("retainedAmount", RetainedAmount);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteIntValue("userSettlementDelay", UserSettlementDelay);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationUserSettlementTime>("userSettlementTime", UserSettlementTime);
+            writer.WriteStringValue("userSettlementTime", UserSettlementTime);
             writer.WriteStringValue("userSettlementTimeZone", UserSettlementTimeZone);
             writer.WriteAdditionalData(AdditionalData);
         }

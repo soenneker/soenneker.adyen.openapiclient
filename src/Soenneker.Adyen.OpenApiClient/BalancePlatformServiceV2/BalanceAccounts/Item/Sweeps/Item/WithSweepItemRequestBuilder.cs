@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps.Item.Executions;
 using Soenneker.Adyen.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSweepItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The executions property</summary>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps.Item.Executions.ExecutionsRequestBuilder Executions
+        {
+            get => new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps.Item.Executions.ExecutionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps.Item.WithSweepItemRequestBuilder"/> and sets the default values.
         /// </summary>
