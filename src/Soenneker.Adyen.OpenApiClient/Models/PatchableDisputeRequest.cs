@@ -14,6 +14,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Additional information for raising a dispute of `type` **cancelled**. Required for disputes of `type` **cancelled**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate? CancelledInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate CancelledInfo { get; set; }
+#endif
         /// <summary>Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +38,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo FraudInfo { get; set; }
 #endif
+        /// <summary>Additional information for raising a dispute of `type` **notAsDescribed**. Required for disputes of `type` **notAsDescribed**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate? NotAsDescribedInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate NotAsDescribedInfo { get; set; }
+#endif
         /// <summary>Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,7 +54,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo NotDeliveredInfo { get; set; }
 #endif
-        /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.</summary>
+        /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is deprecated. Do not create or submit any disputes for this dispute `type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo? OtherInfo { get; set; }
@@ -79,8 +95,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cancelledInfo", n => { CancelledInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate.CreateFromDiscriminatorValue); } },
                 { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo.CreateFromDiscriminatorValue); } },
                 { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo.CreateFromDiscriminatorValue); } },
+                { "notAsDescribedInfo", n => { NotAsDescribedInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate.CreateFromDiscriminatorValue); } },
                 { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo.CreateFromDiscriminatorValue); } },
                 { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper.CreateFromDiscriminatorValue); } },
@@ -93,8 +111,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate>("cancelledInfo", CancelledInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo>("duplicateInfo", DuplicateInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo>("fraudInfo", FraudInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate>("notAsDescribedInfo", NotAsDescribedInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>("otherInfo", OtherInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper>("status", Status);

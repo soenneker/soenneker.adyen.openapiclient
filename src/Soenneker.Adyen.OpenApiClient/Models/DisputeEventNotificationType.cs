@@ -19,6 +19,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         Duplicate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "notAsDescribed")]
+        #pragma warning disable CS1591
+        NotAsDescribed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cancelled")]
+        #pragma warning disable CS1591
+        Cancelled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "other")]
         #pragma warning disable CS1591
         Other,

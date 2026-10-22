@@ -22,6 +22,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Arn { get; private set; }
 #endif
+        /// <summary>Additional information for raising a dispute of `type` **cancelled**. Required for disputes of `type` **cancelled**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseCancelledInfo? CancelledInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseCancelledInfo CancelledInfo { get; set; }
+#endif
         /// <summary>Your description for the dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +70,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
+        /// <summary>Additional information for raising a dispute of `type` **notAsDescribed**. Required for disputes of `type` **notAsDescribed**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotAsDescribedInfo? NotAsDescribedInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotAsDescribedInfo NotAsDescribedInfo { get; set; }
+#endif
         /// <summary>Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +86,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotDeliveredInfo NotDeliveredInfo { get; set; }
 #endif
-        /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other****Note:** The **other** dispute `type` is currently in beta testing. Do not create or submit any disputes for this dispute `type` at this time.</summary>
+        /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is deprecated. Do not create or submit any disputes for this dispute `type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseOtherInfo? OtherInfo { get; set; }
@@ -128,11 +144,13 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "arn", n => { Arn = n.GetStringValue(); } },
+                { "cancelledInfo", n => { CancelledInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseCancelledInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseCancelledInfo.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disputedAmount", n => { DisputedAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseDisputedAmount>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseDisputedAmount.CreateFromDiscriminatorValue); } },
                 { "duplicateInfo", n => { DuplicateInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseDuplicateInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseDuplicateInfo.CreateFromDiscriminatorValue); } },
                 { "fraudInfo", n => { FraudInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseFraudInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseFraudInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "notAsDescribedInfo", n => { NotAsDescribedInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotAsDescribedInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotAsDescribedInfo.CreateFromDiscriminatorValue); } },
                 { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotDeliveredInfo.CreateFromDiscriminatorValue); } },
                 { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseOtherInfo.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseStatus>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseStatus.CreateFromDiscriminatorValue); } },
@@ -147,10 +165,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseCancelledInfo>("cancelledInfo", CancelledInfo);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseDisputedAmount>("disputedAmount", DisputedAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseDuplicateInfo>("duplicateInfo", DuplicateInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseFraudInfo>("fraudInfo", FraudInfo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotAsDescribedInfo>("notAsDescribedInfo", NotAsDescribedInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseOtherInfo>("otherInfo", OtherInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseStatus>("status", Status);
