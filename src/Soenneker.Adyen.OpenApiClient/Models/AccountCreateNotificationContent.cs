@@ -58,10 +58,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs containing metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationContentMetadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponseMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationContentMetadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponseMetadataProperty2 Metadata { get; set; }
 #endif
         /// <summary>The payout method code held by the account holder to couple the account with. Scheduled card payouts will be sent using this payout method code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "bankAccountUUID", n => { BankAccountUUID = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "invalidFields", n => { InvalidFields = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>(global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationContentMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationContentMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponseMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponseMetadataProperty2.CreateFromDiscriminatorValue); } },
                 { "payoutMethodCode", n => { PayoutMethodCode = n.GetStringValue(); } },
                 { "payoutSchedule", n => { PayoutSchedule = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponsePayoutSchedule>(global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponsePayoutSchedule.CreateFromDiscriminatorValue); } },
                 { "payoutSpeed", n => { PayoutSpeed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponsePayoutSpeed>(); } },
@@ -150,7 +150,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("bankAccountUUID", BankAccountUUID);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldType>("invalidFields", InvalidFields);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationContentMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponseMetadataProperty2>("metadata", Metadata);
             writer.WriteStringValue("payoutMethodCode", PayoutMethodCode);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponsePayoutSchedule>("payoutSchedule", PayoutSchedule);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6CreateAccountResponsePayoutSpeed>("payoutSpeed", PayoutSpeed);

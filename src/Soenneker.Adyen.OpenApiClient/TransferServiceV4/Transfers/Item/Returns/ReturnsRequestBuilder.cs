@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.Returns
 {
     /// <summary>
-    /// Builds and executes requests for operations under \TransferService-v4\transfers\{-id}\returns
+    /// Builds and executes requests for operations under \TransferService-v4\transfers\{id}\returns
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReturnsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.Returns
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReturnsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers/{%2Did}/returns", pathParameters)
+        public ReturnsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers/{id}/returns", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.Returns
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReturnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers/{%2Did}/returns", rawUrl)
+        public ReturnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransferService-v4/transfers/{id}/returns", rawUrl)
         {
         }
         /// <summary>

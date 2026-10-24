@@ -42,45 +42,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates if the merchant accepted the cancellation. Required if the cardholder cancelled the service within 15 days of the current date.Possible values: **true**, **false**.</summary>
         public bool? DidMerchantAcceptCancellation { get; set; }
         /// <summary>Indicates the kind of dispute being raised by the cardholder.Possible values: **notAsDescribed**, **defectiveMerchandise**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo? DisputeDueTo { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo DisputeDueTo { get; set; }
-#endif
         /// <summary>Indicates if the cardholder attempted to negotiate a resolution with the merchant before raising the dispute. Required if more than 120 days have passed since both the `lastExpectedDate` and the transaction processing date.Possible values: **true**, **false**.If the value of this parameter is **true**, provide information in `descriptionOfIssue` about the negotiations that took place with the merchant.</summary>
         public bool? EvidenceOfNegotiationsWithMerchant { get; set; }
         /// <summary>The type of purchase being disputed. Required if the value of `disputeDueTo` is **notAsDescribed**.Possible values: **goods**, **services**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProductTypeWrapper? GoodsOrServices { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProductTypeWrapper GoodsOrServices { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProductType? GoodsOrServices { get; set; }
         /// <summary>Indicates if the transaction is non-fiat or non-fungible token (NFT) related. Required if the value of `goodsOrServices` is **services**.Possible values: **true**, **false**.</summary>
         public bool? IsNonFiatOrNft { get; set; }
         /// <summary>The date, in **YYYY-MM-DD** format, that the merchant promised delivery of the goods or services.</summary>
         public Date? LastExpectedDate { get; set; }
         /// <summary>The reason the merchant gave for refusing the return. Required if the value of `attemptedToReturn` is **true**.Possible values: * **MRRA**: The merchant refused to provide return authorization. * **MRRM**: The merchant refused to accept the returned merchandise. * **MICNRM**: The merchant told the cardholder not to return the merchandise. * **MNLER**: The merchant no longer exists or is not responding. * **MNPCIR**: The merchant did not provide clear instructions on how to return the merchandise.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdviseWrapper? ReasonMerchantRefused { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdviseWrapper ReasonMerchantRefused { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdvise? ReasonMerchantRefused { get; set; }
         /// <summary>Indicates if local law prohibits the cardholder from attempting to resolve the issue with the merchant. Required if the value of `didAttemptToResolve` is **false**. If this value is also **false**, the dispute cannot proceed.Possible values: **true**, **false**.</summary>
         public bool? ResolutionProhibitedByLaw { get; set; }
         /// <summary>The method used to return the merchandise. Required if the value of `didCardholderReturn` is **true**.Possible values: **faceToFace**, **fedEx**, **dhl**, **ups**, **postalService**, **other**.If the value of this parameter is **other**, provide information in `descriptionOfIssue` about how the merchandise was returned.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper2? ReturnMethod { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper2 ReturnMethod { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethod? ReturnMethod { get; set; }
         /// <summary>The tracking number for the shipment used to return the merchandise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,13 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShippingTrackingNumber { get; set; }
 #endif
         /// <summary>The party that initiated cancellation of the service. Required if the value of `goodsOrServices` is **services**.Possible values: **merchant**, **cardholder**.If the value of this parameter is **cardholder**, provide information in `descriptionOfIssue` about how the service was cancelled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper2? WhoCancelled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper2 WhoCancelled { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity? WhoCancelled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate"/> and sets the default values.
         /// </summary>
@@ -132,16 +102,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "didAttemptToResolve", n => { DidAttemptToResolve = n.GetBoolValue(); } },
                 { "didCardholderReturn", n => { DidCardholderReturn = n.GetBoolValue(); } },
                 { "didMerchantAcceptCancellation", n => { DidMerchantAcceptCancellation = n.GetBoolValue(); } },
-                { "disputeDueTo", n => { DisputeDueTo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo>(global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo.CreateFromDiscriminatorValue); } },
+                { "disputeDueTo", n => { DisputeDueTo = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo>(); } },
                 { "evidenceOfNegotiationsWithMerchant", n => { EvidenceOfNegotiationsWithMerchant = n.GetBoolValue(); } },
-                { "goodsOrServices", n => { GoodsOrServices = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductTypeWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.ProductTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "goodsOrServices", n => { GoodsOrServices = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>(); } },
                 { "isNonFiatOrNft", n => { IsNonFiatOrNft = n.GetBoolValue(); } },
                 { "lastExpectedDate", n => { LastExpectedDate = n.GetDateValue(); } },
-                { "reasonMerchantRefused", n => { ReasonMerchantRefused = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdviseWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdviseWrapper.CreateFromDiscriminatorValue); } },
+                { "reasonMerchantRefused", n => { ReasonMerchantRefused = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdvise>(); } },
                 { "resolutionProhibitedByLaw", n => { ResolutionProhibitedByLaw = n.GetBoolValue(); } },
-                { "returnMethod", n => { ReturnMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper2>(global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper2.CreateFromDiscriminatorValue); } },
+                { "returnMethod", n => { ReturnMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethod>(); } },
                 { "shippingTrackingNumber", n => { ShippingTrackingNumber = n.GetStringValue(); } },
-                { "whoCancelled", n => { WhoCancelled = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper2>(global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper2.CreateFromDiscriminatorValue); } },
+                { "whoCancelled", n => { WhoCancelled = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>(); } },
             };
         }
         /// <summary>
@@ -161,16 +131,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("didAttemptToResolve", DidAttemptToResolve);
             writer.WriteBoolValue("didCardholderReturn", DidCardholderReturn);
             writer.WriteBoolValue("didMerchantAcceptCancellation", DidMerchantAcceptCancellation);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo>("disputeDueTo", DisputeDueTo);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdateDisputeDueTo>("disputeDueTo", DisputeDueTo);
             writer.WriteBoolValue("evidenceOfNegotiationsWithMerchant", EvidenceOfNegotiationsWithMerchant);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductTypeWrapper>("goodsOrServices", GoodsOrServices);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ProductType>("goodsOrServices", GoodsOrServices);
             writer.WriteBoolValue("isNonFiatOrNft", IsNonFiatOrNft);
             writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdviseWrapper>("reasonMerchantRefused", ReasonMerchantRefused);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedMerchantRefuseAdvise>("reasonMerchantRefused", ReasonMerchantRefused);
             writer.WriteBoolValue("resolutionProhibitedByLaw", ResolutionProhibitedByLaw);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper2>("returnMethod", ReturnMethod);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethod>("returnMethod", ReturnMethod);
             writer.WriteStringValue("shippingTrackingNumber", ShippingTrackingNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper2>("whoCancelled", WhoCancelled);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>("whoCancelled", WhoCancelled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

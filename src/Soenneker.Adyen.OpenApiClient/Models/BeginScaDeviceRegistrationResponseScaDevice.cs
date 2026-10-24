@@ -32,13 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Type of device registered. Possible values: **ios**, **android**, **browser**. </summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BeginScaDeviceRegistrationResponseScaDevice"/> and sets the default values.
         /// </summary>
@@ -66,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed>(global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed>(); } },
             };
         }
         /// <summary>
@@ -78,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaDeviceTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

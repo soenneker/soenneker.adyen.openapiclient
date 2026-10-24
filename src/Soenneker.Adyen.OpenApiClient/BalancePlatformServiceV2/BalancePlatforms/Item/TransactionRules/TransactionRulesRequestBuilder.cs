@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.TransactionRules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{balancePlatform-id}\transactionRules
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{id}\transactionRules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionRulesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/transactionRules", pathParameters)
+        public TransactionRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/transactionRules", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/transactionRules", rawUrl)
+        public TransactionRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/transactionRules", rawUrl)
         {
         }
         /// <summary>

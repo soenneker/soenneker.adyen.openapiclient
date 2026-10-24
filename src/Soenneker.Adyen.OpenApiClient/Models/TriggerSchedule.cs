@@ -16,13 +16,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of schedule at which the top up is executed.* **weekdays**: pull in funds Monday-Friday at 07:00 AM in the local timezone of the balance account.* **weekly**: pull in funds every Monday at 07:00 AM in the local timezone of the balance account.* **monthly**: pull in funds every first of the month at 07:00 AM in the local timezone of the balance account.* **null** (default): continuous monitoring.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TriggerSchedule"/> and sets the default values.
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed>(global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed>(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScheduleTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

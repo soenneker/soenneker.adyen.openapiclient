@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.Sweeps
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccount-id}\sweeps
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccountId}\sweeps
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SweepsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SweepsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/sweeps{?limit*,offset*}", pathParameters)
+        public SweepsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/sweeps{?limit*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SweepsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/sweeps{?limit*,offset*}", rawUrl)
+        public SweepsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/sweeps{?limit*,offset*}", rawUrl)
         {
         }
         /// <summary>

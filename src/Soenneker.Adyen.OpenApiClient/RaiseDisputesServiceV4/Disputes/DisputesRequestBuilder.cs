@@ -20,14 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes
     {
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.disputes.item collection</summary>
         /// <param name="position">The unique identifier of the raised dispute.</param>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item.DisputeItemRequestBuilder"/></returns>
-        public global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item.DisputeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item.WithDisputeItemRequestBuilder"/></returns>
+        public global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item.WithDisputeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dispute%2Did", position);
-                return new global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item.DisputeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("disputeId", position);
+                return new global::Soenneker.Adyen.OpenApiClient.RaiseDisputesServiceV4.Disputes.Item.WithDisputeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

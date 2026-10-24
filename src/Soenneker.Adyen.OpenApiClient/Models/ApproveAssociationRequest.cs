@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string EntityId { get; set; }
 #endif
         /// <summary>The type of the entity. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType? EntityType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType EntityType { get; set; }
-#endif
         /// <summary>List of device ids associated to the entity that will be approved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public List<string> ScaDeviceIds { get; set; }
 #endif
         /// <summary>The status of the association. Possible values: **active** or **pendingApproval**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequest"/> and sets the default values.
         /// </summary>
@@ -72,9 +60,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entityId", n => { EntityId = n.GetStringValue(); } },
-                { "entityType", n => { EntityType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType>(global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType.CreateFromDiscriminatorValue); } },
+                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType>(); } },
                 { "scaDeviceIds", n => { ScaDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus>(global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus>(); } },
             };
         }
         /// <summary>
@@ -85,9 +73,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("entityId", EntityId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType>("entityType", EntityType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType>("entityType", EntityType);
             writer.WriteCollectionOfPrimitiveValues<string>("scaDeviceIds", ScaDeviceIds);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

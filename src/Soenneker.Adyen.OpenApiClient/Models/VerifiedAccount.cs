@@ -37,13 +37,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string AccountNumber { get; set; }
 #endif
         /// <summary>The type of the bank account. Possible values are **CURRENT**, **SAVINGS**, **BUSINESS**, **CREDIT_CARD**, **LOAN**, **UNKNOWN**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType? AccountType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType AccountType { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the banking institution where the bank account is held.</summary>
@@ -106,7 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountId", n => { AccountId = n.GetStringValue(); } },
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
-                { "accountType", n => { AccountType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType>(global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType.CreateFromDiscriminatorValue); } },
+                { "accountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType>(); } },
                 { "bankName", n => { BankName = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "identifiers", n => { Identifiers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers>(global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers.CreateFromDiscriminatorValue); } },
@@ -123,7 +117,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteStringValue("accountNumber", AccountNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType>("accountType", AccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountAccountType>("accountType", AccountType);
             writer.WriteStringValue("bankName", BankName);
             writer.WriteStringValue("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccountIdentifiers>("identifiers", Identifiers);

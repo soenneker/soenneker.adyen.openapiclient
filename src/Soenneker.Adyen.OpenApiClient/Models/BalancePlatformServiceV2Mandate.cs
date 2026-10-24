@@ -49,21 +49,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string PaymentInstrumentId { get; set; }
 #endif
         /// <summary>The status of the mandate.Possible values: **pending**, **approved**, **cancelled**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed Status { get; set; }
-#endif
         /// <summary>The type of mandate. Possible value: **bacs**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType Type { get; set; }
-#endif
         /// <summary>The date when the mandate was updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -96,8 +84,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "paymentInstrumentId", n => { PaymentInstrumentId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -113,8 +101,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("paymentInstrumentId", PaymentInstrumentId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateStatusComposed>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2MandateType>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

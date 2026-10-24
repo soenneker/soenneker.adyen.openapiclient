@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.RecurringTopUps
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccount-id}\recurringTopUps
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccountId}\recurringTopUps
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecurringTopUpsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecurringTopUpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/recurringTopUps{?cursor*,limit*}", pathParameters)
+        public RecurringTopUpsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/recurringTopUps{?cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecurringTopUpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/recurringTopUps{?cursor*,limit*}", rawUrl)
+        public RecurringTopUpsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/recurringTopUps{?cursor*,limit*}", rawUrl)
         {
         }
         /// <summary>

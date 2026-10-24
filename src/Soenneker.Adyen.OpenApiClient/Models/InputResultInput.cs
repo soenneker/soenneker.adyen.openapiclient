@@ -21,14 +21,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public int? DigitInput { get; set; }
         /// <summary>The number of the function key which is typed by the Customer on the POI or the Cashier on the Sale Terminal.</summary>
         public int? FunctionKey { get; set; }
-        /// <summary>Type of requested input. Can be: **GetConfirmation**, **TextString**, **DigitString**, **DecimalString** or **GetMenuEntry**.Possible values:* **DecimalString*** **DigitString*** **GetAnyKey*** **GetConfirmation*** **GetFunctionKey*** **GetMenuEntry*** **Password*** **SiteManager*** **TextString**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand? InputCommand { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand InputCommand { get; set; }
-#endif
         /// <summary>The index of the menu item (from 1 to n) which is selected by the Cashier on the Sale Terminal. The value -1 indicates that the immediate upper level of the menu is requested. The value 0 indicates that the root of the menu is requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "ConfirmedFlag", n => { ConfirmedFlag = n.GetBoolValue(); } },
                 { "DigitInput", n => { DigitInput = n.GetIntValue(); } },
                 { "FunctionKey", n => { FunctionKey = n.GetIntValue(); } },
-                { "InputCommand", n => { InputCommand = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand>(global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand.CreateFromDiscriminatorValue); } },
+                { "InputCommand", n => { InputCommand = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand>(); } },
                 { "MenuEntryNumber", n => { MenuEntryNumber = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "Password", n => { Password = n.GetStringValue(); } },
                 { "TextInput", n => { TextInput = n.GetStringValue(); } },
@@ -97,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("ConfirmedFlag", ConfirmedFlag);
             writer.WriteIntValue("DigitInput", DigitInput);
             writer.WriteIntValue("FunctionKey", FunctionKey);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand>("InputCommand", InputCommand);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputInputCommand>("InputCommand", InputCommand);
             writer.WriteCollectionOfPrimitiveValues<int?>("MenuEntryNumber", MenuEntryNumber);
             writer.WriteStringValue("Password", Password);
             writer.WriteStringValue("TextInput", TextInput);

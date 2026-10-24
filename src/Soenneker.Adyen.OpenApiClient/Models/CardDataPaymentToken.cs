@@ -17,14 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Expiry date and time. Limits the validity of a payment token.</summary>
         public DateTimeOffset? ExpiryDateTime { get; set; }
-        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Customer*** **Transaction**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Transaction*** **Customer**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType? TokenRequestedType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType TokenRequestedType { get; set; }
-#endif
         /// <summary>Payment token replacing the PAN of the payment card to identify the payment mean of the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +53,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ExpiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                { "TokenRequestedType", n => { TokenRequestedType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType.CreateFromDiscriminatorValue); } },
+                { "TokenRequestedType", n => { TokenRequestedType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType>(); } },
                 { "TokenValue", n => { TokenValue = n.GetStringValue(); } },
             };
         }
@@ -71,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("ExpiryDateTime", ExpiryDateTime);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType>("TokenRequestedType", TokenRequestedType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTokenTokenRequestedType>("TokenRequestedType", TokenRequestedType);
             writer.WriteStringValue("TokenValue", TokenValue);
             writer.WriteAdditionalData(AdditionalData);
         }

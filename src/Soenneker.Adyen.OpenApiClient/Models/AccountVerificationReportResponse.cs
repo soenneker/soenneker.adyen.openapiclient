@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The location where the third-party individual&apos;s bank account is registered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry? Country { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry Country { get; set; }
-#endif
         /// <summary>The unique identifier for the specific report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount>(global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry>(global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry.CreateFromDiscriminatorValue); } },
+                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }
@@ -76,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount>("accounts", Accounts);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry>("country", Country);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry>("country", Country);
             writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }

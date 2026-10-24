@@ -32,29 +32,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string DefaultCurrency { get; set; }
 #endif
         /// <summary>The text shown on the payment terminal, asking the shopper for a donation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField? DisplayTextField { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField DisplayTextField { get; set; }
-#endif
         /// <summary>The interaction flow for in-person donations: complete payment for the purchase and the donation in one go, or separately.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow? DonationFlow { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow DonationFlow { get; set; }
-#endif
         /// <summary>The type of donation to collect from the shopper. Possible values: - **roundup**: Round up the transaction amount.- **fixedAmounts**: Choose a fixed amount.- **fixedAmountsRoundup**: Round up, or choose a fixed amount.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType? DonationType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType DonationType { get; set; }
-#endif
         /// <summary>The merchant accounts for this sales channel that are associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,9 +84,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "amounts", n => { Amounts = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DonationAmount>(global::Soenneker.Adyen.OpenApiClient.Models.DonationAmount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "defaultCurrency", n => { DefaultCurrency = n.GetStringValue(); } },
-                { "displayTextField", n => { DisplayTextField = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField>(global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField.CreateFromDiscriminatorValue); } },
-                { "donationFlow", n => { DonationFlow = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow>(global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow.CreateFromDiscriminatorValue); } },
-                { "donationType", n => { DonationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType>(global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType.CreateFromDiscriminatorValue); } },
+                { "displayTextField", n => { DisplayTextField = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField>(); } },
+                { "donationFlow", n => { DonationFlow = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow>(); } },
+                { "donationType", n => { DonationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType>(); } },
                 { "merchantAccounts", n => { MerchantAccounts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "presentCardTimeoutMs", n => { PresentCardTimeoutMs = n.GetLongValue(); } },
                 { "promptTimeoutMs", n => { PromptTimeoutMs = n.GetLongValue(); } },
@@ -120,9 +102,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.DonationAmount>("amounts", Amounts);
             writer.WriteStringValue("defaultCurrency", DefaultCurrency);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField>("displayTextField", DisplayTextField);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow>("donationFlow", DonationFlow);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType>("donationType", DonationType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDisplayTextField>("displayTextField", DisplayTextField);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationFlow>("donationFlow", DonationFlow);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsResponseDonationType>("donationType", DonationType);
             writer.WriteCollectionOfPrimitiveValues<string>("merchantAccounts", MerchantAccounts);
             writer.WriteLongValue("presentCardTimeoutMs", PresentCardTimeoutMs);
             writer.WriteLongValue("promptTimeoutMs", PromptTimeoutMs);

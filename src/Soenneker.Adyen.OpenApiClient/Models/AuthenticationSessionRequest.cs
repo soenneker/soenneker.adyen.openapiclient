@@ -31,13 +31,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy Policy { get; set; }
 #endif
         /// <summary>The type of component.For [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), set this to **onboarding**.For [Platform Experience components](https://docs.adyen.com/platforms/build-user-dashboards), set this to **platform**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct? Product { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct Product { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequest"/> and sets the default values.
         /// </summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "allowOrigin", n => { AllowOrigin = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy.CreateFromDiscriminatorValue); } },
-                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>(); } },
             };
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("allowOrigin", AllowOrigin);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy>("policy", Policy);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>("product", Product);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>("product", Product);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Any custom fields used as part of the input to configured risk rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestRiskDataCustomFields? CustomFields { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2? CustomFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestRiskDataCustomFields CustomFields { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2 CustomFields { get; set; }
 #endif
         /// <summary>An integer value that is added to the normal fraud score. The value can be either positive or negative.</summary>
         public int? FraudOffset { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "clientData", n => { ClientData = n.GetStringValue(); } },
-                { "customFields", n => { CustomFields = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestRiskDataCustomFields>(global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestRiskDataCustomFields.CreateFromDiscriminatorValue); } },
+                { "customFields", n => { CustomFields = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2.CreateFromDiscriminatorValue); } },
                 { "fraudOffset", n => { FraudOffset = n.GetIntValue(); } },
                 { "profileReference", n => { ProfileReference = n.GetStringValue(); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientData", ClientData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateCheckoutSessionRequestRiskDataCustomFields>("customFields", CustomFields);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2>("customFields", CustomFields);
             writer.WriteIntValue("fraudOffset", FraudOffset);
             writer.WriteStringValue("profileReference", ProfileReference);
             writer.WriteAdditionalData(AdditionalData);

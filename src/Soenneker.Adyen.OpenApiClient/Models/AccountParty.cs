@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity Identity { get; set; }
 #endif
         /// <summary>Specifies a role or capacity of the party in relation to the bank account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole? Role { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole Role { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountParty"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "identity", n => { Identity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity>(global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole>(global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole>(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity>("identity", Identity);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -33,14 +33,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DefaultLayoutString { get; set; }
 #endif
-        /// <summary>Logical device located on a Sale Terminal or a POI Terminal, regarding the class of information to output (display, print or store), or input (keyboard) for the Cashier or the Customer.Possible values:* **CashierDisplay*** **CashierInput*** **CustomerDisplay*** **CustomerInput**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice? Device { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice Device { get; set; }
-#endif
         /// <summary>Indicates if the Cancel function key has to be deactivated (value True).</summary>
         public bool? DisableCancelFlag { get; set; }
         /// <summary>Indicates if the Correct function key has to be deactivated (value True). During the processing of an Input command `GetConfirmation`, `SiteManager`, or `GetMenuEntry`.</summary>
@@ -53,22 +47,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public bool? GlobalCorrectionFlag { get; set; }
         /// <summary>Indicates whether to request an Immediate response to the message without waiting for the completion of the command.</summary>
         public bool? ImmediateResponseFlag { get; set; }
-        /// <summary>Qualification of the information to send to an output logical device, to display or print to the Cashier or the Customer.Possible values:* **CustomerAssistance*** **Display*** **Document*** **Error*** **Input*** **POIReplication*** **Receipt*** **Sound*** **Status*** **Voucher**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify? InfoQualify { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify InfoQualify { get; set; }
-#endif
-        /// <summary>Type of requested input. Can be: **GetConfirmation**, **TextString**, **DigitString**, **DecimalString** or **GetMenuEntry**.Possible values:* **DecimalString*** **DigitString*** **GetAnyKey*** **GetConfirmation*** **GetFunctionKey*** **GetMenuEntry*** **Password*** **SiteManager*** **TextString**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **GetAnyKey*** **GetConfirmation*** **SiteManager*** **TextString*** **DigitString*** **DecimalString*** **GetFunctionKey*** **GetMenuEntry*** **Password**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand? InputCommand { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand InputCommand { get; set; }
-#endif
         /// <summary>Indicates to mask the characters entered by the user (i.e. replacing in the display of the input, the entered character by a standard character as *).</summary>
         public bool? MaskCharactersFlag { get; set; }
         /// <summary>Maximum input length of the decimal part (without decimal point).</summary>
@@ -132,15 +114,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "BeepKeyFlag", n => { BeepKeyFlag = n.GetBoolValue(); } },
                 { "DefaultInputString", n => { DefaultInputString = n.GetStringValue(); } },
                 { "DefaultLayoutString", n => { DefaultLayoutString = n.GetStringValue(); } },
-                { "Device", n => { Device = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice>(global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice.CreateFromDiscriminatorValue); } },
+                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice>(); } },
                 { "DisableCancelFlag", n => { DisableCancelFlag = n.GetBoolValue(); } },
                 { "DisableCorrectFlag", n => { DisableCorrectFlag = n.GetBoolValue(); } },
                 { "DisableValidFlag", n => { DisableValidFlag = n.GetBoolValue(); } },
                 { "FromRightToLeftFlag", n => { FromRightToLeftFlag = n.GetBoolValue(); } },
                 { "GlobalCorrectionFlag", n => { GlobalCorrectionFlag = n.GetBoolValue(); } },
                 { "ImmediateResponseFlag", n => { ImmediateResponseFlag = n.GetBoolValue(); } },
-                { "InfoQualify", n => { InfoQualify = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify>(global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify.CreateFromDiscriminatorValue); } },
-                { "InputCommand", n => { InputCommand = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand>(global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand.CreateFromDiscriminatorValue); } },
+                { "InfoQualify", n => { InfoQualify = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify>(); } },
+                { "InputCommand", n => { InputCommand = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand>(); } },
                 { "MaskCharactersFlag", n => { MaskCharactersFlag = n.GetBoolValue(); } },
                 { "MaxDecimalLength", n => { MaxDecimalLength = n.GetIntValue(); } },
                 { "MaxInputTime", n => { MaxInputTime = n.GetIntValue(); } },
@@ -162,15 +144,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("BeepKeyFlag", BeepKeyFlag);
             writer.WriteStringValue("DefaultInputString", DefaultInputString);
             writer.WriteStringValue("DefaultLayoutString", DefaultLayoutString);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice>("Device", Device);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataDevice>("Device", Device);
             writer.WriteBoolValue("DisableCancelFlag", DisableCancelFlag);
             writer.WriteBoolValue("DisableCorrectFlag", DisableCorrectFlag);
             writer.WriteBoolValue("DisableValidFlag", DisableValidFlag);
             writer.WriteBoolValue("FromRightToLeftFlag", FromRightToLeftFlag);
             writer.WriteBoolValue("GlobalCorrectionFlag", GlobalCorrectionFlag);
             writer.WriteBoolValue("ImmediateResponseFlag", ImmediateResponseFlag);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify>("InfoQualify", InfoQualify);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand>("InputCommand", InputCommand);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInfoQualify>("InfoQualify", InfoQualify);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InputDataInputCommand>("InputCommand", InputCommand);
             writer.WriteBoolValue("MaskCharactersFlag", MaskCharactersFlag);
             writer.WriteIntValue("MaxDecimalLength", MaxDecimalLength);
             writer.WriteIntValue("MaxInputTime", MaxInputTime);

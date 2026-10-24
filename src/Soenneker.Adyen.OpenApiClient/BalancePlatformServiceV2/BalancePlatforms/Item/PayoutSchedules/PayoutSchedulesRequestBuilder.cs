@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.PayoutSchedules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{balancePlatform-id}\payoutSchedules
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{id}\payoutSchedules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayoutSchedulesRequestBuilder : BaseRequestBuilder
@@ -26,7 +26,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("id", position);
+                urlTplParams.Add("id2", position);
                 return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.PayoutSchedules.Item.PayoutSchedulesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayoutSchedulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/payoutSchedules{?countryCode*,currency*}", pathParameters)
+        public PayoutSchedulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/payoutSchedules{?countryCode*,currency*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayoutSchedulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/payoutSchedules{?countryCode*,currency*}", rawUrl)
+        public PayoutSchedulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/payoutSchedules{?countryCode*,currency*}", rawUrl)
         {
         }
         /// <summary>

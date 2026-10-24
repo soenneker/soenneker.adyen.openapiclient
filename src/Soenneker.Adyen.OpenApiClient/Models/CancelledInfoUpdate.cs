@@ -18,13 +18,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates if the cardholder attempted to return the merchandise but was unable to.Possible values: **true**, **false**.Required if the value of `didCardholderReturn` is **false**.If the value of this parameter is **true**, provide information in `descriptionOfIssue` about how the cardholder attempted to return the goods, and what they did with the goods (for example, destroyed them).</summary>
         public bool? AttemptedToReturn { get; set; }
         /// <summary>The certification code for the guaranteed reservation.Required if the value of `serviceType` is **guaranteedReservation** (a guaranteed reservation).Possible values: * **GR**: The cardholder properly cancelled the guaranteed reservation. * **RC**: The cardholder attempted to cancel within 24 hours of delivery of the reservation confirmation. * **AR**: The merchant billed a &quot;no-show transaction&quot; for more than one day&apos;s accommodation or rental.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservationWrapper? CertificationGuaranteedReservation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservationWrapper CertificationGuaranteedReservation { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservation? CertificationGuaranteedReservation { get; set; }
         /// <summary>The date, in **YYYY-MM-DD** format, when the cardholder attempted to return the goods they purchased.Required if the value of `attemptedToReturn` is **true**.</summary>
         public Date? DateOfAttemptedReturn { get; set; }
         /// <summary>The date, in **YYYY-MM-DD** format, when the purchase was cancelled.Required if the value of `certificationGuaranteedReservation` is **GR** or **RC**, or if the value of `didCardholderCancelBeforeShipment` is **true**.</summary>
@@ -50,39 +44,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates if the cardholder returned the merchandise to the merchant.Possible values: **true**, **false**.Required if the value of `didCardholderReceiveGoods` is **true**.</summary>
         public bool? DidCardholderReturn { get; set; }
         /// <summary>The type of purchase being disputed.Possible values: **goods**, **services**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices? GoodsOrServices { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices GoodsOrServices { get; set; }
-#endif
         /// <summary>The date, in **YYYY-MM-DD** format, that the merchant promised delivery.Required if the value of `goodsOrServices` is **goods**.</summary>
         public Date? LastExpectedDate { get; set; }
         /// <summary>The reason the merchant gave for refusing the return.Required if the value of `attemptedToReturn` is **true**.Possible values: * **MRRA**: The merchant refused to provide return authorization. * **MRRM**: The merchant refused to accept returned merchandise. * **MICNRM**: The merchant informed cardholder not to return the merchandise.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdviseWrapper? MerchantRefuseAdvise { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdviseWrapper MerchantRefuseAdvise { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdvise? MerchantRefuseAdvise { get; set; }
         /// <summary>The method used to return the merchandise.Required if the value of `didCardholderReturn` is **true**.Possible values: **faceToFace**, **fedEx**, **dhl**, **ups**, **postalService**, **other**.If the value of this parameter is **other**, or if the cardholder attempted a return but did not complete it, provide information in `descriptionOfIssue` about how the cardholder attempted to return the goods or services.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper? ReturnMethod { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper ReturnMethod { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethod? ReturnMethod { get; set; }
         /// <summary>The type of service purchased.Required if the value of `goodsOrServices` is **services**.Possible values: * **timeshare**: A reservation for a timeshare. * **guaranteedReservation**: A guaranteed reservation (for example, a hotel or a car rental booking). * **other**: Any other type of service.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ServiceTypeWrapper? ServiceType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ServiceTypeWrapper ServiceType { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.ServiceType? ServiceType { get; set; }
         /// <summary>The tracking number for the shipment used to return the merchandise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,13 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates if the merchant provided the cardholder with a cancellation policy.Possible values: **true**, **false**.Required if the value of `didCardholderReceiveGoods` is **false**, the value of `didCardholderCancelBeforeShipment` is **true**, or the value of `serviceType` is **guaranteedReservation**.</summary>
         public bool? WasCancellationPolicyProvided { get; set; }
         /// <summary>The party that initiated the cancellation of the purchase.Required if the value of `serviceType` is **timeshare** (a timeshare) or **other** (any other type of service), or if the value of `didCardholderReceiveGoods` is **false**.Possible values: **merchant**, **cardholder**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper? WhoCancelled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper WhoCancelled { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity? WhoCancelled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate"/> and sets the default values.
         /// </summary>
@@ -129,7 +93,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attemptedToReturn", n => { AttemptedToReturn = n.GetBoolValue(); } },
-                { "certificationGuaranteedReservation", n => { CertificationGuaranteedReservation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservationWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservationWrapper.CreateFromDiscriminatorValue); } },
+                { "certificationGuaranteedReservation", n => { CertificationGuaranteedReservation = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservation>(); } },
                 { "dateOfAttemptedReturn", n => { DateOfAttemptedReturn = n.GetDateValue(); } },
                 { "dateOfCancellation", n => { DateOfCancellation = n.GetDateValue(); } },
                 { "dateOfReturn", n => { DateOfReturn = n.GetDateValue(); } },
@@ -139,15 +103,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "didCardholderCancelBeforeShipment", n => { DidCardholderCancelBeforeShipment = n.GetBoolValue(); } },
                 { "didCardholderReceiveGoods", n => { DidCardholderReceiveGoods = n.GetBoolValue(); } },
                 { "didCardholderReturn", n => { DidCardholderReturn = n.GetBoolValue(); } },
-                { "goodsOrServices", n => { GoodsOrServices = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices>(global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices.CreateFromDiscriminatorValue); } },
+                { "goodsOrServices", n => { GoodsOrServices = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices>(); } },
                 { "lastExpectedDate", n => { LastExpectedDate = n.GetDateValue(); } },
-                { "merchantRefuseAdvise", n => { MerchantRefuseAdvise = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdviseWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdviseWrapper.CreateFromDiscriminatorValue); } },
-                { "returnMethod", n => { ReturnMethod = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper.CreateFromDiscriminatorValue); } },
-                { "serviceType", n => { ServiceType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ServiceTypeWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.ServiceTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "merchantRefuseAdvise", n => { MerchantRefuseAdvise = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdvise>(); } },
+                { "returnMethod", n => { ReturnMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethod>(); } },
+                { "serviceType", n => { ServiceType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ServiceType>(); } },
                 { "shippingTrackingNumber", n => { ShippingTrackingNumber = n.GetStringValue(); } },
                 { "timeshareDate", n => { TimeshareDate = n.GetDateValue(); } },
                 { "wasCancellationPolicyProvided", n => { WasCancellationPolicyProvided = n.GetBoolValue(); } },
-                { "whoCancelled", n => { WhoCancelled = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper.CreateFromDiscriminatorValue); } },
+                { "whoCancelled", n => { WhoCancelled = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>(); } },
             };
         }
         /// <summary>
@@ -158,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("attemptedToReturn", AttemptedToReturn);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservationWrapper>("certificationGuaranteedReservation", CertificationGuaranteedReservation);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CertificationGuaranteedReservation>("certificationGuaranteedReservation", CertificationGuaranteedReservation);
             writer.WriteDateValue("dateOfAttemptedReturn", DateOfAttemptedReturn);
             writer.WriteDateValue("dateOfCancellation", DateOfCancellation);
             writer.WriteDateValue("dateOfReturn", DateOfReturn);
@@ -168,15 +132,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("didCardholderCancelBeforeShipment", DidCardholderCancelBeforeShipment);
             writer.WriteBoolValue("didCardholderReceiveGoods", DidCardholderReceiveGoods);
             writer.WriteBoolValue("didCardholderReturn", DidCardholderReturn);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices>("goodsOrServices", GoodsOrServices);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdateGoodsOrServices>("goodsOrServices", GoodsOrServices);
             writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdviseWrapper>("merchantRefuseAdvise", MerchantRefuseAdvise);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethodWrapper>("returnMethod", ReturnMethod);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ServiceTypeWrapper>("serviceType", ServiceType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantRefuseAdvise>("merchantRefuseAdvise", MerchantRefuseAdvise);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReturnMethod>("returnMethod", ReturnMethod);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ServiceType>("serviceType", ServiceType);
             writer.WriteStringValue("shippingTrackingNumber", ShippingTrackingNumber);
             writer.WriteDateValue("timeshareDate", TimeshareDate);
             writer.WriteBoolValue("wasCancellationPolicyProvided", WasCancellationPolicyProvided);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntityWrapper>("whoCancelled", WhoCancelled);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellingEntity>("whoCancelled", WhoCancelled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

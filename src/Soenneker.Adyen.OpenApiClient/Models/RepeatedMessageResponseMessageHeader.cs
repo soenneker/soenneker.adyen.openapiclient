@@ -23,30 +23,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DeviceID { get; set; }
 #endif
-        /// <summary>Category of message.Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **Batch*** **CardAcquisition*** **CardReaderInit*** **CardReaderPowerOff*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **None*** **PIN*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **Sound*** **StoredValue*** **TransactionStatus*** **Transmit**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **CardAcquisition*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **StoredValue*** **TransactionStatus*** **None**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory? MessageCategory { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory MessageCategory { get; set; }
-#endif
-        /// <summary>Class of the message.Possible values:* **Device*** **Event*** **Service**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Service*** **Device*** **Event**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass? MessageClass { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass MessageClass { get; set; }
-#endif
-        /// <summary>Type of message of the Sale to POI protocol.Possible values:* **Notification*** **Request*** **Response**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Request*** **Response*** **Notification**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType? MessageType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType MessageType { get; set; }
-#endif
         /// <summary>Identification of a POI System or a POI Terminal for the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,9 +87,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "DeviceID", n => { DeviceID = n.GetStringValue(); } },
-                { "MessageCategory", n => { MessageCategory = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory>(global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory.CreateFromDiscriminatorValue); } },
-                { "MessageClass", n => { MessageClass = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass>(global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass.CreateFromDiscriminatorValue); } },
-                { "MessageType", n => { MessageType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType>(global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType.CreateFromDiscriminatorValue); } },
+                { "MessageCategory", n => { MessageCategory = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory>(); } },
+                { "MessageClass", n => { MessageClass = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass>(); } },
+                { "MessageType", n => { MessageType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType>(); } },
                 { "POIID", n => { POIID = n.GetStringValue(); } },
                 { "ProtocolVersion", n => { ProtocolVersion = n.GetStringValue(); } },
                 { "SaleID", n => { SaleID = n.GetStringValue(); } },
@@ -122,9 +104,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("DeviceID", DeviceID);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory>("MessageCategory", MessageCategory);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass>("MessageClass", MessageClass);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType>("MessageType", MessageType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory>("MessageCategory", MessageCategory);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass>("MessageClass", MessageClass);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType>("MessageType", MessageType);
             writer.WriteStringValue("POIID", POIID);
             writer.WriteStringValue("ProtocolVersion", ProtocolVersion);
             writer.WriteStringValue("SaleID", SaleID);

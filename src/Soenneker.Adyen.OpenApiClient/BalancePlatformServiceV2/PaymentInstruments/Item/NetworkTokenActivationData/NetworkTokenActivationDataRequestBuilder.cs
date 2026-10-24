@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.NetworkTokenActivationData
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\paymentInstruments\{-id}\networkTokenActivationData
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\paymentInstruments\{id}\networkTokenActivationData
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkTokenActivationDataRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstrume
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NetworkTokenActivationDataRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{%2Did}/networkTokenActivationData", pathParameters)
+        public NetworkTokenActivationDataRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{id}/networkTokenActivationData", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstrume
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NetworkTokenActivationDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{%2Did}/networkTokenActivationData", rawUrl)
+        public NetworkTokenActivationDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{id}/networkTokenActivationData", rawUrl)
         {
         }
         /// <summary>

@@ -1004,10 +1004,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key-value pairs provided in the request, prefixed with &apos;metadata.&apos;. For example, &apos;metadata.myField: myValue&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationRequestItemAdditionalDataMetadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationRequestItemAdditionalDataMetadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2 Metadata { get; set; }
 #endif
         /// <summary>The modifiedShopperReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1848,7 +1848,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantIntegration.version", n => { MerchantIntegrationVersion = n.GetStringValue(); } },
                 { "merchantOrderReference", n => { MerchantOrderReference = n.GetStringValue(); } },
                 { "merchantReference", n => { MerchantReference = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationRequestItemAdditionalDataMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationRequestItemAdditionalDataMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2.CreateFromDiscriminatorValue); } },
                 { "modifiedShopperReference", n => { ModifiedShopperReference = n.GetStringValue(); } },
                 { "networkProcessingMode", n => { NetworkProcessingMode = n.GetStringValue(); } },
                 { "networkToken.available", n => { NetworkTokenAvailable = n.GetStringValue(); } },
@@ -2069,7 +2069,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("merchantIntegration.version", MerchantIntegrationVersion);
             writer.WriteStringValue("merchantOrderReference", MerchantOrderReference);
             writer.WriteStringValue("merchantReference", MerchantReference);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationRequestItemAdditionalDataMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthorisationNotificationAdditionalDataMetadataProperty2>("metadata", Metadata);
             writer.WriteStringValue("modifiedShopperReference", ModifiedShopperReference);
             writer.WriteStringValue("networkProcessingMode", NetworkProcessingMode);
             writer.WriteStringValue("networkToken.available", NetworkTokenAvailable);

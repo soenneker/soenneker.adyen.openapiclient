@@ -41,23 +41,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation ScaInformation { get; set; }
 #endif
         /// <summary>The scope to which the transfer limit applies. Possible values:* **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform.* **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope? Scope { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope Scope { get; set; }
-#endif
         /// <summary>The date and time when the transfer limit becomes active. If you specify a date in the future, we will schedule a transfer limit.Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): **YYYY-MM-DDThh:mm:ss.sssTZD**</summary>
         public DateTimeOffset? StartsAt { get; set; }
         /// <summary>The type of transfer to which the limit applies. Possible values:* **instant**: the limit applies to transfers with an **instant** priority.* **all**: the limit applies to all transfers, regardless of priority.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType? TransferType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType TransferType { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequest"/> and sets the default values.
         /// </summary>
@@ -87,9 +75,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "endsAt", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "scaInformation", n => { ScaInformation = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation>(global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope>(global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope>(); } },
                 { "startsAt", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
-                { "transferType", n => { TransferType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType>(global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType.CreateFromDiscriminatorValue); } },
+                { "transferType", n => { TransferType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType>(); } },
             };
         }
         /// <summary>
@@ -103,9 +91,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("endsAt", EndsAt);
             writer.WriteStringValue("reference", Reference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScaInformation>("scaInformation", ScaInformation);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestScope>("scope", Scope);
             writer.WriteDateTimeOffsetValue("startsAt", StartsAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType>("transferType", TransferType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateTransferLimitRequestTransferType>("transferType", TransferType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

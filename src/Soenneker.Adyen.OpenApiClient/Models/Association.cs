@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string EntityId { get; set; }
 #endif
         /// <summary>The type of entity you are associating the device with. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType? EntityType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType EntityType { get; set; }
-#endif
         /// <summary>The unique identifier for the SCA device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +33,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ScaDeviceId { get; set; }
 #endif
         /// <summary>The status of the association. Possible values: **active** or **pendingApproval**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Association"/> and sets the default values.
         /// </summary>
@@ -72,9 +60,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entityId", n => { EntityId = n.GetStringValue(); } },
-                { "entityType", n => { EntityType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType.CreateFromDiscriminatorValue); } },
+                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType>(); } },
                 { "scaDeviceId", n => { ScaDeviceId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed>(global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed>(); } },
             };
         }
         /// <summary>
@@ -85,9 +73,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("entityId", EntityId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType>("entityType", EntityType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationEntityType>("entityType", EntityType);
             writer.WriteStringValue("scaDeviceId", ScaDeviceId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AssociationStatusComposed>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,14 +15,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Qualification of the document to print to the Cashier or the Customer.SaleReceipt or CashierReceipt.Possible values:* **CashierReceipt*** **CustomerReceipt*** **Document*** **Journal*** **SaleReceipt*** **Voucher**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier? DocumentQualifier { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier DocumentQualifier { get; set; }
-#endif
         /// <summary>Type of the print integrated to other prints.</summary>
         public bool? IntegratedPrintFlag { get; set; }
         /// <summary>Content to display or print.</summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DocumentQualifier", n => { DocumentQualifier = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier.CreateFromDiscriminatorValue); } },
+                { "DocumentQualifier", n => { DocumentQualifier = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>(); } },
                 { "IntegratedPrintFlag", n => { IntegratedPrintFlag = n.GetBoolValue(); } },
                 { "OutputContent", n => { OutputContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent.CreateFromDiscriminatorValue); } },
                 { "RequiredSignatureFlag", n => { RequiredSignatureFlag = n.GetBoolValue(); } },
@@ -74,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>("DocumentQualifier", DocumentQualifier);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>("DocumentQualifier", DocumentQualifier);
             writer.WriteBoolValue("IntegratedPrintFlag", IntegratedPrintFlag);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent>("OutputContent", OutputContent);
             writer.WriteBoolValue("RequiredSignatureFlag", RequiredSignatureFlag);

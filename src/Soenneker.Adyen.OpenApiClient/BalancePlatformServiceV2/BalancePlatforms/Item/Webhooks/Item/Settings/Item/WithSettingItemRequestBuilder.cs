@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.Webhooks.Item.Settings.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{balancePlatform-id}\webhooks\{webhookId}\settings\{settingId}
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{id}\webhooks\{webhookId}\settings\{settingId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSettingItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/webhooks/{webhookId}/settings/{settingId}", pathParameters)
+        public WithSettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/webhooks/{webhookId}/settings/{settingId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/webhooks/{webhookId}/settings/{settingId}", rawUrl)
+        public WithSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/webhooks/{webhookId}/settings/{settingId}", rawUrl)
         {
         }
         /// <summary>

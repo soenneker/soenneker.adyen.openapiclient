@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The status of the payout execution.Possible values:- **succeeded**: The payout was sent successfully.- **failed**: The payout could not be sent because an error occurred.- **skipped**: The payout was not triggered as expected.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult? Result { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult Result { get; set; }
-#endif
         /// <summary>Contains information about the result of the payout execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult>(); } },
                 { "resultDetails", n => { ResultDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails.CreateFromDiscriminatorValue); } },
                 { "triggeredAt", n => { TriggeredAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -79,7 +73,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult>("result", Result);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecutionResultDetails>("resultDetails", ResultDetails);
             writer.WriteDateTimeOffsetValue("triggeredAt", TriggeredAt);
             writer.WriteAdditionalData(AdditionalData);

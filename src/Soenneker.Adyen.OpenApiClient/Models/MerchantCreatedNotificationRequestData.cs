@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Key-value pairs that specify the actions that the merchant account can do and its settings. The key is a capability. For example, the **sendToTransferInstrument** is the capability required before you can pay out funds to the bank account. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantCreatedNotificationRequestDataCapabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantCreatedNotificationRequestDataCapabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2 Capabilities { get; set; }
 #endif
         /// <summary>The unique identifier of the company account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantCreatedNotificationRequestDataCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantCreatedNotificationRequestDataCapabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
                 { "companyId", n => { CompanyId = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantCreatedNotificationRequestDataCapabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountCreateNotificationDataCapabilitiesProperty2>("capabilities", Capabilities);
             writer.WriteStringValue("companyId", CompanyId);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteStringValue("merchantId", MerchantId);

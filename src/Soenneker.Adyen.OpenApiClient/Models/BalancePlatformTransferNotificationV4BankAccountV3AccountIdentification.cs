@@ -155,63 +155,63 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.BalancePlatformTransferNotificationV4AuLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4AuLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4BrLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("brLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4BrLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BrLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4CaLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("caLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4CaLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CaLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4CzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("czLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4CzLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CzLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4DkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("dkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4DkLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4DkLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4HkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("hkLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4HkLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4HkLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4HuLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("huLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4HuLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4HuLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4IbanAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("iban".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4IbanAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4IbanAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4NoLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("noLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4NoLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NoLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("numberAndBic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NumberAndBicAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4NzLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("nzLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4NzLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4NzLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4PlLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("plLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4PlLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4PlLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4SeLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("seLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4SeLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SeLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4SgLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("sgLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4SgLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4SgLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4UkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ukLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4UkLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UkLocalAccountIdentification();
             }
-            else if("BalancePlatformTransferNotificationV4UsLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("usLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4UsLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4UsLocalAccountIdentification();
             }

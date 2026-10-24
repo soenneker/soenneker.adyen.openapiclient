@@ -13,14 +13,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceInquiryRequestPaymentAccountReq : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.Possible values:* **CardTotals*** **Checking*** **CreditCard*** **Default*** **EpurseCard*** **Investment*** **Savings*** **Universal**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of cardholder account used for the transaction. Allows a cardholder to select the type of account used for the transaction.Possible values:* **Default*** **Savings*** **Checking*** **CreditCard*** **Universal*** **Investment*** **CardTotals*** **EpurseCard**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType? AccountType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType AccountType { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
@@ -64,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AccountType", n => { AccountType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType.CreateFromDiscriminatorValue); } },
+                { "AccountType", n => { AccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType>(); } },
                 { "CardAcquisitionReference", n => { CardAcquisitionReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData.CreateFromDiscriminatorValue); } },
             };
@@ -76,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType>("AccountType", AccountType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqAccountType>("AccountType", AccountType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("CardAcquisitionReference", CardAcquisitionReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentAccountReqPaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
             writer.WriteAdditionalData(AdditionalData);

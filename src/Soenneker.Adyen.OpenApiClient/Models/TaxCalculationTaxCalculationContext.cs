@@ -16,13 +16,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of calculation requested. Initially only LRS_TCS is supported.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType CalculationType { get; set; }
-#endif
         /// <summary>India-specific LRS declarations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "calculationType", n => { CalculationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType.CreateFromDiscriminatorValue); } },
+                { "calculationType", n => { CalculationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>(); } },
                 { "lrs", n => { Lrs = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs.CreateFromDiscriminatorValue); } },
                 { "taxCountryCode", n => { TaxCountryCode = n.GetStringValue(); } },
             };
@@ -76,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>("calculationType", CalculationType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>("calculationType", CalculationType);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs>("lrs", Lrs);
             writer.WriteStringValue("taxCountryCode", TaxCountryCode);
             writer.WriteAdditionalData(AdditionalData);

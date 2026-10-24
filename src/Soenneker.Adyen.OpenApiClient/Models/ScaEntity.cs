@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type of the entity that you are associating with the SCA device. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed>(global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed>(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntityTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

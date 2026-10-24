@@ -46,21 +46,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The date the undelivered goods or services were expected to be delivered in YYYY-MM-DD format.</summary>
         public Date? LastExpectedDate { get; set; }
         /// <summary>The type of product that you expected to receive.Possible values: **goods**, **services**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered? WhatWasNotDelivered { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered WhatWasNotDelivered { get; set; }
-#endif
         /// <summary>The party that initiated the cancellation of the transaction.Possible values: **merchant**, **cardholder**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper? WhoCancelled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper WhoCancelled { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity? WhoCancelled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfo"/> and sets the default values.
         /// </summary>
@@ -95,8 +83,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "isMerchantBankrupt", n => { IsMerchantBankrupt = n.GetBoolValue(); } },
                 { "isNonFiatOrNft", n => { IsNonFiatOrNft = n.GetBoolValue(); } },
                 { "lastExpectedDate", n => { LastExpectedDate = n.GetDateValue(); } },
-                { "whatWasNotDelivered", n => { WhatWasNotDelivered = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered.CreateFromDiscriminatorValue); } },
-                { "whoCancelled", n => { WhoCancelled = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper.CreateFromDiscriminatorValue); } },
+                { "whatWasNotDelivered", n => { WhatWasNotDelivered = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered>(); } },
+                { "whoCancelled", n => { WhoCancelled = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity>(); } },
             };
         }
         /// <summary>
@@ -115,8 +103,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("isMerchantBankrupt", IsMerchantBankrupt);
             writer.WriteBoolValue("isNonFiatOrNft", IsNonFiatOrNft);
             writer.WriteDateValue("lastExpectedDate", LastExpectedDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered>("whatWasNotDelivered", WhatWasNotDelivered);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntityWrapper>("whoCancelled", WhoCancelled);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableNotDeliveredInfoWhatWasNotDelivered>("whatWasNotDelivered", WhatWasNotDelivered);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4CancellingEntity>("whoCancelled", WhoCancelled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

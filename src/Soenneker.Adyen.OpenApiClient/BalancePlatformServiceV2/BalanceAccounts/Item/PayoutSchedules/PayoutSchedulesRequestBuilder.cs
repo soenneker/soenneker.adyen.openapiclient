@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.PayoutSchedules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccount-id}\payoutSchedules
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balanceAccounts\{balanceAccountId}\payoutSchedules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayoutSchedulesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayoutSchedulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/payoutSchedules{?currency*,cursor*,limit*}", pathParameters)
+        public PayoutSchedulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/payoutSchedules{?currency*,cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayoutSchedulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccount%2Did}/payoutSchedules{?currency*,cursor*,limit*}", rawUrl)
+        public PayoutSchedulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balanceAccounts/{balanceAccountId}/payoutSchedules{?currency*,cursor*,limit*}", rawUrl)
         {
         }
         /// <summary>

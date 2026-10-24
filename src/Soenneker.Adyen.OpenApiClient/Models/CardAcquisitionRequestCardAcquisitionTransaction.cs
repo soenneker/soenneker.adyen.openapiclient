@@ -46,27 +46,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ForceEntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem?>? ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionForceEntryModeItem?>? ForceEntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem?> ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionForceEntryModeItem?> ForceEntryMode { get; set; }
 #endif
-        /// <summary>Type of Loyalty processing requested by the Sale System. An way to specify what the POI has to handle concerning the loyalty.Possible values:* **Allowed*** **Forbidden*** **Processed*** **Proposed*** **Required**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Forbidden*** **Processed*** **Allowed*** **Proposed*** **Required**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling? LoyaltyHandling { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling LoyaltyHandling { get; set; }
-#endif
-        /// <summary>Type of payment transaction. Elements requested by the Sale System that are related to the payment only.Possible values:* **CashAdvance*** **CashDeposit*** **Completion*** **FirstReservation*** **Instalment*** **IssuerInstalment*** **Normal*** **OneTimeReservation*** **PaidOut*** **Recurring*** **Refund*** **UpdateReservation**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Normal*** **Refund*** **OneTimeReservation*** **FirstReservation*** **UpdateReservation*** **Completion*** **CashAdvance*** **CashDeposit*** **Recurring*** **Instalment*** **IssuerInstalment*** **PaidOut**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType? PaymentType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType PaymentType { get; set; }
-#endif
         /// <summary>Amount of a transaction. In the Card Acquisition Request message, it allows the processing of a contactless card.</summary>
         public double? TotalAmount { get; set; }
         /// <summary>
@@ -99,9 +87,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CashBackFlag", n => { CashBackFlag = n.GetBoolValue(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
                 { "ForceCustomerSelectionFlag", n => { ForceCustomerSelectionFlag = n.GetBoolValue(); } },
-                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem>()?.AsList(); } },
-                { "LoyaltyHandling", n => { LoyaltyHandling = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling.CreateFromDiscriminatorValue); } },
-                { "PaymentType", n => { PaymentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType>(global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType.CreateFromDiscriminatorValue); } },
+                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionForceEntryModeItem>()?.AsList(); } },
+                { "LoyaltyHandling", n => { LoyaltyHandling = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling>(); } },
+                { "PaymentType", n => { PaymentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType>(); } },
                 { "TotalAmount", n => { TotalAmount = n.GetDoubleValue(); } },
             };
         }
@@ -117,9 +105,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("CashBackFlag", CashBackFlag);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);
             writer.WriteBoolValue("ForceCustomerSelectionFlag", ForceCustomerSelectionFlag);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem>("ForceEntryMode", ForceEntryMode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType>("PaymentType", PaymentType);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionForceEntryModeItem>("ForceEntryMode", ForceEntryMode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionLoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardAcquisitionTransactionPaymentType>("PaymentType", PaymentType);
             writer.WriteDoubleValue("TotalAmount", TotalAmount);
             writer.WriteAdditionalData(AdditionalData);
         }

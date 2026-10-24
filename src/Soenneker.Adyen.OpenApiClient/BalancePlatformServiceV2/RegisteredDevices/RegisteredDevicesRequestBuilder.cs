@@ -20,14 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
     {
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.registeredDevices.item collection</summary>
         /// <param name="position">The unique identifier of the SCA device.</param>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.Item.DeviceItemRequestBuilder"/></returns>
-        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.Item.DeviceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.Item.WithDeviceItemRequestBuilder"/></returns>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.Item.WithDeviceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("device%2Did", position);
-                return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.Item.DeviceItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deviceId", position);
+                return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.Item.WithDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

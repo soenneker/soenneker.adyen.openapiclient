@@ -17,22 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Selection of a menu entry to be displayed. In Input request message, it allows selection of one or several menu entries before any user action.</summary>
         public bool? DefaultSelectedFlag { get; set; }
-        /// <summary>Characteristics related to the selection of a menu entry.Possible values:* **NonSelectable*** **NonSelectableSubMenu*** **Selectable*** **SubMenu**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Characteristics related to the selection of a menu entry.Possible values:* **Selectable*** **NonSelectable*** **SubMenu*** **NonSelectableSubMenu**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag? MenuEntryTag { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag MenuEntryTag { get; set; }
-#endif
-        /// <summary>Possible values:* **BarCode*** **MessageRef*** **Text*** **XHTML**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **MessageRef*** **Text*** **XHTML*** **BarCode**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat? OutputFormat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat OutputFormat { get; set; }
-#endif
         /// <summary>Content of text message to display or print. It conveys Information related to the content of the text message and its format. All the data elements related to the format of the text to display or print are parameters valid for the whole Text content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,8 +72,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "DefaultSelectedFlag", n => { DefaultSelectedFlag = n.GetBoolValue(); } },
-                { "MenuEntryTag", n => { MenuEntryTag = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag>(global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag.CreateFromDiscriminatorValue); } },
-                { "OutputFormat", n => { OutputFormat = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat>(global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat.CreateFromDiscriminatorValue); } },
+                { "MenuEntryTag", n => { MenuEntryTag = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag>(); } },
+                { "OutputFormat", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat>(); } },
                 { "OutputText", n => { OutputText = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>(global::Soenneker.Adyen.OpenApiClient.Models.OutputText.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "OutputXHTML", n => { OutputXHTML = n.GetByteArrayValue(); } },
                 { "PredefinedContent", n => { PredefinedContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryPredefinedContent>(global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryPredefinedContent.CreateFromDiscriminatorValue); } },
@@ -99,8 +87,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("DefaultSelectedFlag", DefaultSelectedFlag);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag>("MenuEntryTag", MenuEntryTag);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat>("OutputFormat", OutputFormat);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryMenuEntryTag>("MenuEntryTag", MenuEntryTag);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryOutputFormat>("OutputFormat", OutputFormat);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>("OutputText", OutputText);
             writer.WriteByteArrayValue("OutputXHTML", OutputXHTML);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MenuEntryPredefinedContent>("PredefinedContent", PredefinedContent);

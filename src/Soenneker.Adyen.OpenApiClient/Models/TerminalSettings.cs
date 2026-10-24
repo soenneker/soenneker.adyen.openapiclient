@@ -17,26 +17,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The cardholderReceipt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1? CardholderReceipt { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt? CardholderReceipt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1 CardholderReceipt { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt CardholderReceipt { get; set; }
 #endif
         /// <summary>The connectivity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1? Connectivity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity? Connectivity { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1 Connectivity { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity Connectivity { get; set; }
 #endif
         /// <summary>The dcc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1? Dcc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc? Dcc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1 Dcc { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc Dcc { get; set; }
 #endif
         /// <summary>Settings for tipping with or without predefined options to choose from. The maximum number of predefined options is four, or three plus the option to enter a custom tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,180 +49,180 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The hardware property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1? Hardware { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware? Hardware { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1 Hardware { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware Hardware { get; set; }
 #endif
         /// <summary>The homeScreen property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1? HomeScreen { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen? HomeScreen { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1 HomeScreen { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen HomeScreen { get; set; }
 #endif
         /// <summary>The kioskMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1? KioskMode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode? KioskMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1 KioskMode { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode KioskMode { get; set; }
 #endif
         /// <summary>The localization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1? Localization { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization? Localization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1 Localization { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization Localization { get; set; }
 #endif
         /// <summary>The moto property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1? Moto { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto? Moto { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1 Moto { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto Moto { get; set; }
 #endif
         /// <summary>The nexo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1? Nexo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo? Nexo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1 Nexo { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo Nexo { get; set; }
 #endif
         /// <summary>The offlineProcessing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1? OfflineProcessing { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing? OfflineProcessing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1 OfflineProcessing { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing OfflineProcessing { get; set; }
 #endif
         /// <summary>The opi property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1? Opi { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi? Opi { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1 Opi { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi Opi { get; set; }
 #endif
         /// <summary>The passcodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1? Passcodes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes? Passcodes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1 Passcodes { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes Passcodes { get; set; }
 #endif
         /// <summary>The payAtTable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1? PayAtTable { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable? PayAtTable { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1 PayAtTable { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable PayAtTable { get; set; }
 #endif
         /// <summary>The payment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1? Payment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment? Payment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1 Payment { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment Payment { get; set; }
 #endif
         /// <summary>The receiptOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1? ReceiptOptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions? ReceiptOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1 ReceiptOptions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions ReceiptOptions { get; set; }
 #endif
         /// <summary>The receiptPrinting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1? ReceiptPrinting { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting? ReceiptPrinting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1 ReceiptPrinting { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting ReceiptPrinting { get; set; }
 #endif
         /// <summary>The refunds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1? Refunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds? Refunds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1 Refunds { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds Refunds { get; set; }
 #endif
         /// <summary>Show the tipping amount calculated from the percentage next to each tipping percentage option on the terminal screen, for example `10 % | 10 EUR` for a 100 EUR payment.</summary>
         public bool? ShowCalculatedPercentageTippingAmount { get; set; }
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1? Signature { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature? Signature { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1 Signature { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature Signature { get; set; }
 #endif
         /// <summary>The standalone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1? Standalone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone? Standalone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1 Standalone { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone Standalone { get; set; }
 #endif
         /// <summary>The storeAndForward property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1? StoreAndForward { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward? StoreAndForward { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1 StoreAndForward { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward StoreAndForward { get; set; }
 #endif
         /// <summary>The surcharge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1? Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge? Surcharge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1 Surcharge { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge Surcharge { get; set; }
 #endif
         /// <summary>The tapToPay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1? TapToPay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay? TapToPay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1 TapToPay { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay TapToPay { get; set; }
 #endif
         /// <summary>The terminalInstructions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1? TerminalInstructions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions? TerminalInstructions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1 TerminalInstructions { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions TerminalInstructions { get; set; }
 #endif
         /// <summary>The timeouts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1? Timeouts { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts? Timeouts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1 Timeouts { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts Timeouts { get; set; }
 #endif
         /// <summary>The wifiProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1? WifiProfiles { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles? WifiProfiles { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1 WifiProfiles { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles WifiProfiles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettings"/> and sets the default values.
@@ -249,33 +249,33 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cardholderReceipt", n => { CardholderReceipt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1.CreateFromDiscriminatorValue); } },
-                { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1.CreateFromDiscriminatorValue); } },
-                { "dcc", n => { Dcc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1.CreateFromDiscriminatorValue); } },
+                { "cardholderReceipt", n => { CardholderReceipt = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt.CreateFromDiscriminatorValue); } },
+                { "connectivity", n => { Connectivity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity.CreateFromDiscriminatorValue); } },
+                { "dcc", n => { Dcc = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc.CreateFromDiscriminatorValue); } },
                 { "gratuities", n => { Gratuities = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Gratuity>(global::Soenneker.Adyen.OpenApiClient.Models.Gratuity.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "hardware", n => { Hardware = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1.CreateFromDiscriminatorValue); } },
-                { "homeScreen", n => { HomeScreen = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1.CreateFromDiscriminatorValue); } },
-                { "kioskMode", n => { KioskMode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1.CreateFromDiscriminatorValue); } },
-                { "localization", n => { Localization = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1.CreateFromDiscriminatorValue); } },
-                { "moto", n => { Moto = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1.CreateFromDiscriminatorValue); } },
-                { "nexo", n => { Nexo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1.CreateFromDiscriminatorValue); } },
-                { "offlineProcessing", n => { OfflineProcessing = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1.CreateFromDiscriminatorValue); } },
-                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1.CreateFromDiscriminatorValue); } },
-                { "passcodes", n => { Passcodes = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1.CreateFromDiscriminatorValue); } },
-                { "payAtTable", n => { PayAtTable = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1.CreateFromDiscriminatorValue); } },
-                { "payment", n => { Payment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1.CreateFromDiscriminatorValue); } },
-                { "receiptOptions", n => { ReceiptOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1.CreateFromDiscriminatorValue); } },
-                { "receiptPrinting", n => { ReceiptPrinting = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1.CreateFromDiscriminatorValue); } },
-                { "refunds", n => { Refunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1.CreateFromDiscriminatorValue); } },
+                { "hardware", n => { Hardware = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware.CreateFromDiscriminatorValue); } },
+                { "homeScreen", n => { HomeScreen = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen.CreateFromDiscriminatorValue); } },
+                { "kioskMode", n => { KioskMode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode.CreateFromDiscriminatorValue); } },
+                { "localization", n => { Localization = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization.CreateFromDiscriminatorValue); } },
+                { "moto", n => { Moto = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto.CreateFromDiscriminatorValue); } },
+                { "nexo", n => { Nexo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo.CreateFromDiscriminatorValue); } },
+                { "offlineProcessing", n => { OfflineProcessing = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing.CreateFromDiscriminatorValue); } },
+                { "opi", n => { Opi = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi.CreateFromDiscriminatorValue); } },
+                { "passcodes", n => { Passcodes = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes.CreateFromDiscriminatorValue); } },
+                { "payAtTable", n => { PayAtTable = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable.CreateFromDiscriminatorValue); } },
+                { "payment", n => { Payment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment.CreateFromDiscriminatorValue); } },
+                { "receiptOptions", n => { ReceiptOptions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions.CreateFromDiscriminatorValue); } },
+                { "receiptPrinting", n => { ReceiptPrinting = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting.CreateFromDiscriminatorValue); } },
+                { "refunds", n => { Refunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds.CreateFromDiscriminatorValue); } },
                 { "showCalculatedPercentageTippingAmount", n => { ShowCalculatedPercentageTippingAmount = n.GetBoolValue(); } },
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1.CreateFromDiscriminatorValue); } },
-                { "standalone", n => { Standalone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1.CreateFromDiscriminatorValue); } },
-                { "storeAndForward", n => { StoreAndForward = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1.CreateFromDiscriminatorValue); } },
-                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1.CreateFromDiscriminatorValue); } },
-                { "tapToPay", n => { TapToPay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1.CreateFromDiscriminatorValue); } },
-                { "terminalInstructions", n => { TerminalInstructions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1.CreateFromDiscriminatorValue); } },
-                { "timeouts", n => { Timeouts = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1.CreateFromDiscriminatorValue); } },
-                { "wifiProfiles", n => { WifiProfiles = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1.CreateFromDiscriminatorValue); } },
+                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature.CreateFromDiscriminatorValue); } },
+                { "standalone", n => { Standalone = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone.CreateFromDiscriminatorValue); } },
+                { "storeAndForward", n => { StoreAndForward = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward.CreateFromDiscriminatorValue); } },
+                { "surcharge", n => { Surcharge = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge.CreateFromDiscriminatorValue); } },
+                { "tapToPay", n => { TapToPay = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay.CreateFromDiscriminatorValue); } },
+                { "terminalInstructions", n => { TerminalInstructions = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions.CreateFromDiscriminatorValue); } },
+                { "timeouts", n => { Timeouts = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts.CreateFromDiscriminatorValue); } },
+                { "wifiProfiles", n => { WifiProfiles = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -285,33 +285,33 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceiptAnyOf1>("cardholderReceipt", CardholderReceipt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivityAnyOf1>("connectivity", Connectivity);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccAnyOf1>("dcc", Dcc);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsCardholderReceipt>("cardholderReceipt", CardholderReceipt);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsConnectivity>("connectivity", Connectivity);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDcc>("dcc", Dcc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Gratuity>("gratuities", Gratuities);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardwareAnyOf1>("hardware", Hardware);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenAnyOf1>("homeScreen", HomeScreen);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeAnyOf1>("kioskMode", KioskMode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalizationAnyOf1>("localization", Localization);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoAnyOf1>("moto", Moto);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexoAnyOf1>("nexo", Nexo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingAnyOf1>("offlineProcessing", OfflineProcessing);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpiAnyOf1>("opi", Opi);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodesAnyOf1>("passcodes", Passcodes);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableAnyOf1>("payAtTable", PayAtTable);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPaymentAnyOf1>("payment", Payment);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptionsAnyOf1>("receiptOptions", ReceiptOptions);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrintingAnyOf1>("receiptPrinting", ReceiptPrinting);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefundsAnyOf1>("refunds", Refunds);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHardware>("hardware", Hardware);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreen>("homeScreen", HomeScreen);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskMode>("kioskMode", KioskMode);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsLocalization>("localization", Localization);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMoto>("moto", Moto);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsNexo>("nexo", Nexo);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessing>("offlineProcessing", OfflineProcessing);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOpi>("opi", Opi);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPasscodes>("passcodes", Passcodes);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTable>("payAtTable", PayAtTable);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayment>("payment", Payment);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptOptions>("receiptOptions", ReceiptOptions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsReceiptPrinting>("receiptPrinting", ReceiptPrinting);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsRefunds>("refunds", Refunds);
             writer.WriteBoolValue("showCalculatedPercentageTippingAmount", ShowCalculatedPercentageTippingAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureAnyOf1>("signature", Signature);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneAnyOf1>("standalone", Standalone);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForwardAnyOf1>("storeAndForward", StoreAndForward);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurchargeAnyOf1>("surcharge", Surcharge);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPayAnyOf1>("tapToPay", TapToPay);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructionsAnyOf1>("terminalInstructions", TerminalInstructions);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeoutsAnyOf1>("timeouts", Timeouts);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfilesAnyOf1>("wifiProfiles", WifiProfiles);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignature>("signature", Signature);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandalone>("standalone", Standalone);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStoreAndForward>("storeAndForward", StoreAndForward);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSurcharge>("surcharge", Surcharge);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTapToPay>("tapToPay", TapToPay);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTerminalInstructions>("terminalInstructions", TerminalInstructions);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsTimeouts>("timeouts", Timeouts);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsWifiProfiles>("wifiProfiles", WifiProfiles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

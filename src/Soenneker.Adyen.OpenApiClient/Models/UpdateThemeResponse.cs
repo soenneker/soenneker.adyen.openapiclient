@@ -24,13 +24,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The terminal display mode. Possible values: **dark**, **light**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode? Mode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode Mode { get; set; }
-#endif
         /// <summary>The name of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode>(global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -77,7 +71,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateThemeResponseMode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

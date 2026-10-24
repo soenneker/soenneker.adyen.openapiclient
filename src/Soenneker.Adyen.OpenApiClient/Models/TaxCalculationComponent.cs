@@ -23,13 +23,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount TaxAmount { get; set; }
 #endif
         /// <summary>The type of the calculated tax component, for example LRS_TCS.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponent"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "taxAmount", n => { TaxAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType>(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount>("taxAmount", TaxAmount);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

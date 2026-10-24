@@ -16,21 +16,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of exemption for Strong Customer Authentication (SCA). Possible values:* **lowerLimit**: the newly created limit is lower than the existing limit.* **notRegulated**: the limit is created in a country, region, or industry where it is not mandated by law to use SCA.* **setByPlatform**: you set a limit for one of your user&apos;s balance accounts, or for your balance platform.* **initialLimit**: there are no existing transfer limits set on the balance account or balance platform.* **alreadyPerformed**: you are confident about your user&apos;s identity and do not need to verify this using SCA.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption? Exemption { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption Exemption { get; set; }
-#endif
         /// <summary>The status of Strong Customer Authentication (SCA). Possible values:* **notPerformed**: the requester was unable to successfully authenticate the request using SCA, or has an SCA exemption.* **pending**: the request is pending SCA authentication.* **performed**: the request is successfully authenticated using SCA.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation"/> and sets the default values.
         /// </summary>
@@ -56,8 +44,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exemption", n => { Exemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption>(global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus>(global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus.CreateFromDiscriminatorValue); } },
+                { "exemption", n => { Exemption = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus>(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption>("exemption", Exemption);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption>("exemption", Exemption);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

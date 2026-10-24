@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.Webhooks.Item.Settings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{balancePlatform-id}\webhooks\{webhookId}\settings
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{id}\webhooks\{webhookId}\settings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/webhooks/{webhookId}/settings", pathParameters)
+        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/webhooks/{webhookId}/settings", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/webhooks/{webhookId}/settings", rawUrl)
+        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/webhooks/{webhookId}/settings", rawUrl)
         {
         }
         /// <summary>

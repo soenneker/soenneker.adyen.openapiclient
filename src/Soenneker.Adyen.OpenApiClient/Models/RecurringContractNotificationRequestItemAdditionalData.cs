@@ -652,10 +652,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key-value pairs provided in the request, prefixed with &apos;metadata.&apos;. For example, &apos;metadata.myField: myValue&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationRequestItemAdditionalDataMetadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationAdditionalDataMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationRequestItemAdditionalDataMetadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationAdditionalDataMetadataProperty2 Metadata { get; set; }
 #endif
         /// <summary>Indicates the processing flow.Possible values:* **sale**: You do not need to separately capture the funds, because capture happens automatically as part of the transaction. * **auth**: If you have not [configured automatic capture for the transaction](https://docs.adyen.com/online-payments/capture#types-of-capture), you must manually capture the funds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1130,7 +1130,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "latestCard.expiryDate", n => { LatestCardExpiryDate = n.GetStringValue(); } },
                 { "latestCard.summary", n => { LatestCardSummary = n.GetStringValue(); } },
                 { "liabilityShift", n => { LiabilityShift = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationRequestItemAdditionalDataMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationRequestItemAdditionalDataMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationAdditionalDataMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationAdditionalDataMetadataProperty2.CreateFromDiscriminatorValue); } },
                 { "networkProcessingMode", n => { NetworkProcessingMode = n.GetStringValue(); } },
                 { "networkToken.available", n => { NetworkTokenAvailable = n.GetStringValue(); } },
                 { "networkToken.bin", n => { NetworkTokenBin = n.GetStringValue(); } },
@@ -1266,7 +1266,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("latestCard.expiryDate", LatestCardExpiryDate);
             writer.WriteStringValue("latestCard.summary", LatestCardSummary);
             writer.WriteStringValue("liabilityShift", LiabilityShift);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationRequestItemAdditionalDataMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringContractNotificationAdditionalDataMetadataProperty2>("metadata", Metadata);
             writer.WriteStringValue("networkProcessingMode", NetworkProcessingMode);
             writer.WriteStringValue("networkToken.available", NetworkTokenAvailable);
             writer.WriteStringValue("networkToken.bin", NetworkTokenBin);

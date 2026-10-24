@@ -39,14 +39,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData MobileData { get; set; }
 #endif
-        /// <summary>Type of payment instrument.Possible values:* **Card*** **Cash*** **Check*** **Mobile*** **StoredValue**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Card*** **Check*** **Mobile*** **StoredValue*** **Cash**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType? PaymentInstrumentType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType PaymentInstrumentType { get; set; }
-#endif
         /// <summary>Sensitive information related to the payment card, protected by CMS.SensitiveCardData protected by CMS EnvelopedData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CardData", n => { CardData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCardData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCardData.CreateFromDiscriminatorValue); } },
                 { "CheckData", n => { CheckData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData.CreateFromDiscriminatorValue); } },
                 { "MobileData", n => { MobileData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData.CreateFromDiscriminatorValue); } },
-                { "PaymentInstrumentType", n => { PaymentInstrumentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType.CreateFromDiscriminatorValue); } },
+                { "PaymentInstrumentType", n => { PaymentInstrumentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType>(); } },
                 { "ProtectedCardData", n => { ProtectedCardData = n.GetStringValue(); } },
                 { "StoredValueAccountID", n => { StoredValueAccountID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>(global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId.CreateFromDiscriminatorValue); } },
             };
@@ -106,7 +100,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCardData>("CardData", CardData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData>("CheckData", CheckData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataMobileData>("MobileData", MobileData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType>("PaymentInstrumentType", PaymentInstrumentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataPaymentInstrumentType>("PaymentInstrumentType", PaymentInstrumentType);
             writer.WriteStringValue("ProtectedCardData", ProtectedCardData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountId>("StoredValueAccountID", StoredValueAccountID);
             writer.WriteAdditionalData(AdditionalData);

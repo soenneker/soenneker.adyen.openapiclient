@@ -207,11 +207,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 result.TransferServiceV4SgLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4SgLocalAccountIdentification();
             }
-            else if("TransferServiceV4UkLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ukLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TransferServiceV4UkLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UkLocalAccountIdentification();
             }
-            else if("TransferServiceV4UsLocalAccountIdentification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("usLocal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TransferServiceV4UsLocalAccountIdentification = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UsLocalAccountIdentification();
             }

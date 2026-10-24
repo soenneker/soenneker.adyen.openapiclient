@@ -24,21 +24,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string DescriptionOfIssue { get; set; }
 #endif
         /// <summary>The specific category of **other** dispute that you are raising.Possible values: **atmDispute**, **cancelledGoodsServices**, **cancelledRecurring**, **counterfeit**, **creditNotProcessed**, **notAsDescribed**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType? SubType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType SubType { get; set; }
-#endif
         /// <summary>The type of product that you purchased.Possible values: **goods**, **services**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased? WhatWasPurchased { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased WhatWasPurchased { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DisputeResponseOtherInfo"/> and sets the default values.
         /// </summary>
@@ -65,8 +53,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "descriptionOfIssue", n => { DescriptionOfIssue = n.GetStringValue(); } },
-                { "subType", n => { SubType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType>(global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType.CreateFromDiscriminatorValue); } },
-                { "whatWasPurchased", n => { WhatWasPurchased = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased>(global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased.CreateFromDiscriminatorValue); } },
+                { "subType", n => { SubType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType>(); } },
+                { "whatWasPurchased", n => { WhatWasPurchased = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased>(); } },
             };
         }
         /// <summary>
@@ -77,8 +65,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("descriptionOfIssue", DescriptionOfIssue);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType>("subType", SubType);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased>("whatWasPurchased", WhatWasPurchased);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType>("subType", SubType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased>("whatWasPurchased", WhatWasPurchased);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,21 +16,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The remittance category, for example TOUR_PROGRAMME or EDUCATION.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose? RemittancePurpose { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose RemittancePurpose { get; set; }
-#endif
         /// <summary>The status of the INR 1 million LRS sublimit, for example EXCEEDED.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus? SublimitStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus SublimitStatus { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs"/> and sets the default values.
         /// </summary>
@@ -56,8 +44,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "remittancePurpose", n => { RemittancePurpose = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose>(global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose.CreateFromDiscriminatorValue); } },
-                { "sublimitStatus", n => { SublimitStatus = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus>(global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus.CreateFromDiscriminatorValue); } },
+                { "remittancePurpose", n => { RemittancePurpose = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose>(); } },
+                { "sublimitStatus", n => { SublimitStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus>(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose>("remittancePurpose", RemittancePurpose);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus>("sublimitStatus", SublimitStatus);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose>("remittancePurpose", RemittancePurpose);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus>("sublimitStatus", SublimitStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

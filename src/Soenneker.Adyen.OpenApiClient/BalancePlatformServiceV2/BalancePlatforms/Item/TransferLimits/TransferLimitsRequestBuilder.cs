@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatforms.Item.TransferLimits
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{balancePlatform-id}\transferLimits
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\balancePlatforms\{id}\transferLimits
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransferLimitsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransferLimitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/transferLimits{?scope*,status*,transferType*}", pathParameters)
+        public TransferLimitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/transferLimits{?scope*,status*,transferType*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalancePlatform
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransferLimitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{balancePlatform%2Did}/transferLimits{?scope*,status*,transferType*}", rawUrl)
+        public TransferLimitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/balancePlatforms/{id}/transferLimits{?scope*,status*,transferType*}", rawUrl)
         {
         }
         /// <summary>

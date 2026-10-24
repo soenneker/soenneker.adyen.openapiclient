@@ -15,14 +15,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Qualification of the document to print to the Cashier or the Customer. Allows the manager of the printer, Sale or POI Terminal, to send information to a physical printer or to use the paper type accordingly.Possible values:* **CashierReceipt*** **CustomerReceipt*** **Document*** **Journal*** **SaleReceipt*** **Voucher**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier? DocumentQualifier { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier DocumentQualifier { get; set; }
-#endif
         /// <summary>Type of the print integrated in other prints. Allows a separated printing (paper cut if available), or integration with the sale receipt or other print. If the printing is integrated, the response is always immediate, even if the `ResponseMode` is set to `PrintEnd`.</summary>
         public bool? IntegratedPrintFlag { get; set; }
         /// <summary>Content to display or print. This is a sequence of elements if they have different formats.</summary>
@@ -35,14 +29,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #endif
         /// <summary>Indicates that the cardholder payment receipt requires a physical signature by the Customer.</summary>
         public bool? RequiredSignatureFlag { get; set; }
-        /// <summary>Message response awaited by the initiator of the Request. Allows various types and synchronisation of requests for Print or Sound.Possible values:* **Immediate*** **NotRequired*** **PrintEnd*** **SoundEnd**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **NotRequired*** **Immediate*** **PrintEnd*** **SoundEnd**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode? ResponseMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode ResponseMode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput"/> and sets the default values.
         /// </summary>
@@ -70,11 +58,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DocumentQualifier", n => { DocumentQualifier = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier>(global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier.CreateFromDiscriminatorValue); } },
+                { "DocumentQualifier", n => { DocumentQualifier = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier>(); } },
                 { "IntegratedPrintFlag", n => { IntegratedPrintFlag = n.GetBoolValue(); } },
                 { "OutputContent", n => { OutputContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputOutputContent>(global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputOutputContent.CreateFromDiscriminatorValue); } },
                 { "RequiredSignatureFlag", n => { RequiredSignatureFlag = n.GetBoolValue(); } },
-                { "ResponseMode", n => { ResponseMode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode>(global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode.CreateFromDiscriminatorValue); } },
+                { "ResponseMode", n => { ResponseMode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode>(); } },
             };
         }
         /// <summary>
@@ -84,11 +72,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier>("DocumentQualifier", DocumentQualifier);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputDocumentQualifier>("DocumentQualifier", DocumentQualifier);
             writer.WriteBoolValue("IntegratedPrintFlag", IntegratedPrintFlag);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputOutputContent>("OutputContent", OutputContent);
             writer.WriteBoolValue("RequiredSignatureFlag", RequiredSignatureFlag);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode>("ResponseMode", ResponseMode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintOutputResponseMode>("ResponseMode", ResponseMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

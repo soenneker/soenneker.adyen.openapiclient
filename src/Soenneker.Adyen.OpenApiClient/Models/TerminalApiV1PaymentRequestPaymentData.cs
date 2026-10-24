@@ -40,14 +40,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentInstrumentData PaymentInstrumentData { get; set; }
 #endif
-        /// <summary>Type of payment transaction. Elements requested by the Sale System that are related to the payment only.Possible values:* **CashAdvance*** **CashDeposit*** **Completion*** **FirstReservation*** **Instalment*** **IssuerInstalment*** **Normal*** **OneTimeReservation*** **PaidOut*** **Recurring*** **Refund*** **UpdateReservation**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Normal*** **Refund*** **OneTimeReservation*** **FirstReservation*** **UpdateReservation*** **Completion*** **CashAdvance*** **CashDeposit*** **Recurring*** **Instalment*** **IssuerInstalment*** **PaidOut**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType? PaymentType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType PaymentType { get; set; }
-#endif
         /// <summary>Requested validity date for the reservation. Allows a specific period for the reservation according to the need of the Merchant for the first reservation and the reservation updates as well.</summary>
         public Date? RequestedValidityDate { get; set; }
         /// <summary>Indicates if the payment of the Sale transaction is split. Allows the POI to decline payment means that cannot accept split payment.</summary>
@@ -81,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CardAcquisitionReference", n => { CardAcquisitionReference = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "Instalment", n => { Instalment = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataInstalment>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataInstalment.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentInstrumentData.CreateFromDiscriminatorValue); } },
-                { "PaymentType", n => { PaymentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType.CreateFromDiscriminatorValue); } },
+                { "PaymentType", n => { PaymentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType>(); } },
                 { "RequestedValidityDate", n => { RequestedValidityDate = n.GetDateValue(); } },
                 { "SplitPaymentFlag", n => { SplitPaymentFlag = n.GetBoolValue(); } },
             };
@@ -96,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("CardAcquisitionReference", CardAcquisitionReference);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataInstalment>("Instalment", Instalment);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType>("PaymentType", PaymentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentDataPaymentType>("PaymentType", PaymentType);
             writer.WriteDateValue("RequestedValidityDate", RequestedValidityDate);
             writer.WriteBoolValue("SplitPaymentFlag", SplitPaymentFlag);
             writer.WriteAdditionalData(AdditionalData);

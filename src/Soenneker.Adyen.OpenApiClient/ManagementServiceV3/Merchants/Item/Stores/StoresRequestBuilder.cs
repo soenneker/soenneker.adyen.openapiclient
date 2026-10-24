@@ -20,14 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Store
     {
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.ManagementServiceV3.merchants.item.stores.item collection</summary>
         /// <param name="position">The unique identifier of the store.</param>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.ReferenceItemRequestBuilder"/></returns>
-        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.ReferenceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.WithReferenceItemRequestBuilder"/></returns>
+        public global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.WithReferenceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("reference%2Did", position);
-                return new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.ReferenceItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("reference", position);
+                return new global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.WithReferenceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

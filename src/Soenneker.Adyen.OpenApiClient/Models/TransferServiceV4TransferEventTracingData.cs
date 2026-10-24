@@ -39,11 +39,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferEventTracingData();
-            if("TransferServiceV4UkFpsTracingData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ukFps".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TransferServiceV4UkFpsTracingData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UkFpsTracingData();
             }
-            else if("TransferServiceV4UsAchTracingData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("usAch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TransferServiceV4UsAchTracingData = new global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UsAchTracingData();
             }

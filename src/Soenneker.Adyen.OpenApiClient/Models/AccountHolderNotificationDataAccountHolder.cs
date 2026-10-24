@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs that specify the actions that an account holder can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing. The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderCapabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderCapabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities Capabilities { get; set; }
 #endif
         /// <summary>Contact details of the account holder.</summary>
         [Obsolete("")]
@@ -67,10 +67,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A set of key and value pairs for general use.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderMetadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderMetadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata Metadata { get; set; }
 #endif
         /// <summary>The unique identifier of the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,12 +140,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balancePlatform", n => { BalancePlatform = n.GetStringValue(); } },
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderCapabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities.CreateFromDiscriminatorValue); } },
                 { "contactDetails", n => { ContactDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata.CreateFromDiscriminatorValue); } },
                 { "migratedAccountHolderCode", n => { MigratedAccountHolderCode = n.GetStringValue(); } },
                 { "primaryBalanceAccount", n => { PrimaryBalanceAccount = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -162,12 +162,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("balancePlatform", BalancePlatform);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderCapabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderCapabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderContactDetails>("contactDetails", ContactDetails);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolderMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2AccountHolderMetadata>("metadata", Metadata);
             writer.WriteStringValue("migratedAccountHolderCode", MigratedAccountHolderCode);
             writer.WriteStringValue("primaryBalanceAccount", PrimaryBalanceAccount);
             writer.WriteStringValue("reference", Reference);

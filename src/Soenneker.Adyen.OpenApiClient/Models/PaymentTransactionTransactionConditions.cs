@@ -52,21 +52,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The ForceEntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem?>? ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?>? ForceEntryMode { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem?> ForceEntryMode { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem?> ForceEntryMode { get; set; }
 #endif
         /// <summary>Indicates if the Cashier requires POI forces online access to the Acquirer.Go online if data sent.</summary>
         public bool? ForceOnlineFlag { get; set; }
-        /// <summary>Type of Loyalty processing requested by the Sale System.Possible values:* **Allowed*** **Forbidden*** **Processed*** **Proposed*** **Required**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Forbidden*** **Processed*** **Allowed*** **Proposed*** **Required**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling? LoyaltyHandling { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling LoyaltyHandling { get; set; }
-#endif
         /// <summary>The code which identifies the category of the transaction (MCC).The payment implies a specific MCC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,9 +100,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "AllowedPaymentBrand", n => { AllowedPaymentBrand = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
                 { "DebitPreferredFlag", n => { DebitPreferredFlag = n.GetBoolValue(); } },
-                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem>()?.AsList(); } },
+                { "ForceEntryMode", n => { ForceEntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem>()?.AsList(); } },
                 { "ForceOnlineFlag", n => { ForceOnlineFlag = n.GetBoolValue(); } },
-                { "LoyaltyHandling", n => { LoyaltyHandling = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling.CreateFromDiscriminatorValue); } },
+                { "LoyaltyHandling", n => { LoyaltyHandling = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling>(); } },
                 { "MerchantCategoryCode", n => { MerchantCategoryCode = n.GetStringValue(); } },
             };
         }
@@ -124,9 +118,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("AllowedPaymentBrand", AllowedPaymentBrand);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);
             writer.WriteBoolValue("DebitPreferredFlag", DebitPreferredFlag);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.ForceEntryModeItem>("ForceEntryMode", ForceEntryMode);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsForceEntryModeItem>("ForceEntryMode", ForceEntryMode);
             writer.WriteBoolValue("ForceOnlineFlag", ForceOnlineFlag);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionConditionsLoyaltyHandling>("LoyaltyHandling", LoyaltyHandling);
             writer.WriteStringValue("MerchantCategoryCode", MerchantCategoryCode);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -23,14 +23,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string DeviceID { get; set; }
 #endif
-        /// <summary>Category of message.CardAcquisition, Display, Input, Loyalty, Payment, Print, CardReaderInit, CardReaderPowerOff.Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **Batch*** **CardAcquisition*** **CardReaderInit*** **CardReaderPowerOff*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **None*** **PIN*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **Sound*** **StoredValue*** **TransactionStatus*** **Transmit**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **CardAcquisition*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **StoredValue*** **TransactionStatus*** **None**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory? MessageCategory { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory MessageCategory { get; set; }
-#endif
         /// <summary>Identification of a POI System or a POI Terminal for the Sale to POI protocol.Default `MessageHeader.POIID`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "DeviceID", n => { DeviceID = n.GetStringValue(); } },
-                { "MessageCategory", n => { MessageCategory = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory>(global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory.CreateFromDiscriminatorValue); } },
+                { "MessageCategory", n => { MessageCategory = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory>(); } },
                 { "POIID", n => { POIID = n.GetStringValue(); } },
                 { "SaleID", n => { SaleID = n.GetStringValue(); } },
                 { "ServiceID", n => { ServiceID = n.GetStringValue(); } },
@@ -95,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("DeviceID", DeviceID);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory>("MessageCategory", MessageCategory);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory>("MessageCategory", MessageCategory);
             writer.WriteStringValue("POIID", POIID);
             writer.WriteStringValue("SaleID", SaleID);
             writer.WriteStringValue("ServiceID", ServiceID);

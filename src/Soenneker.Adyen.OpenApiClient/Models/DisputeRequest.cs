@@ -79,13 +79,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestOtherInfo OtherInfo { get; set; }
 #endif
         /// <summary>The current status of the dispute.When you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus Status { get; set; }
-#endif
         /// <summary>The unique reference of the transaction for which you are raising the dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "notAsDescribedInfo", n => { NotAsDescribedInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestNotAsDescribedInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestNotAsDescribedInfo.CreateFromDiscriminatorValue); } },
                 { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestNotDeliveredInfo.CreateFromDiscriminatorValue); } },
                 { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestOtherInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus>(); } },
                 { "transactionId", n => { TransactionId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -155,7 +149,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestNotAsDescribedInfo>("notAsDescribedInfo", NotAsDescribedInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestOtherInfo>("otherInfo", OtherInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestStatus>("status", Status);
             writer.WriteStringValue("transactionId", TransactionId);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

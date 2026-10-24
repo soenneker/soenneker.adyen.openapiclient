@@ -27,13 +27,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The expiration date and time of the offer validity period.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The type of financing that the offer is for.Possible values: **businessFinancing**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType? FinancingType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType FinancingType { get; set; }
-#endif
         /// <summary>The unique identifier of the dynamic offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
                 { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "financingType", n => { FinancingType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType.CreateFromDiscriminatorValue); } },
+                { "financingType", n => { FinancingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "maximumAmount", n => { MaximumAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount.CreateFromDiscriminatorValue); } },
                 { "minimumAmount", n => { MinimumAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount.CreateFromDiscriminatorValue); } },
@@ -114,7 +108,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("accountHolderId", AccountHolderId);
             writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>("contractType", ContractType);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType>("financingType", FinancingType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType>("financingType", FinancingType);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount>("maximumAmount", MaximumAmount);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount>("minimumAmount", MinimumAmount);

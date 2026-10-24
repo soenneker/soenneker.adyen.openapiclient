@@ -23,14 +23,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode OutputBarcode { get; set; }
 #endif
-        /// <summary>Format of the content to display or print.Possible values:* **BarCode*** **MessageRef*** **Text*** **XHTML**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **MessageRef*** **Text*** **XHTML*** **BarCode**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat? OutputFormat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat OutputFormat { get; set; }
-#endif
         /// <summary>Content of text message to display or print.Mandatory, if `OutputFormat` is Text, not allowed otherwise. One instance of `OutputText` per shared format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "OutputBarcode", n => { OutputBarcode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode.CreateFromDiscriminatorValue); } },
-                { "OutputFormat", n => { OutputFormat = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat.CreateFromDiscriminatorValue); } },
+                { "OutputFormat", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>(); } },
                 { "OutputText", n => { OutputText = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>(global::Soenneker.Adyen.OpenApiClient.Models.OutputText.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "OutputXHTML", n => { OutputXHTML = n.GetByteArrayValue(); } },
                 { "PredefinedContent", n => { PredefinedContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent.CreateFromDiscriminatorValue); } },
@@ -95,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode>("OutputBarcode", OutputBarcode);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>("OutputFormat", OutputFormat);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>("OutputFormat", OutputFormat);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>("OutputText", OutputText);
             writer.WriteByteArrayValue("OutputXHTML", OutputXHTML);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent>("PredefinedContent", PredefinedContent);

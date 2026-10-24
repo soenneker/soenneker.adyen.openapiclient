@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.Reveal
 {
     /// <summary>
-    /// Builds and executes requests for operations under \BalancePlatformService-v2\paymentInstruments\{-id}\reveal
+    /// Builds and executes requests for operations under \BalancePlatformService-v2\paymentInstruments\{id}\reveal
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RevealRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstrume
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RevealRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{%2Did}/reveal", pathParameters)
+        public RevealRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{id}/reveal", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstrume
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RevealRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{%2Did}/reveal", rawUrl)
+        public RevealRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/BalancePlatformService-v2/paymentInstruments/{id}/reveal", rawUrl)
         {
         }
         /// <summary>

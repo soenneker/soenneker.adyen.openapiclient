@@ -32,13 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string TaxIdentificationNumber { get; set; }
 #endif
         /// <summary>The type of the tax identification. Initially only PAN is supported.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType? TaxIdentificationType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType TaxIdentificationType { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationRequestShopperTaxIdentification"/> and sets the default values.
         /// </summary>
@@ -66,7 +60,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "taxCountryCode", n => { TaxCountryCode = n.GetStringValue(); } },
                 { "taxIdentificationNumber", n => { TaxIdentificationNumber = n.GetStringValue(); } },
-                { "taxIdentificationType", n => { TaxIdentificationType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType>(global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType.CreateFromDiscriminatorValue); } },
+                { "taxIdentificationType", n => { TaxIdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType>(); } },
             };
         }
         /// <summary>
@@ -78,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("taxCountryCode", TaxCountryCode);
             writer.WriteStringValue("taxIdentificationNumber", TaxIdentificationNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType>("taxIdentificationType", TaxIdentificationType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ShopperTaxIdentificationTaxIdentificationType>("taxIdentificationType", TaxIdentificationType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

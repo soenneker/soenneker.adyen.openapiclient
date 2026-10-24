@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of customer order open, closed or both to be sent in the response messages.Possible values:* **Both*** **Closed*** **Open**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem?>? CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?>? CustomerOrderReq { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem?> CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem?> CustomerOrderReq { get; set; }
 #endif
         /// <summary>Date and Time. In the Login request message, the Sale System gives its date and time to the POI System. In the Login response, the POI System gives its date and time to the Sale System.</summary>
         public DateTimeOffset? DateTime { get; set; }
@@ -73,14 +73,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShiftNumber { get; set; }
 #endif
-        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Customer*** **Transaction**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Transaction*** **Customer**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType? TokenRequestedType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType TokenRequestedType { get; set; }
-#endif
         /// <summary>Training mode.This flag indicates to the POI that the entire session will be not used to make real transaction, but is used for test of system or operator training.</summary>
         public bool? TrainingModeFlag { get; set; }
         /// <summary>
@@ -109,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem>()?.AsList(); } },
+                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem>()?.AsList(); } },
                 { "DateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
                 { "OperatorID", n => { OperatorID = n.GetStringValue(); } },
                 { "OperatorLanguage", n => { OperatorLanguage = n.GetStringValue(); } },
@@ -117,7 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "SaleSoftware", n => { SaleSoftware = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware>(global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware.CreateFromDiscriminatorValue); } },
                 { "SaleTerminalData", n => { SaleTerminalData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData>(global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData.CreateFromDiscriminatorValue); } },
                 { "ShiftNumber", n => { ShiftNumber = n.GetStringValue(); } },
-                { "TokenRequestedType", n => { TokenRequestedType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType>(global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType.CreateFromDiscriminatorValue); } },
+                { "TokenRequestedType", n => { TokenRequestedType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType>(); } },
                 { "TrainingModeFlag", n => { TrainingModeFlag = n.GetBoolValue(); } },
             };
         }
@@ -128,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem>("CustomerOrderReq", CustomerOrderReq);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestCustomerOrderReqItem>("CustomerOrderReq", CustomerOrderReq);
             writer.WriteDateTimeOffsetValue("DateTime", DateTime);
             writer.WriteStringValue("OperatorID", OperatorID);
             writer.WriteStringValue("OperatorLanguage", OperatorLanguage);
@@ -136,7 +130,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleSoftware>("SaleSoftware", SaleSoftware);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestSaleTerminalData>("SaleTerminalData", SaleTerminalData);
             writer.WriteStringValue("ShiftNumber", ShiftNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType>("TokenRequestedType", TokenRequestedType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LoginRequestTokenRequestedType>("TokenRequestedType", TokenRequestedType);
             writer.WriteBoolValue("TrainingModeFlag", TrainingModeFlag);
             writer.WriteAdditionalData(AdditionalData);
         }

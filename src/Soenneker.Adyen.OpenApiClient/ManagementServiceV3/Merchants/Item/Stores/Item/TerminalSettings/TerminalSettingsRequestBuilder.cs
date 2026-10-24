@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Stores.Item.TerminalSettings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ManagementService-v3\merchants\{merchantId}\stores\{reference-id}\terminalSettings
+    /// Builds and executes requests for operations under \ManagementService-v3\merchants\{merchantId}\stores\{reference}\terminalSettings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TerminalSettingsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Store
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TerminalSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ManagementService-v3/merchants/{merchantId}/stores/{reference%2Did}/terminalSettings", pathParameters)
+        public TerminalSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ManagementService-v3/merchants/{merchantId}/stores/{reference}/terminalSettings", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Merchants.Item.Store
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TerminalSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ManagementService-v3/merchants/{merchantId}/stores/{reference%2Did}/terminalSettings", rawUrl)
+        public TerminalSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ManagementService-v3/merchants/{merchantId}/stores/{reference}/terminalSettings", rawUrl)
         {
         }
         /// <summary>

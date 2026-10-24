@@ -15,13 +15,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The resource type.Possible values: **accountHolder**, **legalEntity**.You must also include the corresponding unique identifier of the resource. For example, the account holder ID.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1Resource"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType>(global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType>(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SessionAuthenticationServiceV1ResourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

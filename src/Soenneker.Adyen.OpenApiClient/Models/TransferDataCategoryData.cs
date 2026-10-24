@@ -55,19 +55,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferDataCategoryData();
-            if("BalancePlatformTransferNotificationV4BankCategoryData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("bank".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4BankCategoryData = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4BankCategoryData();
             }
-            else if("BalancePlatformTransferNotificationV4InternalCategoryData".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("internal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4InternalCategoryData = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4InternalCategoryData();
             }
-            else if("BalancePlatformTransferNotificationV4IssuedCard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("issuedCard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4IssuedCard = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4IssuedCard();
             }
-            else if("BalancePlatformTransferNotificationV4PlatformPayment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("platformPayment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransferNotificationV4PlatformPayment = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4PlatformPayment();
             }

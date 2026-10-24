@@ -47,13 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingTarget Target { get; set; }
 #endif
         /// <summary>The type of the webhook setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting"/> and sets the default values.
         /// </summary>
@@ -89,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingTarget>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingTarget.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType>(); } },
             };
         }
         /// <summary>
@@ -103,7 +97,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingTarget>("target", Target);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSettingType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

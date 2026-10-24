@@ -20,14 +20,14 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts
     {
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.balanceAccounts.item collection</summary>
         /// <param name="position">The unique identifier of the balance account.</param>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.BalanceAccountItemRequestBuilder"/></returns>
-        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.BalanceAccountItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.WithBalanceAccountItemRequestBuilder"/></returns>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.WithBalanceAccountItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("balanceAccount%2Did", position);
-                return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.BalanceAccountItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("balanceAccountId", position);
+                return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.BalanceAccounts.Item.WithBalanceAccountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

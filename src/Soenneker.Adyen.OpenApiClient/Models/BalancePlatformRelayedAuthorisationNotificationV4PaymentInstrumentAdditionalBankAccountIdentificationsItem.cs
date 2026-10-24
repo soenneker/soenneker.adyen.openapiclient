@@ -30,8 +30,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string Iban { get; set; }
 #endif
-        /// <summary>**iban**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4IbanType? Type { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4PaymentInstrumentAdditionalBankAccountIdentificationsItem"/> and sets the default values.
         /// </summary>
@@ -59,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "bic", n => { Bic = n.GetStringValue(); } },
                 { "iban", n => { Iban = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4IbanType>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bic", Bic);
             writer.WriteStringValue("iban", Iban);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4IbanType>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -47,13 +47,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ToMerchant { get; set; }
 #endif
         /// <summary>The type of balance transfer. Possible values: **tax**, **fee**, **terminalSale**, **credit**, **debit**, and **adjustment**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequest"/> and sets the default values.
         /// </summary>
@@ -83,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "fromMerchant", n => { FromMerchant = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "toMerchant", n => { ToMerchant = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType>(global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType>(); } },
             };
         }
         /// <summary>
@@ -97,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("fromMerchant", FromMerchant);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("toMerchant", ToMerchant);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalanceTransferRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

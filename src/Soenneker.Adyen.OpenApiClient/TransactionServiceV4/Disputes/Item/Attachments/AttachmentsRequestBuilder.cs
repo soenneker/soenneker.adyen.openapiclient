@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attachments
 {
     /// <summary>
-    /// Builds and executes requests for operations under \TransactionService-v4\disputes\{dispute-id}\attachments
+    /// Builds and executes requests for operations under \TransactionService-v4\disputes\{disputeId}\attachments
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttachmentsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttachmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{dispute%2Did}/attachments", pathParameters)
+        public AttachmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{disputeId}/attachments", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{dispute%2Did}/attachments", rawUrl)
+        public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{disputeId}/attachments", rawUrl)
         {
         }
         /// <summary>

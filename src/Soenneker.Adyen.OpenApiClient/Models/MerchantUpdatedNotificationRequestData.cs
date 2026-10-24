@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Key-value pairs that specify what you can do with the merchant account and its settings. The key is a capability. For example, the **sendToTransferInstrument** is the capability required before you can pay out the funds of a merchant account to a [bank account](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments). The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantUpdatedNotificationRequestDataCapabilities? Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountUpdateNotificationDataCapabilitiesProperty2? Capabilities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantUpdatedNotificationRequestDataCapabilities Capabilities { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountUpdateNotificationDataCapabilitiesProperty2 Capabilities { get; set; }
 #endif
         /// <summary>The unique identifier of the [legal entity](https://docs.adyen.com/api-explorer/legalentity/latest/post/legalEntities#responses-200-id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantUpdatedNotificationRequestDataCapabilities>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantUpdatedNotificationRequestDataCapabilities.CreateFromDiscriminatorValue); } },
+                { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountUpdateNotificationDataCapabilitiesProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.AccountUpdateNotificationDataCapabilitiesProperty2.CreateFromDiscriminatorValue); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -85,7 +85,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantUpdatedNotificationRequestDataCapabilities>("capabilities", Capabilities);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountUpdateNotificationDataCapabilitiesProperty2>("capabilities", Capabilities);
             writer.WriteStringValue("legalEntityId", LegalEntityId);
             writer.WriteStringValue("merchantId", MerchantId);
             writer.WriteStringValue("status", Status);

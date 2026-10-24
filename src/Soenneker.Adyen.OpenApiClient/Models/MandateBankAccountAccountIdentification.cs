@@ -31,8 +31,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string SortCode { get; set; }
 #endif
-        /// <summary>**ukLocal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2UkLocalType? Type { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification"/> and sets the default values.
         /// </summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 { "sortCode", n => { SortCode = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2UkLocalType>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteStringValue("sortCode", SortCode);
-            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfigurationNotificationV2UkLocalType>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

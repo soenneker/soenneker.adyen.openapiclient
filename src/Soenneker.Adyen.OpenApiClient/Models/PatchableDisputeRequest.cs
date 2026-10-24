@@ -63,13 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo OtherInfo { get; set; }
 #endif
         /// <summary>The current status of the dispute.When you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper Status { get; set; }
-#endif
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequest"/> and sets the default values.
         /// </summary>
@@ -101,7 +95,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "notAsDescribedInfo", n => { NotAsDescribedInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate.CreateFromDiscriminatorValue); } },
                 { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo.CreateFromDiscriminatorValue); } },
                 { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper>(global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus>(); } },
             };
         }
         /// <summary>
@@ -117,7 +111,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate>("notAsDescribedInfo", NotAsDescribedInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>("notDeliveredInfo", NotDeliveredInfo);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>("otherInfo", OtherInfo);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatusWrapper>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

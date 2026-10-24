@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attachments.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \TransactionService-v4\disputes\{dispute-id}\attachments\{attachmentId}
+    /// Builds and executes requests for operations under \TransactionService-v4\disputes\{disputeId}\attachments\{attachmentId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAttachmentItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAttachmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{dispute%2Did}/attachments/{attachmentId}", pathParameters)
+        public WithAttachmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{disputeId}/attachments/{attachmentId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransactionServiceV4.Disputes.Item.Attac
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAttachmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{dispute%2Did}/attachments/{attachmentId}", rawUrl)
+        public WithAttachmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/TransactionService-v4/disputes/{disputeId}/attachments/{attachmentId}", rawUrl)
         {
         }
         /// <summary>

@@ -26,14 +26,14 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstrume
         }
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.paymentInstruments.item collection</summary>
         /// <param name="position">The unique identifier of the payment instrument.</param>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.PaymentInstrumentsItemRequestBuilder"/></returns>
+        public global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.PaymentInstrumentsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.PaymentInstruments.Item.PaymentInstrumentsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

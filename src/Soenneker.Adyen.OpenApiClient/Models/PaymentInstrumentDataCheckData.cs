@@ -63,14 +63,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData TrackData { get; set; }
 #endif
-        /// <summary>Type of bank check.Possible values:* **Company*** **Personal**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Personal*** **Company**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode? TypeCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode TypeCode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentDataCheckData"/> and sets the default values.
         /// </summary>
@@ -102,7 +96,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CheckNumber", n => { CheckNumber = n.GetStringValue(); } },
                 { "Country", n => { Country = n.GetStringValue(); } },
                 { "TrackData", n => { TrackData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData>(global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData.CreateFromDiscriminatorValue); } },
-                { "TypeCode", n => { TypeCode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode>(global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode.CreateFromDiscriminatorValue); } },
+                { "TypeCode", n => { TypeCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode>(); } },
             };
         }
         /// <summary>
@@ -118,7 +112,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("CheckNumber", CheckNumber);
             writer.WriteStringValue("Country", Country);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTrackData>("TrackData", TrackData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode>("TypeCode", TypeCode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckDataTypeCode>("TypeCode", TypeCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

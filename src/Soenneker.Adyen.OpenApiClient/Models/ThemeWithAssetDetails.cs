@@ -32,13 +32,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The terminal display mode. Possible values: **dark**, **light**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode? Mode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode Mode { get; set; }
-#endif
         /// <summary>The name of the theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +68,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "assets", n => { Assets = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset>(global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode>(global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -87,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ThemeAsset>("assets", Assets);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThemeWithAssetDetailsMode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

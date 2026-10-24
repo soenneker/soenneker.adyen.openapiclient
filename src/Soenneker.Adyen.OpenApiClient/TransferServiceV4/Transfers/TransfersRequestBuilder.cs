@@ -32,14 +32,14 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         }
         /// <summary>Gets an item from the Soenneker.Adyen.OpenApiClient.TransferServiceV4.transfers.item collection</summary>
         /// <param name="position">Unique identifier of the transfer.</param>
-        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.TransfersItemRequestBuilder"/></returns>
+        public global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.TransfersItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.Item.TransfersItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

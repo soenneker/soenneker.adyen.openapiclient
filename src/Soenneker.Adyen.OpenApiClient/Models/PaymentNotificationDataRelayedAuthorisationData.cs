@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The `metadata` object from the relayed authorisation response from your server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentNotificationDataRelayedAuthorisationDataMetadata? Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationDataMetadataProperty2? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentNotificationDataRelayedAuthorisationDataMetadata Metadata { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationDataMetadataProperty2 Metadata { get; set; }
 #endif
         /// <summary>The `reference` from the relayed authorisation response from your server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentNotificationDataRelayedAuthorisationDataMetadata>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentNotificationDataRelayedAuthorisationDataMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationDataMetadataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationDataMetadataProperty2.CreateFromDiscriminatorValue); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentNotificationDataRelayedAuthorisationDataMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationDataMetadataProperty2>("metadata", Metadata);
             writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Adyen.OpenApiClient.Models.TransferViewCategoryData();
-            if("BalancePlatformTransactionNotificationV4PlatformPayment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("platformPayment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BalancePlatformTransactionNotificationV4PlatformPayment = new global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransactionNotificationV4PlatformPayment();
             }

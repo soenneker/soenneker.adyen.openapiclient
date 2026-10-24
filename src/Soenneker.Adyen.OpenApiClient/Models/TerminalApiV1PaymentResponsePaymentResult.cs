@@ -27,10 +27,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Method for customer authentication. Allows the Sale System informed about customer authentication for the payment transaction.Possible values:* **Bypass*** **ManualVerification*** **MerchantAuthentication*** **OfflinePIN*** **OnlinePIN*** **PaperSignature*** **SecureCertificate*** **SecureNoCertificate*** **SecuredChannel*** **SignatureCapture*** **UnknownMethod**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationMethodItem?>? AuthenticationMethod { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?>? AuthenticationMethod { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationMethodItem?> AuthenticationMethod { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem?> AuthenticationMethod { get; set; }
 #endif
         /// <summary>Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. Only one format of the signature is allowed:  * The size of the pad area where the signature is written, given with the maximum abscissa and ordinate values.  * The sequence of coordinates where the pen changes direction or lift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,14 +84,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData PaymentInstrumentData { get; set; }
 #endif
-        /// <summary>Type of payment transaction. Elements requested by the Sale System that are related to the payment only.Possible values:* **CashAdvance*** **CashDeposit*** **Completion*** **FirstReservation*** **Instalment*** **IssuerInstalment*** **Normal*** **OneTimeReservation*** **PaidOut*** **Recurring*** **Refund*** **UpdateReservation**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Possible values:* **Normal*** **Refund*** **OneTimeReservation*** **FirstReservation*** **UpdateReservation*** **Completion*** **CashAdvance*** **CashDeposit*** **Recurring*** **Instalment*** **IssuerInstalment*** **PaidOut**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType? PaymentType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType PaymentType { get; set; }
-#endif
         /// <summary>Numeric value of a handwritten signature. Contains the value of a handwritten signature, e.g. the signature of a cardholder on the merchant payment receipt. The format before encryption is the encoded data structure CapturedSignature. The data structure before encryption includes the start and end tags for an XML encoding, the identifier and length bytes for an ASN.1 encoding, and the complete member ProtectedSignature for a JSON encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,7 +124,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "AmountsResp", n => { AmountsResp = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp.CreateFromDiscriminatorValue); } },
-                { "AuthenticationMethod", n => { AuthenticationMethod = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationMethodItem>()?.AsList(); } },
+                { "AuthenticationMethod", n => { AuthenticationMethod = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem>()?.AsList(); } },
                 { "CapturedSignature", n => { CapturedSignature = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature.CreateFromDiscriminatorValue); } },
                 { "CurrencyConversion", n => { CurrencyConversion = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>(global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "CustomerLanguage", n => { CustomerLanguage = n.GetStringValue(); } },
@@ -139,7 +133,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "OnlineFlag", n => { OnlineFlag = n.GetBoolValue(); } },
                 { "PaymentAcquirerData", n => { PaymentAcquirerData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData.CreateFromDiscriminatorValue); } },
                 { "PaymentInstrumentData", n => { PaymentInstrumentData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData.CreateFromDiscriminatorValue); } },
-                { "PaymentType", n => { PaymentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>(global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType.CreateFromDiscriminatorValue); } },
+                { "PaymentType", n => { PaymentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>(); } },
                 { "ProtectedSignature", n => { ProtectedSignature = n.GetStringValue(); } },
                 { "ValidityDate", n => { ValidityDate = n.GetDateValue(); } },
             };
@@ -152,7 +146,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultAmountsResp>("AmountsResp", AmountsResp);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationMethodItem>("AuthenticationMethod", AuthenticationMethod);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentResultAuthenticationMethodItem>("AuthenticationMethod", AuthenticationMethod);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultCapturedSignature>("CapturedSignature", CapturedSignature);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion>("CurrencyConversion", CurrencyConversion);
             writer.WriteStringValue("CustomerLanguage", CustomerLanguage);
@@ -161,7 +155,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteBoolValue("OnlineFlag", OnlineFlag);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentAcquirerData>("PaymentAcquirerData", PaymentAcquirerData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentInstrumentData>("PaymentInstrumentData", PaymentInstrumentData);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>("PaymentType", PaymentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResultPaymentType>("PaymentType", PaymentType);
             writer.WriteStringValue("ProtectedSignature", ProtectedSignature);
             writer.WriteDateValue("ValidityDate", ValidityDate);
             writer.WriteAdditionalData(AdditionalData);

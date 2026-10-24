@@ -67,13 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignOnline Online { get; set; }
 #endif
         /// <summary>The current status of the donation campaign.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaign"/> and sets the default values.
         /// </summary>
@@ -107,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nonprofitCause", n => { NonprofitCause = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignNonprofitCause>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignNonprofitCause.CreateFromDiscriminatorValue); } },
                 { "online", n => { Online = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignOnline>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignOnline.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus>(global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus>(); } },
             };
         }
         /// <summary>
@@ -122,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignNonprofitCause>("nonprofitCause", NonprofitCause);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignOnline>("online", Online);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ManagementServiceV3DonationCampaignStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

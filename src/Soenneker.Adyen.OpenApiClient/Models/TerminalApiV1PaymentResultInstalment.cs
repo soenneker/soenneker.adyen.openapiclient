@@ -25,23 +25,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>First date of a payment. For instalment, the date of the first payments, if not immediate.</summary>
         public Date? FirstPaymentDate { get; set; }
         /// <summary>Type of instalment transaction. For requesting an instalment payment transaction.Possible values:* **DeferredInstalments*** **EqualInstalments*** **InequalInstalments**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType? InstalmentType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType InstalmentType { get; set; }
-#endif
         /// <summary>Period of time with defined unit of time. A period between 2 payment instalments.</summary>
         public int? Period { get; set; }
-        /// <summary>Type of instalment transaction.Possible values:* **Annual*** **Daily*** **Monthly*** **Weekly**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of instalment transaction.Possible values:* **Daily*** **Weekly*** **Monthly*** **Annual**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit? PeriodUnit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit PeriodUnit { get; set; }
-#endif
         /// <summary>Identification of an instalment plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,9 +71,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "CumulativeAmount", n => { CumulativeAmount = n.GetDoubleValue(); } },
                 { "FirstAmount", n => { FirstAmount = n.GetDoubleValue(); } },
                 { "FirstPaymentDate", n => { FirstPaymentDate = n.GetDateValue(); } },
-                { "InstalmentType", n => { InstalmentType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType>(global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType.CreateFromDiscriminatorValue); } },
+                { "InstalmentType", n => { InstalmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType>(); } },
                 { "Period", n => { Period = n.GetIntValue(); } },
-                { "PeriodUnit", n => { PeriodUnit = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit>(global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit.CreateFromDiscriminatorValue); } },
+                { "PeriodUnit", n => { PeriodUnit = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit>(); } },
                 { "PlanID", n => { PlanID = n.GetStringValue(); } },
                 { "SequenceNumber", n => { SequenceNumber = n.GetIntValue(); } },
                 { "TotalNbOfPayments", n => { TotalNbOfPayments = n.GetIntValue(); } },
@@ -102,9 +90,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteDoubleValue("CumulativeAmount", CumulativeAmount);
             writer.WriteDoubleValue("FirstAmount", FirstAmount);
             writer.WriteDateValue("FirstPaymentDate", FirstPaymentDate);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType>("InstalmentType", InstalmentType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentInstalmentType>("InstalmentType", InstalmentType);
             writer.WriteIntValue("Period", Period);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit>("PeriodUnit", PeriodUnit);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.InstalmentPeriodUnit>("PeriodUnit", PeriodUnit);
             writer.WriteStringValue("PlanID", PlanID);
             writer.WriteIntValue("SequenceNumber", SequenceNumber);
             writer.WriteIntValue("TotalNbOfPayments", TotalNbOfPayments);

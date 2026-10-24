@@ -17,10 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The tokenData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetailsTokenData? TokenData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? TokenData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetailsTokenData TokenData { get; set; }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 TokenData { get; set; }
 #endif
         /// <summary>The tokenDataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tokenData", n => { TokenData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetailsTokenData>(global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetailsTokenData.CreateFromDiscriminatorValue); } },
+                { "tokenData", n => { TokenData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2.CreateFromDiscriminatorValue); } },
                 { "tokenDataType", n => { TokenDataType = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetailTokenDetailsTokenData>("tokenData", TokenData);
+            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2>("tokenData", TokenData);
             writer.WriteStringValue("tokenDataType", TokenDataType);
             writer.WriteAdditionalData(AdditionalData);
         }

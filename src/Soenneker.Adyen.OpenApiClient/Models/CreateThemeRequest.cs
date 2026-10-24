@@ -15,14 +15,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The terminal display mode. Possible values: **dark** for a dark screen background, or **light** for a light screen background.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The terminal display mode. Possible values: **dark**, **light**.</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode? Mode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode Mode { get; set; }
-#endif
         /// <summary>The name of the theme. Must be unique within the account specified in the path. Maximum 255 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +50,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode>(global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CreateThemeRequestMode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

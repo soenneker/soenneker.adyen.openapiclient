@@ -18,10 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates the hierarchical structure of the reconciliation result of the Sale to POI reconciliation.Required to present totals per value of element included in this cluster (POI Terminal, Sale Terminal, Cashier, Shift, TotalsGroupID).Possible values:* **OperatorID*** **POIID*** **SaleID*** **ShiftNumber*** **TotalsGroupID**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem?>? TotalDetails { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?>? TotalDetails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem?> TotalDetails { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?> TotalDetails { get; set; }
 #endif
         /// <summary>Filter to compute the totals.Used for the Get Totals, to request totals for a (or a combination of) particular value of the POI Terminal, Sale Terminal, Cashier, Shift, or TotalsGroupID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TotalDetails", n => { TotalDetails = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem>()?.AsList(); } },
+                { "TotalDetails", n => { TotalDetails = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem>()?.AsList(); } },
                 { "TotalFilter", n => { TotalFilter = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter>(global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.TotalDetailsItem>("TotalDetails", TotalDetails);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem>("TotalDetails", TotalDetails);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter>("TotalFilter", TotalFilter);
             writer.WriteAdditionalData(AdditionalData);
         }

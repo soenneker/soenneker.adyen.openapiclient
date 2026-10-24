@@ -26,10 +26,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of customer order open, closed or both to be sent in the response messages.Possible values:* **Both*** **Closed*** **Open**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem?>? CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataCustomerOrderReqItem?>? CustomerOrderReq { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem?> CustomerOrderReq { get; set; }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataCustomerOrderReqItem?> CustomerOrderReq { get; set; }
 #endif
         /// <summary>Identification of the Cashier or Operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,14 +103,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 #else
         public string ShiftNumber { get; set; }
 #endif
-        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Customer*** **Transaction**</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of token replacing the PAN of a payment card to identify the payment mean of the customer. It allows, for a merchant, to use a token for a transaction only or for a longer period.Possible values:* **Transaction*** **Customer**</summary>
         public global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType? TokenRequestedType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType TokenRequestedType { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData"/> and sets the default values.
         /// </summary>
@@ -137,7 +131,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "CustomerOrderID", n => { CustomerOrderID = n.GetStringValue(); } },
-                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem>()?.AsList(); } },
+                { "CustomerOrderReq", n => { CustomerOrderReq = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataCustomerOrderReqItem>()?.AsList(); } },
                 { "OperatorID", n => { OperatorID = n.GetStringValue(); } },
                 { "OperatorLanguage", n => { OperatorLanguage = n.GetStringValue(); } },
                 { "SaleReferenceID", n => { SaleReferenceID = n.GetStringValue(); } },
@@ -147,7 +141,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "SaleToPOIData", n => { SaleToPOIData = n.GetStringValue(); } },
                 { "SaleTransactionID", n => { SaleTransactionID = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType.CreateFromDiscriminatorValue); } },
                 { "ShiftNumber", n => { ShiftNumber = n.GetStringValue(); } },
-                { "TokenRequestedType", n => { TokenRequestedType = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType>(global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType.CreateFromDiscriminatorValue); } },
+                { "TokenRequestedType", n => { TokenRequestedType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType>(); } },
             };
         }
         /// <summary>
@@ -158,7 +152,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("CustomerOrderID", CustomerOrderID);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.CustomerOrderReqItem>("CustomerOrderReq", CustomerOrderReq);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataCustomerOrderReqItem>("CustomerOrderReq", CustomerOrderReq);
             writer.WriteStringValue("OperatorID", OperatorID);
             writer.WriteStringValue("OperatorLanguage", OperatorLanguage);
             writer.WriteStringValue("SaleReferenceID", SaleReferenceID);
@@ -168,7 +162,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             writer.WriteStringValue("SaleToPOIData", SaleToPOIData);
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType>("SaleTransactionID", SaleTransactionID);
             writer.WriteStringValue("ShiftNumber", ShiftNumber);
-            writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType>("TokenRequestedType", TokenRequestedType);
+            writer.WriteEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SaleDataTokenRequestedType>("TokenRequestedType", TokenRequestedType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
