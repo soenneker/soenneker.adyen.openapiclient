@@ -442,6 +442,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public string ShopperStatement { get; set; }
 #endif
         /// <summary>The tax info of the shopper</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Adyen.OpenApiClient.Models.PaymentRequestShopperTaxInfo? ShopperTaxInfo { get; set; }

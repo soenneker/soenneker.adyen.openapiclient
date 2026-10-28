@@ -10,6 +10,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     /// <summary>
     /// The tax info of the shopper
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentRequestShopperTaxInfo : IAdditionalDataHolder, IParsable
     {
