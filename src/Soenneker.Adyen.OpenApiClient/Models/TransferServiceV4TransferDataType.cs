@@ -159,6 +159,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         #pragma warning disable CS1591
         BalanceMigration,
         #pragma warning restore CS1591
+        [EnumMember(Value = "interestPayout")]
+        #pragma warning disable CS1591
+        InterestPayout,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fxSell")]
         #pragma warning disable CS1591
         FxSell,
