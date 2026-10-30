@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
-            if (parseNode.GetChildNode("credentials") is { } nullNodeCredentials && nullNodeCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credentials = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("httpMethod") is { } nullNodeHttpMethod && nullNodeHttpMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpMethod = null;
-            if (parseNode.GetChildNode("urlSuffix") is { } nullNodeUrlSuffix && nullNodeUrlSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlSuffix = null;
+            if (parseNode.GetChildNode("body") is null) { _explicitNullValueBody = default!; _explicitNullProperties?.Remove("body"); }
+            else if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("credentials") is null) { _explicitNullValueCredentials = default!; _explicitNullProperties?.Remove("credentials"); }
+            else if (parseNode.GetChildNode("credentials") is { } nullNodeCredentials && nullNodeCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credentials = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("httpMethod") is null) { _explicitNullValueHttpMethod = default!; _explicitNullProperties?.Remove("httpMethod"); }
+            else if (parseNode.GetChildNode("httpMethod") is { } nullNodeHttpMethod && nullNodeHttpMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpMethod = null;
+            if (parseNode.GetChildNode("urlSuffix") is null) { _explicitNullValueUrlSuffix = default!; _explicitNullProperties?.Remove("urlSuffix"); }
+            else if (parseNode.GetChildNode("urlSuffix") is { } nullNodeUrlSuffix && nullNodeUrlSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlSuffix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The request body that you want Adyen to forward to the third party on your behalf, in string format.Include key value pairs to specify the payment details, and use [placeholders](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#placeholders) for the values. Adyen replaces the placeholders with the payment details when making the request to the third party.When forwarding a network token, include a [condition](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#conditional-placeholders) that checks if the network token exists, and informs Adyen of which fields to send depending on the outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public string? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private string? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public string Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public string Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private string _explicitNullValueBody = default!;
 #endif
         /// <summary>Your credentials that are needed to authenticate with the third party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        public string? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
         private string? _explicitNullValueCredentials = default!;
 #nullable restore
 #else
-        public string Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        public string Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
         private string _explicitNullValueCredentials = default!;
 #endif
         /// <summary>The request headers that will be included in the request Adyen makes to the third party on your behalf. Supports the `{{credentials}}` [placeholder](https://docs.adyen.com/online-payments/tokenization/forward-payment-details#placeholders).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2 Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2 _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The HTTP method to use for the request Adyen makes on your behalf to the third party.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod? HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpMethod"); else _explicitNullProperties?.Remove("httpMethod"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod? HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; AdditionalData?.Remove("httpMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("httpMethod"); else _explicitNullProperties?.Remove("httpMethod"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod? _explicitNullValueHttpMethod = default!;
         /// <summary>The suffix that Adyen needs to append to the `baseUrl` to construct the destination URL that belongs to the third party. This is usually the endpoint name for the request, for example, **/payments**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UrlSuffix { get => _explicitNullValueUrlSuffix; set { _explicitNullValueUrlSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlSuffix"); else _explicitNullProperties?.Remove("urlSuffix"); } }
+        public string? UrlSuffix { get => _explicitNullValueUrlSuffix; set { _explicitNullValueUrlSuffix = value; AdditionalData?.Remove("urlSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlSuffix"); else _explicitNullProperties?.Remove("urlSuffix"); } }
         private string? _explicitNullValueUrlSuffix = default!;
 #nullable restore
 #else
-        public string UrlSuffix { get => _explicitNullValueUrlSuffix; set { _explicitNullValueUrlSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlSuffix"); else _explicitNullProperties?.Remove("urlSuffix"); } }
+        public string UrlSuffix { get => _explicitNullValueUrlSuffix; set { _explicitNullValueUrlSuffix = value; AdditionalData?.Remove("urlSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlSuffix"); else _explicitNullProperties?.Remove("urlSuffix"); } }
         private string _explicitNullValueUrlSuffix = default!;
 #endif
         /// <summary>
@@ -98,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "credentials", n => { Credentials = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHeadersProperty2.CreateFromDiscriminatorValue); } },
-                { "httpMethod", n => { HttpMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod>(); } },
+                { "httpMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutOutgoingForwardRequestHttpMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHttpMethod = default; _explicitNullProperties?.Remove("httpMethod"); AdditionalData["httpMethod"] = unknown; } else { HttpMethod = parsed; AdditionalData.Remove("httpMethod"); } } },
                 { "urlSuffix", n => { UrlSuffix = n.GetStringValue(); } },
             };
         }

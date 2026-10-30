@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("personalData") is { } nullNodePersonalData && nullNodePersonalData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalData = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("personalData") is null) { _explicitNullValuePersonalData = default!; _explicitNullProperties?.Remove("personalData"); }
+            else if (parseNode.GetChildNode("personalData") is { } nullNodePersonalData && nullNodePersonalData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The name of the individual.&gt;Make sure your account holder registers using the name shown on their Photo ID.  Maximum length: 80 characters  Cannot contain numbers. /n Cannot be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsName _explicitNullValueName = default!;
 #endif
         /// <summary>Personal information of the individual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsPersonalData? PersonalData { get => _explicitNullValuePersonalData; set { _explicitNullValuePersonalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalData"); else _explicitNullProperties?.Remove("personalData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsPersonalData? PersonalData { get => _explicitNullValuePersonalData; set { _explicitNullValuePersonalData = value; AdditionalData?.Remove("personalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalData"); else _explicitNullProperties?.Remove("personalData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsPersonalData? _explicitNullValuePersonalData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsPersonalData PersonalData { get => _explicitNullValuePersonalData; set { _explicitNullValuePersonalData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalData"); else _explicitNullProperties?.Remove("personalData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsPersonalData PersonalData { get => _explicitNullValuePersonalData; set { _explicitNullValuePersonalData = value; AdditionalData?.Remove("personalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalData"); else _explicitNullProperties?.Remove("personalData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6IndividualDetailsPersonalData _explicitNullValuePersonalData = default!;
 #endif
         /// <summary>

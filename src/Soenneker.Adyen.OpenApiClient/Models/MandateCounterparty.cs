@@ -18,28 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
-            if (parseNode.GetChildNode("accountIdentification") is { } nullNodeAccountIdentification && nullNodeAccountIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIdentification = null;
+            if (parseNode.GetChildNode("accountHolder") is null) { _explicitNullValueAccountHolder = default!; _explicitNullProperties?.Remove("accountHolder"); }
+            else if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("accountIdentification") is null) { _explicitNullValueAccountIdentification = default!; _explicitNullProperties?.Remove("accountIdentification"); }
+            else if (parseNode.GetChildNode("accountIdentification") is { } nullNodeAccountIdentification && nullNodeAccountIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIdentification = null;
         }
 
         /// <summary>Contains information about the owner of the counterparty bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountHolder? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountHolder _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>Contains the bank account details of the counterparty. The fields required in this object depend on the country of the bank account and the currency of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification? AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification? AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; AdditionalData?.Remove("accountIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification? _explicitNullValueAccountIdentification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; AdditionalData?.Remove("accountIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MandateBankAccountAccountIdentification _explicitNullValueAccountIdentification = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

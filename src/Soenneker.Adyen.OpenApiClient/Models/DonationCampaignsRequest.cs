@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
-            if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("locale") is null) { _explicitNullValueLocale = default!; _explicitNullProperties?.Remove("locale"); }
+            else if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
+            else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The label that is assigned to the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>Locale on the shopper interaction device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        public string? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
         private string? _explicitNullValueLocale = default!;
 #nullable restore
 #else
-        public string Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        public string Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
         private string _explicitNullValueLocale = default!;
 #endif
         /// <summary>Your merchant account identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>Required for Adyen for Platforms integrations if you are a platform model. This is your [reference](https://docs.adyen.com/api-explorer/Management/3/post/merchants/(merchantId)/stores#request-reference) (on [balance platform](https://docs.adyen.com/platforms)) or the [storeReference](https://docs.adyen.com/api-explorer/Account/latest/post/updateAccountHolder#request-accountHolderDetails-storeDetails-storeReference) (in the [classic integration](https://docs.adyen.com/classic-platforms/processing-payments/route-payment-to-store/#route-a-payment-to-a-store)) for the ecommerce or point-of-sale store that is processing the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public string? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string? _explicitNullValueStore = default!;
 #nullable restore
 #else
-        public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string _explicitNullValueStore = default!;
 #endif
         /// <summary>

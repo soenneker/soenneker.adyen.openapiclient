@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("UTMEastward") is { } nullNodeUTMEastward && nullNodeUTMEastward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMEastward = null;
-            if (parseNode.GetChildNode("UTMNorthward") is { } nullNodeUTMNorthward && nullNodeUTMNorthward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMNorthward = null;
-            if (parseNode.GetChildNode("UTMZone") is { } nullNodeUTMZone && nullNodeUTMZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMZone = null;
+            if (parseNode.GetChildNode("UTMEastward") is null) { _explicitNullValueUTMEastward = default!; _explicitNullProperties?.Remove("UTMEastward"); }
+            else if (parseNode.GetChildNode("UTMEastward") is { } nullNodeUTMEastward && nullNodeUTMEastward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMEastward = null;
+            if (parseNode.GetChildNode("UTMNorthward") is null) { _explicitNullValueUTMNorthward = default!; _explicitNullProperties?.Remove("UTMNorthward"); }
+            else if (parseNode.GetChildNode("UTMNorthward") is { } nullNodeUTMNorthward && nullNodeUTMNorthward.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMNorthward = null;
+            if (parseNode.GetChildNode("UTMZone") is null) { _explicitNullValueUTMZone = default!; _explicitNullProperties?.Remove("UTMZone"); }
+            else if (parseNode.GetChildNode("UTMZone") is { } nullNodeUTMZone && nullNodeUTMZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMZone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>X-coordinate of the Universal Transverse Mercator coordinate system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UTMEastward { get => _explicitNullValueUTMEastward; set { _explicitNullValueUTMEastward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMEastward"); else _explicitNullProperties?.Remove("UTMEastward"); } }
+        public string? UTMEastward { get => _explicitNullValueUTMEastward; set { _explicitNullValueUTMEastward = value; AdditionalData?.Remove("UTMEastward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMEastward"); else _explicitNullProperties?.Remove("UTMEastward"); } }
         private string? _explicitNullValueUTMEastward = default!;
 #nullable restore
 #else
-        public string UTMEastward { get => _explicitNullValueUTMEastward; set { _explicitNullValueUTMEastward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMEastward"); else _explicitNullProperties?.Remove("UTMEastward"); } }
+        public string UTMEastward { get => _explicitNullValueUTMEastward; set { _explicitNullValueUTMEastward = value; AdditionalData?.Remove("UTMEastward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMEastward"); else _explicitNullProperties?.Remove("UTMEastward"); } }
         private string _explicitNullValueUTMEastward = default!;
 #endif
         /// <summary>Y-coordinate of the Universal Transverse Mercator coordinate system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UTMNorthward { get => _explicitNullValueUTMNorthward; set { _explicitNullValueUTMNorthward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMNorthward"); else _explicitNullProperties?.Remove("UTMNorthward"); } }
+        public string? UTMNorthward { get => _explicitNullValueUTMNorthward; set { _explicitNullValueUTMNorthward = value; AdditionalData?.Remove("UTMNorthward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMNorthward"); else _explicitNullProperties?.Remove("UTMNorthward"); } }
         private string? _explicitNullValueUTMNorthward = default!;
 #nullable restore
 #else
-        public string UTMNorthward { get => _explicitNullValueUTMNorthward; set { _explicitNullValueUTMNorthward = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMNorthward"); else _explicitNullProperties?.Remove("UTMNorthward"); } }
+        public string UTMNorthward { get => _explicitNullValueUTMNorthward; set { _explicitNullValueUTMNorthward = value; AdditionalData?.Remove("UTMNorthward"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMNorthward"); else _explicitNullProperties?.Remove("UTMNorthward"); } }
         private string _explicitNullValueUTMNorthward = default!;
 #endif
         /// <summary>UTM grid zone combination of the longitude zone (1 to 60) and the latitude band (C to X, excluding I and O).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UTMZone { get => _explicitNullValueUTMZone; set { _explicitNullValueUTMZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMZone"); else _explicitNullProperties?.Remove("UTMZone"); } }
+        public string? UTMZone { get => _explicitNullValueUTMZone; set { _explicitNullValueUTMZone = value; AdditionalData?.Remove("UTMZone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMZone"); else _explicitNullProperties?.Remove("UTMZone"); } }
         private string? _explicitNullValueUTMZone = default!;
 #nullable restore
 #else
-        public string UTMZone { get => _explicitNullValueUTMZone; set { _explicitNullValueUTMZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMZone"); else _explicitNullProperties?.Remove("UTMZone"); } }
+        public string UTMZone { get => _explicitNullValueUTMZone; set { _explicitNullValueUTMZone = value; AdditionalData?.Remove("UTMZone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMZone"); else _explicitNullProperties?.Remove("UTMZone"); } }
         private string _explicitNullValueUTMZone = default!;
 #endif
         /// <summary>

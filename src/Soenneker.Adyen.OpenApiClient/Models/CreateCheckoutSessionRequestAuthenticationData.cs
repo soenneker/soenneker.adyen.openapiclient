@@ -18,27 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attemptAuthentication") is { } nullNodeAttemptAuthentication && nullNodeAttemptAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptAuthentication = null;
-            if (parseNode.GetChildNode("authenticationOnly") is { } nullNodeAuthenticationOnly && nullNodeAuthenticationOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationOnly = null;
-            if (parseNode.GetChildNode("threeDSRequestData") is { } nullNodeThreeDSRequestData && nullNodeThreeDSRequestData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestData = null;
+            if (parseNode.GetChildNode("attemptAuthentication") is null) { _explicitNullValueAttemptAuthentication = default!; _explicitNullProperties?.Remove("attemptAuthentication"); }
+            else if (parseNode.GetChildNode("attemptAuthentication") is { } nullNodeAttemptAuthentication && nullNodeAttemptAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptAuthentication = null;
+            if (parseNode.GetChildNode("authenticationOnly") is null) { _explicitNullValueAuthenticationOnly = default!; _explicitNullProperties?.Remove("authenticationOnly"); }
+            else if (parseNode.GetChildNode("authenticationOnly") is { } nullNodeAuthenticationOnly && nullNodeAuthenticationOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationOnly = null;
+            if (parseNode.GetChildNode("threeDSRequestData") is null) { _explicitNullValueThreeDSRequestData = default!; _explicitNullProperties?.Remove("threeDSRequestData"); }
+            else if (parseNode.GetChildNode("threeDSRequestData") is { } nullNodeThreeDSRequestData && nullNodeThreeDSRequestData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates when 3D Secure authentication should be attempted. This overrides all other rules, including [Dynamic 3D Secure settings](https://docs.adyen.com/risk-management/dynamic-3d-secure).Possible values:* **always**: Perform 3D Secure authentication.* **never**: Don&apos;t perform 3D Secure authentication. If PSD2 SCA or other national regulations require authentication, the transaction gets declined.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication? AttemptAuthentication { get => _explicitNullValueAttemptAuthentication; set { _explicitNullValueAttemptAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attemptAuthentication"); else _explicitNullProperties?.Remove("attemptAuthentication"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication? AttemptAuthentication { get => _explicitNullValueAttemptAuthentication; set { _explicitNullValueAttemptAuthentication = value; AdditionalData?.Remove("attemptAuthentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attemptAuthentication"); else _explicitNullProperties?.Remove("attemptAuthentication"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication? _explicitNullValueAttemptAuthentication = default!;
         /// <summary>Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.</summary>
-        public bool? AuthenticationOnly { get => _explicitNullValueAuthenticationOnly; set { _explicitNullValueAuthenticationOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationOnly"); else _explicitNullProperties?.Remove("authenticationOnly"); } }
+        public bool? AuthenticationOnly { get => _explicitNullValueAuthenticationOnly; set { _explicitNullValueAuthenticationOnly = value; AdditionalData?.Remove("authenticationOnly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationOnly"); else _explicitNullProperties?.Remove("authenticationOnly"); } }
         private bool? _explicitNullValueAuthenticationOnly = default!;
         /// <summary>The threeDSRequestData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData? ThreeDSRequestData { get => _explicitNullValueThreeDSRequestData; set { _explicitNullValueThreeDSRequestData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestData"); else _explicitNullProperties?.Remove("threeDSRequestData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData? ThreeDSRequestData { get => _explicitNullValueThreeDSRequestData; set { _explicitNullValueThreeDSRequestData = value; AdditionalData?.Remove("threeDSRequestData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestData"); else _explicitNullProperties?.Remove("threeDSRequestData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData? _explicitNullValueThreeDSRequestData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData ThreeDSRequestData { get => _explicitNullValueThreeDSRequestData; set { _explicitNullValueThreeDSRequestData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestData"); else _explicitNullProperties?.Remove("threeDSRequestData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData ThreeDSRequestData { get => _explicitNullValueThreeDSRequestData; set { _explicitNullValueThreeDSRequestData = value; AdditionalData?.Remove("threeDSRequestData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestData"); else _explicitNullProperties?.Remove("threeDSRequestData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData _explicitNullValueThreeDSRequestData = default!;
 #endif
         /// <summary>
@@ -67,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attemptAuthentication", n => { AttemptAuthentication = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication>(); } },
+                { "attemptAuthentication", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationDataAttemptAuthentication>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttemptAuthentication = default; _explicitNullProperties?.Remove("attemptAuthentication"); AdditionalData["attemptAuthentication"] = unknown; } else { AttemptAuthentication = parsed; AdditionalData.Remove("attemptAuthentication"); } } },
                 { "authenticationOnly", n => { AuthenticationOnly = n.GetBoolValue(); } },
                 { "threeDSRequestData", n => { ThreeDSRequestData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData>(global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestData.CreateFromDiscriminatorValue); } },
             };

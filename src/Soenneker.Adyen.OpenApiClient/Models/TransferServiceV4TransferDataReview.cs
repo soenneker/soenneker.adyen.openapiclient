@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("numberOfApprovalsRequired") is { } nullNodeNumberOfApprovalsRequired && nullNodeNumberOfApprovalsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfApprovalsRequired = null;
-            if (parseNode.GetChildNode("scaOnApproval") is { } nullNodeScaOnApproval && nullNodeScaOnApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaOnApproval = null;
+            if (parseNode.GetChildNode("numberOfApprovalsRequired") is null) { _explicitNullValueNumberOfApprovalsRequired = default!; _explicitNullProperties?.Remove("numberOfApprovalsRequired"); }
+            else if (parseNode.GetChildNode("numberOfApprovalsRequired") is { } nullNodeNumberOfApprovalsRequired && nullNodeNumberOfApprovalsRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfApprovalsRequired = null;
+            if (parseNode.GetChildNode("scaOnApproval") is null) { _explicitNullValueScaOnApproval = default!; _explicitNullProperties?.Remove("scaOnApproval"); }
+            else if (parseNode.GetChildNode("scaOnApproval") is { } nullNodeScaOnApproval && nullNodeScaOnApproval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaOnApproval = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Shows the number of [approvals](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers/approve) required to process the transfer.</summary>
-        public int? NumberOfApprovalsRequired { get => _explicitNullValueNumberOfApprovalsRequired; set { _explicitNullValueNumberOfApprovalsRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfApprovalsRequired"); else _explicitNullProperties?.Remove("numberOfApprovalsRequired"); } }
+        public int? NumberOfApprovalsRequired { get => _explicitNullValueNumberOfApprovalsRequired; set { _explicitNullValueNumberOfApprovalsRequired = value; AdditionalData?.Remove("numberOfApprovalsRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfApprovalsRequired"); else _explicitNullProperties?.Remove("numberOfApprovalsRequired"); } }
         private int? _explicitNullValueNumberOfApprovalsRequired = default!;
         /// <summary>Shows the status of the Strong Customer Authentication (SCA) process.Possible values: **required**, **notApplicable**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReviewScaOnApproval? ScaOnApproval { get => _explicitNullValueScaOnApproval; set { _explicitNullValueScaOnApproval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaOnApproval"); else _explicitNullProperties?.Remove("scaOnApproval"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReviewScaOnApproval? ScaOnApproval { get => _explicitNullValueScaOnApproval; set { _explicitNullValueScaOnApproval = value; AdditionalData?.Remove("scaOnApproval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaOnApproval"); else _explicitNullProperties?.Remove("scaOnApproval"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReviewScaOnApproval? _explicitNullValueScaOnApproval = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataReview"/> and sets the default values.
@@ -56,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "numberOfApprovalsRequired", n => { NumberOfApprovalsRequired = n.GetIntValue(); } },
-                { "scaOnApproval", n => { ScaOnApproval = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReviewScaOnApproval>(); } },
+                { "scaOnApproval", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferReviewScaOnApproval>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScaOnApproval = default; _explicitNullProperties?.Remove("scaOnApproval"); AdditionalData["scaOnApproval"] = unknown; } else { ScaOnApproval = parsed; AdditionalData.Remove("scaOnApproval"); } } },
             };
         }
         /// <summary>

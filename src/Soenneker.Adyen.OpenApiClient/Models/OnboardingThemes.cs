@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
-            if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
-            if (parseNode.GetChildNode("themes") is { } nullNodeThemes && nullNodeThemes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Themes = null;
+            if (parseNode.GetChildNode("next") is null) { _explicitNullValueNext = default!; _explicitNullProperties?.Remove("next"); }
+            else if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("previous") is null) { _explicitNullValuePrevious = default!; _explicitNullProperties?.Remove("previous"); }
+            else if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+            if (parseNode.GetChildNode("themes") is null) { _explicitNullValueThemes = default!; _explicitNullProperties?.Remove("themes"); }
+            else if (parseNode.GetChildNode("themes") is { } nullNodeThemes && nullNodeThemes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Themes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The next page. Only present if there is a next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        public string? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private string? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public string Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        public string Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private string _explicitNullValueNext = default!;
 #endif
         /// <summary>The previous page. Only present if there is a previous page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        public string? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private string? _explicitNullValuePrevious = default!;
 #nullable restore
 #else
-        public string Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        public string Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private string _explicitNullValuePrevious = default!;
 #endif
         /// <summary>List of onboarding themes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme>? Themes { get => _explicitNullValueThemes; set { _explicitNullValueThemes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themes"); else _explicitNullProperties?.Remove("themes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme>? Themes { get => _explicitNullValueThemes; set { _explicitNullValueThemes = value; AdditionalData?.Remove("themes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themes"); else _explicitNullProperties?.Remove("themes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme>? _explicitNullValueThemes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme> Themes { get => _explicitNullValueThemes; set { _explicitNullValueThemes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themes"); else _explicitNullProperties?.Remove("themes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme> Themes { get => _explicitNullValueThemes; set { _explicitNullValueThemes = value; AdditionalData?.Remove("themes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themes"); else _explicitNullProperties?.Remove("themes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.OnboardingTheme> _explicitNullValueThemes = default!;
 #endif
         /// <summary>

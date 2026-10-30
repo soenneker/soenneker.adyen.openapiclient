@@ -17,24 +17,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountCode") is { } nullNodeAccountCode && nullNodeAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCode = null;
-            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("accountCode") is null) { _explicitNullValueAccountCode = default!; _explicitNullProperties?.Remove("accountCode"); }
+            else if (parseNode.GetChildNode("accountCode") is { } nullNodeAccountCode && nullNodeAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCode = null;
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
         }
 
         /// <summary>The account for which to retrieve the transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        public string? AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; AdditionalData?.Remove("accountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
         private string? _explicitNullValueAccountCode = default!;
 #nullable restore
 #else
-        public string AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        public string AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; AdditionalData?.Remove("accountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
         private string _explicitNullValueAccountCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The page of transactions to retrieve.Each page lists fifty (50) transactions.  The most recent transactions are included on page 1.</summary>
-        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private int? _explicitNullValuePage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionListForAccount"/> and sets the default values.

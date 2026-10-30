@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("number") is null) { _explicitNullValueNumber = default!; _explicitNullProperties?.Remove("number"); }
+            else if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The full phone number provided as a single string. For example, **&quot;0031 6 11 22 33 44&quot;**, **&quot;+316/1122-3344&quot;**,  or **&quot;(0031) 611223344&quot;**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string? _explicitNullValueNumber = default!;
 #nullable restore
 #else
-        public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string _explicitNullValueNumber = default!;
 #endif
         /// <summary>Type of phone number.Possible values: **Landline**, **Mobile**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AuthenticationPhone"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PhoneType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

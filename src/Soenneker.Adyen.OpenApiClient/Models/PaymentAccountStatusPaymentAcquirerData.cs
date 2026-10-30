@@ -18,35 +18,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
-            if (parseNode.GetChildNode("AcquirerPOIID") is { } nullNodeAcquirerPOIID && nullNodeAcquirerPOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerPOIID = null;
-            if (parseNode.GetChildNode("AcquirerTransactionID") is { } nullNodeAcquirerTransactionID && nullNodeAcquirerTransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerTransactionID = null;
-            if (parseNode.GetChildNode("ApprovalCode") is { } nullNodeApprovalCode && nullNodeApprovalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalCode = null;
-            if (parseNode.GetChildNode("HostReconciliationID") is { } nullNodeHostReconciliationID && nullNodeHostReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostReconciliationID = null;
-            if (parseNode.GetChildNode("MerchantID") is { } nullNodeMerchantID && nullNodeMerchantID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantID = null;
+            if (parseNode.GetChildNode("AcquirerID") is null) { _explicitNullValueAcquirerID = default!; _explicitNullProperties?.Remove("AcquirerID"); }
+            else if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
+            if (parseNode.GetChildNode("AcquirerPOIID") is null) { _explicitNullValueAcquirerPOIID = default!; _explicitNullProperties?.Remove("AcquirerPOIID"); }
+            else if (parseNode.GetChildNode("AcquirerPOIID") is { } nullNodeAcquirerPOIID && nullNodeAcquirerPOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerPOIID = null;
+            if (parseNode.GetChildNode("AcquirerTransactionID") is null) { _explicitNullValueAcquirerTransactionID = default!; _explicitNullProperties?.Remove("AcquirerTransactionID"); }
+            else if (parseNode.GetChildNode("AcquirerTransactionID") is { } nullNodeAcquirerTransactionID && nullNodeAcquirerTransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerTransactionID = null;
+            if (parseNode.GetChildNode("ApprovalCode") is null) { _explicitNullValueApprovalCode = default!; _explicitNullProperties?.Remove("ApprovalCode"); }
+            else if (parseNode.GetChildNode("ApprovalCode") is { } nullNodeApprovalCode && nullNodeApprovalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalCode = null;
+            if (parseNode.GetChildNode("HostReconciliationID") is null) { _explicitNullValueHostReconciliationID = default!; _explicitNullProperties?.Remove("HostReconciliationID"); }
+            else if (parseNode.GetChildNode("HostReconciliationID") is { } nullNodeHostReconciliationID && nullNodeHostReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostReconciliationID = null;
+            if (parseNode.GetChildNode("MerchantID") is null) { _explicitNullValueMerchantID = default!; _explicitNullProperties?.Remove("MerchantID"); }
+            else if (parseNode.GetChildNode("MerchantID") is { } nullNodeMerchantID && nullNodeMerchantID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantID = null;
         }
 
         /// <summary>Identification of the Acquirer.Identification of the Acquirer when the POI System is multi-acquirer.</summary>
-        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
         private int? _explicitNullValueAcquirerID = default!;
         /// <summary>Identification of the POI for the payment Acquirer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcquirerPOIID { get => _explicitNullValueAcquirerPOIID; set { _explicitNullValueAcquirerPOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerPOIID"); else _explicitNullProperties?.Remove("AcquirerPOIID"); } }
+        public string? AcquirerPOIID { get => _explicitNullValueAcquirerPOIID; set { _explicitNullValueAcquirerPOIID = value; AdditionalData?.Remove("AcquirerPOIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerPOIID"); else _explicitNullProperties?.Remove("AcquirerPOIID"); } }
         private string? _explicitNullValueAcquirerPOIID = default!;
 #nullable restore
 #else
-        public string AcquirerPOIID { get => _explicitNullValueAcquirerPOIID; set { _explicitNullValueAcquirerPOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerPOIID"); else _explicitNullProperties?.Remove("AcquirerPOIID"); } }
+        public string AcquirerPOIID { get => _explicitNullValueAcquirerPOIID; set { _explicitNullValueAcquirerPOIID = value; AdditionalData?.Remove("AcquirerPOIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerPOIID"); else _explicitNullProperties?.Remove("AcquirerPOIID"); } }
         private string _explicitNullValueAcquirerPOIID = default!;
 #endif
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? AcquirerTransactionID { get => _explicitNullValueAcquirerTransactionID; set { _explicitNullValueAcquirerTransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerTransactionID"); else _explicitNullProperties?.Remove("AcquirerTransactionID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? AcquirerTransactionID { get => _explicitNullValueAcquirerTransactionID; set { _explicitNullValueAcquirerTransactionID = value; AdditionalData?.Remove("AcquirerTransactionID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerTransactionID"); else _explicitNullProperties?.Remove("AcquirerTransactionID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValueAcquirerTransactionID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType AcquirerTransactionID { get => _explicitNullValueAcquirerTransactionID; set { _explicitNullValueAcquirerTransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerTransactionID"); else _explicitNullProperties?.Remove("AcquirerTransactionID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType AcquirerTransactionID { get => _explicitNullValueAcquirerTransactionID; set { _explicitNullValueAcquirerTransactionID = value; AdditionalData?.Remove("AcquirerTransactionID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerTransactionID"); else _explicitNullProperties?.Remove("AcquirerTransactionID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValueAcquirerTransactionID = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,31 +60,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Code assigned to a transaction approval by the Acquirer.If available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApprovalCode { get => _explicitNullValueApprovalCode; set { _explicitNullValueApprovalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApprovalCode"); else _explicitNullProperties?.Remove("ApprovalCode"); } }
+        public string? ApprovalCode { get => _explicitNullValueApprovalCode; set { _explicitNullValueApprovalCode = value; AdditionalData?.Remove("ApprovalCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApprovalCode"); else _explicitNullProperties?.Remove("ApprovalCode"); } }
         private string? _explicitNullValueApprovalCode = default!;
 #nullable restore
 #else
-        public string ApprovalCode { get => _explicitNullValueApprovalCode; set { _explicitNullValueApprovalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApprovalCode"); else _explicitNullProperties?.Remove("ApprovalCode"); } }
+        public string ApprovalCode { get => _explicitNullValueApprovalCode; set { _explicitNullValueApprovalCode = value; AdditionalData?.Remove("ApprovalCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ApprovalCode"); else _explicitNullProperties?.Remove("ApprovalCode"); } }
         private string _explicitNullValueApprovalCode = default!;
 #endif
         /// <summary>Identifier of a reconciliation period with a payment or loyalty host. Allows the assignment of a transaction to the Acquirer reconciliation (or batch).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostReconciliationID { get => _explicitNullValueHostReconciliationID; set { _explicitNullValueHostReconciliationID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostReconciliationID"); else _explicitNullProperties?.Remove("HostReconciliationID"); } }
+        public string? HostReconciliationID { get => _explicitNullValueHostReconciliationID; set { _explicitNullValueHostReconciliationID = value; AdditionalData?.Remove("HostReconciliationID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostReconciliationID"); else _explicitNullProperties?.Remove("HostReconciliationID"); } }
         private string? _explicitNullValueHostReconciliationID = default!;
 #nullable restore
 #else
-        public string HostReconciliationID { get => _explicitNullValueHostReconciliationID; set { _explicitNullValueHostReconciliationID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostReconciliationID"); else _explicitNullProperties?.Remove("HostReconciliationID"); } }
+        public string HostReconciliationID { get => _explicitNullValueHostReconciliationID; set { _explicitNullValueHostReconciliationID = value; AdditionalData?.Remove("HostReconciliationID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HostReconciliationID"); else _explicitNullProperties?.Remove("HostReconciliationID"); } }
         private string _explicitNullValueHostReconciliationID = default!;
 #endif
         /// <summary>Identification of the Merchant for the Acquirer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantID { get => _explicitNullValueMerchantID; set { _explicitNullValueMerchantID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantID"); else _explicitNullProperties?.Remove("MerchantID"); } }
+        public string? MerchantID { get => _explicitNullValueMerchantID; set { _explicitNullValueMerchantID = value; AdditionalData?.Remove("MerchantID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantID"); else _explicitNullProperties?.Remove("MerchantID"); } }
         private string? _explicitNullValueMerchantID = default!;
 #nullable restore
 #else
-        public string MerchantID { get => _explicitNullValueMerchantID; set { _explicitNullValueMerchantID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantID"); else _explicitNullProperties?.Remove("MerchantID"); } }
+        public string MerchantID { get => _explicitNullValueMerchantID; set { _explicitNullValueMerchantID = value; AdditionalData?.Remove("MerchantID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MerchantID"); else _explicitNullProperties?.Remove("MerchantID"); } }
         private string _explicitNullValueMerchantID = default!;
 #endif
         /// <summary>

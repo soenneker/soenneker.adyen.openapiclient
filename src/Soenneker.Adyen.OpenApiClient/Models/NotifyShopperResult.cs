@@ -17,13 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("displayedReference") is { } nullNodeDisplayedReference && nullNodeDisplayedReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayedReference = null;
-            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
-            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
-            if (parseNode.GetChildNode("resultCode") is { } nullNodeResultCode && nullNodeResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCode = null;
-            if (parseNode.GetChildNode("shopperNotificationReference") is { } nullNodeShopperNotificationReference && nullNodeShopperNotificationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperNotificationReference = null;
-            if (parseNode.GetChildNode("storedPaymentMethodId") is { } nullNodeStoredPaymentMethodId && nullNodeStoredPaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredPaymentMethodId = null;
+            if (parseNode.GetChildNode("displayedReference") is null) { _explicitNullValueDisplayedReference = default!; _explicitNullProperties?.Remove("displayedReference"); }
+            else if (parseNode.GetChildNode("displayedReference") is { } nullNodeDisplayedReference && nullNodeDisplayedReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayedReference = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("pspReference") is null) { _explicitNullValuePspReference = default!; _explicitNullProperties?.Remove("pspReference"); }
+            else if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("resultCode") is null) { _explicitNullValueResultCode = default!; _explicitNullProperties?.Remove("resultCode"); }
+            else if (parseNode.GetChildNode("resultCode") is { } nullNodeResultCode && nullNodeResultCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCode = null;
+            if (parseNode.GetChildNode("shopperNotificationReference") is null) { _explicitNullValueShopperNotificationReference = default!; _explicitNullProperties?.Remove("shopperNotificationReference"); }
+            else if (parseNode.GetChildNode("shopperNotificationReference") is { } nullNodeShopperNotificationReference && nullNodeShopperNotificationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperNotificationReference = null;
+            if (parseNode.GetChildNode("storedPaymentMethodId") is null) { _explicitNullValueStoredPaymentMethodId = default!; _explicitNullProperties?.Remove("storedPaymentMethodId"); }
+            else if (parseNode.GetChildNode("storedPaymentMethodId") is { } nullNodeStoredPaymentMethodId && nullNodeStoredPaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredPaymentMethodId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Reference of Pre-debit notification that is displayed to the shopper</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayedReference { get => _explicitNullValueDisplayedReference; set { _explicitNullValueDisplayedReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayedReference"); else _explicitNullProperties?.Remove("displayedReference"); } }
+        public string? DisplayedReference { get => _explicitNullValueDisplayedReference; set { _explicitNullValueDisplayedReference = value; AdditionalData?.Remove("displayedReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayedReference"); else _explicitNullProperties?.Remove("displayedReference"); } }
         private string? _explicitNullValueDisplayedReference = default!;
 #nullable restore
 #else
-        public string DisplayedReference { get => _explicitNullValueDisplayedReference; set { _explicitNullValueDisplayedReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayedReference"); else _explicitNullProperties?.Remove("displayedReference"); } }
+        public string DisplayedReference { get => _explicitNullValueDisplayedReference; set { _explicitNullValueDisplayedReference = value; AdditionalData?.Remove("displayedReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayedReference"); else _explicitNullProperties?.Remove("displayedReference"); } }
         private string _explicitNullValueDisplayedReference = default!;
 #endif
         /// <summary>A simple description of the `resultCode`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The unique reference that is associated with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>Reference of Pre-debit notification sent in my the merchant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The code indicating the status of notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        public string? ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; AdditionalData?.Remove("resultCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
         private string? _explicitNullValueResultCode = default!;
 #nullable restore
 #else
-        public string ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
+        public string ResultCode { get => _explicitNullValueResultCode; set { _explicitNullValueResultCode = value; AdditionalData?.Remove("resultCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCode"); else _explicitNullProperties?.Remove("resultCode"); } }
         private string _explicitNullValueResultCode = default!;
 #endif
         /// <summary>The unique reference for the request sent downstream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopperNotificationReference { get => _explicitNullValueShopperNotificationReference; set { _explicitNullValueShopperNotificationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperNotificationReference"); else _explicitNullProperties?.Remove("shopperNotificationReference"); } }
+        public string? ShopperNotificationReference { get => _explicitNullValueShopperNotificationReference; set { _explicitNullValueShopperNotificationReference = value; AdditionalData?.Remove("shopperNotificationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperNotificationReference"); else _explicitNullProperties?.Remove("shopperNotificationReference"); } }
         private string? _explicitNullValueShopperNotificationReference = default!;
 #nullable restore
 #else
-        public string ShopperNotificationReference { get => _explicitNullValueShopperNotificationReference; set { _explicitNullValueShopperNotificationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperNotificationReference"); else _explicitNullProperties?.Remove("shopperNotificationReference"); } }
+        public string ShopperNotificationReference { get => _explicitNullValueShopperNotificationReference; set { _explicitNullValueShopperNotificationReference = value; AdditionalData?.Remove("shopperNotificationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperNotificationReference"); else _explicitNullProperties?.Remove("shopperNotificationReference"); } }
         private string _explicitNullValueShopperNotificationReference = default!;
 #endif
         /// <summary>This is the recurringDetailReference returned in the response when token was created</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
+        public string? StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; AdditionalData?.Remove("storedPaymentMethodId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
         private string? _explicitNullValueStoredPaymentMethodId = default!;
 #nullable restore
 #else
-        public string StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
+        public string StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; AdditionalData?.Remove("storedPaymentMethodId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
         private string _explicitNullValueStoredPaymentMethodId = default!;
 #endif
         /// <summary>

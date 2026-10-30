@@ -18,27 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
-            if (parseNode.GetChildNode("InfoQualify") is { } nullNodeInfoQualify && nullNodeInfoQualify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InfoQualify = null;
-            if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("Device") is null) { _explicitNullValueDevice = default!; _explicitNullProperties?.Remove("Device"); }
+            else if (parseNode.GetChildNode("Device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("InfoQualify") is null) { _explicitNullValueInfoQualify = default!; _explicitNullProperties?.Remove("InfoQualify"); }
+            else if (parseNode.GetChildNode("InfoQualify") is { } nullNodeInfoQualify && nullNodeInfoQualify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InfoQualify = null;
+            if (parseNode.GetChildNode("Response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("Response"); }
+            else if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values:* **CashierDisplay*** **CustomerDisplay*** **CashierInput*** **CustomerInput**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputResultDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Device"); else _explicitNullProperties?.Remove("Device"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputResultDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("Device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Device"); else _explicitNullProperties?.Remove("Device"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputResultDevice? _explicitNullValueDevice = default!;
         /// <summary>Possible values:* **Status*** **Error*** **Display*** **Sound*** **Input*** **POIReplication*** **CustomerAssistance*** **Receipt*** **Document*** **Voucher**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputResultInfoQualify? InfoQualify { get => _explicitNullValueInfoQualify; set { _explicitNullValueInfoQualify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InfoQualify"); else _explicitNullProperties?.Remove("InfoQualify"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputResultInfoQualify? InfoQualify { get => _explicitNullValueInfoQualify; set { _explicitNullValueInfoQualify = value; AdditionalData?.Remove("InfoQualify"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InfoQualify"); else _explicitNullProperties?.Remove("InfoQualify"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputResultInfoQualify? _explicitNullValueInfoQualify = default!;
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue _explicitNullValueResponse = default!;
 #endif
         /// <summary>
@@ -66,8 +69,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "Device", n => { Device = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputResultDevice>(); } },
-                { "InfoQualify", n => { InfoQualify = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputResultInfoQualify>(); } },
+                { "Device", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputResultDevice>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDevice = default; _explicitNullProperties?.Remove("Device"); AdditionalData["Device"] = unknown; } else { Device = parsed; AdditionalData.Remove("Device"); } } },
+                { "InfoQualify", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputResultInfoQualify>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInfoQualify = default; _explicitNullProperties?.Remove("InfoQualify"); AdditionalData["InfoQualify"] = unknown; } else { InfoQualify = parsed; AdditionalData.Remove("InfoQualify"); } } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
             };
         }

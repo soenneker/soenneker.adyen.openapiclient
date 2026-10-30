@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("businessLines") is { } nullNodeBusinessLinesProp && nullNodeBusinessLinesProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessLinesProp = null;
+            if (parseNode.GetChildNode("businessLines") is null) { _explicitNullValueBusinessLinesProp = default!; _explicitNullProperties?.Remove("businessLines"); }
+            else if (parseNode.GetChildNode("businessLines") is { } nullNodeBusinessLinesProp && nullNodeBusinessLinesProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessLinesProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of business lines.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLine>? BusinessLinesProp { get => _explicitNullValueBusinessLinesProp; set { _explicitNullValueBusinessLinesProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLines"); else _explicitNullProperties?.Remove("businessLines"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLine>? BusinessLinesProp { get => _explicitNullValueBusinessLinesProp; set { _explicitNullValueBusinessLinesProp = value; AdditionalData?.Remove("businessLines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLines"); else _explicitNullProperties?.Remove("businessLines"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLine>? _explicitNullValueBusinessLinesProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLine> BusinessLinesProp { get => _explicitNullValueBusinessLinesProp; set { _explicitNullValueBusinessLinesProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLines"); else _explicitNullProperties?.Remove("businessLines"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLine> BusinessLinesProp { get => _explicitNullValueBusinessLinesProp; set { _explicitNullValueBusinessLinesProp = value; AdditionalData?.Remove("businessLines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLines"); else _explicitNullProperties?.Remove("businessLines"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLine> _explicitNullValueBusinessLinesProp = default!;
 #endif
         /// <summary>

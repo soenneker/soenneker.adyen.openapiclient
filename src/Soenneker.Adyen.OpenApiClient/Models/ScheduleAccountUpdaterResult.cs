@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("pspReference") is null) { _explicitNullValuePspReference = default!; _explicitNullProperties?.Remove("pspReference"); }
+            else if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Adyen&apos;s 16-character unique reference associated with the transaction. This value is globally unique; quote it when communicating with us about this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>The result of scheduling an Account Updater. If scheduling was successful, this field returns **Success**; otherwise it contains the error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public string? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private string? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public string Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public string Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private string _explicitNullValueResult = default!;
 #endif
         /// <summary>

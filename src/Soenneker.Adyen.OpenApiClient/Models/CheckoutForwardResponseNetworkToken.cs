@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("swapped") is { } nullNodeSwapped && nullNodeSwapped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Swapped = null;
+            if (parseNode.GetChildNode("swapped") is null) { _explicitNullValueSwapped = default!; _explicitNullProperties?.Remove("swapped"); }
+            else if (parseNode.GetChildNode("swapped") is { } nullNodeSwapped && nullNodeSwapped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Swapped = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether a network token was used in the forwarded request. When `true`, the Primary Account Number (PAN) was successfully swapped for a network token. When `false`, the request fell back to the PAN.</summary>
-        public bool? Swapped { get => _explicitNullValueSwapped; set { _explicitNullValueSwapped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swapped"); else _explicitNullProperties?.Remove("swapped"); } }
+        public bool? Swapped { get => _explicitNullValueSwapped; set { _explicitNullValueSwapped = value; AdditionalData?.Remove("swapped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swapped"); else _explicitNullProperties?.Remove("swapped"); } }
         private bool? _explicitNullValueSwapped = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardResponseNetworkToken"/> and sets the default values.

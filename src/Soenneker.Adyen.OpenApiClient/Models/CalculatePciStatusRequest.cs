@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additionalSalesChannels") is { } nullNodeAdditionalSalesChannels && nullNodeAdditionalSalesChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSalesChannels = null;
+            if (parseNode.GetChildNode("additionalSalesChannels") is null) { _explicitNullValueAdditionalSalesChannels = default!; _explicitNullProperties?.Remove("additionalSalesChannels"); }
+            else if (parseNode.GetChildNode("additionalSalesChannels") is { } nullNodeAdditionalSalesChannels && nullNodeAdditionalSalesChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSalesChannels = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An array of additional sales channels to generate PCI questionnaires. Include the relevant sales channels if you need your user to sign PCI questionnaires. Not required if you [create stores](https://docs.adyen.com/platforms) and [add payment methods](https://docs.adyen.com/adyen-for-platforms-model) before you generate the questionnaires.Possible values:*  **eCommerce***  **pos***  **ecomMoto***  **posMoto**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?>? AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?>? AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; AdditionalData?.Remove("additionalSalesChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?>? _explicitNullValueAdditionalSalesChannels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?> AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?> AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; AdditionalData?.Remove("additionalSalesChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusRequestAdditionalSalesChannelsItem?> _explicitNullValueAdditionalSalesChannels = default!;
 #endif
         /// <summary>

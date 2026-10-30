@@ -17,23 +17,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("kycCheckCode") is { } nullNodeKycCheckCode && nullNodeKycCheckCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheckCode = null;
-            if (parseNode.GetChildNode("kycCheckDescription") is { } nullNodeKycCheckDescription && nullNodeKycCheckDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheckDescription = null;
+            if (parseNode.GetChildNode("kycCheckCode") is null) { _explicitNullValueKycCheckCode = default!; _explicitNullProperties?.Remove("kycCheckCode"); }
+            else if (parseNode.GetChildNode("kycCheckCode") is { } nullNodeKycCheckCode && nullNodeKycCheckCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheckCode = null;
+            if (parseNode.GetChildNode("kycCheckDescription") is null) { _explicitNullValueKycCheckDescription = default!; _explicitNullProperties?.Remove("kycCheckDescription"); }
+            else if (parseNode.GetChildNode("kycCheckDescription") is { } nullNodeKycCheckDescription && nullNodeKycCheckDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheckDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code of the check. For possible values, refer to [Verification codes](https://docs.adyen.com/classic-platforms/verification-process/verification-codes).</summary>
-        public int? KycCheckCode { get => _explicitNullValueKycCheckCode; set { _explicitNullValueKycCheckCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckCode"); else _explicitNullProperties?.Remove("kycCheckCode"); } }
+        public int? KycCheckCode { get => _explicitNullValueKycCheckCode; set { _explicitNullValueKycCheckCode = value; AdditionalData?.Remove("kycCheckCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckCode"); else _explicitNullProperties?.Remove("kycCheckCode"); } }
         private int? _explicitNullValueKycCheckCode = default!;
         /// <summary>A description of the check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KycCheckDescription { get => _explicitNullValueKycCheckDescription; set { _explicitNullValueKycCheckDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckDescription"); else _explicitNullProperties?.Remove("kycCheckDescription"); } }
+        public string? KycCheckDescription { get => _explicitNullValueKycCheckDescription; set { _explicitNullValueKycCheckDescription = value; AdditionalData?.Remove("kycCheckDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckDescription"); else _explicitNullProperties?.Remove("kycCheckDescription"); } }
         private string? _explicitNullValueKycCheckDescription = default!;
 #nullable restore
 #else
-        public string KycCheckDescription { get => _explicitNullValueKycCheckDescription; set { _explicitNullValueKycCheckDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckDescription"); else _explicitNullProperties?.Remove("kycCheckDescription"); } }
+        public string KycCheckDescription { get => _explicitNullValueKycCheckDescription; set { _explicitNullValueKycCheckDescription = value; AdditionalData?.Remove("kycCheckDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckDescription"); else _explicitNullProperties?.Remove("kycCheckDescription"); } }
         private string _explicitNullValueKycCheckDescription = default!;
 #endif
         /// <summary>

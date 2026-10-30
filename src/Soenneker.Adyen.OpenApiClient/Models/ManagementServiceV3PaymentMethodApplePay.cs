@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of merchant domains.For more information, see [Apple Pay documentation](https://docs.adyen.com/payment-methods/apple-pay/web-drop-in?tab=adyen-certificate-live_1#going-live).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string> _explicitNullValueDomains = default!;
 #endif
         /// <summary>

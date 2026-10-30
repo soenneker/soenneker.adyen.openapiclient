@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ServiceIdentification") is { } nullNodeServiceIdentification && nullNodeServiceIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceIdentification = null;
+            if (parseNode.GetChildNode("ServiceIdentification") is null) { _explicitNullValueServiceIdentification = default!; _explicitNullProperties?.Remove("ServiceIdentification"); }
+            else if (parseNode.GetChildNode("ServiceIdentification") is { } nullNodeServiceIdentification && nullNodeServiceIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceIdentification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of the administrative service to process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceIdentification { get => _explicitNullValueServiceIdentification; set { _explicitNullValueServiceIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceIdentification"); else _explicitNullProperties?.Remove("ServiceIdentification"); } }
+        public string? ServiceIdentification { get => _explicitNullValueServiceIdentification; set { _explicitNullValueServiceIdentification = value; AdditionalData?.Remove("ServiceIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceIdentification"); else _explicitNullProperties?.Remove("ServiceIdentification"); } }
         private string? _explicitNullValueServiceIdentification = default!;
 #nullable restore
 #else
-        public string ServiceIdentification { get => _explicitNullValueServiceIdentification; set { _explicitNullValueServiceIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceIdentification"); else _explicitNullProperties?.Remove("ServiceIdentification"); } }
+        public string ServiceIdentification { get => _explicitNullValueServiceIdentification; set { _explicitNullValueServiceIdentification = value; AdditionalData?.Remove("ServiceIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceIdentification"); else _explicitNullProperties?.Remove("ServiceIdentification"); } }
         private string _explicitNullValueServiceIdentification = default!;
 #endif
         /// <summary>

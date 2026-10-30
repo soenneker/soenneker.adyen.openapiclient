@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("iban") is { } nullNodeIban && nullNodeIban.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iban = null;
-            if (parseNode.GetChildNode("ownerName") is { } nullNodeOwnerName && nullNodeOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerName = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("iban") is null) { _explicitNullValueIban = default!; _explicitNullProperties?.Remove("iban"); }
+            else if (parseNode.GetChildNode("iban") is { } nullNodeIban && nullNodeIban.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Iban = null;
+            if (parseNode.GetChildNode("ownerName") is null) { _explicitNullValueOwnerName = default!; _explicitNullProperties?.Remove("ownerName"); }
+            else if (parseNode.GetChildNode("ownerName") is { } nullNodeOwnerName && nullNodeOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The address of the bank account owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>The international bank account number as defined in the [ISO-13616](https://www.iso.org/standard/81090.html) standard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        public string? Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; AdditionalData?.Remove("iban"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
         private string? _explicitNullValueIban = default!;
 #nullable restore
 #else
-        public string Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
+        public string Iban { get => _explicitNullValueIban; set { _explicitNullValueIban = value; AdditionalData?.Remove("iban"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iban"); else _explicitNullProperties?.Remove("iban"); } }
         private string _explicitNullValueIban = default!;
 #endif
         /// <summary>The name of the bank account owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoOwnerName? OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoOwnerName? OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; AdditionalData?.Remove("ownerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoOwnerName? _explicitNullValueOwnerName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoOwnerName OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoOwnerName OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; AdditionalData?.Remove("ownerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownerName"); else _explicitNullProperties?.Remove("ownerName"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankAccountInfoOwnerName _explicitNullValueOwnerName = default!;
 #endif
         /// <summary>

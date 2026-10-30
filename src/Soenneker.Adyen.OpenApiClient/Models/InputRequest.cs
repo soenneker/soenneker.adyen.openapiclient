@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
-            if (parseNode.GetChildNode("InputData") is { } nullNodeInputData && nullNodeInputData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputData = null;
+            if (parseNode.GetChildNode("DisplayOutput") is null) { _explicitNullValueDisplayOutput = default!; _explicitNullProperties?.Remove("DisplayOutput"); }
+            else if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
+            if (parseNode.GetChildNode("InputData") is null) { _explicitNullValueInputData = default!; _explicitNullProperties?.Remove("InputData"); }
+            else if (parseNode.GetChildNode("InputData") is { } nullNodeInputData && nullNodeInputData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information to display and the way to process the display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; AdditionalData?.Remove("DisplayOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput? _explicitNullValueDisplayOutput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; AdditionalData?.Remove("DisplayOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputRequestDisplayOutput _explicitNullValueDisplayOutput = default!;
 #endif
         /// <summary>Information related to an Input request. It conveys the target input logical device, the type of input command, and possible minimum and maximum length of the input. In addition, if the requestor might require to receive an Event Notification if a card is inserted in a card reader, with the `NotifyCardInputFlag`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData? InputData { get => _explicitNullValueInputData; set { _explicitNullValueInputData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputData"); else _explicitNullProperties?.Remove("InputData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData? InputData { get => _explicitNullValueInputData; set { _explicitNullValueInputData = value; AdditionalData?.Remove("InputData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputData"); else _explicitNullProperties?.Remove("InputData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData? _explicitNullValueInputData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData InputData { get => _explicitNullValueInputData; set { _explicitNullValueInputData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputData"); else _explicitNullProperties?.Remove("InputData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData InputData { get => _explicitNullValueInputData; set { _explicitNullValueInputData = value; AdditionalData?.Remove("InputData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("InputData"); else _explicitNullProperties?.Remove("InputData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputRequestInputData _explicitNullValueInputData = default!;
 #endif
         /// <summary>

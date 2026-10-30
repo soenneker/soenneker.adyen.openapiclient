@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
-            if (parseNode.GetChildNode("grantAccountId") is { } nullNodeGrantAccountId && nullNodeGrantAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantAccountId = null;
-            if (parseNode.GetChildNode("grantOfferId") is { } nullNodeGrantOfferId && nullNodeGrantOfferId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantOfferId = null;
+            if (parseNode.GetChildNode("counterparty") is null) { _explicitNullValueCounterparty = default!; _explicitNullProperties?.Remove("counterparty"); }
+            else if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("grantAccountId") is null) { _explicitNullValueGrantAccountId = default!; _explicitNullProperties?.Remove("grantAccountId"); }
+            else if (parseNode.GetChildNode("grantAccountId") is { } nullNodeGrantAccountId && nullNodeGrantAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantAccountId = null;
+            if (parseNode.GetChildNode("grantOfferId") is null) { _explicitNullValueGrantOfferId = default!; _explicitNullProperties?.Remove("grantOfferId"); }
+            else if (parseNode.GetChildNode("grantOfferId") is { } nullNodeGrantOfferId && nullNodeGrantOfferId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantOfferId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An object containing the details of the receiving party of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrantInfoCounterparty _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>The identifier of the grant account used for the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrantAccountId { get => _explicitNullValueGrantAccountId; set { _explicitNullValueGrantAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantAccountId"); else _explicitNullProperties?.Remove("grantAccountId"); } }
+        public string? GrantAccountId { get => _explicitNullValueGrantAccountId; set { _explicitNullValueGrantAccountId = value; AdditionalData?.Remove("grantAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantAccountId"); else _explicitNullProperties?.Remove("grantAccountId"); } }
         private string? _explicitNullValueGrantAccountId = default!;
 #nullable restore
 #else
-        public string GrantAccountId { get => _explicitNullValueGrantAccountId; set { _explicitNullValueGrantAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantAccountId"); else _explicitNullProperties?.Remove("grantAccountId"); } }
+        public string GrantAccountId { get => _explicitNullValueGrantAccountId; set { _explicitNullValueGrantAccountId = value; AdditionalData?.Remove("grantAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantAccountId"); else _explicitNullProperties?.Remove("grantAccountId"); } }
         private string _explicitNullValueGrantAccountId = default!;
 #endif
         /// <summary>The identifier of the grant offer that has been selected and from which the grant details will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrantOfferId { get => _explicitNullValueGrantOfferId; set { _explicitNullValueGrantOfferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOfferId"); else _explicitNullProperties?.Remove("grantOfferId"); } }
+        public string? GrantOfferId { get => _explicitNullValueGrantOfferId; set { _explicitNullValueGrantOfferId = value; AdditionalData?.Remove("grantOfferId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOfferId"); else _explicitNullProperties?.Remove("grantOfferId"); } }
         private string? _explicitNullValueGrantOfferId = default!;
 #nullable restore
 #else
-        public string GrantOfferId { get => _explicitNullValueGrantOfferId; set { _explicitNullValueGrantOfferId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOfferId"); else _explicitNullProperties?.Remove("grantOfferId"); } }
+        public string GrantOfferId { get => _explicitNullValueGrantOfferId; set { _explicitNullValueGrantOfferId = value; AdditionalData?.Remove("grantOfferId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOfferId"); else _explicitNullProperties?.Remove("grantOfferId"); } }
         private string _explicitNullValueGrantOfferId = default!;
 #endif
         /// <summary>

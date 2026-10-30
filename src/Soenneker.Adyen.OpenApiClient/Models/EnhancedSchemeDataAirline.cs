@@ -18,19 +18,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agency") is { } nullNodeAgency && nullNodeAgency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agency = null;
-            if (parseNode.GetChildNode("boardingFee") is { } nullNodeBoardingFee && nullNodeBoardingFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardingFee = null;
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("computerizedReservationSystem") is { } nullNodeComputerizedReservationSystem && nullNodeComputerizedReservationSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputerizedReservationSystem = null;
-            if (parseNode.GetChildNode("customerReferenceNumber") is { } nullNodeCustomerReferenceNumber && nullNodeCustomerReferenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerReferenceNumber = null;
-            if (parseNode.GetChildNode("designatorCode") is { } nullNodeDesignatorCode && nullNodeDesignatorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesignatorCode = null;
-            if (parseNode.GetChildNode("documentType") is { } nullNodeDocumentType && nullNodeDocumentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentType = null;
-            if (parseNode.GetChildNode("flightDate") is { } nullNodeFlightDate && nullNodeFlightDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlightDate = null;
-            if (parseNode.GetChildNode("legs") is { } nullNodeLegs && nullNodeLegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legs = null;
-            if (parseNode.GetChildNode("passengerName") is { } nullNodePassengerName && nullNodePassengerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PassengerName = null;
-            if (parseNode.GetChildNode("passengers") is { } nullNodePassengers && nullNodePassengers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passengers = null;
-            if (parseNode.GetChildNode("ticket") is { } nullNodeTicket && nullNodeTicket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ticket = null;
-            if (parseNode.GetChildNode("travelAgency") is { } nullNodeTravelAgency && nullNodeTravelAgency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TravelAgency = null;
+            if (parseNode.GetChildNode("agency") is null) { _explicitNullValueAgency = default!; _explicitNullProperties?.Remove("agency"); }
+            else if (parseNode.GetChildNode("agency") is { } nullNodeAgency && nullNodeAgency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agency = null;
+            if (parseNode.GetChildNode("boardingFee") is null) { _explicitNullValueBoardingFee = default!; _explicitNullProperties?.Remove("boardingFee"); }
+            else if (parseNode.GetChildNode("boardingFee") is { } nullNodeBoardingFee && nullNodeBoardingFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardingFee = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("computerizedReservationSystem") is null) { _explicitNullValueComputerizedReservationSystem = default!; _explicitNullProperties?.Remove("computerizedReservationSystem"); }
+            else if (parseNode.GetChildNode("computerizedReservationSystem") is { } nullNodeComputerizedReservationSystem && nullNodeComputerizedReservationSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputerizedReservationSystem = null;
+            if (parseNode.GetChildNode("customerReferenceNumber") is null) { _explicitNullValueCustomerReferenceNumber = default!; _explicitNullProperties?.Remove("customerReferenceNumber"); }
+            else if (parseNode.GetChildNode("customerReferenceNumber") is { } nullNodeCustomerReferenceNumber && nullNodeCustomerReferenceNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerReferenceNumber = null;
+            if (parseNode.GetChildNode("designatorCode") is null) { _explicitNullValueDesignatorCode = default!; _explicitNullProperties?.Remove("designatorCode"); }
+            else if (parseNode.GetChildNode("designatorCode") is { } nullNodeDesignatorCode && nullNodeDesignatorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DesignatorCode = null;
+            if (parseNode.GetChildNode("documentType") is null) { _explicitNullValueDocumentType = default!; _explicitNullProperties?.Remove("documentType"); }
+            else if (parseNode.GetChildNode("documentType") is { } nullNodeDocumentType && nullNodeDocumentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentType = null;
+            if (parseNode.GetChildNode("flightDate") is null) { _explicitNullValueFlightDate = default!; _explicitNullProperties?.Remove("flightDate"); }
+            else if (parseNode.GetChildNode("flightDate") is { } nullNodeFlightDate && nullNodeFlightDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlightDate = null;
+            if (parseNode.GetChildNode("legs") is null) { _explicitNullValueLegs = default!; _explicitNullProperties?.Remove("legs"); }
+            else if (parseNode.GetChildNode("legs") is { } nullNodeLegs && nullNodeLegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legs = null;
+            if (parseNode.GetChildNode("passengerName") is null) { _explicitNullValuePassengerName = default!; _explicitNullProperties?.Remove("passengerName"); }
+            else if (parseNode.GetChildNode("passengerName") is { } nullNodePassengerName && nullNodePassengerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PassengerName = null;
+            if (parseNode.GetChildNode("passengers") is null) { _explicitNullValuePassengers = default!; _explicitNullProperties?.Remove("passengers"); }
+            else if (parseNode.GetChildNode("passengers") is { } nullNodePassengers && nullNodePassengers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passengers = null;
+            if (parseNode.GetChildNode("ticket") is null) { _explicitNullValueTicket = default!; _explicitNullProperties?.Remove("ticket"); }
+            else if (parseNode.GetChildNode("ticket") is { } nullNodeTicket && nullNodeTicket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ticket = null;
+            if (parseNode.GetChildNode("travelAgency") is null) { _explicitNullValueTravelAgency = default!; _explicitNullProperties?.Remove("travelAgency"); }
+            else if (parseNode.GetChildNode("travelAgency") is { } nullNodeTravelAgency && nullNodeTravelAgency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TravelAgency = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,117 +51,117 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The agency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Agency? Agency { get => _explicitNullValueAgency; set { _explicitNullValueAgency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agency"); else _explicitNullProperties?.Remove("agency"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Agency? Agency { get => _explicitNullValueAgency; set { _explicitNullValueAgency = value; AdditionalData?.Remove("agency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agency"); else _explicitNullProperties?.Remove("agency"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.Agency? _explicitNullValueAgency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Agency Agency { get => _explicitNullValueAgency; set { _explicitNullValueAgency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agency"); else _explicitNullProperties?.Remove("agency"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Agency Agency { get => _explicitNullValueAgency; set { _explicitNullValueAgency = value; AdditionalData?.Remove("agency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agency"); else _explicitNullProperties?.Remove("agency"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.Agency _explicitNullValueAgency = default!;
 #endif
         /// <summary>The amount charged for boarding the plane, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* Encoding: Numeric* minLength: 1 character* maxLength: 11 characters* **additionalData key:** `airline.boarding_fee`</summary>
-        public long? BoardingFee { get => _explicitNullValueBoardingFee; set { _explicitNullValueBoardingFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingFee"); else _explicitNullProperties?.Remove("boardingFee"); } }
+        public long? BoardingFee { get => _explicitNullValueBoardingFee; set { _explicitNullValueBoardingFee = value; AdditionalData?.Remove("boardingFee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingFee"); else _explicitNullProperties?.Remove("boardingFee"); } }
         private long? _explicitNullValueBoardingFee = default!;
         /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-digit accounting code (PAX) that identifies the carrier.* Format: IATA 3-digit accounting code (PAX)* Example: KLM = 074* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.airline_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
         /// <summary> The [CRS](https://en.wikipedia.org/wiki/Computer_reservation_system) used to make the reservation and purchase the ticket.* Encoding: ASCII* minLength: 4 characters* maxLength: 4 characters* **additionalData key:** `airline.computerized_reservation_system`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComputerizedReservationSystem { get => _explicitNullValueComputerizedReservationSystem; set { _explicitNullValueComputerizedReservationSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("computerizedReservationSystem"); else _explicitNullProperties?.Remove("computerizedReservationSystem"); } }
+        public string? ComputerizedReservationSystem { get => _explicitNullValueComputerizedReservationSystem; set { _explicitNullValueComputerizedReservationSystem = value; AdditionalData?.Remove("computerizedReservationSystem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("computerizedReservationSystem"); else _explicitNullProperties?.Remove("computerizedReservationSystem"); } }
         private string? _explicitNullValueComputerizedReservationSystem = default!;
 #nullable restore
 #else
-        public string ComputerizedReservationSystem { get => _explicitNullValueComputerizedReservationSystem; set { _explicitNullValueComputerizedReservationSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("computerizedReservationSystem"); else _explicitNullProperties?.Remove("computerizedReservationSystem"); } }
+        public string ComputerizedReservationSystem { get => _explicitNullValueComputerizedReservationSystem; set { _explicitNullValueComputerizedReservationSystem = value; AdditionalData?.Remove("computerizedReservationSystem"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("computerizedReservationSystem"); else _explicitNullProperties?.Remove("computerizedReservationSystem"); } }
         private string _explicitNullValueComputerizedReservationSystem = default!;
 #endif
         /// <summary>The alphanumeric customer reference number.* Encoding: ASCII* maxLength: 20 characters* If you send more than 20 characters, the customer reference number is truncated* Must not start with a space or be all spaces.* **additionalData key:** `airline.customer_reference_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerReferenceNumber { get => _explicitNullValueCustomerReferenceNumber; set { _explicitNullValueCustomerReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerReferenceNumber"); else _explicitNullProperties?.Remove("customerReferenceNumber"); } }
+        public string? CustomerReferenceNumber { get => _explicitNullValueCustomerReferenceNumber; set { _explicitNullValueCustomerReferenceNumber = value; AdditionalData?.Remove("customerReferenceNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerReferenceNumber"); else _explicitNullProperties?.Remove("customerReferenceNumber"); } }
         private string? _explicitNullValueCustomerReferenceNumber = default!;
 #nullable restore
 #else
-        public string CustomerReferenceNumber { get => _explicitNullValueCustomerReferenceNumber; set { _explicitNullValueCustomerReferenceNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerReferenceNumber"); else _explicitNullProperties?.Remove("customerReferenceNumber"); } }
+        public string CustomerReferenceNumber { get => _explicitNullValueCustomerReferenceNumber; set { _explicitNullValueCustomerReferenceNumber = value; AdditionalData?.Remove("customerReferenceNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerReferenceNumber"); else _explicitNullProperties?.Remove("customerReferenceNumber"); } }
         private string _explicitNullValueCustomerReferenceNumber = default!;
 #endif
         /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.* Encoding: ASCII* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* **additionalData key:** `airline.airline_designator_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DesignatorCode { get => _explicitNullValueDesignatorCode; set { _explicitNullValueDesignatorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("designatorCode"); else _explicitNullProperties?.Remove("designatorCode"); } }
+        public string? DesignatorCode { get => _explicitNullValueDesignatorCode; set { _explicitNullValueDesignatorCode = value; AdditionalData?.Remove("designatorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("designatorCode"); else _explicitNullProperties?.Remove("designatorCode"); } }
         private string? _explicitNullValueDesignatorCode = default!;
 #nullable restore
 #else
-        public string DesignatorCode { get => _explicitNullValueDesignatorCode; set { _explicitNullValueDesignatorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("designatorCode"); else _explicitNullProperties?.Remove("designatorCode"); } }
+        public string DesignatorCode { get => _explicitNullValueDesignatorCode; set { _explicitNullValueDesignatorCode = value; AdditionalData?.Remove("designatorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("designatorCode"); else _explicitNullProperties?.Remove("designatorCode"); } }
         private string _explicitNullValueDesignatorCode = default!;
 #endif
         /// <summary>A code that identifies the type of item bought. The description of the code can appear on credit card statements.* Encoding: ASCII* Example: Passenger ticket = 01* minLength: 2 characters* maxLength: 2 characters* **additionalData key:** `airline.document_type`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentType { get => _explicitNullValueDocumentType; set { _explicitNullValueDocumentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentType"); else _explicitNullProperties?.Remove("documentType"); } }
+        public string? DocumentType { get => _explicitNullValueDocumentType; set { _explicitNullValueDocumentType = value; AdditionalData?.Remove("documentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentType"); else _explicitNullProperties?.Remove("documentType"); } }
         private string? _explicitNullValueDocumentType = default!;
 #nullable restore
 #else
-        public string DocumentType { get => _explicitNullValueDocumentType; set { _explicitNullValueDocumentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentType"); else _explicitNullProperties?.Remove("documentType"); } }
+        public string DocumentType { get => _explicitNullValueDocumentType; set { _explicitNullValueDocumentType = value; AdditionalData?.Remove("documentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentType"); else _explicitNullProperties?.Remove("documentType"); } }
         private string _explicitNullValueDocumentType = default!;
 #endif
         /// <summary>The flight departure date. Time is optional.* Format for date only: `yyyy-MM-dd`* Format for date and time: `yyyy-MM-ddTHH:mm`* Use local time of departure airport.* minLength: 10 characters* maxLength: 16 characters* **additionalData key:** `airline.flight_date`</summary>
-        public DateTimeOffset? FlightDate { get => _explicitNullValueFlightDate; set { _explicitNullValueFlightDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flightDate"); else _explicitNullProperties?.Remove("flightDate"); } }
+        public DateTimeOffset? FlightDate { get => _explicitNullValueFlightDate; set { _explicitNullValueFlightDate = value; AdditionalData?.Remove("flightDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flightDate"); else _explicitNullProperties?.Remove("flightDate"); } }
         private DateTimeOffset? _explicitNullValueFlightDate = default!;
         /// <summary>The legs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg>? Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg>? Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; AdditionalData?.Remove("legs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg>? _explicitNullValueLegs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg> Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg> Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; AdditionalData?.Remove("legs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72Leg> _explicitNullValueLegs = default!;
 #endif
         /// <summary>The passenger&apos;s name, initials, and title.* Format: last name + first name or initials + title* Example: *FLYER / MARY MS** minLength: 1 character* maxLength: 20 characters* If you send more than 20 characters, the name is truncated* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.passenger_name`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PassengerName { get => _explicitNullValuePassengerName; set { _explicitNullValuePassengerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengerName"); else _explicitNullProperties?.Remove("passengerName"); } }
+        public string? PassengerName { get => _explicitNullValuePassengerName; set { _explicitNullValuePassengerName = value; AdditionalData?.Remove("passengerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengerName"); else _explicitNullProperties?.Remove("passengerName"); } }
         private string? _explicitNullValuePassengerName = default!;
 #nullable restore
 #else
-        public string PassengerName { get => _explicitNullValuePassengerName; set { _explicitNullValuePassengerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengerName"); else _explicitNullProperties?.Remove("passengerName"); } }
+        public string PassengerName { get => _explicitNullValuePassengerName; set { _explicitNullValuePassengerName = value; AdditionalData?.Remove("passengerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengerName"); else _explicitNullProperties?.Remove("passengerName"); } }
         private string _explicitNullValuePassengerName = default!;
 #endif
         /// <summary>The passengers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Passenger>? Passengers { get => _explicitNullValuePassengers; set { _explicitNullValuePassengers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengers"); else _explicitNullProperties?.Remove("passengers"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Passenger>? Passengers { get => _explicitNullValuePassengers; set { _explicitNullValuePassengers = value; AdditionalData?.Remove("passengers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengers"); else _explicitNullProperties?.Remove("passengers"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Passenger>? _explicitNullValuePassengers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Passenger> Passengers { get => _explicitNullValuePassengers; set { _explicitNullValuePassengers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengers"); else _explicitNullProperties?.Remove("passengers"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Passenger> Passengers { get => _explicitNullValuePassengers; set { _explicitNullValuePassengers = value; AdditionalData?.Remove("passengers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passengers"); else _explicitNullProperties?.Remove("passengers"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Passenger> _explicitNullValuePassengers = default!;
 #endif
         /// <summary>The ticket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Ticket? Ticket { get => _explicitNullValueTicket; set { _explicitNullValueTicket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket"); else _explicitNullProperties?.Remove("ticket"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Ticket? Ticket { get => _explicitNullValueTicket; set { _explicitNullValueTicket = value; AdditionalData?.Remove("ticket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket"); else _explicitNullProperties?.Remove("ticket"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.Ticket? _explicitNullValueTicket = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Ticket Ticket { get => _explicitNullValueTicket; set { _explicitNullValueTicket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket"); else _explicitNullProperties?.Remove("ticket"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Ticket Ticket { get => _explicitNullValueTicket; set { _explicitNullValueTicket = value; AdditionalData?.Remove("ticket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket"); else _explicitNullProperties?.Remove("ticket"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.Ticket _explicitNullValueTicket = default!;
 #endif
         /// <summary>The travelAgency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TravelAgency? TravelAgency { get => _explicitNullValueTravelAgency; set { _explicitNullValueTravelAgency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travelAgency"); else _explicitNullProperties?.Remove("travelAgency"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TravelAgency? TravelAgency { get => _explicitNullValueTravelAgency; set { _explicitNullValueTravelAgency = value; AdditionalData?.Remove("travelAgency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travelAgency"); else _explicitNullProperties?.Remove("travelAgency"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TravelAgency? _explicitNullValueTravelAgency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TravelAgency TravelAgency { get => _explicitNullValueTravelAgency; set { _explicitNullValueTravelAgency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travelAgency"); else _explicitNullProperties?.Remove("travelAgency"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TravelAgency TravelAgency { get => _explicitNullValueTravelAgency; set { _explicitNullValueTravelAgency = value; AdditionalData?.Remove("travelAgency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travelAgency"); else _explicitNullProperties?.Remove("travelAgency"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TravelAgency _explicitNullValueTravelAgency = default!;
 #endif
         /// <summary>

@@ -17,41 +17,66 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("amountAdjustments") is { } nullNodeAmountAdjustments && nullNodeAmountAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountAdjustments = null;
-            if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
-            if (parseNode.GetChildNode("authorisationDecision") is { } nullNodeAuthorisationDecision && nullNodeAuthorisationDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationDecision = null;
-            if (parseNode.GetChildNode("authorisationType") is { } nullNodeAuthorisationType && nullNodeAuthorisationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationType = null;
-            if (parseNode.GetChildNode("balanceAccount") is { } nullNodeBalanceAccount && nullNodeBalanceAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccount = null;
-            if (parseNode.GetChildNode("balanceMutations") is { } nullNodeBalanceMutations && nullNodeBalanceMutations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceMutations = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("entryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
-            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("merchantData") is { } nullNodeMerchantData && nullNodeMerchantData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantData = null;
-            if (parseNode.GetChildNode("originalAmount") is { } nullNodeOriginalAmount && nullNodeOriginalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalAmount = null;
-            if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
-            if (parseNode.GetChildNode("processingType") is { } nullNodeProcessingType && nullNodeProcessingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingType = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
-            if (parseNode.GetChildNode("schemeRiskScore") is { } nullNodeSchemeRiskScore && nullNodeSchemeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeRiskScore = null;
-            if (parseNode.GetChildNode("schemeTraceId") is { } nullNodeSchemeTraceId && nullNodeSchemeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeTraceId = null;
-            if (parseNode.GetChildNode("schemeUniqueTransactionId") is { } nullNodeSchemeUniqueTransactionId && nullNodeSchemeUniqueTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeUniqueTransactionId = null;
-            if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
-            if (parseNode.GetChildNode("threeDSecure") is { } nullNodeThreeDSecure && nullNodeThreeDSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSecure = null;
-            if (parseNode.GetChildNode("transactionRulesResult") is { } nullNodeTransactionRulesResult && nullNodeTransactionRulesResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionRulesResult = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("validationResult") is { } nullNodeValidationResult && nullNodeValidationResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationResult = null;
+            if (parseNode.GetChildNode("accountHolder") is null) { _explicitNullValueAccountHolder = default!; _explicitNullProperties?.Remove("accountHolder"); }
+            else if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("amountAdjustments") is null) { _explicitNullValueAmountAdjustments = default!; _explicitNullProperties?.Remove("amountAdjustments"); }
+            else if (parseNode.GetChildNode("amountAdjustments") is { } nullNodeAmountAdjustments && nullNodeAmountAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountAdjustments = null;
+            if (parseNode.GetChildNode("authCode") is null) { _explicitNullValueAuthCode = default!; _explicitNullProperties?.Remove("authCode"); }
+            else if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("authorisationDecision") is null) { _explicitNullValueAuthorisationDecision = default!; _explicitNullProperties?.Remove("authorisationDecision"); }
+            else if (parseNode.GetChildNode("authorisationDecision") is { } nullNodeAuthorisationDecision && nullNodeAuthorisationDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationDecision = null;
+            if (parseNode.GetChildNode("authorisationType") is null) { _explicitNullValueAuthorisationType = default!; _explicitNullProperties?.Remove("authorisationType"); }
+            else if (parseNode.GetChildNode("authorisationType") is { } nullNodeAuthorisationType && nullNodeAuthorisationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationType = null;
+            if (parseNode.GetChildNode("balanceAccount") is null) { _explicitNullValueBalanceAccount = default!; _explicitNullProperties?.Remove("balanceAccount"); }
+            else if (parseNode.GetChildNode("balanceAccount") is { } nullNodeBalanceAccount && nullNodeBalanceAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccount = null;
+            if (parseNode.GetChildNode("balanceMutations") is null) { _explicitNullValueBalanceMutations = default!; _explicitNullProperties?.Remove("balanceMutations"); }
+            else if (parseNode.GetChildNode("balanceMutations") is { } nullNodeBalanceMutations && nullNodeBalanceMutations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceMutations = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("entryMode") is null) { _explicitNullValueEntryMode = default!; _explicitNullProperties?.Remove("entryMode"); }
+            else if (parseNode.GetChildNode("entryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
+            if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
+            else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("merchantData") is null) { _explicitNullValueMerchantData = default!; _explicitNullProperties?.Remove("merchantData"); }
+            else if (parseNode.GetChildNode("merchantData") is { } nullNodeMerchantData && nullNodeMerchantData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantData = null;
+            if (parseNode.GetChildNode("originalAmount") is null) { _explicitNullValueOriginalAmount = default!; _explicitNullProperties?.Remove("originalAmount"); }
+            else if (parseNode.GetChildNode("originalAmount") is { } nullNodeOriginalAmount && nullNodeOriginalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalAmount = null;
+            if (parseNode.GetChildNode("paymentInstrument") is null) { _explicitNullValuePaymentInstrument = default!; _explicitNullProperties?.Remove("paymentInstrument"); }
+            else if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
+            if (parseNode.GetChildNode("processingType") is null) { _explicitNullValueProcessingType = default!; _explicitNullProperties?.Remove("processingType"); }
+            else if (parseNode.GetChildNode("processingType") is { } nullNodeProcessingType && nullNodeProcessingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingType = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("schemeRiskScore") is null) { _explicitNullValueSchemeRiskScore = default!; _explicitNullProperties?.Remove("schemeRiskScore"); }
+            else if (parseNode.GetChildNode("schemeRiskScore") is { } nullNodeSchemeRiskScore && nullNodeSchemeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeRiskScore = null;
+            if (parseNode.GetChildNode("schemeTraceId") is null) { _explicitNullValueSchemeTraceId = default!; _explicitNullProperties?.Remove("schemeTraceId"); }
+            else if (parseNode.GetChildNode("schemeTraceId") is { } nullNodeSchemeTraceId && nullNodeSchemeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeTraceId = null;
+            if (parseNode.GetChildNode("schemeUniqueTransactionId") is null) { _explicitNullValueSchemeUniqueTransactionId = default!; _explicitNullProperties?.Remove("schemeUniqueTransactionId"); }
+            else if (parseNode.GetChildNode("schemeUniqueTransactionId") is { } nullNodeSchemeUniqueTransactionId && nullNodeSchemeUniqueTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SchemeUniqueTransactionId = null;
+            if (parseNode.GetChildNode("scores") is null) { _explicitNullValueScores = default!; _explicitNullProperties?.Remove("scores"); }
+            else if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
+            if (parseNode.GetChildNode("threeDSecure") is null) { _explicitNullValueThreeDSecure = default!; _explicitNullProperties?.Remove("threeDSecure"); }
+            else if (parseNode.GetChildNode("threeDSecure") is { } nullNodeThreeDSecure && nullNodeThreeDSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSecure = null;
+            if (parseNode.GetChildNode("transactionRulesResult") is null) { _explicitNullValueTransactionRulesResult = default!; _explicitNullProperties?.Remove("transactionRulesResult"); }
+            else if (parseNode.GetChildNode("transactionRulesResult") is { } nullNodeTransactionRulesResult && nullNodeTransactionRulesResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionRulesResult = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("validationResult") is null) { _explicitNullValueValidationResult = default!; _explicitNullProperties?.Remove("validationResult"); }
+            else if (parseNode.GetChildNode("validationResult") is { } nullNodeValidationResult && nullNodeValidationResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidationResult = null;
         }
 
         /// <summary>The reference of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAccountHolder? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAccountHolder _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -59,227 +84,227 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The amount of the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The amount adjustments in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment>? AmountAdjustments { get => _explicitNullValueAmountAdjustments; set { _explicitNullValueAmountAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustments"); else _explicitNullProperties?.Remove("amountAdjustments"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment>? AmountAdjustments { get => _explicitNullValueAmountAdjustments; set { _explicitNullValueAmountAdjustments = value; AdditionalData?.Remove("amountAdjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustments"); else _explicitNullProperties?.Remove("amountAdjustments"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment>? _explicitNullValueAmountAdjustments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment> AmountAdjustments { get => _explicitNullValueAmountAdjustments; set { _explicitNullValueAmountAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustments"); else _explicitNullProperties?.Remove("amountAdjustments"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment> AmountAdjustments { get => _explicitNullValueAmountAdjustments; set { _explicitNullValueAmountAdjustments = value; AdditionalData?.Remove("amountAdjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustments"); else _explicitNullProperties?.Remove("amountAdjustments"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4AmountAdjustment> _explicitNullValueAmountAdjustments = default!;
 #endif
         /// <summary>The authorization code for the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("authCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
         private string? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("authCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
         private string _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>The decision of the authorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAuthorisationDecision? AuthorisationDecision { get => _explicitNullValueAuthorisationDecision; set { _explicitNullValueAuthorisationDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationDecision"); else _explicitNullProperties?.Remove("authorisationDecision"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAuthorisationDecision? AuthorisationDecision { get => _explicitNullValueAuthorisationDecision; set { _explicitNullValueAuthorisationDecision = value; AdditionalData?.Remove("authorisationDecision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationDecision"); else _explicitNullProperties?.Remove("authorisationDecision"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAuthorisationDecision? _explicitNullValueAuthorisationDecision = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAuthorisationDecision AuthorisationDecision { get => _explicitNullValueAuthorisationDecision; set { _explicitNullValueAuthorisationDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationDecision"); else _explicitNullProperties?.Remove("authorisationDecision"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAuthorisationDecision AuthorisationDecision { get => _explicitNullValueAuthorisationDecision; set { _explicitNullValueAuthorisationDecision = value; AdditionalData?.Remove("authorisationDecision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationDecision"); else _explicitNullProperties?.Remove("authorisationDecision"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestAuthorisationDecision _explicitNullValueAuthorisationDecision = default!;
 #endif
         /// <summary>The authorization type.Possible values:* **finalAuthorisation*** **preAuthorisation*** **defaultAuthorisation**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorisationType { get => _explicitNullValueAuthorisationType; set { _explicitNullValueAuthorisationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationType"); else _explicitNullProperties?.Remove("authorisationType"); } }
+        public string? AuthorisationType { get => _explicitNullValueAuthorisationType; set { _explicitNullValueAuthorisationType = value; AdditionalData?.Remove("authorisationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationType"); else _explicitNullProperties?.Remove("authorisationType"); } }
         private string? _explicitNullValueAuthorisationType = default!;
 #nullable restore
 #else
-        public string AuthorisationType { get => _explicitNullValueAuthorisationType; set { _explicitNullValueAuthorisationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationType"); else _explicitNullProperties?.Remove("authorisationType"); } }
+        public string AuthorisationType { get => _explicitNullValueAuthorisationType; set { _explicitNullValueAuthorisationType = value; AdditionalData?.Remove("authorisationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationType"); else _explicitNullProperties?.Remove("authorisationType"); } }
         private string _explicitNullValueAuthorisationType = default!;
 #endif
         /// <summary>The reference of the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestBalanceAccount? BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestBalanceAccount? BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; AdditionalData?.Remove("balanceAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestBalanceAccount? _explicitNullValueBalanceAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestBalanceAccount BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestBalanceAccount BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; AdditionalData?.Remove("balanceAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestBalanceAccount _explicitNullValueBalanceAccount = default!;
 #endif
         /// <summary>The list of balance mutations per event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutation>? BalanceMutations { get => _explicitNullValueBalanceMutations; set { _explicitNullValueBalanceMutations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceMutations"); else _explicitNullProperties?.Remove("balanceMutations"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutation>? BalanceMutations { get => _explicitNullValueBalanceMutations; set { _explicitNullValueBalanceMutations = value; AdditionalData?.Remove("balanceMutations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceMutations"); else _explicitNullProperties?.Remove("balanceMutations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutation>? _explicitNullValueBalanceMutations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutation> BalanceMutations { get => _explicitNullValueBalanceMutations; set { _explicitNullValueBalanceMutations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceMutations"); else _explicitNullProperties?.Remove("balanceMutations"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutation> BalanceMutations { get => _explicitNullValueBalanceMutations; set { _explicitNullValueBalanceMutations = value; AdditionalData?.Remove("balanceMutations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceMutations"); else _explicitNullProperties?.Remove("balanceMutations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutation> _explicitNullValueBalanceMutations = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The entry mode of the information of the payment instrument. For example: **contactless**, **chip**, **magstripe**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryMode"); else _explicitNullProperties?.Remove("entryMode"); } }
+        public string? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; AdditionalData?.Remove("entryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryMode"); else _explicitNullProperties?.Remove("entryMode"); } }
         private string? _explicitNullValueEntryMode = default!;
 #nullable restore
 #else
-        public string EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryMode"); else _explicitNullProperties?.Remove("entryMode"); } }
+        public string EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; AdditionalData?.Remove("entryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entryMode"); else _explicitNullProperties?.Remove("entryMode"); } }
         private string _explicitNullValueEntryMode = default!;
 #endif
         /// <summary>The environment from which the webhook originated.Possible values: **test**, **live**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The unique identifier of the transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The information about the merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestMerchantData? MerchantData { get => _explicitNullValueMerchantData; set { _explicitNullValueMerchantData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantData"); else _explicitNullProperties?.Remove("merchantData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestMerchantData? MerchantData { get => _explicitNullValueMerchantData; set { _explicitNullValueMerchantData = value; AdditionalData?.Remove("merchantData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantData"); else _explicitNullProperties?.Remove("merchantData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestMerchantData? _explicitNullValueMerchantData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestMerchantData MerchantData { get => _explicitNullValueMerchantData; set { _explicitNullValueMerchantData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantData"); else _explicitNullProperties?.Remove("merchantData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestMerchantData MerchantData { get => _explicitNullValueMerchantData; set { _explicitNullValueMerchantData = value; AdditionalData?.Remove("merchantData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantData"); else _explicitNullProperties?.Remove("merchantData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestMerchantData _explicitNullValueMerchantData = default!;
 #endif
         /// <summary>The amount in the original currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestOriginalAmount? OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestOriginalAmount? OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; AdditionalData?.Remove("originalAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestOriginalAmount? _explicitNullValueOriginalAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestOriginalAmount OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestOriginalAmount OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; AdditionalData?.Remove("originalAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestOriginalAmount _explicitNullValueOriginalAmount = default!;
 #endif
         /// <summary>Contains information about the payment instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestPaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestPaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; AdditionalData?.Remove("paymentInstrument"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestPaymentInstrument? _explicitNullValuePaymentInstrument = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestPaymentInstrument PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestPaymentInstrument PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; AdditionalData?.Remove("paymentInstrument"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestPaymentInstrument _explicitNullValuePaymentInstrument = default!;
 #endif
         /// <summary>The processing type used for this payment. For example: **ecommerce**, **pos**, **moto**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
+        public string? ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; AdditionalData?.Remove("processingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
         private string? _explicitNullValueProcessingType = default!;
 #nullable restore
 #else
-        public string ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
+        public string ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; AdditionalData?.Remove("processingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
         private string _explicitNullValueProcessingType = default!;
 #endif
         /// <summary>The reference of the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The risk score provided by the card schemes.</summary>
-        public int? SchemeRiskScore { get => _explicitNullValueSchemeRiskScore; set { _explicitNullValueSchemeRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeRiskScore"); else _explicitNullProperties?.Remove("schemeRiskScore"); } }
+        public int? SchemeRiskScore { get => _explicitNullValueSchemeRiskScore; set { _explicitNullValueSchemeRiskScore = value; AdditionalData?.Remove("schemeRiskScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeRiskScore"); else _explicitNullProperties?.Remove("schemeRiskScore"); } }
         private int? _explicitNullValueSchemeRiskScore = default!;
         /// <summary>The identifier of the original payment. This ID is provided by the scheme and can be alphanumeric or numeric, depending on the scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemeTraceId { get => _explicitNullValueSchemeTraceId; set { _explicitNullValueSchemeTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeTraceId"); else _explicitNullProperties?.Remove("schemeTraceId"); } }
+        public string? SchemeTraceId { get => _explicitNullValueSchemeTraceId; set { _explicitNullValueSchemeTraceId = value; AdditionalData?.Remove("schemeTraceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeTraceId"); else _explicitNullProperties?.Remove("schemeTraceId"); } }
         private string? _explicitNullValueSchemeTraceId = default!;
 #nullable restore
 #else
-        public string SchemeTraceId { get => _explicitNullValueSchemeTraceId; set { _explicitNullValueSchemeTraceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeTraceId"); else _explicitNullProperties?.Remove("schemeTraceId"); } }
+        public string SchemeTraceId { get => _explicitNullValueSchemeTraceId; set { _explicitNullValueSchemeTraceId = value; AdditionalData?.Remove("schemeTraceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeTraceId"); else _explicitNullProperties?.Remove("schemeTraceId"); } }
         private string _explicitNullValueSchemeTraceId = default!;
 #endif
         /// <summary>The unique identifier created by the scheme. This ID can be alphanumeric or numeric depending on the scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemeUniqueTransactionId { get => _explicitNullValueSchemeUniqueTransactionId; set { _explicitNullValueSchemeUniqueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeUniqueTransactionId"); else _explicitNullProperties?.Remove("schemeUniqueTransactionId"); } }
+        public string? SchemeUniqueTransactionId { get => _explicitNullValueSchemeUniqueTransactionId; set { _explicitNullValueSchemeUniqueTransactionId = value; AdditionalData?.Remove("schemeUniqueTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeUniqueTransactionId"); else _explicitNullProperties?.Remove("schemeUniqueTransactionId"); } }
         private string? _explicitNullValueSchemeUniqueTransactionId = default!;
 #nullable restore
 #else
-        public string SchemeUniqueTransactionId { get => _explicitNullValueSchemeUniqueTransactionId; set { _explicitNullValueSchemeUniqueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeUniqueTransactionId"); else _explicitNullProperties?.Remove("schemeUniqueTransactionId"); } }
+        public string SchemeUniqueTransactionId { get => _explicitNullValueSchemeUniqueTransactionId; set { _explicitNullValueSchemeUniqueTransactionId = value; AdditionalData?.Remove("schemeUniqueTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemeUniqueTransactionId"); else _explicitNullProperties?.Remove("schemeUniqueTransactionId"); } }
         private string _explicitNullValueSchemeUniqueTransactionId = default!;
 #endif
         /// <summary>The list of transaction scores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring>? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring>? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring>? _explicitNullValueScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring> Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring> Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring> _explicitNullValueScores = default!;
 #endif
         /// <summary>The data of the result from the 3DS authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure? ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure? ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; AdditionalData?.Remove("threeDSecure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure? _explicitNullValueThreeDSecure = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure ThreeDSecure { get => _explicitNullValueThreeDSecure; set { _explicitNullValueThreeDSecure = value; AdditionalData?.Remove("threeDSecure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSecure"); else _explicitNullProperties?.Remove("threeDSecure"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure _explicitNullValueThreeDSecure = default!;
 #endif
         /// <summary>Contains the results of the evaluation of the transaction rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult? TransactionRulesResult { get => _explicitNullValueTransactionRulesResult; set { _explicitNullValueTransactionRulesResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRulesResult"); else _explicitNullProperties?.Remove("transactionRulesResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult? TransactionRulesResult { get => _explicitNullValueTransactionRulesResult; set { _explicitNullValueTransactionRulesResult = value; AdditionalData?.Remove("transactionRulesResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRulesResult"); else _explicitNullProperties?.Remove("transactionRulesResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult? _explicitNullValueTransactionRulesResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult TransactionRulesResult { get => _explicitNullValueTransactionRulesResult; set { _explicitNullValueTransactionRulesResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRulesResult"); else _explicitNullProperties?.Remove("transactionRulesResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult TransactionRulesResult { get => _explicitNullValueTransactionRulesResult; set { _explicitNullValueTransactionRulesResult = value; AdditionalData?.Remove("transactionRulesResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRulesResult"); else _explicitNullProperties?.Remove("transactionRulesResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult _explicitNullValueTransactionRulesResult = default!;
 #endif
         /// <summary>Type of notification.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthorisationRelayedType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthorisationRelayedType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthorisationRelayedType? _explicitNullValueType = default!;
         /// <summary>Contains the checks that Adyen performed to validate the payment and the result of each.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult>? ValidationResult { get => _explicitNullValueValidationResult; set { _explicitNullValueValidationResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationResult"); else _explicitNullProperties?.Remove("validationResult"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult>? ValidationResult { get => _explicitNullValueValidationResult; set { _explicitNullValueValidationResult = value; AdditionalData?.Remove("validationResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationResult"); else _explicitNullProperties?.Remove("validationResult"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult>? _explicitNullValueValidationResult = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult> ValidationResult { get => _explicitNullValueValidationResult; set { _explicitNullValueValidationResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationResult"); else _explicitNullProperties?.Remove("validationResult"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult> ValidationResult { get => _explicitNullValueValidationResult; set { _explicitNullValueValidationResult = value; AdditionalData?.Remove("validationResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validationResult"); else _explicitNullProperties?.Remove("validationResult"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult> _explicitNullValueValidationResult = default!;
 #endif
         /// <summary>
@@ -330,7 +355,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "scores", n => { Scores = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring>(global::Soenneker.Adyen.OpenApiClient.Models.TransactionScoring.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "threeDSecure", n => { ThreeDSecure = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure>(global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestThreeDSecure.CreateFromDiscriminatorValue); } },
                 { "transactionRulesResult", n => { TransactionRulesResult = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult>(global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthorisationRequestTransactionRulesResult.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthorisationRelayedType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthorisationRelayedType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "validationResult", n => { ValidationResult = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult>(global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4ValidationResult.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

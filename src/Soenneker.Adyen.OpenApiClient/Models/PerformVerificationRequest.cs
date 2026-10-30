@@ -17,28 +17,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
-            if (parseNode.GetChildNode("accountStateType") is { } nullNodeAccountStateType && nullNodeAccountStateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountStateType = null;
-            if (parseNode.GetChildNode("tier") is { } nullNodeTier && nullNodeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tier = null;
+            if (parseNode.GetChildNode("accountHolderCode") is null) { _explicitNullValueAccountHolderCode = default!; _explicitNullProperties?.Remove("accountHolderCode"); }
+            else if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("accountStateType") is null) { _explicitNullValueAccountStateType = default!; _explicitNullProperties?.Remove("accountStateType"); }
+            else if (parseNode.GetChildNode("accountStateType") is { } nullNodeAccountStateType && nullNodeAccountStateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountStateType = null;
+            if (parseNode.GetChildNode("tier") is null) { _explicitNullValueTier = default!; _explicitNullProperties?.Remove("tier"); }
+            else if (parseNode.GetChildNode("tier") is { } nullNodeTier && nullNodeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tier = null;
         }
 
         /// <summary>The code of the account holder to verify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>The state required for the account holder.&gt; Permitted values: `Processing`, `Payout`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType? AccountStateType { get => _explicitNullValueAccountStateType; set { _explicitNullValueAccountStateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountStateType"); else _explicitNullProperties?.Remove("accountStateType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType? AccountStateType { get => _explicitNullValueAccountStateType; set { _explicitNullValueAccountStateType = value; AdditionalData?.Remove("accountStateType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountStateType"); else _explicitNullProperties?.Remove("accountStateType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType? _explicitNullValueAccountStateType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tier required for the account holder.</summary>
-        public int? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        public int? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; AdditionalData?.Remove("tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
         private int? _explicitNullValueTier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequest"/> and sets the default values.
@@ -66,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
-                { "accountStateType", n => { AccountStateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType>(); } },
+                { "accountStateType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PerformVerificationRequestAccountStateType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAccountStateType = default; _explicitNullProperties?.Remove("accountStateType"); AdditionalData["accountStateType"] = unknown; } else { AccountStateType = parsed; AdditionalData.Remove("accountStateType"); } } },
                 { "tier", n => { Tier = n.GetIntValue(); } },
             };
         }

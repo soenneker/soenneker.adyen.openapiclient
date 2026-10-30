@@ -17,15 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
-            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
-            if (parseNode.GetChildNode("packageName") is { } nullNodePackageName && nullNodePackageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageName = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("versionCode") is { } nullNodeVersionCode && nullNodeVersionCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionCode = null;
-            if (parseNode.GetChildNode("versionName") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("errorCode") is null) { _explicitNullValueErrorCode = default!; _explicitNullProperties?.Remove("errorCode"); }
+            else if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("errors") is null) { _explicitNullValueErrors = default!; _explicitNullProperties?.Remove("errors"); }
+            else if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("packageName") is null) { _explicitNullValuePackageName = default!; _explicitNullProperties?.Remove("packageName"); }
+            else if (parseNode.GetChildNode("packageName") is { } nullNodePackageName && nullNodePackageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageName = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("versionCode") is null) { _explicitNullValueVersionCode = default!; _explicitNullProperties?.Remove("versionCode"); }
+            else if (parseNode.GetChildNode("versionCode") is { } nullNodeVersionCode && nullNodeVersionCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionCode = null;
+            if (parseNode.GetChildNode("versionName") is null) { _explicitNullValueVersionName = default!; _explicitNullProperties?.Remove("versionName"); }
+            else if (parseNode.GetChildNode("versionName") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,78 +42,78 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The description that was provided when uploading the app. The description is not shown on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The error code of the Android app with the `status` of either **error** or **invalid**.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
         private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
         private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The list of errors of the Android app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppError>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppError>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppError>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppError> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppError> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppError> _explicitNullValueErrors = default!;
 #endif
         /// <summary>The unique identifier of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The app name that is shown on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>The package name that uniquely identifies the Android app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
+        public string? PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; AdditionalData?.Remove("packageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
         private string? _explicitNullValuePackageName = default!;
 #nullable restore
 #else
-        public string PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
+        public string PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; AdditionalData?.Remove("packageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
         private string _explicitNullValuePackageName = default!;
 #endif
         /// <summary>The status of the app. Possible values: * `processing`: the app is being signed and converted to a format that the terminal can handle.* `error`: something went wrong. Check that the app matches the [requirements](https://docs.adyen.com/point-of-sale/android-terminals/app-requirements).* `invalid`: there is something wrong with the APK file of the app.* `ready`: the app has been signed and converted.* `archived`: the app is no longer available.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus? _explicitNullValueStatus = default!;
         /// <summary>The version number of the app.</summary>
-        public int? VersionCode { get => _explicitNullValueVersionCode; set { _explicitNullValueVersionCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionCode"); else _explicitNullProperties?.Remove("versionCode"); } }
+        public int? VersionCode { get => _explicitNullValueVersionCode; set { _explicitNullValueVersionCode = value; AdditionalData?.Remove("versionCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionCode"); else _explicitNullProperties?.Remove("versionCode"); } }
         private int? _explicitNullValueVersionCode = default!;
         /// <summary>The app version number that is shown on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
+        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; AdditionalData?.Remove("versionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
         private string? _explicitNullValueVersionName = default!;
 #nullable restore
 #else
-        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
+        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; AdditionalData?.Remove("versionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
         private string _explicitNullValueVersionName = default!;
 #endif
         /// <summary>
@@ -138,7 +147,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "packageName", n => { PackageName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AndroidAppStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "versionCode", n => { VersionCode = n.GetIntValue(); } },
                 { "versionName", n => { VersionName = n.GetStringValue(); } },
             };

@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
-            if (parseNode.GetChildNode("recurringTopUps") is { } nullNodeRecurringTopUps && nullNodeRecurringTopUps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTopUps = null;
+            if (parseNode.GetChildNode("link") is null) { _explicitNullValueLink = default!; _explicitNullProperties?.Remove("link"); }
+            else if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("recurringTopUps") is null) { _explicitNullValueRecurringTopUps = default!; _explicitNullProperties?.Remove("recurringTopUps"); }
+            else if (parseNode.GetChildNode("recurringTopUps") is { } nullNodeRecurringTopUps && nullNodeRecurringTopUps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringTopUps = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Link? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.Link? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.Link Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.Link Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.Link _explicitNullValueLink = default!;
 #endif
         /// <summary>The recurringTopUps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp>? RecurringTopUps { get => _explicitNullValueRecurringTopUps; set { _explicitNullValueRecurringTopUps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringTopUps"); else _explicitNullProperties?.Remove("recurringTopUps"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp>? RecurringTopUps { get => _explicitNullValueRecurringTopUps; set { _explicitNullValueRecurringTopUps = value; AdditionalData?.Remove("recurringTopUps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringTopUps"); else _explicitNullProperties?.Remove("recurringTopUps"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp>? _explicitNullValueRecurringTopUps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp> RecurringTopUps { get => _explicitNullValueRecurringTopUps; set { _explicitNullValueRecurringTopUps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringTopUps"); else _explicitNullProperties?.Remove("recurringTopUps"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp> RecurringTopUps { get => _explicitNullValueRecurringTopUps; set { _explicitNullValueRecurringTopUps = value; AdditionalData?.Remove("recurringTopUps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringTopUps"); else _explicitNullProperties?.Remove("recurringTopUps"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.RecurringTopUp> _explicitNullValueRecurringTopUps = default!;
 #endif
         /// <summary>

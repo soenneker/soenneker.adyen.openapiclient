@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rangeCreationResults") is { } nullNodeRangeCreationResults && nullNodeRangeCreationResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeCreationResults = null;
+            if (parseNode.GetChildNode("rangeCreationResults") is null) { _explicitNullValueRangeCreationResults = default!; _explicitNullProperties?.Remove("rangeCreationResults"); }
+            else if (parseNode.GetChildNode("rangeCreationResults") is { } nullNodeRangeCreationResults && nullNodeRangeCreationResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeCreationResults = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The results of the test card creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult>? RangeCreationResults { get => _explicitNullValueRangeCreationResults; set { _explicitNullValueRangeCreationResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeCreationResults"); else _explicitNullProperties?.Remove("rangeCreationResults"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult>? RangeCreationResults { get => _explicitNullValueRangeCreationResults; set { _explicitNullValueRangeCreationResults = value; AdditionalData?.Remove("rangeCreationResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeCreationResults"); else _explicitNullProperties?.Remove("rangeCreationResults"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult>? _explicitNullValueRangeCreationResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult> RangeCreationResults { get => _explicitNullValueRangeCreationResults; set { _explicitNullValueRangeCreationResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeCreationResults"); else _explicitNullProperties?.Remove("rangeCreationResults"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult> RangeCreationResults { get => _explicitNullValueRangeCreationResults; set { _explicitNullValueRangeCreationResults = value; AdditionalData?.Remove("rangeCreationResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeCreationResults"); else _explicitNullProperties?.Remove("rangeCreationResults"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeCreationResult> _explicitNullValueRangeCreationResults = default!;
 #endif
         /// <summary>

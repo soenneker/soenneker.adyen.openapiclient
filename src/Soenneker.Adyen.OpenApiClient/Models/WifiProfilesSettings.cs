@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
-            if (parseNode.GetChildNode("roaming") is { } nullNodeRoaming && nullNodeRoaming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roaming = null;
-            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("band") is null) { _explicitNullValueBand = default!; _explicitNullProperties?.Remove("band"); }
+            else if (parseNode.GetChildNode("band") is { } nullNodeBand && nullNodeBand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Band = null;
+            if (parseNode.GetChildNode("roaming") is null) { _explicitNullValueRoaming = default!; _explicitNullProperties?.Remove("roaming"); }
+            else if (parseNode.GetChildNode("roaming") is { } nullNodeRoaming && nullNodeRoaming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roaming = null;
+            if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
+            else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The preferred Wi-Fi band, for use if the terminals support multiple bands. Possible values: All, 2.4GHz, 5GHz.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
+        public string? Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; AdditionalData?.Remove("band"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
         private string? _explicitNullValueBand = default!;
 #nullable restore
 #else
-        public string Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
+        public string Band { get => _explicitNullValueBand; set { _explicitNullValueBand = value; AdditionalData?.Remove("band"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("band"); else _explicitNullProperties?.Remove("band"); } }
         private string _explicitNullValueBand = default!;
 #endif
         /// <summary>Indicates whether roaming is enabled on the terminals.</summary>
-        public bool? Roaming { get => _explicitNullValueRoaming; set { _explicitNullValueRoaming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roaming"); else _explicitNullProperties?.Remove("roaming"); } }
+        public bool? Roaming { get => _explicitNullValueRoaming; set { _explicitNullValueRoaming = value; AdditionalData?.Remove("roaming"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roaming"); else _explicitNullProperties?.Remove("roaming"); } }
         private bool? _explicitNullValueRoaming = default!;
         /// <summary>The connection time-out in seconds. Minimum value: 0.</summary>
-        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.WifiProfilesSettings"/> and sets the default values.

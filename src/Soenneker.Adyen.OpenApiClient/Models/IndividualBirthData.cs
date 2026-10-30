@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dateOfBirth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("dateOfBirth") is null) { _explicitNullValueDateOfBirth = default!; _explicitNullProperties?.Remove("dateOfBirth"); }
+            else if (parseNode.GetChildNode("dateOfBirth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The individual&apos;s date of birth, in YYYY-MM-DD format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
+        public string? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; AdditionalData?.Remove("dateOfBirth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
         private string? _explicitNullValueDateOfBirth = default!;
 #nullable restore
 #else
-        public string DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
+        public string DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; AdditionalData?.Remove("dateOfBirth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
         private string _explicitNullValueDateOfBirth = default!;
 #endif
         /// <summary>

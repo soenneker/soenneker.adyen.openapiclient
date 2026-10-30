@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("OperatorID") is { } nullNodeOperatorID && nullNodeOperatorID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorID = null;
-            if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
-            if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
-            if (parseNode.GetChildNode("ShiftNumber") is { } nullNodeShiftNumber && nullNodeShiftNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftNumber = null;
-            if (parseNode.GetChildNode("TotalsGroupID") is { } nullNodeTotalsGroupID && nullNodeTotalsGroupID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalsGroupID = null;
+            if (parseNode.GetChildNode("OperatorID") is null) { _explicitNullValueOperatorID = default!; _explicitNullProperties?.Remove("OperatorID"); }
+            else if (parseNode.GetChildNode("OperatorID") is { } nullNodeOperatorID && nullNodeOperatorID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatorID = null;
+            if (parseNode.GetChildNode("POIID") is null) { _explicitNullValuePOIID = default!; _explicitNullProperties?.Remove("POIID"); }
+            else if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
+            if (parseNode.GetChildNode("SaleID") is null) { _explicitNullValueSaleID = default!; _explicitNullProperties?.Remove("SaleID"); }
+            else if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
+            if (parseNode.GetChildNode("ShiftNumber") is null) { _explicitNullValueShiftNumber = default!; _explicitNullProperties?.Remove("ShiftNumber"); }
+            else if (parseNode.GetChildNode("ShiftNumber") is { } nullNodeShiftNumber && nullNodeShiftNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShiftNumber = null;
+            if (parseNode.GetChildNode("TotalsGroupID") is null) { _explicitNullValueTotalsGroupID = default!; _explicitNullProperties?.Remove("TotalsGroupID"); }
+            else if (parseNode.GetChildNode("TotalsGroupID") is { } nullNodeTotalsGroupID && nullNodeTotalsGroupID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalsGroupID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of the Cashier or Operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatorID { get => _explicitNullValueOperatorID; set { _explicitNullValueOperatorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorID"); else _explicitNullProperties?.Remove("OperatorID"); } }
+        public string? OperatorID { get => _explicitNullValueOperatorID; set { _explicitNullValueOperatorID = value; AdditionalData?.Remove("OperatorID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorID"); else _explicitNullProperties?.Remove("OperatorID"); } }
         private string? _explicitNullValueOperatorID = default!;
 #nullable restore
 #else
-        public string OperatorID { get => _explicitNullValueOperatorID; set { _explicitNullValueOperatorID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorID"); else _explicitNullProperties?.Remove("OperatorID"); } }
+        public string OperatorID { get => _explicitNullValueOperatorID; set { _explicitNullValueOperatorID = value; AdditionalData?.Remove("OperatorID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OperatorID"); else _explicitNullProperties?.Remove("OperatorID"); } }
         private string _explicitNullValueOperatorID = default!;
 #endif
         /// <summary>Identification of a POI System or a POI Terminal for the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; AdditionalData?.Remove("POIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
         private string? _explicitNullValuePOIID = default!;
 #nullable restore
 #else
-        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; AdditionalData?.Remove("POIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
         private string _explicitNullValuePOIID = default!;
 #endif
         /// <summary>Identification of a Sale System or a Sale Terminal for the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; AdditionalData?.Remove("SaleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
         private string? _explicitNullValueSaleID = default!;
 #nullable restore
 #else
-        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; AdditionalData?.Remove("SaleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
         private string _explicitNullValueSaleID = default!;
 #endif
         /// <summary>Shift number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShiftNumber { get => _explicitNullValueShiftNumber; set { _explicitNullValueShiftNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ShiftNumber"); else _explicitNullProperties?.Remove("ShiftNumber"); } }
+        public string? ShiftNumber { get => _explicitNullValueShiftNumber; set { _explicitNullValueShiftNumber = value; AdditionalData?.Remove("ShiftNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ShiftNumber"); else _explicitNullProperties?.Remove("ShiftNumber"); } }
         private string? _explicitNullValueShiftNumber = default!;
 #nullable restore
 #else
-        public string ShiftNumber { get => _explicitNullValueShiftNumber; set { _explicitNullValueShiftNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ShiftNumber"); else _explicitNullProperties?.Remove("ShiftNumber"); } }
+        public string ShiftNumber { get => _explicitNullValueShiftNumber; set { _explicitNullValueShiftNumber = value; AdditionalData?.Remove("ShiftNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ShiftNumber"); else _explicitNullProperties?.Remove("ShiftNumber"); } }
         private string _explicitNullValueShiftNumber = default!;
 #endif
         /// <summary>Sent if totals in the response have to be computed only for this particular value of TotalsGroupID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
+        public string? TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; AdditionalData?.Remove("TotalsGroupID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
         private string? _explicitNullValueTotalsGroupID = default!;
 #nullable restore
 #else
-        public string TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
+        public string TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; AdditionalData?.Remove("TotalsGroupID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
         private string _explicitNullValueTotalsGroupID = default!;
 #endif
         /// <summary>

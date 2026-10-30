@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("supportUrl") is { } nullNodeSupportUrl && nullNodeSupportUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportUrl = null;
+            if (parseNode.GetChildNode("supportUrl") is null) { _explicitNullValueSupportUrl = default!; _explicitNullProperties?.Remove("supportUrl"); }
+            else if (parseNode.GetChildNode("supportUrl") is { } nullNodeSupportUrl && nullNodeSupportUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Support Url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportUrl"); else _explicitNullProperties?.Remove("supportUrl"); } }
+        public string? SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; AdditionalData?.Remove("supportUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportUrl"); else _explicitNullProperties?.Remove("supportUrl"); } }
         private string? _explicitNullValueSupportUrl = default!;
 #nullable restore
 #else
-        public string SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportUrl"); else _explicitNullProperties?.Remove("supportUrl"); } }
+        public string SupportUrl { get => _explicitNullValueSupportUrl; set { _explicitNullValueSupportUrl = value; AdditionalData?.Remove("supportUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportUrl"); else _explicitNullProperties?.Remove("supportUrl"); } }
         private string _explicitNullValueSupportUrl = default!;
 #endif
         /// <summary>

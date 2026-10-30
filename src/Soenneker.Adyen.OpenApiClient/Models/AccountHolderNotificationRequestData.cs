@@ -18,18 +18,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("accountHolder") is null) { _explicitNullValueAccountHolder = default!; _explicitNullProperties?.Remove("accountHolder"); }
+            else if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
         }
 
         /// <summary>Contains information about the account holder resource that triggered the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderNotificationDataAccountHolder _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,11 +39,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>

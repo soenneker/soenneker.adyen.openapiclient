@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("CardAcquisitionReference") is { } nullNodeCardAcquisitionReference && nullNodeCardAcquisitionReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardAcquisitionReference = null;
-            if (parseNode.GetChildNode("LoyaltyAccountID") is { } nullNodeLoyaltyAccountID && nullNodeLoyaltyAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccountID = null;
+            if (parseNode.GetChildNode("CardAcquisitionReference") is null) { _explicitNullValueCardAcquisitionReference = default!; _explicitNullProperties?.Remove("CardAcquisitionReference"); }
+            else if (parseNode.GetChildNode("CardAcquisitionReference") is { } nullNodeCardAcquisitionReference && nullNodeCardAcquisitionReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardAcquisitionReference = null;
+            if (parseNode.GetChildNode("LoyaltyAccountID") is null) { _explicitNullValueLoyaltyAccountID = default!; _explicitNullProperties?.Remove("LoyaltyAccountID"); }
+            else if (parseNode.GetChildNode("LoyaltyAccountID") is { } nullNodeLoyaltyAccountID && nullNodeLoyaltyAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccountID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; AdditionalData?.Remove("CardAcquisitionReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValueCardAcquisitionReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType CardAcquisitionReference { get => _explicitNullValueCardAcquisitionReference; set { _explicitNullValueCardAcquisitionReference = value; AdditionalData?.Remove("CardAcquisitionReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardAcquisitionReference"); else _explicitNullProperties?.Remove("CardAcquisitionReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValueCardAcquisitionReference = default!;
 #endif
         /// <summary>Identification of a Loyalty account.In the Payment Request message, it allows to identify the loyalty account by the Sale Terminal instead of the POI Terminal (e.g. because the account identification is a bar-code read by the Cashier on a scanner device).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; AdditionalData?.Remove("LoyaltyAccountID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? _explicitNullValueLoyaltyAccountID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; AdditionalData?.Remove("LoyaltyAccountID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId _explicitNullValueLoyaltyAccountID = default!;
 #endif
         /// <summary>

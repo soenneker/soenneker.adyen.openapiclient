@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("messageCode") is { } nullNodeMessageCode && nullNodeMessageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCode = null;
-            if (parseNode.GetChildNode("messageDescription") is { } nullNodeMessageDescription && nullNodeMessageDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageDescription = null;
+            if (parseNode.GetChildNode("messageCode") is null) { _explicitNullValueMessageCode = default!; _explicitNullProperties?.Remove("messageCode"); }
+            else if (parseNode.GetChildNode("messageCode") is { } nullNodeMessageCode && nullNodeMessageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCode = null;
+            if (parseNode.GetChildNode("messageDescription") is null) { _explicitNullValueMessageDescription = default!; _explicitNullProperties?.Remove("messageDescription"); }
+            else if (parseNode.GetChildNode("messageDescription") is { } nullNodeMessageDescription && nullNodeMessageDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The messageCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageCode { get => _explicitNullValueMessageCode; set { _explicitNullValueMessageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageCode"); else _explicitNullProperties?.Remove("messageCode"); } }
+        public string? MessageCode { get => _explicitNullValueMessageCode; set { _explicitNullValueMessageCode = value; AdditionalData?.Remove("messageCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageCode"); else _explicitNullProperties?.Remove("messageCode"); } }
         private string? _explicitNullValueMessageCode = default!;
 #nullable restore
 #else
-        public string MessageCode { get => _explicitNullValueMessageCode; set { _explicitNullValueMessageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageCode"); else _explicitNullProperties?.Remove("messageCode"); } }
+        public string MessageCode { get => _explicitNullValueMessageCode; set { _explicitNullValueMessageCode = value; AdditionalData?.Remove("messageCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageCode"); else _explicitNullProperties?.Remove("messageCode"); } }
         private string _explicitNullValueMessageCode = default!;
 #endif
         /// <summary>The messageDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageDescription { get => _explicitNullValueMessageDescription; set { _explicitNullValueMessageDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageDescription"); else _explicitNullProperties?.Remove("messageDescription"); } }
+        public string? MessageDescription { get => _explicitNullValueMessageDescription; set { _explicitNullValueMessageDescription = value; AdditionalData?.Remove("messageDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageDescription"); else _explicitNullProperties?.Remove("messageDescription"); } }
         private string? _explicitNullValueMessageDescription = default!;
 #nullable restore
 #else
-        public string MessageDescription { get => _explicitNullValueMessageDescription; set { _explicitNullValueMessageDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageDescription"); else _explicitNullProperties?.Remove("messageDescription"); } }
+        public string MessageDescription { get => _explicitNullValueMessageDescription; set { _explicitNullValueMessageDescription = value; AdditionalData?.Remove("messageDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messageDescription"); else _explicitNullProperties?.Remove("messageDescription"); } }
         private string _explicitNullValueMessageDescription = default!;
 #endif
         /// <summary>

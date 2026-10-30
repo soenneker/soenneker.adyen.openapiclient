@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("businessDetails") is { } nullNodeBusinessDetails && nullNodeBusinessDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetails = null;
-            if (parseNode.GetChildNode("ultimateParentCompanyCode") is { } nullNodeUltimateParentCompanyCode && nullNodeUltimateParentCompanyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParentCompanyCode = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("businessDetails") is null) { _explicitNullValueBusinessDetails = default!; _explicitNullProperties?.Remove("businessDetails"); }
+            else if (parseNode.GetChildNode("businessDetails") is { } nullNodeBusinessDetails && nullNodeBusinessDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetails = null;
+            if (parseNode.GetChildNode("ultimateParentCompanyCode") is null) { _explicitNullValueUltimateParentCompanyCode = default!; _explicitNullProperties?.Remove("ultimateParentCompanyCode"); }
+            else if (parseNode.GetChildNode("ultimateParentCompanyCode") is { } nullNodeUltimateParentCompanyCode && nullNodeUltimateParentCompanyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParentCompanyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Address of the ultimate parent company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>Details about the ultimate parent company&apos;s business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyBusinessDetailsComposed? BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyBusinessDetailsComposed? BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; AdditionalData?.Remove("businessDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyBusinessDetailsComposed? _explicitNullValueBusinessDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyBusinessDetailsComposed BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyBusinessDetailsComposed BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; AdditionalData?.Remove("businessDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UltimateParentCompanyBusinessDetailsComposed _explicitNullValueBusinessDetails = default!;
 #endif
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the entry, returned in the response when you create an ultimate parent company. Required when updating an existing entry in an `/updateAccountHolder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
+        public string? UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; AdditionalData?.Remove("ultimateParentCompanyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
         private string? _explicitNullValueUltimateParentCompanyCode = default!;
 #nullable restore
 #else
-        public string UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
+        public string UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; AdditionalData?.Remove("ultimateParentCompanyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
         private string _explicitNullValueUltimateParentCompanyCode = default!;
 #endif
         /// <summary>

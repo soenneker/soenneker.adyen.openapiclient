@@ -18,12 +18,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("companyId") is { } nullNodeCompanyId && nullNodeCompanyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyId = null;
-            if (parseNode.GetChildNode("merchantId") is { } nullNodeMerchantId && nullNodeMerchantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantId = null;
-            if (parseNode.GetChildNode("storeId") is { } nullNodeStoreId && nullNodeStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreId = null;
-            if (parseNode.GetChildNode("terminalId") is { } nullNodeTerminalId && nullNodeTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalId = null;
-            if (parseNode.GetChildNode("updateSource") is { } nullNodeUpdateSource && nullNodeUpdateSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateSource = null;
-            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("companyId") is null) { _explicitNullValueCompanyId = default!; _explicitNullProperties?.Remove("companyId"); }
+            else if (parseNode.GetChildNode("companyId") is { } nullNodeCompanyId && nullNodeCompanyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyId = null;
+            if (parseNode.GetChildNode("merchantId") is null) { _explicitNullValueMerchantId = default!; _explicitNullProperties?.Remove("merchantId"); }
+            else if (parseNode.GetChildNode("merchantId") is { } nullNodeMerchantId && nullNodeMerchantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantId = null;
+            if (parseNode.GetChildNode("storeId") is null) { _explicitNullValueStoreId = default!; _explicitNullProperties?.Remove("storeId"); }
+            else if (parseNode.GetChildNode("storeId") is { } nullNodeStoreId && nullNodeStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreId = null;
+            if (parseNode.GetChildNode("terminalId") is null) { _explicitNullValueTerminalId = default!; _explicitNullProperties?.Remove("terminalId"); }
+            else if (parseNode.GetChildNode("terminalId") is { } nullNodeTerminalId && nullNodeTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalId = null;
+            if (parseNode.GetChildNode("updateSource") is null) { _explicitNullValueUpdateSource = default!; _explicitNullProperties?.Remove("updateSource"); }
+            else if (parseNode.GetChildNode("updateSource") is { } nullNodeUpdateSource && nullNodeUpdateSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateSource = null;
+            if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
+            else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the company account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
+        public string? CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; AdditionalData?.Remove("companyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
         private string? _explicitNullValueCompanyId = default!;
 #nullable restore
 #else
-        public string CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
+        public string CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; AdditionalData?.Remove("companyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
         private string _explicitNullValueCompanyId = default!;
 #endif
         /// <summary>The unique identifier of the merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
+        public string? MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; AdditionalData?.Remove("merchantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
         private string? _explicitNullValueMerchantId = default!;
 #nullable restore
 #else
-        public string MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
+        public string MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; AdditionalData?.Remove("merchantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
         private string _explicitNullValueMerchantId = default!;
 #endif
         /// <summary>The unique identifier of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
+        public string? StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; AdditionalData?.Remove("storeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
         private string? _explicitNullValueStoreId = default!;
 #nullable restore
 #else
-        public string StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
+        public string StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; AdditionalData?.Remove("storeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
         private string _explicitNullValueStoreId = default!;
 #endif
         /// <summary>The unique identifier of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
+        public string? TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; AdditionalData?.Remove("terminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
         private string? _explicitNullValueTerminalId = default!;
 #nullable restore
 #else
-        public string TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
+        public string TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; AdditionalData?.Remove("terminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
         private string _explicitNullValueTerminalId = default!;
 #endif
         /// <summary>Indicates whether the terminal settings were updated using the Customer Area or the Management API.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDataUpdateSource? UpdateSource { get => _explicitNullValueUpdateSource; set { _explicitNullValueUpdateSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateSource"); else _explicitNullProperties?.Remove("updateSource"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDataUpdateSource? UpdateSource { get => _explicitNullValueUpdateSource; set { _explicitNullValueUpdateSource = value; AdditionalData?.Remove("updateSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateSource"); else _explicitNullProperties?.Remove("updateSource"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDataUpdateSource? _explicitNullValueUpdateSource = default!;
         /// <summary>The user that updated the terminal settings. Can be Adyen or your API credential username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public string? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private string? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public string User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public string User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private string _explicitNullValueUser = default!;
 #endif
         /// <summary>
@@ -110,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "merchantId", n => { MerchantId = n.GetStringValue(); } },
                 { "storeId", n => { StoreId = n.GetStringValue(); } },
                 { "terminalId", n => { TerminalId = n.GetStringValue(); } },
-                { "updateSource", n => { UpdateSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDataUpdateSource>(); } },
+                { "updateSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDataUpdateSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUpdateSource = default; _explicitNullProperties?.Remove("updateSource"); AdditionalData["updateSource"] = unknown; } else { UpdateSource = parsed; AdditionalData.Remove("updateSource"); } } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
         }

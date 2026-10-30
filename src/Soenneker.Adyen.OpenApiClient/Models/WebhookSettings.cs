@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("webhookSettings") is { } nullNodeWebhookSettingsProp && nullNodeWebhookSettingsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookSettingsProp = null;
+            if (parseNode.GetChildNode("webhookSettings") is null) { _explicitNullValueWebhookSettingsProp = default!; _explicitNullProperties?.Remove("webhookSettings"); }
+            else if (parseNode.GetChildNode("webhookSettings") is { } nullNodeWebhookSettingsProp && nullNodeWebhookSettingsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookSettingsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of webhook settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting>? WebhookSettingsProp { get => _explicitNullValueWebhookSettingsProp; set { _explicitNullValueWebhookSettingsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookSettings"); else _explicitNullProperties?.Remove("webhookSettings"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting>? WebhookSettingsProp { get => _explicitNullValueWebhookSettingsProp; set { _explicitNullValueWebhookSettingsProp = value; AdditionalData?.Remove("webhookSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookSettings"); else _explicitNullProperties?.Remove("webhookSettings"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting>? _explicitNullValueWebhookSettingsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting> WebhookSettingsProp { get => _explicitNullValueWebhookSettingsProp; set { _explicitNullValueWebhookSettingsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookSettings"); else _explicitNullProperties?.Remove("webhookSettings"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting> WebhookSettingsProp { get => _explicitNullValueWebhookSettingsProp; set { _explicitNullValueWebhookSettingsProp = value; AdditionalData?.Remove("webhookSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookSettings"); else _explicitNullProperties?.Remove("webhookSettings"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.WebhookSetting> _explicitNullValueWebhookSettingsProp = default!;
 #endif
         /// <summary>

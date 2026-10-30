@@ -19,21 +19,36 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
-            if (parseNode.GetChildNode("balanceAccountPayoutScheduleId") is { } nullNodeBalanceAccountPayoutScheduleId && nullNodeBalanceAccountPayoutScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountPayoutScheduleId = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
-            if (parseNode.GetChildNode("frequencyValue") is { } nullNodeFrequencyValue && nullNodeFrequencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyValue = null;
-            if (parseNode.GetChildNode("maxPayoutAmount") is { } nullNodeMaxPayoutAmount && nullNodeMaxPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayoutAmount = null;
-            if (parseNode.GetChildNode("minPayoutAmount") is { } nullNodeMinPayoutAmount && nullNodeMinPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinPayoutAmount = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
-            if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
-            if (parseNode.GetChildNode("retainedAmount") is { } nullNodeRetainedAmount && nullNodeRetainedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetainedAmount = null;
-            if (parseNode.GetChildNode("salesDayClosingTime") is { } nullNodeSalesDayClosingTime && nullNodeSalesDayClosingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesDayClosingTime = null;
-            if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
+            if (parseNode.GetChildNode("balanceAccountId") is null) { _explicitNullValueBalanceAccountId = default!; _explicitNullProperties?.Remove("balanceAccountId"); }
+            else if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
+            if (parseNode.GetChildNode("balanceAccountPayoutScheduleId") is null) { _explicitNullValueBalanceAccountPayoutScheduleId = default!; _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); }
+            else if (parseNode.GetChildNode("balanceAccountPayoutScheduleId") is { } nullNodeBalanceAccountPayoutScheduleId && nullNodeBalanceAccountPayoutScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountPayoutScheduleId = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("frequency") is null) { _explicitNullValueFrequency = default!; _explicitNullProperties?.Remove("frequency"); }
+            else if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("frequencyValue") is null) { _explicitNullValueFrequencyValue = default!; _explicitNullProperties?.Remove("frequencyValue"); }
+            else if (parseNode.GetChildNode("frequencyValue") is { } nullNodeFrequencyValue && nullNodeFrequencyValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyValue = null;
+            if (parseNode.GetChildNode("maxPayoutAmount") is null) { _explicitNullValueMaxPayoutAmount = default!; _explicitNullProperties?.Remove("maxPayoutAmount"); }
+            else if (parseNode.GetChildNode("maxPayoutAmount") is { } nullNodeMaxPayoutAmount && nullNodeMaxPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayoutAmount = null;
+            if (parseNode.GetChildNode("minPayoutAmount") is null) { _explicitNullValueMinPayoutAmount = default!; _explicitNullProperties?.Remove("minPayoutAmount"); }
+            else if (parseNode.GetChildNode("minPayoutAmount") is { } nullNodeMinPayoutAmount && nullNodeMinPayoutAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinPayoutAmount = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("referenceForBeneficiary") is null) { _explicitNullValueReferenceForBeneficiary = default!; _explicitNullProperties?.Remove("referenceForBeneficiary"); }
+            else if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("retainedAmount") is null) { _explicitNullValueRetainedAmount = default!; _explicitNullProperties?.Remove("retainedAmount"); }
+            else if (parseNode.GetChildNode("retainedAmount") is { } nullNodeRetainedAmount && nullNodeRetainedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetainedAmount = null;
+            if (parseNode.GetChildNode("salesDayClosingTime") is null) { _explicitNullValueSalesDayClosingTime = default!; _explicitNullProperties?.Remove("salesDayClosingTime"); }
+            else if (parseNode.GetChildNode("salesDayClosingTime") is { } nullNodeSalesDayClosingTime && nullNodeSalesDayClosingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesDayClosingTime = null;
+            if (parseNode.GetChildNode("transferInstrumentId") is null) { _explicitNullValueTransferInstrumentId = default!; _explicitNullProperties?.Remove("transferInstrumentId"); }
+            else if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,111 +56,111 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance account to which the payout schedule was applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string? _explicitNullValueBalanceAccountId = default!;
 #nullable restore
 #else
-        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string _explicitNullValueBalanceAccountId = default!;
 #endif
         /// <summary>The unique identifier of the balance platform payout schedule that was applied to the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountPayoutScheduleId { get => _explicitNullValueBalanceAccountPayoutScheduleId; set { _explicitNullValueBalanceAccountPayoutScheduleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutScheduleId"); else _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); } }
+        public string? BalanceAccountPayoutScheduleId { get => _explicitNullValueBalanceAccountPayoutScheduleId; set { _explicitNullValueBalanceAccountPayoutScheduleId = value; AdditionalData?.Remove("balanceAccountPayoutScheduleId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutScheduleId"); else _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); } }
         private string? _explicitNullValueBalanceAccountPayoutScheduleId = default!;
 #nullable restore
 #else
-        public string BalanceAccountPayoutScheduleId { get => _explicitNullValueBalanceAccountPayoutScheduleId; set { _explicitNullValueBalanceAccountPayoutScheduleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutScheduleId"); else _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); } }
+        public string BalanceAccountPayoutScheduleId { get => _explicitNullValueBalanceAccountPayoutScheduleId; set { _explicitNullValueBalanceAccountPayoutScheduleId = value; AdditionalData?.Remove("balanceAccountPayoutScheduleId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutScheduleId"); else _explicitNullProperties?.Remove("balanceAccountPayoutScheduleId"); } }
         private string _explicitNullValueBalanceAccountPayoutScheduleId = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The three-character [ISO code](https://docs.adyen.com/development-resources/currency-codes) of the currency used for this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The description used for all payouts initiated by this payout schedule.Maximum length: 140 characters. If your description is longer, it may be truncated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Specifies whether the payout schedule is active.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The frequency of payouts initiated by this payout schedule.Possible values:* daily* weekdays* weekly* monthly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public string? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private string? _explicitNullValueFrequency = default!;
 #nullable restore
 #else
-        public string Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public string Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private string _explicitNullValueFrequency = default!;
 #endif
         /// <summary>The date of the month or day of the week when payouts are initiated. Allowed only if `frequency` is **monthly** or **weekly**.Possible values if `frequency` is **monthly**: **[1 - 31]**.* If your specified date happens on a weekend, the payout is initiated on the next business day.* If your specified date (**29**, **30**, or **31**) does not exist in a month, the payout is initiated on the last day of that month.Possible values if `frequency` is **weekly**: **[1 - 5]**.</summary>
-        public int? FrequencyValue { get => _explicitNullValueFrequencyValue; set { _explicitNullValueFrequencyValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequencyValue"); else _explicitNullProperties?.Remove("frequencyValue"); } }
+        public int? FrequencyValue { get => _explicitNullValueFrequencyValue; set { _explicitNullValueFrequencyValue = value; AdditionalData?.Remove("frequencyValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequencyValue"); else _explicitNullProperties?.Remove("frequencyValue"); } }
         private int? _explicitNullValueFrequencyValue = default!;
         /// <summary>The maximum amount that can be paid out from balance accounts that use this payout schedule.</summary>
-        public long? MaxPayoutAmount { get => _explicitNullValueMaxPayoutAmount; set { _explicitNullValueMaxPayoutAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayoutAmount"); else _explicitNullProperties?.Remove("maxPayoutAmount"); } }
+        public long? MaxPayoutAmount { get => _explicitNullValueMaxPayoutAmount; set { _explicitNullValueMaxPayoutAmount = value; AdditionalData?.Remove("maxPayoutAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayoutAmount"); else _explicitNullProperties?.Remove("maxPayoutAmount"); } }
         private long? _explicitNullValueMaxPayoutAmount = default!;
         /// <summary>The minimum amount that can be paid out from balance accounts that use this payout schedule.</summary>
-        public long? MinPayoutAmount { get => _explicitNullValueMinPayoutAmount; set { _explicitNullValueMinPayoutAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minPayoutAmount"); else _explicitNullProperties?.Remove("minPayoutAmount"); } }
+        public long? MinPayoutAmount { get => _explicitNullValueMinPayoutAmount; set { _explicitNullValueMinPayoutAmount = value; AdditionalData?.Remove("minPayoutAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minPayoutAmount"); else _explicitNullProperties?.Remove("minPayoutAmount"); } }
         private long? _explicitNullValueMinPayoutAmount = default!;
         /// <summary>Your internal reference of the payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>The reference for beneficiary used for all payouts initiated by this payout schedule. This reference is sent to the recipient of the transfer and is included in all webhooks related to the payout.Supported characters: **a-z**, **A-Z**, **0-9**, **-** and space. Spaces might be replaced with **-** if the recipient bank or payment infrastructure does not allow spaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; AdditionalData?.Remove("referenceForBeneficiary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
         private string? _explicitNullValueReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; AdditionalData?.Remove("referenceForBeneficiary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
         private string _explicitNullValueReferenceForBeneficiary = default!;
 #endif
         /// <summary>The amount of funds that must remain available in the balance account after an execution of the payout schedule. If the funds in the balance account are less than the retained amount, the execution is not initiated.</summary>
-        public long? RetainedAmount { get => _explicitNullValueRetainedAmount; set { _explicitNullValueRetainedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retainedAmount"); else _explicitNullProperties?.Remove("retainedAmount"); } }
+        public long? RetainedAmount { get => _explicitNullValueRetainedAmount; set { _explicitNullValueRetainedAmount = value; AdditionalData?.Remove("retainedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retainedAmount"); else _explicitNullProperties?.Remove("retainedAmount"); } }
         private long? _explicitNullValueRetainedAmount = default!;
         /// <summary>The time of day when the sales day is closed in balance account time zone. The sales day closing time can be between 00:00 to 07:00.Format: **HH:mm:SS**</summary>
 #nullable enable
-        public string? SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
+        public string? SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; AdditionalData?.Remove("salesDayClosingTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
         private string? _explicitNullValueSalesDayClosingTime = default!;
 #nullable restore
         /// <summary>The unique identifier of the transfer instrument to which the funds are paid out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; AdditionalData?.Remove("transferInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
         private string? _explicitNullValueTransferInstrumentId = default!;
 #nullable restore
 #else
-        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; AdditionalData?.Remove("transferInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
         private string _explicitNullValueTransferInstrumentId = default!;
 #endif
         /// <summary>

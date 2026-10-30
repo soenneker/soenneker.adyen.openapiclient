@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("stores") is { } nullNodeStores && nullNodeStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stores = null;
+            if (parseNode.GetChildNode("stores") is null) { _explicitNullValueStores = default!; _explicitNullProperties?.Remove("stores"); }
+            else if (parseNode.GetChildNode("stores") is { } nullNodeStores && nullNodeStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stores = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Array that returns a list of all stores for the specified merchant account, or for all merchant accounts under the company account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>? Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>? Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; AdditionalData?.Remove("stores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>? _explicitNullValueStores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store> Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store> Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; AdditionalData?.Remove("stores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store> _explicitNullValueStores = default!;
 #endif
         /// <summary>

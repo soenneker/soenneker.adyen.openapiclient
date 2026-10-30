@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
-            if (parseNode.GetChildNode("fieldName") is { } nullNodeFieldName && nullNodeFieldName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldName = null;
-            if (parseNode.GetChildNode("shareholderCode") is { } nullNodeShareholderCode && nullNodeShareholderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCode = null;
+            if (parseNode.GetChildNode("field") is null) { _explicitNullValueField = default!; _explicitNullProperties?.Remove("field"); }
+            else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("fieldName") is null) { _explicitNullValueFieldName = default!; _explicitNullProperties?.Remove("fieldName"); }
+            else if (parseNode.GetChildNode("fieldName") is { } nullNodeFieldName && nullNodeFieldName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldName = null;
+            if (parseNode.GetChildNode("shareholderCode") is null) { _explicitNullValueShareholderCode = default!; _explicitNullProperties?.Remove("shareholderCode"); }
+            else if (parseNode.GetChildNode("shareholderCode") is { } nullNodeShareholderCode && nullNodeShareholderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The full name of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private string? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private string _explicitNullValueField = default!;
 #endif
         /// <summary>The type of the field.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldTypeFieldName? FieldName { get => _explicitNullValueFieldName; set { _explicitNullValueFieldName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldName"); else _explicitNullProperties?.Remove("fieldName"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldTypeFieldName? FieldName { get => _explicitNullValueFieldName; set { _explicitNullValueFieldName = value; AdditionalData?.Remove("fieldName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldName"); else _explicitNullProperties?.Remove("fieldName"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldTypeFieldName? _explicitNullValueFieldName = default!;
         /// <summary>The code of the shareholder that the field belongs to. If empty, the field belongs to an account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
+        public string? ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; AdditionalData?.Remove("shareholderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
         private string? _explicitNullValueShareholderCode = default!;
 #nullable restore
 #else
-        public string ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
+        public string ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; AdditionalData?.Remove("shareholderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
         private string _explicitNullValueShareholderCode = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "fieldName", n => { FieldName = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldTypeFieldName>(); } },
+                { "fieldName", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationServiceV6FieldTypeFieldName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFieldName = default; _explicitNullProperties?.Remove("fieldName"); AdditionalData["fieldName"] = unknown; } else { FieldName = parsed; AdditionalData.Remove("fieldName"); } } },
                 { "shareholderCode", n => { ShareholderCode = n.GetStringValue(); } },
             };
         }

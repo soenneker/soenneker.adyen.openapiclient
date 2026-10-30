@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("advice") is { } nullNodeAdvice && nullNodeAdvice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advice = null;
-            if (parseNode.GetChildNode("allHardBlockRulesPassed") is { } nullNodeAllHardBlockRulesPassed && nullNodeAllHardBlockRulesPassed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllHardBlockRulesPassed = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
-            if (parseNode.GetChildNode("triggeredTransactionRules") is { } nullNodeTriggeredTransactionRules && nullNodeTriggeredTransactionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredTransactionRules = null;
+            if (parseNode.GetChildNode("advice") is null) { _explicitNullValueAdvice = default!; _explicitNullProperties?.Remove("advice"); }
+            else if (parseNode.GetChildNode("advice") is { } nullNodeAdvice && nullNodeAdvice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advice = null;
+            if (parseNode.GetChildNode("allHardBlockRulesPassed") is null) { _explicitNullValueAllHardBlockRulesPassed = default!; _explicitNullProperties?.Remove("allHardBlockRulesPassed"); }
+            else if (parseNode.GetChildNode("allHardBlockRulesPassed") is { } nullNodeAllHardBlockRulesPassed && nullNodeAllHardBlockRulesPassed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllHardBlockRulesPassed = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("triggeredTransactionRules") is null) { _explicitNullValueTriggeredTransactionRules = default!; _explicitNullProperties?.Remove("triggeredTransactionRules"); }
+            else if (parseNode.GetChildNode("triggeredTransactionRules") is { } nullNodeTriggeredTransactionRules && nullNodeTriggeredTransactionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredTransactionRules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,27 +33,27 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The advice given by the Risk analysis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
+        public string? Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; AdditionalData?.Remove("advice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
         private string? _explicitNullValueAdvice = default!;
 #nullable restore
 #else
-        public string Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
+        public string Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; AdditionalData?.Remove("advice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
         private string _explicitNullValueAdvice = default!;
 #endif
         /// <summary>Indicates whether the transaction passed the evaluation for all hardblock rules</summary>
-        public bool? AllHardBlockRulesPassed { get => _explicitNullValueAllHardBlockRulesPassed; set { _explicitNullValueAllHardBlockRulesPassed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allHardBlockRulesPassed"); else _explicitNullProperties?.Remove("allHardBlockRulesPassed"); } }
+        public bool? AllHardBlockRulesPassed { get => _explicitNullValueAllHardBlockRulesPassed; set { _explicitNullValueAllHardBlockRulesPassed = value; AdditionalData?.Remove("allHardBlockRulesPassed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allHardBlockRulesPassed"); else _explicitNullProperties?.Remove("allHardBlockRulesPassed"); } }
         private bool? _explicitNullValueAllHardBlockRulesPassed = default!;
         /// <summary>The score of the Risk analysis.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>Array containing all the transaction rules that the transaction triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4TransactionEventViolation>? TriggeredTransactionRules { get => _explicitNullValueTriggeredTransactionRules; set { _explicitNullValueTriggeredTransactionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredTransactionRules"); else _explicitNullProperties?.Remove("triggeredTransactionRules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4TransactionEventViolation>? TriggeredTransactionRules { get => _explicitNullValueTriggeredTransactionRules; set { _explicitNullValueTriggeredTransactionRules = value; AdditionalData?.Remove("triggeredTransactionRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredTransactionRules"); else _explicitNullProperties?.Remove("triggeredTransactionRules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4TransactionEventViolation>? _explicitNullValueTriggeredTransactionRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4TransactionEventViolation> TriggeredTransactionRules { get => _explicitNullValueTriggeredTransactionRules; set { _explicitNullValueTriggeredTransactionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredTransactionRules"); else _explicitNullProperties?.Remove("triggeredTransactionRules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4TransactionEventViolation> TriggeredTransactionRules { get => _explicitNullValueTriggeredTransactionRules; set { _explicitNullValueTriggeredTransactionRules = value; AdditionalData?.Remove("triggeredTransactionRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredTransactionRules"); else _explicitNullProperties?.Remove("triggeredTransactionRules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4TransactionEventViolation> _explicitNullValueTriggeredTransactionRules = default!;
 #endif
         /// <summary>

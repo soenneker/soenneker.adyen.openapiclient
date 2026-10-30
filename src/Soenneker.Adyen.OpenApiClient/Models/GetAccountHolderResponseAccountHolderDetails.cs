@@ -18,22 +18,38 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("bankAccountDetails") is { } nullNodeBankAccountDetails && nullNodeBankAccountDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountDetails = null;
-            if (parseNode.GetChildNode("bankAggregatorDataReference") is { } nullNodeBankAggregatorDataReference && nullNodeBankAggregatorDataReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAggregatorDataReference = null;
-            if (parseNode.GetChildNode("businessDetails") is { } nullNodeBusinessDetails && nullNodeBusinessDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetails = null;
-            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
-            if (parseNode.GetChildNode("fullPhoneNumber") is { } nullNodeFullPhoneNumber && nullNodeFullPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullPhoneNumber = null;
-            if (parseNode.GetChildNode("individualDetails") is { } nullNodeIndividualDetails && nullNodeIndividualDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndividualDetails = null;
-            if (parseNode.GetChildNode("lastReviewDate") is { } nullNodeLastReviewDate && nullNodeLastReviewDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReviewDate = null;
-            if (parseNode.GetChildNode("legalArrangements") is { } nullNodeLegalArrangements && nullNodeLegalArrangements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangements = null;
-            if (parseNode.GetChildNode("merchantCategoryCode") is { } nullNodeMerchantCategoryCode && nullNodeMerchantCategoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCategoryCode = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("payoutMethods") is { } nullNodePayoutMethods && nullNodePayoutMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethods = null;
-            if (parseNode.GetChildNode("phoneNumber") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
-            if (parseNode.GetChildNode("principalBusinessAddress") is { } nullNodePrincipalBusinessAddress && nullNodePrincipalBusinessAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrincipalBusinessAddress = null;
-            if (parseNode.GetChildNode("storeDetails") is { } nullNodeStoreDetails && nullNodeStoreDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreDetails = null;
-            if (parseNode.GetChildNode("webAddress") is { } nullNodeWebAddress && nullNodeWebAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAddress = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("bankAccountDetails") is null) { _explicitNullValueBankAccountDetails = default!; _explicitNullProperties?.Remove("bankAccountDetails"); }
+            else if (parseNode.GetChildNode("bankAccountDetails") is { } nullNodeBankAccountDetails && nullNodeBankAccountDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountDetails = null;
+            if (parseNode.GetChildNode("bankAggregatorDataReference") is null) { _explicitNullValueBankAggregatorDataReference = default!; _explicitNullProperties?.Remove("bankAggregatorDataReference"); }
+            else if (parseNode.GetChildNode("bankAggregatorDataReference") is { } nullNodeBankAggregatorDataReference && nullNodeBankAggregatorDataReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAggregatorDataReference = null;
+            if (parseNode.GetChildNode("businessDetails") is null) { _explicitNullValueBusinessDetails = default!; _explicitNullProperties?.Remove("businessDetails"); }
+            else if (parseNode.GetChildNode("businessDetails") is { } nullNodeBusinessDetails && nullNodeBusinessDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDetails = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("fullPhoneNumber") is null) { _explicitNullValueFullPhoneNumber = default!; _explicitNullProperties?.Remove("fullPhoneNumber"); }
+            else if (parseNode.GetChildNode("fullPhoneNumber") is { } nullNodeFullPhoneNumber && nullNodeFullPhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullPhoneNumber = null;
+            if (parseNode.GetChildNode("individualDetails") is null) { _explicitNullValueIndividualDetails = default!; _explicitNullProperties?.Remove("individualDetails"); }
+            else if (parseNode.GetChildNode("individualDetails") is { } nullNodeIndividualDetails && nullNodeIndividualDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndividualDetails = null;
+            if (parseNode.GetChildNode("lastReviewDate") is null) { _explicitNullValueLastReviewDate = default!; _explicitNullProperties?.Remove("lastReviewDate"); }
+            else if (parseNode.GetChildNode("lastReviewDate") is { } nullNodeLastReviewDate && nullNodeLastReviewDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReviewDate = null;
+            if (parseNode.GetChildNode("legalArrangements") is null) { _explicitNullValueLegalArrangements = default!; _explicitNullProperties?.Remove("legalArrangements"); }
+            else if (parseNode.GetChildNode("legalArrangements") is { } nullNodeLegalArrangements && nullNodeLegalArrangements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangements = null;
+            if (parseNode.GetChildNode("merchantCategoryCode") is null) { _explicitNullValueMerchantCategoryCode = default!; _explicitNullProperties?.Remove("merchantCategoryCode"); }
+            else if (parseNode.GetChildNode("merchantCategoryCode") is { } nullNodeMerchantCategoryCode && nullNodeMerchantCategoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantCategoryCode = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("payoutMethods") is null) { _explicitNullValuePayoutMethods = default!; _explicitNullProperties?.Remove("payoutMethods"); }
+            else if (parseNode.GetChildNode("payoutMethods") is { } nullNodePayoutMethods && nullNodePayoutMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethods = null;
+            if (parseNode.GetChildNode("phoneNumber") is null) { _explicitNullValuePhoneNumber = default!; _explicitNullProperties?.Remove("phoneNumber"); }
+            else if (parseNode.GetChildNode("phoneNumber") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("principalBusinessAddress") is null) { _explicitNullValuePrincipalBusinessAddress = default!; _explicitNullProperties?.Remove("principalBusinessAddress"); }
+            else if (parseNode.GetChildNode("principalBusinessAddress") is { } nullNodePrincipalBusinessAddress && nullNodePrincipalBusinessAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrincipalBusinessAddress = null;
+            if (parseNode.GetChildNode("storeDetails") is null) { _explicitNullValueStoreDetails = default!; _explicitNullProperties?.Remove("storeDetails"); }
+            else if (parseNode.GetChildNode("storeDetails") is { } nullNodeStoreDetails && nullNodeStoreDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreDetails = null;
+            if (parseNode.GetChildNode("webAddress") is null) { _explicitNullValueWebAddress = default!; _explicitNullProperties?.Remove("webAddress"); }
+            else if (parseNode.GetChildNode("webAddress") is { } nullNodeWebAddress && nullNodeWebAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebAddress = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,161 +57,161 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The address of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>Array of bank accounts associated with the account holder. For details about the required `bankAccountDetail` fields, see [Required information](https://docs.adyen.com/classic-platforms/verification-process/required-information).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail>? BankAccountDetails { get => _explicitNullValueBankAccountDetails; set { _explicitNullValueBankAccountDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountDetails"); else _explicitNullProperties?.Remove("bankAccountDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail>? BankAccountDetails { get => _explicitNullValueBankAccountDetails; set { _explicitNullValueBankAccountDetails = value; AdditionalData?.Remove("bankAccountDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountDetails"); else _explicitNullProperties?.Remove("bankAccountDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail>? _explicitNullValueBankAccountDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail> BankAccountDetails { get => _explicitNullValueBankAccountDetails; set { _explicitNullValueBankAccountDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountDetails"); else _explicitNullProperties?.Remove("bankAccountDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail> BankAccountDetails { get => _explicitNullValueBankAccountDetails; set { _explicitNullValueBankAccountDetails = value; AdditionalData?.Remove("bankAccountDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountDetails"); else _explicitNullProperties?.Remove("bankAccountDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountDetail> _explicitNullValueBankAccountDetails = default!;
 #endif
         /// <summary>The opaque reference value returned by the Adyen API during bank account login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAggregatorDataReference { get => _explicitNullValueBankAggregatorDataReference; set { _explicitNullValueBankAggregatorDataReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAggregatorDataReference"); else _explicitNullProperties?.Remove("bankAggregatorDataReference"); } }
+        public string? BankAggregatorDataReference { get => _explicitNullValueBankAggregatorDataReference; set { _explicitNullValueBankAggregatorDataReference = value; AdditionalData?.Remove("bankAggregatorDataReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAggregatorDataReference"); else _explicitNullProperties?.Remove("bankAggregatorDataReference"); } }
         private string? _explicitNullValueBankAggregatorDataReference = default!;
 #nullable restore
 #else
-        public string BankAggregatorDataReference { get => _explicitNullValueBankAggregatorDataReference; set { _explicitNullValueBankAggregatorDataReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAggregatorDataReference"); else _explicitNullProperties?.Remove("bankAggregatorDataReference"); } }
+        public string BankAggregatorDataReference { get => _explicitNullValueBankAggregatorDataReference; set { _explicitNullValueBankAggregatorDataReference = value; AdditionalData?.Remove("bankAggregatorDataReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAggregatorDataReference"); else _explicitNullProperties?.Remove("bankAggregatorDataReference"); } }
         private string _explicitNullValueBankAggregatorDataReference = default!;
 #endif
         /// <summary>Details about the business or nonprofit account holder.Required when creating an account holder with `legalEntity` **Business** or **NonProfit**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsBusinessDetails? BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsBusinessDetails? BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; AdditionalData?.Remove("businessDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsBusinessDetails? _explicitNullValueBusinessDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsBusinessDetails BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsBusinessDetails BusinessDetails { get => _explicitNullValueBusinessDetails; set { _explicitNullValueBusinessDetails = value; AdditionalData?.Remove("businessDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessDetails"); else _explicitNullProperties?.Remove("businessDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsBusinessDetails _explicitNullValueBusinessDetails = default!;
 #endif
         /// <summary>The email address of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The phone number of the account holder provided as a single string. It will be handled as a landline phone.**Examples:** &quot;0031 6 11 22 33 44&quot;, &quot;+316/1122-3344&quot;, &quot;(0031) 611223344&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullPhoneNumber { get => _explicitNullValueFullPhoneNumber; set { _explicitNullValueFullPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullPhoneNumber"); else _explicitNullProperties?.Remove("fullPhoneNumber"); } }
+        public string? FullPhoneNumber { get => _explicitNullValueFullPhoneNumber; set { _explicitNullValueFullPhoneNumber = value; AdditionalData?.Remove("fullPhoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullPhoneNumber"); else _explicitNullProperties?.Remove("fullPhoneNumber"); } }
         private string? _explicitNullValueFullPhoneNumber = default!;
 #nullable restore
 #else
-        public string FullPhoneNumber { get => _explicitNullValueFullPhoneNumber; set { _explicitNullValueFullPhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullPhoneNumber"); else _explicitNullProperties?.Remove("fullPhoneNumber"); } }
+        public string FullPhoneNumber { get => _explicitNullValueFullPhoneNumber; set { _explicitNullValueFullPhoneNumber = value; AdditionalData?.Remove("fullPhoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullPhoneNumber"); else _explicitNullProperties?.Remove("fullPhoneNumber"); } }
         private string _explicitNullValueFullPhoneNumber = default!;
 #endif
         /// <summary>Details about the individual account holder.Required when creating an account holder with `legalEntity` **Individual**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsIndividualDetails? IndividualDetails { get => _explicitNullValueIndividualDetails; set { _explicitNullValueIndividualDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("individualDetails"); else _explicitNullProperties?.Remove("individualDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsIndividualDetails? IndividualDetails { get => _explicitNullValueIndividualDetails; set { _explicitNullValueIndividualDetails = value; AdditionalData?.Remove("individualDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("individualDetails"); else _explicitNullProperties?.Remove("individualDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsIndividualDetails? _explicitNullValueIndividualDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsIndividualDetails IndividualDetails { get => _explicitNullValueIndividualDetails; set { _explicitNullValueIndividualDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("individualDetails"); else _explicitNullProperties?.Remove("individualDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsIndividualDetails IndividualDetails { get => _explicitNullValueIndividualDetails; set { _explicitNullValueIndividualDetails = value; AdditionalData?.Remove("individualDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("individualDetails"); else _explicitNullProperties?.Remove("individualDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsIndividualDetails _explicitNullValueIndividualDetails = default!;
 #endif
         /// <summary>Date when you last reviewed the account holder&apos;s information, in ISO-8601 YYYY-MM-DD format. For example, **2020-01-31**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastReviewDate { get => _explicitNullValueLastReviewDate; set { _explicitNullValueLastReviewDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReviewDate"); else _explicitNullProperties?.Remove("lastReviewDate"); } }
+        public string? LastReviewDate { get => _explicitNullValueLastReviewDate; set { _explicitNullValueLastReviewDate = value; AdditionalData?.Remove("lastReviewDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReviewDate"); else _explicitNullProperties?.Remove("lastReviewDate"); } }
         private string? _explicitNullValueLastReviewDate = default!;
 #nullable restore
 #else
-        public string LastReviewDate { get => _explicitNullValueLastReviewDate; set { _explicitNullValueLastReviewDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReviewDate"); else _explicitNullProperties?.Remove("lastReviewDate"); } }
+        public string LastReviewDate { get => _explicitNullValueLastReviewDate; set { _explicitNullValueLastReviewDate = value; AdditionalData?.Remove("lastReviewDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReviewDate"); else _explicitNullProperties?.Remove("lastReviewDate"); } }
         private string _explicitNullValueLastReviewDate = default!;
 #endif
         /// <summary>An array containing information about the account holder&apos;s [legal arrangements](https://docs.adyen.com/classic-platforms/verification-process/legal-arrangements).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail>? LegalArrangements { get => _explicitNullValueLegalArrangements; set { _explicitNullValueLegalArrangements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangements"); else _explicitNullProperties?.Remove("legalArrangements"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail>? LegalArrangements { get => _explicitNullValueLegalArrangements; set { _explicitNullValueLegalArrangements = value; AdditionalData?.Remove("legalArrangements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangements"); else _explicitNullProperties?.Remove("legalArrangements"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail>? _explicitNullValueLegalArrangements = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail> LegalArrangements { get => _explicitNullValueLegalArrangements; set { _explicitNullValueLegalArrangements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangements"); else _explicitNullProperties?.Remove("legalArrangements"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail> LegalArrangements { get => _explicitNullValueLegalArrangements; set { _explicitNullValueLegalArrangements = value; AdditionalData?.Remove("legalArrangements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangements"); else _explicitNullProperties?.Remove("legalArrangements"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail> _explicitNullValueLegalArrangements = default!;
 #endif
         /// <summary>The Merchant Category Code of the account holder.&gt; If not specified in the request, this will be derived from the platform account (which is configured by Adyen).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCategoryCode"); else _explicitNullProperties?.Remove("merchantCategoryCode"); } }
+        public string? MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; AdditionalData?.Remove("merchantCategoryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCategoryCode"); else _explicitNullProperties?.Remove("merchantCategoryCode"); } }
         private string? _explicitNullValueMerchantCategoryCode = default!;
 #nullable restore
 #else
-        public string MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCategoryCode"); else _explicitNullProperties?.Remove("merchantCategoryCode"); } }
+        public string MerchantCategoryCode { get => _explicitNullValueMerchantCategoryCode; set { _explicitNullValueMerchantCategoryCode = value; AdditionalData?.Remove("merchantCategoryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantCategoryCode"); else _explicitNullProperties?.Remove("merchantCategoryCode"); } }
         private string _explicitNullValueMerchantCategoryCode = default!;
 #endif
         /// <summary>A set of key and value pairs for general use by the account holder or merchant.The keys do not have specific names and may be used for storing miscellaneous data as desired.&gt; The values being stored have a maximum length of eighty (80) characters and will be truncated if necessary.&gt; Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty2? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty2? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty2 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsMetadataProperty2 _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Array of tokenized card details associated with the account holder. For details about how you can use the tokens to pay out, refer to [Pay out to cards](https://docs.adyen.com/classic-platforms/payout-to-cards).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod>? PayoutMethods { get => _explicitNullValuePayoutMethods; set { _explicitNullValuePayoutMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethods"); else _explicitNullProperties?.Remove("payoutMethods"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod>? PayoutMethods { get => _explicitNullValuePayoutMethods; set { _explicitNullValuePayoutMethods = value; AdditionalData?.Remove("payoutMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethods"); else _explicitNullProperties?.Remove("payoutMethods"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod>? _explicitNullValuePayoutMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod> PayoutMethods { get => _explicitNullValuePayoutMethods; set { _explicitNullValuePayoutMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethods"); else _explicitNullProperties?.Remove("payoutMethods"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod> PayoutMethods { get => _explicitNullValuePayoutMethods; set { _explicitNullValuePayoutMethods = value; AdditionalData?.Remove("payoutMethods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethods"); else _explicitNullProperties?.Remove("payoutMethods"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutMethod> _explicitNullValuePayoutMethods = default!;
 #endif
         /// <summary>The phone number of the account holder.&gt; Required if a `fullPhoneNumber` is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPhoneNumber? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPhoneNumber? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPhoneNumber? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPhoneNumber PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPhoneNumber PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPhoneNumber _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>The principal business address of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPrincipalBusinessAddress? PrincipalBusinessAddress { get => _explicitNullValuePrincipalBusinessAddress; set { _explicitNullValuePrincipalBusinessAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principalBusinessAddress"); else _explicitNullProperties?.Remove("principalBusinessAddress"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPrincipalBusinessAddress? PrincipalBusinessAddress { get => _explicitNullValuePrincipalBusinessAddress; set { _explicitNullValuePrincipalBusinessAddress = value; AdditionalData?.Remove("principalBusinessAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principalBusinessAddress"); else _explicitNullProperties?.Remove("principalBusinessAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPrincipalBusinessAddress? _explicitNullValuePrincipalBusinessAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPrincipalBusinessAddress PrincipalBusinessAddress { get => _explicitNullValuePrincipalBusinessAddress; set { _explicitNullValuePrincipalBusinessAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principalBusinessAddress"); else _explicitNullProperties?.Remove("principalBusinessAddress"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPrincipalBusinessAddress PrincipalBusinessAddress { get => _explicitNullValuePrincipalBusinessAddress; set { _explicitNullValuePrincipalBusinessAddress = value; AdditionalData?.Remove("principalBusinessAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("principalBusinessAddress"); else _explicitNullProperties?.Remove("principalBusinessAddress"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderDetailsPrincipalBusinessAddress _explicitNullValuePrincipalBusinessAddress = default!;
 #endif
         /// <summary>Array of stores associated with the account holder. Required when onboarding account holders that have an Adyen [point of sale](https://docs.adyen.com/classic-platforms/platforms-for-pos).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail>? StoreDetails { get => _explicitNullValueStoreDetails; set { _explicitNullValueStoreDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeDetails"); else _explicitNullProperties?.Remove("storeDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail>? StoreDetails { get => _explicitNullValueStoreDetails; set { _explicitNullValueStoreDetails = value; AdditionalData?.Remove("storeDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeDetails"); else _explicitNullProperties?.Remove("storeDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail>? _explicitNullValueStoreDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail> StoreDetails { get => _explicitNullValueStoreDetails; set { _explicitNullValueStoreDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeDetails"); else _explicitNullProperties?.Remove("storeDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail> StoreDetails { get => _explicitNullValueStoreDetails; set { _explicitNullValueStoreDetails = value; AdditionalData?.Remove("storeDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeDetails"); else _explicitNullProperties?.Remove("storeDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoreDetail> _explicitNullValueStoreDetails = default!;
 #endif
         /// <summary>The URL of the website of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebAddress { get => _explicitNullValueWebAddress; set { _explicitNullValueWebAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAddress"); else _explicitNullProperties?.Remove("webAddress"); } }
+        public string? WebAddress { get => _explicitNullValueWebAddress; set { _explicitNullValueWebAddress = value; AdditionalData?.Remove("webAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAddress"); else _explicitNullProperties?.Remove("webAddress"); } }
         private string? _explicitNullValueWebAddress = default!;
 #nullable restore
 #else
-        public string WebAddress { get => _explicitNullValueWebAddress; set { _explicitNullValueWebAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAddress"); else _explicitNullProperties?.Remove("webAddress"); } }
+        public string WebAddress { get => _explicitNullValueWebAddress; set { _explicitNullValueWebAddress = value; AdditionalData?.Remove("webAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webAddress"); else _explicitNullProperties?.Remove("webAddress"); } }
         private string _explicitNullValueWebAddress = default!;
 #endif
         /// <summary>

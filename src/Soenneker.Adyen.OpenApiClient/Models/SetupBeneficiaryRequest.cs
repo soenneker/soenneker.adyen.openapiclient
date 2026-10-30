@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destinationAccountCode") is { } nullNodeDestinationAccountCode && nullNodeDestinationAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAccountCode = null;
-            if (parseNode.GetChildNode("merchantReference") is { } nullNodeMerchantReference && nullNodeMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantReference = null;
-            if (parseNode.GetChildNode("sourceAccountCode") is { } nullNodeSourceAccountCode && nullNodeSourceAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAccountCode = null;
+            if (parseNode.GetChildNode("destinationAccountCode") is null) { _explicitNullValueDestinationAccountCode = default!; _explicitNullProperties?.Remove("destinationAccountCode"); }
+            else if (parseNode.GetChildNode("destinationAccountCode") is { } nullNodeDestinationAccountCode && nullNodeDestinationAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAccountCode = null;
+            if (parseNode.GetChildNode("merchantReference") is null) { _explicitNullValueMerchantReference = default!; _explicitNullProperties?.Remove("merchantReference"); }
+            else if (parseNode.GetChildNode("merchantReference") is { } nullNodeMerchantReference && nullNodeMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantReference = null;
+            if (parseNode.GetChildNode("sourceAccountCode") is null) { _explicitNullValueSourceAccountCode = default!; _explicitNullProperties?.Remove("sourceAccountCode"); }
+            else if (parseNode.GetChildNode("sourceAccountCode") is { } nullNodeSourceAccountCode && nullNodeSourceAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAccountCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The destination account code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAccountCode { get => _explicitNullValueDestinationAccountCode; set { _explicitNullValueDestinationAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountCode"); else _explicitNullProperties?.Remove("destinationAccountCode"); } }
+        public string? DestinationAccountCode { get => _explicitNullValueDestinationAccountCode; set { _explicitNullValueDestinationAccountCode = value; AdditionalData?.Remove("destinationAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountCode"); else _explicitNullProperties?.Remove("destinationAccountCode"); } }
         private string? _explicitNullValueDestinationAccountCode = default!;
 #nullable restore
 #else
-        public string DestinationAccountCode { get => _explicitNullValueDestinationAccountCode; set { _explicitNullValueDestinationAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountCode"); else _explicitNullProperties?.Remove("destinationAccountCode"); } }
+        public string DestinationAccountCode { get => _explicitNullValueDestinationAccountCode; set { _explicitNullValueDestinationAccountCode = value; AdditionalData?.Remove("destinationAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAccountCode"); else _explicitNullProperties?.Remove("destinationAccountCode"); } }
         private string _explicitNullValueDestinationAccountCode = default!;
 #endif
         /// <summary>A value that can be supplied at the discretion of the executing user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        public string? MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; AdditionalData?.Remove("merchantReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
         private string? _explicitNullValueMerchantReference = default!;
 #nullable restore
 #else
-        public string MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
+        public string MerchantReference { get => _explicitNullValueMerchantReference; set { _explicitNullValueMerchantReference = value; AdditionalData?.Remove("merchantReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantReference"); else _explicitNullProperties?.Remove("merchantReference"); } }
         private string _explicitNullValueMerchantReference = default!;
 #endif
         /// <summary>The benefactor account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAccountCode { get => _explicitNullValueSourceAccountCode; set { _explicitNullValueSourceAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountCode"); else _explicitNullProperties?.Remove("sourceAccountCode"); } }
+        public string? SourceAccountCode { get => _explicitNullValueSourceAccountCode; set { _explicitNullValueSourceAccountCode = value; AdditionalData?.Remove("sourceAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountCode"); else _explicitNullProperties?.Remove("sourceAccountCode"); } }
         private string? _explicitNullValueSourceAccountCode = default!;
 #nullable restore
 #else
-        public string SourceAccountCode { get => _explicitNullValueSourceAccountCode; set { _explicitNullValueSourceAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountCode"); else _explicitNullProperties?.Remove("sourceAccountCode"); } }
+        public string SourceAccountCode { get => _explicitNullValueSourceAccountCode; set { _explicitNullValueSourceAccountCode = value; AdditionalData?.Remove("sourceAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceAccountCode"); else _explicitNullProperties?.Remove("sourceAccountCode"); } }
         private string _explicitNullValueSourceAccountCode = default!;
 #endif
         /// <summary>

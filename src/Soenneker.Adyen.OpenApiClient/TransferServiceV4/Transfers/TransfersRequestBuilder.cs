@@ -136,7 +136,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers.TransfersRequestBuilder.TransfersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/TransferService-v4/transfers?createdSince={createdSince}&createdUntil={createdUntil}{&accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/TransferService-v4/transfers?createdSince={createdSince}&createdUntil={createdUntil}{&accountHolderId*,balanceAccountId*,balancePlatform*,category*,cursor*,limit*,paymentInstrumentId*,reference*,sortOrder*}", RequestAdapter.BaseUrl, "https://balanceplatform-api-test.adyen.com/btl/v4", "/TransferService-v4/transfers", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -157,7 +157,7 @@ namespace Soenneker.Adyen.OpenApiClient.TransferServiceV4.Transfers
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://balanceplatform-api-test.adyen.com/btl/v4", "/TransferService-v4/transfers", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

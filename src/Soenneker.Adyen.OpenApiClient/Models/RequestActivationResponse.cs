@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("companyId") is { } nullNodeCompanyId && nullNodeCompanyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyId = null;
-            if (parseNode.GetChildNode("merchantId") is { } nullNodeMerchantId && nullNodeMerchantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantId = null;
+            if (parseNode.GetChildNode("companyId") is null) { _explicitNullValueCompanyId = default!; _explicitNullProperties?.Remove("companyId"); }
+            else if (parseNode.GetChildNode("companyId") is { } nullNodeCompanyId && nullNodeCompanyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyId = null;
+            if (parseNode.GetChildNode("merchantId") is null) { _explicitNullValueMerchantId = default!; _explicitNullProperties?.Remove("merchantId"); }
+            else if (parseNode.GetChildNode("merchantId") is { } nullNodeMerchantId && nullNodeMerchantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the company account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
+        public string? CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; AdditionalData?.Remove("companyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
         private string? _explicitNullValueCompanyId = default!;
 #nullable restore
 #else
-        public string CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
+        public string CompanyId { get => _explicitNullValueCompanyId; set { _explicitNullValueCompanyId = value; AdditionalData?.Remove("companyId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyId"); else _explicitNullProperties?.Remove("companyId"); } }
         private string _explicitNullValueCompanyId = default!;
 #endif
         /// <summary>The unique identifier of the merchant account you requested to activate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
+        public string? MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; AdditionalData?.Remove("merchantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
         private string? _explicitNullValueMerchantId = default!;
 #nullable restore
 #else
-        public string MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
+        public string MerchantId { get => _explicitNullValueMerchantId; set { _explicitNullValueMerchantId = value; AdditionalData?.Remove("merchantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantId"); else _explicitNullProperties?.Remove("merchantId"); } }
         private string _explicitNullValueMerchantId = default!;
 #endif
         /// <summary>

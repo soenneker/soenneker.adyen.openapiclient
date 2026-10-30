@@ -18,28 +18,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
+            else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
         }
 
         /// <summary>Direction on how to handle any payouts that have already been scheduled.Possible values:* `CLOSE`: close the existing batch of payouts.* `UPDATE`: reschedule the existing batch to the new schedule.* `NOTHING` (**default**): allow the payout to proceed.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The reason for the payout schedule update.&gt; This field is required when the `schedule` parameter is set to `HOLD`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>The new payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule? _explicitNullValueSchedule = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountRequestPayoutSchedule"/> and sets the default values.
@@ -66,9 +69,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule>(); } },
+                { "schedule", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdatePayoutScheduleRequestSchedule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSchedule = default; _explicitNullProperties?.Remove("schedule"); AdditionalData["schedule"] = unknown; } else { Schedule = parsed; AdditionalData.Remove("schedule"); } } },
             };
         }
         /// <summary>

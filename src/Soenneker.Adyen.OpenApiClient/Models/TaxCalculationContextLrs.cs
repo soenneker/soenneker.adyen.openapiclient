@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("remittancePurpose") is { } nullNodeRemittancePurpose && nullNodeRemittancePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemittancePurpose = null;
-            if (parseNode.GetChildNode("sublimitStatus") is { } nullNodeSublimitStatus && nullNodeSublimitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SublimitStatus = null;
+            if (parseNode.GetChildNode("remittancePurpose") is null) { _explicitNullValueRemittancePurpose = default!; _explicitNullProperties?.Remove("remittancePurpose"); }
+            else if (parseNode.GetChildNode("remittancePurpose") is { } nullNodeRemittancePurpose && nullNodeRemittancePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemittancePurpose = null;
+            if (parseNode.GetChildNode("sublimitStatus") is null) { _explicitNullValueSublimitStatus = default!; _explicitNullProperties?.Remove("sublimitStatus"); }
+            else if (parseNode.GetChildNode("sublimitStatus") is { } nullNodeSublimitStatus && nullNodeSublimitStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SublimitStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The remittance category, for example TOUR_PROGRAMME or EDUCATION.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose? RemittancePurpose { get => _explicitNullValueRemittancePurpose; set { _explicitNullValueRemittancePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remittancePurpose"); else _explicitNullProperties?.Remove("remittancePurpose"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose? RemittancePurpose { get => _explicitNullValueRemittancePurpose; set { _explicitNullValueRemittancePurpose = value; AdditionalData?.Remove("remittancePurpose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remittancePurpose"); else _explicitNullProperties?.Remove("remittancePurpose"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose? _explicitNullValueRemittancePurpose = default!;
         /// <summary>The status of the INR 1 million LRS sublimit, for example EXCEEDED.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus? SublimitStatus { get => _explicitNullValueSublimitStatus; set { _explicitNullValueSublimitStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sublimitStatus"); else _explicitNullProperties?.Remove("sublimitStatus"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus? SublimitStatus { get => _explicitNullValueSublimitStatus; set { _explicitNullValueSublimitStatus = value; AdditionalData?.Remove("sublimitStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sublimitStatus"); else _explicitNullProperties?.Remove("sublimitStatus"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus? _explicitNullValueSublimitStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "remittancePurpose", n => { RemittancePurpose = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose>(); } },
-                { "sublimitStatus", n => { SublimitStatus = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus>(); } },
+                { "remittancePurpose", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextRemittancePurpose>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRemittancePurpose = default; _explicitNullProperties?.Remove("remittancePurpose"); AdditionalData["remittancePurpose"] = unknown; } else { RemittancePurpose = parsed; AdditionalData.Remove("remittancePurpose"); } } },
+                { "sublimitStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LrsContextSublimitStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSublimitStatus = default; _explicitNullProperties?.Remove("sublimitStatus"); AdditionalData["sublimitStatus"] = unknown; } else { SublimitStatus = parsed; AdditionalData.Remove("sublimitStatus"); } } },
             };
         }
         /// <summary>

@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("adminMenuPin") is { } nullNodeAdminMenuPin && nullNodeAdminMenuPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminMenuPin = null;
-            if (parseNode.GetChildNode("refundPin") is { } nullNodeRefundPin && nullNodeRefundPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefundPin = null;
-            if (parseNode.GetChildNode("screenLockPin") is { } nullNodeScreenLockPin && nullNodeScreenLockPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenLockPin = null;
-            if (parseNode.GetChildNode("txMenuPin") is { } nullNodeTxMenuPin && nullNodeTxMenuPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxMenuPin = null;
+            if (parseNode.GetChildNode("adminMenuPin") is null) { _explicitNullValueAdminMenuPin = default!; _explicitNullProperties?.Remove("adminMenuPin"); }
+            else if (parseNode.GetChildNode("adminMenuPin") is { } nullNodeAdminMenuPin && nullNodeAdminMenuPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdminMenuPin = null;
+            if (parseNode.GetChildNode("refundPin") is null) { _explicitNullValueRefundPin = default!; _explicitNullProperties?.Remove("refundPin"); }
+            else if (parseNode.GetChildNode("refundPin") is { } nullNodeRefundPin && nullNodeRefundPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefundPin = null;
+            if (parseNode.GetChildNode("screenLockPin") is null) { _explicitNullValueScreenLockPin = default!; _explicitNullProperties?.Remove("screenLockPin"); }
+            else if (parseNode.GetChildNode("screenLockPin") is { } nullNodeScreenLockPin && nullNodeScreenLockPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenLockPin = null;
+            if (parseNode.GetChildNode("txMenuPin") is null) { _explicitNullValueTxMenuPin = default!; _explicitNullProperties?.Remove("txMenuPin"); }
+            else if (parseNode.GetChildNode("txMenuPin") is { } nullNodeTxMenuPin && nullNodeTxMenuPin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TxMenuPin = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The passcode for the Admin menu and the Settings menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminMenuPin { get => _explicitNullValueAdminMenuPin; set { _explicitNullValueAdminMenuPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adminMenuPin"); else _explicitNullProperties?.Remove("adminMenuPin"); } }
+        public string? AdminMenuPin { get => _explicitNullValueAdminMenuPin; set { _explicitNullValueAdminMenuPin = value; AdditionalData?.Remove("adminMenuPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adminMenuPin"); else _explicitNullProperties?.Remove("adminMenuPin"); } }
         private string? _explicitNullValueAdminMenuPin = default!;
 #nullable restore
 #else
-        public string AdminMenuPin { get => _explicitNullValueAdminMenuPin; set { _explicitNullValueAdminMenuPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adminMenuPin"); else _explicitNullProperties?.Remove("adminMenuPin"); } }
+        public string AdminMenuPin { get => _explicitNullValueAdminMenuPin; set { _explicitNullValueAdminMenuPin = value; AdditionalData?.Remove("adminMenuPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adminMenuPin"); else _explicitNullProperties?.Remove("adminMenuPin"); } }
         private string _explicitNullValueAdminMenuPin = default!;
 #endif
         /// <summary>The passcode for referenced and unreferenced refunds on standalone terminals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RefundPin { get => _explicitNullValueRefundPin; set { _explicitNullValueRefundPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refundPin"); else _explicitNullProperties?.Remove("refundPin"); } }
+        public string? RefundPin { get => _explicitNullValueRefundPin; set { _explicitNullValueRefundPin = value; AdditionalData?.Remove("refundPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refundPin"); else _explicitNullProperties?.Remove("refundPin"); } }
         private string? _explicitNullValueRefundPin = default!;
 #nullable restore
 #else
-        public string RefundPin { get => _explicitNullValueRefundPin; set { _explicitNullValueRefundPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refundPin"); else _explicitNullProperties?.Remove("refundPin"); } }
+        public string RefundPin { get => _explicitNullValueRefundPin; set { _explicitNullValueRefundPin = value; AdditionalData?.Remove("refundPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refundPin"); else _explicitNullProperties?.Remove("refundPin"); } }
         private string _explicitNullValueRefundPin = default!;
 #endif
         /// <summary>The passcode to unlock the terminal screen after a timeout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScreenLockPin { get => _explicitNullValueScreenLockPin; set { _explicitNullValueScreenLockPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenLockPin"); else _explicitNullProperties?.Remove("screenLockPin"); } }
+        public string? ScreenLockPin { get => _explicitNullValueScreenLockPin; set { _explicitNullValueScreenLockPin = value; AdditionalData?.Remove("screenLockPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenLockPin"); else _explicitNullProperties?.Remove("screenLockPin"); } }
         private string? _explicitNullValueScreenLockPin = default!;
 #nullable restore
 #else
-        public string ScreenLockPin { get => _explicitNullValueScreenLockPin; set { _explicitNullValueScreenLockPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenLockPin"); else _explicitNullProperties?.Remove("screenLockPin"); } }
+        public string ScreenLockPin { get => _explicitNullValueScreenLockPin; set { _explicitNullValueScreenLockPin = value; AdditionalData?.Remove("screenLockPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenLockPin"); else _explicitNullProperties?.Remove("screenLockPin"); } }
         private string _explicitNullValueScreenLockPin = default!;
 #endif
         /// <summary>The passcode for the Transactions menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TxMenuPin { get => _explicitNullValueTxMenuPin; set { _explicitNullValueTxMenuPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txMenuPin"); else _explicitNullProperties?.Remove("txMenuPin"); } }
+        public string? TxMenuPin { get => _explicitNullValueTxMenuPin; set { _explicitNullValueTxMenuPin = value; AdditionalData?.Remove("txMenuPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txMenuPin"); else _explicitNullProperties?.Remove("txMenuPin"); } }
         private string? _explicitNullValueTxMenuPin = default!;
 #nullable restore
 #else
-        public string TxMenuPin { get => _explicitNullValueTxMenuPin; set { _explicitNullValueTxMenuPin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txMenuPin"); else _explicitNullProperties?.Remove("txMenuPin"); } }
+        public string TxMenuPin { get => _explicitNullValueTxMenuPin; set { _explicitNullValueTxMenuPin = value; AdditionalData?.Remove("txMenuPin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("txMenuPin"); else _explicitNullProperties?.Remove("txMenuPin"); } }
         private string _explicitNullValueTxMenuPin = default!;
 #endif
         /// <summary>

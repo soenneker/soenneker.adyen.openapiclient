@@ -18,12 +18,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("adjustAuthorisationData") is { } nullNodeAdjustAuthorisationData && nullNodeAdjustAuthorisationData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdjustAuthorisationData = null;
-            if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
-            if (parseNode.GetChildNode("bookingDate") is { } nullNodeBookingDate && nullNodeBookingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookingDate = null;
-            if (parseNode.GetChildNode("hmacSignature") is { } nullNodeHmacSignature && nullNodeHmacSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignature = null;
-            if (parseNode.GetChildNode("merchantAdviceCode") is { } nullNodeMerchantAdviceCode && nullNodeMerchantAdviceCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAdviceCode = null;
-            if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
+            if (parseNode.GetChildNode("adjustAuthorisationData") is null) { _explicitNullValueAdjustAuthorisationData = default!; _explicitNullProperties?.Remove("adjustAuthorisationData"); }
+            else if (parseNode.GetChildNode("adjustAuthorisationData") is { } nullNodeAdjustAuthorisationData && nullNodeAdjustAuthorisationData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdjustAuthorisationData = null;
+            if (parseNode.GetChildNode("authCode") is null) { _explicitNullValueAuthCode = default!; _explicitNullProperties?.Remove("authCode"); }
+            else if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("bookingDate") is null) { _explicitNullValueBookingDate = default!; _explicitNullProperties?.Remove("bookingDate"); }
+            else if (parseNode.GetChildNode("bookingDate") is { } nullNodeBookingDate && nullNodeBookingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookingDate = null;
+            if (parseNode.GetChildNode("hmacSignature") is null) { _explicitNullValueHmacSignature = default!; _explicitNullProperties?.Remove("hmacSignature"); }
+            else if (parseNode.GetChildNode("hmacSignature") is { } nullNodeHmacSignature && nullNodeHmacSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignature = null;
+            if (parseNode.GetChildNode("merchantAdviceCode") is null) { _explicitNullValueMerchantAdviceCode = default!; _explicitNullProperties?.Remove("merchantAdviceCode"); }
+            else if (parseNode.GetChildNode("merchantAdviceCode") is { } nullNodeMerchantAdviceCode && nullNodeMerchantAdviceCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAdviceCode = null;
+            if (parseNode.GetChildNode("paymentMethodVariant") is null) { _explicitNullValuePaymentMethodVariant = default!; _explicitNullProperties?.Remove("paymentMethodVariant"); }
+            else if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The adjustAuthorisationData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdjustAuthorisationData { get => _explicitNullValueAdjustAuthorisationData; set { _explicitNullValueAdjustAuthorisationData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustAuthorisationData"); else _explicitNullProperties?.Remove("adjustAuthorisationData"); } }
+        public string? AdjustAuthorisationData { get => _explicitNullValueAdjustAuthorisationData; set { _explicitNullValueAdjustAuthorisationData = value; AdditionalData?.Remove("adjustAuthorisationData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustAuthorisationData"); else _explicitNullProperties?.Remove("adjustAuthorisationData"); } }
         private string? _explicitNullValueAdjustAuthorisationData = default!;
 #nullable restore
 #else
-        public string AdjustAuthorisationData { get => _explicitNullValueAdjustAuthorisationData; set { _explicitNullValueAdjustAuthorisationData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustAuthorisationData"); else _explicitNullProperties?.Remove("adjustAuthorisationData"); } }
+        public string AdjustAuthorisationData { get => _explicitNullValueAdjustAuthorisationData; set { _explicitNullValueAdjustAuthorisationData = value; AdditionalData?.Remove("adjustAuthorisationData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustAuthorisationData"); else _explicitNullProperties?.Remove("adjustAuthorisationData"); } }
         private string _explicitNullValueAdjustAuthorisationData = default!;
 #endif
         /// <summary>The authCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("authCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
         private string? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("authCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
         private string _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>The bookingDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
+        public string? BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; AdditionalData?.Remove("bookingDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
         private string? _explicitNullValueBookingDate = default!;
 #nullable restore
 #else
-        public string BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
+        public string BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; AdditionalData?.Remove("bookingDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
         private string _explicitNullValueBookingDate = default!;
 #endif
         /// <summary>The hmacSignature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
+        public string? HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; AdditionalData?.Remove("hmacSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
         private string? _explicitNullValueHmacSignature = default!;
 #nullable restore
 #else
-        public string HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
+        public string HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; AdditionalData?.Remove("hmacSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
         private string _explicitNullValueHmacSignature = default!;
 #endif
         /// <summary>The merchantAdviceCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAdviceCode { get => _explicitNullValueMerchantAdviceCode; set { _explicitNullValueMerchantAdviceCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAdviceCode"); else _explicitNullProperties?.Remove("merchantAdviceCode"); } }
+        public string? MerchantAdviceCode { get => _explicitNullValueMerchantAdviceCode; set { _explicitNullValueMerchantAdviceCode = value; AdditionalData?.Remove("merchantAdviceCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAdviceCode"); else _explicitNullProperties?.Remove("merchantAdviceCode"); } }
         private string? _explicitNullValueMerchantAdviceCode = default!;
 #nullable restore
 #else
-        public string MerchantAdviceCode { get => _explicitNullValueMerchantAdviceCode; set { _explicitNullValueMerchantAdviceCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAdviceCode"); else _explicitNullProperties?.Remove("merchantAdviceCode"); } }
+        public string MerchantAdviceCode { get => _explicitNullValueMerchantAdviceCode; set { _explicitNullValueMerchantAdviceCode = value; AdditionalData?.Remove("merchantAdviceCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAdviceCode"); else _explicitNullProperties?.Remove("merchantAdviceCode"); } }
         private string _explicitNullValueMerchantAdviceCode = default!;
 #endif
         /// <summary>The paymentMethodVariant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
+        public string? PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string? _explicitNullValuePaymentMethodVariant = default!;
 #nullable restore
 #else
-        public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
+        public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string _explicitNullValuePaymentMethodVariant = default!;
 #endif
         /// <summary>

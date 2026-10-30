@@ -18,34 +18,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("directCapture") is { } nullNodeDirectCapture && nullNodeDirectCapture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectCapture = null;
-            if (parseNode.GetChildNode("payerId") is { } nullNodePayerId && nullNodePayerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerId = null;
-            if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
+            if (parseNode.GetChildNode("directCapture") is null) { _explicitNullValueDirectCapture = default!; _explicitNullProperties?.Remove("directCapture"); }
+            else if (parseNode.GetChildNode("directCapture") is { } nullNodeDirectCapture && nullNodeDirectCapture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectCapture = null;
+            if (parseNode.GetChildNode("payerId") is null) { _explicitNullValuePayerId = default!; _explicitNullProperties?.Remove("payerId"); }
+            else if (parseNode.GetChildNode("payerId") is { } nullNodePayerId && nullNodePayerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayerId = null;
+            if (parseNode.GetChildNode("subject") is null) { _explicitNullValueSubject = default!; _explicitNullProperties?.Remove("subject"); }
+            else if (parseNode.GetChildNode("subject") is { } nullNodeSubject && nullNodeSubject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subject = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if direct (immediate) capture for PayPal is enabled. If set to **true**, this setting overrides the [capture](https://docs.adyen.com/online-payments/capture) settings of your merchant account. Default value: **true**.</summary>
-        public bool? DirectCapture { get => _explicitNullValueDirectCapture; set { _explicitNullValueDirectCapture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directCapture"); else _explicitNullProperties?.Remove("directCapture"); } }
+        public bool? DirectCapture { get => _explicitNullValueDirectCapture; set { _explicitNullValueDirectCapture = value; AdditionalData?.Remove("directCapture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directCapture"); else _explicitNullProperties?.Remove("directCapture"); } }
         private bool? _explicitNullValueDirectCapture = default!;
         /// <summary>PayPal Merchant ID. Character length and limitations: 13 single-byte alphanumeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayerId { get => _explicitNullValuePayerId; set { _explicitNullValuePayerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payerId"); else _explicitNullProperties?.Remove("payerId"); } }
+        public string? PayerId { get => _explicitNullValuePayerId; set { _explicitNullValuePayerId = value; AdditionalData?.Remove("payerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payerId"); else _explicitNullProperties?.Remove("payerId"); } }
         private string? _explicitNullValuePayerId = default!;
 #nullable restore
 #else
-        public string PayerId { get => _explicitNullValuePayerId; set { _explicitNullValuePayerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payerId"); else _explicitNullProperties?.Remove("payerId"); } }
+        public string PayerId { get => _explicitNullValuePayerId; set { _explicitNullValuePayerId = value; AdditionalData?.Remove("payerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payerId"); else _explicitNullProperties?.Remove("payerId"); } }
         private string _explicitNullValuePayerId = default!;
 #endif
         /// <summary>Your business email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string? Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string? _explicitNullValueSubject = default!;
 #nullable restore
 #else
-        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
+        public string Subject { get => _explicitNullValueSubject; set { _explicitNullValueSubject = value; AdditionalData?.Remove("subject"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subject"); else _explicitNullProperties?.Remove("subject"); } }
         private string _explicitNullValueSubject = default!;
 #endif
         /// <summary>

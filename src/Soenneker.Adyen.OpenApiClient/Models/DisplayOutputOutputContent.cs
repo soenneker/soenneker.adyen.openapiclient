@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("OutputBarcode") is { } nullNodeOutputBarcode && nullNodeOutputBarcode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputBarcode = null;
-            if (parseNode.GetChildNode("OutputFormat") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
-            if (parseNode.GetChildNode("OutputText") is { } nullNodeOutputText && nullNodeOutputText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputText = null;
-            if (parseNode.GetChildNode("OutputXHTML") is { } nullNodeOutputXHTML && nullNodeOutputXHTML.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputXHTML = null;
-            if (parseNode.GetChildNode("PredefinedContent") is { } nullNodePredefinedContent && nullNodePredefinedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredefinedContent = null;
+            if (parseNode.GetChildNode("OutputBarcode") is null) { _explicitNullValueOutputBarcode = default!; _explicitNullProperties?.Remove("OutputBarcode"); }
+            else if (parseNode.GetChildNode("OutputBarcode") is { } nullNodeOutputBarcode && nullNodeOutputBarcode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputBarcode = null;
+            if (parseNode.GetChildNode("OutputFormat") is null) { _explicitNullValueOutputFormat = default!; _explicitNullProperties?.Remove("OutputFormat"); }
+            else if (parseNode.GetChildNode("OutputFormat") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
+            if (parseNode.GetChildNode("OutputText") is null) { _explicitNullValueOutputText = default!; _explicitNullProperties?.Remove("OutputText"); }
+            else if (parseNode.GetChildNode("OutputText") is { } nullNodeOutputText && nullNodeOutputText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputText = null;
+            if (parseNode.GetChildNode("OutputXHTML") is null) { _explicitNullValueOutputXHTML = default!; _explicitNullProperties?.Remove("OutputXHTML"); }
+            else if (parseNode.GetChildNode("OutputXHTML") is { } nullNodeOutputXHTML && nullNodeOutputXHTML.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputXHTML = null;
+            if (parseNode.GetChildNode("PredefinedContent") is null) { _explicitNullValuePredefinedContent = default!; _explicitNullProperties?.Remove("PredefinedContent"); }
+            else if (parseNode.GetChildNode("PredefinedContent") is { } nullNodePredefinedContent && nullNodePredefinedContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PredefinedContent = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Barcode content to display or print.Mandatory if `OutputFormat` is Barcode, not allowed otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode? OutputBarcode { get => _explicitNullValueOutputBarcode; set { _explicitNullValueOutputBarcode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputBarcode"); else _explicitNullProperties?.Remove("OutputBarcode"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode? OutputBarcode { get => _explicitNullValueOutputBarcode; set { _explicitNullValueOutputBarcode = value; AdditionalData?.Remove("OutputBarcode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputBarcode"); else _explicitNullProperties?.Remove("OutputBarcode"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode? _explicitNullValueOutputBarcode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode OutputBarcode { get => _explicitNullValueOutputBarcode; set { _explicitNullValueOutputBarcode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputBarcode"); else _explicitNullProperties?.Remove("OutputBarcode"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode OutputBarcode { get => _explicitNullValueOutputBarcode; set { _explicitNullValueOutputBarcode = value; AdditionalData?.Remove("OutputBarcode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputBarcode"); else _explicitNullProperties?.Remove("OutputBarcode"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode _explicitNullValueOutputBarcode = default!;
 #endif
         /// <summary>Format of the content to display or print. Display or print device function.Possible values:* **MessageRef*** **Text*** **XHTML*** **BarCode**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputFormat"); else _explicitNullProperties?.Remove("OutputFormat"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; AdditionalData?.Remove("OutputFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputFormat"); else _explicitNullProperties?.Remove("OutputFormat"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat? _explicitNullValueOutputFormat = default!;
         /// <summary>Content of text message to display or print.Mandatory, if `OutputFormat` is Text, not allowed otherwise. One instance of `OutputText` per shared format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>? OutputText { get => _explicitNullValueOutputText; set { _explicitNullValueOutputText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputText"); else _explicitNullProperties?.Remove("OutputText"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>? OutputText { get => _explicitNullValueOutputText; set { _explicitNullValueOutputText = value; AdditionalData?.Remove("OutputText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputText"); else _explicitNullProperties?.Remove("OutputText"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>? _explicitNullValueOutputText = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputText> OutputText { get => _explicitNullValueOutputText; set { _explicitNullValueOutputText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputText"); else _explicitNullProperties?.Remove("OutputText"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputText> OutputText { get => _explicitNullValueOutputText; set { _explicitNullValueOutputText = value; AdditionalData?.Remove("OutputText"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputText"); else _explicitNullProperties?.Remove("OutputText"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.OutputText> _explicitNullValueOutputText = default!;
 #endif
         /// <summary>XHTML document body containing the message to display or print.Mandatory if `OutputFormat` is XHTML, not allowed otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? OutputXHTML { get => _explicitNullValueOutputXHTML; set { _explicitNullValueOutputXHTML = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputXHTML"); else _explicitNullProperties?.Remove("OutputXHTML"); } }
+        public byte[]? OutputXHTML { get => _explicitNullValueOutputXHTML; set { _explicitNullValueOutputXHTML = value; AdditionalData?.Remove("OutputXHTML"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputXHTML"); else _explicitNullProperties?.Remove("OutputXHTML"); } }
         private byte[]? _explicitNullValueOutputXHTML = default!;
 #nullable restore
 #else
-        public byte[] OutputXHTML { get => _explicitNullValueOutputXHTML; set { _explicitNullValueOutputXHTML = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputXHTML"); else _explicitNullProperties?.Remove("OutputXHTML"); } }
+        public byte[] OutputXHTML { get => _explicitNullValueOutputXHTML; set { _explicitNullValueOutputXHTML = value; AdditionalData?.Remove("OutputXHTML"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputXHTML"); else _explicitNullProperties?.Remove("OutputXHTML"); } }
         private byte[] _explicitNullValueOutputXHTML = default!;
 #endif
         /// <summary>Reference of a predefined message to display or print.Mandatory, if `OutputFormat` is MessageRef, not allowed otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent? PredefinedContent { get => _explicitNullValuePredefinedContent; set { _explicitNullValuePredefinedContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PredefinedContent"); else _explicitNullProperties?.Remove("PredefinedContent"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent? PredefinedContent { get => _explicitNullValuePredefinedContent; set { _explicitNullValuePredefinedContent = value; AdditionalData?.Remove("PredefinedContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PredefinedContent"); else _explicitNullProperties?.Remove("PredefinedContent"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent? _explicitNullValuePredefinedContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent PredefinedContent { get => _explicitNullValuePredefinedContent; set { _explicitNullValuePredefinedContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PredefinedContent"); else _explicitNullProperties?.Remove("PredefinedContent"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent PredefinedContent { get => _explicitNullValuePredefinedContent; set { _explicitNullValuePredefinedContent = value; AdditionalData?.Remove("PredefinedContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PredefinedContent"); else _explicitNullProperties?.Remove("PredefinedContent"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent _explicitNullValuePredefinedContent = default!;
 #endif
         /// <summary>
@@ -96,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "OutputBarcode", n => { OutputBarcode = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputBarcode.CreateFromDiscriminatorValue); } },
-                { "OutputFormat", n => { OutputFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>(); } },
+                { "OutputFormat", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentOutputFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutputFormat = default; _explicitNullProperties?.Remove("OutputFormat"); AdditionalData["OutputFormat"] = unknown; } else { OutputFormat = parsed; AdditionalData.Remove("OutputFormat"); } } },
                 { "OutputText", n => { OutputText = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.OutputText>(global::Soenneker.Adyen.OpenApiClient.Models.OutputText.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "OutputXHTML", n => { OutputXHTML = n.GetByteArrayValue(); } },
                 { "PredefinedContent", n => { PredefinedContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent>(global::Soenneker.Adyen.OpenApiClient.Models.OutputContentPredefinedContent.CreateFromDiscriminatorValue); } },

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("doingBusinessAsName") is { } nullNodeDoingBusinessAsName && nullNodeDoingBusinessAsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoingBusinessAsName = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("doingBusinessAsName") is null) { _explicitNullValueDoingBusinessAsName = default!; _explicitNullProperties?.Remove("doingBusinessAsName"); }
+            else if (parseNode.GetChildNode("doingBusinessAsName") is { } nullNodeDoingBusinessAsName && nullNodeDoingBusinessAsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoingBusinessAsName = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The text to be shown on the shopper&apos;s bank statement. We recommend sending a maximum of 22 characters, otherwise banks might truncate the string. Allowed characters: **a-z**, **A-Z**, **0-9**, spaces, and special characters **. , &apos; _ - ? + * /**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DoingBusinessAsName { get => _explicitNullValueDoingBusinessAsName; set { _explicitNullValueDoingBusinessAsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAsName"); else _explicitNullProperties?.Remove("doingBusinessAsName"); } }
+        public string? DoingBusinessAsName { get => _explicitNullValueDoingBusinessAsName; set { _explicitNullValueDoingBusinessAsName = value; AdditionalData?.Remove("doingBusinessAsName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAsName"); else _explicitNullProperties?.Remove("doingBusinessAsName"); } }
         private string? _explicitNullValueDoingBusinessAsName = default!;
 #nullable restore
 #else
-        public string DoingBusinessAsName { get => _explicitNullValueDoingBusinessAsName; set { _explicitNullValueDoingBusinessAsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAsName"); else _explicitNullProperties?.Remove("doingBusinessAsName"); } }
+        public string DoingBusinessAsName { get => _explicitNullValueDoingBusinessAsName; set { _explicitNullValueDoingBusinessAsName = value; AdditionalData?.Remove("doingBusinessAsName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doingBusinessAsName"); else _explicitNullProperties?.Remove("doingBusinessAsName"); } }
         private string _explicitNullValueDoingBusinessAsName = default!;
 #endif
         /// <summary>The type of transaction description you want to use:- **fixed**: The transaction description set in this request is used for all payments with this payment method.- **append**: The transaction description set in this request is used as a base for all payments with this payment method. The [transaction description set in the request to process the payment](https://docs.adyen.com/api-explorer/Checkout/70/post/sessions#request-shopperStatement) is appended to this base description. Note that if the combined length exceeds 22 characters, banks may truncate the string.- **dynamic**: Only the [transaction description set in the request to process the payment](https://docs.adyen.com/api-explorer/Checkout/70/post/sessions#request-shopperStatement) is used for payments with this payment method.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CupResponseInfoTransactionDescription"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "doingBusinessAsName", n => { DoingBusinessAsName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransactionDescriptionResponseInfoType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

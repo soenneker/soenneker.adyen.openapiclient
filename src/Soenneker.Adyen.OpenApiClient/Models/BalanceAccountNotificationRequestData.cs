@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAccount") is { } nullNodeBalanceAccount && nullNodeBalanceAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccount = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("balanceAccount") is null) { _explicitNullValueBalanceAccount = default!; _explicitNullProperties?.Remove("balanceAccount"); }
+            else if (parseNode.GetChildNode("balanceAccount") is { } nullNodeBalanceAccount && nullNodeBalanceAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccount = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The balanceAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccount? BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccount? BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; AdditionalData?.Remove("balanceAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccount? _explicitNullValueBalanceAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccount BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccount BalanceAccount { get => _explicitNullValueBalanceAccount; set { _explicitNullValueBalanceAccount = value; AdditionalData?.Remove("balanceAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccount"); else _explicitNullProperties?.Remove("balanceAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccount _explicitNullValueBalanceAccount = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>

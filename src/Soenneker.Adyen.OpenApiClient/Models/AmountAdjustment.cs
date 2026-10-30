@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("amountAdjustmentType") is { } nullNodeAmountAdjustmentType && nullNodeAmountAdjustmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountAdjustmentType = null;
-            if (parseNode.GetChildNode("basepoints") is { } nullNodeBasepoints && nullNodeBasepoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Basepoints = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("amountAdjustmentType") is null) { _explicitNullValueAmountAdjustmentType = default!; _explicitNullProperties?.Remove("amountAdjustmentType"); }
+            else if (parseNode.GetChildNode("amountAdjustmentType") is { } nullNodeAmountAdjustmentType && nullNodeAmountAdjustmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountAdjustmentType = null;
+            if (parseNode.GetChildNode("basepoints") is null) { _explicitNullValueBasepoints = default!; _explicitNullProperties?.Remove("basepoints"); }
+            else if (parseNode.GetChildNode("basepoints") is { } nullNodeBasepoints && nullNodeBasepoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Basepoints = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The adjustment amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The type of markup that is applied to an authorised payment.Possible values: **exchange**, **forexMarkup**, **authHoldReserve**, **atmMarkup**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get => _explicitNullValueAmountAdjustmentType; set { _explicitNullValueAmountAdjustmentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustmentType"); else _explicitNullProperties?.Remove("amountAdjustmentType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmountAdjustmentType? AmountAdjustmentType { get => _explicitNullValueAmountAdjustmentType; set { _explicitNullValueAmountAdjustmentType = value; AdditionalData?.Remove("amountAdjustmentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountAdjustmentType"); else _explicitNullProperties?.Remove("amountAdjustmentType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmountAdjustmentType? _explicitNullValueAmountAdjustmentType = default!;
         /// <summary>The basepoints associated with the applied markup.</summary>
-        public int? Basepoints { get => _explicitNullValueBasepoints; set { _explicitNullValueBasepoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basepoints"); else _explicitNullProperties?.Remove("basepoints"); } }
+        public int? Basepoints { get => _explicitNullValueBasepoints; set { _explicitNullValueBasepoints = value; AdditionalData?.Remove("basepoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basepoints"); else _explicitNullProperties?.Remove("basepoints"); } }
         private int? _explicitNullValueBasepoints = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustment"/> and sets the default values.
@@ -66,7 +69,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount>(global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmount.CreateFromDiscriminatorValue); } },
-                { "amountAdjustmentType", n => { AmountAdjustmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmountAdjustmentType>(); } },
+                { "amountAdjustmentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmountAdjustmentAmountAdjustmentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAmountAdjustmentType = default; _explicitNullProperties?.Remove("amountAdjustmentType"); AdditionalData["amountAdjustmentType"] = unknown; } else { AmountAdjustmentType = parsed; AdditionalData.Remove("amountAdjustmentType"); } } },
                 { "basepoints", n => { Basepoints = n.GetIntValue(); } },
             };
         }

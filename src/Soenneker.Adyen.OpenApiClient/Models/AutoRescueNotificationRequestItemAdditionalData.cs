@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bookingDate") is { } nullNodeBookingDate && nullNodeBookingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookingDate = null;
-            if (parseNode.GetChildNode("hmacSignature") is { } nullNodeHmacSignature && nullNodeHmacSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignature = null;
-            if (parseNode.GetChildNode("merchantOrderReference") is { } nullNodeMerchantOrderReference && nullNodeMerchantOrderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantOrderReference = null;
-            if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
-            if (parseNode.GetChildNode("retry.rescueReference") is { } nullNodeRetryRescueReference && nullNodeRetryRescueReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryRescueReference = null;
+            if (parseNode.GetChildNode("bookingDate") is null) { _explicitNullValueBookingDate = default!; _explicitNullProperties?.Remove("bookingDate"); }
+            else if (parseNode.GetChildNode("bookingDate") is { } nullNodeBookingDate && nullNodeBookingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookingDate = null;
+            if (parseNode.GetChildNode("hmacSignature") is null) { _explicitNullValueHmacSignature = default!; _explicitNullProperties?.Remove("hmacSignature"); }
+            else if (parseNode.GetChildNode("hmacSignature") is { } nullNodeHmacSignature && nullNodeHmacSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignature = null;
+            if (parseNode.GetChildNode("merchantOrderReference") is null) { _explicitNullValueMerchantOrderReference = default!; _explicitNullProperties?.Remove("merchantOrderReference"); }
+            else if (parseNode.GetChildNode("merchantOrderReference") is { } nullNodeMerchantOrderReference && nullNodeMerchantOrderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantOrderReference = null;
+            if (parseNode.GetChildNode("paymentMethodVariant") is null) { _explicitNullValuePaymentMethodVariant = default!; _explicitNullProperties?.Remove("paymentMethodVariant"); }
+            else if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
+            if (parseNode.GetChildNode("retry.rescueReference") is null) { _explicitNullValueRetryRescueReference = default!; _explicitNullProperties?.Remove("retry.rescueReference"); }
+            else if (parseNode.GetChildNode("retry.rescueReference") is { } nullNodeRetryRescueReference && nullNodeRetryRescueReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryRescueReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The bookingDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
+        public string? BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; AdditionalData?.Remove("bookingDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
         private string? _explicitNullValueBookingDate = default!;
 #nullable restore
 #else
-        public string BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
+        public string BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; AdditionalData?.Remove("bookingDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
         private string _explicitNullValueBookingDate = default!;
 #endif
         /// <summary>The hmacSignature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
+        public string? HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; AdditionalData?.Remove("hmacSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
         private string? _explicitNullValueHmacSignature = default!;
 #nullable restore
 #else
-        public string HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
+        public string HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; AdditionalData?.Remove("hmacSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
         private string _explicitNullValueHmacSignature = default!;
 #endif
         /// <summary>The merchantOrderReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
+        public string? MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; AdditionalData?.Remove("merchantOrderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
         private string? _explicitNullValueMerchantOrderReference = default!;
 #nullable restore
 #else
-        public string MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
+        public string MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; AdditionalData?.Remove("merchantOrderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
         private string _explicitNullValueMerchantOrderReference = default!;
 #endif
         /// <summary>The paymentMethodVariant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
+        public string? PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string? _explicitNullValuePaymentMethodVariant = default!;
 #nullable restore
 #else
-        public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
+        public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string _explicitNullValuePaymentMethodVariant = default!;
 #endif
         /// <summary>The retryRescueReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RetryRescueReference { get => _explicitNullValueRetryRescueReference; set { _explicitNullValueRetryRescueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry.rescueReference"); else _explicitNullProperties?.Remove("retry.rescueReference"); } }
+        public string? RetryRescueReference { get => _explicitNullValueRetryRescueReference; set { _explicitNullValueRetryRescueReference = value; AdditionalData?.Remove("retry.rescueReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry.rescueReference"); else _explicitNullProperties?.Remove("retry.rescueReference"); } }
         private string? _explicitNullValueRetryRescueReference = default!;
 #nullable restore
 #else
-        public string RetryRescueReference { get => _explicitNullValueRetryRescueReference; set { _explicitNullValueRetryRescueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry.rescueReference"); else _explicitNullProperties?.Remove("retry.rescueReference"); } }
+        public string RetryRescueReference { get => _explicitNullValueRetryRescueReference; set { _explicitNullValueRetryRescueReference = value; AdditionalData?.Remove("retry.rescueReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry.rescueReference"); else _explicitNullProperties?.Remove("retry.rescueReference"); } }
         private string _explicitNullValueRetryRescueReference = default!;
 #endif
         /// <summary>

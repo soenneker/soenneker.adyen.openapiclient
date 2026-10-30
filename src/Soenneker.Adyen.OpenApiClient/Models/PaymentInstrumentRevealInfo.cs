@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
-            if (parseNode.GetChildNode("expiration") is { } nullNodeExpiration && nullNodeExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiration = null;
-            if (parseNode.GetChildNode("pan") is { } nullNodePan && nullNodePan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pan = null;
+            if (parseNode.GetChildNode("cvc") is null) { _explicitNullValueCvc = default!; _explicitNullProperties?.Remove("cvc"); }
+            else if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
+            if (parseNode.GetChildNode("expiration") is null) { _explicitNullValueExpiration = default!; _explicitNullProperties?.Remove("expiration"); }
+            else if (parseNode.GetChildNode("expiration") is { } nullNodeExpiration && nullNodeExpiration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiration = null;
+            if (parseNode.GetChildNode("pan") is null) { _explicitNullValuePan = default!; _explicitNullProperties?.Remove("pan"); }
+            else if (parseNode.GetChildNode("pan") is { } nullNodePan && nullNodePan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pan = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The CVC2 value of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; AdditionalData?.Remove("cvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
         private string? _explicitNullValueCvc = default!;
 #nullable restore
 #else
-        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; AdditionalData?.Remove("cvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
         private string _explicitNullValueCvc = default!;
 #endif
         /// <summary>The expiration date of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration? Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration? Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; AdditionalData?.Remove("expiration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration? _explicitNullValueExpiration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration Expiration { get => _explicitNullValueExpiration; set { _explicitNullValueExpiration = value; AdditionalData?.Remove("expiration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration"); else _explicitNullProperties?.Remove("expiration"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentRevealInfoExpiration _explicitNullValueExpiration = default!;
 #endif
         /// <summary>The primary account number (PAN) of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pan { get => _explicitNullValuePan; set { _explicitNullValuePan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pan"); else _explicitNullProperties?.Remove("pan"); } }
+        public string? Pan { get => _explicitNullValuePan; set { _explicitNullValuePan = value; AdditionalData?.Remove("pan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pan"); else _explicitNullProperties?.Remove("pan"); } }
         private string? _explicitNullValuePan = default!;
 #nullable restore
 #else
-        public string Pan { get => _explicitNullValuePan; set { _explicitNullValuePan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pan"); else _explicitNullProperties?.Remove("pan"); } }
+        public string Pan { get => _explicitNullValuePan; set { _explicitNullValuePan = value; AdditionalData?.Remove("pan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pan"); else _explicitNullProperties?.Remove("pan"); } }
         private string _explicitNullValuePan = default!;
 #endif
         /// <summary>

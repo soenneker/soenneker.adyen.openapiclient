@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("repayment") is { } nullNodeRepayment && nullNodeRepayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repayment = null;
+            if (parseNode.GetChildNode("repayment") is null) { _explicitNullValueRepayment = default!; _explicitNullProperties?.Remove("repayment"); }
+            else if (parseNode.GetChildNode("repayment") is { } nullNodeRepayment && nullNodeRepayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repayment = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains information about the basis points configured for repaying the disbursement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementInfoUpdateRepayment? Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementInfoUpdateRepayment? Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; AdditionalData?.Remove("repayment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DisbursementInfoUpdateRepayment? _explicitNullValueRepayment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementInfoUpdateRepayment Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisbursementInfoUpdateRepayment Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; AdditionalData?.Remove("repayment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DisbursementInfoUpdateRepayment _explicitNullValueRepayment = default!;
 #endif
         /// <summary>

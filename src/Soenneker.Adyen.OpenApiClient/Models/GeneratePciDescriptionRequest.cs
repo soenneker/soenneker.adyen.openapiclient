@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additionalSalesChannels") is { } nullNodeAdditionalSalesChannels && nullNodeAdditionalSalesChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSalesChannels = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("additionalSalesChannels") is null) { _explicitNullValueAdditionalSalesChannels = default!; _explicitNullProperties?.Remove("additionalSalesChannels"); }
+            else if (parseNode.GetChildNode("additionalSalesChannels") is { } nullNodeAdditionalSalesChannels && nullNodeAdditionalSalesChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSalesChannels = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An array of additional sales channels to generate PCI questionnaires. Include the relevant sales channels if you need your user to sign PCI questionnaires. Not required if you [create stores](https://docs.adyen.com/platforms) and [add payment methods](https://docs.adyen.com/adyen-for-platforms-model) before you generate the questionnaires.Possible values:*  **eCommerce***  **pos***  **ecomMoto***  **posMoto**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.GeneratePciDescriptionRequestAdditionalSalesChannelsItem?>? AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.GeneratePciDescriptionRequestAdditionalSalesChannelsItem?>? AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; AdditionalData?.Remove("additionalSalesChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.GeneratePciDescriptionRequestAdditionalSalesChannelsItem?>? _explicitNullValueAdditionalSalesChannels = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.GeneratePciDescriptionRequestAdditionalSalesChannelsItem?> AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.GeneratePciDescriptionRequestAdditionalSalesChannelsItem?> AdditionalSalesChannels { get => _explicitNullValueAdditionalSalesChannels; set { _explicitNullValueAdditionalSalesChannels = value; AdditionalData?.Remove("additionalSalesChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalSalesChannels"); else _explicitNullProperties?.Remove("additionalSalesChannels"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.GeneratePciDescriptionRequestAdditionalSalesChannelsItem?> _explicitNullValueAdditionalSalesChannels = default!;
 #endif
         /// <summary>Sets the language of the PCI questionnaire. Its value is a two-character [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) language code, for example, **en**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>

@@ -18,20 +18,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acsTransactionId") is { } nullNodeAcsTransactionId && nullNodeAcsTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsTransactionId = null;
-            if (parseNode.GetChildNode("authenticationResult") is { } nullNodeAuthenticationResult && nullNodeAuthenticationResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationResult = null;
-            if (parseNode.GetChildNode("authenticationType") is { } nullNodeAuthenticationType && nullNodeAuthenticationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationType = null;
-            if (parseNode.GetChildNode("dsTransactionId") is { } nullNodeDsTransactionId && nullNodeDsTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsTransactionId = null;
+            if (parseNode.GetChildNode("acsTransactionId") is null) { _explicitNullValueAcsTransactionId = default!; _explicitNullProperties?.Remove("acsTransactionId"); }
+            else if (parseNode.GetChildNode("acsTransactionId") is { } nullNodeAcsTransactionId && nullNodeAcsTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsTransactionId = null;
+            if (parseNode.GetChildNode("authenticationResult") is null) { _explicitNullValueAuthenticationResult = default!; _explicitNullProperties?.Remove("authenticationResult"); }
+            else if (parseNode.GetChildNode("authenticationResult") is { } nullNodeAuthenticationResult && nullNodeAuthenticationResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationResult = null;
+            if (parseNode.GetChildNode("authenticationType") is null) { _explicitNullValueAuthenticationType = default!; _explicitNullProperties?.Remove("authenticationType"); }
+            else if (parseNode.GetChildNode("authenticationType") is { } nullNodeAuthenticationType && nullNodeAuthenticationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationType = null;
+            if (parseNode.GetChildNode("dsTransactionId") is null) { _explicitNullValueDsTransactionId = default!; _explicitNullProperties?.Remove("dsTransactionId"); }
+            else if (parseNode.GetChildNode("dsTransactionId") is { } nullNodeDsTransactionId && nullNodeDsTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsTransactionId = null;
         }
 
         /// <summary>The transaction identifier for the Access Control Server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
+        public string? AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; AdditionalData?.Remove("acsTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
         private string? _explicitNullValueAcsTransactionId = default!;
 #nullable restore
 #else
-        public string AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
+        public string AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; AdditionalData?.Remove("acsTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
         private string _explicitNullValueAcsTransactionId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,31 +43,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The result from the performed authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationResult { get => _explicitNullValueAuthenticationResult; set { _explicitNullValueAuthenticationResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationResult"); else _explicitNullProperties?.Remove("authenticationResult"); } }
+        public string? AuthenticationResult { get => _explicitNullValueAuthenticationResult; set { _explicitNullValueAuthenticationResult = value; AdditionalData?.Remove("authenticationResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationResult"); else _explicitNullProperties?.Remove("authenticationResult"); } }
         private string? _explicitNullValueAuthenticationResult = default!;
 #nullable restore
 #else
-        public string AuthenticationResult { get => _explicitNullValueAuthenticationResult; set { _explicitNullValueAuthenticationResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationResult"); else _explicitNullProperties?.Remove("authenticationResult"); } }
+        public string AuthenticationResult { get => _explicitNullValueAuthenticationResult; set { _explicitNullValueAuthenticationResult = value; AdditionalData?.Remove("authenticationResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationResult"); else _explicitNullProperties?.Remove("authenticationResult"); } }
         private string _explicitNullValueAuthenticationResult = default!;
 #endif
         /// <summary>The type of the performed authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
+        public string? AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; AdditionalData?.Remove("authenticationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
         private string? _explicitNullValueAuthenticationType = default!;
 #nullable restore
 #else
-        public string AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
+        public string AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; AdditionalData?.Remove("authenticationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
         private string _explicitNullValueAuthenticationType = default!;
 #endif
         /// <summary>The transaction identifier for the Directory server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DsTransactionId { get => _explicitNullValueDsTransactionId; set { _explicitNullValueDsTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransactionId"); else _explicitNullProperties?.Remove("dsTransactionId"); } }
+        public string? DsTransactionId { get => _explicitNullValueDsTransactionId; set { _explicitNullValueDsTransactionId = value; AdditionalData?.Remove("dsTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransactionId"); else _explicitNullProperties?.Remove("dsTransactionId"); } }
         private string? _explicitNullValueDsTransactionId = default!;
 #nullable restore
 #else
-        public string DsTransactionId { get => _explicitNullValueDsTransactionId; set { _explicitNullValueDsTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransactionId"); else _explicitNullProperties?.Remove("dsTransactionId"); } }
+        public string DsTransactionId { get => _explicitNullValueDsTransactionId; set { _explicitNullValueDsTransactionId = value; AdditionalData?.Remove("dsTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransactionId"); else _explicitNullProperties?.Remove("dsTransactionId"); } }
         private string _explicitNullValueDsTransactionId = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("paymentInstrument") is null) { _explicitNullValuePaymentInstrument = default!; _explicitNullProperties?.Remove("paymentInstrument"); }
+            else if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>Contains information about the payment instrument resource that triggered the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentNotificationDataPaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentNotificationDataPaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; AdditionalData?.Remove("paymentInstrument"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentNotificationDataPaymentInstrument? _explicitNullValuePaymentInstrument = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentNotificationDataPaymentInstrument PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentNotificationDataPaymentInstrument PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; AdditionalData?.Remove("paymentInstrument"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentNotificationDataPaymentInstrument _explicitNullValuePaymentInstrument = default!;
 #endif
         /// <summary>

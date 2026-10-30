@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
-            if (parseNode.GetChildNode("IsReachableFlag") is { } nullNodeIsReachableFlag && nullNodeIsReachableFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReachableFlag = null;
+            if (parseNode.GetChildNode("AcquirerID") is null) { _explicitNullValueAcquirerID = default!; _explicitNullProperties?.Remove("AcquirerID"); }
+            else if (parseNode.GetChildNode("AcquirerID") is { } nullNodeAcquirerID && nullNodeAcquirerID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerID = null;
+            if (parseNode.GetChildNode("IsReachableFlag") is null) { _explicitNullValueIsReachableFlag = default!; _explicitNullProperties?.Remove("IsReachableFlag"); }
+            else if (parseNode.GetChildNode("IsReachableFlag") is { } nullNodeIsReachableFlag && nullNodeIsReachableFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReachableFlag = null;
         }
 
         /// <summary>Identification of the Acquirer.</summary>
-        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
+        public int? AcquirerID { get => _explicitNullValueAcquirerID; set { _explicitNullValueAcquirerID = value; AdditionalData?.Remove("AcquirerID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AcquirerID"); else _explicitNullProperties?.Remove("AcquirerID"); } }
         private int? _explicitNullValueAcquirerID = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicate if a Host is reachable.</summary>
-        public bool? IsReachableFlag { get => _explicitNullValueIsReachableFlag; set { _explicitNullValueIsReachableFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IsReachableFlag"); else _explicitNullProperties?.Remove("IsReachableFlag"); } }
+        public bool? IsReachableFlag { get => _explicitNullValueIsReachableFlag; set { _explicitNullValueIsReachableFlag = value; AdditionalData?.Remove("IsReachableFlag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IsReachableFlag"); else _explicitNullProperties?.Remove("IsReachableFlag"); } }
         private bool? _explicitNullValueIsReachableFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.HostStatus"/> and sets the default values.

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("androidPackageId") is { } nullNodeAndroidPackageId && nullNodeAndroidPackageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AndroidPackageId = null;
-            if (parseNode.GetChildNode("iosScheme") is { } nullNodeIosScheme && nullNodeIosScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IosScheme = null;
+            if (parseNode.GetChildNode("androidPackageId") is null) { _explicitNullValueAndroidPackageId = default!; _explicitNullProperties?.Remove("androidPackageId"); }
+            else if (parseNode.GetChildNode("androidPackageId") is { } nullNodeAndroidPackageId && nullNodeAndroidPackageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AndroidPackageId = null;
+            if (parseNode.GetChildNode("iosScheme") is null) { _explicitNullValueIosScheme = default!; _explicitNullProperties?.Remove("iosScheme"); }
+            else if (parseNode.GetChildNode("iosScheme") is { } nullNodeIosScheme && nullNodeIosScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IosScheme = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The Android package identifier for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AndroidPackageId { get => _explicitNullValueAndroidPackageId; set { _explicitNullValueAndroidPackageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("androidPackageId"); else _explicitNullProperties?.Remove("androidPackageId"); } }
+        public string? AndroidPackageId { get => _explicitNullValueAndroidPackageId; set { _explicitNullValueAndroidPackageId = value; AdditionalData?.Remove("androidPackageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("androidPackageId"); else _explicitNullProperties?.Remove("androidPackageId"); } }
         private string? _explicitNullValueAndroidPackageId = default!;
 #nullable restore
 #else
-        public string AndroidPackageId { get => _explicitNullValueAndroidPackageId; set { _explicitNullValueAndroidPackageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("androidPackageId"); else _explicitNullProperties?.Remove("androidPackageId"); } }
+        public string AndroidPackageId { get => _explicitNullValueAndroidPackageId; set { _explicitNullValueAndroidPackageId = value; AdditionalData?.Remove("androidPackageId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("androidPackageId"); else _explicitNullProperties?.Remove("androidPackageId"); } }
         private string _explicitNullValueAndroidPackageId = default!;
 #endif
         /// <summary>The iOS URL scheme for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IosScheme { get => _explicitNullValueIosScheme; set { _explicitNullValueIosScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iosScheme"); else _explicitNullProperties?.Remove("iosScheme"); } }
+        public string? IosScheme { get => _explicitNullValueIosScheme; set { _explicitNullValueIosScheme = value; AdditionalData?.Remove("iosScheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iosScheme"); else _explicitNullProperties?.Remove("iosScheme"); } }
         private string? _explicitNullValueIosScheme = default!;
 #nullable restore
 #else
-        public string IosScheme { get => _explicitNullValueIosScheme; set { _explicitNullValueIosScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iosScheme"); else _explicitNullProperties?.Remove("iosScheme"); } }
+        public string IosScheme { get => _explicitNullValueIosScheme; set { _explicitNullValueIosScheme = value; AdditionalData?.Remove("iosScheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iosScheme"); else _explicitNullProperties?.Remove("iosScheme"); } }
         private string _explicitNullValueIosScheme = default!;
 #endif
         /// <summary>

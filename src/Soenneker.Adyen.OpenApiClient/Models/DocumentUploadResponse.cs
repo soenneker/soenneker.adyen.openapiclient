@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
-            if (parseNode.GetChildNode("fileName") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("context") is null) { _explicitNullValueContext = default!; _explicitNullProperties?.Remove("context"); }
+            else if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("fileName") is null) { _explicitNullValueFileName = default!; _explicitNullProperties?.Remove("fileName"); }
+            else if (parseNode.GetChildNode("fileName") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("pspReference") is null) { _explicitNullValuePspReference = default!; _explicitNullProperties?.Remove("pspReference"); }
+            else if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The document context indicating the type of document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        public string? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private string? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public string Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        public string Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private string _explicitNullValueContext = default!;
 #endif
         /// <summary>The name of the uploaded file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("fileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
         private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("fileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
         private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>The merchant account that the document belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>The PSP reference extracted from the filename.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("referenced") is { } nullNodeReferenced && nullNodeReferenced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referenced = null;
-            if (parseNode.GetChildNode("unreferenced") is { } nullNodeUnreferenced && nullNodeUnreferenced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unreferenced = null;
+            if (parseNode.GetChildNode("referenced") is null) { _explicitNullValueReferenced = default!; _explicitNullProperties?.Remove("referenced"); }
+            else if (parseNode.GetChildNode("referenced") is { } nullNodeReferenced && nullNodeReferenced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referenced = null;
+            if (parseNode.GetChildNode("unreferenced") is null) { _explicitNullValueUnreferenced = default!; _explicitNullProperties?.Remove("unreferenced"); }
+            else if (parseNode.GetChildNode("unreferenced") is { } nullNodeUnreferenced && nullNodeUnreferenced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unreferenced = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Settings for referenced refunds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced? Referenced { get => _explicitNullValueReferenced; set { _explicitNullValueReferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced"); else _explicitNullProperties?.Remove("referenced"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced? Referenced { get => _explicitNullValueReferenced; set { _explicitNullValueReferenced = value; AdditionalData?.Remove("referenced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced"); else _explicitNullProperties?.Remove("referenced"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced? _explicitNullValueReferenced = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced Referenced { get => _explicitNullValueReferenced; set { _explicitNullValueReferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced"); else _explicitNullProperties?.Remove("referenced"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced Referenced { get => _explicitNullValueReferenced; set { _explicitNullValueReferenced = value; AdditionalData?.Remove("referenced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced"); else _explicitNullProperties?.Remove("referenced"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced _explicitNullValueReferenced = default!;
 #endif
         /// <summary>Settings for unreferenced refunds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced? Unreferenced { get => _explicitNullValueUnreferenced; set { _explicitNullValueUnreferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreferenced"); else _explicitNullProperties?.Remove("unreferenced"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced? Unreferenced { get => _explicitNullValueUnreferenced; set { _explicitNullValueUnreferenced = value; AdditionalData?.Remove("unreferenced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreferenced"); else _explicitNullProperties?.Remove("unreferenced"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced? _explicitNullValueUnreferenced = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced Unreferenced { get => _explicitNullValueUnreferenced; set { _explicitNullValueUnreferenced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreferenced"); else _explicitNullProperties?.Remove("unreferenced"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced Unreferenced { get => _explicitNullValueUnreferenced; set { _explicitNullValueUnreferenced = value; AdditionalData?.Remove("unreferenced"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreferenced"); else _explicitNullProperties?.Remove("unreferenced"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RefundsUnreferenced _explicitNullValueUnreferenced = default!;
 #endif
         /// <summary>

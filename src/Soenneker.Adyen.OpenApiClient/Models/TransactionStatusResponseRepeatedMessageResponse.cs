@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("MessageHeader") is { } nullNodeMessageHeader && nullNodeMessageHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageHeader = null;
-            if (parseNode.GetChildNode("RepeatedResponseMessageBody") is { } nullNodeRepeatedResponseMessageBody && nullNodeRepeatedResponseMessageBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatedResponseMessageBody = null;
+            if (parseNode.GetChildNode("MessageHeader") is null) { _explicitNullValueMessageHeader = default!; _explicitNullProperties?.Remove("MessageHeader"); }
+            else if (parseNode.GetChildNode("MessageHeader") is { } nullNodeMessageHeader && nullNodeMessageHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageHeader = null;
+            if (parseNode.GetChildNode("RepeatedResponseMessageBody") is null) { _explicitNullValueRepeatedResponseMessageBody = default!; _explicitNullProperties?.Remove("RepeatedResponseMessageBody"); }
+            else if (parseNode.GetChildNode("RepeatedResponseMessageBody") is { } nullNodeRepeatedResponseMessageBody && nullNodeRepeatedResponseMessageBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatedResponseMessageBody = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Message header of the Sale to POI protocol message.It conveys Information related to the Sale to POI protocol management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponseMessageHeader? MessageHeader { get => _explicitNullValueMessageHeader; set { _explicitNullValueMessageHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageHeader"); else _explicitNullProperties?.Remove("MessageHeader"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponseMessageHeader? MessageHeader { get => _explicitNullValueMessageHeader; set { _explicitNullValueMessageHeader = value; AdditionalData?.Remove("MessageHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageHeader"); else _explicitNullProperties?.Remove("MessageHeader"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponseMessageHeader? _explicitNullValueMessageHeader = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponseMessageHeader MessageHeader { get => _explicitNullValueMessageHeader; set { _explicitNullValueMessageHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageHeader"); else _explicitNullProperties?.Remove("MessageHeader"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponseMessageHeader MessageHeader { get => _explicitNullValueMessageHeader; set { _explicitNullValueMessageHeader = value; AdditionalData?.Remove("MessageHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageHeader"); else _explicitNullProperties?.Remove("MessageHeader"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepeatedMessageResponseMessageHeader _explicitNullValueMessageHeader = default!;
 #endif
         /// <summary>The RepeatedResponseMessageBody property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedResponseMessageBody? RepeatedResponseMessageBody { get => _explicitNullValueRepeatedResponseMessageBody; set { _explicitNullValueRepeatedResponseMessageBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedResponseMessageBody"); else _explicitNullProperties?.Remove("RepeatedResponseMessageBody"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedResponseMessageBody? RepeatedResponseMessageBody { get => _explicitNullValueRepeatedResponseMessageBody; set { _explicitNullValueRepeatedResponseMessageBody = value; AdditionalData?.Remove("RepeatedResponseMessageBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedResponseMessageBody"); else _explicitNullProperties?.Remove("RepeatedResponseMessageBody"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepeatedResponseMessageBody? _explicitNullValueRepeatedResponseMessageBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedResponseMessageBody RepeatedResponseMessageBody { get => _explicitNullValueRepeatedResponseMessageBody; set { _explicitNullValueRepeatedResponseMessageBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedResponseMessageBody"); else _explicitNullProperties?.Remove("RepeatedResponseMessageBody"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepeatedResponseMessageBody RepeatedResponseMessageBody { get => _explicitNullValueRepeatedResponseMessageBody; set { _explicitNullValueRepeatedResponseMessageBody = value; AdditionalData?.Remove("RepeatedResponseMessageBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedResponseMessageBody"); else _explicitNullProperties?.Remove("RepeatedResponseMessageBody"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepeatedResponseMessageBody _explicitNullValueRepeatedResponseMessageBody = default!;
 #endif
         /// <summary>

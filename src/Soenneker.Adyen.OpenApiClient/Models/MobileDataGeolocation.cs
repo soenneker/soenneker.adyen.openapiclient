@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("GeographicCoordinates") is { } nullNodeGeographicCoordinates && nullNodeGeographicCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeographicCoordinates = null;
-            if (parseNode.GetChildNode("UTMCoordinates") is { } nullNodeUTMCoordinates && nullNodeUTMCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMCoordinates = null;
+            if (parseNode.GetChildNode("GeographicCoordinates") is null) { _explicitNullValueGeographicCoordinates = default!; _explicitNullProperties?.Remove("GeographicCoordinates"); }
+            else if (parseNode.GetChildNode("GeographicCoordinates") is { } nullNodeGeographicCoordinates && nullNodeGeographicCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeographicCoordinates = null;
+            if (parseNode.GetChildNode("UTMCoordinates") is null) { _explicitNullValueUTMCoordinates = default!; _explicitNullProperties?.Remove("UTMCoordinates"); }
+            else if (parseNode.GetChildNode("UTMCoordinates") is { } nullNodeUTMCoordinates && nullNodeUTMCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UTMCoordinates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The GeographicCoordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates? GeographicCoordinates { get => _explicitNullValueGeographicCoordinates; set { _explicitNullValueGeographicCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GeographicCoordinates"); else _explicitNullProperties?.Remove("GeographicCoordinates"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates? GeographicCoordinates { get => _explicitNullValueGeographicCoordinates; set { _explicitNullValueGeographicCoordinates = value; AdditionalData?.Remove("GeographicCoordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GeographicCoordinates"); else _explicitNullProperties?.Remove("GeographicCoordinates"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates? _explicitNullValueGeographicCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates GeographicCoordinates { get => _explicitNullValueGeographicCoordinates; set { _explicitNullValueGeographicCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GeographicCoordinates"); else _explicitNullProperties?.Remove("GeographicCoordinates"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates GeographicCoordinates { get => _explicitNullValueGeographicCoordinates; set { _explicitNullValueGeographicCoordinates = value; AdditionalData?.Remove("GeographicCoordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("GeographicCoordinates"); else _explicitNullProperties?.Remove("GeographicCoordinates"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GeographicCoordinates _explicitNullValueGeographicCoordinates = default!;
 #endif
         /// <summary>The UTMCoordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? UTMCoordinates { get => _explicitNullValueUTMCoordinates; set { _explicitNullValueUTMCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMCoordinates"); else _explicitNullProperties?.Remove("UTMCoordinates"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? UTMCoordinates { get => _explicitNullValueUTMCoordinates; set { _explicitNullValueUTMCoordinates = value; AdditionalData?.Remove("UTMCoordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMCoordinates"); else _explicitNullProperties?.Remove("UTMCoordinates"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates? _explicitNullValueUTMCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates UTMCoordinates { get => _explicitNullValueUTMCoordinates; set { _explicitNullValueUTMCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMCoordinates"); else _explicitNullProperties?.Remove("UTMCoordinates"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates UTMCoordinates { get => _explicitNullValueUTMCoordinates; set { _explicitNullValueUTMCoordinates = value; AdditionalData?.Remove("UTMCoordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("UTMCoordinates"); else _explicitNullProperties?.Remove("UTMCoordinates"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UtmCoordinates _explicitNullValueUTMCoordinates = default!;
 #endif
         /// <summary>

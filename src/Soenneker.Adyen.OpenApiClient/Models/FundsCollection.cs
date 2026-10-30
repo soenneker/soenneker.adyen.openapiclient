@@ -17,24 +17,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountIdentification") is { } nullNodeAccountIdentification && nullNodeAccountIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIdentification = null;
-            if (parseNode.GetChildNode("fundsCollectionType") is { } nullNodeFundsCollectionType && nullNodeFundsCollectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundsCollectionType = null;
+            if (parseNode.GetChildNode("accountIdentification") is null) { _explicitNullValueAccountIdentification = default!; _explicitNullProperties?.Remove("accountIdentification"); }
+            else if (parseNode.GetChildNode("accountIdentification") is { } nullNodeAccountIdentification && nullNodeAccountIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIdentification = null;
+            if (parseNode.GetChildNode("fundsCollectionType") is null) { _explicitNullValueFundsCollectionType = default!; _explicitNullProperties?.Remove("fundsCollectionType"); }
+            else if (parseNode.GetChildNode("fundsCollectionType") is { } nullNodeFundsCollectionType && nullNodeFundsCollectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundsCollectionType = null;
         }
 
         /// <summary>Contains the identification information of the account to which you can transfer funds related to repayments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification? AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification? AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; AdditionalData?.Remove("accountIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification? _explicitNullValueAccountIdentification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification AccountIdentification { get => _explicitNullValueAccountIdentification; set { _explicitNullValueAccountIdentification = value; AdditionalData?.Remove("accountIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentification"); else _explicitNullProperties?.Remove("accountIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification _explicitNullValueAccountIdentification = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of funds collection.Possible values: **UnscheduledRepayment**, **Revocation**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType? FundsCollectionType { get => _explicitNullValueFundsCollectionType; set { _explicitNullValueFundsCollectionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundsCollectionType"); else _explicitNullProperties?.Remove("fundsCollectionType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType? FundsCollectionType { get => _explicitNullValueFundsCollectionType; set { _explicitNullValueFundsCollectionType = value; AdditionalData?.Remove("fundsCollectionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundsCollectionType"); else _explicitNullProperties?.Remove("fundsCollectionType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType? _explicitNullValueFundsCollectionType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.FundsCollection"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountIdentification", n => { AccountIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionAccountIdentification.CreateFromDiscriminatorValue); } },
-                { "fundsCollectionType", n => { FundsCollectionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType>(); } },
+                { "fundsCollectionType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.FundsCollectionFundsCollectionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFundsCollectionType = default; _explicitNullProperties?.Remove("fundsCollectionType"); AdditionalData["fundsCollectionType"] = unknown; } else { FundsCollectionType = parsed; AdditionalData.Remove("fundsCollectionType"); } } },
             };
         }
         /// <summary>

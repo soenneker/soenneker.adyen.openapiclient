@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowedAppsInKioskMode") is { } nullNodeAllowedAppsInKioskMode && nullNodeAllowedAppsInKioskMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAppsInKioskMode = null;
-            if (parseNode.GetChildNode("kioskAppOnStartup") is { } nullNodeKioskAppOnStartup && nullNodeKioskAppOnStartup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KioskAppOnStartup = null;
+            if (parseNode.GetChildNode("allowedAppsInKioskMode") is null) { _explicitNullValueAllowedAppsInKioskMode = default!; _explicitNullProperties?.Remove("allowedAppsInKioskMode"); }
+            else if (parseNode.GetChildNode("allowedAppsInKioskMode") is { } nullNodeAllowedAppsInKioskMode && nullNodeAllowedAppsInKioskMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedAppsInKioskMode = null;
+            if (parseNode.GetChildNode("kioskAppOnStartup") is null) { _explicitNullValueKioskAppOnStartup = default!; _explicitNullProperties?.Remove("kioskAppOnStartup"); }
+            else if (parseNode.GetChildNode("kioskAppOnStartup") is { } nullNodeKioskAppOnStartup && nullNodeKioskAppOnStartup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KioskAppOnStartup = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of package names for apps allowed to run in kiosk mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedAppsInKioskMode { get => _explicitNullValueAllowedAppsInKioskMode; set { _explicitNullValueAllowedAppsInKioskMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedAppsInKioskMode"); else _explicitNullProperties?.Remove("allowedAppsInKioskMode"); } }
+        public List<string>? AllowedAppsInKioskMode { get => _explicitNullValueAllowedAppsInKioskMode; set { _explicitNullValueAllowedAppsInKioskMode = value; AdditionalData?.Remove("allowedAppsInKioskMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedAppsInKioskMode"); else _explicitNullProperties?.Remove("allowedAppsInKioskMode"); } }
         private List<string>? _explicitNullValueAllowedAppsInKioskMode = default!;
 #nullable restore
 #else
-        public List<string> AllowedAppsInKioskMode { get => _explicitNullValueAllowedAppsInKioskMode; set { _explicitNullValueAllowedAppsInKioskMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedAppsInKioskMode"); else _explicitNullProperties?.Remove("allowedAppsInKioskMode"); } }
+        public List<string> AllowedAppsInKioskMode { get => _explicitNullValueAllowedAppsInKioskMode; set { _explicitNullValueAllowedAppsInKioskMode = value; AdditionalData?.Remove("allowedAppsInKioskMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedAppsInKioskMode"); else _explicitNullProperties?.Remove("allowedAppsInKioskMode"); } }
         private List<string> _explicitNullValueAllowedAppsInKioskMode = default!;
 #endif
         /// <summary>The package name of the app to launch on startup. This must be one of the apps included in `allowedAppsInKioskMode`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KioskAppOnStartup { get => _explicitNullValueKioskAppOnStartup; set { _explicitNullValueKioskAppOnStartup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskAppOnStartup"); else _explicitNullProperties?.Remove("kioskAppOnStartup"); } }
+        public string? KioskAppOnStartup { get => _explicitNullValueKioskAppOnStartup; set { _explicitNullValueKioskAppOnStartup = value; AdditionalData?.Remove("kioskAppOnStartup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskAppOnStartup"); else _explicitNullProperties?.Remove("kioskAppOnStartup"); } }
         private string? _explicitNullValueKioskAppOnStartup = default!;
 #nullable restore
 #else
-        public string KioskAppOnStartup { get => _explicitNullValueKioskAppOnStartup; set { _explicitNullValueKioskAppOnStartup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskAppOnStartup"); else _explicitNullProperties?.Remove("kioskAppOnStartup"); } }
+        public string KioskAppOnStartup { get => _explicitNullValueKioskAppOnStartup; set { _explicitNullValueKioskAppOnStartup = value; AdditionalData?.Remove("kioskAppOnStartup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kioskAppOnStartup"); else _explicitNullProperties?.Remove("kioskAppOnStartup"); } }
         private string _explicitNullValueKioskAppOnStartup = default!;
 #endif
         /// <summary>

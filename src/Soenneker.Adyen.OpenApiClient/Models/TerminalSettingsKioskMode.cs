@@ -56,6 +56,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(TerminalSettingsKioskModeMember1 != null || TerminalSettingsKioskModeMember2 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TerminalSettingsKioskModeMember1, TerminalSettingsKioskModeMember2);
@@ -70,8 +72,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (TerminalSettingsKioskModeMember1 == null && TerminalSettingsKioskModeMember2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (TerminalSettingsKioskModeMember1 != null && TerminalSettingsKioskModeMember2 == null) { if (TerminalSettingsKioskModeMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsKioskModeMember1); return; }
-            if (TerminalSettingsKioskModeMember2 != null && TerminalSettingsKioskModeMember1 == null) { if (TerminalSettingsKioskModeMember2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsKioskModeMember2); return; }
+            int selectedUnionBranches = 0;
+            if (TerminalSettingsKioskModeMember1 != null) selectedUnionBranches++;
+            if (TerminalSettingsKioskModeMember2 != null) selectedUnionBranches++;
+            if (TerminalSettingsKioskModeMember1 != null && selectedUnionBranches == 1) { if (TerminalSettingsKioskModeMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsKioskModeMember1); return; }
+            if (TerminalSettingsKioskModeMember2 != null && selectedUnionBranches == 1) { if (TerminalSettingsKioskModeMember2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsKioskModeMember2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsKioskModeMember1>(null, TerminalSettingsKioskModeMember1, TerminalSettingsKioskModeMember2);

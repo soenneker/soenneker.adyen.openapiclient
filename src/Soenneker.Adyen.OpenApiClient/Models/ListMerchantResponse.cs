@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("itemsTotal") is { } nullNodeItemsTotal && nullNodeItemsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsTotal = null;
-            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
-            if (parseNode.GetChildNode("pagesTotal") is { } nullNodePagesTotal && nullNodePagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PagesTotal = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("itemsTotal") is null) { _explicitNullValueItemsTotal = default!; _explicitNullProperties?.Remove("itemsTotal"); }
+            else if (parseNode.GetChildNode("itemsTotal") is { } nullNodeItemsTotal && nullNodeItemsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsTotal = null;
+            if (parseNode.GetChildNode("_links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("_links"); }
+            else if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("pagesTotal") is null) { _explicitNullValuePagesTotal = default!; _explicitNullProperties?.Remove("pagesTotal"); }
+            else if (parseNode.GetChildNode("pagesTotal") is { } nullNodePagesTotal && nullNodePagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PagesTotal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of merchant accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Merchant>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Merchant>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Merchant>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Merchant> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Merchant> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Merchant> _explicitNullValueData = default!;
 #endif
         /// <summary>Total number of items.</summary>
-        public int? ItemsTotal { get => _explicitNullValueItemsTotal; set { _explicitNullValueItemsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsTotal"); else _explicitNullProperties?.Remove("itemsTotal"); } }
+        public int? ItemsTotal { get => _explicitNullValueItemsTotal; set { _explicitNullValueItemsTotal = value; AdditionalData?.Remove("itemsTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsTotal"); else _explicitNullProperties?.Remove("itemsTotal"); } }
         private int? _explicitNullValueItemsTotal = default!;
         /// <summary>Pagination references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponseLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>Total number of pages.</summary>
-        public int? PagesTotal { get => _explicitNullValuePagesTotal; set { _explicitNullValuePagesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagesTotal"); else _explicitNullProperties?.Remove("pagesTotal"); } }
+        public int? PagesTotal { get => _explicitNullValuePagesTotal; set { _explicitNullValuePagesTotal = value; AdditionalData?.Remove("pagesTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagesTotal"); else _explicitNullProperties?.Remove("pagesTotal"); } }
         private int? _explicitNullValuePagesTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ListMerchantResponse"/> and sets the default values.

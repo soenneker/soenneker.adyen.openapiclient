@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticationOnly") is { } nullNodeAuthenticationOnly && nullNodeAuthenticationOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationOnly = null;
+            if (parseNode.GetChildNode("authenticationOnly") is null) { _explicitNullValueAuthenticationOnly = default!; _explicitNullProperties?.Remove("authenticationOnly"); }
+            else if (parseNode.GetChildNode("authenticationOnly") is { } nullNodeAuthenticationOnly && nullNodeAuthenticationOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationOnly = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Required to trigger the [authentication-only flow](https://docs.adyen.com/online-payments/3d-secure/authentication-only/). If set to **true**, you will only perform the 3D Secure 2 authentication, and will not proceed to the payment authorization.Default: **false**.</summary>
-        public bool? AuthenticationOnly { get => _explicitNullValueAuthenticationOnly; set { _explicitNullValueAuthenticationOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationOnly"); else _explicitNullProperties?.Remove("authenticationOnly"); } }
+        public bool? AuthenticationOnly { get => _explicitNullValueAuthenticationOnly; set { _explicitNullValueAuthenticationOnly = value; AdditionalData?.Remove("authenticationOnly"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationOnly"); else _explicitNullProperties?.Remove("authenticationOnly"); } }
         private bool? _explicitNullValueAuthenticationOnly = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutServiceV72PaymentDetailsRequestAuthenticationData"/> and sets the default values.

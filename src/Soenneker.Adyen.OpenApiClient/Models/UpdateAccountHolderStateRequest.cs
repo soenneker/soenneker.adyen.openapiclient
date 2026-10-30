@@ -17,39 +17,43 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
-            if (parseNode.GetChildNode("disable") is { } nullNodeDisable && nullNodeDisable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disable = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("stateType") is { } nullNodeStateType && nullNodeStateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateType = null;
+            if (parseNode.GetChildNode("accountHolderCode") is null) { _explicitNullValueAccountHolderCode = default!; _explicitNullProperties?.Remove("accountHolderCode"); }
+            else if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("disable") is null) { _explicitNullValueDisable = default!; _explicitNullProperties?.Remove("disable"); }
+            else if (parseNode.GetChildNode("disable") is { } nullNodeDisable && nullNodeDisable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disable = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("stateType") is null) { _explicitNullValueStateType = default!; _explicitNullProperties?.Remove("stateType"); }
+            else if (parseNode.GetChildNode("stateType") is { } nullNodeStateType && nullNodeStateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StateType = null;
         }
 
         /// <summary>The code of the Account Holder on which to update the state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, disable the requested state.  If false, enable the requested state.</summary>
-        public bool? Disable { get => _explicitNullValueDisable; set { _explicitNullValueDisable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable"); else _explicitNullProperties?.Remove("disable"); } }
+        public bool? Disable { get => _explicitNullValueDisable; set { _explicitNullValueDisable = value; AdditionalData?.Remove("disable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable"); else _explicitNullProperties?.Remove("disable"); } }
         private bool? _explicitNullValueDisable = default!;
         /// <summary>The reason that the state is being updated.&gt;Required if the state is being disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>The state to be updated.&gt;Permitted values are: `Processing`, `Payout`</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType? StateType { get => _explicitNullValueStateType; set { _explicitNullValueStateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stateType"); else _explicitNullProperties?.Remove("stateType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType? StateType { get => _explicitNullValueStateType; set { _explicitNullValueStateType = value; AdditionalData?.Remove("stateType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stateType"); else _explicitNullProperties?.Remove("stateType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType? _explicitNullValueStateType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequest"/> and sets the default values.
@@ -79,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "accountHolderCode", n => { AccountHolderCode = n.GetStringValue(); } },
                 { "disable", n => { Disable = n.GetBoolValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "stateType", n => { StateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType>(); } },
+                { "stateType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.UpdateAccountHolderStateRequestStateType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStateType = default; _explicitNullProperties?.Remove("stateType"); AdditionalData["stateType"] = unknown; } else { StateType = parsed; AdditionalData.Remove("stateType"); } } },
             };
         }
         /// <summary>

@@ -17,34 +17,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DateTime") is { } nullNodeDateTime && nullNodeDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTime = null;
-            if (parseNode.GetChildNode("POISoftware") is { } nullNodePOISoftware && nullNodePOISoftware.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POISoftware = null;
-            if (parseNode.GetChildNode("POIStatus") is { } nullNodePOIStatus && nullNodePOIStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIStatus = null;
+            if (parseNode.GetChildNode("DateTime") is null) { _explicitNullValueDateTime = default!; _explicitNullProperties?.Remove("DateTime"); }
+            else if (parseNode.GetChildNode("DateTime") is { } nullNodeDateTime && nullNodeDateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTime = null;
+            if (parseNode.GetChildNode("POISoftware") is null) { _explicitNullValuePOISoftware = default!; _explicitNullProperties?.Remove("POISoftware"); }
+            else if (parseNode.GetChildNode("POISoftware") is { } nullNodePOISoftware && nullNodePOISoftware.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POISoftware = null;
+            if (parseNode.GetChildNode("POIStatus") is null) { _explicitNullValuePOIStatus = default!; _explicitNullProperties?.Remove("POIStatus"); }
+            else if (parseNode.GetChildNode("POIStatus") is { } nullNodePOIStatus && nullNodePOIStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIStatus = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and Time. In the response, the POI System gives its date and time to the Sale System.</summary>
-        public DateTimeOffset? DateTime { get => _explicitNullValueDateTime; set { _explicitNullValueDateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DateTime"); else _explicitNullProperties?.Remove("DateTime"); } }
+        public DateTimeOffset? DateTime { get => _explicitNullValueDateTime; set { _explicitNullValueDateTime = value; AdditionalData?.Remove("DateTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DateTime"); else _explicitNullProperties?.Remove("DateTime"); } }
         private DateTimeOffset? _explicitNullValueDateTime = default!;
         /// <summary>Information related to the software of the POI System which manages the Sale to POI protocol. In a session allows identifying the product features of a POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiSoftware? POISoftware { get => _explicitNullValuePOISoftware; set { _explicitNullValuePOISoftware = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POISoftware"); else _explicitNullProperties?.Remove("POISoftware"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiSoftware? POISoftware { get => _explicitNullValuePOISoftware; set { _explicitNullValuePOISoftware = value; AdditionalData?.Remove("POISoftware"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POISoftware"); else _explicitNullProperties?.Remove("POISoftware"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PoiSoftware? _explicitNullValuePOISoftware = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiSoftware POISoftware { get => _explicitNullValuePOISoftware; set { _explicitNullValuePOISoftware = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POISoftware"); else _explicitNullProperties?.Remove("POISoftware"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiSoftware POISoftware { get => _explicitNullValuePOISoftware; set { _explicitNullValuePOISoftware = value; AdditionalData?.Remove("POISoftware"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POISoftware"); else _explicitNullProperties?.Remove("POISoftware"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PoiSoftware _explicitNullValuePOISoftware = default!;
 #endif
         /// <summary>Indicate the availability of the POI Terminal components. The data element is absent if the component is not part of the POI Terminal.State of a POI Terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus? POIStatus { get => _explicitNullValuePOIStatus; set { _explicitNullValuePOIStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIStatus"); else _explicitNullProperties?.Remove("POIStatus"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus? POIStatus { get => _explicitNullValuePOIStatus; set { _explicitNullValuePOIStatus = value; AdditionalData?.Remove("POIStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIStatus"); else _explicitNullProperties?.Remove("POIStatus"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus? _explicitNullValuePOIStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus POIStatus { get => _explicitNullValuePOIStatus; set { _explicitNullValuePOIStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIStatus"); else _explicitNullProperties?.Remove("POIStatus"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus POIStatus { get => _explicitNullValuePOIStatus; set { _explicitNullValuePOIStatus = value; AdditionalData?.Remove("POIStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIStatus"); else _explicitNullProperties?.Remove("POIStatus"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PoiStatus _explicitNullValuePOIStatus = default!;
 #endif
         /// <summary>

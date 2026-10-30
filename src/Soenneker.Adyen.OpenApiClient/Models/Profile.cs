@@ -17,25 +17,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authType") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
-            if (parseNode.GetChildNode("autoWifi") is { } nullNodeAutoWifi && nullNodeAutoWifi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoWifi = null;
-            if (parseNode.GetChildNode("bssType") is { } nullNodeBssType && nullNodeBssType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BssType = null;
-            if (parseNode.GetChildNode("channel") is { } nullNodeChannel && nullNodeChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Channel = null;
-            if (parseNode.GetChildNode("defaultProfile") is { } nullNodeDefaultProfile && nullNodeDefaultProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultProfile = null;
-            if (parseNode.GetChildNode("domainSuffix") is { } nullNodeDomainSuffix && nullNodeDomainSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainSuffix = null;
-            if (parseNode.GetChildNode("eap") is { } nullNodeEap && nullNodeEap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eap = null;
-            if (parseNode.GetChildNode("eapCaCert") is { } nullNodeEapCaCert && nullNodeEapCaCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapCaCert = null;
-            if (parseNode.GetChildNode("eapClientCert") is { } nullNodeEapClientCert && nullNodeEapClientCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapClientCert = null;
-            if (parseNode.GetChildNode("eapClientKey") is { } nullNodeEapClientKey && nullNodeEapClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapClientKey = null;
-            if (parseNode.GetChildNode("eapClientPwd") is { } nullNodeEapClientPwd && nullNodeEapClientPwd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapClientPwd = null;
-            if (parseNode.GetChildNode("eapIdentity") is { } nullNodeEapIdentity && nullNodeEapIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapIdentity = null;
-            if (parseNode.GetChildNode("eapIntermediateCert") is { } nullNodeEapIntermediateCert && nullNodeEapIntermediateCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapIntermediateCert = null;
-            if (parseNode.GetChildNode("eapPwd") is { } nullNodeEapPwd && nullNodeEapPwd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapPwd = null;
-            if (parseNode.GetChildNode("hiddenSsid") is { } nullNodeHiddenSsid && nullNodeHiddenSsid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenSsid = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("psk") is { } nullNodePsk && nullNodePsk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Psk = null;
-            if (parseNode.GetChildNode("ssid") is { } nullNodeSsid && nullNodeSsid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssid = null;
-            if (parseNode.GetChildNode("wsec") is { } nullNodeWsec && nullNodeWsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wsec = null;
+            if (parseNode.GetChildNode("authType") is null) { _explicitNullValueAuthType = default!; _explicitNullProperties?.Remove("authType"); }
+            else if (parseNode.GetChildNode("authType") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("autoWifi") is null) { _explicitNullValueAutoWifi = default!; _explicitNullProperties?.Remove("autoWifi"); }
+            else if (parseNode.GetChildNode("autoWifi") is { } nullNodeAutoWifi && nullNodeAutoWifi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoWifi = null;
+            if (parseNode.GetChildNode("bssType") is null) { _explicitNullValueBssType = default!; _explicitNullProperties?.Remove("bssType"); }
+            else if (parseNode.GetChildNode("bssType") is { } nullNodeBssType && nullNodeBssType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BssType = null;
+            if (parseNode.GetChildNode("channel") is null) { _explicitNullValueChannel = default!; _explicitNullProperties?.Remove("channel"); }
+            else if (parseNode.GetChildNode("channel") is { } nullNodeChannel && nullNodeChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Channel = null;
+            if (parseNode.GetChildNode("defaultProfile") is null) { _explicitNullValueDefaultProfile = default!; _explicitNullProperties?.Remove("defaultProfile"); }
+            else if (parseNode.GetChildNode("defaultProfile") is { } nullNodeDefaultProfile && nullNodeDefaultProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultProfile = null;
+            if (parseNode.GetChildNode("domainSuffix") is null) { _explicitNullValueDomainSuffix = default!; _explicitNullProperties?.Remove("domainSuffix"); }
+            else if (parseNode.GetChildNode("domainSuffix") is { } nullNodeDomainSuffix && nullNodeDomainSuffix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainSuffix = null;
+            if (parseNode.GetChildNode("eap") is null) { _explicitNullValueEap = default!; _explicitNullProperties?.Remove("eap"); }
+            else if (parseNode.GetChildNode("eap") is { } nullNodeEap && nullNodeEap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eap = null;
+            if (parseNode.GetChildNode("eapCaCert") is null) { _explicitNullValueEapCaCert = default!; _explicitNullProperties?.Remove("eapCaCert"); }
+            else if (parseNode.GetChildNode("eapCaCert") is { } nullNodeEapCaCert && nullNodeEapCaCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapCaCert = null;
+            if (parseNode.GetChildNode("eapClientCert") is null) { _explicitNullValueEapClientCert = default!; _explicitNullProperties?.Remove("eapClientCert"); }
+            else if (parseNode.GetChildNode("eapClientCert") is { } nullNodeEapClientCert && nullNodeEapClientCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapClientCert = null;
+            if (parseNode.GetChildNode("eapClientKey") is null) { _explicitNullValueEapClientKey = default!; _explicitNullProperties?.Remove("eapClientKey"); }
+            else if (parseNode.GetChildNode("eapClientKey") is { } nullNodeEapClientKey && nullNodeEapClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapClientKey = null;
+            if (parseNode.GetChildNode("eapClientPwd") is null) { _explicitNullValueEapClientPwd = default!; _explicitNullProperties?.Remove("eapClientPwd"); }
+            else if (parseNode.GetChildNode("eapClientPwd") is { } nullNodeEapClientPwd && nullNodeEapClientPwd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapClientPwd = null;
+            if (parseNode.GetChildNode("eapIdentity") is null) { _explicitNullValueEapIdentity = default!; _explicitNullProperties?.Remove("eapIdentity"); }
+            else if (parseNode.GetChildNode("eapIdentity") is { } nullNodeEapIdentity && nullNodeEapIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapIdentity = null;
+            if (parseNode.GetChildNode("eapIntermediateCert") is null) { _explicitNullValueEapIntermediateCert = default!; _explicitNullProperties?.Remove("eapIntermediateCert"); }
+            else if (parseNode.GetChildNode("eapIntermediateCert") is { } nullNodeEapIntermediateCert && nullNodeEapIntermediateCert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapIntermediateCert = null;
+            if (parseNode.GetChildNode("eapPwd") is null) { _explicitNullValueEapPwd = default!; _explicitNullProperties?.Remove("eapPwd"); }
+            else if (parseNode.GetChildNode("eapPwd") is { } nullNodeEapPwd && nullNodeEapPwd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EapPwd = null;
+            if (parseNode.GetChildNode("hiddenSsid") is null) { _explicitNullValueHiddenSsid = default!; _explicitNullProperties?.Remove("hiddenSsid"); }
+            else if (parseNode.GetChildNode("hiddenSsid") is { } nullNodeHiddenSsid && nullNodeHiddenSsid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenSsid = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("psk") is null) { _explicitNullValuePsk = default!; _explicitNullProperties?.Remove("psk"); }
+            else if (parseNode.GetChildNode("psk") is { } nullNodePsk && nullNodePsk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Psk = null;
+            if (parseNode.GetChildNode("ssid") is null) { _explicitNullValueSsid = default!; _explicitNullProperties?.Remove("ssid"); }
+            else if (parseNode.GetChildNode("ssid") is { } nullNodeSsid && nullNodeSsid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ssid = null;
+            if (parseNode.GetChildNode("wsec") is null) { _explicitNullValueWsec = default!; _explicitNullProperties?.Remove("wsec"); }
+            else if (parseNode.GetChildNode("wsec") is { } nullNodeWsec && nullNodeWsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wsec = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -43,163 +62,163 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of Wi-Fi network. Possible values: **wpa-psk**, **wpa2-psk**, **wpa-eap**, **wpa2-eap**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authType"); else _explicitNullProperties?.Remove("authType"); } }
+        public string? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("authType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authType"); else _explicitNullProperties?.Remove("authType"); } }
         private string? _explicitNullValueAuthType = default!;
 #nullable restore
 #else
-        public string AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authType"); else _explicitNullProperties?.Remove("authType"); } }
+        public string AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("authType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authType"); else _explicitNullProperties?.Remove("authType"); } }
         private string _explicitNullValueAuthType = default!;
 #endif
         /// <summary>Indicates whether to automatically select the best authentication method available. Does not work on older terminal models.</summary>
-        public bool? AutoWifi { get => _explicitNullValueAutoWifi; set { _explicitNullValueAutoWifi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoWifi"); else _explicitNullProperties?.Remove("autoWifi"); } }
+        public bool? AutoWifi { get => _explicitNullValueAutoWifi; set { _explicitNullValueAutoWifi = value; AdditionalData?.Remove("autoWifi"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoWifi"); else _explicitNullProperties?.Remove("autoWifi"); } }
         private bool? _explicitNullValueAutoWifi = default!;
         /// <summary>Use **infra** for infrastructure-based networks. This applies to most networks. Use **adhoc** only if the communication is p2p-based between base stations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BssType { get => _explicitNullValueBssType; set { _explicitNullValueBssType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bssType"); else _explicitNullProperties?.Remove("bssType"); } }
+        public string? BssType { get => _explicitNullValueBssType; set { _explicitNullValueBssType = value; AdditionalData?.Remove("bssType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bssType"); else _explicitNullProperties?.Remove("bssType"); } }
         private string? _explicitNullValueBssType = default!;
 #nullable restore
 #else
-        public string BssType { get => _explicitNullValueBssType; set { _explicitNullValueBssType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bssType"); else _explicitNullProperties?.Remove("bssType"); } }
+        public string BssType { get => _explicitNullValueBssType; set { _explicitNullValueBssType = value; AdditionalData?.Remove("bssType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bssType"); else _explicitNullProperties?.Remove("bssType"); } }
         private string _explicitNullValueBssType = default!;
 #endif
         /// <summary>The channel number of the Wi-Fi network. The recommended setting is **0** for automatic channel selection.</summary>
-        public int? Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
+        public int? Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; AdditionalData?.Remove("channel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
         private int? _explicitNullValueChannel = default!;
         /// <summary>Indicates whether this is your preferred wireless network. If **true**, the terminal will try connecting to this network first.</summary>
-        public bool? DefaultProfile { get => _explicitNullValueDefaultProfile; set { _explicitNullValueDefaultProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultProfile"); else _explicitNullProperties?.Remove("defaultProfile"); } }
+        public bool? DefaultProfile { get => _explicitNullValueDefaultProfile; set { _explicitNullValueDefaultProfile = value; AdditionalData?.Remove("defaultProfile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultProfile"); else _explicitNullProperties?.Remove("defaultProfile"); } }
         private bool? _explicitNullValueDefaultProfile = default!;
         /// <summary>Specifies the server domain name for EAP-TLS and EAP-PEAP WiFi profiles on Android 11 and above.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainSuffix { get => _explicitNullValueDomainSuffix; set { _explicitNullValueDomainSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainSuffix"); else _explicitNullProperties?.Remove("domainSuffix"); } }
+        public string? DomainSuffix { get => _explicitNullValueDomainSuffix; set { _explicitNullValueDomainSuffix = value; AdditionalData?.Remove("domainSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainSuffix"); else _explicitNullProperties?.Remove("domainSuffix"); } }
         private string? _explicitNullValueDomainSuffix = default!;
 #nullable restore
 #else
-        public string DomainSuffix { get => _explicitNullValueDomainSuffix; set { _explicitNullValueDomainSuffix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainSuffix"); else _explicitNullProperties?.Remove("domainSuffix"); } }
+        public string DomainSuffix { get => _explicitNullValueDomainSuffix; set { _explicitNullValueDomainSuffix = value; AdditionalData?.Remove("domainSuffix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainSuffix"); else _explicitNullProperties?.Remove("domainSuffix"); } }
         private string _explicitNullValueDomainSuffix = default!;
 #endif
         /// <summary>For `authType` **wpa-eap** or **wpa2-eap**. Possible values: **tls**, **peap**, **leap**, **fast**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Eap { get => _explicitNullValueEap; set { _explicitNullValueEap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eap"); else _explicitNullProperties?.Remove("eap"); } }
+        public string? Eap { get => _explicitNullValueEap; set { _explicitNullValueEap = value; AdditionalData?.Remove("eap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eap"); else _explicitNullProperties?.Remove("eap"); } }
         private string? _explicitNullValueEap = default!;
 #nullable restore
 #else
-        public string Eap { get => _explicitNullValueEap; set { _explicitNullValueEap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eap"); else _explicitNullProperties?.Remove("eap"); } }
+        public string Eap { get => _explicitNullValueEap; set { _explicitNullValueEap = value; AdditionalData?.Remove("eap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eap"); else _explicitNullProperties?.Remove("eap"); } }
         private string _explicitNullValueEap = default!;
 #endif
         /// <summary>For `authType` **wpa-eap** or **wpa2-eap**. The root certificate from the CA that signed the certificate of the RADIUS server that is part of your wireless network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert? EapCaCert { get => _explicitNullValueEapCaCert; set { _explicitNullValueEapCaCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapCaCert"); else _explicitNullProperties?.Remove("eapCaCert"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert? EapCaCert { get => _explicitNullValueEapCaCert; set { _explicitNullValueEapCaCert = value; AdditionalData?.Remove("eapCaCert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapCaCert"); else _explicitNullProperties?.Remove("eapCaCert"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert? _explicitNullValueEapCaCert = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert EapCaCert { get => _explicitNullValueEapCaCert; set { _explicitNullValueEapCaCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapCaCert"); else _explicitNullProperties?.Remove("eapCaCert"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert EapCaCert { get => _explicitNullValueEapCaCert; set { _explicitNullValueEapCaCert = value; AdditionalData?.Remove("eapCaCert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapCaCert"); else _explicitNullProperties?.Remove("eapCaCert"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapCaCert _explicitNullValueEapCaCert = default!;
 #endif
         /// <summary>For `eap` **tls**. The certificate chain for the terminals. All terminals in the same network will use the same EAP client certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert? EapClientCert { get => _explicitNullValueEapClientCert; set { _explicitNullValueEapClientCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientCert"); else _explicitNullProperties?.Remove("eapClientCert"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert? EapClientCert { get => _explicitNullValueEapClientCert; set { _explicitNullValueEapClientCert = value; AdditionalData?.Remove("eapClientCert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientCert"); else _explicitNullProperties?.Remove("eapClientCert"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert? _explicitNullValueEapClientCert = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert EapClientCert { get => _explicitNullValueEapClientCert; set { _explicitNullValueEapClientCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientCert"); else _explicitNullProperties?.Remove("eapClientCert"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert EapClientCert { get => _explicitNullValueEapClientCert; set { _explicitNullValueEapClientCert = value; AdditionalData?.Remove("eapClientCert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientCert"); else _explicitNullProperties?.Remove("eapClientCert"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientCert _explicitNullValueEapClientCert = default!;
 #endif
         /// <summary>For `eap` **tls**. The RSA private key for the client. Include the lines BEGIN RSA PRIVATE KEY and END RSA PRIVATE KEY.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey? EapClientKey { get => _explicitNullValueEapClientKey; set { _explicitNullValueEapClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientKey"); else _explicitNullProperties?.Remove("eapClientKey"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey? EapClientKey { get => _explicitNullValueEapClientKey; set { _explicitNullValueEapClientKey = value; AdditionalData?.Remove("eapClientKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientKey"); else _explicitNullProperties?.Remove("eapClientKey"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey? _explicitNullValueEapClientKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey EapClientKey { get => _explicitNullValueEapClientKey; set { _explicitNullValueEapClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientKey"); else _explicitNullProperties?.Remove("eapClientKey"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey EapClientKey { get => _explicitNullValueEapClientKey; set { _explicitNullValueEapClientKey = value; AdditionalData?.Remove("eapClientKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientKey"); else _explicitNullProperties?.Remove("eapClientKey"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapClientKey _explicitNullValueEapClientKey = default!;
 #endif
         /// <summary>For `eap` **tls**. The password of the RSA key file, if that file is password-protected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EapClientPwd { get => _explicitNullValueEapClientPwd; set { _explicitNullValueEapClientPwd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientPwd"); else _explicitNullProperties?.Remove("eapClientPwd"); } }
+        public string? EapClientPwd { get => _explicitNullValueEapClientPwd; set { _explicitNullValueEapClientPwd = value; AdditionalData?.Remove("eapClientPwd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientPwd"); else _explicitNullProperties?.Remove("eapClientPwd"); } }
         private string? _explicitNullValueEapClientPwd = default!;
 #nullable restore
 #else
-        public string EapClientPwd { get => _explicitNullValueEapClientPwd; set { _explicitNullValueEapClientPwd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientPwd"); else _explicitNullProperties?.Remove("eapClientPwd"); } }
+        public string EapClientPwd { get => _explicitNullValueEapClientPwd; set { _explicitNullValueEapClientPwd = value; AdditionalData?.Remove("eapClientPwd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapClientPwd"); else _explicitNullProperties?.Remove("eapClientPwd"); } }
         private string _explicitNullValueEapClientPwd = default!;
 #endif
         /// <summary>For `authType` **wpa-eap** or **wpa2-eap**. The EAP-PEAP username from your MS-CHAP account. Must match the configuration of your RADIUS server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EapIdentity { get => _explicitNullValueEapIdentity; set { _explicitNullValueEapIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIdentity"); else _explicitNullProperties?.Remove("eapIdentity"); } }
+        public string? EapIdentity { get => _explicitNullValueEapIdentity; set { _explicitNullValueEapIdentity = value; AdditionalData?.Remove("eapIdentity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIdentity"); else _explicitNullProperties?.Remove("eapIdentity"); } }
         private string? _explicitNullValueEapIdentity = default!;
 #nullable restore
 #else
-        public string EapIdentity { get => _explicitNullValueEapIdentity; set { _explicitNullValueEapIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIdentity"); else _explicitNullProperties?.Remove("eapIdentity"); } }
+        public string EapIdentity { get => _explicitNullValueEapIdentity; set { _explicitNullValueEapIdentity = value; AdditionalData?.Remove("eapIdentity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIdentity"); else _explicitNullProperties?.Remove("eapIdentity"); } }
         private string _explicitNullValueEapIdentity = default!;
 #endif
         /// <summary>For `eap` **tls**. The EAP intermediate certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert? EapIntermediateCert { get => _explicitNullValueEapIntermediateCert; set { _explicitNullValueEapIntermediateCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIntermediateCert"); else _explicitNullProperties?.Remove("eapIntermediateCert"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert? EapIntermediateCert { get => _explicitNullValueEapIntermediateCert; set { _explicitNullValueEapIntermediateCert = value; AdditionalData?.Remove("eapIntermediateCert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIntermediateCert"); else _explicitNullProperties?.Remove("eapIntermediateCert"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert? _explicitNullValueEapIntermediateCert = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert EapIntermediateCert { get => _explicitNullValueEapIntermediateCert; set { _explicitNullValueEapIntermediateCert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIntermediateCert"); else _explicitNullProperties?.Remove("eapIntermediateCert"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert EapIntermediateCert { get => _explicitNullValueEapIntermediateCert; set { _explicitNullValueEapIntermediateCert = value; AdditionalData?.Remove("eapIntermediateCert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapIntermediateCert"); else _explicitNullProperties?.Remove("eapIntermediateCert"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ProfileEapIntermediateCert _explicitNullValueEapIntermediateCert = default!;
 #endif
         /// <summary>For `eap` **peap**. The EAP-PEAP password from your MS-CHAP account. Must match the configuration of your RADIUS server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EapPwd { get => _explicitNullValueEapPwd; set { _explicitNullValueEapPwd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapPwd"); else _explicitNullProperties?.Remove("eapPwd"); } }
+        public string? EapPwd { get => _explicitNullValueEapPwd; set { _explicitNullValueEapPwd = value; AdditionalData?.Remove("eapPwd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapPwd"); else _explicitNullProperties?.Remove("eapPwd"); } }
         private string? _explicitNullValueEapPwd = default!;
 #nullable restore
 #else
-        public string EapPwd { get => _explicitNullValueEapPwd; set { _explicitNullValueEapPwd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapPwd"); else _explicitNullProperties?.Remove("eapPwd"); } }
+        public string EapPwd { get => _explicitNullValueEapPwd; set { _explicitNullValueEapPwd = value; AdditionalData?.Remove("eapPwd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eapPwd"); else _explicitNullProperties?.Remove("eapPwd"); } }
         private string _explicitNullValueEapPwd = default!;
 #endif
         /// <summary>Indicates if the network doesn&apos;t broadcast its SSID. Mandatory for Android terminals, because these terminals rely on this setting to be able to connect to any network.</summary>
-        public bool? HiddenSsid { get => _explicitNullValueHiddenSsid; set { _explicitNullValueHiddenSsid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiddenSsid"); else _explicitNullProperties?.Remove("hiddenSsid"); } }
+        public bool? HiddenSsid { get => _explicitNullValueHiddenSsid; set { _explicitNullValueHiddenSsid = value; AdditionalData?.Remove("hiddenSsid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hiddenSsid"); else _explicitNullProperties?.Remove("hiddenSsid"); } }
         private bool? _explicitNullValueHiddenSsid = default!;
         /// <summary>Your name for the Wi-Fi profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>For `authType` **wpa-psk or **wpa2-psk**. The password to the wireless network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
+        public string? Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; AdditionalData?.Remove("psk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
         private string? _explicitNullValuePsk = default!;
 #nullable restore
 #else
-        public string Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
+        public string Psk { get => _explicitNullValuePsk; set { _explicitNullValuePsk = value; AdditionalData?.Remove("psk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("psk"); else _explicitNullProperties?.Remove("psk"); } }
         private string _explicitNullValuePsk = default!;
 #endif
         /// <summary>The name of the wireless network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ssid { get => _explicitNullValueSsid; set { _explicitNullValueSsid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssid"); else _explicitNullProperties?.Remove("ssid"); } }
+        public string? Ssid { get => _explicitNullValueSsid; set { _explicitNullValueSsid = value; AdditionalData?.Remove("ssid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssid"); else _explicitNullProperties?.Remove("ssid"); } }
         private string? _explicitNullValueSsid = default!;
 #nullable restore
 #else
-        public string Ssid { get => _explicitNullValueSsid; set { _explicitNullValueSsid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssid"); else _explicitNullProperties?.Remove("ssid"); } }
+        public string Ssid { get => _explicitNullValueSsid; set { _explicitNullValueSsid = value; AdditionalData?.Remove("ssid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ssid"); else _explicitNullProperties?.Remove("ssid"); } }
         private string _explicitNullValueSsid = default!;
 #endif
         /// <summary>The type of encryption. Possible values: **auto**, **ccmp** (recommended), **tkip**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Wsec { get => _explicitNullValueWsec; set { _explicitNullValueWsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsec"); else _explicitNullProperties?.Remove("wsec"); } }
+        public string? Wsec { get => _explicitNullValueWsec; set { _explicitNullValueWsec = value; AdditionalData?.Remove("wsec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsec"); else _explicitNullProperties?.Remove("wsec"); } }
         private string? _explicitNullValueWsec = default!;
 #nullable restore
 #else
-        public string Wsec { get => _explicitNullValueWsec; set { _explicitNullValueWsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsec"); else _explicitNullProperties?.Remove("wsec"); } }
+        public string Wsec { get => _explicitNullValueWsec; set { _explicitNullValueWsec = value; AdditionalData?.Remove("wsec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wsec"); else _explicitNullProperties?.Remove("wsec"); } }
         private string _explicitNullValueWsec = default!;
 #endif
         /// <summary>

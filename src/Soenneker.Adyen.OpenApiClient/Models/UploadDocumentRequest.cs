@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("documentContent") is { } nullNodeDocumentContent && nullNodeDocumentContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentContent = null;
-            if (parseNode.GetChildNode("documentDetail") is { } nullNodeDocumentDetail && nullNodeDocumentDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentDetail = null;
+            if (parseNode.GetChildNode("documentContent") is null) { _explicitNullValueDocumentContent = default!; _explicitNullProperties?.Remove("documentContent"); }
+            else if (parseNode.GetChildNode("documentContent") is { } nullNodeDocumentContent && nullNodeDocumentContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentContent = null;
+            if (parseNode.GetChildNode("documentDetail") is null) { _explicitNullValueDocumentDetail = default!; _explicitNullProperties?.Remove("documentDetail"); }
+            else if (parseNode.GetChildNode("documentDetail") is { } nullNodeDocumentDetail && nullNodeDocumentDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentDetail = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The content of the document, in Base64-encoded string format.To learn about document requirements, refer to [Verification checks](https://docs.adyen.com/classic-platforms/verification-checks).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? DocumentContent { get => _explicitNullValueDocumentContent; set { _explicitNullValueDocumentContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentContent"); else _explicitNullProperties?.Remove("documentContent"); } }
+        public byte[]? DocumentContent { get => _explicitNullValueDocumentContent; set { _explicitNullValueDocumentContent = value; AdditionalData?.Remove("documentContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentContent"); else _explicitNullProperties?.Remove("documentContent"); } }
         private byte[]? _explicitNullValueDocumentContent = default!;
 #nullable restore
 #else
-        public byte[] DocumentContent { get => _explicitNullValueDocumentContent; set { _explicitNullValueDocumentContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentContent"); else _explicitNullProperties?.Remove("documentContent"); } }
+        public byte[] DocumentContent { get => _explicitNullValueDocumentContent; set { _explicitNullValueDocumentContent = value; AdditionalData?.Remove("documentContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentContent"); else _explicitNullProperties?.Remove("documentContent"); } }
         private byte[] _explicitNullValueDocumentContent = default!;
 #endif
         /// <summary>Details of the document being submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail? DocumentDetail { get => _explicitNullValueDocumentDetail; set { _explicitNullValueDocumentDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetail"); else _explicitNullProperties?.Remove("documentDetail"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail? DocumentDetail { get => _explicitNullValueDocumentDetail; set { _explicitNullValueDocumentDetail = value; AdditionalData?.Remove("documentDetail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetail"); else _explicitNullProperties?.Remove("documentDetail"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail? _explicitNullValueDocumentDetail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail DocumentDetail { get => _explicitNullValueDocumentDetail; set { _explicitNullValueDocumentDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetail"); else _explicitNullProperties?.Remove("documentDetail"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail DocumentDetail { get => _explicitNullValueDocumentDetail; set { _explicitNullValueDocumentDetail = value; AdditionalData?.Remove("documentDetail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetail"); else _explicitNullProperties?.Remove("documentDetail"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UploadDocumentRequestDocumentDetail _explicitNullValueDocumentDetail = default!;
 #endif
         /// <summary>

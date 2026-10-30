@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configurationDetails") is { } nullNodeConfigurationDetails && nullNodeConfigurationDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationDetails = null;
+            if (parseNode.GetChildNode("configurationDetails") is null) { _explicitNullValueConfigurationDetails = default!; _explicitNullProperties?.Remove("configurationDetails"); }
+            else if (parseNode.GetChildNode("configurationDetails") is { } nullNodeConfigurationDetails && nullNodeConfigurationDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationDetails = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Details of the notification subscription configuration to be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateNotificationConfigurationRequestConfigurationDetails? ConfigurationDetails { get => _explicitNullValueConfigurationDetails; set { _explicitNullValueConfigurationDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationDetails"); else _explicitNullProperties?.Remove("configurationDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateNotificationConfigurationRequestConfigurationDetails? ConfigurationDetails { get => _explicitNullValueConfigurationDetails; set { _explicitNullValueConfigurationDetails = value; AdditionalData?.Remove("configurationDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationDetails"); else _explicitNullProperties?.Remove("configurationDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UpdateNotificationConfigurationRequestConfigurationDetails? _explicitNullValueConfigurationDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateNotificationConfigurationRequestConfigurationDetails ConfigurationDetails { get => _explicitNullValueConfigurationDetails; set { _explicitNullValueConfigurationDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationDetails"); else _explicitNullProperties?.Remove("configurationDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UpdateNotificationConfigurationRequestConfigurationDetails ConfigurationDetails { get => _explicitNullValueConfigurationDetails; set { _explicitNullValueConfigurationDetails = value; AdditionalData?.Remove("configurationDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationDetails"); else _explicitNullProperties?.Remove("configurationDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UpdateNotificationConfigurationRequestConfigurationDetails _explicitNullValueConfigurationDetails = default!;
 #endif
         /// <summary>

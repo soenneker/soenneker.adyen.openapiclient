@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("issuerCountry") is { } nullNodeIssuerCountry && nullNodeIssuerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerCountry = null;
+            if (parseNode.GetChildNode("issuerCountry") is null) { _explicitNullValueIssuerCountry = default!; _explicitNullProperties?.Remove("issuerCountry"); }
+            else if (parseNode.GetChildNode("issuerCountry") is { } nullNodeIssuerCountry && nullNodeIssuerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerCountry = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The country where the card was issued.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
+        public string? IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; AdditionalData?.Remove("issuerCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
         private string? _explicitNullValueIssuerCountry = default!;
 #nullable restore
 #else
-        public string IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
+        public string IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; AdditionalData?.Remove("issuerCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
         private string _explicitNullValueIssuerCountry = default!;
 #endif
         /// <summary>

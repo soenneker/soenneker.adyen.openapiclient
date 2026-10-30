@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tokenData") is { } nullNodeTokenData && nullNodeTokenData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenData = null;
-            if (parseNode.GetChildNode("tokenDataType") is { } nullNodeTokenDataType && nullNodeTokenDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenDataType = null;
+            if (parseNode.GetChildNode("tokenData") is null) { _explicitNullValueTokenData = default!; _explicitNullProperties?.Remove("tokenData"); }
+            else if (parseNode.GetChildNode("tokenData") is { } nullNodeTokenData && nullNodeTokenData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenData = null;
+            if (parseNode.GetChildNode("tokenDataType") is null) { _explicitNullValueTokenDataType = default!; _explicitNullProperties?.Remove("tokenDataType"); }
+            else if (parseNode.GetChildNode("tokenDataType") is { } nullNodeTokenDataType && nullNodeTokenDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenDataType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The tokenData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; AdditionalData?.Remove("tokenData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2? _explicitNullValueTokenData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 TokenData { get => _explicitNullValueTokenData; set { _explicitNullValueTokenData = value; AdditionalData?.Remove("tokenData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenData"); else _explicitNullProperties?.Remove("tokenData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TokenDetailsTokenDataProperty2 _explicitNullValueTokenData = default!;
 #endif
         /// <summary>The tokenDataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenDataType { get => _explicitNullValueTokenDataType; set { _explicitNullValueTokenDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenDataType"); else _explicitNullProperties?.Remove("tokenDataType"); } }
+        public string? TokenDataType { get => _explicitNullValueTokenDataType; set { _explicitNullValueTokenDataType = value; AdditionalData?.Remove("tokenDataType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenDataType"); else _explicitNullProperties?.Remove("tokenDataType"); } }
         private string? _explicitNullValueTokenDataType = default!;
 #nullable restore
 #else
-        public string TokenDataType { get => _explicitNullValueTokenDataType; set { _explicitNullValueTokenDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenDataType"); else _explicitNullProperties?.Remove("tokenDataType"); } }
+        public string TokenDataType { get => _explicitNullValueTokenDataType; set { _explicitNullValueTokenDataType = value; AdditionalData?.Remove("tokenDataType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenDataType"); else _explicitNullProperties?.Remove("tokenDataType"); } }
         private string _explicitNullValueTokenDataType = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("maxAmount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
-            if (parseNode.GetChildNode("maxPayments") is { } nullNodeMaxPayments && nullNodeMaxPayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayments = null;
-            if (parseNode.GetChildNode("supportedCardTypes") is { } nullNodeSupportedCardTypes && nullNodeSupportedCardTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedCardTypes = null;
+            if (parseNode.GetChildNode("maxAmount") is null) { _explicitNullValueMaxAmount = default!; _explicitNullProperties?.Remove("maxAmount"); }
+            else if (parseNode.GetChildNode("maxAmount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
+            if (parseNode.GetChildNode("maxPayments") is null) { _explicitNullValueMaxPayments = default!; _explicitNullProperties?.Remove("maxPayments"); }
+            else if (parseNode.GetChildNode("maxPayments") is { } nullNodeMaxPayments && nullNodeMaxPayments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPayments = null;
+            if (parseNode.GetChildNode("supportedCardTypes") is null) { _explicitNullValueSupportedCardTypes = default!; _explicitNullProperties?.Remove("supportedCardTypes"); }
+            else if (parseNode.GetChildNode("supportedCardTypes") is { } nullNodeSupportedCardTypes && nullNodeSupportedCardTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedCardTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The maximum amount that the terminal accepts for a single store-and-forward payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; AdditionalData?.Remove("maxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue>? _explicitNullValueMaxAmount = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue> MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue> MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; AdditionalData?.Remove("maxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MinorUnitsMonetaryValue> _explicitNullValueMaxAmount = default!;
 #endif
         /// <summary>The maximum number of store-and-forward transactions per terminal that you can process while offline.</summary>
-        public int? MaxPayments { get => _explicitNullValueMaxPayments; set { _explicitNullValueMaxPayments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayments"); else _explicitNullProperties?.Remove("maxPayments"); } }
+        public int? MaxPayments { get => _explicitNullValueMaxPayments; set { _explicitNullValueMaxPayments = value; AdditionalData?.Remove("maxPayments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayments"); else _explicitNullProperties?.Remove("maxPayments"); } }
         private int? _explicitNullValueMaxPayments = default!;
         /// <summary>The type of card for which the terminal accepts store-and-forward payments. You can specify multiple card types. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes? SupportedCardTypes { get => _explicitNullValueSupportedCardTypes; set { _explicitNullValueSupportedCardTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedCardTypes"); else _explicitNullProperties?.Remove("supportedCardTypes"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes? SupportedCardTypes { get => _explicitNullValueSupportedCardTypes; set { _explicitNullValueSupportedCardTypes = value; AdditionalData?.Remove("supportedCardTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedCardTypes"); else _explicitNullProperties?.Remove("supportedCardTypes"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes? _explicitNullValueSupportedCardTypes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes SupportedCardTypes { get => _explicitNullValueSupportedCardTypes; set { _explicitNullValueSupportedCardTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedCardTypes"); else _explicitNullProperties?.Remove("supportedCardTypes"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes SupportedCardTypes { get => _explicitNullValueSupportedCardTypes; set { _explicitNullValueSupportedCardTypes = value; AdditionalData?.Remove("supportedCardTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportedCardTypes"); else _explicitNullProperties?.Remove("supportedCardTypes"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoreAndForwardSupportedCardTypes _explicitNullValueSupportedCardTypes = default!;
 #endif
         /// <summary>

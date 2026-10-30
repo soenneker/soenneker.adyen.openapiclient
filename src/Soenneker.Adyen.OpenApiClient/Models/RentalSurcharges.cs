@@ -17,21 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fuel") is { } nullNodeFuel && nullNodeFuel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fuel = null;
-            if (parseNode.GetChildNode("insurance") is { } nullNodeInsurance && nullNodeInsurance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insurance = null;
-            if (parseNode.GetChildNode("oneWayDropOff") is { } nullNodeOneWayDropOff && nullNodeOneWayDropOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneWayDropOff = null;
+            if (parseNode.GetChildNode("fuel") is null) { _explicitNullValueFuel = default!; _explicitNullProperties?.Remove("fuel"); }
+            else if (parseNode.GetChildNode("fuel") is { } nullNodeFuel && nullNodeFuel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fuel = null;
+            if (parseNode.GetChildNode("insurance") is null) { _explicitNullValueInsurance = default!; _explicitNullProperties?.Remove("insurance"); }
+            else if (parseNode.GetChildNode("insurance") is { } nullNodeInsurance && nullNodeInsurance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insurance = null;
+            if (parseNode.GetChildNode("oneWayDropOff") is null) { _explicitNullValueOneWayDropOff = default!; _explicitNullProperties?.Remove("oneWayDropOff"); }
+            else if (parseNode.GetChildNode("oneWayDropOff") is { } nullNodeOneWayDropOff && nullNodeOneWayDropOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneWayDropOff = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fuel charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.fuelCharges`</summary>
-        public long? Fuel { get => _explicitNullValueFuel; set { _explicitNullValueFuel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fuel"); else _explicitNullProperties?.Remove("fuel"); } }
+        public long? Fuel { get => _explicitNullValueFuel; set { _explicitNullValueFuel = value; AdditionalData?.Remove("fuel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fuel"); else _explicitNullProperties?.Remove("fuel"); } }
         private long? _explicitNullValueFuel = default!;
         /// <summary>Any insurance charges associated with the rental, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.insuranceCharges`</summary>
-        public long? Insurance { get => _explicitNullValueInsurance; set { _explicitNullValueInsurance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance"); else _explicitNullProperties?.Remove("insurance"); } }
+        public long? Insurance { get => _explicitNullValueInsurance; set { _explicitNullValueInsurance = value; AdditionalData?.Remove("insurance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insurance"); else _explicitNullProperties?.Remove("insurance"); } }
         private long? _explicitNullValueInsurance = default!;
         /// <summary>The charge for not returning a car to the original rental location, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `carRental.oneWayDropOffCharges`</summary>
-        public long? OneWayDropOff { get => _explicitNullValueOneWayDropOff; set { _explicitNullValueOneWayDropOff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneWayDropOff"); else _explicitNullProperties?.Remove("oneWayDropOff"); } }
+        public long? OneWayDropOff { get => _explicitNullValueOneWayDropOff; set { _explicitNullValueOneWayDropOff = value; AdditionalData?.Remove("oneWayDropOff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneWayDropOff"); else _explicitNullProperties?.Remove("oneWayDropOff"); } }
         private long? _explicitNullValueOneWayDropOff = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges"/> and sets the default values.

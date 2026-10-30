@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pageName") is { } nullNodePageName && nullNodePageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageName = null;
-            if (parseNode.GetChildNode("pageNumber") is { } nullNodePageNumber && nullNodePageNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageNumber = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("pageName") is null) { _explicitNullValuePageName = default!; _explicitNullProperties?.Remove("pageName"); }
+            else if (parseNode.GetChildNode("pageName") is { } nullNodePageName && nullNodePageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageName = null;
+            if (parseNode.GetChildNode("pageNumber") is null) { _explicitNullValuePageNumber = default!; _explicitNullProperties?.Remove("pageNumber"); }
+            else if (parseNode.GetChildNode("pageNumber") is { } nullNodePageNumber && nullNodePageNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageNumber = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The pageName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
+        public string? PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; AdditionalData?.Remove("pageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
         private string? _explicitNullValuePageName = default!;
 #nullable restore
 #else
-        public string PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
+        public string PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; AdditionalData?.Remove("pageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
         private string _explicitNullValuePageName = default!;
 #endif
         /// <summary>The pageNumber property</summary>
-        public int? PageNumber { get => _explicitNullValuePageNumber; set { _explicitNullValuePageNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageNumber"); else _explicitNullProperties?.Remove("pageNumber"); } }
+        public int? PageNumber { get => _explicitNullValuePageNumber; set { _explicitNullValuePageNumber = value; AdditionalData?.Remove("pageNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageNumber"); else _explicitNullProperties?.Remove("pageNumber"); } }
         private int? _explicitNullValuePageNumber = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DocumentPage"/> and sets the default values.
@@ -67,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "pageName", n => { PageName = n.GetStringValue(); } },
                 { "pageNumber", n => { PageNumber = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DocumentPageType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

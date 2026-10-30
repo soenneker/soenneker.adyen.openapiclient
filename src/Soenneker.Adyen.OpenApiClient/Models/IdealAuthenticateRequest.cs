@@ -17,18 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
-            if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
+            if (parseNode.GetChildNode("accountHolderId") is null) { _explicitNullValueAccountHolderId = default!; _explicitNullProperties?.Remove("accountHolderId"); }
+            else if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
+            if (parseNode.GetChildNode("payload") is null) { _explicitNullValuePayload = default!; _explicitNullProperties?.Remove("payload"); }
+            else if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
         }
 
         /// <summary>The unique identifier for an account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string? _explicitNullValueAccountHolderId = default!;
 #nullable restore
 #else
-        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string _explicitNullValueAccountHolderId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A payload provided by iDEAL to complete the authentication process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        public string? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
         private string? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public string Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        public string Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
         private string _explicitNullValuePayload = default!;
 #endif
         /// <summary>

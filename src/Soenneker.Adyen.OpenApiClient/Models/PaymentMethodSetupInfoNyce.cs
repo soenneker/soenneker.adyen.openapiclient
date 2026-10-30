@@ -18,23 +18,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("processingType") is { } nullNodeProcessingType && nullNodeProcessingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingType = null;
-            if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
+            if (parseNode.GetChildNode("processingType") is null) { _explicitNullValueProcessingType = default!; _explicitNullProperties?.Remove("processingType"); }
+            else if (parseNode.GetChildNode("processingType") is { } nullNodeProcessingType && nullNodeProcessingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingType = null;
+            if (parseNode.GetChildNode("transactionDescription") is null) { _explicitNullValueTransactionDescription = default!; _explicitNullProperties?.Remove("transactionDescription"); }
+            else if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of transactions processed over this payment method. Allowed values:- **pos** for in-person payments. - **billpay** for subscription payments, both the initial payment and the later recurring payments. These transactions have `recurringProcessingModel` **Subscription**. - **ecom** for all other card not present transactions. This includes non-recurring transactions and transactions with `recurringProcessingModel` **CardOnFile** or **UnscheduledCardOnFile**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoProcessingType? ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoProcessingType? ProcessingType { get => _explicitNullValueProcessingType; set { _explicitNullValueProcessingType = value; AdditionalData?.Remove("processingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingType"); else _explicitNullProperties?.Remove("processingType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoProcessingType? _explicitNullValueProcessingType = default!;
         /// <summary>Information regarding the transaction description.&gt; You cannot configure the transaction description in the test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription? _explicitNullValueTransactionDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription _explicitNullValueTransactionDescription = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "processingType", n => { ProcessingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoProcessingType>(); } },
+                { "processingType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoProcessingType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProcessingType = default; _explicitNullProperties?.Remove("processingType"); AdditionalData["processingType"] = unknown; } else { ProcessingType = parsed; AdditionalData.Remove("processingType"); } } },
                 { "transactionDescription", n => { TransactionDescription = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription>(global::Soenneker.Adyen.OpenApiClient.Models.NyceInfoTransactionDescription.CreateFromDiscriminatorValue); } },
             };
         }

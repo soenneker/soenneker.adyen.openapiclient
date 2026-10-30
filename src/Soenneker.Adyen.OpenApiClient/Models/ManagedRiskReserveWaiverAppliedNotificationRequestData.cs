@@ -19,20 +19,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
-            if (parseNode.GetChildNode("eventDate") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
+            if (parseNode.GetChildNode("accountHolderId") is null) { _explicitNullValueAccountHolderId = default!; _explicitNullProperties?.Remove("accountHolderId"); }
+            else if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("creationDate") is null) { _explicitNullValueCreationDate = default!; _explicitNullProperties?.Remove("creationDate"); }
+            else if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
+            if (parseNode.GetChildNode("eventDate") is null) { _explicitNullValueEventDate = default!; _explicitNullProperties?.Remove("eventDate"); }
+            else if (parseNode.GetChildNode("eventDate") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
         }
 
         /// <summary>The unique identifier of the account holder whose reserves will be waived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string? _explicitNullValueAccountHolderId = default!;
 #nullable restore
 #else
-        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string _explicitNullValueAccountHolderId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,18 +44,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.</summary>
-        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
+        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; AdditionalData?.Remove("creationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
         private DateTimeOffset? _explicitNullValueCreationDate = default!;
         /// <summary>The date in which a reserve waiver has been applied to this account.</summary>
-        public Date? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
+        public Date? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; AdditionalData?.Remove("eventDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
         private Date? _explicitNullValueEventDate = default!;
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

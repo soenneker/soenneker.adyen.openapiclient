@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sessionData") is { } nullNodeSessionData && nullNodeSessionData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionData = null;
+            if (parseNode.GetChildNode("sessionData") is null) { _explicitNullValueSessionData = default!; _explicitNullProperties?.Remove("sessionData"); }
+            else if (parseNode.GetChildNode("sessionData") is { } nullNodeSessionData && nullNodeSessionData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The sessionData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
+        public string? SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; AdditionalData?.Remove("sessionData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
         private string? _explicitNullValueSessionData = default!;
 #nullable restore
 #else
-        public string SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
+        public string SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; AdditionalData?.Remove("sessionData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
         private string _explicitNullValueSessionData = default!;
 #endif
         /// <summary>

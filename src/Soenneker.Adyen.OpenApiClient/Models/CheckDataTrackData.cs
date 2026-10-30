@@ -18,27 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TrackFormat") is { } nullNodeTrackFormat && nullNodeTrackFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackFormat = null;
-            if (parseNode.GetChildNode("TrackNumb") is { } nullNodeTrackNumb && nullNodeTrackNumb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackNumb = null;
-            if (parseNode.GetChildNode("TrackValue") is { } nullNodeTrackValue && nullNodeTrackValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackValue = null;
+            if (parseNode.GetChildNode("TrackFormat") is null) { _explicitNullValueTrackFormat = default!; _explicitNullProperties?.Remove("TrackFormat"); }
+            else if (parseNode.GetChildNode("TrackFormat") is { } nullNodeTrackFormat && nullNodeTrackFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackFormat = null;
+            if (parseNode.GetChildNode("TrackNumb") is null) { _explicitNullValueTrackNumb = default!; _explicitNullProperties?.Remove("TrackNumb"); }
+            else if (parseNode.GetChildNode("TrackNumb") is { } nullNodeTrackNumb && nullNodeTrackNumb.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackNumb = null;
+            if (parseNode.GetChildNode("TrackValue") is null) { _explicitNullValueTrackValue = default!; _explicitNullProperties?.Remove("TrackValue"); }
+            else if (parseNode.GetChildNode("TrackValue") is { } nullNodeTrackValue && nullNodeTrackValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Magnetic track or magnetic ink characters line.Possible values:* **ISO*** **JIS-I*** **JIS-II*** **AAMVA*** **CMC-7*** **E-13B**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? TrackFormat { get => _explicitNullValueTrackFormat; set { _explicitNullValueTrackFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackFormat"); else _explicitNullProperties?.Remove("TrackFormat"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? TrackFormat { get => _explicitNullValueTrackFormat; set { _explicitNullValueTrackFormat = value; AdditionalData?.Remove("TrackFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackFormat"); else _explicitNullProperties?.Remove("TrackFormat"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat? _explicitNullValueTrackFormat = default!;
         /// <summary>Card track number.</summary>
-        public int? TrackNumb { get => _explicitNullValueTrackNumb; set { _explicitNullValueTrackNumb = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackNumb"); else _explicitNullProperties?.Remove("TrackNumb"); } }
+        public int? TrackNumb { get => _explicitNullValueTrackNumb; set { _explicitNullValueTrackNumb = value; AdditionalData?.Remove("TrackNumb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackNumb"); else _explicitNullProperties?.Remove("TrackNumb"); } }
         private int? _explicitNullValueTrackNumb = default!;
         /// <summary>Card track content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackValue { get => _explicitNullValueTrackValue; set { _explicitNullValueTrackValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackValue"); else _explicitNullProperties?.Remove("TrackValue"); } }
+        public string? TrackValue { get => _explicitNullValueTrackValue; set { _explicitNullValueTrackValue = value; AdditionalData?.Remove("TrackValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackValue"); else _explicitNullProperties?.Remove("TrackValue"); } }
         private string? _explicitNullValueTrackValue = default!;
 #nullable restore
 #else
-        public string TrackValue { get => _explicitNullValueTrackValue; set { _explicitNullValueTrackValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackValue"); else _explicitNullProperties?.Remove("TrackValue"); } }
+        public string TrackValue { get => _explicitNullValueTrackValue; set { _explicitNullValueTrackValue = value; AdditionalData?.Remove("TrackValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TrackValue"); else _explicitNullProperties?.Remove("TrackValue"); } }
         private string _explicitNullValueTrackValue = default!;
 #endif
         /// <summary>
@@ -67,7 +70,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TrackFormat", n => { TrackFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat>(); } },
+                { "TrackFormat", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TrackDataTrackFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrackFormat = default; _explicitNullProperties?.Remove("TrackFormat"); AdditionalData["TrackFormat"] = unknown; } else { TrackFormat = parsed; AdditionalData.Remove("TrackFormat"); } } },
                 { "TrackNumb", n => { TrackNumb = n.GetIntValue(); } },
                 { "TrackValue", n => { TrackValue = n.GetStringValue(); } },
             };

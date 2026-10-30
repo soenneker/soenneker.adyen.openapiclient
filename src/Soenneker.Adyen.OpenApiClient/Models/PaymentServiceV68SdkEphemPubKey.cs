@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("crv") is { } nullNodeCrv && nullNodeCrv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crv = null;
-            if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
-            if (parseNode.GetChildNode("x") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
-            if (parseNode.GetChildNode("y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
+            if (parseNode.GetChildNode("crv") is null) { _explicitNullValueCrv = default!; _explicitNullProperties?.Remove("crv"); }
+            else if (parseNode.GetChildNode("crv") is { } nullNodeCrv && nullNodeCrv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Crv = null;
+            if (parseNode.GetChildNode("kty") is null) { _explicitNullValueKty = default!; _explicitNullProperties?.Remove("kty"); }
+            else if (parseNode.GetChildNode("kty") is { } nullNodeKty && nullNodeKty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kty = null;
+            if (parseNode.GetChildNode("x") is null) { _explicitNullValueX = default!; _explicitNullProperties?.Remove("x"); }
+            else if (parseNode.GetChildNode("x") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
+            if (parseNode.GetChildNode("y") is null) { _explicitNullValueY = default!; _explicitNullProperties?.Remove("y"); }
+            else if (parseNode.GetChildNode("y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The `crv` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        public string? Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; AdditionalData?.Remove("crv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
         private string? _explicitNullValueCrv = default!;
 #nullable restore
 #else
-        public string Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
+        public string Crv { get => _explicitNullValueCrv; set { _explicitNullValueCrv = value; AdditionalData?.Remove("crv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crv"); else _explicitNullProperties?.Remove("crv"); } }
         private string _explicitNullValueCrv = default!;
 #endif
         /// <summary>The `kty` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        public string? Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; AdditionalData?.Remove("kty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
         private string? _explicitNullValueKty = default!;
 #nullable restore
 #else
-        public string Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
+        public string Kty { get => _explicitNullValueKty; set { _explicitNullValueKty = value; AdditionalData?.Remove("kty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kty"); else _explicitNullProperties?.Remove("kty"); } }
         private string _explicitNullValueKty = default!;
 #endif
         /// <summary>The `x` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; AdditionalData?.Remove("x"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
         private string? _explicitNullValueX = default!;
 #nullable restore
 #else
-        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
+        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; AdditionalData?.Remove("x"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x"); else _explicitNullProperties?.Remove("x"); } }
         private string _explicitNullValueX = default!;
 #endif
         /// <summary>The `y` value as received from the 3D Secure 2 SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; AdditionalData?.Remove("y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
         private string? _explicitNullValueY = default!;
 #nullable restore
 #else
-        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
+        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; AdditionalData?.Remove("y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y"); else _explicitNullProperties?.Remove("y"); } }
         private string _explicitNullValueY = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contactlessCurrency") is { } nullNodeContactlessCurrency && nullNodeContactlessCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactlessCurrency = null;
-            if (parseNode.GetChildNode("hideMinorUnitsInCurrencies") is { } nullNodeHideMinorUnitsInCurrencies && nullNodeHideMinorUnitsInCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideMinorUnitsInCurrencies = null;
+            if (parseNode.GetChildNode("contactlessCurrency") is null) { _explicitNullValueContactlessCurrency = default!; _explicitNullProperties?.Remove("contactlessCurrency"); }
+            else if (parseNode.GetChildNode("contactlessCurrency") is { } nullNodeContactlessCurrency && nullNodeContactlessCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactlessCurrency = null;
+            if (parseNode.GetChildNode("hideMinorUnitsInCurrencies") is null) { _explicitNullValueHideMinorUnitsInCurrencies = default!; _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); }
+            else if (parseNode.GetChildNode("hideMinorUnitsInCurrencies") is { } nullNodeHideMinorUnitsInCurrencies && nullNodeHideMinorUnitsInCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideMinorUnitsInCurrencies = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The default currency for contactless payments on the payment terminal, in three-letter [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code format.Contact Adyen before you update this setting for the first time. To enable you to change the contactless currency, we first need to check if you meet the compliance requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactlessCurrency { get => _explicitNullValueContactlessCurrency; set { _explicitNullValueContactlessCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactlessCurrency"); else _explicitNullProperties?.Remove("contactlessCurrency"); } }
+        public string? ContactlessCurrency { get => _explicitNullValueContactlessCurrency; set { _explicitNullValueContactlessCurrency = value; AdditionalData?.Remove("contactlessCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactlessCurrency"); else _explicitNullProperties?.Remove("contactlessCurrency"); } }
         private string? _explicitNullValueContactlessCurrency = default!;
 #nullable restore
 #else
-        public string ContactlessCurrency { get => _explicitNullValueContactlessCurrency; set { _explicitNullValueContactlessCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactlessCurrency"); else _explicitNullProperties?.Remove("contactlessCurrency"); } }
+        public string ContactlessCurrency { get => _explicitNullValueContactlessCurrency; set { _explicitNullValueContactlessCurrency = value; AdditionalData?.Remove("contactlessCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contactlessCurrency"); else _explicitNullProperties?.Remove("contactlessCurrency"); } }
         private string _explicitNullValueContactlessCurrency = default!;
 #endif
         /// <summary>Hides the minor units for the listed [ISO currency codes](https://en.wikipedia.org/wiki/ISO_4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HideMinorUnitsInCurrencies { get => _explicitNullValueHideMinorUnitsInCurrencies; set { _explicitNullValueHideMinorUnitsInCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideMinorUnitsInCurrencies"); else _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); } }
+        public List<string>? HideMinorUnitsInCurrencies { get => _explicitNullValueHideMinorUnitsInCurrencies; set { _explicitNullValueHideMinorUnitsInCurrencies = value; AdditionalData?.Remove("hideMinorUnitsInCurrencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideMinorUnitsInCurrencies"); else _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); } }
         private List<string>? _explicitNullValueHideMinorUnitsInCurrencies = default!;
 #nullable restore
 #else
-        public List<string> HideMinorUnitsInCurrencies { get => _explicitNullValueHideMinorUnitsInCurrencies; set { _explicitNullValueHideMinorUnitsInCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideMinorUnitsInCurrencies"); else _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); } }
+        public List<string> HideMinorUnitsInCurrencies { get => _explicitNullValueHideMinorUnitsInCurrencies; set { _explicitNullValueHideMinorUnitsInCurrencies = value; AdditionalData?.Remove("hideMinorUnitsInCurrencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideMinorUnitsInCurrencies"); else _explicitNullProperties?.Remove("hideMinorUnitsInCurrencies"); } }
         private List<string> _explicitNullValueHideMinorUnitsInCurrencies = default!;
 #endif
         /// <summary>

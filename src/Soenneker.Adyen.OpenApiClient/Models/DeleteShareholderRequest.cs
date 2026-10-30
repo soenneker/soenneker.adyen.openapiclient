@@ -17,18 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
-            if (parseNode.GetChildNode("shareholderCodes") is { } nullNodeShareholderCodes && nullNodeShareholderCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCodes = null;
+            if (parseNode.GetChildNode("accountHolderCode") is null) { _explicitNullValueAccountHolderCode = default!; _explicitNullProperties?.Remove("accountHolderCode"); }
+            else if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("shareholderCodes") is null) { _explicitNullValueShareholderCodes = default!; _explicitNullProperties?.Remove("shareholderCodes"); }
+            else if (parseNode.GetChildNode("shareholderCodes") is { } nullNodeShareholderCodes && nullNodeShareholderCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCodes = null;
         }
 
         /// <summary>The code of the Account Holder from which to delete the Shareholders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The code(s) of the Shareholders to be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ShareholderCodes { get => _explicitNullValueShareholderCodes; set { _explicitNullValueShareholderCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCodes"); else _explicitNullProperties?.Remove("shareholderCodes"); } }
+        public List<string>? ShareholderCodes { get => _explicitNullValueShareholderCodes; set { _explicitNullValueShareholderCodes = value; AdditionalData?.Remove("shareholderCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCodes"); else _explicitNullProperties?.Remove("shareholderCodes"); } }
         private List<string>? _explicitNullValueShareholderCodes = default!;
 #nullable restore
 #else
-        public List<string> ShareholderCodes { get => _explicitNullValueShareholderCodes; set { _explicitNullValueShareholderCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCodes"); else _explicitNullProperties?.Remove("shareholderCodes"); } }
+        public List<string> ShareholderCodes { get => _explicitNullValueShareholderCodes; set { _explicitNullValueShareholderCodes = value; AdditionalData?.Remove("shareholderCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCodes"); else _explicitNullProperties?.Remove("shareholderCodes"); } }
         private List<string> _explicitNullValueShareholderCodes = default!;
 #endif
         /// <summary>

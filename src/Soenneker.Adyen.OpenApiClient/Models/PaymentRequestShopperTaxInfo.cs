@@ -19,8 +19,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taxCountryCode") is { } nullNodeTaxCountryCode && nullNodeTaxCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCountryCode = null;
-            if (parseNode.GetChildNode("taxIdentificationNumber") is { } nullNodeTaxIdentificationNumber && nullNodeTaxIdentificationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxIdentificationNumber = null;
+            if (parseNode.GetChildNode("taxCountryCode") is null) { _explicitNullValueTaxCountryCode = default!; _explicitNullProperties?.Remove("taxCountryCode"); }
+            else if (parseNode.GetChildNode("taxCountryCode") is { } nullNodeTaxCountryCode && nullNodeTaxCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCountryCode = null;
+            if (parseNode.GetChildNode("taxIdentificationNumber") is null) { _explicitNullValueTaxIdentificationNumber = default!; _explicitNullProperties?.Remove("taxIdentificationNumber"); }
+            else if (parseNode.GetChildNode("taxIdentificationNumber") is { } nullNodeTaxIdentificationNumber && nullNodeTaxIdentificationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxIdentificationNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +30,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The two-character [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code associated with the provided tax identification number.Currently used only for Indian PA-CB tax verification, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
         private string? _explicitNullValueTaxCountryCode = default!;
 #nullable restore
 #else
-        public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
         private string _explicitNullValueTaxCountryCode = default!;
 #endif
         /// <summary>The shopper’s tax identification number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxIdentificationNumber { get => _explicitNullValueTaxIdentificationNumber; set { _explicitNullValueTaxIdentificationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationNumber"); else _explicitNullProperties?.Remove("taxIdentificationNumber"); } }
+        public string? TaxIdentificationNumber { get => _explicitNullValueTaxIdentificationNumber; set { _explicitNullValueTaxIdentificationNumber = value; AdditionalData?.Remove("taxIdentificationNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationNumber"); else _explicitNullProperties?.Remove("taxIdentificationNumber"); } }
         private string? _explicitNullValueTaxIdentificationNumber = default!;
 #nullable restore
 #else
-        public string TaxIdentificationNumber { get => _explicitNullValueTaxIdentificationNumber; set { _explicitNullValueTaxIdentificationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationNumber"); else _explicitNullProperties?.Remove("taxIdentificationNumber"); } }
+        public string TaxIdentificationNumber { get => _explicitNullValueTaxIdentificationNumber; set { _explicitNullValueTaxIdentificationNumber = value; AdditionalData?.Remove("taxIdentificationNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxIdentificationNumber"); else _explicitNullProperties?.Remove("taxIdentificationNumber"); } }
         private string _explicitNullValueTaxIdentificationNumber = default!;
 #endif
         /// <summary>

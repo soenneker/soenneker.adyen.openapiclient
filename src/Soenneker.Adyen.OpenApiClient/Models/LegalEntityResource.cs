@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
-            if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
+            if (parseNode.GetChildNode("legalEntityId") is null) { _explicitNullValueLegalEntityId = default!; _explicitNullProperties?.Remove("legalEntityId"); }
+            else if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
         }
 
         /// <summary>The unique identifier of the resource connected to the component.For [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), this is the legal entity that has a contractual relationship with your platform and owns the [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments). For sole proprietorships, this is the legal entity of the individual owner.</summary>

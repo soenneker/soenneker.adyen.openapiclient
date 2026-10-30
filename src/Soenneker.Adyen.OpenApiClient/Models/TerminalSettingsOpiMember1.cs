@@ -18,34 +18,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enablePayAtTable") is { } nullNodeEnablePayAtTable && nullNodeEnablePayAtTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePayAtTable = null;
-            if (parseNode.GetChildNode("payAtTableStoreNumber") is { } nullNodePayAtTableStoreNumber && nullNodePayAtTableStoreNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAtTableStoreNumber = null;
-            if (parseNode.GetChildNode("payAtTableURL") is { } nullNodePayAtTableURL && nullNodePayAtTableURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAtTableURL = null;
+            if (parseNode.GetChildNode("enablePayAtTable") is null) { _explicitNullValueEnablePayAtTable = default!; _explicitNullProperties?.Remove("enablePayAtTable"); }
+            else if (parseNode.GetChildNode("enablePayAtTable") is { } nullNodeEnablePayAtTable && nullNodeEnablePayAtTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePayAtTable = null;
+            if (parseNode.GetChildNode("payAtTableStoreNumber") is null) { _explicitNullValuePayAtTableStoreNumber = default!; _explicitNullProperties?.Remove("payAtTableStoreNumber"); }
+            else if (parseNode.GetChildNode("payAtTableStoreNumber") is { } nullNodePayAtTableStoreNumber && nullNodePayAtTableStoreNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAtTableStoreNumber = null;
+            if (parseNode.GetChildNode("payAtTableURL") is null) { _explicitNullValuePayAtTableURL = default!; _explicitNullProperties?.Remove("payAtTableURL"); }
+            else if (parseNode.GetChildNode("payAtTableURL") is { } nullNodePayAtTableURL && nullNodePayAtTableURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayAtTableURL = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if Pay at table is enabled.</summary>
-        public bool? EnablePayAtTable { get => _explicitNullValueEnablePayAtTable; set { _explicitNullValueEnablePayAtTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePayAtTable"); else _explicitNullProperties?.Remove("enablePayAtTable"); } }
+        public bool? EnablePayAtTable { get => _explicitNullValueEnablePayAtTable; set { _explicitNullValueEnablePayAtTable = value; AdditionalData?.Remove("enablePayAtTable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePayAtTable"); else _explicitNullProperties?.Remove("enablePayAtTable"); } }
         private bool? _explicitNullValueEnablePayAtTable = default!;
         /// <summary>The store number to use for Pay at Table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayAtTableStoreNumber { get => _explicitNullValuePayAtTableStoreNumber; set { _explicitNullValuePayAtTableStoreNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableStoreNumber"); else _explicitNullProperties?.Remove("payAtTableStoreNumber"); } }
+        public string? PayAtTableStoreNumber { get => _explicitNullValuePayAtTableStoreNumber; set { _explicitNullValuePayAtTableStoreNumber = value; AdditionalData?.Remove("payAtTableStoreNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableStoreNumber"); else _explicitNullProperties?.Remove("payAtTableStoreNumber"); } }
         private string? _explicitNullValuePayAtTableStoreNumber = default!;
 #nullable restore
 #else
-        public string PayAtTableStoreNumber { get => _explicitNullValuePayAtTableStoreNumber; set { _explicitNullValuePayAtTableStoreNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableStoreNumber"); else _explicitNullProperties?.Remove("payAtTableStoreNumber"); } }
+        public string PayAtTableStoreNumber { get => _explicitNullValuePayAtTableStoreNumber; set { _explicitNullValuePayAtTableStoreNumber = value; AdditionalData?.Remove("payAtTableStoreNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableStoreNumber"); else _explicitNullProperties?.Remove("payAtTableStoreNumber"); } }
         private string _explicitNullValuePayAtTableStoreNumber = default!;
 #endif
         /// <summary>The URL and port number used for Pay at Table communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayAtTableURL { get => _explicitNullValuePayAtTableURL; set { _explicitNullValuePayAtTableURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableURL"); else _explicitNullProperties?.Remove("payAtTableURL"); } }
+        public string? PayAtTableURL { get => _explicitNullValuePayAtTableURL; set { _explicitNullValuePayAtTableURL = value; AdditionalData?.Remove("payAtTableURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableURL"); else _explicitNullProperties?.Remove("payAtTableURL"); } }
         private string? _explicitNullValuePayAtTableURL = default!;
 #nullable restore
 #else
-        public string PayAtTableURL { get => _explicitNullValuePayAtTableURL; set { _explicitNullValuePayAtTableURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableURL"); else _explicitNullProperties?.Remove("payAtTableURL"); } }
+        public string PayAtTableURL { get => _explicitNullValuePayAtTableURL; set { _explicitNullValuePayAtTableURL = value; AdditionalData?.Remove("payAtTableURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payAtTableURL"); else _explicitNullProperties?.Remove("payAtTableURL"); } }
         private string _explicitNullValuePayAtTableURL = default!;
 #endif
         /// <summary>

@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("displayUrls") is { } nullNodeDisplayUrls && nullNodeDisplayUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayUrls = null;
-            if (parseNode.GetChildNode("encryptionKey") is { } nullNodeEncryptionKey && nullNodeEncryptionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptionKey = null;
-            if (parseNode.GetChildNode("eventUrls") is { } nullNodeEventUrls && nullNodeEventUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventUrls = null;
-            if (parseNode.GetChildNode("nexoEventUrls") is { } nullNodeNexoEventUrls && nullNodeNexoEventUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NexoEventUrls = null;
-            if (parseNode.GetChildNode("notification") is { } nullNodeNotification && nullNodeNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification = null;
+            if (parseNode.GetChildNode("displayUrls") is null) { _explicitNullValueDisplayUrls = default!; _explicitNullProperties?.Remove("displayUrls"); }
+            else if (parseNode.GetChildNode("displayUrls") is { } nullNodeDisplayUrls && nullNodeDisplayUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayUrls = null;
+            if (parseNode.GetChildNode("encryptionKey") is null) { _explicitNullValueEncryptionKey = default!; _explicitNullProperties?.Remove("encryptionKey"); }
+            else if (parseNode.GetChildNode("encryptionKey") is { } nullNodeEncryptionKey && nullNodeEncryptionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptionKey = null;
+            if (parseNode.GetChildNode("eventUrls") is null) { _explicitNullValueEventUrls = default!; _explicitNullProperties?.Remove("eventUrls"); }
+            else if (parseNode.GetChildNode("eventUrls") is { } nullNodeEventUrls && nullNodeEventUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventUrls = null;
+            if (parseNode.GetChildNode("nexoEventUrls") is null) { _explicitNullValueNexoEventUrls = default!; _explicitNullProperties?.Remove("nexoEventUrls"); }
+            else if (parseNode.GetChildNode("nexoEventUrls") is { } nullNodeNexoEventUrls && nullNodeNexoEventUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NexoEventUrls = null;
+            if (parseNode.GetChildNode("notification") is null) { _explicitNullValueNotification = default!; _explicitNullProperties?.Remove("notification"); }
+            else if (parseNode.GetChildNode("notification") is { } nullNodeNotification && nullNodeNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,52 +35,52 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of local and public URLs to send display notifications to when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoDisplayUrls? DisplayUrls { get => _explicitNullValueDisplayUrls; set { _explicitNullValueDisplayUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayUrls"); else _explicitNullProperties?.Remove("displayUrls"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoDisplayUrls? DisplayUrls { get => _explicitNullValueDisplayUrls; set { _explicitNullValueDisplayUrls = value; AdditionalData?.Remove("displayUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayUrls"); else _explicitNullProperties?.Remove("displayUrls"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoDisplayUrls? _explicitNullValueDisplayUrls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoDisplayUrls DisplayUrls { get => _explicitNullValueDisplayUrls; set { _explicitNullValueDisplayUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayUrls"); else _explicitNullProperties?.Remove("displayUrls"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoDisplayUrls DisplayUrls { get => _explicitNullValueDisplayUrls; set { _explicitNullValueDisplayUrls = value; AdditionalData?.Remove("displayUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayUrls"); else _explicitNullProperties?.Remove("displayUrls"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoDisplayUrls _explicitNullValueDisplayUrls = default!;
 #endif
         /// <summary>The key you share with Adyen to secure local communications when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey? EncryptionKey { get => _explicitNullValueEncryptionKey; set { _explicitNullValueEncryptionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptionKey"); else _explicitNullProperties?.Remove("encryptionKey"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey? EncryptionKey { get => _explicitNullValueEncryptionKey; set { _explicitNullValueEncryptionKey = value; AdditionalData?.Remove("encryptionKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptionKey"); else _explicitNullProperties?.Remove("encryptionKey"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey? _explicitNullValueEncryptionKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey EncryptionKey { get => _explicitNullValueEncryptionKey; set { _explicitNullValueEncryptionKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptionKey"); else _explicitNullProperties?.Remove("encryptionKey"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey EncryptionKey { get => _explicitNullValueEncryptionKey; set { _explicitNullValueEncryptionKey = value; AdditionalData?.Remove("encryptionKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptionKey"); else _explicitNullProperties?.Remove("encryptionKey"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey _explicitNullValueEncryptionKey = default!;
 #endif
         /// <summary>The list of local and public URLs to send event notifications to when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEventUrls? EventUrls { get => _explicitNullValueEventUrls; set { _explicitNullValueEventUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventUrls"); else _explicitNullProperties?.Remove("eventUrls"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEventUrls? EventUrls { get => _explicitNullValueEventUrls; set { _explicitNullValueEventUrls = value; AdditionalData?.Remove("eventUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventUrls"); else _explicitNullProperties?.Remove("eventUrls"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoEventUrls? _explicitNullValueEventUrls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEventUrls EventUrls { get => _explicitNullValueEventUrls; set { _explicitNullValueEventUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventUrls"); else _explicitNullProperties?.Remove("eventUrls"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoEventUrls EventUrls { get => _explicitNullValueEventUrls; set { _explicitNullValueEventUrls = value; AdditionalData?.Remove("eventUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventUrls"); else _explicitNullProperties?.Remove("eventUrls"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoEventUrls _explicitNullValueEventUrls = default!;
 #endif
         /// <summary>One or more URLs to send event messages to when using Terminal API.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NexoEventUrls { get => _explicitNullValueNexoEventUrls; set { _explicitNullValueNexoEventUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexoEventUrls"); else _explicitNullProperties?.Remove("nexoEventUrls"); } }
+        public List<string>? NexoEventUrls { get => _explicitNullValueNexoEventUrls; set { _explicitNullValueNexoEventUrls = value; AdditionalData?.Remove("nexoEventUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexoEventUrls"); else _explicitNullProperties?.Remove("nexoEventUrls"); } }
         private List<string>? _explicitNullValueNexoEventUrls = default!;
 #nullable restore
 #else
-        public List<string> NexoEventUrls { get => _explicitNullValueNexoEventUrls; set { _explicitNullValueNexoEventUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexoEventUrls"); else _explicitNullProperties?.Remove("nexoEventUrls"); } }
+        public List<string> NexoEventUrls { get => _explicitNullValueNexoEventUrls; set { _explicitNullValueNexoEventUrls = value; AdditionalData?.Remove("nexoEventUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nexoEventUrls"); else _explicitNullProperties?.Remove("nexoEventUrls"); } }
         private List<string> _explicitNullValueNexoEventUrls = default!;
 #endif
         /// <summary>Configures sending event notifications by pressing a button on a terminal, for example used for pay-at-table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoNotification? Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoNotification? Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; AdditionalData?.Remove("notification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoNotification? _explicitNullValueNotification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NexoNotification Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NexoNotification Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; AdditionalData?.Remove("notification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NexoNotification _explicitNullValueNotification = default!;
 #endif
         /// <summary>

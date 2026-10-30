@@ -18,24 +18,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("basisPoints") is { } nullNodeBasisPoints && nullNodeBasisPoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasisPoints = null;
-            if (parseNode.GetChildNode("updateDescription") is { } nullNodeUpdateDescription && nullNodeUpdateDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateDescription = null;
+            if (parseNode.GetChildNode("basisPoints") is null) { _explicitNullValueBasisPoints = default!; _explicitNullProperties?.Remove("basisPoints"); }
+            else if (parseNode.GetChildNode("basisPoints") is { } nullNodeBasisPoints && nullNodeBasisPoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasisPoints = null;
+            if (parseNode.GetChildNode("updateDescription") is null) { _explicitNullValueUpdateDescription = default!; _explicitNullProperties?.Remove("updateDescription"); }
+            else if (parseNode.GetChildNode("updateDescription") is { } nullNodeUpdateDescription && nullNodeUpdateDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The percentage of your user&apos;s incoming net volume that is deducted for repaying the grant. The percentage expressed in [basis points](https://www.investopedia.com/terms/b/basispoint.asp).</summary>
-        public int? BasisPoints { get => _explicitNullValueBasisPoints; set { _explicitNullValueBasisPoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basisPoints"); else _explicitNullProperties?.Remove("basisPoints"); } }
+        public int? BasisPoints { get => _explicitNullValueBasisPoints; set { _explicitNullValueBasisPoints = value; AdditionalData?.Remove("basisPoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basisPoints"); else _explicitNullProperties?.Remove("basisPoints"); } }
         private int? _explicitNullValueBasisPoints = default!;
         /// <summary>The updateDescription property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdateDescription { get => _explicitNullValueUpdateDescription; set { _explicitNullValueUpdateDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDescription"); else _explicitNullProperties?.Remove("updateDescription"); } }
+        public string? UpdateDescription { get => _explicitNullValueUpdateDescription; set { _explicitNullValueUpdateDescription = value; AdditionalData?.Remove("updateDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDescription"); else _explicitNullProperties?.Remove("updateDescription"); } }
         private string? _explicitNullValueUpdateDescription = default!;
 #nullable restore
 #else
-        public string UpdateDescription { get => _explicitNullValueUpdateDescription; set { _explicitNullValueUpdateDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDescription"); else _explicitNullProperties?.Remove("updateDescription"); } }
+        public string UpdateDescription { get => _explicitNullValueUpdateDescription; set { _explicitNullValueUpdateDescription = value; AdditionalData?.Remove("updateDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateDescription"); else _explicitNullProperties?.Remove("updateDescription"); } }
         private string _explicitNullValueUpdateDescription = default!;
 #endif
         /// <summary>

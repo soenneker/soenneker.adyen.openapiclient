@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("companyAccount") is { } nullNodeCompanyAccount && nullNodeCompanyAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyAccount = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("merchantInventory") is { } nullNodeMerchantInventory && nullNodeMerchantInventory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantInventory = null;
-            if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
-            if (parseNode.GetChildNode("terminal") is { } nullNodeTerminal && nullNodeTerminal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Terminal = null;
+            if (parseNode.GetChildNode("companyAccount") is null) { _explicitNullValueCompanyAccount = default!; _explicitNullProperties?.Remove("companyAccount"); }
+            else if (parseNode.GetChildNode("companyAccount") is { } nullNodeCompanyAccount && nullNodeCompanyAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyAccount = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("merchantInventory") is null) { _explicitNullValueMerchantInventory = default!; _explicitNullProperties?.Remove("merchantInventory"); }
+            else if (parseNode.GetChildNode("merchantInventory") is { } nullNodeMerchantInventory && nullNodeMerchantInventory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantInventory = null;
+            if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
+            else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("terminal") is null) { _explicitNullValueTerminal = default!; _explicitNullProperties?.Remove("terminal"); }
+            else if (parseNode.GetChildNode("terminal") is { } nullNodeTerminal && nullNodeTerminal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Terminal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The company account that the terminal is associated with. If this is the only account level shown in the response, the terminal is assigned to the inventory of the company account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyAccount { get => _explicitNullValueCompanyAccount; set { _explicitNullValueCompanyAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyAccount"); else _explicitNullProperties?.Remove("companyAccount"); } }
+        public string? CompanyAccount { get => _explicitNullValueCompanyAccount; set { _explicitNullValueCompanyAccount = value; AdditionalData?.Remove("companyAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyAccount"); else _explicitNullProperties?.Remove("companyAccount"); } }
         private string? _explicitNullValueCompanyAccount = default!;
 #nullable restore
 #else
-        public string CompanyAccount { get => _explicitNullValueCompanyAccount; set { _explicitNullValueCompanyAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyAccount"); else _explicitNullProperties?.Remove("companyAccount"); } }
+        public string CompanyAccount { get => _explicitNullValueCompanyAccount; set { _explicitNullValueCompanyAccount = value; AdditionalData?.Remove("companyAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyAccount"); else _explicitNullProperties?.Remove("companyAccount"); } }
         private string _explicitNullValueCompanyAccount = default!;
 #endif
         /// <summary>The merchant account that the terminal is associated with. If the response doesn&apos;t contain a `store` the terminal is assigned to this merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>Boolean that indicates if the terminal is assigned to the merchant inventory. This is returned when the terminal is assigned to a merchant account.- If **true**, this indicates that the terminal is in the merchant inventory. This also means that the terminal cannot be boarded.- If **false**, this indicates that the terminal is assigned to the merchant account as an in-store terminal. This means that the terminal is ready to be boarded, or is already boarded.</summary>
-        public bool? MerchantInventory { get => _explicitNullValueMerchantInventory; set { _explicitNullValueMerchantInventory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantInventory"); else _explicitNullProperties?.Remove("merchantInventory"); } }
+        public bool? MerchantInventory { get => _explicitNullValueMerchantInventory; set { _explicitNullValueMerchantInventory = value; AdditionalData?.Remove("merchantInventory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantInventory"); else _explicitNullProperties?.Remove("merchantInventory"); } }
         private bool? _explicitNullValueMerchantInventory = default!;
         /// <summary>The store code of the store that the terminal is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public string? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string? _explicitNullValueStore = default!;
 #nullable restore
 #else
-        public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string _explicitNullValueStore = default!;
 #endif
         /// <summary>The unique terminal ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
+        public string? Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; AdditionalData?.Remove("terminal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
         private string? _explicitNullValueTerminal = default!;
 #nullable restore
 #else
-        public string Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
+        public string Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; AdditionalData?.Remove("terminal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
         private string _explicitNullValueTerminal = default!;
 #endif
         /// <summary>

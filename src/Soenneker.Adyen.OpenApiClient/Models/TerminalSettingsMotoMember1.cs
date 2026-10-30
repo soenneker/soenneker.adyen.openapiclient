@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableMoto") is { } nullNodeEnableMoto && nullNodeEnableMoto.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMoto = null;
-            if (parseNode.GetChildNode("maxAmount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
+            if (parseNode.GetChildNode("enableMoto") is null) { _explicitNullValueEnableMoto = default!; _explicitNullProperties?.Remove("enableMoto"); }
+            else if (parseNode.GetChildNode("enableMoto") is { } nullNodeEnableMoto && nullNodeEnableMoto.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMoto = null;
+            if (parseNode.GetChildNode("maxAmount") is null) { _explicitNullValueMaxAmount = default!; _explicitNullProperties?.Remove("maxAmount"); }
+            else if (parseNode.GetChildNode("maxAmount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable MOTO transactions.</summary>
-        public bool? EnableMoto { get => _explicitNullValueEnableMoto; set { _explicitNullValueEnableMoto = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableMoto"); else _explicitNullProperties?.Remove("enableMoto"); } }
+        public bool? EnableMoto { get => _explicitNullValueEnableMoto; set { _explicitNullValueEnableMoto = value; AdditionalData?.Remove("enableMoto"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableMoto"); else _explicitNullProperties?.Remove("enableMoto"); } }
         private bool? _explicitNullValueEnableMoto = default!;
         /// <summary>The maximum amount for MOTO transactions. You need to set the currency for this amount using the [`standalone.currencyCode`](https://docs.adyen.com/api-explorer/Management/1/patch/companies/(companyId)/terminalSettings#request-standalone-currencyCode) parameter. Do not enable standalone, unless you are using a standalone solution.</summary>
-        public int? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
+        public int? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; AdditionalData?.Remove("maxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
         private int? _explicitNullValueMaxAmount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsMotoMember1"/> and sets the default values.

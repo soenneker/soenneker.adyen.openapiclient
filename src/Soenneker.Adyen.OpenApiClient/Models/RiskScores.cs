@@ -17,17 +17,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mastercard") is { } nullNodeMastercard && nullNodeMastercard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mastercard = null;
-            if (parseNode.GetChildNode("visa") is { } nullNodeVisa && nullNodeVisa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visa = null;
+            if (parseNode.GetChildNode("mastercard") is null) { _explicitNullValueMastercard = default!; _explicitNullProperties?.Remove("mastercard"); }
+            else if (parseNode.GetChildNode("mastercard") is { } nullNodeMastercard && nullNodeMastercard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mastercard = null;
+            if (parseNode.GetChildNode("visa") is null) { _explicitNullValueVisa = default!; _explicitNullProperties?.Remove("visa"); }
+            else if (parseNode.GetChildNode("visa") is { } nullNodeVisa && nullNodeVisa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visa = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Transaction risk score provided by Mastercard. Values provided by Mastercard range between 0 (lowest risk) to 998 (highest risk).</summary>
-        public int? Mastercard { get => _explicitNullValueMastercard; set { _explicitNullValueMastercard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mastercard"); else _explicitNullProperties?.Remove("mastercard"); } }
+        public int? Mastercard { get => _explicitNullValueMastercard; set { _explicitNullValueMastercard = value; AdditionalData?.Remove("mastercard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mastercard"); else _explicitNullProperties?.Remove("mastercard"); } }
         private int? _explicitNullValueMastercard = default!;
         /// <summary>Transaction risk score provided by Visa. Values provided by Visa range between 01 (lowest risk) to 99 (highest risk).</summary>
-        public int? Visa { get => _explicitNullValueVisa; set { _explicitNullValueVisa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visa"); else _explicitNullProperties?.Remove("visa"); } }
+        public int? Visa { get => _explicitNullValueVisa; set { _explicitNullValueVisa = value; AdditionalData?.Remove("visa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visa"); else _explicitNullProperties?.Remove("visa"); } }
         private int? _explicitNullValueVisa = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RiskScores"/> and sets the default values.

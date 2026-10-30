@@ -18,47 +18,53 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Commission") is { } nullNodeCommission && nullNodeCommission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commission = null;
-            if (parseNode.GetChildNode("ConvertedAmount") is { } nullNodeConvertedAmount && nullNodeConvertedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedAmount = null;
-            if (parseNode.GetChildNode("CustomerApprovedFlag") is { } nullNodeCustomerApprovedFlag && nullNodeCustomerApprovedFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerApprovedFlag = null;
-            if (parseNode.GetChildNode("Declaration") is { } nullNodeDeclaration && nullNodeDeclaration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Declaration = null;
-            if (parseNode.GetChildNode("Markup") is { } nullNodeMarkup && nullNodeMarkup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Markup = null;
-            if (parseNode.GetChildNode("Rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("Commission") is null) { _explicitNullValueCommission = default!; _explicitNullProperties?.Remove("Commission"); }
+            else if (parseNode.GetChildNode("Commission") is { } nullNodeCommission && nullNodeCommission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commission = null;
+            if (parseNode.GetChildNode("ConvertedAmount") is null) { _explicitNullValueConvertedAmount = default!; _explicitNullProperties?.Remove("ConvertedAmount"); }
+            else if (parseNode.GetChildNode("ConvertedAmount") is { } nullNodeConvertedAmount && nullNodeConvertedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvertedAmount = null;
+            if (parseNode.GetChildNode("CustomerApprovedFlag") is null) { _explicitNullValueCustomerApprovedFlag = default!; _explicitNullProperties?.Remove("CustomerApprovedFlag"); }
+            else if (parseNode.GetChildNode("CustomerApprovedFlag") is { } nullNodeCustomerApprovedFlag && nullNodeCustomerApprovedFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerApprovedFlag = null;
+            if (parseNode.GetChildNode("Declaration") is null) { _explicitNullValueDeclaration = default!; _explicitNullProperties?.Remove("Declaration"); }
+            else if (parseNode.GetChildNode("Declaration") is { } nullNodeDeclaration && nullNodeDeclaration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Declaration = null;
+            if (parseNode.GetChildNode("Markup") is null) { _explicitNullValueMarkup = default!; _explicitNullProperties?.Remove("Markup"); }
+            else if (parseNode.GetChildNode("Markup") is { } nullNodeMarkup && nullNodeMarkup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Markup = null;
+            if (parseNode.GetChildNode("Rate") is null) { _explicitNullValueRate = default!; _explicitNullProperties?.Remove("Rate"); }
+            else if (parseNode.GetChildNode("Rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Commission for a currency conversion.</summary>
-        public double? Commission { get => _explicitNullValueCommission; set { _explicitNullValueCommission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Commission"); else _explicitNullProperties?.Remove("Commission"); } }
+        public double? Commission { get => _explicitNullValueCommission; set { _explicitNullValueCommission = value; AdditionalData?.Remove("Commission"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Commission"); else _explicitNullProperties?.Remove("Commission"); } }
         private double? _explicitNullValueCommission = default!;
         /// <summary>Amount after a currency conversion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount? ConvertedAmount { get => _explicitNullValueConvertedAmount; set { _explicitNullValueConvertedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConvertedAmount"); else _explicitNullProperties?.Remove("ConvertedAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount? ConvertedAmount { get => _explicitNullValueConvertedAmount; set { _explicitNullValueConvertedAmount = value; AdditionalData?.Remove("ConvertedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConvertedAmount"); else _explicitNullProperties?.Remove("ConvertedAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount? _explicitNullValueConvertedAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount ConvertedAmount { get => _explicitNullValueConvertedAmount; set { _explicitNullValueConvertedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConvertedAmount"); else _explicitNullProperties?.Remove("ConvertedAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount ConvertedAmount { get => _explicitNullValueConvertedAmount; set { _explicitNullValueConvertedAmount = value; AdditionalData?.Remove("ConvertedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ConvertedAmount"); else _explicitNullProperties?.Remove("ConvertedAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversionConvertedAmount _explicitNullValueConvertedAmount = default!;
 #endif
         /// <summary>Notify if the customer has approved something. Indicates if the customer has accepted a currency conversion.</summary>
-        public bool? CustomerApprovedFlag { get => _explicitNullValueCustomerApprovedFlag; set { _explicitNullValueCustomerApprovedFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerApprovedFlag"); else _explicitNullProperties?.Remove("CustomerApprovedFlag"); } }
+        public bool? CustomerApprovedFlag { get => _explicitNullValueCustomerApprovedFlag; set { _explicitNullValueCustomerApprovedFlag = value; AdditionalData?.Remove("CustomerApprovedFlag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CustomerApprovedFlag"); else _explicitNullProperties?.Remove("CustomerApprovedFlag"); } }
         private bool? _explicitNullValueCustomerApprovedFlag = default!;
         /// <summary>Declaration to present to the customer or the cashier for validation.If a declaration has to be presented to the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Declaration { get => _explicitNullValueDeclaration; set { _explicitNullValueDeclaration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Declaration"); else _explicitNullProperties?.Remove("Declaration"); } }
+        public string? Declaration { get => _explicitNullValueDeclaration; set { _explicitNullValueDeclaration = value; AdditionalData?.Remove("Declaration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Declaration"); else _explicitNullProperties?.Remove("Declaration"); } }
         private string? _explicitNullValueDeclaration = default!;
 #nullable restore
 #else
-        public string Declaration { get => _explicitNullValueDeclaration; set { _explicitNullValueDeclaration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Declaration"); else _explicitNullProperties?.Remove("Declaration"); } }
+        public string Declaration { get => _explicitNullValueDeclaration; set { _explicitNullValueDeclaration = value; AdditionalData?.Remove("Declaration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Declaration"); else _explicitNullProperties?.Remove("Declaration"); } }
         private string _explicitNullValueDeclaration = default!;
 #endif
         /// <summary>Markup of a currency conversion amount as a percentage.</summary>
-        public double? Markup { get => _explicitNullValueMarkup; set { _explicitNullValueMarkup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Markup"); else _explicitNullProperties?.Remove("Markup"); } }
+        public double? Markup { get => _explicitNullValueMarkup; set { _explicitNullValueMarkup = value; AdditionalData?.Remove("Markup"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Markup"); else _explicitNullProperties?.Remove("Markup"); } }
         private double? _explicitNullValueMarkup = default!;
         /// <summary>Rate of currency conversion.</summary>
-        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rate"); else _explicitNullProperties?.Remove("Rate"); } }
+        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("Rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Rate"); else _explicitNullProperties?.Remove("Rate"); } }
         private double? _explicitNullValueRate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CurrencyConversion"/> and sets the default values.

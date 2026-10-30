@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
-            if (parseNode.GetChildNode("fixedAmount") is { } nullNodeFixedAmount && nullNodeFixedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedAmount = null;
-            if (parseNode.GetChildNode("variablePercentage") is { } nullNodeVariablePercentage && nullNodeVariablePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariablePercentage = null;
+            if (parseNode.GetChildNode("balanceAccountId") is null) { _explicitNullValueBalanceAccountId = default!; _explicitNullProperties?.Remove("balanceAccountId"); }
+            else if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
+            if (parseNode.GetChildNode("fixedAmount") is null) { _explicitNullValueFixedAmount = default!; _explicitNullProperties?.Remove("fixedAmount"); }
+            else if (parseNode.GetChildNode("fixedAmount") is { } nullNodeFixedAmount && nullNodeFixedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedAmount = null;
+            if (parseNode.GetChildNode("variablePercentage") is null) { _explicitNullValueVariablePercentage = default!; _explicitNullProperties?.Remove("variablePercentage"); }
+            else if (parseNode.GetChildNode("variablePercentage") is { } nullNodeVariablePercentage && nullNodeVariablePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariablePercentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Unique identifier of the balance account to which the additional commission is booked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string? _explicitNullValueBalanceAccountId = default!;
 #nullable restore
 #else
-        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string _explicitNullValueBalanceAccountId = default!;
 #endif
         /// <summary>A fixed commission fee, in minor units.</summary>
-        public long? FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
+        public long? FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; AdditionalData?.Remove("fixedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
         private long? _explicitNullValueFixedAmount = default!;
         /// <summary>A variable commission fee, in basis points.</summary>
-        public long? VariablePercentage { get => _explicitNullValueVariablePercentage; set { _explicitNullValueVariablePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variablePercentage"); else _explicitNullProperties?.Remove("variablePercentage"); } }
+        public long? VariablePercentage { get => _explicitNullValueVariablePercentage; set { _explicitNullValueVariablePercentage = value; AdditionalData?.Remove("variablePercentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variablePercentage"); else _explicitNullProperties?.Remove("variablePercentage"); } }
         private long? _explicitNullValueVariablePercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SplitConfigurationLogicAdditionalCommission"/> and sets the default values.

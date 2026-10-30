@@ -17,122 +17,133 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("allowedIpAddresses") is { } nullNodeAllowedIpAddresses && nullNodeAllowedIpAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIpAddresses = null;
-            if (parseNode.GetChildNode("allowedOrigins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
-            if (parseNode.GetChildNode("clientKey") is { } nullNodeClientKey && nullNodeClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientKey = null;
-            if (parseNode.GetChildNode("companyName") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
-            if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
-            if (parseNode.GetChildNode("subjectDN") is { } nullNodeSubjectDN && nullNodeSubjectDN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectDN = null;
-            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("allowedIpAddresses") is null) { _explicitNullValueAllowedIpAddresses = default!; _explicitNullProperties?.Remove("allowedIpAddresses"); }
+            else if (parseNode.GetChildNode("allowedIpAddresses") is { } nullNodeAllowedIpAddresses && nullNodeAllowedIpAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIpAddresses = null;
+            if (parseNode.GetChildNode("allowedOrigins") is null) { _explicitNullValueAllowedOrigins = default!; _explicitNullProperties?.Remove("allowedOrigins"); }
+            else if (parseNode.GetChildNode("allowedOrigins") is { } nullNodeAllowedOrigins && nullNodeAllowedOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedOrigins = null;
+            if (parseNode.GetChildNode("clientKey") is null) { _explicitNullValueClientKey = default!; _explicitNullProperties?.Remove("clientKey"); }
+            else if (parseNode.GetChildNode("clientKey") is { } nullNodeClientKey && nullNodeClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientKey = null;
+            if (parseNode.GetChildNode("companyName") is null) { _explicitNullValueCompanyName = default!; _explicitNullProperties?.Remove("companyName"); }
+            else if (parseNode.GetChildNode("companyName") is { } nullNodeCompanyName && nullNodeCompanyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyName = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("_links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("_links"); }
+            else if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("roles") is null) { _explicitNullValueRoles = default!; _explicitNullProperties?.Remove("roles"); }
+            else if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
+            if (parseNode.GetChildNode("subjectDN") is null) { _explicitNullValueSubjectDN = default!; _explicitNullProperties?.Remove("subjectDN"); }
+            else if (parseNode.GetChildNode("subjectDN") is { } nullNodeSubjectDN && nullNodeSubjectDN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectDN = null;
+            if (parseNode.GetChildNode("username") is null) { _explicitNullValueUsername = default!; _explicitNullProperties?.Remove("username"); }
+            else if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
         }
 
         /// <summary>Indicates if the API credential is enabled. Must be set to **true** to use the credential in your integration.</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of IP addresses from which your client can make requests.If the list is empty, we allow requests from any IP.If the list is not empty and we get a request from an IP which is not on the list, you get a security error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIpAddresses { get => _explicitNullValueAllowedIpAddresses; set { _explicitNullValueAllowedIpAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIpAddresses"); else _explicitNullProperties?.Remove("allowedIpAddresses"); } }
+        public List<string>? AllowedIpAddresses { get => _explicitNullValueAllowedIpAddresses; set { _explicitNullValueAllowedIpAddresses = value; AdditionalData?.Remove("allowedIpAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIpAddresses"); else _explicitNullProperties?.Remove("allowedIpAddresses"); } }
         private List<string>? _explicitNullValueAllowedIpAddresses = default!;
 #nullable restore
 #else
-        public List<string> AllowedIpAddresses { get => _explicitNullValueAllowedIpAddresses; set { _explicitNullValueAllowedIpAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIpAddresses"); else _explicitNullProperties?.Remove("allowedIpAddresses"); } }
+        public List<string> AllowedIpAddresses { get => _explicitNullValueAllowedIpAddresses; set { _explicitNullValueAllowedIpAddresses = value; AdditionalData?.Remove("allowedIpAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedIpAddresses"); else _explicitNullProperties?.Remove("allowedIpAddresses"); } }
         private List<string> _explicitNullValueAllowedIpAddresses = default!;
 #endif
         /// <summary>List containing the [allowed origins](https://docs.adyen.com/development-resources/client-side-authentication#allowed-origins) linked to the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AllowedOrigin>? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AllowedOrigin>? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; AdditionalData?.Remove("allowedOrigins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.AllowedOrigin>? _explicitNullValueAllowedOrigins = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AllowedOrigin> AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AllowedOrigin> AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; AdditionalData?.Remove("allowedOrigins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.AllowedOrigin> _explicitNullValueAllowedOrigins = default!;
 #endif
         /// <summary>Public key used for [client-side authentication](https://docs.adyen.com/development-resources/client-side-authentication). The client key is required for Drop-in and Components integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
+        public string? ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; AdditionalData?.Remove("clientKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
         private string? _explicitNullValueClientKey = default!;
 #nullable restore
 #else
-        public string ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
+        public string ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; AdditionalData?.Remove("clientKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
         private string _explicitNullValueClientKey = default!;
 #endif
         /// <summary>Name of the company linked to the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        public string? CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("companyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
         private string? _explicitNullValueCompanyName = default!;
 #nullable restore
 #else
-        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
+        public string CompanyName { get => _explicitNullValueCompanyName; set { _explicitNullValueCompanyName = value; AdditionalData?.Remove("companyName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("companyName"); else _explicitNullProperties?.Remove("companyName"); } }
         private string _explicitNullValueCompanyName = default!;
 #endif
         /// <summary>Description of the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Unique identifier of the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>References to resources linked to the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MeApiCredentialLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>List of [roles](https://docs.adyen.com/development-resources/api-credentials#roles-1) for the API credential.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        public List<string>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
         private List<string>? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public List<string> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        public List<string> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
         private List<string> _explicitNullValueRoles = default!;
 #endif
         /// <summary>The subject DN of the certificate issued by Adyen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
+        public string? SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; AdditionalData?.Remove("subjectDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
         private string? _explicitNullValueSubjectDN = default!;
 #nullable restore
 #else
-        public string SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
+        public string SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; AdditionalData?.Remove("subjectDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
         private string _explicitNullValueSubjectDN = default!;
 #endif
         /// <summary>The name of the [API credential](https://docs.adyen.com/development-resources/api-credentials), for example **ws@Company.TestCompany**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
         private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
         private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>

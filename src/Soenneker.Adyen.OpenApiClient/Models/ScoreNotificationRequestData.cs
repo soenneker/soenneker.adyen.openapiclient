@@ -18,35 +18,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
-            if (parseNode.GetChildNode("accountHolderStatus") is { } nullNodeAccountHolderStatus && nullNodeAccountHolderStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderStatus = null;
-            if (parseNode.GetChildNode("automatedActions") is { } nullNodeAutomatedActions && nullNodeAutomatedActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomatedActions = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("riskScore") is { } nullNodeRiskScore && nullNodeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScore = null;
-            if (parseNode.GetChildNode("scoreSignalsTriggered") is { } nullNodeScoreSignalsTriggered && nullNodeScoreSignalsTriggered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreSignalsTriggered = null;
-            if (parseNode.GetChildNode("signalSourceTypes") is { } nullNodeSignalSourceTypes && nullNodeSignalSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignalSourceTypes = null;
+            if (parseNode.GetChildNode("accountHolder") is null) { _explicitNullValueAccountHolder = default!; _explicitNullProperties?.Remove("accountHolder"); }
+            else if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("accountHolderStatus") is null) { _explicitNullValueAccountHolderStatus = default!; _explicitNullProperties?.Remove("accountHolderStatus"); }
+            else if (parseNode.GetChildNode("accountHolderStatus") is { } nullNodeAccountHolderStatus && nullNodeAccountHolderStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderStatus = null;
+            if (parseNode.GetChildNode("automatedActions") is null) { _explicitNullValueAutomatedActions = default!; _explicitNullProperties?.Remove("automatedActions"); }
+            else if (parseNode.GetChildNode("automatedActions") is { } nullNodeAutomatedActions && nullNodeAutomatedActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomatedActions = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("creationDate") is null) { _explicitNullValueCreationDate = default!; _explicitNullProperties?.Remove("creationDate"); }
+            else if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("riskScore") is null) { _explicitNullValueRiskScore = default!; _explicitNullProperties?.Remove("riskScore"); }
+            else if (parseNode.GetChildNode("riskScore") is { } nullNodeRiskScore && nullNodeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScore = null;
+            if (parseNode.GetChildNode("scoreSignalsTriggered") is null) { _explicitNullValueScoreSignalsTriggered = default!; _explicitNullProperties?.Remove("scoreSignalsTriggered"); }
+            else if (parseNode.GetChildNode("scoreSignalsTriggered") is { } nullNodeScoreSignalsTriggered && nullNodeScoreSignalsTriggered.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreSignalsTriggered = null;
+            if (parseNode.GetChildNode("signalSourceTypes") is null) { _explicitNullValueSignalSourceTypes = default!; _explicitNullProperties?.Remove("signalSourceTypes"); }
+            else if (parseNode.GetChildNode("signalSourceTypes") is { } nullNodeSignalSourceTypes && nullNodeSignalSourceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignalSourceTypes = null;
         }
 
         /// <summary>Contains information about the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankScoreSignalTriggeredDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankScoreSignalTriggeredDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankScoreSignalTriggeredDataAccountHolder? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankScoreSignalTriggeredDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankScoreSignalTriggeredDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankScoreSignalTriggeredDataAccountHolder _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>The status of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderStatus { get => _explicitNullValueAccountHolderStatus; set { _explicitNullValueAccountHolderStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderStatus"); else _explicitNullProperties?.Remove("accountHolderStatus"); } }
+        public string? AccountHolderStatus { get => _explicitNullValueAccountHolderStatus; set { _explicitNullValueAccountHolderStatus = value; AdditionalData?.Remove("accountHolderStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderStatus"); else _explicitNullProperties?.Remove("accountHolderStatus"); } }
         private string? _explicitNullValueAccountHolderStatus = default!;
 #nullable restore
 #else
-        public string AccountHolderStatus { get => _explicitNullValueAccountHolderStatus; set { _explicitNullValueAccountHolderStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderStatus"); else _explicitNullProperties?.Remove("accountHolderStatus"); } }
+        public string AccountHolderStatus { get => _explicitNullValueAccountHolderStatus; set { _explicitNullValueAccountHolderStatus = value; AdditionalData?.Remove("accountHolderStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderStatus"); else _explicitNullProperties?.Remove("accountHolderStatus"); } }
         private string _explicitNullValueAccountHolderStatus = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,57 +63,57 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The automated action(s) taken as a result of the score signals that were triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AutomatedActions { get => _explicitNullValueAutomatedActions; set { _explicitNullValueAutomatedActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatedActions"); else _explicitNullProperties?.Remove("automatedActions"); } }
+        public List<string>? AutomatedActions { get => _explicitNullValueAutomatedActions; set { _explicitNullValueAutomatedActions = value; AdditionalData?.Remove("automatedActions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatedActions"); else _explicitNullProperties?.Remove("automatedActions"); } }
         private List<string>? _explicitNullValueAutomatedActions = default!;
 #nullable restore
 #else
-        public List<string> AutomatedActions { get => _explicitNullValueAutomatedActions; set { _explicitNullValueAutomatedActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatedActions"); else _explicitNullProperties?.Remove("automatedActions"); } }
+        public List<string> AutomatedActions { get => _explicitNullValueAutomatedActions; set { _explicitNullValueAutomatedActions = value; AdditionalData?.Remove("automatedActions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automatedActions"); else _explicitNullProperties?.Remove("automatedActions"); } }
         private List<string> _explicitNullValueAutomatedActions = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.</summary>
-        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
+        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; AdditionalData?.Remove("creationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
         private DateTimeOffset? _explicitNullValueCreationDate = default!;
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The score of the identity resulting from the signal(s) that were triggered.</summary>
-        public int? RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
+        public int? RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; AdditionalData?.Remove("riskScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
         private int? _explicitNullValueRiskScore = default!;
         /// <summary>The name(s) of the score signals that were triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScoreSignalsTriggered { get => _explicitNullValueScoreSignalsTriggered; set { _explicitNullValueScoreSignalsTriggered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoreSignalsTriggered"); else _explicitNullProperties?.Remove("scoreSignalsTriggered"); } }
+        public List<string>? ScoreSignalsTriggered { get => _explicitNullValueScoreSignalsTriggered; set { _explicitNullValueScoreSignalsTriggered = value; AdditionalData?.Remove("scoreSignalsTriggered"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoreSignalsTriggered"); else _explicitNullProperties?.Remove("scoreSignalsTriggered"); } }
         private List<string>? _explicitNullValueScoreSignalsTriggered = default!;
 #nullable restore
 #else
-        public List<string> ScoreSignalsTriggered { get => _explicitNullValueScoreSignalsTriggered; set { _explicitNullValueScoreSignalsTriggered = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoreSignalsTriggered"); else _explicitNullProperties?.Remove("scoreSignalsTriggered"); } }
+        public List<string> ScoreSignalsTriggered { get => _explicitNullValueScoreSignalsTriggered; set { _explicitNullValueScoreSignalsTriggered = value; AdditionalData?.Remove("scoreSignalsTriggered"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scoreSignalsTriggered"); else _explicitNullProperties?.Remove("scoreSignalsTriggered"); } }
         private List<string> _explicitNullValueScoreSignalsTriggered = default!;
 #endif
         /// <summary>The type(s) of the score signals that were triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SignalSourceTypes { get => _explicitNullValueSignalSourceTypes; set { _explicitNullValueSignalSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signalSourceTypes"); else _explicitNullProperties?.Remove("signalSourceTypes"); } }
+        public List<string>? SignalSourceTypes { get => _explicitNullValueSignalSourceTypes; set { _explicitNullValueSignalSourceTypes = value; AdditionalData?.Remove("signalSourceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signalSourceTypes"); else _explicitNullProperties?.Remove("signalSourceTypes"); } }
         private List<string>? _explicitNullValueSignalSourceTypes = default!;
 #nullable restore
 #else
-        public List<string> SignalSourceTypes { get => _explicitNullValueSignalSourceTypes; set { _explicitNullValueSignalSourceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signalSourceTypes"); else _explicitNullProperties?.Remove("signalSourceTypes"); } }
+        public List<string> SignalSourceTypes { get => _explicitNullValueSignalSourceTypes; set { _explicitNullValueSignalSourceTypes = value; AdditionalData?.Remove("signalSourceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signalSourceTypes"); else _explicitNullProperties?.Remove("signalSourceTypes"); } }
         private List<string> _explicitNullValueSignalSourceTypes = default!;
 #endif
         /// <summary>

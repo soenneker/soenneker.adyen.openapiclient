@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("legs") is { } nullNodeLegs && nullNodeLegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legs = null;
-            if (parseNode.GetChildNode("ticketNumber") is { } nullNodeTicketNumber && nullNodeTicketNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TicketNumber = null;
+            if (parseNode.GetChildNode("legs") is null) { _explicitNullValueLegs = default!; _explicitNullProperties?.Remove("legs"); }
+            else if (parseNode.GetChildNode("legs") is { } nullNodeLegs && nullNodeLegs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Legs = null;
+            if (parseNode.GetChildNode("ticketNumber") is null) { _explicitNullValueTicketNumber = default!; _explicitNullProperties?.Remove("ticketNumber"); }
+            else if (parseNode.GetChildNode("ticketNumber") is { } nullNodeTicketNumber && nullNodeTicketNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TicketNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Details about the flight legs for this ticket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Leg>? Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Leg>? Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; AdditionalData?.Remove("legs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Leg>? _explicitNullValueLegs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Leg> Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Leg> Legs { get => _explicitNullValueLegs; set { _explicitNullValueLegs = value; AdditionalData?.Remove("legs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legs"); else _explicitNullProperties?.Remove("legs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4Leg> _explicitNullValueLegs = default!;
 #endif
         /// <summary>The ticket&apos;s unique identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketNumber { get => _explicitNullValueTicketNumber; set { _explicitNullValueTicketNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticketNumber"); else _explicitNullProperties?.Remove("ticketNumber"); } }
+        public string? TicketNumber { get => _explicitNullValueTicketNumber; set { _explicitNullValueTicketNumber = value; AdditionalData?.Remove("ticketNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticketNumber"); else _explicitNullProperties?.Remove("ticketNumber"); } }
         private string? _explicitNullValueTicketNumber = default!;
 #nullable restore
 #else
-        public string TicketNumber { get => _explicitNullValueTicketNumber; set { _explicitNullValueTicketNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticketNumber"); else _explicitNullProperties?.Remove("ticketNumber"); } }
+        public string TicketNumber { get => _explicitNullValueTicketNumber; set { _explicitNullValueTicketNumber = value; AdditionalData?.Remove("ticketNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticketNumber"); else _explicitNullProperties?.Remove("ticketNumber"); } }
         private string _explicitNullValueTicketNumber = default!;
 #endif
         /// <summary>

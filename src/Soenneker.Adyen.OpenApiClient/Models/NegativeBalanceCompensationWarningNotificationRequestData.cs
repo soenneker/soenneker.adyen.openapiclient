@@ -18,24 +18,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("liableBalanceAccountId") is { } nullNodeLiableBalanceAccountId && nullNodeLiableBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiableBalanceAccountId = null;
-            if (parseNode.GetChildNode("negativeBalanceSince") is { } nullNodeNegativeBalanceSince && nullNodeNegativeBalanceSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeBalanceSince = null;
-            if (parseNode.GetChildNode("scheduledCompensationAt") is { } nullNodeScheduledCompensationAt && nullNodeScheduledCompensationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledCompensationAt = null;
+            if (parseNode.GetChildNode("accountHolder") is null) { _explicitNullValueAccountHolder = default!; _explicitNullProperties?.Remove("accountHolder"); }
+            else if (parseNode.GetChildNode("accountHolder") is { } nullNodeAccountHolder && nullNodeAccountHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolder = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("creationDate") is null) { _explicitNullValueCreationDate = default!; _explicitNullProperties?.Remove("creationDate"); }
+            else if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("liableBalanceAccountId") is null) { _explicitNullValueLiableBalanceAccountId = default!; _explicitNullProperties?.Remove("liableBalanceAccountId"); }
+            else if (parseNode.GetChildNode("liableBalanceAccountId") is { } nullNodeLiableBalanceAccountId && nullNodeLiableBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiableBalanceAccountId = null;
+            if (parseNode.GetChildNode("negativeBalanceSince") is null) { _explicitNullValueNegativeBalanceSince = default!; _explicitNullProperties?.Remove("negativeBalanceSince"); }
+            else if (parseNode.GetChildNode("negativeBalanceSince") is { } nullNodeNegativeBalanceSince && nullNodeNegativeBalanceSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeBalanceSince = null;
+            if (parseNode.GetChildNode("scheduledCompensationAt") is null) { _explicitNullValueScheduledCompensationAt = default!; _explicitNullProperties?.Remove("scheduledCompensationAt"); }
+            else if (parseNode.GetChildNode("scheduledCompensationAt") is { } nullNodeScheduledCompensationAt && nullNodeScheduledCompensationAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledCompensationAt = null;
         }
 
         /// <summary>The details of the account holder who owns the balance account with a negative balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAccountHolder? AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAccountHolder? _explicitNullValueAccountHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAccountHolder AccountHolder { get => _explicitNullValueAccountHolder; set { _explicitNullValueAccountHolder = value; AdditionalData?.Remove("accountHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolder"); else _explicitNullProperties?.Remove("accountHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAccountHolder _explicitNullValueAccountHolder = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -43,51 +51,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The negative balance amount of the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationDataAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>The date and time when the event was triggered, in ISO 8601 extended format. For example, **2025-03-19T10:15:30+01:00**.</summary>
-        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
+        public DateTimeOffset? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; AdditionalData?.Remove("creationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
         private DateTimeOffset? _explicitNullValueCreationDate = default!;
         /// <summary>The ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The balance account ID of the account that will be used to compensate the balance account whose balance is negative.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LiableBalanceAccountId { get => _explicitNullValueLiableBalanceAccountId; set { _explicitNullValueLiableBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liableBalanceAccountId"); else _explicitNullProperties?.Remove("liableBalanceAccountId"); } }
+        public string? LiableBalanceAccountId { get => _explicitNullValueLiableBalanceAccountId; set { _explicitNullValueLiableBalanceAccountId = value; AdditionalData?.Remove("liableBalanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liableBalanceAccountId"); else _explicitNullProperties?.Remove("liableBalanceAccountId"); } }
         private string? _explicitNullValueLiableBalanceAccountId = default!;
 #nullable restore
 #else
-        public string LiableBalanceAccountId { get => _explicitNullValueLiableBalanceAccountId; set { _explicitNullValueLiableBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liableBalanceAccountId"); else _explicitNullProperties?.Remove("liableBalanceAccountId"); } }
+        public string LiableBalanceAccountId { get => _explicitNullValueLiableBalanceAccountId; set { _explicitNullValueLiableBalanceAccountId = value; AdditionalData?.Remove("liableBalanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liableBalanceAccountId"); else _explicitNullProperties?.Remove("liableBalanceAccountId"); } }
         private string _explicitNullValueLiableBalanceAccountId = default!;
 #endif
         /// <summary>The date the balance for the account became negative.</summary>
-        public DateTimeOffset? NegativeBalanceSince { get => _explicitNullValueNegativeBalanceSince; set { _explicitNullValueNegativeBalanceSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negativeBalanceSince"); else _explicitNullProperties?.Remove("negativeBalanceSince"); } }
+        public DateTimeOffset? NegativeBalanceSince { get => _explicitNullValueNegativeBalanceSince; set { _explicitNullValueNegativeBalanceSince = value; AdditionalData?.Remove("negativeBalanceSince"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negativeBalanceSince"); else _explicitNullProperties?.Remove("negativeBalanceSince"); } }
         private DateTimeOffset? _explicitNullValueNegativeBalanceSince = default!;
         /// <summary>The date when a compensation transfer to the account is scheduled to happen.</summary>
-        public DateTimeOffset? ScheduledCompensationAt { get => _explicitNullValueScheduledCompensationAt; set { _explicitNullValueScheduledCompensationAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledCompensationAt"); else _explicitNullProperties?.Remove("scheduledCompensationAt"); } }
+        public DateTimeOffset? ScheduledCompensationAt { get => _explicitNullValueScheduledCompensationAt; set { _explicitNullValueScheduledCompensationAt = value; AdditionalData?.Remove("scheduledCompensationAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduledCompensationAt"); else _explicitNullProperties?.Remove("scheduledCompensationAt"); } }
         private DateTimeOffset? _explicitNullValueScheduledCompensationAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NegativeBalanceCompensationWarningNotificationRequestData"/> and sets the default values.

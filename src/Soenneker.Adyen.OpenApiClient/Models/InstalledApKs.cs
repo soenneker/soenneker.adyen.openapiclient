@@ -17,34 +17,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("confirmationDate") is { } nullNodeConfirmationDate && nullNodeConfirmationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmationDate = null;
-            if (parseNode.GetChildNode("packageName") is { } nullNodePackageName && nullNodePackageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageName = null;
-            if (parseNode.GetChildNode("versionName") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
+            if (parseNode.GetChildNode("confirmationDate") is null) { _explicitNullValueConfirmationDate = default!; _explicitNullProperties?.Remove("confirmationDate"); }
+            else if (parseNode.GetChildNode("confirmationDate") is { } nullNodeConfirmationDate && nullNodeConfirmationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfirmationDate = null;
+            if (parseNode.GetChildNode("packageName") is null) { _explicitNullValuePackageName = default!; _explicitNullProperties?.Remove("packageName"); }
+            else if (parseNode.GetChildNode("packageName") is { } nullNodePackageName && nullNodePackageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PackageName = null;
+            if (parseNode.GetChildNode("versionName") is null) { _explicitNullValueVersionName = default!; _explicitNullProperties?.Remove("versionName"); }
+            else if (parseNode.GetChildNode("versionName") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the app was installed.</summary>
-        public DateTimeOffset? ConfirmationDate { get => _explicitNullValueConfirmationDate; set { _explicitNullValueConfirmationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirmationDate"); else _explicitNullProperties?.Remove("confirmationDate"); } }
+        public DateTimeOffset? ConfirmationDate { get => _explicitNullValueConfirmationDate; set { _explicitNullValueConfirmationDate = value; AdditionalData?.Remove("confirmationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirmationDate"); else _explicitNullProperties?.Remove("confirmationDate"); } }
         private DateTimeOffset? _explicitNullValueConfirmationDate = default!;
         /// <summary>The package name of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
+        public string? PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; AdditionalData?.Remove("packageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
         private string? _explicitNullValuePackageName = default!;
 #nullable restore
 #else
-        public string PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
+        public string PackageName { get => _explicitNullValuePackageName; set { _explicitNullValuePackageName = value; AdditionalData?.Remove("packageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packageName"); else _explicitNullProperties?.Remove("packageName"); } }
         private string _explicitNullValuePackageName = default!;
 #endif
         /// <summary>The version name of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
+        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; AdditionalData?.Remove("versionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
         private string? _explicitNullValueVersionName = default!;
 #nullable restore
 #else
-        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
+        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; AdditionalData?.Remove("versionName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionName"); else _explicitNullProperties?.Remove("versionName"); } }
         private string _explicitNullValueVersionName = default!;
 #endif
         /// <summary>

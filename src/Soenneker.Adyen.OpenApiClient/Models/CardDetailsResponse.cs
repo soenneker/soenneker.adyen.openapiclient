@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("brands") is { } nullNodeBrands && nullNodeBrands.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brands = null;
-            if (parseNode.GetChildNode("fundingSource") is { } nullNodeFundingSource && nullNodeFundingSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingSource = null;
-            if (parseNode.GetChildNode("isCardCommercial") is { } nullNodeIsCardCommercial && nullNodeIsCardCommercial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCardCommercial = null;
-            if (parseNode.GetChildNode("issuingCountryCode") is { } nullNodeIssuingCountryCode && nullNodeIssuingCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingCountryCode = null;
+            if (parseNode.GetChildNode("brands") is null) { _explicitNullValueBrands = default!; _explicitNullProperties?.Remove("brands"); }
+            else if (parseNode.GetChildNode("brands") is { } nullNodeBrands && nullNodeBrands.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brands = null;
+            if (parseNode.GetChildNode("fundingSource") is null) { _explicitNullValueFundingSource = default!; _explicitNullProperties?.Remove("fundingSource"); }
+            else if (parseNode.GetChildNode("fundingSource") is { } nullNodeFundingSource && nullNodeFundingSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingSource = null;
+            if (parseNode.GetChildNode("isCardCommercial") is null) { _explicitNullValueIsCardCommercial = default!; _explicitNullProperties?.Remove("isCardCommercial"); }
+            else if (parseNode.GetChildNode("isCardCommercial") is { } nullNodeIsCardCommercial && nullNodeIsCardCommercial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCardCommercial = null;
+            if (parseNode.GetChildNode("issuingCountryCode") is null) { _explicitNullValueIssuingCountryCode = default!; _explicitNullProperties?.Remove("issuingCountryCode"); }
+            else if (parseNode.GetChildNode("issuingCountryCode") is { } nullNodeIssuingCountryCode && nullNodeIssuingCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuingCountryCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of brands identified for the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails>? Brands { get => _explicitNullValueBrands; set { _explicitNullValueBrands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brands"); else _explicitNullProperties?.Remove("brands"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails>? Brands { get => _explicitNullValueBrands; set { _explicitNullValueBrands = value; AdditionalData?.Remove("brands"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brands"); else _explicitNullProperties?.Remove("brands"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails>? _explicitNullValueBrands = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails> Brands { get => _explicitNullValueBrands; set { _explicitNullValueBrands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brands"); else _explicitNullProperties?.Remove("brands"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails> Brands { get => _explicitNullValueBrands; set { _explicitNullValueBrands = value; AdditionalData?.Remove("brands"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brands"); else _explicitNullProperties?.Remove("brands"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CardBrandDetails> _explicitNullValueBrands = default!;
 #endif
         /// <summary>The funding source of the card, for example **DEBIT**, **CREDIT**, or **PREPAID**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
+        public string? FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; AdditionalData?.Remove("fundingSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
         private string? _explicitNullValueFundingSource = default!;
 #nullable restore
 #else
-        public string FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
+        public string FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; AdditionalData?.Remove("fundingSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
         private string _explicitNullValueFundingSource = default!;
 #endif
         /// <summary>Indicates if this is a commercial card or a consumer card. If **true**, it is a commercial card. If **false**, it is a consumer card.</summary>
-        public bool? IsCardCommercial { get => _explicitNullValueIsCardCommercial; set { _explicitNullValueIsCardCommercial = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCardCommercial"); else _explicitNullProperties?.Remove("isCardCommercial"); } }
+        public bool? IsCardCommercial { get => _explicitNullValueIsCardCommercial; set { _explicitNullValueIsCardCommercial = value; AdditionalData?.Remove("isCardCommercial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCardCommercial"); else _explicitNullProperties?.Remove("isCardCommercial"); } }
         private bool? _explicitNullValueIsCardCommercial = default!;
         /// <summary>The two-letter country code  of the country where the card was issued.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuingCountryCode { get => _explicitNullValueIssuingCountryCode; set { _explicitNullValueIssuingCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingCountryCode"); else _explicitNullProperties?.Remove("issuingCountryCode"); } }
+        public string? IssuingCountryCode { get => _explicitNullValueIssuingCountryCode; set { _explicitNullValueIssuingCountryCode = value; AdditionalData?.Remove("issuingCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingCountryCode"); else _explicitNullProperties?.Remove("issuingCountryCode"); } }
         private string? _explicitNullValueIssuingCountryCode = default!;
 #nullable restore
 #else
-        public string IssuingCountryCode { get => _explicitNullValueIssuingCountryCode; set { _explicitNullValueIssuingCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingCountryCode"); else _explicitNullProperties?.Remove("issuingCountryCode"); } }
+        public string IssuingCountryCode { get => _explicitNullValueIssuingCountryCode; set { _explicitNullValueIssuingCountryCode = value; AdditionalData?.Remove("issuingCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuingCountryCode"); else _explicitNullProperties?.Remove("issuingCountryCode"); } }
         private string _explicitNullValueIssuingCountryCode = default!;
 #endif
         /// <summary>

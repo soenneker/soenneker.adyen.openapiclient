@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableBcmcMobile") is { } nullNodeEnableBcmcMobile && nullNodeEnableBcmcMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBcmcMobile = null;
+            if (parseNode.GetChildNode("enableBcmcMobile") is null) { _explicitNullValueEnableBcmcMobile = default!; _explicitNullProperties?.Remove("enableBcmcMobile"); }
+            else if (parseNode.GetChildNode("enableBcmcMobile") is { } nullNodeEnableBcmcMobile && nullNodeEnableBcmcMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBcmcMobile = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if [Bancontact mobile](https://docs.adyen.com/payment-methods/bancontact/bancontact-mobile) is enabled.</summary>
-        public bool? EnableBcmcMobile { get => _explicitNullValueEnableBcmcMobile; set { _explicitNullValueEnableBcmcMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableBcmcMobile"); else _explicitNullProperties?.Remove("enableBcmcMobile"); } }
+        public bool? EnableBcmcMobile { get => _explicitNullValueEnableBcmcMobile; set { _explicitNullValueEnableBcmcMobile = value; AdditionalData?.Remove("enableBcmcMobile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableBcmcMobile"); else _explicitNullProperties?.Remove("enableBcmcMobile"); } }
         private bool? _explicitNullValueEnableBcmcMobile = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoBcmc"/> and sets the default values.

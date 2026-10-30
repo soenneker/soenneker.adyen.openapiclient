@@ -17,18 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
-            if (parseNode.GetChildNode("paymentInstrumentIds") is { } nullNodePaymentInstrumentIds && nullNodePaymentInstrumentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentIds = null;
+            if (parseNode.GetChildNode("accountHolderId") is null) { _explicitNullValueAccountHolderId = default!; _explicitNullProperties?.Remove("accountHolderId"); }
+            else if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
+            if (parseNode.GetChildNode("paymentInstrumentIds") is null) { _explicitNullValuePaymentInstrumentIds = default!; _explicitNullProperties?.Remove("paymentInstrumentIds"); }
+            else if (parseNode.GetChildNode("paymentInstrumentIds") is { } nullNodePaymentInstrumentIds && nullNodePaymentInstrumentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentIds = null;
         }
 
         /// <summary>The unique identifier of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string? _explicitNullValueAccountHolderId = default!;
 #nullable restore
 #else
-        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string _explicitNullValueAccountHolderId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifiers of the payment instruments to be associated with the iDEAL profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PaymentInstrumentIds { get => _explicitNullValuePaymentInstrumentIds; set { _explicitNullValuePaymentInstrumentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentIds"); else _explicitNullProperties?.Remove("paymentInstrumentIds"); } }
+        public List<string>? PaymentInstrumentIds { get => _explicitNullValuePaymentInstrumentIds; set { _explicitNullValuePaymentInstrumentIds = value; AdditionalData?.Remove("paymentInstrumentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentIds"); else _explicitNullProperties?.Remove("paymentInstrumentIds"); } }
         private List<string>? _explicitNullValuePaymentInstrumentIds = default!;
 #nullable restore
 #else
-        public List<string> PaymentInstrumentIds { get => _explicitNullValuePaymentInstrumentIds; set { _explicitNullValuePaymentInstrumentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentIds"); else _explicitNullProperties?.Remove("paymentInstrumentIds"); } }
+        public List<string> PaymentInstrumentIds { get => _explicitNullValuePaymentInstrumentIds; set { _explicitNullValuePaymentInstrumentIds = value; AdditionalData?.Remove("paymentInstrumentIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentIds"); else _explicitNullProperties?.Remove("paymentInstrumentIds"); } }
         private List<string> _explicitNullValuePaymentInstrumentIds = default!;
 #endif
         /// <summary>

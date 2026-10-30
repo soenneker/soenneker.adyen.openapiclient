@@ -17,13 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("fee") is { } nullNodeFee && nullNodeFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fee = null;
-            if (parseNode.GetChildNode("instructingBalanceAccountId") is { } nullNodeInstructingBalanceAccountId && nullNodeInstructingBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstructingBalanceAccountId = null;
-            if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
-            if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("counterparty") is null) { _explicitNullValueCounterparty = default!; _explicitNullProperties?.Remove("counterparty"); }
+            else if (parseNode.GetChildNode("counterparty") is { } nullNodeCounterparty && nullNodeCounterparty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Counterparty = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("fee") is null) { _explicitNullValueFee = default!; _explicitNullProperties?.Remove("fee"); }
+            else if (parseNode.GetChildNode("fee") is { } nullNodeFee && nullNodeFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fee = null;
+            if (parseNode.GetChildNode("instructingBalanceAccountId") is null) { _explicitNullValueInstructingBalanceAccountId = default!; _explicitNullProperties?.Remove("instructingBalanceAccountId"); }
+            else if (parseNode.GetChildNode("instructingBalanceAccountId") is { } nullNodeInstructingBalanceAccountId && nullNodeInstructingBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstructingBalanceAccountId = null;
+            if (parseNode.GetChildNode("referenceForBeneficiary") is null) { _explicitNullValueReferenceForBeneficiary = default!; _explicitNullProperties?.Remove("referenceForBeneficiary"); }
+            else if (parseNode.GetChildNode("referenceForBeneficiary") is { } nullNodeReferenceForBeneficiary && nullNodeReferenceForBeneficiary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceForBeneficiary = null;
+            if (parseNode.GetChildNode("transferInstrumentId") is null) { _explicitNullValueTransferInstrumentId = default!; _explicitNullProperties?.Remove("transferInstrumentId"); }
+            else if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,41 +38,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains the amount of the cashout, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>Contains information about the counterparty of the cashout transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed? Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed? _explicitNullValueCounterparty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed Counterparty { get => _explicitNullValueCounterparty; set { _explicitNullValueCounterparty = value; AdditionalData?.Remove("counterparty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("counterparty"); else _explicitNullProperties?.Remove("counterparty"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoCounterpartyComposed _explicitNullValueCounterparty = default!;
 #endif
         /// <summary>Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.Your description of the cashout transfer. This description is used by most banks as the transfer description. We recommend sending a maximum of 140 characters, otherwise the description may be truncated.If you do not provide a description, Adyen generates a description automatically. This generated description is not returned in the response.Supported characters: **[a-z] [A-Z] [0-9] / - ? : ( ) . , &apos; + Space**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Contains the currency and value of the cashout fee, in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoFee? Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoFee? Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; AdditionalData?.Remove("fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoFee? _explicitNullValueFee = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoFee Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoFee Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; AdditionalData?.Remove("fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CashOutInfoFee _explicitNullValueFee = default!;
 #endif
         /// <summary>The ID of the resource.</summary>
@@ -79,32 +86,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance account that initiates the cashout request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstructingBalanceAccountId { get => _explicitNullValueInstructingBalanceAccountId; set { _explicitNullValueInstructingBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructingBalanceAccountId"); else _explicitNullProperties?.Remove("instructingBalanceAccountId"); } }
+        public string? InstructingBalanceAccountId { get => _explicitNullValueInstructingBalanceAccountId; set { _explicitNullValueInstructingBalanceAccountId = value; AdditionalData?.Remove("instructingBalanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructingBalanceAccountId"); else _explicitNullProperties?.Remove("instructingBalanceAccountId"); } }
         private string? _explicitNullValueInstructingBalanceAccountId = default!;
 #nullable restore
 #else
-        public string InstructingBalanceAccountId { get => _explicitNullValueInstructingBalanceAccountId; set { _explicitNullValueInstructingBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructingBalanceAccountId"); else _explicitNullProperties?.Remove("instructingBalanceAccountId"); } }
+        public string InstructingBalanceAccountId { get => _explicitNullValueInstructingBalanceAccountId; set { _explicitNullValueInstructingBalanceAccountId = value; AdditionalData?.Remove("instructingBalanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructingBalanceAccountId"); else _explicitNullProperties?.Remove("instructingBalanceAccountId"); } }
         private string _explicitNullValueInstructingBalanceAccountId = default!;
 #endif
         /// <summary>Allowed and returned only when you provide the `counterparty.transferInstrumentId` field.The reference that is sent to the recipient of a cashout transfer. This reference is also sent in all webhooks related to the cashout transfer, so you can use it to track the status of the transfer.If you do not provide a reference for the beneficiary, Adyen generates one automatically. This generated reference for the beneficiary is not returned in the response.Supported characters: **a-z**, **A-Z**, **0-9**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        public string? ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; AdditionalData?.Remove("referenceForBeneficiary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
         private string? _explicitNullValueReferenceForBeneficiary = default!;
 #nullable restore
 #else
-        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
+        public string ReferenceForBeneficiary { get => _explicitNullValueReferenceForBeneficiary; set { _explicitNullValueReferenceForBeneficiary = value; AdditionalData?.Remove("referenceForBeneficiary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenceForBeneficiary"); else _explicitNullProperties?.Remove("referenceForBeneficiary"); } }
         private string _explicitNullValueReferenceForBeneficiary = default!;
 #endif
         /// <summary>**Use `counterparty.transferInstrumentId` instead.**The unique identifier of the counterparty transfer instrument.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; AdditionalData?.Remove("transferInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
         private string? _explicitNullValueTransferInstrumentId = default!;
 #nullable restore
 #else
-        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; AdditionalData?.Remove("transferInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
         private string _explicitNullValueTransferInstrumentId = default!;
 #endif
         /// <summary>

@@ -17,34 +17,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
-            if (parseNode.GetChildNode("defenseDocumentTypeCode") is { } nullNodeDefenseDocumentTypeCode && nullNodeDefenseDocumentTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypeCode = null;
-            if (parseNode.GetChildNode("requirementLevel") is { } nullNodeRequirementLevel && nullNodeRequirementLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementLevel = null;
+            if (parseNode.GetChildNode("available") is null) { _explicitNullValueAvailable = default!; _explicitNullProperties?.Remove("available"); }
+            else if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
+            if (parseNode.GetChildNode("defenseDocumentTypeCode") is null) { _explicitNullValueDefenseDocumentTypeCode = default!; _explicitNullProperties?.Remove("defenseDocumentTypeCode"); }
+            else if (parseNode.GetChildNode("defenseDocumentTypeCode") is { } nullNodeDefenseDocumentTypeCode && nullNodeDefenseDocumentTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypeCode = null;
+            if (parseNode.GetChildNode("requirementLevel") is null) { _explicitNullValueRequirementLevel = default!; _explicitNullProperties?.Remove("requirementLevel"); }
+            else if (parseNode.GetChildNode("requirementLevel") is { } nullNodeRequirementLevel && nullNodeRequirementLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequirementLevel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When **true**, you&apos;ve successfully uploaded this type of defense document. When **false**, you haven&apos;t uploaded this defense document type.</summary>
-        public bool? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        public bool? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; AdditionalData?.Remove("available"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
         private bool? _explicitNullValueAvailable = default!;
         /// <summary>The document type code of the defense document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
+        public string? DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; AdditionalData?.Remove("defenseDocumentTypeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
         private string? _explicitNullValueDefenseDocumentTypeCode = default!;
 #nullable restore
 #else
-        public string DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
+        public string DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; AdditionalData?.Remove("defenseDocumentTypeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
         private string _explicitNullValueDefenseDocumentTypeCode = default!;
 #endif
         /// <summary>Indicates to what extent the defense document is required in the defense process.Possible values: * **Required**: You must supply the document. * **OneOrMore**: You must supply at least one of the documents with this label.* **Optional**: You can choose to supply the document.* **AlternativeRequired**: You must supply a generic defense document. To enable this functionality, contact our Support Team. When enabled, you can supply a generic defense document for all schemes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequirementLevel { get => _explicitNullValueRequirementLevel; set { _explicitNullValueRequirementLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirementLevel"); else _explicitNullProperties?.Remove("requirementLevel"); } }
+        public string? RequirementLevel { get => _explicitNullValueRequirementLevel; set { _explicitNullValueRequirementLevel = value; AdditionalData?.Remove("requirementLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirementLevel"); else _explicitNullProperties?.Remove("requirementLevel"); } }
         private string? _explicitNullValueRequirementLevel = default!;
 #nullable restore
 #else
-        public string RequirementLevel { get => _explicitNullValueRequirementLevel; set { _explicitNullValueRequirementLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirementLevel"); else _explicitNullProperties?.Remove("requirementLevel"); } }
+        public string RequirementLevel { get => _explicitNullValueRequirementLevel; set { _explicitNullValueRequirementLevel = value; AdditionalData?.Remove("requirementLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirementLevel"); else _explicitNullProperties?.Remove("requirementLevel"); } }
         private string _explicitNullValueRequirementLevel = default!;
 #endif
         /// <summary>

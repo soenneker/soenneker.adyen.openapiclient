@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reasons") is { } nullNodeReasons && nullNodeReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reasons = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("reasons") is null) { _explicitNullValueReasons = default!; _explicitNullProperties?.Remove("reasons"); }
+            else if (parseNode.GetChildNode("reasons") is { } nullNodeReasons && nullNodeReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reasons = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The reason for the `result` of the validations.This field is only sent for `validationFacts.type` **walletValidation**, when `validationFacts.result` is **invalid**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
+        public List<string>? Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; AdditionalData?.Remove("reasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
         private List<string>? _explicitNullValueReasons = default!;
 #nullable restore
 #else
-        public List<string> Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
+        public List<string> Reasons { get => _explicitNullValueReasons; set { _explicitNullValueReasons = value; AdditionalData?.Remove("reasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasons"); else _explicitNullProperties?.Remove("reasons"); } }
         private List<string> _explicitNullValueReasons = default!;
 #endif
         /// <summary>The evaluation result of the validation facts.Possible values: **valid**, **invalid**, **notValidated**, **notApplicable**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ValidationFactsResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ValidationFactsResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ValidationFactsResult? _explicitNullValueResult = default!;
         /// <summary>The type of the validation fact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "reasons", n => { Reasons = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValidationFactsResult>(); } },
+                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValidationFactsResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }

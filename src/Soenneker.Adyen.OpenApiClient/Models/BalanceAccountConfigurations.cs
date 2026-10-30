@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAccountPayoutSchedules") is { } nullNodeBalanceAccountPayoutSchedules && nullNodeBalanceAccountPayoutSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountPayoutSchedules = null;
-            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("balanceAccountPayoutSchedules") is null) { _explicitNullValueBalanceAccountPayoutSchedules = default!; _explicitNullProperties?.Remove("balanceAccountPayoutSchedules"); }
+            else if (parseNode.GetChildNode("balanceAccountPayoutSchedules") is { } nullNodeBalanceAccountPayoutSchedules && nullNodeBalanceAccountPayoutSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountPayoutSchedules = null;
+            if (parseNode.GetChildNode("link") is null) { _explicitNullValueLink = default!; _explicitNullProperties?.Remove("link"); }
+            else if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains a list of the Balance Account payout schedules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration>? BalanceAccountPayoutSchedules { get => _explicitNullValueBalanceAccountPayoutSchedules; set { _explicitNullValueBalanceAccountPayoutSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutSchedules"); else _explicitNullProperties?.Remove("balanceAccountPayoutSchedules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration>? BalanceAccountPayoutSchedules { get => _explicitNullValueBalanceAccountPayoutSchedules; set { _explicitNullValueBalanceAccountPayoutSchedules = value; AdditionalData?.Remove("balanceAccountPayoutSchedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutSchedules"); else _explicitNullProperties?.Remove("balanceAccountPayoutSchedules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration>? _explicitNullValueBalanceAccountPayoutSchedules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration> BalanceAccountPayoutSchedules { get => _explicitNullValueBalanceAccountPayoutSchedules; set { _explicitNullValueBalanceAccountPayoutSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutSchedules"); else _explicitNullProperties?.Remove("balanceAccountPayoutSchedules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration> BalanceAccountPayoutSchedules { get => _explicitNullValueBalanceAccountPayoutSchedules; set { _explicitNullValueBalanceAccountPayoutSchedules = value; AdditionalData?.Remove("balanceAccountPayoutSchedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountPayoutSchedules"); else _explicitNullProperties?.Remove("balanceAccountPayoutSchedules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfiguration> _explicitNullValueBalanceAccountPayoutSchedules = default!;
 #endif
         /// <summary>Contains links to the next and previous page whenever applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceAccountConfigurationsLink _explicitNullValueLink = default!;
 #endif
         /// <summary>

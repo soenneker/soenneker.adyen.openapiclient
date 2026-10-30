@@ -17,29 +17,32 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountCode") is { } nullNodeAccountCode && nullNodeAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCode = null;
-            if (parseNode.GetChildNode("accountTypeCode") is { } nullNodeAccountTypeCode && nullNodeAccountTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTypeCode = null;
-            if (parseNode.GetChildNode("testCardRanges") is { } nullNodeTestCardRanges && nullNodeTestCardRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestCardRanges = null;
+            if (parseNode.GetChildNode("accountCode") is null) { _explicitNullValueAccountCode = default!; _explicitNullProperties?.Remove("accountCode"); }
+            else if (parseNode.GetChildNode("accountCode") is { } nullNodeAccountCode && nullNodeAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountCode = null;
+            if (parseNode.GetChildNode("accountTypeCode") is null) { _explicitNullValueAccountTypeCode = default!; _explicitNullProperties?.Remove("accountTypeCode"); }
+            else if (parseNode.GetChildNode("accountTypeCode") is { } nullNodeAccountTypeCode && nullNodeAccountTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountTypeCode = null;
+            if (parseNode.GetChildNode("testCardRanges") is null) { _explicitNullValueTestCardRanges = default!; _explicitNullProperties?.Remove("testCardRanges"); }
+            else if (parseNode.GetChildNode("testCardRanges") is { } nullNodeTestCardRanges && nullNodeTestCardRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestCardRanges = null;
         }
 
         /// <summary>The code of the account, for which the test card ranges should be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        public string? AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; AdditionalData?.Remove("accountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
         private string? _explicitNullValueAccountCode = default!;
 #nullable restore
 #else
-        public string AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
+        public string AccountCode { get => _explicitNullValueAccountCode; set { _explicitNullValueAccountCode = value; AdditionalData?.Remove("accountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountCode"); else _explicitNullProperties?.Remove("accountCode"); } }
         private string _explicitNullValueAccountCode = default!;
 #endif
         /// <summary>The type of the account, for which the test card ranges should be created.Permitted values:* Company* MerchantAccount&gt; These values are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountTypeCode { get => _explicitNullValueAccountTypeCode; set { _explicitNullValueAccountTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTypeCode"); else _explicitNullProperties?.Remove("accountTypeCode"); } }
+        public string? AccountTypeCode { get => _explicitNullValueAccountTypeCode; set { _explicitNullValueAccountTypeCode = value; AdditionalData?.Remove("accountTypeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTypeCode"); else _explicitNullProperties?.Remove("accountTypeCode"); } }
         private string? _explicitNullValueAccountTypeCode = default!;
 #nullable restore
 #else
-        public string AccountTypeCode { get => _explicitNullValueAccountTypeCode; set { _explicitNullValueAccountTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTypeCode"); else _explicitNullProperties?.Remove("accountTypeCode"); } }
+        public string AccountTypeCode { get => _explicitNullValueAccountTypeCode; set { _explicitNullValueAccountTypeCode = value; AdditionalData?.Remove("accountTypeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountTypeCode"); else _explicitNullProperties?.Remove("accountTypeCode"); } }
         private string _explicitNullValueAccountTypeCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,11 +50,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of test card ranges to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange>? TestCardRanges { get => _explicitNullValueTestCardRanges; set { _explicitNullValueTestCardRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testCardRanges"); else _explicitNullProperties?.Remove("testCardRanges"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange>? TestCardRanges { get => _explicitNullValueTestCardRanges; set { _explicitNullValueTestCardRanges = value; AdditionalData?.Remove("testCardRanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testCardRanges"); else _explicitNullProperties?.Remove("testCardRanges"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange>? _explicitNullValueTestCardRanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange> TestCardRanges { get => _explicitNullValueTestCardRanges; set { _explicitNullValueTestCardRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testCardRanges"); else _explicitNullProperties?.Remove("testCardRanges"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange> TestCardRanges { get => _explicitNullValueTestCardRanges; set { _explicitNullValueTestCardRanges = value; AdditionalData?.Remove("testCardRanges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testCardRanges"); else _explicitNullProperties?.Remove("testCardRanges"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRange> _explicitNullValueTestCardRanges = default!;
 #endif
         /// <summary>

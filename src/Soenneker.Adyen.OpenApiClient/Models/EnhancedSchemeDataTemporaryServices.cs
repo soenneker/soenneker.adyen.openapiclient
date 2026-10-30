@@ -19,13 +19,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("employeeName") is { } nullNodeEmployeeName && nullNodeEmployeeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeName = null;
-            if (parseNode.GetChildNode("endDate") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
-            if (parseNode.GetChildNode("hourRate") is { } nullNodeHourRate && nullNodeHourRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HourRate = null;
-            if (parseNode.GetChildNode("hoursWorked") is { } nullNodeHoursWorked && nullNodeHoursWorked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoursWorked = null;
-            if (parseNode.GetChildNode("jobDescription") is { } nullNodeJobDescription && nullNodeJobDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDescription = null;
-            if (parseNode.GetChildNode("serviceRequestor") is { } nullNodeServiceRequestor && nullNodeServiceRequestor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceRequestor = null;
-            if (parseNode.GetChildNode("startDate") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("employeeName") is null) { _explicitNullValueEmployeeName = default!; _explicitNullProperties?.Remove("employeeName"); }
+            else if (parseNode.GetChildNode("employeeName") is { } nullNodeEmployeeName && nullNodeEmployeeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmployeeName = null;
+            if (parseNode.GetChildNode("endDate") is null) { _explicitNullValueEndDate = default!; _explicitNullProperties?.Remove("endDate"); }
+            else if (parseNode.GetChildNode("endDate") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("hourRate") is null) { _explicitNullValueHourRate = default!; _explicitNullProperties?.Remove("hourRate"); }
+            else if (parseNode.GetChildNode("hourRate") is { } nullNodeHourRate && nullNodeHourRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HourRate = null;
+            if (parseNode.GetChildNode("hoursWorked") is null) { _explicitNullValueHoursWorked = default!; _explicitNullProperties?.Remove("hoursWorked"); }
+            else if (parseNode.GetChildNode("hoursWorked") is { } nullNodeHoursWorked && nullNodeHoursWorked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoursWorked = null;
+            if (parseNode.GetChildNode("jobDescription") is null) { _explicitNullValueJobDescription = default!; _explicitNullProperties?.Remove("jobDescription"); }
+            else if (parseNode.GetChildNode("jobDescription") is { } nullNodeJobDescription && nullNodeJobDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JobDescription = null;
+            if (parseNode.GetChildNode("serviceRequestor") is null) { _explicitNullValueServiceRequestor = default!; _explicitNullProperties?.Remove("serviceRequestor"); }
+            else if (parseNode.GetChildNode("serviceRequestor") is { } nullNodeServiceRequestor && nullNodeServiceRequestor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceRequestor = null;
+            if (parseNode.GetChildNode("startDate") is null) { _explicitNullValueStartDate = default!; _explicitNullProperties?.Remove("startDate"); }
+            else if (parseNode.GetChildNode("startDate") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,44 +40,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The name or ID of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.employeeName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmployeeName { get => _explicitNullValueEmployeeName; set { _explicitNullValueEmployeeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeName"); else _explicitNullProperties?.Remove("employeeName"); } }
+        public string? EmployeeName { get => _explicitNullValueEmployeeName; set { _explicitNullValueEmployeeName = value; AdditionalData?.Remove("employeeName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeName"); else _explicitNullProperties?.Remove("employeeName"); } }
         private string? _explicitNullValueEmployeeName = default!;
 #nullable restore
 #else
-        public string EmployeeName { get => _explicitNullValueEmployeeName; set { _explicitNullValueEmployeeName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeName"); else _explicitNullProperties?.Remove("employeeName"); } }
+        public string EmployeeName { get => _explicitNullValueEmployeeName; set { _explicitNullValueEmployeeName = value; AdditionalData?.Remove("employeeName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("employeeName"); else _explicitNullProperties?.Remove("employeeName"); } }
         private string _explicitNullValueEmployeeName = default!;
 #endif
         /// <summary>The billing period end date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempWeekEnding`</summary>
-        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
+        public Date? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("endDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endDate"); else _explicitNullProperties?.Remove("endDate"); } }
         private Date? _explicitNullValueEndDate = default!;
         /// <summary>The hourly rate for the temporary services, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `enhancedSchemeData.regularHoursRate`</summary>
-        public int? HourRate { get => _explicitNullValueHourRate; set { _explicitNullValueHourRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hourRate"); else _explicitNullProperties?.Remove("hourRate"); } }
+        public int? HourRate { get => _explicitNullValueHourRate; set { _explicitNullValueHourRate = value; AdditionalData?.Remove("hourRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hourRate"); else _explicitNullProperties?.Remove("hourRate"); } }
         private int? _explicitNullValueHourRate = default!;
         /// <summary>The number of hours worked during the billing period.* Format: Numeric* **additionalData key:** `enhancedSchemeData.regularHoursWorked`</summary>
-        public int? HoursWorked { get => _explicitNullValueHoursWorked; set { _explicitNullValueHoursWorked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hoursWorked"); else _explicitNullProperties?.Remove("hoursWorked"); } }
+        public int? HoursWorked { get => _explicitNullValueHoursWorked; set { _explicitNullValueHoursWorked = value; AdditionalData?.Remove("hoursWorked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hoursWorked"); else _explicitNullProperties?.Remove("hoursWorked"); } }
         private int? _explicitNullValueHoursWorked = default!;
         /// <summary>The job description of the person working in a temporary capacity.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.jobDescription`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobDescription { get => _explicitNullValueJobDescription; set { _explicitNullValueJobDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDescription"); else _explicitNullProperties?.Remove("jobDescription"); } }
+        public string? JobDescription { get => _explicitNullValueJobDescription; set { _explicitNullValueJobDescription = value; AdditionalData?.Remove("jobDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDescription"); else _explicitNullProperties?.Remove("jobDescription"); } }
         private string? _explicitNullValueJobDescription = default!;
 #nullable restore
 #else
-        public string JobDescription { get => _explicitNullValueJobDescription; set { _explicitNullValueJobDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDescription"); else _explicitNullProperties?.Remove("jobDescription"); } }
+        public string JobDescription { get => _explicitNullValueJobDescription; set { _explicitNullValueJobDescription = value; AdditionalData?.Remove("jobDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jobDescription"); else _explicitNullProperties?.Remove("jobDescription"); } }
         private string _explicitNullValueJobDescription = default!;
 #endif
         /// <summary>The name of the person requesting the temporary services.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `enhancedSchemeData.requestName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceRequestor { get => _explicitNullValueServiceRequestor; set { _explicitNullValueServiceRequestor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRequestor"); else _explicitNullProperties?.Remove("serviceRequestor"); } }
+        public string? ServiceRequestor { get => _explicitNullValueServiceRequestor; set { _explicitNullValueServiceRequestor = value; AdditionalData?.Remove("serviceRequestor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRequestor"); else _explicitNullProperties?.Remove("serviceRequestor"); } }
         private string? _explicitNullValueServiceRequestor = default!;
 #nullable restore
 #else
-        public string ServiceRequestor { get => _explicitNullValueServiceRequestor; set { _explicitNullValueServiceRequestor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRequestor"); else _explicitNullProperties?.Remove("serviceRequestor"); } }
+        public string ServiceRequestor { get => _explicitNullValueServiceRequestor; set { _explicitNullValueServiceRequestor = value; AdditionalData?.Remove("serviceRequestor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceRequestor"); else _explicitNullProperties?.Remove("serviceRequestor"); } }
         private string _explicitNullValueServiceRequestor = default!;
 #endif
         /// <summary>The billing period start date.* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `enhancedSchemeData.tempStartDate`</summary>
-        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
+        public Date? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("startDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startDate"); else _explicitNullProperties?.Remove("startDate"); } }
         private Date? _explicitNullValueStartDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataTemporaryServices"/> and sets the default values.

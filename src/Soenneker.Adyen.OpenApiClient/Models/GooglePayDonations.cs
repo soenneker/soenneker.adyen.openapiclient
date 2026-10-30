@@ -17,15 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("checkoutAttemptId") is { } nullNodeCheckoutAttemptId && nullNodeCheckoutAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutAttemptId = null;
-            if (parseNode.GetChildNode("fundingSource") is { } nullNodeFundingSource && nullNodeFundingSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingSource = null;
-            if (parseNode.GetChildNode("googlePayCardNetwork") is { } nullNodeGooglePayCardNetwork && nullNodeGooglePayCardNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GooglePayCardNetwork = null;
-            if (parseNode.GetChildNode("googlePayToken") is { } nullNodeGooglePayToken && nullNodeGooglePayToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GooglePayToken = null;
-            if (parseNode.GetChildNode("recurringDetailReference") is { } nullNodeRecurringDetailReference && nullNodeRecurringDetailReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetailReference = null;
-            if (parseNode.GetChildNode("sdkData") is { } nullNodeSdkData && nullNodeSdkData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkData = null;
-            if (parseNode.GetChildNode("storedPaymentMethodId") is { } nullNodeStoredPaymentMethodId && nullNodeStoredPaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredPaymentMethodId = null;
-            if (parseNode.GetChildNode("threeDS2SdkVersion") is { } nullNodeThreeDS2SdkVersion && nullNodeThreeDS2SdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2SdkVersion = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("checkoutAttemptId") is null) { _explicitNullValueCheckoutAttemptId = default!; _explicitNullProperties?.Remove("checkoutAttemptId"); }
+            else if (parseNode.GetChildNode("checkoutAttemptId") is { } nullNodeCheckoutAttemptId && nullNodeCheckoutAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutAttemptId = null;
+            if (parseNode.GetChildNode("fundingSource") is null) { _explicitNullValueFundingSource = default!; _explicitNullProperties?.Remove("fundingSource"); }
+            else if (parseNode.GetChildNode("fundingSource") is { } nullNodeFundingSource && nullNodeFundingSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FundingSource = null;
+            if (parseNode.GetChildNode("googlePayCardNetwork") is null) { _explicitNullValueGooglePayCardNetwork = default!; _explicitNullProperties?.Remove("googlePayCardNetwork"); }
+            else if (parseNode.GetChildNode("googlePayCardNetwork") is { } nullNodeGooglePayCardNetwork && nullNodeGooglePayCardNetwork.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GooglePayCardNetwork = null;
+            if (parseNode.GetChildNode("googlePayToken") is null) { _explicitNullValueGooglePayToken = default!; _explicitNullProperties?.Remove("googlePayToken"); }
+            else if (parseNode.GetChildNode("googlePayToken") is { } nullNodeGooglePayToken && nullNodeGooglePayToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GooglePayToken = null;
+            if (parseNode.GetChildNode("recurringDetailReference") is null) { _explicitNullValueRecurringDetailReference = default!; _explicitNullProperties?.Remove("recurringDetailReference"); }
+            else if (parseNode.GetChildNode("recurringDetailReference") is { } nullNodeRecurringDetailReference && nullNodeRecurringDetailReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetailReference = null;
+            if (parseNode.GetChildNode("sdkData") is null) { _explicitNullValueSdkData = default!; _explicitNullProperties?.Remove("sdkData"); }
+            else if (parseNode.GetChildNode("sdkData") is { } nullNodeSdkData && nullNodeSdkData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkData = null;
+            if (parseNode.GetChildNode("storedPaymentMethodId") is null) { _explicitNullValueStoredPaymentMethodId = default!; _explicitNullProperties?.Remove("storedPaymentMethodId"); }
+            else if (parseNode.GetChildNode("storedPaymentMethodId") is { } nullNodeStoredPaymentMethodId && nullNodeStoredPaymentMethodId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredPaymentMethodId = null;
+            if (parseNode.GetChildNode("threeDS2SdkVersion") is null) { _explicitNullValueThreeDS2SdkVersion = default!; _explicitNullProperties?.Remove("threeDS2SdkVersion"); }
+            else if (parseNode.GetChildNode("threeDS2SdkVersion") is { } nullNodeThreeDS2SdkVersion && nullNodeThreeDS2SdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2SdkVersion = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,79 +42,79 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The checkout attempt identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
+        public string? CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; AdditionalData?.Remove("checkoutAttemptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
         private string? _explicitNullValueCheckoutAttemptId = default!;
 #nullable restore
 #else
-        public string CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
+        public string CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; AdditionalData?.Remove("checkoutAttemptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
         private string _explicitNullValueCheckoutAttemptId = default!;
 #endif
         /// <summary>The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsFundingSource? FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsFundingSource? FundingSource { get => _explicitNullValueFundingSource; set { _explicitNullValueFundingSource = value; AdditionalData?.Remove("fundingSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fundingSource"); else _explicitNullProperties?.Remove("fundingSource"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsFundingSource? _explicitNullValueFundingSource = default!;
         /// <summary>The selected payment card network. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GooglePayCardNetwork { get => _explicitNullValueGooglePayCardNetwork; set { _explicitNullValueGooglePayCardNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayCardNetwork"); else _explicitNullProperties?.Remove("googlePayCardNetwork"); } }
+        public string? GooglePayCardNetwork { get => _explicitNullValueGooglePayCardNetwork; set { _explicitNullValueGooglePayCardNetwork = value; AdditionalData?.Remove("googlePayCardNetwork"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayCardNetwork"); else _explicitNullProperties?.Remove("googlePayCardNetwork"); } }
         private string? _explicitNullValueGooglePayCardNetwork = default!;
 #nullable restore
 #else
-        public string GooglePayCardNetwork { get => _explicitNullValueGooglePayCardNetwork; set { _explicitNullValueGooglePayCardNetwork = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayCardNetwork"); else _explicitNullProperties?.Remove("googlePayCardNetwork"); } }
+        public string GooglePayCardNetwork { get => _explicitNullValueGooglePayCardNetwork; set { _explicitNullValueGooglePayCardNetwork = value; AdditionalData?.Remove("googlePayCardNetwork"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayCardNetwork"); else _explicitNullProperties?.Remove("googlePayCardNetwork"); } }
         private string _explicitNullValueGooglePayCardNetwork = default!;
 #endif
         /// <summary>The `token` that you obtained from the [Google Pay API](https://developers.google.com/pay/api/web/reference/response-objects#PaymentData) `PaymentData` response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GooglePayToken { get => _explicitNullValueGooglePayToken; set { _explicitNullValueGooglePayToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayToken"); else _explicitNullProperties?.Remove("googlePayToken"); } }
+        public string? GooglePayToken { get => _explicitNullValueGooglePayToken; set { _explicitNullValueGooglePayToken = value; AdditionalData?.Remove("googlePayToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayToken"); else _explicitNullProperties?.Remove("googlePayToken"); } }
         private string? _explicitNullValueGooglePayToken = default!;
 #nullable restore
 #else
-        public string GooglePayToken { get => _explicitNullValueGooglePayToken; set { _explicitNullValueGooglePayToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayToken"); else _explicitNullProperties?.Remove("googlePayToken"); } }
+        public string GooglePayToken { get => _explicitNullValueGooglePayToken; set { _explicitNullValueGooglePayToken = value; AdditionalData?.Remove("googlePayToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("googlePayToken"); else _explicitNullProperties?.Remove("googlePayToken"); } }
         private string _explicitNullValueGooglePayToken = default!;
 #endif
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
+        public string? RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; AdditionalData?.Remove("recurringDetailReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
         private string? _explicitNullValueRecurringDetailReference = default!;
 #nullable restore
 #else
-        public string RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
+        public string RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; AdditionalData?.Remove("recurringDetailReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
         private string _explicitNullValueRecurringDetailReference = default!;
 #endif
         /// <summary>Base64-encoded JSON object containing SDK related parameters required by the SDK</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
+        public string? SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; AdditionalData?.Remove("sdkData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
         private string? _explicitNullValueSdkData = default!;
 #nullable restore
 #else
-        public string SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
+        public string SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; AdditionalData?.Remove("sdkData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
         private string _explicitNullValueSdkData = default!;
 #endif
         /// <summary>This is the `recurringDetailReference` returned in the response when you created the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
+        public string? StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; AdditionalData?.Remove("storedPaymentMethodId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
         private string? _explicitNullValueStoredPaymentMethodId = default!;
 #nullable restore
 #else
-        public string StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
+        public string StoredPaymentMethodId { get => _explicitNullValueStoredPaymentMethodId; set { _explicitNullValueStoredPaymentMethodId = value; AdditionalData?.Remove("storedPaymentMethodId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storedPaymentMethodId"); else _explicitNullProperties?.Remove("storedPaymentMethodId"); } }
         private string _explicitNullValueStoredPaymentMethodId = default!;
 #endif
         /// <summary>Required for mobile integrations. Version of the 3D Secure 2 mobile SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDS2SdkVersion { get => _explicitNullValueThreeDS2SdkVersion; set { _explicitNullValueThreeDS2SdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2SdkVersion"); else _explicitNullProperties?.Remove("threeDS2SdkVersion"); } }
+        public string? ThreeDS2SdkVersion { get => _explicitNullValueThreeDS2SdkVersion; set { _explicitNullValueThreeDS2SdkVersion = value; AdditionalData?.Remove("threeDS2SdkVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2SdkVersion"); else _explicitNullProperties?.Remove("threeDS2SdkVersion"); } }
         private string? _explicitNullValueThreeDS2SdkVersion = default!;
 #nullable restore
 #else
-        public string ThreeDS2SdkVersion { get => _explicitNullValueThreeDS2SdkVersion; set { _explicitNullValueThreeDS2SdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2SdkVersion"); else _explicitNullProperties?.Remove("threeDS2SdkVersion"); } }
+        public string ThreeDS2SdkVersion { get => _explicitNullValueThreeDS2SdkVersion; set { _explicitNullValueThreeDS2SdkVersion = value; AdditionalData?.Remove("threeDS2SdkVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2SdkVersion"); else _explicitNullProperties?.Remove("threeDS2SdkVersion"); } }
         private string _explicitNullValueThreeDS2SdkVersion = default!;
 #endif
         /// <summary>**googlepay**, **paywithgoogle**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonations"/> and sets the default values.
@@ -133,14 +142,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
-                { "fundingSource", n => { FundingSource = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsFundingSource>(); } },
+                { "fundingSource", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglePayDonationsFundingSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFundingSource = default; _explicitNullProperties?.Remove("fundingSource"); AdditionalData["fundingSource"] = unknown; } else { FundingSource = parsed; AdditionalData.Remove("fundingSource"); } } },
                 { "googlePayCardNetwork", n => { GooglePayCardNetwork = n.GetStringValue(); } },
                 { "googlePayToken", n => { GooglePayToken = n.GetStringValue(); } },
                 { "recurringDetailReference", n => { RecurringDetailReference = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
                 { "storedPaymentMethodId", n => { StoredPaymentMethodId = n.GetStringValue(); } },
                 { "threeDS2SdkVersion", n => { ThreeDS2SdkVersion = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GooglepayType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

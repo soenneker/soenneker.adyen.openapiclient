@@ -18,23 +18,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DocumentQualifier") is { } nullNodeDocumentQualifier && nullNodeDocumentQualifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentQualifier = null;
-            if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("DocumentQualifier") is null) { _explicitNullValueDocumentQualifier = default!; _explicitNullProperties?.Remove("DocumentQualifier"); }
+            else if (parseNode.GetChildNode("DocumentQualifier") is { } nullNodeDocumentQualifier && nullNodeDocumentQualifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentQualifier = null;
+            if (parseNode.GetChildNode("Response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("Response"); }
+            else if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier? DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier? DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; AdditionalData?.Remove("DocumentQualifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier? _explicitNullValueDocumentQualifier = default!;
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue _explicitNullValueResponse = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DocumentQualifier", n => { DocumentQualifier = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier>(); } },
+                { "DocumentQualifier", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PrintResponseDocumentQualifier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocumentQualifier = default; _explicitNullProperties?.Remove("DocumentQualifier"); AdditionalData["DocumentQualifier"] = unknown; } else { DocumentQualifier = parsed; AdditionalData.Remove("DocumentQualifier"); } } },
                 { "Response", n => { Response = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue>(global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue.CreateFromDiscriminatorValue); } },
             };
         }

@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("checkInDate") is { } nullNodeCheckInDate && nullNodeCheckInDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckInDate = null;
-            if (parseNode.GetChildNode("numberOfNights") is { } nullNodeNumberOfNights && nullNodeNumberOfNights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfNights = null;
+            if (parseNode.GetChildNode("checkInDate") is null) { _explicitNullValueCheckInDate = default!; _explicitNullProperties?.Remove("checkInDate"); }
+            else if (parseNode.GetChildNode("checkInDate") is { } nullNodeCheckInDate && nullNodeCheckInDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckInDate = null;
+            if (parseNode.GetChildNode("numberOfNights") is null) { _explicitNullValueNumberOfNights = default!; _explicitNullProperties?.Remove("numberOfNights"); }
+            else if (parseNode.GetChildNode("numberOfNights") is { } nullNodeNumberOfNights && nullNodeNumberOfNights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfNights = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The check-in date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckInDate { get => _explicitNullValueCheckInDate; set { _explicitNullValueCheckInDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkInDate"); else _explicitNullProperties?.Remove("checkInDate"); } }
+        public string? CheckInDate { get => _explicitNullValueCheckInDate; set { _explicitNullValueCheckInDate = value; AdditionalData?.Remove("checkInDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkInDate"); else _explicitNullProperties?.Remove("checkInDate"); } }
         private string? _explicitNullValueCheckInDate = default!;
 #nullable restore
 #else
-        public string CheckInDate { get => _explicitNullValueCheckInDate; set { _explicitNullValueCheckInDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkInDate"); else _explicitNullProperties?.Remove("checkInDate"); } }
+        public string CheckInDate { get => _explicitNullValueCheckInDate; set { _explicitNullValueCheckInDate = value; AdditionalData?.Remove("checkInDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkInDate"); else _explicitNullProperties?.Remove("checkInDate"); } }
         private string _explicitNullValueCheckInDate = default!;
 #endif
         /// <summary>The total number of nights the room is booked for.</summary>
-        public int? NumberOfNights { get => _explicitNullValueNumberOfNights; set { _explicitNullValueNumberOfNights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfNights"); else _explicitNullProperties?.Remove("numberOfNights"); } }
+        public int? NumberOfNights { get => _explicitNullValueNumberOfNights; set { _explicitNullValueNumberOfNights = value; AdditionalData?.Remove("numberOfNights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfNights"); else _explicitNullProperties?.Remove("numberOfNights"); } }
         private int? _explicitNullValueNumberOfNights = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Lodging"/> and sets the default values.

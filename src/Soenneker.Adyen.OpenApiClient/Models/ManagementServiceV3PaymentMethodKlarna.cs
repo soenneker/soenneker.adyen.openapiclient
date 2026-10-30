@@ -18,38 +18,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoCapture") is { } nullNodeAutoCapture && nullNodeAutoCapture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCapture = null;
-            if (parseNode.GetChildNode("disputeEmail") is { } nullNodeDisputeEmail && nullNodeDisputeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeEmail = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("supportEmail") is { } nullNodeSupportEmail && nullNodeSupportEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportEmail = null;
+            if (parseNode.GetChildNode("autoCapture") is null) { _explicitNullValueAutoCapture = default!; _explicitNullProperties?.Remove("autoCapture"); }
+            else if (parseNode.GetChildNode("autoCapture") is { } nullNodeAutoCapture && nullNodeAutoCapture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoCapture = null;
+            if (parseNode.GetChildNode("disputeEmail") is null) { _explicitNullValueDisputeEmail = default!; _explicitNullProperties?.Remove("disputeEmail"); }
+            else if (parseNode.GetChildNode("disputeEmail") is { } nullNodeDisputeEmail && nullNodeDisputeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeEmail = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("supportEmail") is null) { _explicitNullValueSupportEmail = default!; _explicitNullProperties?.Remove("supportEmail"); }
+            else if (parseNode.GetChildNode("supportEmail") is { } nullNodeSupportEmail && nullNodeSupportEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportEmail = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the status of [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture).</summary>
-        public bool? AutoCapture { get => _explicitNullValueAutoCapture; set { _explicitNullValueAutoCapture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCapture"); else _explicitNullProperties?.Remove("autoCapture"); } }
+        public bool? AutoCapture { get => _explicitNullValueAutoCapture; set { _explicitNullValueAutoCapture = value; AdditionalData?.Remove("autoCapture"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoCapture"); else _explicitNullProperties?.Remove("autoCapture"); } }
         private bool? _explicitNullValueAutoCapture = default!;
         /// <summary>The email address for disputes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisputeEmail { get => _explicitNullValueDisputeEmail; set { _explicitNullValueDisputeEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeEmail"); else _explicitNullProperties?.Remove("disputeEmail"); } }
+        public string? DisputeEmail { get => _explicitNullValueDisputeEmail; set { _explicitNullValueDisputeEmail = value; AdditionalData?.Remove("disputeEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeEmail"); else _explicitNullProperties?.Remove("disputeEmail"); } }
         private string? _explicitNullValueDisputeEmail = default!;
 #nullable restore
 #else
-        public string DisputeEmail { get => _explicitNullValueDisputeEmail; set { _explicitNullValueDisputeEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeEmail"); else _explicitNullProperties?.Remove("disputeEmail"); } }
+        public string DisputeEmail { get => _explicitNullValueDisputeEmail; set { _explicitNullValueDisputeEmail = value; AdditionalData?.Remove("disputeEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeEmail"); else _explicitNullProperties?.Remove("disputeEmail"); } }
         private string _explicitNullValueDisputeEmail = default!;
 #endif
         /// <summary>The region of operation.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion? _explicitNullValueRegion = default!;
         /// <summary>The email address of merchant support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
+        public string? SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; AdditionalData?.Remove("supportEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
         private string? _explicitNullValueSupportEmail = default!;
 #nullable restore
 #else
-        public string SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
+        public string SupportEmail { get => _explicitNullValueSupportEmail; set { _explicitNullValueSupportEmail = value; AdditionalData?.Remove("supportEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supportEmail"); else _explicitNullProperties?.Remove("supportEmail"); } }
         private string _explicitNullValueSupportEmail = default!;
 #endif
         /// <summary>
@@ -79,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "autoCapture", n => { AutoCapture = n.GetBoolValue(); } },
                 { "disputeEmail", n => { DisputeEmail = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KlarnaResponseInfoRegion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
                 { "supportEmail", n => { SupportEmail = n.GetStringValue(); } },
             };
         }

@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amounts") is { } nullNodeAmounts && nullNodeAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amounts = null;
-            if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("amounts") is null) { _explicitNullValueAmounts = default!; _explicitNullProperties?.Remove("amounts"); }
+            else if (parseNode.GetChildNode("amounts") is { } nullNodeAmounts && nullNodeAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amounts = null;
+            if (parseNode.GetChildNode("currencyCode") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currencyCode"); }
+            else if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The donation amounts in minor units. The list must contain at least one amount and no more than three amounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
+        public List<long?>? Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; AdditionalData?.Remove("amounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
         private List<long?>? _explicitNullValueAmounts = default!;
 #nullable restore
 #else
-        public List<long?> Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
+        public List<long?> Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; AdditionalData?.Remove("amounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
         private List<long?> _explicitNullValueAmounts = default!;
 #endif
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes#currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
         private string? _explicitNullValueCurrencyCode = default!;
 #nullable restore
 #else
-        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
         private string _explicitNullValueCurrencyCode = default!;
 #endif
         /// <summary>

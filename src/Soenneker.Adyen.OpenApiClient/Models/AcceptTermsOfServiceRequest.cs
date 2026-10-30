@@ -17,18 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acceptedBy") is { } nullNodeAcceptedBy && nullNodeAcceptedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedBy = null;
-            if (parseNode.GetChildNode("ipAddress") is { } nullNodeIpAddress && nullNodeIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAddress = null;
+            if (parseNode.GetChildNode("acceptedBy") is null) { _explicitNullValueAcceptedBy = default!; _explicitNullProperties?.Remove("acceptedBy"); }
+            else if (parseNode.GetChildNode("acceptedBy") is { } nullNodeAcceptedBy && nullNodeAcceptedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedBy = null;
+            if (parseNode.GetChildNode("ipAddress") is null) { _explicitNullValueIpAddress = default!; _explicitNullProperties?.Remove("ipAddress"); }
+            else if (parseNode.GetChildNode("ipAddress") is { } nullNodeIpAddress && nullNodeIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IpAddress = null;
         }
 
         /// <summary>The legal entity ID of the user accepting the Terms of Service.For organizations, this must be the individual legal entity ID of an authorized signatory for the organization.For sole proprietorships, this must be the individual legal entity ID of the owner.For individuals, this must be the individual legal entity id of either the individual, parent, or guardian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptedBy { get => _explicitNullValueAcceptedBy; set { _explicitNullValueAcceptedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedBy"); else _explicitNullProperties?.Remove("acceptedBy"); } }
+        public string? AcceptedBy { get => _explicitNullValueAcceptedBy; set { _explicitNullValueAcceptedBy = value; AdditionalData?.Remove("acceptedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedBy"); else _explicitNullProperties?.Remove("acceptedBy"); } }
         private string? _explicitNullValueAcceptedBy = default!;
 #nullable restore
 #else
-        public string AcceptedBy { get => _explicitNullValueAcceptedBy; set { _explicitNullValueAcceptedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedBy"); else _explicitNullProperties?.Remove("acceptedBy"); } }
+        public string AcceptedBy { get => _explicitNullValueAcceptedBy; set { _explicitNullValueAcceptedBy = value; AdditionalData?.Remove("acceptedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedBy"); else _explicitNullProperties?.Remove("acceptedBy"); } }
         private string _explicitNullValueAcceptedBy = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The IP address of the user accepting the Terms of Service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress { get => _explicitNullValueIpAddress; set { _explicitNullValueIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAddress"); else _explicitNullProperties?.Remove("ipAddress"); } }
+        public string? IpAddress { get => _explicitNullValueIpAddress; set { _explicitNullValueIpAddress = value; AdditionalData?.Remove("ipAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAddress"); else _explicitNullProperties?.Remove("ipAddress"); } }
         private string? _explicitNullValueIpAddress = default!;
 #nullable restore
 #else
-        public string IpAddress { get => _explicitNullValueIpAddress; set { _explicitNullValueIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAddress"); else _explicitNullProperties?.Remove("ipAddress"); } }
+        public string IpAddress { get => _explicitNullValueIpAddress; set { _explicitNullValueIpAddress = value; AdditionalData?.Remove("ipAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipAddress"); else _explicitNullProperties?.Remove("ipAddress"); } }
         private string _explicitNullValueIpAddress = default!;
 #endif
         /// <summary>

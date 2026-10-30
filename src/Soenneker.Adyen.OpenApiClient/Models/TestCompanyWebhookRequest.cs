@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merchantIds") is { } nullNodeMerchantIds && nullNodeMerchantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantIds = null;
-            if (parseNode.GetChildNode("notification") is { } nullNodeNotification && nullNodeNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification = null;
-            if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
+            if (parseNode.GetChildNode("merchantIds") is null) { _explicitNullValueMerchantIds = default!; _explicitNullProperties?.Remove("merchantIds"); }
+            else if (parseNode.GetChildNode("merchantIds") is { } nullNodeMerchantIds && nullNodeMerchantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantIds = null;
+            if (parseNode.GetChildNode("notification") is null) { _explicitNullValueNotification = default!; _explicitNullProperties?.Remove("notification"); }
+            else if (parseNode.GetChildNode("notification") is { } nullNodeNotification && nullNodeNotification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Notification = null;
+            if (parseNode.GetChildNode("types") is null) { _explicitNullValueTypes = default!; _explicitNullProperties?.Remove("types"); }
+            else if (parseNode.GetChildNode("types") is { } nullNodeTypes && nullNodeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Types = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of `merchantId` values for which test webhooks will be sent. The list can have a maximum of 20 `merchantId` values.If not specified, we send sample notifications to all the merchant accounts that the webhook is configured for. If this is more than 20 merchant accounts, use this list to specify a subset of the merchant accounts for which to send test notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MerchantIds { get => _explicitNullValueMerchantIds; set { _explicitNullValueMerchantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIds"); else _explicitNullProperties?.Remove("merchantIds"); } }
+        public List<string>? MerchantIds { get => _explicitNullValueMerchantIds; set { _explicitNullValueMerchantIds = value; AdditionalData?.Remove("merchantIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIds"); else _explicitNullProperties?.Remove("merchantIds"); } }
         private List<string>? _explicitNullValueMerchantIds = default!;
 #nullable restore
 #else
-        public List<string> MerchantIds { get => _explicitNullValueMerchantIds; set { _explicitNullValueMerchantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIds"); else _explicitNullProperties?.Remove("merchantIds"); } }
+        public List<string> MerchantIds { get => _explicitNullValueMerchantIds; set { _explicitNullValueMerchantIds = value; AdditionalData?.Remove("merchantIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIds"); else _explicitNullProperties?.Remove("merchantIds"); } }
         private List<string> _explicitNullValueMerchantIds = default!;
 #endif
         /// <summary>Custom test notification object. Required when the [`types`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_types) list contains **CUSTOM**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; AdditionalData?.Remove("notification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification? _explicitNullValueNotification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification Notification { get => _explicitNullValueNotification; set { _explicitNullValueNotification = value; AdditionalData?.Remove("notification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification"); else _explicitNullProperties?.Remove("notification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TestCompanyWebhookRequestNotification _explicitNullValueNotification = default!;
 #endif
         /// <summary>List of event codes for which to send test notifications. Only the webhook types below are supported. Possible values if webhook `type`: **standard**:* **AUTHORISATION*** **CHARGEBACK_REVERSED*** **ORDER_CLOSED*** **ORDER_OPENED*** **PAIDOUT_REVERSED*** **PAYOUT_THIRDPARTY*** **REFUNDED_REVERSED*** **REFUND_WITH_DATA*** **REPORT_AVAILABLE*** **CUSTOM** - set your custom notification fields in the [`notification`](https://docs.adyen.com/api-explorer/#/ManagementService/v1/post/companies/{companyId}/webhooks/{webhookId}/test__reqParam_notification) object.Possible values if webhook `type`: **banktransfer-notification**:* **PENDING**Possible values if webhook `type`: **report-notification**:* **REPORT_AVAILABLE**Possible values if webhook `type`: **ideal-notification**:* **AUTHORISATION**Possible values if webhook `type`: **pending-notification**:* **PENDING**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        public List<string>? Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; AdditionalData?.Remove("types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
         private List<string>? _explicitNullValueTypes = default!;
 #nullable restore
 #else
-        public List<string> Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
+        public List<string> Types { get => _explicitNullValueTypes; set { _explicitNullValueTypes = value; AdditionalData?.Remove("types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("types"); else _explicitNullProperties?.Remove("types"); } }
         private List<string> _explicitNullValueTypes = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
-            if (parseNode.GetChildNode("StoredValueData") is { } nullNodeStoredValueData && nullNodeStoredValueData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueData = null;
+            if (parseNode.GetChildNode("SaleData") is null) { _explicitNullValueSaleData = default!; _explicitNullProperties?.Remove("SaleData"); }
+            else if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
+            if (parseNode.GetChildNode("StoredValueData") is null) { _explicitNullValueStoredValueData = default!; _explicitNullProperties?.Remove("StoredValueData"); }
+            else if (parseNode.GetChildNode("StoredValueData") is { } nullNodeStoredValueData && nullNodeStoredValueData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Data related to the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; AdditionalData?.Remove("SaleData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData? _explicitNullValueSaleData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; AdditionalData?.Remove("SaleData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueRequestSaleData _explicitNullValueSaleData = default!;
 #endif
         /// <summary>Data related to the stored value card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData>? StoredValueData { get => _explicitNullValueStoredValueData; set { _explicitNullValueStoredValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueData"); else _explicitNullProperties?.Remove("StoredValueData"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData>? StoredValueData { get => _explicitNullValueStoredValueData; set { _explicitNullValueStoredValueData = value; AdditionalData?.Remove("StoredValueData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueData"); else _explicitNullProperties?.Remove("StoredValueData"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData>? _explicitNullValueStoredValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData> StoredValueData { get => _explicitNullValueStoredValueData; set { _explicitNullValueStoredValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueData"); else _explicitNullProperties?.Remove("StoredValueData"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData> StoredValueData { get => _explicitNullValueStoredValueData; set { _explicitNullValueStoredValueData = value; AdditionalData?.Remove("StoredValueData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueData"); else _explicitNullProperties?.Remove("StoredValueData"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueData> _explicitNullValueStoredValueData = default!;
 #endif
         /// <summary>

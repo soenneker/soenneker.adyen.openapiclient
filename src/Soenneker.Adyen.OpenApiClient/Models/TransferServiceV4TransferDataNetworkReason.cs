@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("namespace") is null) { _explicitNullValueNamespace = default!; _explicitNullProperties?.Remove("namespace"); }
+            else if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The network-specific reason code. Use `namespace` to identify the code set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
         /// <summary>A human-readable description of the reason code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The category of codes that `code` belongs to. The `namespace` identifies the payment network and the type of reasonPossible values:*  **ukFpsRejectionCode** : Reason code for a rejected Faster Payments transfer.*  **ukFpsReturnReasonCode** : Reason code for a returned Faster Payments transfer.*  **usAchReturnReasonCode** : Reason code for a returned ACH transfer.*  **usAchCorrectionReasonCode** : Reason code for an ACH Notification of Change.*  **iso8583ResponseCode** : ISO 8583 response code for a card transfer.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace? _explicitNullValueNamespace = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4TransferDataNetworkReason"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace>(); } },
+                { "namespace", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4NetworkReasonNamespace>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNamespace = default; _explicitNullProperties?.Remove("namespace"); AdditionalData["namespace"] = unknown; } else { Namespace = parsed; AdditionalData.Remove("namespace"); } } },
             };
         }
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balance") is { } nullNodeBalance && nullNodeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balance = null;
-            if (parseNode.GetChildNode("onHoldBalance") is { } nullNodeOnHoldBalance && nullNodeOnHoldBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnHoldBalance = null;
-            if (parseNode.GetChildNode("pendingBalance") is { } nullNodePendingBalance && nullNodePendingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingBalance = null;
+            if (parseNode.GetChildNode("balance") is null) { _explicitNullValueBalance = default!; _explicitNullProperties?.Remove("balance"); }
+            else if (parseNode.GetChildNode("balance") is { } nullNodeBalance && nullNodeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balance = null;
+            if (parseNode.GetChildNode("onHoldBalance") is null) { _explicitNullValueOnHoldBalance = default!; _explicitNullProperties?.Remove("onHoldBalance"); }
+            else if (parseNode.GetChildNode("onHoldBalance") is { } nullNodeOnHoldBalance && nullNodeOnHoldBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnHoldBalance = null;
+            if (parseNode.GetChildNode("pendingBalance") is null) { _explicitNullValuePendingBalance = default!; _explicitNullProperties?.Remove("pendingBalance"); }
+            else if (parseNode.GetChildNode("pendingBalance") is { } nullNodePendingBalance && nullNodePendingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingBalance = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of balances held by the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; AdditionalData?.Remove("balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? _explicitNullValueBalance = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; AdditionalData?.Remove("balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> _explicitNullValueBalance = default!;
 #endif
         /// <summary>The list of on hold balances held by the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? OnHoldBalance { get => _explicitNullValueOnHoldBalance; set { _explicitNullValueOnHoldBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onHoldBalance"); else _explicitNullProperties?.Remove("onHoldBalance"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? OnHoldBalance { get => _explicitNullValueOnHoldBalance; set { _explicitNullValueOnHoldBalance = value; AdditionalData?.Remove("onHoldBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onHoldBalance"); else _explicitNullProperties?.Remove("onHoldBalance"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? _explicitNullValueOnHoldBalance = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> OnHoldBalance { get => _explicitNullValueOnHoldBalance; set { _explicitNullValueOnHoldBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onHoldBalance"); else _explicitNullProperties?.Remove("onHoldBalance"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> OnHoldBalance { get => _explicitNullValueOnHoldBalance; set { _explicitNullValueOnHoldBalance = value; AdditionalData?.Remove("onHoldBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onHoldBalance"); else _explicitNullProperties?.Remove("onHoldBalance"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> _explicitNullValueOnHoldBalance = default!;
 #endif
         /// <summary>The list of pending balances held by the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; AdditionalData?.Remove("pendingBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount>? _explicitNullValuePendingBalance = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; AdditionalData?.Remove("pendingBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.FundServiceV6Amount> _explicitNullValuePendingBalance = default!;
 #endif
         /// <summary>

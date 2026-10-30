@@ -17,14 +17,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("industryCode") is { } nullNodeIndustryCode && nullNodeIndustryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndustryCode = null;
-            if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
-            if (parseNode.GetChildNode("problems") is { } nullNodeProblems && nullNodeProblems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Problems = null;
-            if (parseNode.GetChildNode("salesChannels") is { } nullNodeSalesChannels && nullNodeSalesChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesChannels = null;
-            if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
-            if (parseNode.GetChildNode("sourceOfFunds") is { } nullNodeSourceOfFunds && nullNodeSourceOfFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceOfFunds = null;
-            if (parseNode.GetChildNode("webData") is { } nullNodeWebData && nullNodeWebData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebData = null;
-            if (parseNode.GetChildNode("webDataExemption") is { } nullNodeWebDataExemption && nullNodeWebDataExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebDataExemption = null;
+            if (parseNode.GetChildNode("industryCode") is null) { _explicitNullValueIndustryCode = default!; _explicitNullProperties?.Remove("industryCode"); }
+            else if (parseNode.GetChildNode("industryCode") is { } nullNodeIndustryCode && nullNodeIndustryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndustryCode = null;
+            if (parseNode.GetChildNode("legalEntityId") is null) { _explicitNullValueLegalEntityId = default!; _explicitNullProperties?.Remove("legalEntityId"); }
+            else if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
+            if (parseNode.GetChildNode("problems") is null) { _explicitNullValueProblems = default!; _explicitNullProperties?.Remove("problems"); }
+            else if (parseNode.GetChildNode("problems") is { } nullNodeProblems && nullNodeProblems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Problems = null;
+            if (parseNode.GetChildNode("salesChannels") is null) { _explicitNullValueSalesChannels = default!; _explicitNullProperties?.Remove("salesChannels"); }
+            else if (parseNode.GetChildNode("salesChannels") is { } nullNodeSalesChannels && nullNodeSalesChannels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesChannels = null;
+            if (parseNode.GetChildNode("service") is null) { _explicitNullValueService = default!; _explicitNullProperties?.Remove("service"); }
+            else if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
+            if (parseNode.GetChildNode("sourceOfFunds") is null) { _explicitNullValueSourceOfFunds = default!; _explicitNullProperties?.Remove("sourceOfFunds"); }
+            else if (parseNode.GetChildNode("sourceOfFunds") is { } nullNodeSourceOfFunds && nullNodeSourceOfFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceOfFunds = null;
+            if (parseNode.GetChildNode("webData") is null) { _explicitNullValueWebData = default!; _explicitNullProperties?.Remove("webData"); }
+            else if (parseNode.GetChildNode("webData") is { } nullNodeWebData && nullNodeWebData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebData = null;
+            if (parseNode.GetChildNode("webDataExemption") is null) { _explicitNullValueWebDataExemption = default!; _explicitNullProperties?.Remove("webDataExemption"); }
+            else if (parseNode.GetChildNode("webDataExemption") is { } nullNodeWebDataExemption && nullNodeWebDataExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebDataExemption = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,11 +48,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A code that represents the industry of the legal entity for [marketplaces](https://docs.adyen.com/marketplaces/verification-requirements/reference-additional-products/#list-industry-codes) or [platforms](https://docs.adyen.com/platforms/verification-requirements/reference-additional-products/#list-industry-codes). For example, **4431A** for computer software stores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndustryCode { get => _explicitNullValueIndustryCode; set { _explicitNullValueIndustryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industryCode"); else _explicitNullProperties?.Remove("industryCode"); } }
+        public string? IndustryCode { get => _explicitNullValueIndustryCode; set { _explicitNullValueIndustryCode = value; AdditionalData?.Remove("industryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industryCode"); else _explicitNullProperties?.Remove("industryCode"); } }
         private string? _explicitNullValueIndustryCode = default!;
 #nullable restore
 #else
-        public string IndustryCode { get => _explicitNullValueIndustryCode; set { _explicitNullValueIndustryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industryCode"); else _explicitNullProperties?.Remove("industryCode"); } }
+        public string IndustryCode { get => _explicitNullValueIndustryCode; set { _explicitNullValueIndustryCode = value; AdditionalData?.Remove("industryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("industryCode"); else _explicitNullProperties?.Remove("industryCode"); } }
         private string _explicitNullValueIndustryCode = default!;
 #endif
         /// <summary>The description of the industry code.</summary>
@@ -58,64 +66,64 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Unique identifier of the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities__resParam_id) that owns the business line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        public string? LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; AdditionalData?.Remove("legalEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
         private string? _explicitNullValueLegalEntityId = default!;
 #nullable restore
 #else
-        public string LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        public string LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; AdditionalData?.Remove("legalEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
         private string _explicitNullValueLegalEntityId = default!;
 #endif
         /// <summary>The verification errors related to capabilities for this supporting entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>? Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>? Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; AdditionalData?.Remove("problems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>? _explicitNullValueProblems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; AdditionalData?.Remove("problems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> _explicitNullValueProblems = default!;
 #endif
         /// <summary>A list of channels where goods or services are sold.Possible values: **pos**, **posMoto**, **eCommerce**, **ecomMoto**, **payByLink**.Required only in combination with the `service` **paymentProcessing**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SalesChannels { get => _explicitNullValueSalesChannels; set { _explicitNullValueSalesChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesChannels"); else _explicitNullProperties?.Remove("salesChannels"); } }
+        public List<string>? SalesChannels { get => _explicitNullValueSalesChannels; set { _explicitNullValueSalesChannels = value; AdditionalData?.Remove("salesChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesChannels"); else _explicitNullProperties?.Remove("salesChannels"); } }
         private List<string>? _explicitNullValueSalesChannels = default!;
 #nullable restore
 #else
-        public List<string> SalesChannels { get => _explicitNullValueSalesChannels; set { _explicitNullValueSalesChannels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesChannels"); else _explicitNullProperties?.Remove("salesChannels"); } }
+        public List<string> SalesChannels { get => _explicitNullValueSalesChannels; set { _explicitNullValueSalesChannels = value; AdditionalData?.Remove("salesChannels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesChannels"); else _explicitNullProperties?.Remove("salesChannels"); } }
         private List<string> _explicitNullValueSalesChannels = default!;
 #endif
         /// <summary>The service for which you are creating the business line.Possible values:*  **paymentProcessing***  **issuing***  **banking**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineService? _explicitNullValueService = default!;
         /// <summary>Contains information about the source of your user&apos;s funds. Required only if the `service` is **banking** or **issuing**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds? SourceOfFunds { get => _explicitNullValueSourceOfFunds; set { _explicitNullValueSourceOfFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceOfFunds"); else _explicitNullProperties?.Remove("sourceOfFunds"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds? SourceOfFunds { get => _explicitNullValueSourceOfFunds; set { _explicitNullValueSourceOfFunds = value; AdditionalData?.Remove("sourceOfFunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceOfFunds"); else _explicitNullProperties?.Remove("sourceOfFunds"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds? _explicitNullValueSourceOfFunds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds SourceOfFunds { get => _explicitNullValueSourceOfFunds; set { _explicitNullValueSourceOfFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceOfFunds"); else _explicitNullProperties?.Remove("sourceOfFunds"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds SourceOfFunds { get => _explicitNullValueSourceOfFunds; set { _explicitNullValueSourceOfFunds = value; AdditionalData?.Remove("sourceOfFunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceOfFunds"); else _explicitNullProperties?.Remove("sourceOfFunds"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds _explicitNullValueSourceOfFunds = default!;
 #endif
         /// <summary>List of website URLs where your user&apos;s goods or services are sold. When this is required for a service but your user does not have an online presence, provide the reason in the `webDataExemption` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebData>? WebData { get => _explicitNullValueWebData; set { _explicitNullValueWebData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webData"); else _explicitNullProperties?.Remove("webData"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebData>? WebData { get => _explicitNullValueWebData; set { _explicitNullValueWebData = value; AdditionalData?.Remove("webData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webData"); else _explicitNullProperties?.Remove("webData"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.WebData>? _explicitNullValueWebData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebData> WebData { get => _explicitNullValueWebData; set { _explicitNullValueWebData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webData"); else _explicitNullProperties?.Remove("webData"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.WebData> WebData { get => _explicitNullValueWebData; set { _explicitNullValueWebData = value; AdditionalData?.Remove("webData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webData"); else _explicitNullProperties?.Remove("webData"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.WebData> _explicitNullValueWebData = default!;
 #endif
         /// <summary>The reason why the web data is not provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption? WebDataExemption { get => _explicitNullValueWebDataExemption; set { _explicitNullValueWebDataExemption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webDataExemption"); else _explicitNullProperties?.Remove("webDataExemption"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption? WebDataExemption { get => _explicitNullValueWebDataExemption; set { _explicitNullValueWebDataExemption = value; AdditionalData?.Remove("webDataExemption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webDataExemption"); else _explicitNullProperties?.Remove("webDataExemption"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption? _explicitNullValueWebDataExemption = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption WebDataExemption { get => _explicitNullValueWebDataExemption; set { _explicitNullValueWebDataExemption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webDataExemption"); else _explicitNullProperties?.Remove("webDataExemption"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption WebDataExemption { get => _explicitNullValueWebDataExemption; set { _explicitNullValueWebDataExemption = value; AdditionalData?.Remove("webDataExemption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webDataExemption"); else _explicitNullProperties?.Remove("webDataExemption"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption _explicitNullValueWebDataExemption = default!;
 #endif
         /// <summary>
@@ -149,7 +157,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "problems", n => { Problems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "salesChannels", n => { SalesChannels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "service", n => { Service = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineService>(); } },
+                { "service", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineService>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueService = default; _explicitNullProperties?.Remove("service"); AdditionalData["service"] = unknown; } else { Service = parsed; AdditionalData.Remove("service"); } } },
                 { "sourceOfFunds", n => { SourceOfFunds = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineSourceOfFunds.CreateFromDiscriminatorValue); } },
                 { "webData", n => { WebData = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.WebData>(global::Soenneker.Adyen.OpenApiClient.Models.WebData.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webDataExemption", n => { WebDataExemption = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption>(global::Soenneker.Adyen.OpenApiClient.Models.BusinessLineWebDataExemption.CreateFromDiscriminatorValue); } },

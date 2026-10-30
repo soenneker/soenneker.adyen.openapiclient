@@ -128,7 +128,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevices.RegisteredDevicesRequestBuilder.RegisteredDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/BalancePlatformService-v2/registeredDevices?paymentInstrumentId={paymentInstrumentId}{&pageNumber*,pageSize*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/BalancePlatformService-v2/registeredDevices?paymentInstrumentId={paymentInstrumentId}{&pageNumber*,pageSize*}", RequestAdapter.BaseUrl, "https://balanceplatform-api-test.adyen.com/bcl/v2", "/BalancePlatformService-v2/registeredDevices", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -149,7 +149,7 @@ namespace Soenneker.Adyen.OpenApiClient.BalancePlatformServiceV2.RegisteredDevic
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://balanceplatform-api-test.adyen.com/bcl/v2", "/BalancePlatformService-v2/registeredDevices", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

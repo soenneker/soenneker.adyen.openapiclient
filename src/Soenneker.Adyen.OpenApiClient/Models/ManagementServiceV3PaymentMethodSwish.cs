@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("swishNumber") is { } nullNodeSwishNumber && nullNodeSwishNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SwishNumber = null;
+            if (parseNode.GetChildNode("swishNumber") is null) { _explicitNullValueSwishNumber = default!; _explicitNullProperties?.Remove("swishNumber"); }
+            else if (parseNode.GetChildNode("swishNumber") is { } nullNodeSwishNumber && nullNodeSwishNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SwishNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Swish number. Format: 10 digits without spaces. For example, **1231111111**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SwishNumber { get => _explicitNullValueSwishNumber; set { _explicitNullValueSwishNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swishNumber"); else _explicitNullProperties?.Remove("swishNumber"); } }
+        public string? SwishNumber { get => _explicitNullValueSwishNumber; set { _explicitNullValueSwishNumber = value; AdditionalData?.Remove("swishNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swishNumber"); else _explicitNullProperties?.Remove("swishNumber"); } }
         private string? _explicitNullValueSwishNumber = default!;
 #nullable restore
 #else
-        public string SwishNumber { get => _explicitNullValueSwishNumber; set { _explicitNullValueSwishNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swishNumber"); else _explicitNullProperties?.Remove("swishNumber"); } }
+        public string SwishNumber { get => _explicitNullValueSwishNumber; set { _explicitNullValueSwishNumber = value; AdditionalData?.Remove("swishNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("swishNumber"); else _explicitNullProperties?.Remove("swishNumber"); } }
         private string _explicitNullValueSwishNumber = default!;
 #endif
         /// <summary>

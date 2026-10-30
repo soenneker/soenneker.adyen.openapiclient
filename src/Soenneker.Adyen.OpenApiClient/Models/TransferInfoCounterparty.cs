@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
-            if (parseNode.GetChildNode("bankAccount") is { } nullNodeBankAccount && nullNodeBankAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccount = null;
-            if (parseNode.GetChildNode("card") is { } nullNodeCard && nullNodeCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Card = null;
-            if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
+            if (parseNode.GetChildNode("balanceAccountId") is null) { _explicitNullValueBalanceAccountId = default!; _explicitNullProperties?.Remove("balanceAccountId"); }
+            else if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
+            if (parseNode.GetChildNode("bankAccount") is null) { _explicitNullValueBankAccount = default!; _explicitNullProperties?.Remove("bankAccount"); }
+            else if (parseNode.GetChildNode("bankAccount") is { } nullNodeBankAccount && nullNodeBankAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccount = null;
+            if (parseNode.GetChildNode("card") is null) { _explicitNullValueCard = default!; _explicitNullProperties?.Remove("card"); }
+            else if (parseNode.GetChildNode("card") is { } nullNodeCard && nullNodeCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Card = null;
+            if (parseNode.GetChildNode("transferInstrumentId") is null) { _explicitNullValueTransferInstrumentId = default!; _explicitNullProperties?.Remove("transferInstrumentId"); }
+            else if (parseNode.GetChildNode("transferInstrumentId") is { } nullNodeTransferInstrumentId && nullNodeTransferInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferInstrumentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the counterparty [balance account](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string? _explicitNullValueBalanceAccountId = default!;
 #nullable restore
 #else
-        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string _explicitNullValueBalanceAccountId = default!;
 #endif
         /// <summary>Contains information about the counterparty bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3BankAccount? BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3BankAccount? BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; AdditionalData?.Remove("bankAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3BankAccount? _explicitNullValueBankAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3BankAccount BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3BankAccount BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; AdditionalData?.Remove("bankAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3BankAccount _explicitNullValueBankAccount = default!;
 #endif
         /// <summary>Contains information about the counterparty card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3Card? Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3Card? Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; AdditionalData?.Remove("card"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3Card? _explicitNullValueCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3Card Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3Card Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; AdditionalData?.Remove("card"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CounterpartyInfoV3Card _explicitNullValueCard = default!;
 #endif
         /// <summary>The unique identifier of the counterparty [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        public string? TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; AdditionalData?.Remove("transferInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
         private string? _explicitNullValueTransferInstrumentId = default!;
 #nullable restore
 #else
-        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
+        public string TransferInstrumentId { get => _explicitNullValueTransferInstrumentId; set { _explicitNullValueTransferInstrumentId = value; AdditionalData?.Remove("transferInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferInstrumentId"); else _explicitNullProperties?.Remove("transferInstrumentId"); } }
         private string _explicitNullValueTransferInstrumentId = default!;
 #endif
         /// <summary>

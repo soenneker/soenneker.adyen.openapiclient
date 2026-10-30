@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
-            if (parseNode.GetChildNode("payoutState") is { } nullNodePayoutState && nullNodePayoutState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutState = null;
-            if (parseNode.GetChildNode("processingState") is { } nullNodeProcessingState && nullNodeProcessingState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingState = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("statusReason") is { } nullNodeStatusReason && nullNodeStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReason = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("payoutState") is null) { _explicitNullValuePayoutState = default!; _explicitNullProperties?.Remove("payoutState"); }
+            else if (parseNode.GetChildNode("payoutState") is { } nullNodePayoutState && nullNodePayoutState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutState = null;
+            if (parseNode.GetChildNode("processingState") is null) { _explicitNullValueProcessingState = default!; _explicitNullProperties?.Remove("processingState"); }
+            else if (parseNode.GetChildNode("processingState") is { } nullNodeProcessingState && nullNodeProcessingState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingState = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("statusReason") is null) { _explicitNullValueStatusReason = default!; _explicitNullProperties?.Remove("statusReason"); }
+            else if (parseNode.GetChildNode("statusReason") is { } nullNodeStatusReason && nullNodeStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReason = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of events scheduled for the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent> _explicitNullValueEvents = default!;
 #endif
         /// <summary>The payout state of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState? PayoutState { get => _explicitNullValuePayoutState; set { _explicitNullValuePayoutState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutState"); else _explicitNullProperties?.Remove("payoutState"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState? PayoutState { get => _explicitNullValuePayoutState; set { _explicitNullValuePayoutState = value; AdditionalData?.Remove("payoutState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutState"); else _explicitNullProperties?.Remove("payoutState"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState? _explicitNullValuePayoutState = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState PayoutState { get => _explicitNullValuePayoutState; set { _explicitNullValuePayoutState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutState"); else _explicitNullProperties?.Remove("payoutState"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState PayoutState { get => _explicitNullValuePayoutState; set { _explicitNullValuePayoutState = value; AdditionalData?.Remove("payoutState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutState"); else _explicitNullProperties?.Remove("payoutState"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState _explicitNullValuePayoutState = default!;
 #endif
         /// <summary>The processing state of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState? ProcessingState { get => _explicitNullValueProcessingState; set { _explicitNullValueProcessingState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingState"); else _explicitNullProperties?.Remove("processingState"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState? ProcessingState { get => _explicitNullValueProcessingState; set { _explicitNullValueProcessingState = value; AdditionalData?.Remove("processingState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingState"); else _explicitNullProperties?.Remove("processingState"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState? _explicitNullValueProcessingState = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState ProcessingState { get => _explicitNullValueProcessingState; set { _explicitNullValueProcessingState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingState"); else _explicitNullProperties?.Remove("processingState"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState ProcessingState { get => _explicitNullValueProcessingState; set { _explicitNullValueProcessingState = value; AdditionalData?.Remove("processingState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingState"); else _explicitNullProperties?.Remove("processingState"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState _explicitNullValueProcessingState = default!;
 #endif
         /// <summary>The status of the account holder.&gt;Permitted values: `Active`, `Inactive`, `Suspended`, `Closed`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus? _explicitNullValueStatus = default!;
         /// <summary>The reason why the status was assigned to the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
+        public string? StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; AdditionalData?.Remove("statusReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
         private string? _explicitNullValueStatusReason = default!;
 #nullable restore
 #else
-        public string StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
+        public string StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; AdditionalData?.Remove("statusReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
         private string _explicitNullValueStatusReason = default!;
 #endif
         /// <summary>
@@ -98,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent>(global::Soenneker.Adyen.OpenApiClient.Models.AccountEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payoutState", n => { PayoutState = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusPayoutState.CreateFromDiscriminatorValue); } },
                 { "processingState", n => { ProcessingState = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState>(global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusProcessingState.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderStatusStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
             };
         }

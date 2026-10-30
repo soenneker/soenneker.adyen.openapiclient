@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("live") is { } nullNodeLive && nullNodeLive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Live = null;
-            if (parseNode.GetChildNode("notificationItems") is { } nullNodeNotificationItems && nullNodeNotificationItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationItems = null;
+            if (parseNode.GetChildNode("live") is null) { _explicitNullValueLive = default!; _explicitNullProperties?.Remove("live"); }
+            else if (parseNode.GetChildNode("live") is { } nullNodeLive && nullNodeLive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Live = null;
+            if (parseNode.GetChildNode("notificationItems") is null) { _explicitNullValueNotificationItems = default!; _explicitNullProperties?.Remove("notificationItems"); }
+            else if (parseNode.GetChildNode("notificationItems") is { } nullNodeNotificationItems && nullNodeNotificationItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationItems = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Informs about the origin of the notification. The value is **true** when originating from the live environment, **false** for the test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Live { get => _explicitNullValueLive; set { _explicitNullValueLive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live"); else _explicitNullProperties?.Remove("live"); } }
+        public string? Live { get => _explicitNullValueLive; set { _explicitNullValueLive = value; AdditionalData?.Remove("live"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live"); else _explicitNullProperties?.Remove("live"); } }
         private string? _explicitNullValueLive = default!;
 #nullable restore
 #else
-        public string Live { get => _explicitNullValueLive; set { _explicitNullValueLive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live"); else _explicitNullProperties?.Remove("live"); } }
+        public string Live { get => _explicitNullValueLive; set { _explicitNullValueLive = value; AdditionalData?.Remove("live"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live"); else _explicitNullProperties?.Remove("live"); } }
         private string _explicitNullValueLive = default!;
 #endif
         /// <summary>A container object for the details included in the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DisputesNotificationRequestItemWrapper>? NotificationItems { get => _explicitNullValueNotificationItems; set { _explicitNullValueNotificationItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationItems"); else _explicitNullProperties?.Remove("notificationItems"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DisputesNotificationRequestItemWrapper>? NotificationItems { get => _explicitNullValueNotificationItems; set { _explicitNullValueNotificationItems = value; AdditionalData?.Remove("notificationItems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationItems"); else _explicitNullProperties?.Remove("notificationItems"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DisputesNotificationRequestItemWrapper>? _explicitNullValueNotificationItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DisputesNotificationRequestItemWrapper> NotificationItems { get => _explicitNullValueNotificationItems; set { _explicitNullValueNotificationItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationItems"); else _explicitNullProperties?.Remove("notificationItems"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DisputesNotificationRequestItemWrapper> NotificationItems { get => _explicitNullValueNotificationItems; set { _explicitNullValueNotificationItems = value; AdditionalData?.Remove("notificationItems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationItems"); else _explicitNullProperties?.Remove("notificationItems"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DisputesNotificationRequestItemWrapper> _explicitNullValueNotificationItems = default!;
 #endif
         /// <summary>

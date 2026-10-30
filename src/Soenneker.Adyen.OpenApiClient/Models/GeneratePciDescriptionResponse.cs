@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("pciTemplateReferences") is { } nullNodePciTemplateReferences && nullNodePciTemplateReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PciTemplateReferences = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("pciTemplateReferences") is null) { _explicitNullValuePciTemplateReferences = default!; _explicitNullProperties?.Remove("pciTemplateReferences"); }
+            else if (parseNode.GetChildNode("pciTemplateReferences") is { } nullNodePciTemplateReferences && nullNodePciTemplateReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PciTemplateReferences = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The generated questionnaires in a base64 encoded format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[]? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[] _explicitNullValueContent = default!;
 #endif
         /// <summary>The two-letter [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code for the questionnaire. For example, **en**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The array of Adyen-generated unique identifiers for the questionnaires. If empty, the user is not required to sign questionnaires.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PciTemplateReferences { get => _explicitNullValuePciTemplateReferences; set { _explicitNullValuePciTemplateReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciTemplateReferences"); else _explicitNullProperties?.Remove("pciTemplateReferences"); } }
+        public List<string>? PciTemplateReferences { get => _explicitNullValuePciTemplateReferences; set { _explicitNullValuePciTemplateReferences = value; AdditionalData?.Remove("pciTemplateReferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciTemplateReferences"); else _explicitNullProperties?.Remove("pciTemplateReferences"); } }
         private List<string>? _explicitNullValuePciTemplateReferences = default!;
 #nullable restore
 #else
-        public List<string> PciTemplateReferences { get => _explicitNullValuePciTemplateReferences; set { _explicitNullValuePciTemplateReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciTemplateReferences"); else _explicitNullProperties?.Remove("pciTemplateReferences"); } }
+        public List<string> PciTemplateReferences { get => _explicitNullValuePciTemplateReferences; set { _explicitNullValuePciTemplateReferences = value; AdditionalData?.Remove("pciTemplateReferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciTemplateReferences"); else _explicitNullProperties?.Remove("pciTemplateReferences"); } }
         private List<string> _explicitNullValuePciTemplateReferences = default!;
 #endif
         /// <summary>

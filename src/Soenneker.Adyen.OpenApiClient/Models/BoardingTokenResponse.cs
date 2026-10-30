@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("boardingToken") is { } nullNodeBoardingToken && nullNodeBoardingToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardingToken = null;
-            if (parseNode.GetChildNode("installationId") is { } nullNodeInstallationId && nullNodeInstallationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallationId = null;
+            if (parseNode.GetChildNode("boardingToken") is null) { _explicitNullValueBoardingToken = default!; _explicitNullProperties?.Remove("boardingToken"); }
+            else if (parseNode.GetChildNode("boardingToken") is { } nullNodeBoardingToken && nullNodeBoardingToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardingToken = null;
+            if (parseNode.GetChildNode("installationId") is null) { _explicitNullValueInstallationId = default!; _explicitNullProperties?.Remove("installationId"); }
+            else if (parseNode.GetChildNode("installationId") is { } nullNodeInstallationId && nullNodeInstallationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallationId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The boarding token that allows the Payments App to board.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BoardingToken { get => _explicitNullValueBoardingToken; set { _explicitNullValueBoardingToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingToken"); else _explicitNullProperties?.Remove("boardingToken"); } }
+        public string? BoardingToken { get => _explicitNullValueBoardingToken; set { _explicitNullValueBoardingToken = value; AdditionalData?.Remove("boardingToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingToken"); else _explicitNullProperties?.Remove("boardingToken"); } }
         private string? _explicitNullValueBoardingToken = default!;
 #nullable restore
 #else
-        public string BoardingToken { get => _explicitNullValueBoardingToken; set { _explicitNullValueBoardingToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingToken"); else _explicitNullProperties?.Remove("boardingToken"); } }
+        public string BoardingToken { get => _explicitNullValueBoardingToken; set { _explicitNullValueBoardingToken = value; AdditionalData?.Remove("boardingToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingToken"); else _explicitNullProperties?.Remove("boardingToken"); } }
         private string _explicitNullValueBoardingToken = default!;
 #endif
         /// <summary>The unique identifier of the Payments App instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
+        public string? InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; AdditionalData?.Remove("installationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
         private string? _explicitNullValueInstallationId = default!;
 #nullable restore
 #else
-        public string InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
+        public string InstallationId { get => _explicitNullValueInstallationId; set { _explicitNullValueInstallationId = value; AdditionalData?.Remove("installationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationId"); else _explicitNullProperties?.Remove("installationId"); } }
         private string _explicitNullValueInstallationId = default!;
 #endif
         /// <summary>

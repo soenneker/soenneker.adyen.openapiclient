@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("maxAmount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
-            if (parseNode.GetChildNode("singleTransactionLimit") is { } nullNodeSingleTransactionLimit && nullNodeSingleTransactionLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleTransactionLimit = null;
-            if (parseNode.GetChildNode("singleUse") is { } nullNodeSingleUse && nullNodeSingleUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleUse = null;
+            if (parseNode.GetChildNode("maxAmount") is null) { _explicitNullValueMaxAmount = default!; _explicitNullProperties?.Remove("maxAmount"); }
+            else if (parseNode.GetChildNode("maxAmount") is { } nullNodeMaxAmount && nullNodeMaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxAmount = null;
+            if (parseNode.GetChildNode("singleTransactionLimit") is null) { _explicitNullValueSingleTransactionLimit = default!; _explicitNullProperties?.Remove("singleTransactionLimit"); }
+            else if (parseNode.GetChildNode("singleTransactionLimit") is { } nullNodeSingleTransactionLimit && nullNodeSingleTransactionLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleTransactionLimit = null;
+            if (parseNode.GetChildNode("singleUse") is null) { _explicitNullValueSingleUse = default!; _explicitNullProperties?.Remove("singleUse"); }
+            else if (parseNode.GetChildNode("singleUse") is { } nullNodeSingleUse && nullNodeSingleUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SingleUse = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The total sum amount of one or more payments made using this permit may not exceed this amount if set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionMaxAmount? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionMaxAmount? MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; AdditionalData?.Remove("maxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionMaxAmount? _explicitNullValueMaxAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionMaxAmount MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionMaxAmount MaxAmount { get => _explicitNullValueMaxAmount; set { _explicitNullValueMaxAmount = value; AdditionalData?.Remove("maxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxAmount"); else _explicitNullProperties?.Remove("maxAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionMaxAmount _explicitNullValueMaxAmount = default!;
 #endif
         /// <summary>The amount of any single payment using this permit may not exceed this amount if set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionSingleTransactionLimit? SingleTransactionLimit { get => _explicitNullValueSingleTransactionLimit; set { _explicitNullValueSingleTransactionLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singleTransactionLimit"); else _explicitNullProperties?.Remove("singleTransactionLimit"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionSingleTransactionLimit? SingleTransactionLimit { get => _explicitNullValueSingleTransactionLimit; set { _explicitNullValueSingleTransactionLimit = value; AdditionalData?.Remove("singleTransactionLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singleTransactionLimit"); else _explicitNullProperties?.Remove("singleTransactionLimit"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionSingleTransactionLimit? _explicitNullValueSingleTransactionLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionSingleTransactionLimit SingleTransactionLimit { get => _explicitNullValueSingleTransactionLimit; set { _explicitNullValueSingleTransactionLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singleTransactionLimit"); else _explicitNullProperties?.Remove("singleTransactionLimit"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionSingleTransactionLimit SingleTransactionLimit { get => _explicitNullValueSingleTransactionLimit; set { _explicitNullValueSingleTransactionLimit = value; AdditionalData?.Remove("singleTransactionLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singleTransactionLimit"); else _explicitNullProperties?.Remove("singleTransactionLimit"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionSingleTransactionLimit _explicitNullValueSingleTransactionLimit = default!;
 #endif
         /// <summary>Only a single payment can be made using this permit if set to true, otherwise multiple payments are allowed.</summary>
-        public bool? SingleUse { get => _explicitNullValueSingleUse; set { _explicitNullValueSingleUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singleUse"); else _explicitNullProperties?.Remove("singleUse"); } }
+        public bool? SingleUse { get => _explicitNullValueSingleUse; set { _explicitNullValueSingleUse = value; AdditionalData?.Remove("singleUse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("singleUse"); else _explicitNullProperties?.Remove("singleUse"); } }
         private bool? _explicitNullValueSingleUse = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed"/> and sets the default values.

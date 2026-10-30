@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("issuerId") is { } nullNodeIssuerId && nullNodeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerId = null;
-            if (parseNode.GetChildNode("transToken") is { } nullNodeTransToken && nullNodeTransToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransToken = null;
+            if (parseNode.GetChildNode("issuerId") is null) { _explicitNullValueIssuerId = default!; _explicitNullProperties?.Remove("issuerId"); }
+            else if (parseNode.GetChildNode("issuerId") is { } nullNodeIssuerId && nullNodeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerId = null;
+            if (parseNode.GetChildNode("transToken") is null) { _explicitNullValueTransToken = default!; _explicitNullProperties?.Remove("transToken"); }
+            else if (parseNode.GetChildNode("transToken") is { } nullNodeTransToken && nullNodeTransToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The OPI issuer id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
+        public string? IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
         private string? _explicitNullValueIssuerId = default!;
 #nullable restore
 #else
-        public string IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
+        public string IssuerId { get => _explicitNullValueIssuerId; set { _explicitNullValueIssuerId = value; AdditionalData?.Remove("issuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerId"); else _explicitNullProperties?.Remove("issuerId"); } }
         private string _explicitNullValueIssuerId = default!;
 #endif
         /// <summary>The OPI transaction token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransToken { get => _explicitNullValueTransToken; set { _explicitNullValueTransToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transToken"); else _explicitNullProperties?.Remove("transToken"); } }
+        public string? TransToken { get => _explicitNullValueTransToken; set { _explicitNullValueTransToken = value; AdditionalData?.Remove("transToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transToken"); else _explicitNullProperties?.Remove("transToken"); } }
         private string? _explicitNullValueTransToken = default!;
 #nullable restore
 #else
-        public string TransToken { get => _explicitNullValueTransToken; set { _explicitNullValueTransToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transToken"); else _explicitNullProperties?.Remove("transToken"); } }
+        public string TransToken { get => _explicitNullValueTransToken; set { _explicitNullValueTransToken = value; AdditionalData?.Remove("transToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transToken"); else _explicitNullProperties?.Remove("transToken"); } }
         private string _explicitNullValueTransToken = default!;
 #endif
         /// <summary>

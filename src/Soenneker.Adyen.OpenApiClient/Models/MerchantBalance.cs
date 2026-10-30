@@ -17,12 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("availableFund") is { } nullNodeAvailableFund && nullNodeAvailableFund.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableFund = null;
-            if (parseNode.GetChildNode("deposit") is { } nullNodeDeposit && nullNodeDeposit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deposit = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("nextPayout") is { } nullNodeNextPayout && nullNodeNextPayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPayout = null;
-            if (parseNode.GetChildNode("pendingBalance") is { } nullNodePendingBalance && nullNodePendingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingBalance = null;
-            if (parseNode.GetChildNode("reserve") is { } nullNodeReserve && nullNodeReserve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserve = null;
+            if (parseNode.GetChildNode("availableFund") is null) { _explicitNullValueAvailableFund = default!; _explicitNullProperties?.Remove("availableFund"); }
+            else if (parseNode.GetChildNode("availableFund") is { } nullNodeAvailableFund && nullNodeAvailableFund.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableFund = null;
+            if (parseNode.GetChildNode("deposit") is null) { _explicitNullValueDeposit = default!; _explicitNullProperties?.Remove("deposit"); }
+            else if (parseNode.GetChildNode("deposit") is { } nullNodeDeposit && nullNodeDeposit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deposit = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("nextPayout") is null) { _explicitNullValueNextPayout = default!; _explicitNullProperties?.Remove("nextPayout"); }
+            else if (parseNode.GetChildNode("nextPayout") is { } nullNodeNextPayout && nullNodeNextPayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPayout = null;
+            if (parseNode.GetChildNode("pendingBalance") is null) { _explicitNullValuePendingBalance = default!; _explicitNullProperties?.Remove("pendingBalance"); }
+            else if (parseNode.GetChildNode("pendingBalance") is { } nullNodePendingBalance && nullNodePendingBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingBalance = null;
+            if (parseNode.GetChildNode("reserve") is null) { _explicitNullValueReserve = default!; _explicitNullProperties?.Remove("reserve"); }
+            else if (parseNode.GetChildNode("reserve") is { } nullNodeReserve && nullNodeReserve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserve = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The availableFund property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? AvailableFund { get => _explicitNullValueAvailableFund; set { _explicitNullValueAvailableFund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableFund"); else _explicitNullProperties?.Remove("availableFund"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? AvailableFund { get => _explicitNullValueAvailableFund; set { _explicitNullValueAvailableFund = value; AdditionalData?.Remove("availableFund"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableFund"); else _explicitNullProperties?.Remove("availableFund"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? _explicitNullValueAvailableFund = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount AvailableFund { get => _explicitNullValueAvailableFund; set { _explicitNullValueAvailableFund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableFund"); else _explicitNullProperties?.Remove("availableFund"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount AvailableFund { get => _explicitNullValueAvailableFund; set { _explicitNullValueAvailableFund = value; AdditionalData?.Remove("availableFund"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("availableFund"); else _explicitNullProperties?.Remove("availableFund"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount _explicitNullValueAvailableFund = default!;
 #endif
         /// <summary>The deposit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? Deposit { get => _explicitNullValueDeposit; set { _explicitNullValueDeposit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deposit"); else _explicitNullProperties?.Remove("deposit"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? Deposit { get => _explicitNullValueDeposit; set { _explicitNullValueDeposit = value; AdditionalData?.Remove("deposit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deposit"); else _explicitNullProperties?.Remove("deposit"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? _explicitNullValueDeposit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount Deposit { get => _explicitNullValueDeposit; set { _explicitNullValueDeposit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deposit"); else _explicitNullProperties?.Remove("deposit"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount Deposit { get => _explicitNullValueDeposit; set { _explicitNullValueDeposit = value; AdditionalData?.Remove("deposit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deposit"); else _explicitNullProperties?.Remove("deposit"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount _explicitNullValueDeposit = default!;
 #endif
         /// <summary>The merchantAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>The nextPayout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? NextPayout { get => _explicitNullValueNextPayout; set { _explicitNullValueNextPayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPayout"); else _explicitNullProperties?.Remove("nextPayout"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? NextPayout { get => _explicitNullValueNextPayout; set { _explicitNullValueNextPayout = value; AdditionalData?.Remove("nextPayout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPayout"); else _explicitNullProperties?.Remove("nextPayout"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? _explicitNullValueNextPayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount NextPayout { get => _explicitNullValueNextPayout; set { _explicitNullValueNextPayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPayout"); else _explicitNullProperties?.Remove("nextPayout"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount NextPayout { get => _explicitNullValueNextPayout; set { _explicitNullValueNextPayout = value; AdditionalData?.Remove("nextPayout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPayout"); else _explicitNullProperties?.Remove("nextPayout"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount _explicitNullValueNextPayout = default!;
 #endif
         /// <summary>The pendingBalance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; AdditionalData?.Remove("pendingBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? _explicitNullValuePendingBalance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount PendingBalance { get => _explicitNullValuePendingBalance; set { _explicitNullValuePendingBalance = value; AdditionalData?.Remove("pendingBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingBalance"); else _explicitNullProperties?.Remove("pendingBalance"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount _explicitNullValuePendingBalance = default!;
 #endif
         /// <summary>The reserve property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? Reserve { get => _explicitNullValueReserve; set { _explicitNullValueReserve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserve"); else _explicitNullProperties?.Remove("reserve"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? Reserve { get => _explicitNullValueReserve; set { _explicitNullValueReserve = value; AdditionalData?.Remove("reserve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserve"); else _explicitNullProperties?.Remove("reserve"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount? _explicitNullValueReserve = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount Reserve { get => _explicitNullValueReserve; set { _explicitNullValueReserve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserve"); else _explicitNullProperties?.Remove("reserve"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount Reserve { get => _explicitNullValueReserve; set { _explicitNullValueReserve = value; AdditionalData?.Remove("reserve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserve"); else _explicitNullProperties?.Remove("reserve"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalanceControlServiceV2Amount _explicitNullValueReserve = default!;
 #endif
         /// <summary>

@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("payoutMethodCode") is { } nullNodePayoutMethodCode && nullNodePayoutMethodCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethodCode = null;
-            if (parseNode.GetChildNode("payoutMethodReference") is { } nullNodePayoutMethodReference && nullNodePayoutMethodReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethodReference = null;
-            if (parseNode.GetChildNode("recurringDetailReference") is { } nullNodeRecurringDetailReference && nullNodeRecurringDetailReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetailReference = null;
-            if (parseNode.GetChildNode("shopperReference") is { } nullNodeShopperReference && nullNodeShopperReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperReference = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("payoutMethodCode") is null) { _explicitNullValuePayoutMethodCode = default!; _explicitNullProperties?.Remove("payoutMethodCode"); }
+            else if (parseNode.GetChildNode("payoutMethodCode") is { } nullNodePayoutMethodCode && nullNodePayoutMethodCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethodCode = null;
+            if (parseNode.GetChildNode("payoutMethodReference") is null) { _explicitNullValuePayoutMethodReference = default!; _explicitNullProperties?.Remove("payoutMethodReference"); }
+            else if (parseNode.GetChildNode("payoutMethodReference") is { } nullNodePayoutMethodReference && nullNodePayoutMethodReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethodReference = null;
+            if (parseNode.GetChildNode("recurringDetailReference") is null) { _explicitNullValueRecurringDetailReference = default!; _explicitNullProperties?.Remove("recurringDetailReference"); }
+            else if (parseNode.GetChildNode("recurringDetailReference") is { } nullNodeRecurringDetailReference && nullNodeRecurringDetailReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetailReference = null;
+            if (parseNode.GetChildNode("shopperReference") is null) { _explicitNullValueShopperReference = default!; _explicitNullProperties?.Remove("shopperReference"); }
+            else if (parseNode.GetChildNode("shopperReference") is { } nullNodeShopperReference && nullNodeShopperReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The [`merchantAccount`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__reqParam_merchantAccount) you used in the `/payments` request when you [saved the account holder&apos;s card details](https://docs.adyen.com/classic-platforms/payouts/manual-payout/payout-to-cards#check-and-store).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the payout method, returned in the response when you create a payout method. Required when updating an existing payout method in an `/updateAccountHolder` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
+        public string? PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; AdditionalData?.Remove("payoutMethodCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
         private string? _explicitNullValuePayoutMethodCode = default!;
 #nullable restore
 #else
-        public string PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
+        public string PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; AdditionalData?.Remove("payoutMethodCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
         private string _explicitNullValuePayoutMethodCode = default!;
 #endif
         /// <summary>Your reference for the payout method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutMethodReference { get => _explicitNullValuePayoutMethodReference; set { _explicitNullValuePayoutMethodReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodReference"); else _explicitNullProperties?.Remove("payoutMethodReference"); } }
+        public string? PayoutMethodReference { get => _explicitNullValuePayoutMethodReference; set { _explicitNullValuePayoutMethodReference = value; AdditionalData?.Remove("payoutMethodReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodReference"); else _explicitNullProperties?.Remove("payoutMethodReference"); } }
         private string? _explicitNullValuePayoutMethodReference = default!;
 #nullable restore
 #else
-        public string PayoutMethodReference { get => _explicitNullValuePayoutMethodReference; set { _explicitNullValuePayoutMethodReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodReference"); else _explicitNullProperties?.Remove("payoutMethodReference"); } }
+        public string PayoutMethodReference { get => _explicitNullValuePayoutMethodReference; set { _explicitNullValuePayoutMethodReference = value; AdditionalData?.Remove("payoutMethodReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodReference"); else _explicitNullProperties?.Remove("payoutMethodReference"); } }
         private string _explicitNullValuePayoutMethodReference = default!;
 #endif
         /// <summary>The [`recurringDetailReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_additionalData-ResponseAdditionalDataCommon-recurring-recurringDetailReference)  returned in the `/payments` response when you [saved the account holder&apos;s card details](https://docs.adyen.com/classic-platforms/payouts/manual-payout/payout-to-cards#check-and-store).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
+        public string? RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; AdditionalData?.Remove("recurringDetailReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
         private string? _explicitNullValueRecurringDetailReference = default!;
 #nullable restore
 #else
-        public string RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
+        public string RecurringDetailReference { get => _explicitNullValueRecurringDetailReference; set { _explicitNullValueRecurringDetailReference = value; AdditionalData?.Remove("recurringDetailReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurringDetailReference"); else _explicitNullProperties?.Remove("recurringDetailReference"); } }
         private string _explicitNullValueRecurringDetailReference = default!;
 #endif
         /// <summary>The [`shopperReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__reqParam_shopperReference) you sent in the `/payments` request when you [saved the account holder&apos;s card details](https://docs.adyen.com/classic-platforms/payouts/manual-payout/payout-to-cards#check-and-store).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopperReference { get => _explicitNullValueShopperReference; set { _explicitNullValueShopperReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperReference"); else _explicitNullProperties?.Remove("shopperReference"); } }
+        public string? ShopperReference { get => _explicitNullValueShopperReference; set { _explicitNullValueShopperReference = value; AdditionalData?.Remove("shopperReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperReference"); else _explicitNullProperties?.Remove("shopperReference"); } }
         private string? _explicitNullValueShopperReference = default!;
 #nullable restore
 #else
-        public string ShopperReference { get => _explicitNullValueShopperReference; set { _explicitNullValueShopperReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperReference"); else _explicitNullProperties?.Remove("shopperReference"); } }
+        public string ShopperReference { get => _explicitNullValueShopperReference; set { _explicitNullValueShopperReference = value; AdditionalData?.Remove("shopperReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperReference"); else _explicitNullProperties?.Remove("shopperReference"); } }
         private string _explicitNullValueShopperReference = default!;
 #endif
         /// <summary>

@@ -18,54 +18,60 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowPayout") is { } nullNodeAllowPayout && nullNodeAllowPayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowPayout = null;
-            if (parseNode.GetChildNode("disabled") is { } nullNodeDisabled && nullNodeDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disabled = null;
-            if (parseNode.GetChildNode("disableReason") is { } nullNodeDisableReason && nullNodeDisableReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableReason = null;
-            if (parseNode.GetChildNode("notAllowedReason") is { } nullNodeNotAllowedReason && nullNodeNotAllowedReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAllowedReason = null;
-            if (parseNode.GetChildNode("payoutLimit") is { } nullNodePayoutLimit && nullNodePayoutLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutLimit = null;
-            if (parseNode.GetChildNode("tierNumber") is { } nullNodeTierNumber && nullNodeTierNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierNumber = null;
+            if (parseNode.GetChildNode("allowPayout") is null) { _explicitNullValueAllowPayout = default!; _explicitNullProperties?.Remove("allowPayout"); }
+            else if (parseNode.GetChildNode("allowPayout") is { } nullNodeAllowPayout && nullNodeAllowPayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowPayout = null;
+            if (parseNode.GetChildNode("disabled") is null) { _explicitNullValueDisabled = default!; _explicitNullProperties?.Remove("disabled"); }
+            else if (parseNode.GetChildNode("disabled") is { } nullNodeDisabled && nullNodeDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disabled = null;
+            if (parseNode.GetChildNode("disableReason") is null) { _explicitNullValueDisableReason = default!; _explicitNullProperties?.Remove("disableReason"); }
+            else if (parseNode.GetChildNode("disableReason") is { } nullNodeDisableReason && nullNodeDisableReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableReason = null;
+            if (parseNode.GetChildNode("notAllowedReason") is null) { _explicitNullValueNotAllowedReason = default!; _explicitNullProperties?.Remove("notAllowedReason"); }
+            else if (parseNode.GetChildNode("notAllowedReason") is { } nullNodeNotAllowedReason && nullNodeNotAllowedReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAllowedReason = null;
+            if (parseNode.GetChildNode("payoutLimit") is null) { _explicitNullValuePayoutLimit = default!; _explicitNullProperties?.Remove("payoutLimit"); }
+            else if (parseNode.GetChildNode("payoutLimit") is { } nullNodePayoutLimit && nullNodePayoutLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutLimit = null;
+            if (parseNode.GetChildNode("tierNumber") is null) { _explicitNullValueTierNumber = default!; _explicitNullProperties?.Remove("tierNumber"); }
+            else if (parseNode.GetChildNode("tierNumber") is { } nullNodeTierNumber && nullNodeTierNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether payouts are allowed. This field is the overarching payout status, and is the aggregate of multiple conditions (e.g., KYC status, disabled flag, etc). If this field is false, no payouts will be permitted for any of the account holder&apos;s accounts. If this field is true, payouts will be permitted for any of the account holder&apos;s accounts.</summary>
-        public bool? AllowPayout { get => _explicitNullValueAllowPayout; set { _explicitNullValueAllowPayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowPayout"); else _explicitNullProperties?.Remove("allowPayout"); } }
+        public bool? AllowPayout { get => _explicitNullValueAllowPayout; set { _explicitNullValueAllowPayout = value; AdditionalData?.Remove("allowPayout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowPayout"); else _explicitNullProperties?.Remove("allowPayout"); } }
         private bool? _explicitNullValueAllowPayout = default!;
         /// <summary>Indicates whether payouts have been disabled (by the platform) for all of the account holder&apos;s accounts. A platform may enable and disable this field at their discretion. If this field is true, `allowPayout` will be false and no payouts will be permitted for any of the account holder&apos;s accounts. If this field is false, `allowPayout` may or may not be enabled, depending on other factors.</summary>
-        public bool? Disabled { get => _explicitNullValueDisabled; set { _explicitNullValueDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabled"); else _explicitNullProperties?.Remove("disabled"); } }
+        public bool? Disabled { get => _explicitNullValueDisabled; set { _explicitNullValueDisabled = value; AdditionalData?.Remove("disabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabled"); else _explicitNullProperties?.Remove("disabled"); } }
         private bool? _explicitNullValueDisabled = default!;
         /// <summary>The reason why payouts (to all of the account holder&apos;s accounts) have been disabled (by the platform). If the `disabled` field is true, this field can be used to explain why.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
+        public string? DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; AdditionalData?.Remove("disableReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
         private string? _explicitNullValueDisableReason = default!;
 #nullable restore
 #else
-        public string DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
+        public string DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; AdditionalData?.Remove("disableReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
         private string _explicitNullValueDisableReason = default!;
 #endif
         /// <summary>The reason why payouts (to all of the account holder&apos;s accounts) have been disabled (by Adyen). If payouts have been disabled by Adyen, this field will explain why. If this field is blank, payouts have not been disabled by Adyen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotAllowedReason { get => _explicitNullValueNotAllowedReason; set { _explicitNullValueNotAllowedReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAllowedReason"); else _explicitNullProperties?.Remove("notAllowedReason"); } }
+        public string? NotAllowedReason { get => _explicitNullValueNotAllowedReason; set { _explicitNullValueNotAllowedReason = value; AdditionalData?.Remove("notAllowedReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAllowedReason"); else _explicitNullProperties?.Remove("notAllowedReason"); } }
         private string? _explicitNullValueNotAllowedReason = default!;
 #nullable restore
 #else
-        public string NotAllowedReason { get => _explicitNullValueNotAllowedReason; set { _explicitNullValueNotAllowedReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAllowedReason"); else _explicitNullProperties?.Remove("notAllowedReason"); } }
+        public string NotAllowedReason { get => _explicitNullValueNotAllowedReason; set { _explicitNullValueNotAllowedReason = value; AdditionalData?.Remove("notAllowedReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAllowedReason"); else _explicitNullProperties?.Remove("notAllowedReason"); } }
         private string _explicitNullValueNotAllowedReason = default!;
 #endif
         /// <summary>The maximum amount that payouts are limited to. Only applies if payouts are allowed but limited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountPayoutStatePayoutLimit? PayoutLimit { get => _explicitNullValuePayoutLimit; set { _explicitNullValuePayoutLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutLimit"); else _explicitNullProperties?.Remove("payoutLimit"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountPayoutStatePayoutLimit? PayoutLimit { get => _explicitNullValuePayoutLimit; set { _explicitNullValuePayoutLimit = value; AdditionalData?.Remove("payoutLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutLimit"); else _explicitNullProperties?.Remove("payoutLimit"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountPayoutStatePayoutLimit? _explicitNullValuePayoutLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountPayoutStatePayoutLimit PayoutLimit { get => _explicitNullValuePayoutLimit; set { _explicitNullValuePayoutLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutLimit"); else _explicitNullProperties?.Remove("payoutLimit"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountPayoutStatePayoutLimit PayoutLimit { get => _explicitNullValuePayoutLimit; set { _explicitNullValuePayoutLimit = value; AdditionalData?.Remove("payoutLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutLimit"); else _explicitNullProperties?.Remove("payoutLimit"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountPayoutStatePayoutLimit _explicitNullValuePayoutLimit = default!;
 #endif
         /// <summary>The payout tier that the account holder occupies.</summary>
-        public int? TierNumber { get => _explicitNullValueTierNumber; set { _explicitNullValueTierNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tierNumber"); else _explicitNullProperties?.Remove("tierNumber"); } }
+        public int? TierNumber { get => _explicitNullValueTierNumber; set { _explicitNullValueTierNumber = value; AdditionalData?.Remove("tierNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tierNumber"); else _explicitNullProperties?.Remove("tierNumber"); } }
         private int? _explicitNullValueTierNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountHolderStatusPayoutState"/> and sets the default values.

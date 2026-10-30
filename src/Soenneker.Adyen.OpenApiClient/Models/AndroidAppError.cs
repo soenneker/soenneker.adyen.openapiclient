@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
-            if (parseNode.GetChildNode("terminalModels") is { } nullNodeTerminalModels && nullNodeTerminalModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalModels = null;
+            if (parseNode.GetChildNode("errorCode") is null) { _explicitNullValueErrorCode = default!; _explicitNullProperties?.Remove("errorCode"); }
+            else if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("terminalModels") is null) { _explicitNullValueTerminalModels = default!; _explicitNullProperties?.Remove("terminalModels"); }
+            else if (parseNode.GetChildNode("terminalModels") is { } nullNodeTerminalModels && nullNodeTerminalModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalModels = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The error code of the Android app with the `status` of either **error** or **invalid**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
         private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
         private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The list of payment terminal models to which the returned `errorCode` applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TerminalModels { get => _explicitNullValueTerminalModels; set { _explicitNullValueTerminalModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalModels"); else _explicitNullProperties?.Remove("terminalModels"); } }
+        public List<string>? TerminalModels { get => _explicitNullValueTerminalModels; set { _explicitNullValueTerminalModels = value; AdditionalData?.Remove("terminalModels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalModels"); else _explicitNullProperties?.Remove("terminalModels"); } }
         private List<string>? _explicitNullValueTerminalModels = default!;
 #nullable restore
 #else
-        public List<string> TerminalModels { get => _explicitNullValueTerminalModels; set { _explicitNullValueTerminalModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalModels"); else _explicitNullProperties?.Remove("terminalModels"); } }
+        public List<string> TerminalModels { get => _explicitNullValueTerminalModels; set { _explicitNullValueTerminalModels = value; AdditionalData?.Remove("terminalModels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalModels"); else _explicitNullProperties?.Remove("terminalModels"); } }
         private List<string> _explicitNullValueTerminalModels = default!;
 #endif
         /// <summary>

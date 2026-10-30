@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("term") is { } nullNodeTerm && nullNodeTerm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Term = null;
+            if (parseNode.GetChildNode("term") is null) { _explicitNullValueTerm = default!; _explicitNullProperties?.Remove("term"); }
+            else if (parseNode.GetChildNode("term") is { } nullNodeTerm && nullNodeTerm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Term = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains information about the time period in which your user must repay the total amount of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DynamicOfferRepaymentTerm? Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DynamicOfferRepaymentTerm? Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; AdditionalData?.Remove("term"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DynamicOfferRepaymentTerm? _explicitNullValueTerm = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DynamicOfferRepaymentTerm Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DynamicOfferRepaymentTerm Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; AdditionalData?.Remove("term"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DynamicOfferRepaymentTerm _explicitNullValueTerm = default!;
 #endif
         /// <summary>

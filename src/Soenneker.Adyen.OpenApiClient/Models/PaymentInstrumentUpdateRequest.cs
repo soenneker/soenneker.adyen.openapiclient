@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
-            if (parseNode.GetChildNode("card") is { } nullNodeCard && nullNodeCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Card = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("statusComment") is { } nullNodeStatusComment && nullNodeStatusComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusComment = null;
-            if (parseNode.GetChildNode("statusReason") is { } nullNodeStatusReason && nullNodeStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReason = null;
+            if (parseNode.GetChildNode("balanceAccountId") is null) { _explicitNullValueBalanceAccountId = default!; _explicitNullProperties?.Remove("balanceAccountId"); }
+            else if (parseNode.GetChildNode("balanceAccountId") is { } nullNodeBalanceAccountId && nullNodeBalanceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAccountId = null;
+            if (parseNode.GetChildNode("card") is null) { _explicitNullValueCard = default!; _explicitNullProperties?.Remove("card"); }
+            else if (parseNode.GetChildNode("card") is { } nullNodeCard && nullNodeCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Card = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("statusComment") is null) { _explicitNullValueStatusComment = default!; _explicitNullProperties?.Remove("statusComment"); }
+            else if (parseNode.GetChildNode("statusComment") is { } nullNodeStatusComment && nullNodeStatusComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusComment = null;
+            if (parseNode.GetChildNode("statusReason") is null) { _explicitNullValueStatusReason = default!; _explicitNullProperties?.Remove("statusReason"); }
+            else if (parseNode.GetChildNode("statusReason") is { } nullNodeStatusReason && nullNodeStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReason = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance account associated with this payment instrument.&gt;You can only change the balance account ID if the payment instrument has **inactive** status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string? BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string? _explicitNullValueBalanceAccountId = default!;
 #nullable restore
 #else
-        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
+        public string BalanceAccountId { get => _explicitNullValueBalanceAccountId; set { _explicitNullValueBalanceAccountId = value; AdditionalData?.Remove("balanceAccountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAccountId"); else _explicitNullProperties?.Remove("balanceAccountId"); } }
         private string _explicitNullValueBalanceAccountId = default!;
 #endif
         /// <summary>Object that contains information about the card payment instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard? Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard? Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; AdditionalData?.Remove("card"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard? _explicitNullValueCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; AdditionalData?.Remove("card"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard _explicitNullValueCard = default!;
 #endif
         /// <summary>The status of the payment instrument. If a status is not specified when creating a payment instrument, it is set to **active** by default. However, there can be exceptions for cards based on the `card.formFactor` and the `issuingCountryCode`. For example, when issuing physical cards in the US, the default status is **inactive**.Possible values:  * **active**:  The payment instrument is active and can be used to make payments.  * **inactive**: The payment instrument is inactive and cannot be used to make payments.  * **suspended**: The payment instrument is suspended, either because it was stolen or lost.  * **closed**: The payment instrument is permanently closed. This action cannot be undone. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>Comment for the status of the payment instrument.Required if `statusReason` is **other**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusComment { get => _explicitNullValueStatusComment; set { _explicitNullValueStatusComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusComment"); else _explicitNullProperties?.Remove("statusComment"); } }
+        public string? StatusComment { get => _explicitNullValueStatusComment; set { _explicitNullValueStatusComment = value; AdditionalData?.Remove("statusComment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusComment"); else _explicitNullProperties?.Remove("statusComment"); } }
         private string? _explicitNullValueStatusComment = default!;
 #nullable restore
 #else
-        public string StatusComment { get => _explicitNullValueStatusComment; set { _explicitNullValueStatusComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusComment"); else _explicitNullProperties?.Remove("statusComment"); } }
+        public string StatusComment { get => _explicitNullValueStatusComment; set { _explicitNullValueStatusComment = value; AdditionalData?.Remove("statusComment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusComment"); else _explicitNullProperties?.Remove("statusComment"); } }
         private string _explicitNullValueStatusComment = default!;
 #endif
         /// <summary>The reason for updating the status of the payment instrument.Possible values: **lost**, **stolen**, **damaged**, **suspectedFraud**, **expired**, **endOfLife**, **accountClosure**, **other**.If the reason is **other**, you must also send the `statusComment` parameter describing the status change.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason? StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason? StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; AdditionalData?.Remove("statusReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason? _explicitNullValueStatusReason = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequest"/> and sets the default values.
@@ -89,9 +94,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "balanceAccountId", n => { BalanceAccountId = n.GetStringValue(); } },
                 { "card", n => { Card = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestCard.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "statusComment", n => { StatusComment = n.GetStringValue(); } },
-                { "statusReason", n => { StatusReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason>(); } },
+                { "statusReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentUpdateRequestStatusReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatusReason = default; _explicitNullProperties?.Remove("statusReason"); AdditionalData["statusReason"] = unknown; } else { StatusReason = parsed; AdditionalData.Remove("statusReason"); } } },
             };
         }
         /// <summary>

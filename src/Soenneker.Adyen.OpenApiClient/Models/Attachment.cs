@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
-            if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
-            if (parseNode.GetChildNode("pageName") is { } nullNodePageName && nullNodePageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageName = null;
-            if (parseNode.GetChildNode("pageType") is { } nullNodePageType && nullNodePageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageType = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("contentType") is null) { _explicitNullValueContentType = default!; _explicitNullProperties?.Remove("contentType"); }
+            else if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("filename") is null) { _explicitNullValueFilename = default!; _explicitNullProperties?.Remove("filename"); }
+            else if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
+            if (parseNode.GetChildNode("pageName") is null) { _explicitNullValuePageName = default!; _explicitNullProperties?.Remove("pageName"); }
+            else if (parseNode.GetChildNode("pageName") is { } nullNodePageName && nullNodePageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageName = null;
+            if (parseNode.GetChildNode("pageType") is null) { _explicitNullValuePageType = default!; _explicitNullProperties?.Remove("pageType"); }
+            else if (parseNode.GetChildNode("pageType") is { } nullNodePageType && nullNodePageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,53 +34,53 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The document in Base64-encoded string format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[]? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[] _explicitNullValueContent = default!;
 #endif
         /// <summary>The file format. Possible values: **application/pdf**, **image/jpg**, **image/jpeg**, **image/png**. </summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
         private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
         private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The name of the file including the file extension.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; AdditionalData?.Remove("filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
         private string? _explicitNullValueFilename = default!;
 #nullable restore
 #else
-        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; AdditionalData?.Remove("filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
         private string _explicitNullValueFilename = default!;
 #endif
         /// <summary>The name of the file including the file extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
+        public string? PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; AdditionalData?.Remove("pageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
         private string? _explicitNullValuePageName = default!;
 #nullable restore
 #else
-        public string PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
+        public string PageName { get => _explicitNullValuePageName; set { _explicitNullValuePageName = value; AdditionalData?.Remove("pageName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageName"); else _explicitNullProperties?.Remove("pageName"); } }
         private string _explicitNullValuePageName = default!;
 #endif
         /// <summary>Specifies which side of the ID card is uploaded.* If the `type` is **driversLicense** or **identityCard**, you must set this to **front** or **back** and include both sides in the same API request.* For any other types, when this is omitted, we infer the page number based on the order of attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageType { get => _explicitNullValuePageType; set { _explicitNullValuePageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageType"); else _explicitNullProperties?.Remove("pageType"); } }
+        public string? PageType { get => _explicitNullValuePageType; set { _explicitNullValuePageType = value; AdditionalData?.Remove("pageType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageType"); else _explicitNullProperties?.Remove("pageType"); } }
         private string? _explicitNullValuePageType = default!;
 #nullable restore
 #else
-        public string PageType { get => _explicitNullValuePageType; set { _explicitNullValuePageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageType"); else _explicitNullProperties?.Remove("pageType"); } }
+        public string PageType { get => _explicitNullValuePageType; set { _explicitNullValuePageType = value; AdditionalData?.Remove("pageType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pageType"); else _explicitNullProperties?.Remove("pageType"); } }
         private string _explicitNullValuePageType = default!;
 #endif
         /// <summary>

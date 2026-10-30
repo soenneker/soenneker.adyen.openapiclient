@@ -18,65 +18,74 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acceptHeader") is { } nullNodeAcceptHeader && nullNodeAcceptHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptHeader = null;
-            if (parseNode.GetChildNode("colorDepth") is { } nullNodeColorDepth && nullNodeColorDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorDepth = null;
-            if (parseNode.GetChildNode("javaEnabled") is { } nullNodeJavaEnabled && nullNodeJavaEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavaEnabled = null;
-            if (parseNode.GetChildNode("javaScriptEnabled") is { } nullNodeJavaScriptEnabled && nullNodeJavaScriptEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavaScriptEnabled = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("screenHeight") is { } nullNodeScreenHeight && nullNodeScreenHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenHeight = null;
-            if (parseNode.GetChildNode("screenWidth") is { } nullNodeScreenWidth && nullNodeScreenWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenWidth = null;
-            if (parseNode.GetChildNode("timeZoneOffset") is { } nullNodeTimeZoneOffset && nullNodeTimeZoneOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZoneOffset = null;
-            if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
+            if (parseNode.GetChildNode("acceptHeader") is null) { _explicitNullValueAcceptHeader = default!; _explicitNullProperties?.Remove("acceptHeader"); }
+            else if (parseNode.GetChildNode("acceptHeader") is { } nullNodeAcceptHeader && nullNodeAcceptHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptHeader = null;
+            if (parseNode.GetChildNode("colorDepth") is null) { _explicitNullValueColorDepth = default!; _explicitNullProperties?.Remove("colorDepth"); }
+            else if (parseNode.GetChildNode("colorDepth") is { } nullNodeColorDepth && nullNodeColorDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorDepth = null;
+            if (parseNode.GetChildNode("javaEnabled") is null) { _explicitNullValueJavaEnabled = default!; _explicitNullProperties?.Remove("javaEnabled"); }
+            else if (parseNode.GetChildNode("javaEnabled") is { } nullNodeJavaEnabled && nullNodeJavaEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavaEnabled = null;
+            if (parseNode.GetChildNode("javaScriptEnabled") is null) { _explicitNullValueJavaScriptEnabled = default!; _explicitNullProperties?.Remove("javaScriptEnabled"); }
+            else if (parseNode.GetChildNode("javaScriptEnabled") is { } nullNodeJavaScriptEnabled && nullNodeJavaScriptEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JavaScriptEnabled = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("screenHeight") is null) { _explicitNullValueScreenHeight = default!; _explicitNullProperties?.Remove("screenHeight"); }
+            else if (parseNode.GetChildNode("screenHeight") is { } nullNodeScreenHeight && nullNodeScreenHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenHeight = null;
+            if (parseNode.GetChildNode("screenWidth") is null) { _explicitNullValueScreenWidth = default!; _explicitNullProperties?.Remove("screenWidth"); }
+            else if (parseNode.GetChildNode("screenWidth") is { } nullNodeScreenWidth && nullNodeScreenWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScreenWidth = null;
+            if (parseNode.GetChildNode("timeZoneOffset") is null) { _explicitNullValueTimeZoneOffset = default!; _explicitNullProperties?.Remove("timeZoneOffset"); }
+            else if (parseNode.GetChildNode("timeZoneOffset") is { } nullNodeTimeZoneOffset && nullNodeTimeZoneOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZoneOffset = null;
+            if (parseNode.GetChildNode("userAgent") is null) { _explicitNullValueUserAgent = default!; _explicitNullProperties?.Remove("userAgent"); }
+            else if (parseNode.GetChildNode("userAgent") is { } nullNodeUserAgent && nullNodeUserAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserAgent = null;
         }
 
         /// <summary>The accept header value of the shopper&apos;s browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptHeader { get => _explicitNullValueAcceptHeader; set { _explicitNullValueAcceptHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptHeader"); else _explicitNullProperties?.Remove("acceptHeader"); } }
+        public string? AcceptHeader { get => _explicitNullValueAcceptHeader; set { _explicitNullValueAcceptHeader = value; AdditionalData?.Remove("acceptHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptHeader"); else _explicitNullProperties?.Remove("acceptHeader"); } }
         private string? _explicitNullValueAcceptHeader = default!;
 #nullable restore
 #else
-        public string AcceptHeader { get => _explicitNullValueAcceptHeader; set { _explicitNullValueAcceptHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptHeader"); else _explicitNullProperties?.Remove("acceptHeader"); } }
+        public string AcceptHeader { get => _explicitNullValueAcceptHeader; set { _explicitNullValueAcceptHeader = value; AdditionalData?.Remove("acceptHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptHeader"); else _explicitNullProperties?.Remove("acceptHeader"); } }
         private string _explicitNullValueAcceptHeader = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The color depth of the shopper&apos;s browser in bits per pixel. This should be obtained by using the browser&apos;s `screen.colorDepth` property. Accepted values: 1, 4, 8, 15, 16, 24, 30, 32 or 48 bit color depth.</summary>
-        public int? ColorDepth { get => _explicitNullValueColorDepth; set { _explicitNullValueColorDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colorDepth"); else _explicitNullProperties?.Remove("colorDepth"); } }
+        public int? ColorDepth { get => _explicitNullValueColorDepth; set { _explicitNullValueColorDepth = value; AdditionalData?.Remove("colorDepth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("colorDepth"); else _explicitNullProperties?.Remove("colorDepth"); } }
         private int? _explicitNullValueColorDepth = default!;
         /// <summary>Boolean value indicating if the shopper&apos;s browser is able to execute Java.</summary>
-        public bool? JavaEnabled { get => _explicitNullValueJavaEnabled; set { _explicitNullValueJavaEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javaEnabled"); else _explicitNullProperties?.Remove("javaEnabled"); } }
+        public bool? JavaEnabled { get => _explicitNullValueJavaEnabled; set { _explicitNullValueJavaEnabled = value; AdditionalData?.Remove("javaEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javaEnabled"); else _explicitNullProperties?.Remove("javaEnabled"); } }
         private bool? _explicitNullValueJavaEnabled = default!;
         /// <summary>Boolean value indicating if the shopper&apos;s browser is able to execute JavaScript. A default &apos;true&apos; value is assumed if the field is not present.</summary>
-        public bool? JavaScriptEnabled { get => _explicitNullValueJavaScriptEnabled; set { _explicitNullValueJavaScriptEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javaScriptEnabled"); else _explicitNullProperties?.Remove("javaScriptEnabled"); } }
+        public bool? JavaScriptEnabled { get => _explicitNullValueJavaScriptEnabled; set { _explicitNullValueJavaScriptEnabled = value; AdditionalData?.Remove("javaScriptEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("javaScriptEnabled"); else _explicitNullProperties?.Remove("javaScriptEnabled"); } }
         private bool? _explicitNullValueJavaScriptEnabled = default!;
         /// <summary>The `navigator.language` value of the shopper&apos;s browser (as defined in IETF BCP 47).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The total height of the shopper&apos;s device screen in pixels.</summary>
-        public int? ScreenHeight { get => _explicitNullValueScreenHeight; set { _explicitNullValueScreenHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenHeight"); else _explicitNullProperties?.Remove("screenHeight"); } }
+        public int? ScreenHeight { get => _explicitNullValueScreenHeight; set { _explicitNullValueScreenHeight = value; AdditionalData?.Remove("screenHeight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenHeight"); else _explicitNullProperties?.Remove("screenHeight"); } }
         private int? _explicitNullValueScreenHeight = default!;
         /// <summary>The total width of the shopper&apos;s device screen in pixels.</summary>
-        public int? ScreenWidth { get => _explicitNullValueScreenWidth; set { _explicitNullValueScreenWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenWidth"); else _explicitNullProperties?.Remove("screenWidth"); } }
+        public int? ScreenWidth { get => _explicitNullValueScreenWidth; set { _explicitNullValueScreenWidth = value; AdditionalData?.Remove("screenWidth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("screenWidth"); else _explicitNullProperties?.Remove("screenWidth"); } }
         private int? _explicitNullValueScreenWidth = default!;
         /// <summary>Time difference between UTC time and the shopper&apos;s browser local time, in minutes.</summary>
-        public int? TimeZoneOffset { get => _explicitNullValueTimeZoneOffset; set { _explicitNullValueTimeZoneOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZoneOffset"); else _explicitNullProperties?.Remove("timeZoneOffset"); } }
+        public int? TimeZoneOffset { get => _explicitNullValueTimeZoneOffset; set { _explicitNullValueTimeZoneOffset = value; AdditionalData?.Remove("timeZoneOffset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeZoneOffset"); else _explicitNullProperties?.Remove("timeZoneOffset"); } }
         private int? _explicitNullValueTimeZoneOffset = default!;
         /// <summary>The user agent value of the shopper&apos;s browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
         private string? _explicitNullValueUserAgent = default!;
 #nullable restore
 #else
-        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
+        public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
         private string _explicitNullValueUserAgent = default!;
 #endif
         /// <summary>

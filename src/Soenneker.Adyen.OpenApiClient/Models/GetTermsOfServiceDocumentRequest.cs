@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is { } nullNodeTermsOfServiceDocumentFormat && nullNodeTermsOfServiceDocumentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceDocumentFormat = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is null) { _explicitNullValueTermsOfServiceDocumentFormat = default!; _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); }
+            else if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is { } nullNodeTermsOfServiceDocumentFormat && nullNodeTermsOfServiceDocumentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceDocumentFormat = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The language to be used for the Terms of Service document, specified by the two-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code. Possible values: **en** for English or **fr** for French.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The requested format for the Terms of Service document. Default value: JSON. Possible values: **JSON**, **PDF**, or **TXT**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
+        public string? TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; AdditionalData?.Remove("termsOfServiceDocumentFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
         private string? _explicitNullValueTermsOfServiceDocumentFormat = default!;
 #nullable restore
 #else
-        public string TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
+        public string TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; AdditionalData?.Remove("termsOfServiceDocumentFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
         private string _explicitNullValueTermsOfServiceDocumentFormat = default!;
 #endif
         /// <summary>The type of Terms of Service.Possible values:*  **adyenForPlatformsManage***  **adyenIssuing***  **adyenForPlatformsAdvanced***  **adyenCapital***  **adyenCapitalCashAdvance***  **adyenAccount***  **adyenCard***  **adyenFranchisee***  **adyenPccr***  **adyenChargeCard***  **kycOnInvite***  **directDebit**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequestType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequest"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "termsOfServiceDocumentFormat", n => { TermsOfServiceDocumentFormat = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequestType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetTermsOfServiceDocumentRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

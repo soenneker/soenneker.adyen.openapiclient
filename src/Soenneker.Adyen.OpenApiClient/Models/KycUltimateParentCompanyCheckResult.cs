@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
-            if (parseNode.GetChildNode("ultimateParentCompanyCode") is { } nullNodeUltimateParentCompanyCode && nullNodeUltimateParentCompanyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParentCompanyCode = null;
+            if (parseNode.GetChildNode("checks") is null) { _explicitNullValueChecks = default!; _explicitNullProperties?.Remove("checks"); }
+            else if (parseNode.GetChildNode("checks") is { } nullNodeChecks && nullNodeChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checks = null;
+            if (parseNode.GetChildNode("ultimateParentCompanyCode") is null) { _explicitNullValueUltimateParentCompanyCode = default!; _explicitNullProperties?.Remove("ultimateParentCompanyCode"); }
+            else if (parseNode.GetChildNode("ultimateParentCompanyCode") is { } nullNodeUltimateParentCompanyCode && nullNodeUltimateParentCompanyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UltimateParentCompanyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of the checks and their statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData>? Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData>? _explicitNullValueChecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData> Checks { get => _explicitNullValueChecks; set { _explicitNullValueChecks = value; AdditionalData?.Remove("checks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checks"); else _explicitNullProperties?.Remove("checks"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData> _explicitNullValueChecks = default!;
 #endif
         /// <summary>The code of the Ultimate Parent Company to which the check applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
+        public string? UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; AdditionalData?.Remove("ultimateParentCompanyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
         private string? _explicitNullValueUltimateParentCompanyCode = default!;
 #nullable restore
 #else
-        public string UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
+        public string UltimateParentCompanyCode { get => _explicitNullValueUltimateParentCompanyCode; set { _explicitNullValueUltimateParentCompanyCode = value; AdditionalData?.Remove("ultimateParentCompanyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ultimateParentCompanyCode"); else _explicitNullProperties?.Remove("ultimateParentCompanyCode"); } }
         private string _explicitNullValueUltimateParentCompanyCode = default!;
 #endif
         /// <summary>

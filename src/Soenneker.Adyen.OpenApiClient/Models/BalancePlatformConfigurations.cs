@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balancePlatformPayoutSchedules") is { } nullNodeBalancePlatformPayoutSchedules && nullNodeBalancePlatformPayoutSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatformPayoutSchedules = null;
+            if (parseNode.GetChildNode("balancePlatformPayoutSchedules") is null) { _explicitNullValueBalancePlatformPayoutSchedules = default!; _explicitNullProperties?.Remove("balancePlatformPayoutSchedules"); }
+            else if (parseNode.GetChildNode("balancePlatformPayoutSchedules") is { } nullNodeBalancePlatformPayoutSchedules && nullNodeBalancePlatformPayoutSchedules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatformPayoutSchedules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains a list of the payout schedules configured in your balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration>? BalancePlatformPayoutSchedules { get => _explicitNullValueBalancePlatformPayoutSchedules; set { _explicitNullValueBalancePlatformPayoutSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatformPayoutSchedules"); else _explicitNullProperties?.Remove("balancePlatformPayoutSchedules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration>? BalancePlatformPayoutSchedules { get => _explicitNullValueBalancePlatformPayoutSchedules; set { _explicitNullValueBalancePlatformPayoutSchedules = value; AdditionalData?.Remove("balancePlatformPayoutSchedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatformPayoutSchedules"); else _explicitNullProperties?.Remove("balancePlatformPayoutSchedules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration>? _explicitNullValueBalancePlatformPayoutSchedules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration> BalancePlatformPayoutSchedules { get => _explicitNullValueBalancePlatformPayoutSchedules; set { _explicitNullValueBalancePlatformPayoutSchedules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatformPayoutSchedules"); else _explicitNullProperties?.Remove("balancePlatformPayoutSchedules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration> BalancePlatformPayoutSchedules { get => _explicitNullValueBalancePlatformPayoutSchedules; set { _explicitNullValueBalancePlatformPayoutSchedules = value; AdditionalData?.Remove("balancePlatformPayoutSchedules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatformPayoutSchedules"); else _explicitNullProperties?.Remove("balancePlatformPayoutSchedules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformConfiguration> _explicitNullValueBalancePlatformPayoutSchedules = default!;
 #endif
         /// <summary>

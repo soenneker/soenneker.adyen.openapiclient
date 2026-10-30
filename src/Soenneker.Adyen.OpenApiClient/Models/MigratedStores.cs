@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("businessLineId") is { } nullNodeBusinessLineId && nullNodeBusinessLineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessLineId = null;
-            if (parseNode.GetChildNode("storeCode") is { } nullNodeStoreCode && nullNodeStoreCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreCode = null;
-            if (parseNode.GetChildNode("storeId") is { } nullNodeStoreId && nullNodeStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreId = null;
-            if (parseNode.GetChildNode("storeReference") is { } nullNodeStoreReference && nullNodeStoreReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreReference = null;
+            if (parseNode.GetChildNode("businessLineId") is null) { _explicitNullValueBusinessLineId = default!; _explicitNullProperties?.Remove("businessLineId"); }
+            else if (parseNode.GetChildNode("businessLineId") is { } nullNodeBusinessLineId && nullNodeBusinessLineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessLineId = null;
+            if (parseNode.GetChildNode("storeCode") is null) { _explicitNullValueStoreCode = default!; _explicitNullProperties?.Remove("storeCode"); }
+            else if (parseNode.GetChildNode("storeCode") is { } nullNodeStoreCode && nullNodeStoreCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreCode = null;
+            if (parseNode.GetChildNode("storeId") is null) { _explicitNullValueStoreId = default!; _explicitNullProperties?.Remove("storeId"); }
+            else if (parseNode.GetChildNode("storeId") is { } nullNodeStoreId && nullNodeStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreId = null;
+            if (parseNode.GetChildNode("storeReference") is null) { _explicitNullValueStoreReference = default!; _explicitNullProperties?.Remove("storeReference"); }
+            else if (parseNode.GetChildNode("storeReference") is { } nullNodeStoreReference && nullNodeStoreReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the business line associated with the migrated account holder in the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessLineId { get => _explicitNullValueBusinessLineId; set { _explicitNullValueBusinessLineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLineId"); else _explicitNullProperties?.Remove("businessLineId"); } }
+        public string? BusinessLineId { get => _explicitNullValueBusinessLineId; set { _explicitNullValueBusinessLineId = value; AdditionalData?.Remove("businessLineId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLineId"); else _explicitNullProperties?.Remove("businessLineId"); } }
         private string? _explicitNullValueBusinessLineId = default!;
 #nullable restore
 #else
-        public string BusinessLineId { get => _explicitNullValueBusinessLineId; set { _explicitNullValueBusinessLineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLineId"); else _explicitNullProperties?.Remove("businessLineId"); } }
+        public string BusinessLineId { get => _explicitNullValueBusinessLineId; set { _explicitNullValueBusinessLineId = value; AdditionalData?.Remove("businessLineId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("businessLineId"); else _explicitNullProperties?.Remove("businessLineId"); } }
         private string _explicitNullValueBusinessLineId = default!;
 #endif
         /// <summary>The unique identifier of the store associated with the migrated account holder in the classic integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreCode { get => _explicitNullValueStoreCode; set { _explicitNullValueStoreCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCode"); else _explicitNullProperties?.Remove("storeCode"); } }
+        public string? StoreCode { get => _explicitNullValueStoreCode; set { _explicitNullValueStoreCode = value; AdditionalData?.Remove("storeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCode"); else _explicitNullProperties?.Remove("storeCode"); } }
         private string? _explicitNullValueStoreCode = default!;
 #nullable restore
 #else
-        public string StoreCode { get => _explicitNullValueStoreCode; set { _explicitNullValueStoreCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCode"); else _explicitNullProperties?.Remove("storeCode"); } }
+        public string StoreCode { get => _explicitNullValueStoreCode; set { _explicitNullValueStoreCode = value; AdditionalData?.Remove("storeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCode"); else _explicitNullProperties?.Remove("storeCode"); } }
         private string _explicitNullValueStoreCode = default!;
 #endif
         /// <summary>The unique identifier of the store associated with the migrated account holder in the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
+        public string? StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; AdditionalData?.Remove("storeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
         private string? _explicitNullValueStoreId = default!;
 #nullable restore
 #else
-        public string StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
+        public string StoreId { get => _explicitNullValueStoreId; set { _explicitNullValueStoreId = value; AdditionalData?.Remove("storeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeId"); else _explicitNullProperties?.Remove("storeId"); } }
         private string _explicitNullValueStoreId = default!;
 #endif
         /// <summary>Your reference for the store in the classic integration. The [Customer Area](https://ca-test.adyen.com/) uses this value for the store description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreReference { get => _explicitNullValueStoreReference; set { _explicitNullValueStoreReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeReference"); else _explicitNullProperties?.Remove("storeReference"); } }
+        public string? StoreReference { get => _explicitNullValueStoreReference; set { _explicitNullValueStoreReference = value; AdditionalData?.Remove("storeReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeReference"); else _explicitNullProperties?.Remove("storeReference"); } }
         private string? _explicitNullValueStoreReference = default!;
 #nullable restore
 #else
-        public string StoreReference { get => _explicitNullValueStoreReference; set { _explicitNullValueStoreReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeReference"); else _explicitNullProperties?.Remove("storeReference"); } }
+        public string StoreReference { get => _explicitNullValueStoreReference; set { _explicitNullValueStoreReference = value; AdditionalData?.Remove("storeReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeReference"); else _explicitNullProperties?.Remove("storeReference"); } }
         private string _explicitNullValueStoreReference = default!;
 #endif
         /// <summary>

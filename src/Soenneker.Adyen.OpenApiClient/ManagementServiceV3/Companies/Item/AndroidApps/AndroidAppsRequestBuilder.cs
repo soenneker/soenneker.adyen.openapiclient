@@ -126,7 +126,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Andro
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.AndroidApps.AndroidAppsRequestBuilder.AndroidAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://management-test.adyen.com/v3", "/ManagementService-v3/companies/{companyId}/androidApps", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -145,7 +145,7 @@ namespace Soenneker.Adyen.OpenApiClient.ManagementServiceV3.Companies.Item.Andro
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://management-test.adyen.com/v3", "/ManagementService-v3/companies/{companyId}/androidApps", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

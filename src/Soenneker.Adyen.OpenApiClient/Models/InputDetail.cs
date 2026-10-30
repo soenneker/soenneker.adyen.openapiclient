@@ -17,15 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
-            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
-            if (parseNode.GetChildNode("inputDetails") is { } nullNodeInputDetails && nullNodeInputDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputDetails = null;
-            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
-            if (parseNode.GetChildNode("itemSearchUrl") is { } nullNodeItemSearchUrl && nullNodeItemSearchUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemSearchUrl = null;
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("optional") is { } nullNodeOptional && nullNodeOptional.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Optional = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("configuration") is null) { _explicitNullValueConfiguration = default!; _explicitNullProperties?.Remove("configuration"); }
+            else if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("details") is null) { _explicitNullValueDetails = default!; _explicitNullProperties?.Remove("details"); }
+            else if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("inputDetails") is null) { _explicitNullValueInputDetails = default!; _explicitNullProperties?.Remove("inputDetails"); }
+            else if (parseNode.GetChildNode("inputDetails") is { } nullNodeInputDetails && nullNodeInputDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputDetails = null;
+            if (parseNode.GetChildNode("items") is null) { _explicitNullValueItems = default!; _explicitNullProperties?.Remove("items"); }
+            else if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("itemSearchUrl") is null) { _explicitNullValueItemSearchUrl = default!; _explicitNullProperties?.Remove("itemSearchUrl"); }
+            else if (parseNode.GetChildNode("itemSearchUrl") is { } nullNodeItemSearchUrl && nullNodeItemSearchUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemSearchUrl = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("optional") is null) { _explicitNullValueOptional = default!; _explicitNullProperties?.Remove("optional"); }
+            else if (parseNode.GetChildNode("optional") is { } nullNodeOptional && nullNodeOptional.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Optional = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,85 +42,85 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Configuration parameters for the required input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2 Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2 Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InputDetailConfigurationProperty2 _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>Input details can also be provided recursively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail> _explicitNullValueDetails = default!;
 #endif
         /// <summary>Input details can also be provided recursively (deprecated).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>? InputDetails { get => _explicitNullValueInputDetails; set { _explicitNullValueInputDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputDetails"); else _explicitNullProperties?.Remove("inputDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>? InputDetails { get => _explicitNullValueInputDetails; set { _explicitNullValueInputDetails = value; AdditionalData?.Remove("inputDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputDetails"); else _explicitNullProperties?.Remove("inputDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail>? _explicitNullValueInputDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail> InputDetails { get => _explicitNullValueInputDetails; set { _explicitNullValueInputDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputDetails"); else _explicitNullProperties?.Remove("inputDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail> InputDetails { get => _explicitNullValueInputDetails; set { _explicitNullValueInputDetails = value; AdditionalData?.Remove("inputDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputDetails"); else _explicitNullProperties?.Remove("inputDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.SubInputDetail> _explicitNullValueInputDetails = default!;
 #endif
         /// <summary>In case of a select, the items to choose from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.ItemValue> _explicitNullValueItems = default!;
 #endif
         /// <summary>In case of a select, the URL from which to query the items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemSearchUrl { get => _explicitNullValueItemSearchUrl; set { _explicitNullValueItemSearchUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemSearchUrl"); else _explicitNullProperties?.Remove("itemSearchUrl"); } }
+        public string? ItemSearchUrl { get => _explicitNullValueItemSearchUrl; set { _explicitNullValueItemSearchUrl = value; AdditionalData?.Remove("itemSearchUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemSearchUrl"); else _explicitNullProperties?.Remove("itemSearchUrl"); } }
         private string? _explicitNullValueItemSearchUrl = default!;
 #nullable restore
 #else
-        public string ItemSearchUrl { get => _explicitNullValueItemSearchUrl; set { _explicitNullValueItemSearchUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemSearchUrl"); else _explicitNullProperties?.Remove("itemSearchUrl"); } }
+        public string ItemSearchUrl { get => _explicitNullValueItemSearchUrl; set { _explicitNullValueItemSearchUrl = value; AdditionalData?.Remove("itemSearchUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemSearchUrl"); else _explicitNullProperties?.Remove("itemSearchUrl"); } }
         private string _explicitNullValueItemSearchUrl = default!;
 #endif
         /// <summary>The value to provide in the result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>True if this input value is optional.</summary>
-        public bool? Optional { get => _explicitNullValueOptional; set { _explicitNullValueOptional = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional"); else _explicitNullProperties?.Remove("optional"); } }
+        public bool? Optional { get => _explicitNullValueOptional; set { _explicitNullValueOptional = value; AdditionalData?.Remove("optional"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optional"); else _explicitNullProperties?.Remove("optional"); } }
         private bool? _explicitNullValueOptional = default!;
         /// <summary>The type of the required input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>The value can be pre-filled, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>

@@ -18,23 +18,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sdkInterface") is { } nullNodeSdkInterface && nullNodeSdkInterface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkInterface = null;
-            if (parseNode.GetChildNode("sdkUiType") is { } nullNodeSdkUiType && nullNodeSdkUiType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkUiType = null;
+            if (parseNode.GetChildNode("sdkInterface") is null) { _explicitNullValueSdkInterface = default!; _explicitNullProperties?.Remove("sdkInterface"); }
+            else if (parseNode.GetChildNode("sdkInterface") is { } nullNodeSdkInterface && nullNodeSdkInterface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkInterface = null;
+            if (parseNode.GetChildNode("sdkUiType") is null) { _explicitNullValueSdkUiType = default!; _explicitNullProperties?.Remove("sdkUiType"); }
+            else if (parseNode.GetChildNode("sdkUiType") is { } nullNodeSdkUiType && nullNodeSdkUiType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkUiType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Supported SDK interface types.Allowed values:* native* html* both</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface? SdkInterface { get => _explicitNullValueSdkInterface; set { _explicitNullValueSdkInterface = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkInterface"); else _explicitNullProperties?.Remove("sdkInterface"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface? SdkInterface { get => _explicitNullValueSdkInterface; set { _explicitNullValueSdkInterface = value; AdditionalData?.Remove("sdkInterface"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkInterface"); else _explicitNullProperties?.Remove("sdkInterface"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface? _explicitNullValueSdkInterface = default!;
         /// <summary>UI types supported for displaying specific challenges.Allowed values:* text* singleSelect* outOfBand* otherHtml* multiSelect</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?>? SdkUiType { get => _explicitNullValueSdkUiType; set { _explicitNullValueSdkUiType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkUiType"); else _explicitNullProperties?.Remove("sdkUiType"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?>? SdkUiType { get => _explicitNullValueSdkUiType; set { _explicitNullValueSdkUiType = value; AdditionalData?.Remove("sdkUiType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkUiType"); else _explicitNullProperties?.Remove("sdkUiType"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?>? _explicitNullValueSdkUiType = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?> SdkUiType { get => _explicitNullValueSdkUiType; set { _explicitNullValueSdkUiType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkUiType"); else _explicitNullProperties?.Remove("sdkUiType"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?> SdkUiType { get => _explicitNullValueSdkUiType; set { _explicitNullValueSdkUiType = value; AdditionalData?.Remove("sdkUiType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkUiType"); else _explicitNullProperties?.Remove("sdkUiType"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem?> _explicitNullValueSdkUiType = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "sdkInterface", n => { SdkInterface = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface>(); } },
+                { "sdkInterface", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkInterface>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSdkInterface = default; _explicitNullProperties?.Remove("sdkInterface"); AdditionalData["sdkInterface"] = unknown; } else { SdkInterface = parsed; AdditionalData.Remove("sdkInterface"); } } },
                 { "sdkUiType", n => { SdkUiType = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68DeviceRenderOptionsSdkUiTypeItem>()?.AsList(); } },
             };
         }

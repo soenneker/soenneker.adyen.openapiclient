@@ -18,34 +18,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("calculationType") is { } nullNodeCalculationType && nullNodeCalculationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalculationType = null;
-            if (parseNode.GetChildNode("lrs") is { } nullNodeLrs && nullNodeLrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lrs = null;
-            if (parseNode.GetChildNode("taxCountryCode") is { } nullNodeTaxCountryCode && nullNodeTaxCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCountryCode = null;
+            if (parseNode.GetChildNode("calculationType") is null) { _explicitNullValueCalculationType = default!; _explicitNullProperties?.Remove("calculationType"); }
+            else if (parseNode.GetChildNode("calculationType") is { } nullNodeCalculationType && nullNodeCalculationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalculationType = null;
+            if (parseNode.GetChildNode("lrs") is null) { _explicitNullValueLrs = default!; _explicitNullProperties?.Remove("lrs"); }
+            else if (parseNode.GetChildNode("lrs") is { } nullNodeLrs && nullNodeLrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lrs = null;
+            if (parseNode.GetChildNode("taxCountryCode") is null) { _explicitNullValueTaxCountryCode = default!; _explicitNullProperties?.Remove("taxCountryCode"); }
+            else if (parseNode.GetChildNode("taxCountryCode") is { } nullNodeTaxCountryCode && nullNodeTaxCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCountryCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of calculation requested. Initially only LRS_TCS is supported.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get => _explicitNullValueCalculationType; set { _explicitNullValueCalculationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculationType"); else _explicitNullProperties?.Remove("calculationType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? CalculationType { get => _explicitNullValueCalculationType; set { _explicitNullValueCalculationType = value; AdditionalData?.Remove("calculationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculationType"); else _explicitNullProperties?.Remove("calculationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType? _explicitNullValueCalculationType = default!;
         /// <summary>India-specific LRS declarations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; AdditionalData?.Remove("lrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs? _explicitNullValueLrs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs Lrs { get => _explicitNullValueLrs; set { _explicitNullValueLrs = value; AdditionalData?.Remove("lrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lrs"); else _explicitNullProperties?.Remove("lrs"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs _explicitNullValueLrs = default!;
 #endif
         /// <summary>The country governing tax processing. Initially only IN is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        public string? TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
         private string? _explicitNullValueTaxCountryCode = default!;
 #nullable restore
 #else
-        public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
+        public string TaxCountryCode { get => _explicitNullValueTaxCountryCode; set { _explicitNullValueTaxCountryCode = value; AdditionalData?.Remove("taxCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCountryCode"); else _explicitNullProperties?.Remove("taxCountryCode"); } }
         private string _explicitNullValueTaxCountryCode = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "calculationType", n => { CalculationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>(); } },
+                { "calculationType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextCalculationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCalculationType = default; _explicitNullProperties?.Remove("calculationType"); AdditionalData["calculationType"] = unknown; } else { CalculationType = parsed; AdditionalData.Remove("calculationType"); } } },
                 { "lrs", n => { Lrs = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationContextLrs.CreateFromDiscriminatorValue); } },
                 { "taxCountryCode", n => { TaxCountryCode = n.GetStringValue(); } },
             };

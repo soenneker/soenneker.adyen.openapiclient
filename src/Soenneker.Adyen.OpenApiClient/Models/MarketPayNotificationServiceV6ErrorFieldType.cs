@@ -17,34 +17,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
-            if (parseNode.GetChildNode("errorDescription") is { } nullNodeErrorDescription && nullNodeErrorDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorDescription = null;
-            if (parseNode.GetChildNode("fieldType") is { } nullNodeFieldType && nullNodeFieldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldType = null;
+            if (parseNode.GetChildNode("errorCode") is null) { _explicitNullValueErrorCode = default!; _explicitNullProperties?.Remove("errorCode"); }
+            else if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("errorDescription") is null) { _explicitNullValueErrorDescription = default!; _explicitNullProperties?.Remove("errorDescription"); }
+            else if (parseNode.GetChildNode("errorDescription") is { } nullNodeErrorDescription && nullNodeErrorDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorDescription = null;
+            if (parseNode.GetChildNode("fieldType") is null) { _explicitNullValueFieldType = default!; _explicitNullProperties?.Remove("fieldType"); }
+            else if (parseNode.GetChildNode("fieldType") is { } nullNodeFieldType && nullNodeFieldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The validation error code.</summary>
-        public int? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        public int? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; AdditionalData?.Remove("errorCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
         private int? _explicitNullValueErrorCode = default!;
         /// <summary>A description of the validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorDescription"); else _explicitNullProperties?.Remove("errorDescription"); } }
+        public string? ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; AdditionalData?.Remove("errorDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorDescription"); else _explicitNullProperties?.Remove("errorDescription"); } }
         private string? _explicitNullValueErrorDescription = default!;
 #nullable restore
 #else
-        public string ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorDescription"); else _explicitNullProperties?.Remove("errorDescription"); } }
+        public string ErrorDescription { get => _explicitNullValueErrorDescription; set { _explicitNullValueErrorDescription = value; AdditionalData?.Remove("errorDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorDescription"); else _explicitNullProperties?.Remove("errorDescription"); } }
         private string _explicitNullValueErrorDescription = default!;
 #endif
         /// <summary>The type of error field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldTypeFieldType? FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldType"); else _explicitNullProperties?.Remove("fieldType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldTypeFieldType? FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; AdditionalData?.Remove("fieldType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldType"); else _explicitNullProperties?.Remove("fieldType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldTypeFieldType? _explicitNullValueFieldType = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldTypeFieldType FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldType"); else _explicitNullProperties?.Remove("fieldType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldTypeFieldType FieldType { get => _explicitNullValueFieldType; set { _explicitNullValueFieldType = value; AdditionalData?.Remove("fieldType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldType"); else _explicitNullProperties?.Remove("fieldType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ErrorFieldTypeFieldType _explicitNullValueFieldType = default!;
 #endif
         /// <summary>

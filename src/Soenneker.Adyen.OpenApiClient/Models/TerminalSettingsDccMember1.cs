@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableDcc") is { } nullNodeEnableDcc && nullNodeEnableDcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableDcc = null;
+            if (parseNode.GetChildNode("enableDcc") is null) { _explicitNullValueEnableDcc = default!; _explicitNullProperties?.Remove("enableDcc"); }
+            else if (parseNode.GetChildNode("enableDcc") is { } nullNodeEnableDcc && nullNodeEnableDcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableDcc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable Dynamic Currency Conversion (DCC). When you enable DCC, you are responsible for complying with [DCC receipt requirements and terms of use](https://help.adyen.com/en_US/knowledge/in-person-payments/terminal-features/dynamic-currency-conversion-dcc-rules-regulations).</summary>
-        public bool? EnableDcc { get => _explicitNullValueEnableDcc; set { _explicitNullValueEnableDcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableDcc"); else _explicitNullProperties?.Remove("enableDcc"); } }
+        public bool? EnableDcc { get => _explicitNullValueEnableDcc; set { _explicitNullValueEnableDcc = value; AdditionalData?.Remove("enableDcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableDcc"); else _explicitNullProperties?.Remove("enableDcc"); } }
         private bool? _explicitNullValueEnableDcc = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsDccMember1"/> and sets the default values.

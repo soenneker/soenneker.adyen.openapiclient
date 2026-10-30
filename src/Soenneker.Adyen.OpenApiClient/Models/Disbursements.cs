@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("disbursements") is { } nullNodeDisbursementsProp && nullNodeDisbursementsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisbursementsProp = null;
+            if (parseNode.GetChildNode("disbursements") is null) { _explicitNullValueDisbursementsProp = default!; _explicitNullProperties?.Remove("disbursements"); }
+            else if (parseNode.GetChildNode("disbursements") is { } nullNodeDisbursementsProp && nullNodeDisbursementsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisbursementsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains a list of all disbursements related to the specified grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Disbursement>? DisbursementsProp { get => _explicitNullValueDisbursementsProp; set { _explicitNullValueDisbursementsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disbursements"); else _explicitNullProperties?.Remove("disbursements"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Disbursement>? DisbursementsProp { get => _explicitNullValueDisbursementsProp; set { _explicitNullValueDisbursementsProp = value; AdditionalData?.Remove("disbursements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disbursements"); else _explicitNullProperties?.Remove("disbursements"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Disbursement>? _explicitNullValueDisbursementsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Disbursement> DisbursementsProp { get => _explicitNullValueDisbursementsProp; set { _explicitNullValueDisbursementsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disbursements"); else _explicitNullProperties?.Remove("disbursements"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Disbursement> DisbursementsProp { get => _explicitNullValueDisbursementsProp; set { _explicitNullValueDisbursementsProp = value; AdditionalData?.Remove("disbursements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disbursements"); else _explicitNullProperties?.Remove("disbursements"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Disbursement> _explicitNullValueDisbursementsProp = default!;
 #endif
         /// <summary>

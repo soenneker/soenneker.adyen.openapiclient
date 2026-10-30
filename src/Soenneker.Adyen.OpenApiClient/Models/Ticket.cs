@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("issueAddress") is { } nullNodeIssueAddress && nullNodeIssueAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueAddress = null;
-            if (parseNode.GetChildNode("issueDate") is { } nullNodeIssueDate && nullNodeIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueDate = null;
-            if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
+            if (parseNode.GetChildNode("issueAddress") is null) { _explicitNullValueIssueAddress = default!; _explicitNullProperties?.Remove("issueAddress"); }
+            else if (parseNode.GetChildNode("issueAddress") is { } nullNodeIssueAddress && nullNodeIssueAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueAddress = null;
+            if (parseNode.GetChildNode("issueDate") is null) { _explicitNullValueIssueDate = default!; _explicitNullProperties?.Remove("issueDate"); }
+            else if (parseNode.GetChildNode("issueDate") is { } nullNodeIssueDate && nullNodeIssueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueDate = null;
+            if (parseNode.GetChildNode("number") is null) { _explicitNullValueNumber = default!; _explicitNullProperties?.Remove("number"); }
+            else if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The address of the organization that issued the ticket.* minLength: 0 characters* maxLength: 16 characters* **additionalData key:** `airline.ticket_issue_address`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssueAddress { get => _explicitNullValueIssueAddress; set { _explicitNullValueIssueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueAddress"); else _explicitNullProperties?.Remove("issueAddress"); } }
+        public string? IssueAddress { get => _explicitNullValueIssueAddress; set { _explicitNullValueIssueAddress = value; AdditionalData?.Remove("issueAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueAddress"); else _explicitNullProperties?.Remove("issueAddress"); } }
         private string? _explicitNullValueIssueAddress = default!;
 #nullable restore
 #else
-        public string IssueAddress { get => _explicitNullValueIssueAddress; set { _explicitNullValueIssueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueAddress"); else _explicitNullProperties?.Remove("issueAddress"); } }
+        public string IssueAddress { get => _explicitNullValueIssueAddress; set { _explicitNullValueIssueAddress = value; AdditionalData?.Remove("issueAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueAddress"); else _explicitNullProperties?.Remove("issueAddress"); } }
         private string _explicitNullValueIssueAddress = default!;
 #endif
         /// <summary>The date that the ticket was issued to the passenger.* minLength: 10 characters* maxLength: 10 characters* Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): yyyy-MM-dd* **additionalData key:** `airline.issue_date`</summary>
-        public Date? IssueDate { get => _explicitNullValueIssueDate; set { _explicitNullValueIssueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueDate"); else _explicitNullProperties?.Remove("issueDate"); } }
+        public Date? IssueDate { get => _explicitNullValueIssueDate; set { _explicitNullValueIssueDate = value; AdditionalData?.Remove("issueDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueDate"); else _explicitNullProperties?.Remove("issueDate"); } }
         private Date? _explicitNullValueIssueDate = default!;
         /// <summary>The ticket&apos;s unique identifier.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.ticket_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string? _explicitNullValueNumber = default!;
 #nullable restore
 #else
-        public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string _explicitNullValueNumber = default!;
 #endif
         /// <summary>

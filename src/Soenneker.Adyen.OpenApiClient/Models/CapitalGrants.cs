@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("grants") is { } nullNodeGrants && nullNodeGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Grants = null;
+            if (parseNode.GetChildNode("grants") is null) { _explicitNullValueGrants = default!; _explicitNullProperties?.Remove("grants"); }
+            else if (parseNode.GetChildNode("grants") is { } nullNodeGrants && nullNodeGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Grants = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant>? Grants { get => _explicitNullValueGrants; set { _explicitNullValueGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grants"); else _explicitNullProperties?.Remove("grants"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant>? Grants { get => _explicitNullValueGrants; set { _explicitNullValueGrants = value; AdditionalData?.Remove("grants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grants"); else _explicitNullProperties?.Remove("grants"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant>? _explicitNullValueGrants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant> Grants { get => _explicitNullValueGrants; set { _explicitNullValueGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grants"); else _explicitNullProperties?.Remove("grants"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant> Grants { get => _explicitNullValueGrants; set { _explicitNullValueGrants = value; AdditionalData?.Remove("grants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grants"); else _explicitNullProperties?.Remove("grants"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CapitalGrant> _explicitNullValueGrants = default!;
 #endif
         /// <summary>

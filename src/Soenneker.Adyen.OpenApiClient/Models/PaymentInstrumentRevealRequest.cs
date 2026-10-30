@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("encryptedKey") is { } nullNodeEncryptedKey && nullNodeEncryptedKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptedKey = null;
-            if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
+            if (parseNode.GetChildNode("encryptedKey") is null) { _explicitNullValueEncryptedKey = default!; _explicitNullProperties?.Remove("encryptedKey"); }
+            else if (parseNode.GetChildNode("encryptedKey") is { } nullNodeEncryptedKey && nullNodeEncryptedKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptedKey = null;
+            if (parseNode.GetChildNode("paymentInstrumentId") is null) { _explicitNullValuePaymentInstrumentId = default!; _explicitNullProperties?.Remove("paymentInstrumentId"); }
+            else if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The symmetric session key that you encrypted with the [public key](https://docs.adyen.com/api-explorer/balanceplatform/2/get/publicKey) that you received from Adyen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncryptedKey { get => _explicitNullValueEncryptedKey; set { _explicitNullValueEncryptedKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptedKey"); else _explicitNullProperties?.Remove("encryptedKey"); } }
+        public string? EncryptedKey { get => _explicitNullValueEncryptedKey; set { _explicitNullValueEncryptedKey = value; AdditionalData?.Remove("encryptedKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptedKey"); else _explicitNullProperties?.Remove("encryptedKey"); } }
         private string? _explicitNullValueEncryptedKey = default!;
 #nullable restore
 #else
-        public string EncryptedKey { get => _explicitNullValueEncryptedKey; set { _explicitNullValueEncryptedKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptedKey"); else _explicitNullProperties?.Remove("encryptedKey"); } }
+        public string EncryptedKey { get => _explicitNullValueEncryptedKey; set { _explicitNullValueEncryptedKey = value; AdditionalData?.Remove("encryptedKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryptedKey"); else _explicitNullProperties?.Remove("encryptedKey"); } }
         private string _explicitNullValueEncryptedKey = default!;
 #endif
         /// <summary>The unique identifier of the payment instrument, which is the card for which you are managing the PIN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; AdditionalData?.Remove("paymentInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
         private string? _explicitNullValuePaymentInstrumentId = default!;
 #nullable restore
 #else
-        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; AdditionalData?.Remove("paymentInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
         private string _explicitNullValuePaymentInstrumentId = default!;
 #endif
         /// <summary>

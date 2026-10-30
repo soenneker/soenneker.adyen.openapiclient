@@ -18,21 +18,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("IMEI") is { } nullNodeIMEI && nullNodeIMEI.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IMEI = null;
-            if (parseNode.GetChildNode("IMSI") is { } nullNodeIMSI && nullNodeIMSI.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IMSI = null;
-            if (parseNode.GetChildNode("MSISDN") is { } nullNodeMSISDN && nullNodeMSISDN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MSISDN = null;
+            if (parseNode.GetChildNode("IMEI") is null) { _explicitNullValueIMEI = default!; _explicitNullProperties?.Remove("IMEI"); }
+            else if (parseNode.GetChildNode("IMEI") is { } nullNodeIMEI && nullNodeIMEI.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IMEI = null;
+            if (parseNode.GetChildNode("IMSI") is null) { _explicitNullValueIMSI = default!; _explicitNullProperties?.Remove("IMSI"); }
+            else if (parseNode.GetChildNode("IMSI") is { } nullNodeIMSI && nullNodeIMSI.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IMSI = null;
+            if (parseNode.GetChildNode("MSISDN") is null) { _explicitNullValueMSISDN = default!; _explicitNullProperties?.Remove("MSISDN"); }
+            else if (parseNode.GetChildNode("MSISDN") is { } nullNodeMSISDN && nullNodeMSISDN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MSISDN = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>International Mobile Equipment Identity. Unique number associated with the mobile phone device.</summary>
-        public int? IMEI { get => _explicitNullValueIMEI; set { _explicitNullValueIMEI = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMEI"); else _explicitNullProperties?.Remove("IMEI"); } }
+        public int? IMEI { get => _explicitNullValueIMEI; set { _explicitNullValueIMEI = value; AdditionalData?.Remove("IMEI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMEI"); else _explicitNullProperties?.Remove("IMEI"); } }
         private int? _explicitNullValueIMEI = default!;
         /// <summary>International Mobile Subscriber Identity. Unique number associated with the mobile phone user, containing the Mobile Country Code (MCC), the Mobile Network Code (MNC), and the Mobile Identification Number (MSIN)</summary>
-        public int? IMSI { get => _explicitNullValueIMSI; set { _explicitNullValueIMSI = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMSI"); else _explicitNullProperties?.Remove("IMSI"); } }
+        public int? IMSI { get => _explicitNullValueIMSI; set { _explicitNullValueIMSI = value; AdditionalData?.Remove("IMSI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IMSI"); else _explicitNullProperties?.Remove("IMSI"); } }
         private int? _explicitNullValueIMSI = default!;
         /// <summary>Mobile Subscriber Integrated Service Digital Network (i.e. mobile phone number of the SIM card). Country, National Destination Code, and Subscriber Number.</summary>
-        public int? MSISDN { get => _explicitNullValueMSISDN; set { _explicitNullValueMSISDN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MSISDN"); else _explicitNullProperties?.Remove("MSISDN"); } }
+        public int? MSISDN { get => _explicitNullValueMSISDN; set { _explicitNullValueMSISDN = value; AdditionalData?.Remove("MSISDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MSISDN"); else _explicitNullProperties?.Remove("MSISDN"); } }
         private int? _explicitNullValueMSISDN = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MobileDataSensitiveMobileData"/> and sets the default values.

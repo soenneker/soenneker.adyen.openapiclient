@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("exemption") is { } nullNodeExemption && nullNodeExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exemption = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("exemption") is null) { _explicitNullValueExemption = default!; _explicitNullProperties?.Remove("exemption"); }
+            else if (parseNode.GetChildNode("exemption") is { } nullNodeExemption && nullNodeExemption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exemption = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of exemption for Strong Customer Authentication (SCA). Possible values:* **lowerLimit**: the newly created limit is lower than the existing limit.* **notRegulated**: the limit is created in a country, region, or industry where it is not mandated by law to use SCA.* **setByPlatform**: you set a limit for one of your user&apos;s balance accounts, or for your balance platform.* **initialLimit**: there are no existing transfer limits set on the balance account or balance platform.* **alreadyPerformed**: you are confident about your user&apos;s identity and do not need to verify this using SCA.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption? Exemption { get => _explicitNullValueExemption; set { _explicitNullValueExemption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exemption"); else _explicitNullProperties?.Remove("exemption"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption? Exemption { get => _explicitNullValueExemption; set { _explicitNullValueExemption = value; AdditionalData?.Remove("exemption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exemption"); else _explicitNullProperties?.Remove("exemption"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption? _explicitNullValueExemption = default!;
         /// <summary>The status of Strong Customer Authentication (SCA). Possible values:* **notPerformed**: the requester was unable to successfully authenticate the request using SCA, or has an SCA exemption.* **pending**: the request is pending SCA authentication.* **performed**: the request is successfully authenticated using SCA.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferLimitScaInformation"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exemption", n => { Exemption = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus>(); } },
+                { "exemption", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationExemption>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExemption = default; _explicitNullProperties?.Remove("exemption"); AdditionalData["exemption"] = unknown; } else { Exemption = parsed; AdditionalData.Remove("exemption"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ScaInformationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

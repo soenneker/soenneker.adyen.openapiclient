@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("headerForAuthorizedReceipt") is { } nullNodeHeaderForAuthorizedReceipt && nullNodeHeaderForAuthorizedReceipt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderForAuthorizedReceipt = null;
+            if (parseNode.GetChildNode("headerForAuthorizedReceipt") is null) { _explicitNullValueHeaderForAuthorizedReceipt = default!; _explicitNullProperties?.Remove("headerForAuthorizedReceipt"); }
+            else if (parseNode.GetChildNode("headerForAuthorizedReceipt") is { } nullNodeHeaderForAuthorizedReceipt && nullNodeHeaderForAuthorizedReceipt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderForAuthorizedReceipt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The structure of the header to show on the shopper receipt. You can define the order of one or two header lines and blank lines. For example, **header1,header2,filler**. The text of the header lines is defined in the Customer Area under **In-person payments** &gt; **Terminal settings** &gt; **Receipts** in the **Receipt lines** block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderForAuthorizedReceipt { get => _explicitNullValueHeaderForAuthorizedReceipt; set { _explicitNullValueHeaderForAuthorizedReceipt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerForAuthorizedReceipt"); else _explicitNullProperties?.Remove("headerForAuthorizedReceipt"); } }
+        public string? HeaderForAuthorizedReceipt { get => _explicitNullValueHeaderForAuthorizedReceipt; set { _explicitNullValueHeaderForAuthorizedReceipt = value; AdditionalData?.Remove("headerForAuthorizedReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerForAuthorizedReceipt"); else _explicitNullProperties?.Remove("headerForAuthorizedReceipt"); } }
         private string? _explicitNullValueHeaderForAuthorizedReceipt = default!;
 #nullable restore
 #else
-        public string HeaderForAuthorizedReceipt { get => _explicitNullValueHeaderForAuthorizedReceipt; set { _explicitNullValueHeaderForAuthorizedReceipt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerForAuthorizedReceipt"); else _explicitNullProperties?.Remove("headerForAuthorizedReceipt"); } }
+        public string HeaderForAuthorizedReceipt { get => _explicitNullValueHeaderForAuthorizedReceipt; set { _explicitNullValueHeaderForAuthorizedReceipt = value; AdditionalData?.Remove("headerForAuthorizedReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerForAuthorizedReceipt"); else _explicitNullProperties?.Remove("headerForAuthorizedReceipt"); } }
         private string _explicitNullValueHeaderForAuthorizedReceipt = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("boardingRequestToken") is { } nullNodeBoardingRequestToken && nullNodeBoardingRequestToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardingRequestToken = null;
-            if (parseNode.GetChildNode("subMerchantData") is { } nullNodeSubMerchantData && nullNodeSubMerchantData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubMerchantData = null;
+            if (parseNode.GetChildNode("boardingRequestToken") is null) { _explicitNullValueBoardingRequestToken = default!; _explicitNullProperties?.Remove("boardingRequestToken"); }
+            else if (parseNode.GetChildNode("boardingRequestToken") is { } nullNodeBoardingRequestToken && nullNodeBoardingRequestToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoardingRequestToken = null;
+            if (parseNode.GetChildNode("subMerchantData") is null) { _explicitNullValueSubMerchantData = default!; _explicitNullProperties?.Remove("subMerchantData"); }
+            else if (parseNode.GetChildNode("subMerchantData") is { } nullNodeSubMerchantData && nullNodeSubMerchantData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubMerchantData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The boardingToken request token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BoardingRequestToken { get => _explicitNullValueBoardingRequestToken; set { _explicitNullValueBoardingRequestToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingRequestToken"); else _explicitNullProperties?.Remove("boardingRequestToken"); } }
+        public string? BoardingRequestToken { get => _explicitNullValueBoardingRequestToken; set { _explicitNullValueBoardingRequestToken = value; AdditionalData?.Remove("boardingRequestToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingRequestToken"); else _explicitNullProperties?.Remove("boardingRequestToken"); } }
         private string? _explicitNullValueBoardingRequestToken = default!;
 #nullable restore
 #else
-        public string BoardingRequestToken { get => _explicitNullValueBoardingRequestToken; set { _explicitNullValueBoardingRequestToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingRequestToken"); else _explicitNullProperties?.Remove("boardingRequestToken"); } }
+        public string BoardingRequestToken { get => _explicitNullValueBoardingRequestToken; set { _explicitNullValueBoardingRequestToken = value; AdditionalData?.Remove("boardingRequestToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boardingRequestToken"); else _explicitNullProperties?.Remove("boardingRequestToken"); } }
         private string _explicitNullValueBoardingRequestToken = default!;
 #endif
         /// <summary>Data of the sub-merchant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequestSubMerchantData? SubMerchantData { get => _explicitNullValueSubMerchantData; set { _explicitNullValueSubMerchantData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subMerchantData"); else _explicitNullProperties?.Remove("subMerchantData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequestSubMerchantData? SubMerchantData { get => _explicitNullValueSubMerchantData; set { _explicitNullValueSubMerchantData = value; AdditionalData?.Remove("subMerchantData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subMerchantData"); else _explicitNullProperties?.Remove("subMerchantData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequestSubMerchantData? _explicitNullValueSubMerchantData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequestSubMerchantData SubMerchantData { get => _explicitNullValueSubMerchantData; set { _explicitNullValueSubMerchantData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subMerchantData"); else _explicitNullProperties?.Remove("subMerchantData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequestSubMerchantData SubMerchantData { get => _explicitNullValueSubMerchantData; set { _explicitNullValueSubMerchantData = value; AdditionalData?.Remove("subMerchantData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subMerchantData"); else _explicitNullProperties?.Remove("subMerchantData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BoardingTokenRequestSubMerchantData _explicitNullValueSubMerchantData = default!;
 #endif
         /// <summary>

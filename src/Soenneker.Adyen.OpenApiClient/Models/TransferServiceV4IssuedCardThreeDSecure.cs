@@ -18,17 +18,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acsTransactionId") is { } nullNodeAcsTransactionId && nullNodeAcsTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsTransactionId = null;
+            if (parseNode.GetChildNode("acsTransactionId") is null) { _explicitNullValueAcsTransactionId = default!; _explicitNullProperties?.Remove("acsTransactionId"); }
+            else if (parseNode.GetChildNode("acsTransactionId") is { } nullNodeAcsTransactionId && nullNodeAcsTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsTransactionId = null;
         }
 
         /// <summary>The transaction identifier for the Access Control Server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
+        public string? AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; AdditionalData?.Remove("acsTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
         private string? _explicitNullValueAcsTransactionId = default!;
 #nullable restore
 #else
-        public string AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
+        public string AcsTransactionId { get => _explicitNullValueAcsTransactionId; set { _explicitNullValueAcsTransactionId = value; AdditionalData?.Remove("acsTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsTransactionId"); else _explicitNullProperties?.Remove("acsTransactionId"); } }
         private string _explicitNullValueAcsTransactionId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

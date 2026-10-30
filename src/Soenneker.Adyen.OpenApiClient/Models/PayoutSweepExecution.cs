@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
-            if (parseNode.GetChildNode("resultDetails") is { } nullNodeResultDetails && nullNodeResultDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultDetails = null;
-            if (parseNode.GetChildNode("triggeredAt") is { } nullNodeTriggeredAt && nullNodeTriggeredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("resultDetails") is null) { _explicitNullValueResultDetails = default!; _explicitNullProperties?.Remove("resultDetails"); }
+            else if (parseNode.GetChildNode("resultDetails") is { } nullNodeResultDetails && nullNodeResultDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultDetails = null;
+            if (parseNode.GetChildNode("triggeredAt") is null) { _explicitNullValueTriggeredAt = default!; _explicitNullProperties?.Remove("triggeredAt"); }
+            else if (parseNode.GetChildNode("triggeredAt") is { } nullNodeTriggeredAt && nullNodeTriggeredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the sweep execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The outcome of the sweep execution.Possible results:- **succeeded**: The sweep payout was completed successfully.- **failed**: The sweep payout was not completed due to an error.- **skipped**: The sweep payout was not triggered as expected.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult? _explicitNullValueResult = default!;
         /// <summary>Details about the outcome of the sweep execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails? ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails? ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; AdditionalData?.Remove("resultDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails? _explicitNullValueResultDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails ResultDetails { get => _explicitNullValueResultDetails; set { _explicitNullValueResultDetails = value; AdditionalData?.Remove("resultDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultDetails"); else _explicitNullProperties?.Remove("resultDetails"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails _explicitNullValueResultDetails = default!;
 #endif
         /// <summary>The timestamp of when the execution was triggered.</summary>
-        public DateTimeOffset? TriggeredAt { get => _explicitNullValueTriggeredAt; set { _explicitNullValueTriggeredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredAt"); else _explicitNullProperties?.Remove("triggeredAt"); } }
+        public DateTimeOffset? TriggeredAt { get => _explicitNullValueTriggeredAt; set { _explicitNullValueTriggeredAt = value; AdditionalData?.Remove("triggeredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggeredAt"); else _explicitNullProperties?.Remove("triggeredAt"); } }
         private DateTimeOffset? _explicitNullValueTriggeredAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution"/> and sets the default values.
@@ -77,7 +81,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult>(); } },
+                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResult>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
                 { "resultDetails", n => { ResultDetails = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails>(global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionResultDetails.CreateFromDiscriminatorValue); } },
                 { "triggeredAt", n => { TriggeredAt = n.GetDateTimeOffsetValue(); } },
             };

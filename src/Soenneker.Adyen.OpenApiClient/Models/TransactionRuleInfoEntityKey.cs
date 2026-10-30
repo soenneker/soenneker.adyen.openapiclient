@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entityReference") is { } nullNodeEntityReference && nullNodeEntityReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityReference = null;
-            if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("entityReference") is null) { _explicitNullValueEntityReference = default!; _explicitNullProperties?.Remove("entityReference"); }
+            else if (parseNode.GetChildNode("entityReference") is { } nullNodeEntityReference && nullNodeEntityReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityReference = null;
+            if (parseNode.GetChildNode("entityType") is null) { _explicitNullValueEntityType = default!; _explicitNullProperties?.Remove("entityType"); }
+            else if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityReference { get => _explicitNullValueEntityReference; set { _explicitNullValueEntityReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityReference"); else _explicitNullProperties?.Remove("entityReference"); } }
+        public string? EntityReference { get => _explicitNullValueEntityReference; set { _explicitNullValueEntityReference = value; AdditionalData?.Remove("entityReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityReference"); else _explicitNullProperties?.Remove("entityReference"); } }
         private string? _explicitNullValueEntityReference = default!;
 #nullable restore
 #else
-        public string EntityReference { get => _explicitNullValueEntityReference; set { _explicitNullValueEntityReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityReference"); else _explicitNullProperties?.Remove("entityReference"); } }
+        public string EntityReference { get => _explicitNullValueEntityReference; set { _explicitNullValueEntityReference = value; AdditionalData?.Remove("entityReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityReference"); else _explicitNullProperties?.Remove("entityReference"); } }
         private string _explicitNullValueEntityReference = default!;
 #endif
         /// <summary>The type of resource.Possible values: **balancePlatform**, **paymentInstrumentGroup**, **accountHolder**, **balanceAccount**, or **paymentInstrument**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        public string? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; AdditionalData?.Remove("entityType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
         private string? _explicitNullValueEntityType = default!;
 #nullable restore
 #else
-        public string EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        public string EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; AdditionalData?.Remove("entityType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
         private string _explicitNullValueEntityType = default!;
 #endif
         /// <summary>

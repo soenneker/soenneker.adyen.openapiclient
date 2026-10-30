@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("networkTokens") is { } nullNodeNetworkTokens && nullNodeNetworkTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkTokens = null;
+            if (parseNode.GetChildNode("networkTokens") is null) { _explicitNullValueNetworkTokens = default!; _explicitNullProperties?.Remove("networkTokens"); }
+            else if (parseNode.GetChildNode("networkTokens") is { } nullNodeNetworkTokens && nullNodeNetworkTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkTokens = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of network tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken>? NetworkTokens { get => _explicitNullValueNetworkTokens; set { _explicitNullValueNetworkTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkTokens"); else _explicitNullProperties?.Remove("networkTokens"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken>? NetworkTokens { get => _explicitNullValueNetworkTokens; set { _explicitNullValueNetworkTokens = value; AdditionalData?.Remove("networkTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkTokens"); else _explicitNullProperties?.Remove("networkTokens"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken>? _explicitNullValueNetworkTokens = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken> NetworkTokens { get => _explicitNullValueNetworkTokens; set { _explicitNullValueNetworkTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkTokens"); else _explicitNullProperties?.Remove("networkTokens"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken> NetworkTokens { get => _explicitNullValueNetworkTokens; set { _explicitNullValueNetworkTokens = value; AdditionalData?.Remove("networkTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkTokens"); else _explicitNullProperties?.Remove("networkTokens"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.NetworkToken> _explicitNullValueNetworkTokens = default!;
 #endif
         /// <summary>

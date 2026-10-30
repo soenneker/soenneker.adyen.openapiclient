@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("localShopperStatement") is { } nullNodeLocalShopperStatement && nullNodeLocalShopperStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalShopperStatement = null;
+            if (parseNode.GetChildNode("localShopperStatement") is null) { _explicitNullValueLocalShopperStatement = default!; _explicitNullProperties?.Remove("localShopperStatement"); }
+            else if (parseNode.GetChildNode("localShopperStatement") is { } nullNodeLocalShopperStatement && nullNodeLocalShopperStatement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalShopperStatement = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An array of local shopper statements. Card schemes use this in the bank statement.For Japan local shopper statements in both ja-Hani and ja-Kana are required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement>? LocalShopperStatement { get => _explicitNullValueLocalShopperStatement; set { _explicitNullValueLocalShopperStatement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localShopperStatement"); else _explicitNullProperties?.Remove("localShopperStatement"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement>? LocalShopperStatement { get => _explicitNullValueLocalShopperStatement; set { _explicitNullValueLocalShopperStatement = value; AdditionalData?.Remove("localShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localShopperStatement"); else _explicitNullProperties?.Remove("localShopperStatement"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement>? _explicitNullValueLocalShopperStatement = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement> LocalShopperStatement { get => _explicitNullValueLocalShopperStatement; set { _explicitNullValueLocalShopperStatement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localShopperStatement"); else _explicitNullProperties?.Remove("localShopperStatement"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement> LocalShopperStatement { get => _explicitNullValueLocalShopperStatement; set { _explicitNullValueLocalShopperStatement = value; AdditionalData?.Remove("localShopperStatement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localShopperStatement"); else _explicitNullProperties?.Remove("localShopperStatement"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LocalShopperStatement> _explicitNullValueLocalShopperStatement = default!;
 #endif
         /// <summary>

@@ -17,17 +17,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("updateAtFirstMaintenanceCall") is { } nullNodeUpdateAtFirstMaintenanceCall && nullNodeUpdateAtFirstMaintenanceCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateAtFirstMaintenanceCall = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updateAtFirstMaintenanceCall") is null) { _explicitNullValueUpdateAtFirstMaintenanceCall = default!; _explicitNullProperties?.Remove("updateAtFirstMaintenanceCall"); }
+            else if (parseNode.GetChildNode("updateAtFirstMaintenanceCall") is { } nullNodeUpdateAtFirstMaintenanceCall && nullNodeUpdateAtFirstMaintenanceCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateAtFirstMaintenanceCall = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of terminal action: Update Release.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType? _explicitNullValueType = default!;
         /// <summary>Boolean flag that tells if the terminal should update at the first next maintenance call. If false, terminal will update on its configured reboot time.</summary>
-        public bool? UpdateAtFirstMaintenanceCall { get => _explicitNullValueUpdateAtFirstMaintenanceCall; set { _explicitNullValueUpdateAtFirstMaintenanceCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateAtFirstMaintenanceCall"); else _explicitNullProperties?.Remove("updateAtFirstMaintenanceCall"); } }
+        public bool? UpdateAtFirstMaintenanceCall { get => _explicitNullValueUpdateAtFirstMaintenanceCall; set { _explicitNullValueUpdateAtFirstMaintenanceCall = value; AdditionalData?.Remove("updateAtFirstMaintenanceCall"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updateAtFirstMaintenanceCall"); else _explicitNullProperties?.Remove("updateAtFirstMaintenanceCall"); } }
         private bool? _explicitNullValueUpdateAtFirstMaintenanceCall = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateDetails"/> and sets the default values.
@@ -54,7 +56,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReleaseUpdateType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updateAtFirstMaintenanceCall", n => { UpdateAtFirstMaintenanceCall = n.GetBoolValue(); } },
             };
         }

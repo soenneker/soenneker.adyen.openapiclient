@@ -17,18 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
-            if (parseNode.GetChildNode("bsbCode") is { } nullNodeBsbCode && nullNodeBsbCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BsbCode = null;
+            if (parseNode.GetChildNode("accountNumber") is null) { _explicitNullValueAccountNumber = default!; _explicitNullProperties?.Remove("accountNumber"); }
+            else if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("bsbCode") is null) { _explicitNullValueBsbCode = default!; _explicitNullProperties?.Remove("bsbCode"); }
+            else if (parseNode.GetChildNode("bsbCode") is { } nullNodeBsbCode && nullNodeBsbCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BsbCode = null;
         }
 
         /// <summary>The account number of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; AdditionalData?.Remove("accountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; AdditionalData?.Remove("accountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The BSB (Bank-State-Branch) code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BsbCode { get => _explicitNullValueBsbCode; set { _explicitNullValueBsbCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsbCode"); else _explicitNullProperties?.Remove("bsbCode"); } }
+        public string? BsbCode { get => _explicitNullValueBsbCode; set { _explicitNullValueBsbCode = value; AdditionalData?.Remove("bsbCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsbCode"); else _explicitNullProperties?.Remove("bsbCode"); } }
         private string? _explicitNullValueBsbCode = default!;
 #nullable restore
 #else
-        public string BsbCode { get => _explicitNullValueBsbCode; set { _explicitNullValueBsbCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsbCode"); else _explicitNullProperties?.Remove("bsbCode"); } }
+        public string BsbCode { get => _explicitNullValueBsbCode; set { _explicitNullValueBsbCode = value; AdditionalData?.Remove("bsbCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bsbCode"); else _explicitNullProperties?.Remove("bsbCode"); } }
         private string _explicitNullValueBsbCode = default!;
 #endif
         /// <summary>

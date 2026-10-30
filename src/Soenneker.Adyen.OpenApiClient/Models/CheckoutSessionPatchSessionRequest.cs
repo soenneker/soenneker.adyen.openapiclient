@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("payable") is { } nullNodePayable && nullNodePayable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payable = null;
-            if (parseNode.GetChildNode("sessionData") is { } nullNodeSessionData && nullNodeSessionData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionData = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("payable") is null) { _explicitNullValuePayable = default!; _explicitNullProperties?.Remove("payable"); }
+            else if (parseNode.GetChildNode("payable") is { } nullNodePayable && nullNodePayable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payable = null;
+            if (parseNode.GetChildNode("sessionData") is null) { _explicitNullValueSessionData = default!; _explicitNullProperties?.Remove("sessionData"); }
+            else if (parseNode.GetChildNode("sessionData") is { } nullNodeSessionData && nullNodeSessionData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The amount to update for the payment session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSessionPatchSessionRequestAmount _explicitNullValueAmount = default!;
 #endif
         /// <summary>Indicates if the session is payable. If the payment amount is final, set this to **true** to indicate that the session is payable, so that the shopper can proceed to submit the payment. When you set this to **true**, you can no longer update the session.If you set this to **false**, you must make another request to update the session and set this to **true** before the shopper can submit the payment.</summary>
-        public bool? Payable { get => _explicitNullValuePayable; set { _explicitNullValuePayable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payable"); else _explicitNullProperties?.Remove("payable"); } }
+        public bool? Payable { get => _explicitNullValuePayable; set { _explicitNullValuePayable = value; AdditionalData?.Remove("payable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payable"); else _explicitNullProperties?.Remove("payable"); } }
         private bool? _explicitNullValuePayable = default!;
         /// <summary>The encoded payment session data from the `beforeSubmit` callback from [Drop-in](https://docs.adyen.com/online-payments/build-your-integration/sessions-flow?platform=Web&amp;integration=Drop-in#update-the-session-amount) or [the Component](https://docs.adyen.com/online-payments/build-your-integration/sessions-flow?platform=Web&amp;integration=Components#update-the-session-amount).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
+        public string? SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; AdditionalData?.Remove("sessionData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
         private string? _explicitNullValueSessionData = default!;
 #nullable restore
 #else
-        public string SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
+        public string SessionData { get => _explicitNullValueSessionData; set { _explicitNullValueSessionData = value; AdditionalData?.Remove("sessionData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionData"); else _explicitNullProperties?.Remove("sessionData"); } }
         private string _explicitNullValueSessionData = default!;
 #endif
         /// <summary>

@@ -17,15 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("carrierCode") is { } nullNodeCarrierCode && nullNodeCarrierCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarrierCode = null;
-            if (parseNode.GetChildNode("classOfTravel") is { } nullNodeClassOfTravel && nullNodeClassOfTravel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassOfTravel = null;
-            if (parseNode.GetChildNode("dateOfTravel") is { } nullNodeDateOfTravel && nullNodeDateOfTravel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfTravel = null;
-            if (parseNode.GetChildNode("departureAirportCode") is { } nullNodeDepartureAirportCode && nullNodeDepartureAirportCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DepartureAirportCode = null;
-            if (parseNode.GetChildNode("departureTax") is { } nullNodeDepartureTax && nullNodeDepartureTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DepartureTax = null;
-            if (parseNode.GetChildNode("destinationAirportCode") is { } nullNodeDestinationAirportCode && nullNodeDestinationAirportCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAirportCode = null;
-            if (parseNode.GetChildNode("fareBasisCode") is { } nullNodeFareBasisCode && nullNodeFareBasisCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FareBasisCode = null;
-            if (parseNode.GetChildNode("flightNumber") is { } nullNodeFlightNumber && nullNodeFlightNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlightNumber = null;
-            if (parseNode.GetChildNode("stopOverCode") is { } nullNodeStopOverCode && nullNodeStopOverCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopOverCode = null;
+            if (parseNode.GetChildNode("carrierCode") is null) { _explicitNullValueCarrierCode = default!; _explicitNullProperties?.Remove("carrierCode"); }
+            else if (parseNode.GetChildNode("carrierCode") is { } nullNodeCarrierCode && nullNodeCarrierCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CarrierCode = null;
+            if (parseNode.GetChildNode("classOfTravel") is null) { _explicitNullValueClassOfTravel = default!; _explicitNullProperties?.Remove("classOfTravel"); }
+            else if (parseNode.GetChildNode("classOfTravel") is { } nullNodeClassOfTravel && nullNodeClassOfTravel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClassOfTravel = null;
+            if (parseNode.GetChildNode("dateOfTravel") is null) { _explicitNullValueDateOfTravel = default!; _explicitNullProperties?.Remove("dateOfTravel"); }
+            else if (parseNode.GetChildNode("dateOfTravel") is { } nullNodeDateOfTravel && nullNodeDateOfTravel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfTravel = null;
+            if (parseNode.GetChildNode("departureAirportCode") is null) { _explicitNullValueDepartureAirportCode = default!; _explicitNullProperties?.Remove("departureAirportCode"); }
+            else if (parseNode.GetChildNode("departureAirportCode") is { } nullNodeDepartureAirportCode && nullNodeDepartureAirportCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DepartureAirportCode = null;
+            if (parseNode.GetChildNode("departureTax") is null) { _explicitNullValueDepartureTax = default!; _explicitNullProperties?.Remove("departureTax"); }
+            else if (parseNode.GetChildNode("departureTax") is { } nullNodeDepartureTax && nullNodeDepartureTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DepartureTax = null;
+            if (parseNode.GetChildNode("destinationAirportCode") is null) { _explicitNullValueDestinationAirportCode = default!; _explicitNullProperties?.Remove("destinationAirportCode"); }
+            else if (parseNode.GetChildNode("destinationAirportCode") is { } nullNodeDestinationAirportCode && nullNodeDestinationAirportCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationAirportCode = null;
+            if (parseNode.GetChildNode("fareBasisCode") is null) { _explicitNullValueFareBasisCode = default!; _explicitNullProperties?.Remove("fareBasisCode"); }
+            else if (parseNode.GetChildNode("fareBasisCode") is { } nullNodeFareBasisCode && nullNodeFareBasisCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FareBasisCode = null;
+            if (parseNode.GetChildNode("flightNumber") is null) { _explicitNullValueFlightNumber = default!; _explicitNullProperties?.Remove("flightNumber"); }
+            else if (parseNode.GetChildNode("flightNumber") is { } nullNodeFlightNumber && nullNodeFlightNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlightNumber = null;
+            if (parseNode.GetChildNode("stopOverCode") is null) { _explicitNullValueStopOverCode = default!; _explicitNullProperties?.Remove("stopOverCode"); }
+            else if (parseNode.GetChildNode("stopOverCode") is { } nullNodeStopOverCode && nullNodeStopOverCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StopOverCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,77 +42,77 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 2-letter accounting code (PAX) that identifies the carrier.This field is required if the airline data includes leg details.* Example: KLM = KL* minLength: 2 characters* maxLength: 2 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].carrier_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CarrierCode { get => _explicitNullValueCarrierCode; set { _explicitNullValueCarrierCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrierCode"); else _explicitNullProperties?.Remove("carrierCode"); } }
+        public string? CarrierCode { get => _explicitNullValueCarrierCode; set { _explicitNullValueCarrierCode = value; AdditionalData?.Remove("carrierCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrierCode"); else _explicitNullProperties?.Remove("carrierCode"); } }
         private string? _explicitNullValueCarrierCode = default!;
 #nullable restore
 #else
-        public string CarrierCode { get => _explicitNullValueCarrierCode; set { _explicitNullValueCarrierCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrierCode"); else _explicitNullProperties?.Remove("carrierCode"); } }
+        public string CarrierCode { get => _explicitNullValueCarrierCode; set { _explicitNullValueCarrierCode = value; AdditionalData?.Remove("carrierCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("carrierCode"); else _explicitNullProperties?.Remove("carrierCode"); } }
         private string _explicitNullValueCarrierCode = default!;
 #endif
         /// <summary>A one-letter travel class identifier. The following are common: * F: first class* J: business class* Y: economy class* W: premium economy* Encoding: ASCII* minLength: 1 character* maxLength: 1 character* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].class_of_travel`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassOfTravel { get => _explicitNullValueClassOfTravel; set { _explicitNullValueClassOfTravel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classOfTravel"); else _explicitNullProperties?.Remove("classOfTravel"); } }
+        public string? ClassOfTravel { get => _explicitNullValueClassOfTravel; set { _explicitNullValueClassOfTravel = value; AdditionalData?.Remove("classOfTravel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classOfTravel"); else _explicitNullProperties?.Remove("classOfTravel"); } }
         private string? _explicitNullValueClassOfTravel = default!;
 #nullable restore
 #else
-        public string ClassOfTravel { get => _explicitNullValueClassOfTravel; set { _explicitNullValueClassOfTravel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classOfTravel"); else _explicitNullProperties?.Remove("classOfTravel"); } }
+        public string ClassOfTravel { get => _explicitNullValueClassOfTravel; set { _explicitNullValueClassOfTravel = value; AdditionalData?.Remove("classOfTravel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classOfTravel"); else _explicitNullProperties?.Remove("classOfTravel"); } }
         private string _explicitNullValueClassOfTravel = default!;
 #endif
         /// <summary>Date and time of travel in format `yyyy-MM-ddTHH:mm`.* Use local time of departure airport.* minLength: 16 characters* maxLength: 16 characters* **additionalData key:** `airline.leg[N].date_of_travel`</summary>
-        public DateTimeOffset? DateOfTravel { get => _explicitNullValueDateOfTravel; set { _explicitNullValueDateOfTravel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfTravel"); else _explicitNullProperties?.Remove("dateOfTravel"); } }
+        public DateTimeOffset? DateOfTravel { get => _explicitNullValueDateOfTravel; set { _explicitNullValueDateOfTravel = value; AdditionalData?.Remove("dateOfTravel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfTravel"); else _explicitNullProperties?.Remove("dateOfTravel"); } }
         private DateTimeOffset? _explicitNullValueDateOfTravel = default!;
         /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) three-letter airport code of the departure airport.This field is required if the airline data includes leg details.* Encoding: ASCII* Example: Amsterdam = AMS* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].depart_airport`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepartureAirportCode { get => _explicitNullValueDepartureAirportCode; set { _explicitNullValueDepartureAirportCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("departureAirportCode"); else _explicitNullProperties?.Remove("departureAirportCode"); } }
+        public string? DepartureAirportCode { get => _explicitNullValueDepartureAirportCode; set { _explicitNullValueDepartureAirportCode = value; AdditionalData?.Remove("departureAirportCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("departureAirportCode"); else _explicitNullProperties?.Remove("departureAirportCode"); } }
         private string? _explicitNullValueDepartureAirportCode = default!;
 #nullable restore
 #else
-        public string DepartureAirportCode { get => _explicitNullValueDepartureAirportCode; set { _explicitNullValueDepartureAirportCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("departureAirportCode"); else _explicitNullProperties?.Remove("departureAirportCode"); } }
+        public string DepartureAirportCode { get => _explicitNullValueDepartureAirportCode; set { _explicitNullValueDepartureAirportCode = value; AdditionalData?.Remove("departureAirportCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("departureAirportCode"); else _explicitNullProperties?.Remove("departureAirportCode"); } }
         private string _explicitNullValueDepartureAirportCode = default!;
 #endif
         /// <summary>The amount of [departure tax](https://en.wikipedia.org/wiki/Departure_tax) charged, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* Encoding: Numeric* minLength: 1* maxLength: 11* Must not be all zeros.* **additionalData key:** `airline.leg[N].depart_tax`</summary>
-        public long? DepartureTax { get => _explicitNullValueDepartureTax; set { _explicitNullValueDepartureTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("departureTax"); else _explicitNullProperties?.Remove("departureTax"); } }
+        public long? DepartureTax { get => _explicitNullValueDepartureTax; set { _explicitNullValueDepartureTax = value; AdditionalData?.Remove("departureTax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("departureTax"); else _explicitNullProperties?.Remove("departureTax"); } }
         private long? _explicitNullValueDepartureTax = default!;
         /// <summary>The [IATA](https://www.iata.org/services/pages/codes.aspx) 3-letter airport code of the destination airport.This field is required if the airline data includes leg details.* Example: Amsterdam = AMS* Encoding: ASCII* minLength: 3 characters* maxLength: 3 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].destination_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationAirportCode { get => _explicitNullValueDestinationAirportCode; set { _explicitNullValueDestinationAirportCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAirportCode"); else _explicitNullProperties?.Remove("destinationAirportCode"); } }
+        public string? DestinationAirportCode { get => _explicitNullValueDestinationAirportCode; set { _explicitNullValueDestinationAirportCode = value; AdditionalData?.Remove("destinationAirportCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAirportCode"); else _explicitNullProperties?.Remove("destinationAirportCode"); } }
         private string? _explicitNullValueDestinationAirportCode = default!;
 #nullable restore
 #else
-        public string DestinationAirportCode { get => _explicitNullValueDestinationAirportCode; set { _explicitNullValueDestinationAirportCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAirportCode"); else _explicitNullProperties?.Remove("destinationAirportCode"); } }
+        public string DestinationAirportCode { get => _explicitNullValueDestinationAirportCode; set { _explicitNullValueDestinationAirportCode = value; AdditionalData?.Remove("destinationAirportCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinationAirportCode"); else _explicitNullProperties?.Remove("destinationAirportCode"); } }
         private string _explicitNullValueDestinationAirportCode = default!;
 #endif
         /// <summary>The [fare basis code](https://en.wikipedia.org/wiki/Fare_basis_code), alphanumeric.* minLength: 1 character* maxLength: 15 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].fare_base_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FareBasisCode { get => _explicitNullValueFareBasisCode; set { _explicitNullValueFareBasisCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fareBasisCode"); else _explicitNullProperties?.Remove("fareBasisCode"); } }
+        public string? FareBasisCode { get => _explicitNullValueFareBasisCode; set { _explicitNullValueFareBasisCode = value; AdditionalData?.Remove("fareBasisCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fareBasisCode"); else _explicitNullProperties?.Remove("fareBasisCode"); } }
         private string? _explicitNullValueFareBasisCode = default!;
 #nullable restore
 #else
-        public string FareBasisCode { get => _explicitNullValueFareBasisCode; set { _explicitNullValueFareBasisCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fareBasisCode"); else _explicitNullProperties?.Remove("fareBasisCode"); } }
+        public string FareBasisCode { get => _explicitNullValueFareBasisCode; set { _explicitNullValueFareBasisCode = value; AdditionalData?.Remove("fareBasisCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fareBasisCode"); else _explicitNullProperties?.Remove("fareBasisCode"); } }
         private string _explicitNullValueFareBasisCode = default!;
 #endif
         /// <summary>The flight identifier.* minLength: 1 character* maxLength: 5 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `airline.leg[N].flight_number`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FlightNumber { get => _explicitNullValueFlightNumber; set { _explicitNullValueFlightNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flightNumber"); else _explicitNullProperties?.Remove("flightNumber"); } }
+        public string? FlightNumber { get => _explicitNullValueFlightNumber; set { _explicitNullValueFlightNumber = value; AdditionalData?.Remove("flightNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flightNumber"); else _explicitNullProperties?.Remove("flightNumber"); } }
         private string? _explicitNullValueFlightNumber = default!;
 #nullable restore
 #else
-        public string FlightNumber { get => _explicitNullValueFlightNumber; set { _explicitNullValueFlightNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flightNumber"); else _explicitNullProperties?.Remove("flightNumber"); } }
+        public string FlightNumber { get => _explicitNullValueFlightNumber; set { _explicitNullValueFlightNumber = value; AdditionalData?.Remove("flightNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flightNumber"); else _explicitNullProperties?.Remove("flightNumber"); } }
         private string _explicitNullValueFlightNumber = default!;
 #endif
         /// <summary>A one-letter code that indicates whether the passenger is entitled to make a stopover. Can be a space, O if the passenger is entitled to make a stopover, or X if they are not.* Encoding: ASCII* minLength: 1 character* maxLength: 1 character* **additionalData key:** `airline.leg[N].stop_over_code`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StopOverCode { get => _explicitNullValueStopOverCode; set { _explicitNullValueStopOverCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopOverCode"); else _explicitNullProperties?.Remove("stopOverCode"); } }
+        public string? StopOverCode { get => _explicitNullValueStopOverCode; set { _explicitNullValueStopOverCode = value; AdditionalData?.Remove("stopOverCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopOverCode"); else _explicitNullProperties?.Remove("stopOverCode"); } }
         private string? _explicitNullValueStopOverCode = default!;
 #nullable restore
 #else
-        public string StopOverCode { get => _explicitNullValueStopOverCode; set { _explicitNullValueStopOverCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopOverCode"); else _explicitNullProperties?.Remove("stopOverCode"); } }
+        public string StopOverCode { get => _explicitNullValueStopOverCode; set { _explicitNullValueStopOverCode = value; AdditionalData?.Remove("stopOverCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopOverCode"); else _explicitNullProperties?.Remove("stopOverCode"); } }
         private string _explicitNullValueStopOverCode = default!;
 #endif
         /// <summary>

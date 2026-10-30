@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("month") is { } nullNodeMonth && nullNodeMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Month = null;
-            if (parseNode.GetChildNode("year") is { } nullNodeYear && nullNodeYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Year = null;
+            if (parseNode.GetChildNode("month") is null) { _explicitNullValueMonth = default!; _explicitNullProperties?.Remove("month"); }
+            else if (parseNode.GetChildNode("month") is { } nullNodeMonth && nullNodeMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Month = null;
+            if (parseNode.GetChildNode("year") is null) { _explicitNullValueYear = default!; _explicitNullProperties?.Remove("year"); }
+            else if (parseNode.GetChildNode("year") is { } nullNodeYear && nullNodeYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Year = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The month in which the card will expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
+        public string? Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; AdditionalData?.Remove("month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
         private string? _explicitNullValueMonth = default!;
 #nullable restore
 #else
-        public string Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
+        public string Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; AdditionalData?.Remove("month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
         private string _explicitNullValueMonth = default!;
 #endif
         /// <summary>The year in which the card will expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
+        public string? Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; AdditionalData?.Remove("year"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
         private string? _explicitNullValueYear = default!;
 #nullable restore
 #else
-        public string Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
+        public string Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; AdditionalData?.Remove("year"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
         private string _explicitNullValueYear = default!;
 #endif
         /// <summary>

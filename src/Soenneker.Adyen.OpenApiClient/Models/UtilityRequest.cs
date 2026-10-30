@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("originDomains") is { } nullNodeOriginDomains && nullNodeOriginDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginDomains = null;
+            if (parseNode.GetChildNode("originDomains") is null) { _explicitNullValueOriginDomains = default!; _explicitNullProperties?.Remove("originDomains"); }
+            else if (parseNode.GetChildNode("originDomains") is { } nullNodeOriginDomains && nullNodeOriginDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginDomains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of origin domains, for which origin keys are requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OriginDomains { get => _explicitNullValueOriginDomains; set { _explicitNullValueOriginDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originDomains"); else _explicitNullProperties?.Remove("originDomains"); } }
+        public List<string>? OriginDomains { get => _explicitNullValueOriginDomains; set { _explicitNullValueOriginDomains = value; AdditionalData?.Remove("originDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originDomains"); else _explicitNullProperties?.Remove("originDomains"); } }
         private List<string>? _explicitNullValueOriginDomains = default!;
 #nullable restore
 #else
-        public List<string> OriginDomains { get => _explicitNullValueOriginDomains; set { _explicitNullValueOriginDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originDomains"); else _explicitNullProperties?.Remove("originDomains"); } }
+        public List<string> OriginDomains { get => _explicitNullValueOriginDomains; set { _explicitNullValueOriginDomains = value; AdditionalData?.Remove("originDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originDomains"); else _explicitNullProperties?.Remove("originDomains"); } }
         private List<string> _explicitNullValueOriginDomains = default!;
 #endif
         /// <summary>

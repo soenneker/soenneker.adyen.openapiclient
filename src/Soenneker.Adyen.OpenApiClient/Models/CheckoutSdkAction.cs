@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("paymentData") is { } nullNodePaymentData && nullNodePaymentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentData = null;
-            if (parseNode.GetChildNode("paymentMethodType") is { } nullNodePaymentMethodType && nullNodePaymentMethodType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodType = null;
-            if (parseNode.GetChildNode("sdkData") is { } nullNodeSdkData && nullNodeSdkData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkData = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("paymentData") is null) { _explicitNullValuePaymentData = default!; _explicitNullProperties?.Remove("paymentData"); }
+            else if (parseNode.GetChildNode("paymentData") is { } nullNodePaymentData && nullNodePaymentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentData = null;
+            if (parseNode.GetChildNode("paymentMethodType") is null) { _explicitNullValuePaymentMethodType = default!; _explicitNullProperties?.Remove("paymentMethodType"); }
+            else if (parseNode.GetChildNode("paymentMethodType") is { } nullNodePaymentMethodType && nullNodePaymentMethodType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodType = null;
+            if (parseNode.GetChildNode("sdkData") is null) { _explicitNullValueSdkData = default!; _explicitNullProperties?.Remove("sdkData"); }
+            else if (parseNode.GetChildNode("sdkData") is { } nullNodeSdkData && nullNodeSdkData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkData = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Encoded payment data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentData { get => _explicitNullValuePaymentData; set { _explicitNullValuePaymentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentData"); else _explicitNullProperties?.Remove("paymentData"); } }
+        public string? PaymentData { get => _explicitNullValuePaymentData; set { _explicitNullValuePaymentData = value; AdditionalData?.Remove("paymentData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentData"); else _explicitNullProperties?.Remove("paymentData"); } }
         private string? _explicitNullValuePaymentData = default!;
 #nullable restore
 #else
-        public string PaymentData { get => _explicitNullValuePaymentData; set { _explicitNullValuePaymentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentData"); else _explicitNullProperties?.Remove("paymentData"); } }
+        public string PaymentData { get => _explicitNullValuePaymentData; set { _explicitNullValuePaymentData = value; AdditionalData?.Remove("paymentData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentData"); else _explicitNullProperties?.Remove("paymentData"); } }
         private string _explicitNullValuePaymentData = default!;
 #endif
         /// <summary>Specifies the payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethodType { get => _explicitNullValuePaymentMethodType; set { _explicitNullValuePaymentMethodType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodType"); else _explicitNullProperties?.Remove("paymentMethodType"); } }
+        public string? PaymentMethodType { get => _explicitNullValuePaymentMethodType; set { _explicitNullValuePaymentMethodType = value; AdditionalData?.Remove("paymentMethodType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodType"); else _explicitNullProperties?.Remove("paymentMethodType"); } }
         private string? _explicitNullValuePaymentMethodType = default!;
 #nullable restore
 #else
-        public string PaymentMethodType { get => _explicitNullValuePaymentMethodType; set { _explicitNullValuePaymentMethodType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodType"); else _explicitNullProperties?.Remove("paymentMethodType"); } }
+        public string PaymentMethodType { get => _explicitNullValuePaymentMethodType; set { _explicitNullValuePaymentMethodType = value; AdditionalData?.Remove("paymentMethodType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodType"); else _explicitNullProperties?.Remove("paymentMethodType"); } }
         private string _explicitNullValuePaymentMethodType = default!;
 #endif
         /// <summary>The data to pass to the SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2? SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2? SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; AdditionalData?.Remove("sdkData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2? _explicitNullValueSdkData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2 SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2 SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; AdditionalData?.Remove("sdkData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2 _explicitNullValueSdkData = default!;
 #endif
         /// <summary>The type of the action.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType? _explicitNullValueType = default!;
         /// <summary>Specifies the URL to redirect to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -97,7 +102,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "paymentData", n => { PaymentData = n.GetStringValue(); } },
                 { "paymentMethodType", n => { PaymentMethodType = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2>(global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionSdkDataProperty2.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CheckoutSdkActionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }

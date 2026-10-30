@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("logoUrl") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
-            if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("logoUrl") is null) { _explicitNullValueLogoUrl = default!; _explicitNullProperties?.Remove("logoUrl"); }
+            else if (parseNode.GetChildNode("logoUrl") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
+            if (parseNode.GetChildNode("merchantName") is null) { _explicitNullValueMerchantName = default!; _explicitNullProperties?.Remove("merchantName"); }
+            else if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The URL of the logo image shown in Cash App checkout next to payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
+        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; AdditionalData?.Remove("logoUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
         private string? _explicitNullValueLogoUrl = default!;
 #nullable restore
 #else
-        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
+        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; AdditionalData?.Remove("logoUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
         private string _explicitNullValueLogoUrl = default!;
 #endif
         /// <summary>The merchant display name shown in Cash App checkout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchantName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
         private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchantName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
         private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>

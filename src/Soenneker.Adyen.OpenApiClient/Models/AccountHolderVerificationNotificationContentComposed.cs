@@ -18,23 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
-            if (parseNode.GetChildNode("kycCheckStatusData") is { } nullNodeKycCheckStatusData && nullNodeKycCheckStatusData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheckStatusData = null;
-            if (parseNode.GetChildNode("legalArrangementCode") is { } nullNodeLegalArrangementCode && nullNodeLegalArrangementCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementCode = null;
-            if (parseNode.GetChildNode("legalArrangementEntityCode") is { } nullNodeLegalArrangementEntityCode && nullNodeLegalArrangementEntityCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementEntityCode = null;
-            if (parseNode.GetChildNode("payoutMethodCode") is { } nullNodePayoutMethodCode && nullNodePayoutMethodCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethodCode = null;
-            if (parseNode.GetChildNode("shareholderCode") is { } nullNodeShareholderCode && nullNodeShareholderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCode = null;
-            if (parseNode.GetChildNode("signatoryCode") is { } nullNodeSignatoryCode && nullNodeSignatoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatoryCode = null;
+            if (parseNode.GetChildNode("accountHolderCode") is null) { _explicitNullValueAccountHolderCode = default!; _explicitNullProperties?.Remove("accountHolderCode"); }
+            else if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("kycCheckStatusData") is null) { _explicitNullValueKycCheckStatusData = default!; _explicitNullProperties?.Remove("kycCheckStatusData"); }
+            else if (parseNode.GetChildNode("kycCheckStatusData") is { } nullNodeKycCheckStatusData && nullNodeKycCheckStatusData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KycCheckStatusData = null;
+            if (parseNode.GetChildNode("legalArrangementCode") is null) { _explicitNullValueLegalArrangementCode = default!; _explicitNullProperties?.Remove("legalArrangementCode"); }
+            else if (parseNode.GetChildNode("legalArrangementCode") is { } nullNodeLegalArrangementCode && nullNodeLegalArrangementCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementCode = null;
+            if (parseNode.GetChildNode("legalArrangementEntityCode") is null) { _explicitNullValueLegalArrangementEntityCode = default!; _explicitNullProperties?.Remove("legalArrangementEntityCode"); }
+            else if (parseNode.GetChildNode("legalArrangementEntityCode") is { } nullNodeLegalArrangementEntityCode && nullNodeLegalArrangementEntityCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementEntityCode = null;
+            if (parseNode.GetChildNode("payoutMethodCode") is null) { _explicitNullValuePayoutMethodCode = default!; _explicitNullProperties?.Remove("payoutMethodCode"); }
+            else if (parseNode.GetChildNode("payoutMethodCode") is { } nullNodePayoutMethodCode && nullNodePayoutMethodCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutMethodCode = null;
+            if (parseNode.GetChildNode("shareholderCode") is null) { _explicitNullValueShareholderCode = default!; _explicitNullProperties?.Remove("shareholderCode"); }
+            else if (parseNode.GetChildNode("shareholderCode") is { } nullNodeShareholderCode && nullNodeShareholderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCode = null;
+            if (parseNode.GetChildNode("signatoryCode") is null) { _explicitNullValueSignatoryCode = default!; _explicitNullProperties?.Remove("signatoryCode"); }
+            else if (parseNode.GetChildNode("signatoryCode") is { } nullNodeSignatoryCode && nullNodeSignatoryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatoryCode = null;
         }
 
         /// <summary>The code of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,61 +49,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The kycCheckStatusData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData? KycCheckStatusData { get => _explicitNullValueKycCheckStatusData; set { _explicitNullValueKycCheckStatusData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckStatusData"); else _explicitNullProperties?.Remove("kycCheckStatusData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData? KycCheckStatusData { get => _explicitNullValueKycCheckStatusData; set { _explicitNullValueKycCheckStatusData = value; AdditionalData?.Remove("kycCheckStatusData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckStatusData"); else _explicitNullProperties?.Remove("kycCheckStatusData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData? _explicitNullValueKycCheckStatusData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData KycCheckStatusData { get => _explicitNullValueKycCheckStatusData; set { _explicitNullValueKycCheckStatusData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckStatusData"); else _explicitNullProperties?.Remove("kycCheckStatusData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData KycCheckStatusData { get => _explicitNullValueKycCheckStatusData; set { _explicitNullValueKycCheckStatusData = value; AdditionalData?.Remove("kycCheckStatusData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kycCheckStatusData"); else _explicitNullProperties?.Remove("kycCheckStatusData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6KycCheckStatusData _explicitNullValueKycCheckStatusData = default!;
 #endif
         /// <summary>The unique ID of the legal arrangement that has been verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
+        public string? LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; AdditionalData?.Remove("legalArrangementCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
         private string? _explicitNullValueLegalArrangementCode = default!;
 #nullable restore
 #else
-        public string LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
+        public string LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; AdditionalData?.Remove("legalArrangementCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
         private string _explicitNullValueLegalArrangementCode = default!;
 #endif
         /// <summary>The unique ID of the legal arrangement entity that has been verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalArrangementEntityCode { get => _explicitNullValueLegalArrangementEntityCode; set { _explicitNullValueLegalArrangementEntityCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCode"); else _explicitNullProperties?.Remove("legalArrangementEntityCode"); } }
+        public string? LegalArrangementEntityCode { get => _explicitNullValueLegalArrangementEntityCode; set { _explicitNullValueLegalArrangementEntityCode = value; AdditionalData?.Remove("legalArrangementEntityCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCode"); else _explicitNullProperties?.Remove("legalArrangementEntityCode"); } }
         private string? _explicitNullValueLegalArrangementEntityCode = default!;
 #nullable restore
 #else
-        public string LegalArrangementEntityCode { get => _explicitNullValueLegalArrangementEntityCode; set { _explicitNullValueLegalArrangementEntityCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCode"); else _explicitNullProperties?.Remove("legalArrangementEntityCode"); } }
+        public string LegalArrangementEntityCode { get => _explicitNullValueLegalArrangementEntityCode; set { _explicitNullValueLegalArrangementEntityCode = value; AdditionalData?.Remove("legalArrangementEntityCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCode"); else _explicitNullProperties?.Remove("legalArrangementEntityCode"); } }
         private string _explicitNullValueLegalArrangementEntityCode = default!;
 #endif
         /// <summary>The unique code of the payout method that has been verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
+        public string? PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; AdditionalData?.Remove("payoutMethodCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
         private string? _explicitNullValuePayoutMethodCode = default!;
 #nullable restore
 #else
-        public string PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
+        public string PayoutMethodCode { get => _explicitNullValuePayoutMethodCode; set { _explicitNullValuePayoutMethodCode = value; AdditionalData?.Remove("payoutMethodCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutMethodCode"); else _explicitNullProperties?.Remove("payoutMethodCode"); } }
         private string _explicitNullValuePayoutMethodCode = default!;
 #endif
         /// <summary>The code of the shareholder that has been verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
+        public string? ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; AdditionalData?.Remove("shareholderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
         private string? _explicitNullValueShareholderCode = default!;
 #nullable restore
 #else
-        public string ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
+        public string ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; AdditionalData?.Remove("shareholderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
         private string _explicitNullValueShareholderCode = default!;
 #endif
         /// <summary>The code of the signatory that has been verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignatoryCode { get => _explicitNullValueSignatoryCode; set { _explicitNullValueSignatoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signatoryCode"); else _explicitNullProperties?.Remove("signatoryCode"); } }
+        public string? SignatoryCode { get => _explicitNullValueSignatoryCode; set { _explicitNullValueSignatoryCode = value; AdditionalData?.Remove("signatoryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signatoryCode"); else _explicitNullProperties?.Remove("signatoryCode"); } }
         private string? _explicitNullValueSignatoryCode = default!;
 #nullable restore
 #else
-        public string SignatoryCode { get => _explicitNullValueSignatoryCode; set { _explicitNullValueSignatoryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signatoryCode"); else _explicitNullProperties?.Remove("signatoryCode"); } }
+        public string SignatoryCode { get => _explicitNullValueSignatoryCode; set { _explicitNullValueSignatoryCode = value; AdditionalData?.Remove("signatoryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signatoryCode"); else _explicitNullProperties?.Remove("signatoryCode"); } }
         private string _explicitNullValueSignatoryCode = default!;
 #endif
         /// <summary>

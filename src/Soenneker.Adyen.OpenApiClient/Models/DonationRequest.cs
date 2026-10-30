@@ -17,12 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("donationAccount") is { } nullNodeDonationAccount && nullNodeDonationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationAccount = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("modificationAmount") is { } nullNodeModificationAmount && nullNodeModificationAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationAmount = null;
-            if (parseNode.GetChildNode("originalReference") is { } nullNodeOriginalReference && nullNodeOriginalReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalReference = null;
-            if (parseNode.GetChildNode("platformChargebackLogic") is { } nullNodePlatformChargebackLogic && nullNodePlatformChargebackLogic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformChargebackLogic = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("donationAccount") is null) { _explicitNullValueDonationAccount = default!; _explicitNullProperties?.Remove("donationAccount"); }
+            else if (parseNode.GetChildNode("donationAccount") is { } nullNodeDonationAccount && nullNodeDonationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationAccount = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("modificationAmount") is null) { _explicitNullValueModificationAmount = default!; _explicitNullProperties?.Remove("modificationAmount"); }
+            else if (parseNode.GetChildNode("modificationAmount") is { } nullNodeModificationAmount && nullNodeModificationAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationAmount = null;
+            if (parseNode.GetChildNode("originalReference") is null) { _explicitNullValueOriginalReference = default!; _explicitNullProperties?.Remove("originalReference"); }
+            else if (parseNode.GetChildNode("originalReference") is { } nullNodeOriginalReference && nullNodeOriginalReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalReference = null;
+            if (parseNode.GetChildNode("platformChargebackLogic") is null) { _explicitNullValuePlatformChargebackLogic = default!; _explicitNullProperties?.Remove("platformChargebackLogic"); }
+            else if (parseNode.GetChildNode("platformChargebackLogic") is { } nullNodePlatformChargebackLogic && nullNodePlatformChargebackLogic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformChargebackLogic = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The Adyen account name of the charity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DonationAccount { get => _explicitNullValueDonationAccount; set { _explicitNullValueDonationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationAccount"); else _explicitNullProperties?.Remove("donationAccount"); } }
+        public string? DonationAccount { get => _explicitNullValueDonationAccount; set { _explicitNullValueDonationAccount = value; AdditionalData?.Remove("donationAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationAccount"); else _explicitNullProperties?.Remove("donationAccount"); } }
         private string? _explicitNullValueDonationAccount = default!;
 #nullable restore
 #else
-        public string DonationAccount { get => _explicitNullValueDonationAccount; set { _explicitNullValueDonationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationAccount"); else _explicitNullProperties?.Remove("donationAccount"); } }
+        public string DonationAccount { get => _explicitNullValueDonationAccount; set { _explicitNullValueDonationAccount = value; AdditionalData?.Remove("donationAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationAccount"); else _explicitNullProperties?.Remove("donationAccount"); } }
         private string _explicitNullValueDonationAccount = default!;
 #endif
         /// <summary>The merchant account that is used to process the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>The amount to be donated.The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestModificationAmount? ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestModificationAmount? ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; AdditionalData?.Remove("modificationAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestModificationAmount? _explicitNullValueModificationAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestModificationAmount ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestModificationAmount ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; AdditionalData?.Remove("modificationAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestModificationAmount _explicitNullValueModificationAmount = default!;
 #endif
         /// <summary>The original pspReference of the payment to modify.This reference is returned in:* authorisation response* authorisation notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
+        public string? OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; AdditionalData?.Remove("originalReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
         private string? _explicitNullValueOriginalReference = default!;
 #nullable restore
 #else
-        public string OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
+        public string OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; AdditionalData?.Remove("originalReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
         private string _explicitNullValueOriginalReference = default!;
 #endif
         /// <summary>Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/adyen-for-platforms-model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestPlatformChargebackLogic? PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestPlatformChargebackLogic? PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; AdditionalData?.Remove("platformChargebackLogic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestPlatformChargebackLogic? _explicitNullValuePlatformChargebackLogic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestPlatformChargebackLogic PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestPlatformChargebackLogic PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; AdditionalData?.Remove("platformChargebackLogic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationRequestPlatformChargebackLogic _explicitNullValuePlatformChargebackLogic = default!;
 #endif
         /// <summary>Your reference for the payment modification. This reference is visible in Customer Area and in reports.Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>

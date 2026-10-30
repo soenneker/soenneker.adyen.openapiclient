@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("requiredFields") is { } nullNodeRequiredFields && nullNodeRequiredFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredFields = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("requiredFields") is null) { _explicitNullValueRequiredFields = default!; _explicitNullProperties?.Remove("requiredFields"); }
+            else if (parseNode.GetChildNode("requiredFields") is { } nullNodeRequiredFields && nullNodeRequiredFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredFields = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("summary") is null) { _explicitNullValueSummary = default!; _explicitNullProperties?.Remove("summary"); }
+            else if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of the fields required for execution of the check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequiredFields { get => _explicitNullValueRequiredFields; set { _explicitNullValueRequiredFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredFields"); else _explicitNullProperties?.Remove("requiredFields"); } }
+        public List<string>? RequiredFields { get => _explicitNullValueRequiredFields; set { _explicitNullValueRequiredFields = value; AdditionalData?.Remove("requiredFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredFields"); else _explicitNullProperties?.Remove("requiredFields"); } }
         private List<string>? _explicitNullValueRequiredFields = default!;
 #nullable restore
 #else
-        public List<string> RequiredFields { get => _explicitNullValueRequiredFields; set { _explicitNullValueRequiredFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredFields"); else _explicitNullProperties?.Remove("requiredFields"); } }
+        public List<string> RequiredFields { get => _explicitNullValueRequiredFields; set { _explicitNullValueRequiredFields = value; AdditionalData?.Remove("requiredFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredFields"); else _explicitNullProperties?.Remove("requiredFields"); } }
         private List<string> _explicitNullValueRequiredFields = default!;
 #endif
         /// <summary>The status of the check.Possible values: **AWAITING_DATA** , **DATA_PROVIDED**, **FAILED**, **INVALID_DATA**, **PASSED**, **PENDING**, **RETRY_LIMIT_REACHED**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus? _explicitNullValueStatus = default!;
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>The type of check.Possible values: * **BANK_ACCOUNT_VERIFICATION**: Used in v5 and earlier. Replaced by **PAYOUT_METHOD_VERIFICATION** in v6 and later. * **COMPANY_VERIFICATION**  * **CARD_VERIFICATION*** **IDENTITY_VERIFICATION*** **LEGAL_ARRANGEMENT_VERIFICATION*** **NONPROFIT_VERIFICATION** * **PASSPORT_VERIFICATION*** **PAYOUT_METHOD_VERIFICATION**: Used in v6 and later.* **PCI_VERIFICATION**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusData"/> and sets the default values.
@@ -77,9 +81,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "requiredFields", n => { RequiredFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary>(global::Soenneker.Adyen.OpenApiClient.Models.KycCheckSummary.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.KycCheckStatusDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

@@ -18,38 +18,42 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dateOfSignature") is { } nullNodeDateOfSignature && nullNodeDateOfSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfSignature = null;
-            if (parseNode.GetChildNode("dueDate") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
-            if (parseNode.GetChildNode("mandateId") is { } nullNodeMandateId && nullNodeMandateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MandateId = null;
-            if (parseNode.GetChildNode("sequenceType") is { } nullNodeSequenceType && nullNodeSequenceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceType = null;
+            if (parseNode.GetChildNode("dateOfSignature") is null) { _explicitNullValueDateOfSignature = default!; _explicitNullProperties?.Remove("dateOfSignature"); }
+            else if (parseNode.GetChildNode("dateOfSignature") is { } nullNodeDateOfSignature && nullNodeDateOfSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfSignature = null;
+            if (parseNode.GetChildNode("dueDate") is null) { _explicitNullValueDueDate = default!; _explicitNullProperties?.Remove("dueDate"); }
+            else if (parseNode.GetChildNode("dueDate") is { } nullNodeDueDate && nullNodeDueDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DueDate = null;
+            if (parseNode.GetChildNode("mandateId") is null) { _explicitNullValueMandateId = default!; _explicitNullProperties?.Remove("mandateId"); }
+            else if (parseNode.GetChildNode("mandateId") is { } nullNodeMandateId && nullNodeMandateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MandateId = null;
+            if (parseNode.GetChildNode("sequenceType") is null) { _explicitNullValueSequenceType = default!; _explicitNullProperties?.Remove("sequenceType"); }
+            else if (parseNode.GetChildNode("sequenceType") is { } nullNodeSequenceType && nullNodeSequenceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date when the direct debit mandate was accepted by your user, in [ISO-8601](https://www.w3.org/TR/NOTE-datetime) format.</summary>
-        public DateTimeOffset? DateOfSignature { get => _explicitNullValueDateOfSignature; set { _explicitNullValueDateOfSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfSignature"); else _explicitNullProperties?.Remove("dateOfSignature"); } }
+        public DateTimeOffset? DateOfSignature { get => _explicitNullValueDateOfSignature; set { _explicitNullValueDateOfSignature = value; AdditionalData?.Remove("dateOfSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfSignature"); else _explicitNullProperties?.Remove("dateOfSignature"); } }
         private DateTimeOffset? _explicitNullValueDateOfSignature = default!;
         /// <summary>The date when the funds are deducted from your user&apos;s balance account.</summary>
-        public DateTimeOffset? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dueDate"); else _explicitNullProperties?.Remove("dueDate"); } }
+        public DateTimeOffset? DueDate { get => _explicitNullValueDueDate; set { _explicitNullValueDueDate = value; AdditionalData?.Remove("dueDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dueDate"); else _explicitNullProperties?.Remove("dueDate"); } }
         private DateTimeOffset? _explicitNullValueDueDate = default!;
         /// <summary>Your unique identifier for the direct debit mandate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MandateId { get => _explicitNullValueMandateId; set { _explicitNullValueMandateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandateId"); else _explicitNullProperties?.Remove("mandateId"); } }
+        public string? MandateId { get => _explicitNullValueMandateId; set { _explicitNullValueMandateId = value; AdditionalData?.Remove("mandateId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandateId"); else _explicitNullProperties?.Remove("mandateId"); } }
         private string? _explicitNullValueMandateId = default!;
 #nullable restore
 #else
-        public string MandateId { get => _explicitNullValueMandateId; set { _explicitNullValueMandateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandateId"); else _explicitNullProperties?.Remove("mandateId"); } }
+        public string MandateId { get => _explicitNullValueMandateId; set { _explicitNullValueMandateId = value; AdditionalData?.Remove("mandateId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mandateId"); else _explicitNullProperties?.Remove("mandateId"); } }
         private string _explicitNullValueMandateId = default!;
 #endif
         /// <summary>Identifies the direct debit transfer&apos;s type.Possible values: **OneOff**, **First**, **Recurring**, **Final**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SequenceType { get => _explicitNullValueSequenceType; set { _explicitNullValueSequenceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequenceType"); else _explicitNullProperties?.Remove("sequenceType"); } }
+        public string? SequenceType { get => _explicitNullValueSequenceType; set { _explicitNullValueSequenceType = value; AdditionalData?.Remove("sequenceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequenceType"); else _explicitNullProperties?.Remove("sequenceType"); } }
         private string? _explicitNullValueSequenceType = default!;
 #nullable restore
 #else
-        public string SequenceType { get => _explicitNullValueSequenceType; set { _explicitNullValueSequenceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequenceType"); else _explicitNullProperties?.Remove("sequenceType"); } }
+        public string SequenceType { get => _explicitNullValueSequenceType; set { _explicitNullValueSequenceType = value; AdditionalData?.Remove("sequenceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequenceType"); else _explicitNullProperties?.Remove("sequenceType"); } }
         private string _explicitNullValueSequenceType = default!;
 #endif
         /// <summary>

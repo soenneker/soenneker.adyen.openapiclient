@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("legalArrangementCode") is { } nullNodeLegalArrangementCode && nullNodeLegalArrangementCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementCode = null;
-            if (parseNode.GetChildNode("legalArrangementEntityCodes") is { } nullNodeLegalArrangementEntityCodes && nullNodeLegalArrangementEntityCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementEntityCodes = null;
+            if (parseNode.GetChildNode("legalArrangementCode") is null) { _explicitNullValueLegalArrangementCode = default!; _explicitNullProperties?.Remove("legalArrangementCode"); }
+            else if (parseNode.GetChildNode("legalArrangementCode") is { } nullNodeLegalArrangementCode && nullNodeLegalArrangementCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementCode = null;
+            if (parseNode.GetChildNode("legalArrangementEntityCodes") is null) { _explicitNullValueLegalArrangementEntityCodes = default!; _explicitNullProperties?.Remove("legalArrangementEntityCodes"); }
+            else if (parseNode.GetChildNode("legalArrangementEntityCodes") is { } nullNodeLegalArrangementEntityCodes && nullNodeLegalArrangementEntityCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementEntityCodes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The code of the legal arrangement to be deleted. If you also send `legalArrangementEntityCodes`, only the entities listed will be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
+        public string? LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; AdditionalData?.Remove("legalArrangementCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
         private string? _explicitNullValueLegalArrangementCode = default!;
 #nullable restore
 #else
-        public string LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
+        public string LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; AdditionalData?.Remove("legalArrangementCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
         private string _explicitNullValueLegalArrangementCode = default!;
 #endif
         /// <summary>List of legal arrangement entities to be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LegalArrangementEntityCodes { get => _explicitNullValueLegalArrangementEntityCodes; set { _explicitNullValueLegalArrangementEntityCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCodes"); else _explicitNullProperties?.Remove("legalArrangementEntityCodes"); } }
+        public List<string>? LegalArrangementEntityCodes { get => _explicitNullValueLegalArrangementEntityCodes; set { _explicitNullValueLegalArrangementEntityCodes = value; AdditionalData?.Remove("legalArrangementEntityCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCodes"); else _explicitNullProperties?.Remove("legalArrangementEntityCodes"); } }
         private List<string>? _explicitNullValueLegalArrangementEntityCodes = default!;
 #nullable restore
 #else
-        public List<string> LegalArrangementEntityCodes { get => _explicitNullValueLegalArrangementEntityCodes; set { _explicitNullValueLegalArrangementEntityCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCodes"); else _explicitNullProperties?.Remove("legalArrangementEntityCodes"); } }
+        public List<string> LegalArrangementEntityCodes { get => _explicitNullValueLegalArrangementEntityCodes; set { _explicitNullValueLegalArrangementEntityCodes = value; AdditionalData?.Remove("legalArrangementEntityCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntityCodes"); else _explicitNullProperties?.Remove("legalArrangementEntityCodes"); } }
         private List<string> _explicitNullValueLegalArrangementEntityCodes = default!;
 #endif
         /// <summary>

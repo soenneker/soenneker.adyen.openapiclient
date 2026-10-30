@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balanceAfter") is { } nullNodeBalanceAfter && nullNodeBalanceAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAfter = null;
-            if (parseNode.GetChildNode("balanceBefore") is { } nullNodeBalanceBefore && nullNodeBalanceBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceBefore = null;
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("mutationAmount") is { } nullNodeMutationAmount && nullNodeMutationAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MutationAmount = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("balanceAfter") is null) { _explicitNullValueBalanceAfter = default!; _explicitNullProperties?.Remove("balanceAfter"); }
+            else if (parseNode.GetChildNode("balanceAfter") is { } nullNodeBalanceAfter && nullNodeBalanceAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceAfter = null;
+            if (parseNode.GetChildNode("balanceBefore") is null) { _explicitNullValueBalanceBefore = default!; _explicitNullProperties?.Remove("balanceBefore"); }
+            else if (parseNode.GetChildNode("balanceBefore") is { } nullNodeBalanceBefore && nullNodeBalanceBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalanceBefore = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("mutationAmount") is null) { _explicitNullValueMutationAmount = default!; _explicitNullProperties?.Remove("mutationAmount"); }
+            else if (parseNode.GetChildNode("mutationAmount") is { } nullNodeMutationAmount && nullNodeMutationAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MutationAmount = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The balance amount after the mutation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceAfter? BalanceAfter { get => _explicitNullValueBalanceAfter; set { _explicitNullValueBalanceAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAfter"); else _explicitNullProperties?.Remove("balanceAfter"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceAfter? BalanceAfter { get => _explicitNullValueBalanceAfter; set { _explicitNullValueBalanceAfter = value; AdditionalData?.Remove("balanceAfter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAfter"); else _explicitNullProperties?.Remove("balanceAfter"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceAfter? _explicitNullValueBalanceAfter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceAfter BalanceAfter { get => _explicitNullValueBalanceAfter; set { _explicitNullValueBalanceAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAfter"); else _explicitNullProperties?.Remove("balanceAfter"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceAfter BalanceAfter { get => _explicitNullValueBalanceAfter; set { _explicitNullValueBalanceAfter = value; AdditionalData?.Remove("balanceAfter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceAfter"); else _explicitNullProperties?.Remove("balanceAfter"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceAfter _explicitNullValueBalanceAfter = default!;
 #endif
         /// <summary>The balance amount before the mutation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceBefore? BalanceBefore { get => _explicitNullValueBalanceBefore; set { _explicitNullValueBalanceBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceBefore"); else _explicitNullProperties?.Remove("balanceBefore"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceBefore? BalanceBefore { get => _explicitNullValueBalanceBefore; set { _explicitNullValueBalanceBefore = value; AdditionalData?.Remove("balanceBefore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceBefore"); else _explicitNullProperties?.Remove("balanceBefore"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceBefore? _explicitNullValueBalanceBefore = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceBefore BalanceBefore { get => _explicitNullValueBalanceBefore; set { _explicitNullValueBalanceBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceBefore"); else _explicitNullProperties?.Remove("balanceBefore"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceBefore BalanceBefore { get => _explicitNullValueBalanceBefore; set { _explicitNullValueBalanceBefore = value; AdditionalData?.Remove("balanceBefore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balanceBefore"); else _explicitNullProperties?.Remove("balanceBefore"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationBalanceBefore _explicitNullValueBalanceBefore = default!;
 #endif
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The amount of the mutation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationMutationAmount? MutationAmount { get => _explicitNullValueMutationAmount; set { _explicitNullValueMutationAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutationAmount"); else _explicitNullProperties?.Remove("mutationAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationMutationAmount? MutationAmount { get => _explicitNullValueMutationAmount; set { _explicitNullValueMutationAmount = value; AdditionalData?.Remove("mutationAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutationAmount"); else _explicitNullProperties?.Remove("mutationAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationMutationAmount? _explicitNullValueMutationAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationMutationAmount MutationAmount { get => _explicitNullValueMutationAmount; set { _explicitNullValueMutationAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutationAmount"); else _explicitNullProperties?.Remove("mutationAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationMutationAmount MutationAmount { get => _explicitNullValueMutationAmount; set { _explicitNullValueMutationAmount = value; AdditionalData?.Remove("mutationAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutationAmount"); else _explicitNullProperties?.Remove("mutationAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformRelayedAuthorisationNotificationV4BalanceMutationMutationAmount _explicitNullValueMutationAmount = default!;
 #endif
         /// <summary>The type of the mutation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
         /// <summary>

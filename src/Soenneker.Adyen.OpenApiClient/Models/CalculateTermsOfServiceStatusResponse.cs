@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("termsOfServiceTypes") is { } nullNodeTermsOfServiceTypes && nullNodeTermsOfServiceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceTypes = null;
+            if (parseNode.GetChildNode("termsOfServiceTypes") is null) { _explicitNullValueTermsOfServiceTypes = default!; _explicitNullProperties?.Remove("termsOfServiceTypes"); }
+            else if (parseNode.GetChildNode("termsOfServiceTypes") is { } nullNodeTermsOfServiceTypes && nullNodeTermsOfServiceTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The type of Terms of Service that the legal entity needs to accept. If empty, no Terms of Service needs to be accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?>? TermsOfServiceTypes { get => _explicitNullValueTermsOfServiceTypes; set { _explicitNullValueTermsOfServiceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceTypes"); else _explicitNullProperties?.Remove("termsOfServiceTypes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?>? TermsOfServiceTypes { get => _explicitNullValueTermsOfServiceTypes; set { _explicitNullValueTermsOfServiceTypes = value; AdditionalData?.Remove("termsOfServiceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceTypes"); else _explicitNullProperties?.Remove("termsOfServiceTypes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?>? _explicitNullValueTermsOfServiceTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?> TermsOfServiceTypes { get => _explicitNullValueTermsOfServiceTypes; set { _explicitNullValueTermsOfServiceTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceTypes"); else _explicitNullProperties?.Remove("termsOfServiceTypes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?> TermsOfServiceTypes { get => _explicitNullValueTermsOfServiceTypes; set { _explicitNullValueTermsOfServiceTypes = value; AdditionalData?.Remove("termsOfServiceTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceTypes"); else _explicitNullProperties?.Remove("termsOfServiceTypes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateTermsOfServiceStatusResponseTermsOfServiceTypesItem?> _explicitNullValueTermsOfServiceTypes = default!;
 #endif
         /// <summary>

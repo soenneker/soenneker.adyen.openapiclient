@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
-            if (parseNode.GetChildNode("remediatingActions") is { } nullNodeRemediatingActions && nullNodeRemediatingActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediatingActions = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("capabilities") is null) { _explicitNullValueCapabilities = default!; _explicitNullProperties?.Remove("capabilities"); }
+            else if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("remediatingActions") is null) { _explicitNullValueRemediatingActions = default!; _explicitNullProperties?.Remove("remediatingActions"); }
+            else if (parseNode.GetChildNode("remediatingActions") is { } nullNodeRemediatingActions && nullNodeRemediatingActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemediatingActions = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains key-value pairs that specify the actions that the legal entity can do in your platform. The key is a capability required for your integration. For example, **issueCard** for Issuing.The value is an object containing the settings for the capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveCapabilitiesItem?>? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveCapabilitiesItem?>? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveCapabilitiesItem?>? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveCapabilitiesItem?> Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveCapabilitiesItem?> Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveCapabilitiesItem?> _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>The general error code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
         /// <summary>The general error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>An object containing possible solutions to fix a verification error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction>? RemediatingActions { get => _explicitNullValueRemediatingActions; set { _explicitNullValueRemediatingActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediatingActions"); else _explicitNullProperties?.Remove("remediatingActions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction>? RemediatingActions { get => _explicitNullValueRemediatingActions; set { _explicitNullValueRemediatingActions = value; AdditionalData?.Remove("remediatingActions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediatingActions"); else _explicitNullProperties?.Remove("remediatingActions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction>? _explicitNullValueRemediatingActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction> RemediatingActions { get => _explicitNullValueRemediatingActions; set { _explicitNullValueRemediatingActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediatingActions"); else _explicitNullProperties?.Remove("remediatingActions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction> RemediatingActions { get => _explicitNullValueRemediatingActions; set { _explicitNullValueRemediatingActions = value; AdditionalData?.Remove("remediatingActions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remediatingActions"); else _explicitNullProperties?.Remove("remediatingActions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction> _explicitNullValueRemediatingActions = default!;
 #endif
         /// <summary>The type of error.Possible values:*  **invalidInput***  **dataMissing***  **pendingStatus***  **rejected***  **dataReview**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursive"/> and sets the default values.
@@ -98,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "remediatingActions", n => { RemediatingActions = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4RemediatingAction.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationErrorRecursiveType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errorMessage") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("trackingNumber") is { } nullNodeTrackingNumber && nullNodeTrackingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingNumber = null;
+            if (parseNode.GetChildNode("errorMessage") is null) { _explicitNullValueErrorMessage = default!; _explicitNullProperties?.Remove("errorMessage"); }
+            else if (parseNode.GetChildNode("errorMessage") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("trackingNumber") is null) { _explicitNullValueTrackingNumber = default!; _explicitNullProperties?.Remove("trackingNumber"); }
+            else if (parseNode.GetChildNode("trackingNumber") is { } nullNodeTrackingNumber && nullNodeTrackingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackingNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("errorMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
         private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("errorMessage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
         private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The status of the PIN delivery.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderItemDeliveryStatusStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardOrderItemDeliveryStatusStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CardOrderItemDeliveryStatusStatus? _explicitNullValueStatus = default!;
         /// <summary>The tracking number of the PIN delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackingNumber { get => _explicitNullValueTrackingNumber; set { _explicitNullValueTrackingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackingNumber"); else _explicitNullProperties?.Remove("trackingNumber"); } }
+        public string? TrackingNumber { get => _explicitNullValueTrackingNumber; set { _explicitNullValueTrackingNumber = value; AdditionalData?.Remove("trackingNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackingNumber"); else _explicitNullProperties?.Remove("trackingNumber"); } }
         private string? _explicitNullValueTrackingNumber = default!;
 #nullable restore
 #else
-        public string TrackingNumber { get => _explicitNullValueTrackingNumber; set { _explicitNullValueTrackingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackingNumber"); else _explicitNullProperties?.Remove("trackingNumber"); } }
+        public string TrackingNumber { get => _explicitNullValueTrackingNumber; set { _explicitNullValueTrackingNumber = value; AdditionalData?.Remove("trackingNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackingNumber"); else _explicitNullProperties?.Remove("trackingNumber"); } }
         private string _explicitNullValueTrackingNumber = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrderItemDeliveryStatusStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CardOrderItemDeliveryStatusStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "trackingNumber", n => { TrackingNumber = n.GetStringValue(); } },
             };
         }

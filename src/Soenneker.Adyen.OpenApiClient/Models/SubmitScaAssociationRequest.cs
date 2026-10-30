@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+            if (parseNode.GetChildNode("entities") is null) { _explicitNullValueEntities = default!; _explicitNullProperties?.Remove("entities"); }
+            else if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of entities to be associated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; AdditionalData?.Remove("entities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity>? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; AdditionalData?.Remove("entities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.ScaEntity> _explicitNullValueEntities = default!;
 #endif
         /// <summary>

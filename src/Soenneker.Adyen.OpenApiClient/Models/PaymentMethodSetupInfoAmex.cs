@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("midNumber") is { } nullNodeMidNumber && nullNodeMidNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MidNumber = null;
-            if (parseNode.GetChildNode("reuseMidNumber") is { } nullNodeReuseMidNumber && nullNodeReuseMidNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReuseMidNumber = null;
-            if (parseNode.GetChildNode("serviceLevel") is { } nullNodeServiceLevel && nullNodeServiceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceLevel = null;
+            if (parseNode.GetChildNode("midNumber") is null) { _explicitNullValueMidNumber = default!; _explicitNullProperties?.Remove("midNumber"); }
+            else if (parseNode.GetChildNode("midNumber") is { } nullNodeMidNumber && nullNodeMidNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MidNumber = null;
+            if (parseNode.GetChildNode("reuseMidNumber") is null) { _explicitNullValueReuseMidNumber = default!; _explicitNullProperties?.Remove("reuseMidNumber"); }
+            else if (parseNode.GetChildNode("reuseMidNumber") is { } nullNodeReuseMidNumber && nullNodeReuseMidNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReuseMidNumber = null;
+            if (parseNode.GetChildNode("serviceLevel") is null) { _explicitNullValueServiceLevel = default!; _explicitNullProperties?.Remove("serviceLevel"); }
+            else if (parseNode.GetChildNode("serviceLevel") is { } nullNodeServiceLevel && nullNodeServiceLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceLevel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Merchant ID (MID) number. Format: 10 numeric characters. You must provide this field when you request `gatewayContract` or `paymentDesignatorContract` service levels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MidNumber { get => _explicitNullValueMidNumber; set { _explicitNullValueMidNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("midNumber"); else _explicitNullProperties?.Remove("midNumber"); } }
+        public string? MidNumber { get => _explicitNullValueMidNumber; set { _explicitNullValueMidNumber = value; AdditionalData?.Remove("midNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("midNumber"); else _explicitNullProperties?.Remove("midNumber"); } }
         private string? _explicitNullValueMidNumber = default!;
 #nullable restore
 #else
-        public string MidNumber { get => _explicitNullValueMidNumber; set { _explicitNullValueMidNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("midNumber"); else _explicitNullProperties?.Remove("midNumber"); } }
+        public string MidNumber { get => _explicitNullValueMidNumber; set { _explicitNullValueMidNumber = value; AdditionalData?.Remove("midNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("midNumber"); else _explicitNullProperties?.Remove("midNumber"); } }
         private string _explicitNullValueMidNumber = default!;
 #endif
         /// <summary>Indicates whether the Amex Merchant ID is reused from a previously setup Amex payment method. This is only applicable for `gatewayContract` and `paymentDesignatorContract` service levels. The default value is **false**.</summary>
-        public bool? ReuseMidNumber { get => _explicitNullValueReuseMidNumber; set { _explicitNullValueReuseMidNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reuseMidNumber"); else _explicitNullProperties?.Remove("reuseMidNumber"); } }
+        public bool? ReuseMidNumber { get => _explicitNullValueReuseMidNumber; set { _explicitNullValueReuseMidNumber = value; AdditionalData?.Remove("reuseMidNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reuseMidNumber"); else _explicitNullProperties?.Remove("reuseMidNumber"); } }
         private bool? _explicitNullValueReuseMidNumber = default!;
         /// <summary>Specifies the service level (settlement type) of this payment method. Possible values:* **noContract**: Adyen holds the contract with American Express.* **gatewayContract**: American Express receives the settlement and handles disputes, then pays out to you or your sub-merchant directly.* **paymentDesignatorContract**: Adyen receives the settlement, and handles disputes and payouts.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel? ServiceLevel { get => _explicitNullValueServiceLevel; set { _explicitNullValueServiceLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceLevel"); else _explicitNullProperties?.Remove("serviceLevel"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel? ServiceLevel { get => _explicitNullValueServiceLevel; set { _explicitNullValueServiceLevel = value; AdditionalData?.Remove("serviceLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceLevel"); else _explicitNullProperties?.Remove("serviceLevel"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel? _explicitNullValueServiceLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentMethodSetupInfoAmex"/> and sets the default values.
@@ -69,7 +72,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "midNumber", n => { MidNumber = n.GetStringValue(); } },
                 { "reuseMidNumber", n => { ReuseMidNumber = n.GetBoolValue(); } },
-                { "serviceLevel", n => { ServiceLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel>(); } },
+                { "serviceLevel", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmexInfoServiceLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueServiceLevel = default; _explicitNullProperties?.Remove("serviceLevel"); AdditionalData["serviceLevel"] = unknown; } else { ServiceLevel = parsed; AdditionalData.Remove("serviceLevel"); } } },
             };
         }
         /// <summary>

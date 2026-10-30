@@ -17,20 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderIds") is { } nullNodeAccountHolderIds && nullNodeAccountHolderIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderIds = null;
-            if (parseNode.GetChildNode("inPerson") is { } nullNodeInPerson && nullNodeInPerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InPerson = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("online") is { } nullNodeOnline && nullNodeOnline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Online = null;
+            if (parseNode.GetChildNode("accountHolderIds") is null) { _explicitNullValueAccountHolderIds = default!; _explicitNullProperties?.Remove("accountHolderIds"); }
+            else if (parseNode.GetChildNode("accountHolderIds") is { } nullNodeAccountHolderIds && nullNodeAccountHolderIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderIds = null;
+            if (parseNode.GetChildNode("inPerson") is null) { _explicitNullValueInPerson = default!; _explicitNullProperties?.Remove("inPerson"); }
+            else if (parseNode.GetChildNode("inPerson") is { } nullNodeInPerson && nullNodeInPerson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InPerson = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("online") is null) { _explicitNullValueOnline = default!; _explicitNullProperties?.Remove("online"); }
+            else if (parseNode.GetChildNode("online") is { } nullNodeOnline && nullNodeOnline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Online = null;
         }
 
         /// <summary>The unique identifiers of the account holders associated with the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
+        public List<string>? AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; AdditionalData?.Remove("accountHolderIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
         private List<string>? _explicitNullValueAccountHolderIds = default!;
 #nullable restore
 #else
-        public List<string> AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
+        public List<string> AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; AdditionalData?.Remove("accountHolderIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
         private List<string> _explicitNullValueAccountHolderIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,31 +42,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The settings for in-person donations collected as part of the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate? InPerson { get => _explicitNullValueInPerson; set { _explicitNullValueInPerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inPerson"); else _explicitNullProperties?.Remove("inPerson"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate? InPerson { get => _explicitNullValueInPerson; set { _explicitNullValueInPerson = value; AdditionalData?.Remove("inPerson"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inPerson"); else _explicitNullProperties?.Remove("inPerson"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate? _explicitNullValueInPerson = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate InPerson { get => _explicitNullValueInPerson; set { _explicitNullValueInPerson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inPerson"); else _explicitNullProperties?.Remove("inPerson"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate InPerson { get => _explicitNullValueInPerson; set { _explicitNullValueInPerson = value; AdditionalData?.Remove("inPerson"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inPerson"); else _explicitNullProperties?.Remove("inPerson"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.InPersonDonationSettingsUpdate _explicitNullValueInPerson = default!;
 #endif
         /// <summary>The name of the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The settings for online donations collected as part of the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdate? Online { get => _explicitNullValueOnline; set { _explicitNullValueOnline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("online"); else _explicitNullProperties?.Remove("online"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdate? Online { get => _explicitNullValueOnline; set { _explicitNullValueOnline = value; AdditionalData?.Remove("online"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("online"); else _explicitNullProperties?.Remove("online"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdate? _explicitNullValueOnline = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdate Online { get => _explicitNullValueOnline; set { _explicitNullValueOnline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("online"); else _explicitNullProperties?.Remove("online"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdate Online { get => _explicitNullValueOnline; set { _explicitNullValueOnline = value; AdditionalData?.Remove("online"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("online"); else _explicitNullProperties?.Remove("online"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OnlineDonationSettingsUpdate _explicitNullValueOnline = default!;
 #endif
         /// <summary>

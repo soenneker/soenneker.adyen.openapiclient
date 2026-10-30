@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("includeCryptogram") is { } nullNodeIncludeCryptogram && nullNodeIncludeCryptogram.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeCryptogram = null;
-            if (parseNode.GetChildNode("useNetworkToken") is { } nullNodeUseNetworkToken && nullNodeUseNetworkToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseNetworkToken = null;
+            if (parseNode.GetChildNode("includeCryptogram") is null) { _explicitNullValueIncludeCryptogram = default!; _explicitNullProperties?.Remove("includeCryptogram"); }
+            else if (parseNode.GetChildNode("includeCryptogram") is { } nullNodeIncludeCryptogram && nullNodeIncludeCryptogram.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeCryptogram = null;
+            if (parseNode.GetChildNode("useNetworkToken") is null) { _explicitNullValueUseNetworkToken = default!; _explicitNullProperties?.Remove("useNetworkToken"); }
+            else if (parseNode.GetChildNode("useNetworkToken") is { } nullNodeUseNetworkToken && nullNodeUseNetworkToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseNetworkToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to **true** to enable forwarding network token cryptograms.</summary>
-        public bool? IncludeCryptogram { get => _explicitNullValueIncludeCryptogram; set { _explicitNullValueIncludeCryptogram = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeCryptogram"); else _explicitNullProperties?.Remove("includeCryptogram"); } }
+        public bool? IncludeCryptogram { get => _explicitNullValueIncludeCryptogram; set { _explicitNullValueIncludeCryptogram = value; AdditionalData?.Remove("includeCryptogram"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeCryptogram"); else _explicitNullProperties?.Remove("includeCryptogram"); } }
         private bool? _explicitNullValueIncludeCryptogram = default!;
         /// <summary>Set to **true** to forward the network token for a card.</summary>
-        public bool? UseNetworkToken { get => _explicitNullValueUseNetworkToken; set { _explicitNullValueUseNetworkToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useNetworkToken"); else _explicitNullProperties?.Remove("useNetworkToken"); } }
+        public bool? UseNetworkToken { get => _explicitNullValueUseNetworkToken; set { _explicitNullValueUseNetworkToken = value; AdditionalData?.Remove("useNetworkToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useNetworkToken"); else _explicitNullProperties?.Remove("useNetworkToken"); } }
         private bool? _explicitNullValueUseNetworkToken = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CheckoutForwardRequestOptionsNetworkToken"/> and sets the default values.

@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
-            if (parseNode.GetChildNode("fullName") is { } nullNodeFullName && nullNodeFullName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullName = null;
-            if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
-            if (parseNode.GetChildNode("middleName") is { } nullNodeMiddleName && nullNodeMiddleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MiddleName = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("firstName") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("firstName"); }
+            else if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("fullName") is null) { _explicitNullValueFullName = default!; _explicitNullProperties?.Remove("fullName"); }
+            else if (parseNode.GetChildNode("fullName") is { } nullNodeFullName && nullNodeFullName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullName = null;
+            if (parseNode.GetChildNode("lastName") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("lastName"); }
+            else if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("middleName") is null) { _explicitNullValueMiddleName = default!; _explicitNullProperties?.Remove("middleName"); }
+            else if (parseNode.GetChildNode("middleName") is { } nullNodeMiddleName && nullNodeMiddleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MiddleName = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The raw first name validation result that Adyen received from the scheme. First name validation result is only returned for Visa.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
         private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
         private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>The raw full name validation result that Adyen received from the scheme. Full name is the only field that is validated for Mastercard</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
+        public string? FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; AdditionalData?.Remove("fullName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
         private string? _explicitNullValueFullName = default!;
 #nullable restore
 #else
-        public string FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
+        public string FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; AdditionalData?.Remove("fullName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
         private string _explicitNullValueFullName = default!;
 #endif
         /// <summary>The raw last name validation result that Adyen received from the scheme. Last name validation result is only returned for Visa.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
         private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
         private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>The raw middle name validation result that Adyen received from the scheme. Middle name validation result is only returned for Visa.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName { get => _explicitNullValueMiddleName; set { _explicitNullValueMiddleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middleName"); else _explicitNullProperties?.Remove("middleName"); } }
+        public string? MiddleName { get => _explicitNullValueMiddleName; set { _explicitNullValueMiddleName = value; AdditionalData?.Remove("middleName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middleName"); else _explicitNullProperties?.Remove("middleName"); } }
         private string? _explicitNullValueMiddleName = default!;
 #nullable restore
 #else
-        public string MiddleName { get => _explicitNullValueMiddleName; set { _explicitNullValueMiddleName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middleName"); else _explicitNullProperties?.Remove("middleName"); } }
+        public string MiddleName { get => _explicitNullValueMiddleName; set { _explicitNullValueMiddleName = value; AdditionalData?.Remove("middleName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("middleName"); else _explicitNullProperties?.Remove("middleName"); } }
         private string _explicitNullValueMiddleName = default!;
 #endif
         /// <summary>The raw name validation status value that Adyen received from the scheme. Only returned for Visa.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>

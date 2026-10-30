@@ -17,16 +17,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("cardHolderName") is { } nullNodeCardHolderName && nullNodeCardHolderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolderName = null;
-            if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
-            if (parseNode.GetChildNode("expiryMonth") is { } nullNodeExpiryMonth && nullNodeExpiryMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryMonth = null;
-            if (parseNode.GetChildNode("expiryYear") is { } nullNodeExpiryYear && nullNodeExpiryYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryYear = null;
-            if (parseNode.GetChildNode("rangeEnd") is { } nullNodeRangeEnd && nullNodeRangeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeEnd = null;
-            if (parseNode.GetChildNode("rangeStart") is { } nullNodeRangeStart && nullNodeRangeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeStart = null;
-            if (parseNode.GetChildNode("threeDDirectoryServerResponse") is { } nullNodeThreeDDirectoryServerResponse && nullNodeThreeDDirectoryServerResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDDirectoryServerResponse = null;
-            if (parseNode.GetChildNode("threeDPassword") is { } nullNodeThreeDPassword && nullNodeThreeDPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDPassword = null;
-            if (parseNode.GetChildNode("threeDUsername") is { } nullNodeThreeDUsername && nullNodeThreeDUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDUsername = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("cardHolderName") is null) { _explicitNullValueCardHolderName = default!; _explicitNullProperties?.Remove("cardHolderName"); }
+            else if (parseNode.GetChildNode("cardHolderName") is { } nullNodeCardHolderName && nullNodeCardHolderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolderName = null;
+            if (parseNode.GetChildNode("cvc") is null) { _explicitNullValueCvc = default!; _explicitNullProperties?.Remove("cvc"); }
+            else if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
+            if (parseNode.GetChildNode("expiryMonth") is null) { _explicitNullValueExpiryMonth = default!; _explicitNullProperties?.Remove("expiryMonth"); }
+            else if (parseNode.GetChildNode("expiryMonth") is { } nullNodeExpiryMonth && nullNodeExpiryMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryMonth = null;
+            if (parseNode.GetChildNode("expiryYear") is null) { _explicitNullValueExpiryYear = default!; _explicitNullProperties?.Remove("expiryYear"); }
+            else if (parseNode.GetChildNode("expiryYear") is { } nullNodeExpiryYear && nullNodeExpiryYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryYear = null;
+            if (parseNode.GetChildNode("rangeEnd") is null) { _explicitNullValueRangeEnd = default!; _explicitNullProperties?.Remove("rangeEnd"); }
+            else if (parseNode.GetChildNode("rangeEnd") is { } nullNodeRangeEnd && nullNodeRangeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeEnd = null;
+            if (parseNode.GetChildNode("rangeStart") is null) { _explicitNullValueRangeStart = default!; _explicitNullProperties?.Remove("rangeStart"); }
+            else if (parseNode.GetChildNode("rangeStart") is { } nullNodeRangeStart && nullNodeRangeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeStart = null;
+            if (parseNode.GetChildNode("threeDDirectoryServerResponse") is null) { _explicitNullValueThreeDDirectoryServerResponse = default!; _explicitNullProperties?.Remove("threeDDirectoryServerResponse"); }
+            else if (parseNode.GetChildNode("threeDDirectoryServerResponse") is { } nullNodeThreeDDirectoryServerResponse && nullNodeThreeDDirectoryServerResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDDirectoryServerResponse = null;
+            if (parseNode.GetChildNode("threeDPassword") is null) { _explicitNullValueThreeDPassword = default!; _explicitNullProperties?.Remove("threeDPassword"); }
+            else if (parseNode.GetChildNode("threeDPassword") is { } nullNodeThreeDPassword && nullNodeThreeDPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDPassword = null;
+            if (parseNode.GetChildNode("threeDUsername") is null) { _explicitNullValueThreeDUsername = default!; _explicitNullProperties?.Remove("threeDUsername"); }
+            else if (parseNode.GetChildNode("threeDUsername") is { } nullNodeThreeDUsername && nullNodeThreeDUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDUsername = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,80 +44,80 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains the billing address of the card holder. The address details need to be AVS-compliant, which means that you need to provide at least street address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>The name of the card holder, as it appears on the card, for the test card range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
+        public string? CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; AdditionalData?.Remove("cardHolderName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
         private string? _explicitNullValueCardHolderName = default!;
 #nullable restore
 #else
-        public string CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
+        public string CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; AdditionalData?.Remove("cardHolderName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
         private string _explicitNullValueCardHolderName = default!;
 #endif
         /// <summary>The test card range security code.Example: 123</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; AdditionalData?.Remove("cvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
         private string? _explicitNullValueCvc = default!;
 #nullable restore
 #else
-        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; AdditionalData?.Remove("cvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
         private string _explicitNullValueCvc = default!;
 #endif
         /// <summary>Expiry month for the test card range.Allowed values:* JANUARY* FEBRUARY* MARCH* APRIL* MAY* JUNE* JULY* AUGUST* SEPTEMBER* OCTOBER* NOVEMBER* DECEMBER</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth? ExpiryMonth { get => _explicitNullValueExpiryMonth; set { _explicitNullValueExpiryMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryMonth"); else _explicitNullProperties?.Remove("expiryMonth"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth? ExpiryMonth { get => _explicitNullValueExpiryMonth; set { _explicitNullValueExpiryMonth = value; AdditionalData?.Remove("expiryMonth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryMonth"); else _explicitNullProperties?.Remove("expiryMonth"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth? _explicitNullValueExpiryMonth = default!;
         /// <summary>Expiry year for the test card range.Example: 2020</summary>
-        public int? ExpiryYear { get => _explicitNullValueExpiryYear; set { _explicitNullValueExpiryYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryYear"); else _explicitNullProperties?.Remove("expiryYear"); } }
+        public int? ExpiryYear { get => _explicitNullValueExpiryYear; set { _explicitNullValueExpiryYear = value; AdditionalData?.Remove("expiryYear"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryYear"); else _explicitNullProperties?.Remove("expiryYear"); } }
         private int? _explicitNullValueExpiryYear = default!;
         /// <summary>The last test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 4321</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
+        public string? RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; AdditionalData?.Remove("rangeEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
         private string? _explicitNullValueRangeEnd = default!;
 #nullable restore
 #else
-        public string RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
+        public string RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; AdditionalData?.Remove("rangeEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
         private string _explicitNullValueRangeEnd = default!;
 #endif
         /// <summary>The first test card number in the test card range (inclusive):* Min 6, max 19 digits* BIN compliantExample: 5432 1234 1234 1234</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
+        public string? RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; AdditionalData?.Remove("rangeStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
         private string? _explicitNullValueRangeStart = default!;
 #nullable restore
 #else
-        public string RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
+        public string RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; AdditionalData?.Remove("rangeStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
         private string _explicitNullValueRangeStart = default!;
 #endif
         /// <summary>3D Secure server response. It notifies whether the specified card holder is enrolled in a 3D Secure service. Possible values:* Y (Authentication available)* N (Card holder not enrolled/not participating)* U (Unable to authenticate)</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse? ThreeDDirectoryServerResponse { get => _explicitNullValueThreeDDirectoryServerResponse; set { _explicitNullValueThreeDDirectoryServerResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDDirectoryServerResponse"); else _explicitNullProperties?.Remove("threeDDirectoryServerResponse"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse? ThreeDDirectoryServerResponse { get => _explicitNullValueThreeDDirectoryServerResponse; set { _explicitNullValueThreeDDirectoryServerResponse = value; AdditionalData?.Remove("threeDDirectoryServerResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDDirectoryServerResponse"); else _explicitNullProperties?.Remove("threeDDirectoryServerResponse"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse? _explicitNullValueThreeDDirectoryServerResponse = default!;
         /// <summary>The password used for 3D Secure authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDPassword { get => _explicitNullValueThreeDPassword; set { _explicitNullValueThreeDPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDPassword"); else _explicitNullProperties?.Remove("threeDPassword"); } }
+        public string? ThreeDPassword { get => _explicitNullValueThreeDPassword; set { _explicitNullValueThreeDPassword = value; AdditionalData?.Remove("threeDPassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDPassword"); else _explicitNullProperties?.Remove("threeDPassword"); } }
         private string? _explicitNullValueThreeDPassword = default!;
 #nullable restore
 #else
-        public string ThreeDPassword { get => _explicitNullValueThreeDPassword; set { _explicitNullValueThreeDPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDPassword"); else _explicitNullProperties?.Remove("threeDPassword"); } }
+        public string ThreeDPassword { get => _explicitNullValueThreeDPassword; set { _explicitNullValueThreeDPassword = value; AdditionalData?.Remove("threeDPassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDPassword"); else _explicitNullProperties?.Remove("threeDPassword"); } }
         private string _explicitNullValueThreeDPassword = default!;
 #endif
         /// <summary>The username used for 3D Secure authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDUsername { get => _explicitNullValueThreeDUsername; set { _explicitNullValueThreeDUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDUsername"); else _explicitNullProperties?.Remove("threeDUsername"); } }
+        public string? ThreeDUsername { get => _explicitNullValueThreeDUsername; set { _explicitNullValueThreeDUsername = value; AdditionalData?.Remove("threeDUsername"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDUsername"); else _explicitNullProperties?.Remove("threeDUsername"); } }
         private string? _explicitNullValueThreeDUsername = default!;
 #nullable restore
 #else
-        public string ThreeDUsername { get => _explicitNullValueThreeDUsername; set { _explicitNullValueThreeDUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDUsername"); else _explicitNullProperties?.Remove("threeDUsername"); } }
+        public string ThreeDUsername { get => _explicitNullValueThreeDUsername; set { _explicitNullValueThreeDUsername = value; AdditionalData?.Remove("threeDUsername"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDUsername"); else _explicitNullProperties?.Remove("threeDUsername"); } }
         private string _explicitNullValueThreeDUsername = default!;
 #endif
         /// <summary>
@@ -138,11 +148,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress>(global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeAddress.CreateFromDiscriminatorValue); } },
                 { "cardHolderName", n => { CardHolderName = n.GetStringValue(); } },
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
-                { "expiryMonth", n => { ExpiryMonth = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth>(); } },
+                { "expiryMonth", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeExpiryMonth>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueExpiryMonth = default; _explicitNullProperties?.Remove("expiryMonth"); AdditionalData["expiryMonth"] = unknown; } else { ExpiryMonth = parsed; AdditionalData.Remove("expiryMonth"); } } },
                 { "expiryYear", n => { ExpiryYear = n.GetIntValue(); } },
                 { "rangeEnd", n => { RangeEnd = n.GetStringValue(); } },
                 { "rangeStart", n => { RangeStart = n.GetStringValue(); } },
-                { "threeDDirectoryServerResponse", n => { ThreeDDirectoryServerResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse>(); } },
+                { "threeDDirectoryServerResponse", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TestCardRangeThreeDDirectoryServerResponse>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueThreeDDirectoryServerResponse = default; _explicitNullProperties?.Remove("threeDDirectoryServerResponse"); AdditionalData["threeDDirectoryServerResponse"] = unknown; } else { ThreeDDirectoryServerResponse = parsed; AdditionalData.Remove("threeDDirectoryServerResponse"); } } },
                 { "threeDPassword", n => { ThreeDPassword = n.GetStringValue(); } },
                 { "threeDUsername", n => { ThreeDUsername = n.GetStringValue(); } },
             };

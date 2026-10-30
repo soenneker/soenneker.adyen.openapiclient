@@ -17,13 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
+            if (parseNode.GetChildNode("notificationId") is null) { _explicitNullValueNotificationId = default!; _explicitNullProperties?.Remove("notificationId"); }
+            else if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the notification subscription configuration whose details are to be retrieved.</summary>
-        public long? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
+        public long? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; AdditionalData?.Remove("notificationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
         private long? _explicitNullValueNotificationId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetNotificationConfigurationRequest"/> and sets the default values.

@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("first") is { } nullNodeFirst && nullNodeFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) First = null;
-            if (parseNode.GetChildNode("last") is { } nullNodeLast && nullNodeLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last = null;
-            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
-            if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
-            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+            if (parseNode.GetChildNode("first") is null) { _explicitNullValueFirst = default!; _explicitNullProperties?.Remove("first"); }
+            else if (parseNode.GetChildNode("first") is { } nullNodeFirst && nullNodeFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) First = null;
+            if (parseNode.GetChildNode("last") is null) { _explicitNullValueLast = default!; _explicitNullProperties?.Remove("last"); }
+            else if (parseNode.GetChildNode("last") is { } nullNodeLast && nullNodeLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last = null;
+            if (parseNode.GetChildNode("next") is null) { _explicitNullValueNext = default!; _explicitNullProperties?.Remove("next"); }
+            else if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("previous") is null) { _explicitNullValuePrevious = default!; _explicitNullProperties?.Remove("previous"); }
+            else if (parseNode.GetChildNode("previous") is { } nullNodePrevious && nullNodePrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Previous = null;
+            if (parseNode.GetChildNode("self") is null) { _explicitNullValueSelf = default!; _explicitNullProperties?.Remove("self"); }
+            else if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The link to the first page of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkFirst? First { get => _explicitNullValueFirst; set { _explicitNullValueFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first"); else _explicitNullProperties?.Remove("first"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkFirst? First { get => _explicitNullValueFirst; set { _explicitNullValueFirst = value; AdditionalData?.Remove("first"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first"); else _explicitNullProperties?.Remove("first"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkFirst? _explicitNullValueFirst = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkFirst First { get => _explicitNullValueFirst; set { _explicitNullValueFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first"); else _explicitNullProperties?.Remove("first"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkFirst First { get => _explicitNullValueFirst; set { _explicitNullValueFirst = value; AdditionalData?.Remove("first"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first"); else _explicitNullProperties?.Remove("first"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkFirst _explicitNullValueFirst = default!;
 #endif
         /// <summary>The link to the last page of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkLast? Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkLast? Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; AdditionalData?.Remove("last"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkLast? _explicitNullValueLast = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkLast Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkLast Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; AdditionalData?.Remove("last"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkLast _explicitNullValueLast = default!;
 #endif
         /// <summary>The link to the next page of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkNext? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkNext? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkNext? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkNext Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkNext Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; AdditionalData?.Remove("next"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkNext _explicitNullValueNext = default!;
 #endif
         /// <summary>The link to the previous page of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkPrevious? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkPrevious? Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkPrevious? _explicitNullValuePrevious = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkPrevious Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkPrevious Previous { get => _explicitNullValuePrevious; set { _explicitNullValuePrevious = value; AdditionalData?.Remove("previous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous"); else _explicitNullProperties?.Remove("previous"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkPrevious _explicitNullValuePrevious = default!;
 #endif
         /// <summary>The link to the list page you are currently viewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkSelf? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkSelf? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkSelf? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinkSelf Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinkSelf Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinkSelf _explicitNullValueSelf = default!;
 #endif
         /// <summary>

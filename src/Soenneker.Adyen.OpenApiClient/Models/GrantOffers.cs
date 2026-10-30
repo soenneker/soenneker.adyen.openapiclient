@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("grantOffers") is { } nullNodeGrantOffersProp && nullNodeGrantOffersProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantOffersProp = null;
+            if (parseNode.GetChildNode("grantOffers") is null) { _explicitNullValueGrantOffersProp = default!; _explicitNullProperties?.Remove("grantOffers"); }
+            else if (parseNode.GetChildNode("grantOffers") is { } nullNodeGrantOffersProp && nullNodeGrantOffersProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantOffersProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of available grant offers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer>? GrantOffersProp { get => _explicitNullValueGrantOffersProp; set { _explicitNullValueGrantOffersProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOffers"); else _explicitNullProperties?.Remove("grantOffers"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer>? GrantOffersProp { get => _explicitNullValueGrantOffersProp; set { _explicitNullValueGrantOffersProp = value; AdditionalData?.Remove("grantOffers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOffers"); else _explicitNullProperties?.Remove("grantOffers"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer>? _explicitNullValueGrantOffersProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer> GrantOffersProp { get => _explicitNullValueGrantOffersProp; set { _explicitNullValueGrantOffersProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOffers"); else _explicitNullProperties?.Remove("grantOffers"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer> GrantOffersProp { get => _explicitNullValueGrantOffersProp; set { _explicitNullValueGrantOffersProp = value; AdditionalData?.Remove("grantOffers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantOffers"); else _explicitNullProperties?.Remove("grantOffers"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GrantOffer> _explicitNullValueGrantOffersProp = default!;
 #endif
         /// <summary>

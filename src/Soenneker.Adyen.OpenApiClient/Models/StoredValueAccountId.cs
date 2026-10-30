@@ -18,13 +18,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("EntryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
-            if (parseNode.GetChildNode("ExpiryDate") is { } nullNodeExpiryDate && nullNodeExpiryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryDate = null;
-            if (parseNode.GetChildNode("IdentificationType") is { } nullNodeIdentificationType && nullNodeIdentificationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentificationType = null;
-            if (parseNode.GetChildNode("OwnerName") is { } nullNodeOwnerName && nullNodeOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerName = null;
-            if (parseNode.GetChildNode("StoredValueAccountType") is { } nullNodeStoredValueAccountType && nullNodeStoredValueAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueAccountType = null;
-            if (parseNode.GetChildNode("StoredValueID") is { } nullNodeStoredValueID && nullNodeStoredValueID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueID = null;
-            if (parseNode.GetChildNode("StoredValueProvider") is { } nullNodeStoredValueProvider && nullNodeStoredValueProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueProvider = null;
+            if (parseNode.GetChildNode("EntryMode") is null) { _explicitNullValueEntryMode = default!; _explicitNullProperties?.Remove("EntryMode"); }
+            else if (parseNode.GetChildNode("EntryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
+            if (parseNode.GetChildNode("ExpiryDate") is null) { _explicitNullValueExpiryDate = default!; _explicitNullProperties?.Remove("ExpiryDate"); }
+            else if (parseNode.GetChildNode("ExpiryDate") is { } nullNodeExpiryDate && nullNodeExpiryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryDate = null;
+            if (parseNode.GetChildNode("IdentificationType") is null) { _explicitNullValueIdentificationType = default!; _explicitNullProperties?.Remove("IdentificationType"); }
+            else if (parseNode.GetChildNode("IdentificationType") is { } nullNodeIdentificationType && nullNodeIdentificationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentificationType = null;
+            if (parseNode.GetChildNode("OwnerName") is null) { _explicitNullValueOwnerName = default!; _explicitNullProperties?.Remove("OwnerName"); }
+            else if (parseNode.GetChildNode("OwnerName") is { } nullNodeOwnerName && nullNodeOwnerName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerName = null;
+            if (parseNode.GetChildNode("StoredValueAccountType") is null) { _explicitNullValueStoredValueAccountType = default!; _explicitNullProperties?.Remove("StoredValueAccountType"); }
+            else if (parseNode.GetChildNode("StoredValueAccountType") is { } nullNodeStoredValueAccountType && nullNodeStoredValueAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueAccountType = null;
+            if (parseNode.GetChildNode("StoredValueID") is null) { _explicitNullValueStoredValueID = default!; _explicitNullProperties?.Remove("StoredValueID"); }
+            else if (parseNode.GetChildNode("StoredValueID") is { } nullNodeStoredValueID && nullNodeStoredValueID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueID = null;
+            if (parseNode.GetChildNode("StoredValueProvider") is null) { _explicitNullValueStoredValueProvider = default!; _explicitNullProperties?.Remove("StoredValueProvider"); }
+            else if (parseNode.GetChildNode("StoredValueProvider") is { } nullNodeStoredValueProvider && nullNodeStoredValueProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoredValueProvider = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,50 +39,50 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?>? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?>? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; AdditionalData?.Remove("EntryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?>? _explicitNullValueEntryMode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?> EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?> EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; AdditionalData?.Remove("EntryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem?> _explicitNullValueEntryMode = default!;
 #endif
         /// <summary>Date after which the card cannot be used. If EMV expiry date is present, it overrides Track2 information. Format is MMYY.</summary>
-        public int? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
+        public int? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("ExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ExpiryDate"); else _explicitNullProperties?.Remove("ExpiryDate"); } }
         private int? _explicitNullValueExpiryDate = default!;
         /// <summary>Possible values:* **PAN*** **ISOTrack2*** **BarCode*** **AccountNumber*** **PhoneNumber**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType? IdentificationType { get => _explicitNullValueIdentificationType; set { _explicitNullValueIdentificationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentificationType"); else _explicitNullProperties?.Remove("IdentificationType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType? IdentificationType { get => _explicitNullValueIdentificationType; set { _explicitNullValueIdentificationType = value; AdditionalData?.Remove("IdentificationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IdentificationType"); else _explicitNullProperties?.Remove("IdentificationType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType? _explicitNullValueIdentificationType = default!;
         /// <summary>Name of the owner of a stored value account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OwnerName"); else _explicitNullProperties?.Remove("OwnerName"); } }
+        public string? OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; AdditionalData?.Remove("OwnerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OwnerName"); else _explicitNullProperties?.Remove("OwnerName"); } }
         private string? _explicitNullValueOwnerName = default!;
 #nullable restore
 #else
-        public string OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OwnerName"); else _explicitNullProperties?.Remove("OwnerName"); } }
+        public string OwnerName { get => _explicitNullValueOwnerName; set { _explicitNullValueOwnerName = value; AdditionalData?.Remove("OwnerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OwnerName"); else _explicitNullProperties?.Remove("OwnerName"); } }
         private string _explicitNullValueOwnerName = default!;
 #endif
         /// <summary>Possible values:* **GiftCard*** **PhoneCard*** **Other**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType? StoredValueAccountType { get => _explicitNullValueStoredValueAccountType; set { _explicitNullValueStoredValueAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueAccountType"); else _explicitNullProperties?.Remove("StoredValueAccountType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType? StoredValueAccountType { get => _explicitNullValueStoredValueAccountType; set { _explicitNullValueStoredValueAccountType = value; AdditionalData?.Remove("StoredValueAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueAccountType"); else _explicitNullProperties?.Remove("StoredValueAccountType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType? _explicitNullValueStoredValueAccountType = default!;
         /// <summary>Stored value account identification. The identification of the stored value account conforming to the IdentificationType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoredValueID { get => _explicitNullValueStoredValueID; set { _explicitNullValueStoredValueID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueID"); else _explicitNullProperties?.Remove("StoredValueID"); } }
+        public string? StoredValueID { get => _explicitNullValueStoredValueID; set { _explicitNullValueStoredValueID = value; AdditionalData?.Remove("StoredValueID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueID"); else _explicitNullProperties?.Remove("StoredValueID"); } }
         private string? _explicitNullValueStoredValueID = default!;
 #nullable restore
 #else
-        public string StoredValueID { get => _explicitNullValueStoredValueID; set { _explicitNullValueStoredValueID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueID"); else _explicitNullProperties?.Remove("StoredValueID"); } }
+        public string StoredValueID { get => _explicitNullValueStoredValueID; set { _explicitNullValueStoredValueID = value; AdditionalData?.Remove("StoredValueID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueID"); else _explicitNullProperties?.Remove("StoredValueID"); } }
         private string _explicitNullValueStoredValueID = default!;
 #endif
         /// <summary>Identification of the provider of the stored value account load/reload. When the ProductCode is not sufficient to identify the provider host which delivers the load or reload of the stored value account (for example if it contains the identification of the application.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoredValueProvider { get => _explicitNullValueStoredValueProvider; set { _explicitNullValueStoredValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueProvider"); else _explicitNullProperties?.Remove("StoredValueProvider"); } }
+        public string? StoredValueProvider { get => _explicitNullValueStoredValueProvider; set { _explicitNullValueStoredValueProvider = value; AdditionalData?.Remove("StoredValueProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueProvider"); else _explicitNullProperties?.Remove("StoredValueProvider"); } }
         private string? _explicitNullValueStoredValueProvider = default!;
 #nullable restore
 #else
-        public string StoredValueProvider { get => _explicitNullValueStoredValueProvider; set { _explicitNullValueStoredValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueProvider"); else _explicitNullProperties?.Remove("StoredValueProvider"); } }
+        public string StoredValueProvider { get => _explicitNullValueStoredValueProvider; set { _explicitNullValueStoredValueProvider = value; AdditionalData?.Remove("StoredValueProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StoredValueProvider"); else _explicitNullProperties?.Remove("StoredValueProvider"); } }
         private string _explicitNullValueStoredValueProvider = default!;
 #endif
         /// <summary>
@@ -105,9 +112,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "EntryMode", n => { EntryMode = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdEntryModeItem>()?.AsList(); } },
                 { "ExpiryDate", n => { ExpiryDate = n.GetIntValue(); } },
-                { "IdentificationType", n => { IdentificationType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType>(); } },
+                { "IdentificationType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdIdentificationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIdentificationType = default; _explicitNullProperties?.Remove("IdentificationType"); AdditionalData["IdentificationType"] = unknown; } else { IdentificationType = parsed; AdditionalData.Remove("IdentificationType"); } } },
                 { "OwnerName", n => { OwnerName = n.GetStringValue(); } },
-                { "StoredValueAccountType", n => { StoredValueAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType>(); } },
+                { "StoredValueAccountType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StoredValueAccountIdStoredValueAccountType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStoredValueAccountType = default; _explicitNullProperties?.Remove("StoredValueAccountType"); AdditionalData["StoredValueAccountType"] = unknown; } else { StoredValueAccountType = parsed; AdditionalData.Remove("StoredValueAccountType"); } } },
                 { "StoredValueID", n => { StoredValueID = n.GetStringValue(); } },
                 { "StoredValueProvider", n => { StoredValueProvider = n.GetStringValue(); } },
             };

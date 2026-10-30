@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clientData") is { } nullNodeClientData && nullNodeClientData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientData = null;
-            if (parseNode.GetChildNode("customFields") is { } nullNodeCustomFields && nullNodeCustomFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFields = null;
-            if (parseNode.GetChildNode("fraudOffset") is { } nullNodeFraudOffset && nullNodeFraudOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudOffset = null;
-            if (parseNode.GetChildNode("profileReference") is { } nullNodeProfileReference && nullNodeProfileReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileReference = null;
+            if (parseNode.GetChildNode("clientData") is null) { _explicitNullValueClientData = default!; _explicitNullProperties?.Remove("clientData"); }
+            else if (parseNode.GetChildNode("clientData") is { } nullNodeClientData && nullNodeClientData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientData = null;
+            if (parseNode.GetChildNode("customFields") is null) { _explicitNullValueCustomFields = default!; _explicitNullProperties?.Remove("customFields"); }
+            else if (parseNode.GetChildNode("customFields") is { } nullNodeCustomFields && nullNodeCustomFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFields = null;
+            if (parseNode.GetChildNode("fraudOffset") is null) { _explicitNullValueFraudOffset = default!; _explicitNullProperties?.Remove("fraudOffset"); }
+            else if (parseNode.GetChildNode("fraudOffset") is { } nullNodeFraudOffset && nullNodeFraudOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudOffset = null;
+            if (parseNode.GetChildNode("profileReference") is null) { _explicitNullValueProfileReference = default!; _explicitNullProperties?.Remove("profileReference"); }
+            else if (parseNode.GetChildNode("profileReference") is { } nullNodeProfileReference && nullNodeProfileReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains client-side data, like the device fingerprint, cookies, and specific browser settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientData { get => _explicitNullValueClientData; set { _explicitNullValueClientData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientData"); else _explicitNullProperties?.Remove("clientData"); } }
+        public string? ClientData { get => _explicitNullValueClientData; set { _explicitNullValueClientData = value; AdditionalData?.Remove("clientData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientData"); else _explicitNullProperties?.Remove("clientData"); } }
         private string? _explicitNullValueClientData = default!;
 #nullable restore
 #else
-        public string ClientData { get => _explicitNullValueClientData; set { _explicitNullValueClientData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientData"); else _explicitNullProperties?.Remove("clientData"); } }
+        public string ClientData { get => _explicitNullValueClientData; set { _explicitNullValueClientData = value; AdditionalData?.Remove("clientData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientData"); else _explicitNullProperties?.Remove("clientData"); } }
         private string _explicitNullValueClientData = default!;
 #endif
         /// <summary>Any custom fields used as part of the input to configured risk rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("customFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2? _explicitNullValueCustomFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2 CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2 CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; AdditionalData?.Remove("customFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RiskDataCustomFieldsProperty2 _explicitNullValueCustomFields = default!;
 #endif
         /// <summary>An integer value that is added to the normal fraud score. The value can be either positive or negative.</summary>
-        public int? FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
+        public int? FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; AdditionalData?.Remove("fraudOffset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
         private int? _explicitNullValueFraudOffset = default!;
         /// <summary>The risk profile to assign to this payment. When left empty, the merchant-level account&apos;s default risk profile will be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
+        public string? ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; AdditionalData?.Remove("profileReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
         private string? _explicitNullValueProfileReference = default!;
 #nullable restore
 #else
-        public string ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
+        public string ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; AdditionalData?.Remove("profileReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
         private string _explicitNullValueProfileReference = default!;
 #endif
         /// <summary>

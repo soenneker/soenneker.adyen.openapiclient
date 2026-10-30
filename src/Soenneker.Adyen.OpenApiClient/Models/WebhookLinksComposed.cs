@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
-            if (parseNode.GetChildNode("generateHmac") is { } nullNodeGenerateHmac && nullNodeGenerateHmac.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateHmac = null;
-            if (parseNode.GetChildNode("merchant") is { } nullNodeMerchant && nullNodeMerchant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merchant = null;
-            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
-            if (parseNode.GetChildNode("testWebhook") is { } nullNodeTestWebhook && nullNodeTestWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestWebhook = null;
+            if (parseNode.GetChildNode("company") is null) { _explicitNullValueCompany = default!; _explicitNullProperties?.Remove("company"); }
+            else if (parseNode.GetChildNode("company") is { } nullNodeCompany && nullNodeCompany.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Company = null;
+            if (parseNode.GetChildNode("generateHmac") is null) { _explicitNullValueGenerateHmac = default!; _explicitNullProperties?.Remove("generateHmac"); }
+            else if (parseNode.GetChildNode("generateHmac") is { } nullNodeGenerateHmac && nullNodeGenerateHmac.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateHmac = null;
+            if (parseNode.GetChildNode("merchant") is null) { _explicitNullValueMerchant = default!; _explicitNullProperties?.Remove("merchant"); }
+            else if (parseNode.GetChildNode("merchant") is { } nullNodeMerchant && nullNodeMerchant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merchant = null;
+            if (parseNode.GetChildNode("self") is null) { _explicitNullValueSelf = default!; _explicitNullProperties?.Remove("self"); }
+            else if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+            if (parseNode.GetChildNode("testWebhook") is null) { _explicitNullValueTestWebhook = default!; _explicitNullProperties?.Remove("testWebhook"); }
+            else if (parseNode.GetChildNode("testWebhook") is { } nullNodeTestWebhook && nullNodeTestWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestWebhook = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The company account that the webhook is configured for. Only present for company-level webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany? Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; AdditionalData?.Remove("company"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany? _explicitNullValueCompany = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany Company { get => _explicitNullValueCompany; set { _explicitNullValueCompany = value; AdditionalData?.Remove("company"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company"); else _explicitNullProperties?.Remove("company"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksCompany _explicitNullValueCompany = default!;
 #endif
         /// <summary>Generate an HMAC key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac? GenerateHmac { get => _explicitNullValueGenerateHmac; set { _explicitNullValueGenerateHmac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateHmac"); else _explicitNullProperties?.Remove("generateHmac"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac? GenerateHmac { get => _explicitNullValueGenerateHmac; set { _explicitNullValueGenerateHmac = value; AdditionalData?.Remove("generateHmac"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateHmac"); else _explicitNullProperties?.Remove("generateHmac"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac? _explicitNullValueGenerateHmac = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac GenerateHmac { get => _explicitNullValueGenerateHmac; set { _explicitNullValueGenerateHmac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateHmac"); else _explicitNullProperties?.Remove("generateHmac"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac GenerateHmac { get => _explicitNullValueGenerateHmac; set { _explicitNullValueGenerateHmac = value; AdditionalData?.Remove("generateHmac"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generateHmac"); else _explicitNullProperties?.Remove("generateHmac"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksGenerateHmac _explicitNullValueGenerateHmac = default!;
 #endif
         /// <summary>The merchant account that the webhook is configured for. Only present for merchant-level webhooks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant? Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant? Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; AdditionalData?.Remove("merchant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant? _explicitNullValueMerchant = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant Merchant { get => _explicitNullValueMerchant; set { _explicitNullValueMerchant = value; AdditionalData?.Remove("merchant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchant"); else _explicitNullProperties?.Remove("merchant"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksMerchant _explicitNullValueMerchant = default!;
 #endif
         /// <summary>Link to the resource itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksSelf _explicitNullValueSelf = default!;
 #endif
         /// <summary>Test the webhook setup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook? TestWebhook { get => _explicitNullValueTestWebhook; set { _explicitNullValueTestWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testWebhook"); else _explicitNullProperties?.Remove("testWebhook"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook? TestWebhook { get => _explicitNullValueTestWebhook; set { _explicitNullValueTestWebhook = value; AdditionalData?.Remove("testWebhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testWebhook"); else _explicitNullProperties?.Remove("testWebhook"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook? _explicitNullValueTestWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook TestWebhook { get => _explicitNullValueTestWebhook; set { _explicitNullValueTestWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testWebhook"); else _explicitNullProperties?.Remove("testWebhook"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook TestWebhook { get => _explicitNullValueTestWebhook; set { _explicitNullValueTestWebhook = value; AdditionalData?.Remove("testWebhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testWebhook"); else _explicitNullProperties?.Remove("testWebhook"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookLinksTestWebhook _explicitNullValueTestWebhook = default!;
 #endif
         /// <summary>

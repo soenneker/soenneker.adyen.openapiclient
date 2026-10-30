@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transferLimits") is { } nullNodeTransferLimits && nullNodeTransferLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferLimits = null;
+            if (parseNode.GetChildNode("transferLimits") is null) { _explicitNullValueTransferLimits = default!; _explicitNullProperties?.Remove("transferLimits"); }
+            else if (parseNode.GetChildNode("transferLimits") is { } nullNodeTransferLimits && nullNodeTransferLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferLimits = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of available transfer limits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit>? TransferLimits { get => _explicitNullValueTransferLimits; set { _explicitNullValueTransferLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimits"); else _explicitNullProperties?.Remove("transferLimits"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit>? TransferLimits { get => _explicitNullValueTransferLimits; set { _explicitNullValueTransferLimits = value; AdditionalData?.Remove("transferLimits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimits"); else _explicitNullProperties?.Remove("transferLimits"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit>? _explicitNullValueTransferLimits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit> TransferLimits { get => _explicitNullValueTransferLimits; set { _explicitNullValueTransferLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimits"); else _explicitNullProperties?.Remove("transferLimits"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit> TransferLimits { get => _explicitNullValueTransferLimits; set { _explicitNullValueTransferLimits = value; AdditionalData?.Remove("transferLimits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimits"); else _explicitNullProperties?.Remove("transferLimits"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferLimit> _explicitNullValueTransferLimits = default!;
 #endif
         /// <summary>

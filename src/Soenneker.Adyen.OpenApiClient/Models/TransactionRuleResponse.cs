@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transactionRule") is { } nullNodeTransactionRule && nullNodeTransactionRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionRule = null;
+            if (parseNode.GetChildNode("transactionRule") is null) { _explicitNullValueTransactionRule = default!; _explicitNullProperties?.Remove("transactionRule"); }
+            else if (parseNode.GetChildNode("transactionRule") is { } nullNodeTransactionRule && nullNodeTransactionRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionRule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The transaction rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleResponseTransactionRule? TransactionRule { get => _explicitNullValueTransactionRule; set { _explicitNullValueTransactionRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRule"); else _explicitNullProperties?.Remove("transactionRule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleResponseTransactionRule? TransactionRule { get => _explicitNullValueTransactionRule; set { _explicitNullValueTransactionRule = value; AdditionalData?.Remove("transactionRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRule"); else _explicitNullProperties?.Remove("transactionRule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleResponseTransactionRule? _explicitNullValueTransactionRule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleResponseTransactionRule TransactionRule { get => _explicitNullValueTransactionRule; set { _explicitNullValueTransactionRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRule"); else _explicitNullProperties?.Remove("transactionRule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleResponseTransactionRule TransactionRule { get => _explicitNullValueTransactionRule; set { _explicitNullValueTransactionRule = value; AdditionalData?.Remove("transactionRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionRule"); else _explicitNullProperties?.Remove("transactionRule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionRuleResponseTransactionRule _explicitNullValueTransactionRule = default!;
 #endif
         /// <summary>

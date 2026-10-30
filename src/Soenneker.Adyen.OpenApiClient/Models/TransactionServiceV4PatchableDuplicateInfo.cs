@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("duplicateTransactionId") is { } nullNodeDuplicateTransactionId && nullNodeDuplicateTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateTransactionId = null;
-            if (parseNode.GetChildNode("sameCard") is { } nullNodeSameCard && nullNodeSameCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameCard = null;
-            if (parseNode.GetChildNode("sameIssuer") is { } nullNodeSameIssuer && nullNodeSameIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameIssuer = null;
+            if (parseNode.GetChildNode("duplicateTransactionId") is null) { _explicitNullValueDuplicateTransactionId = default!; _explicitNullProperties?.Remove("duplicateTransactionId"); }
+            else if (parseNode.GetChildNode("duplicateTransactionId") is { } nullNodeDuplicateTransactionId && nullNodeDuplicateTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateTransactionId = null;
+            if (parseNode.GetChildNode("sameCard") is null) { _explicitNullValueSameCard = default!; _explicitNullProperties?.Remove("sameCard"); }
+            else if (parseNode.GetChildNode("sameCard") is { } nullNodeSameCard && nullNodeSameCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameCard = null;
+            if (parseNode.GetChildNode("sameIssuer") is null) { _explicitNullValueSameIssuer = default!; _explicitNullProperties?.Remove("sameIssuer"); }
+            else if (parseNode.GetChildNode("sameIssuer") is { } nullNodeSameIssuer && nullNodeSameIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SameIssuer = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The transaction id associated with the duplicate charge for which you are disputing. The disputed transaction must be in the same amount as the duplicate transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DuplicateTransactionId { get => _explicitNullValueDuplicateTransactionId; set { _explicitNullValueDuplicateTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateTransactionId"); else _explicitNullProperties?.Remove("duplicateTransactionId"); } }
+        public string? DuplicateTransactionId { get => _explicitNullValueDuplicateTransactionId; set { _explicitNullValueDuplicateTransactionId = value; AdditionalData?.Remove("duplicateTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateTransactionId"); else _explicitNullProperties?.Remove("duplicateTransactionId"); } }
         private string? _explicitNullValueDuplicateTransactionId = default!;
 #nullable restore
 #else
-        public string DuplicateTransactionId { get => _explicitNullValueDuplicateTransactionId; set { _explicitNullValueDuplicateTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateTransactionId"); else _explicitNullProperties?.Remove("duplicateTransactionId"); } }
+        public string DuplicateTransactionId { get => _explicitNullValueDuplicateTransactionId; set { _explicitNullValueDuplicateTransactionId = value; AdditionalData?.Remove("duplicateTransactionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateTransactionId"); else _explicitNullProperties?.Remove("duplicateTransactionId"); } }
         private string _explicitNullValueDuplicateTransactionId = default!;
 #endif
         /// <summary>The duplicate charge was made on the same card. Possible values: **true**, **false**.</summary>
-        public bool? SameCard { get => _explicitNullValueSameCard; set { _explicitNullValueSameCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCard"); else _explicitNullProperties?.Remove("sameCard"); } }
+        public bool? SameCard { get => _explicitNullValueSameCard; set { _explicitNullValueSameCard = value; AdditionalData?.Remove("sameCard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameCard"); else _explicitNullProperties?.Remove("sameCard"); } }
         private bool? _explicitNullValueSameCard = default!;
         /// <summary>The issuer associated with each charge is the same. Possible values: **true**, **false**.</summary>
-        public bool? SameIssuer { get => _explicitNullValueSameIssuer; set { _explicitNullValueSameIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameIssuer"); else _explicitNullProperties?.Remove("sameIssuer"); } }
+        public bool? SameIssuer { get => _explicitNullValueSameIssuer; set { _explicitNullValueSameIssuer = value; AdditionalData?.Remove("sameIssuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sameIssuer"); else _explicitNullProperties?.Remove("sameIssuer"); } }
         private bool? _explicitNullValueSameIssuer = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionServiceV4PatchableDuplicateInfo"/> and sets the default values.

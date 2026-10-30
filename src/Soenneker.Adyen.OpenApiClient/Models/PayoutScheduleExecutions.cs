@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("payoutScheduleExecutions") is { } nullNodePayoutScheduleExecutionsProp && nullNodePayoutScheduleExecutionsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutScheduleExecutionsProp = null;
+            if (parseNode.GetChildNode("payoutScheduleExecutions") is null) { _explicitNullValuePayoutScheduleExecutionsProp = default!; _explicitNullProperties?.Remove("payoutScheduleExecutions"); }
+            else if (parseNode.GetChildNode("payoutScheduleExecutions") is { } nullNodePayoutScheduleExecutionsProp && nullNodePayoutScheduleExecutionsProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutScheduleExecutionsProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains a list of executions of the payout schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecution>? PayoutScheduleExecutionsProp { get => _explicitNullValuePayoutScheduleExecutionsProp; set { _explicitNullValuePayoutScheduleExecutionsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutScheduleExecutions"); else _explicitNullProperties?.Remove("payoutScheduleExecutions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecution>? PayoutScheduleExecutionsProp { get => _explicitNullValuePayoutScheduleExecutionsProp; set { _explicitNullValuePayoutScheduleExecutionsProp = value; AdditionalData?.Remove("payoutScheduleExecutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutScheduleExecutions"); else _explicitNullProperties?.Remove("payoutScheduleExecutions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecution>? _explicitNullValuePayoutScheduleExecutionsProp = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecution> PayoutScheduleExecutionsProp { get => _explicitNullValuePayoutScheduleExecutionsProp; set { _explicitNullValuePayoutScheduleExecutionsProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutScheduleExecutions"); else _explicitNullProperties?.Remove("payoutScheduleExecutions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecution> PayoutScheduleExecutionsProp { get => _explicitNullValuePayoutScheduleExecutionsProp; set { _explicitNullValuePayoutScheduleExecutionsProp = value; AdditionalData?.Remove("payoutScheduleExecutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payoutScheduleExecutions"); else _explicitNullProperties?.Remove("payoutScheduleExecutions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutScheduleExecution> _explicitNullValuePayoutScheduleExecutionsProp = default!;
 #endif
         /// <summary>

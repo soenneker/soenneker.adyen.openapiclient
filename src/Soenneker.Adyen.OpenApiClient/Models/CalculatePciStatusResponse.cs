@@ -17,13 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("signingRequired") is { } nullNodeSigningRequired && nullNodeSigningRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningRequired = null;
+            if (parseNode.GetChildNode("signingRequired") is null) { _explicitNullValueSigningRequired = default!; _explicitNullProperties?.Remove("signingRequired"); }
+            else if (parseNode.GetChildNode("signingRequired") is { } nullNodeSigningRequired && nullNodeSigningRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningRequired = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if the user is required to sign PCI questionnaires. If **false**, they do not need to sign any questionnaires.</summary>
-        public bool? SigningRequired { get => _explicitNullValueSigningRequired; set { _explicitNullValueSigningRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingRequired"); else _explicitNullProperties?.Remove("signingRequired"); } }
+        public bool? SigningRequired { get => _explicitNullValueSigningRequired; set { _explicitNullValueSigningRequired = value; AdditionalData?.Remove("signingRequired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signingRequired"); else _explicitNullProperties?.Remove("signingRequired"); } }
         private bool? _explicitNullValueSigningRequired = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CalculatePciStatusResponse"/> and sets the default values.

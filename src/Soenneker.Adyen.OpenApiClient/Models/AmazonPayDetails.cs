@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amazonPayToken") is { } nullNodeAmazonPayToken && nullNodeAmazonPayToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmazonPayToken = null;
-            if (parseNode.GetChildNode("checkoutAttemptId") is { } nullNodeCheckoutAttemptId && nullNodeCheckoutAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutAttemptId = null;
-            if (parseNode.GetChildNode("checkoutSessionId") is { } nullNodeCheckoutSessionId && nullNodeCheckoutSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutSessionId = null;
-            if (parseNode.GetChildNode("sdkData") is { } nullNodeSdkData && nullNodeSdkData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkData = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("amazonPayToken") is null) { _explicitNullValueAmazonPayToken = default!; _explicitNullProperties?.Remove("amazonPayToken"); }
+            else if (parseNode.GetChildNode("amazonPayToken") is { } nullNodeAmazonPayToken && nullNodeAmazonPayToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmazonPayToken = null;
+            if (parseNode.GetChildNode("checkoutAttemptId") is null) { _explicitNullValueCheckoutAttemptId = default!; _explicitNullProperties?.Remove("checkoutAttemptId"); }
+            else if (parseNode.GetChildNode("checkoutAttemptId") is { } nullNodeCheckoutAttemptId && nullNodeCheckoutAttemptId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutAttemptId = null;
+            if (parseNode.GetChildNode("checkoutSessionId") is null) { _explicitNullValueCheckoutSessionId = default!; _explicitNullProperties?.Remove("checkoutSessionId"); }
+            else if (parseNode.GetChildNode("checkoutSessionId") is { } nullNodeCheckoutSessionId && nullNodeCheckoutSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutSessionId = null;
+            if (parseNode.GetChildNode("sdkData") is null) { _explicitNullValueSdkData = default!; _explicitNullProperties?.Remove("sdkData"); }
+            else if (parseNode.GetChildNode("sdkData") is { } nullNodeSdkData && nullNodeSdkData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkData = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This is the `amazonPayToken` that you obtained from the [Get Checkout Session](https://amazon-pay-acquirer-guide.s3-eu-west-1.amazonaws.com/v1/amazon-pay-api-v2/checkout-session.html#get-checkout-session) response. This token is used for API only integration specifically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AmazonPayToken { get => _explicitNullValueAmazonPayToken; set { _explicitNullValueAmazonPayToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazonPayToken"); else _explicitNullProperties?.Remove("amazonPayToken"); } }
+        public string? AmazonPayToken { get => _explicitNullValueAmazonPayToken; set { _explicitNullValueAmazonPayToken = value; AdditionalData?.Remove("amazonPayToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazonPayToken"); else _explicitNullProperties?.Remove("amazonPayToken"); } }
         private string? _explicitNullValueAmazonPayToken = default!;
 #nullable restore
 #else
-        public string AmazonPayToken { get => _explicitNullValueAmazonPayToken; set { _explicitNullValueAmazonPayToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazonPayToken"); else _explicitNullProperties?.Remove("amazonPayToken"); } }
+        public string AmazonPayToken { get => _explicitNullValueAmazonPayToken; set { _explicitNullValueAmazonPayToken = value; AdditionalData?.Remove("amazonPayToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amazonPayToken"); else _explicitNullProperties?.Remove("amazonPayToken"); } }
         private string _explicitNullValueAmazonPayToken = default!;
 #endif
         /// <summary>The checkout attempt identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
+        public string? CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; AdditionalData?.Remove("checkoutAttemptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
         private string? _explicitNullValueCheckoutAttemptId = default!;
 #nullable restore
 #else
-        public string CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
+        public string CheckoutAttemptId { get => _explicitNullValueCheckoutAttemptId; set { _explicitNullValueCheckoutAttemptId = value; AdditionalData?.Remove("checkoutAttemptId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutAttemptId"); else _explicitNullProperties?.Remove("checkoutAttemptId"); } }
         private string _explicitNullValueCheckoutAttemptId = default!;
 #endif
         /// <summary>The `checkoutSessionId` is used to identify the checkout session at the Amazon Pay side. This field is required only for drop-in and components integration, where it replaces the amazonPayToken.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
+        public string? CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; AdditionalData?.Remove("checkoutSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
         private string? _explicitNullValueCheckoutSessionId = default!;
 #nullable restore
 #else
-        public string CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
+        public string CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; AdditionalData?.Remove("checkoutSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
         private string _explicitNullValueCheckoutSessionId = default!;
 #endif
         /// <summary>Base64-encoded JSON object containing SDK related parameters required by the SDK</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
+        public string? SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; AdditionalData?.Remove("sdkData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
         private string? _explicitNullValueSdkData = default!;
 #nullable restore
 #else
-        public string SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
+        public string SdkData { get => _explicitNullValueSdkData; set { _explicitNullValueSdkData = value; AdditionalData?.Remove("sdkData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkData"); else _explicitNullProperties?.Remove("sdkData"); } }
         private string _explicitNullValueSdkData = default!;
 #endif
         /// <summary>**amazonpay**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AmazonPayDetails"/> and sets the default values.
@@ -98,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "checkoutAttemptId", n => { CheckoutAttemptId = n.GetStringValue(); } },
                 { "checkoutSessionId", n => { CheckoutSessionId = n.GetStringValue(); } },
                 { "sdkData", n => { SdkData = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AmazonpayType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

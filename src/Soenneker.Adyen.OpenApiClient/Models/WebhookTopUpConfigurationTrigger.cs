@@ -18,23 +18,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
-            if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
+            if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
+            else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("threshold") is null) { _explicitNullValueThreshold = default!; _explicitNullProperties?.Remove("threshold"); }
+            else if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The schedule for recurring top-ups. Defines when the top-up should be triggered based on time.Possible values:* **weekly**: triggers the top-up once per week.* **monthly**: triggers the top-up once per month.* **weekdays**: triggers the top-up on weekdays only.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerSchedule? _explicitNullValueSchedule = default!;
         /// <summary>The balance threshold that triggers the top-up. If the balance falls below this amount, a top-up is initiated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold? _explicitNullValueThreshold = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold _explicitNullValueThreshold = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerSchedule>(); } },
+                { "schedule", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerSchedule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSchedule = default; _explicitNullProperties?.Remove("schedule"); AdditionalData["schedule"] = unknown; } else { Schedule = parsed; AdditionalData.Remove("schedule"); } } },
                 { "threshold", n => { Threshold = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold>(global::Soenneker.Adyen.OpenApiClient.Models.WebhookTopUpTriggerThreshold.CreateFromDiscriminatorValue); } },
             };
         }

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AreaSize") is { } nullNodeAreaSize && nullNodeAreaSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaSize = null;
-            if (parseNode.GetChildNode("SignaturePoint") is { } nullNodeSignaturePoint && nullNodeSignaturePoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignaturePoint = null;
+            if (parseNode.GetChildNode("AreaSize") is null) { _explicitNullValueAreaSize = default!; _explicitNullProperties?.Remove("AreaSize"); }
+            else if (parseNode.GetChildNode("AreaSize") is { } nullNodeAreaSize && nullNodeAreaSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AreaSize = null;
+            if (parseNode.GetChildNode("SignaturePoint") is null) { _explicitNullValueSignaturePoint = default!; _explicitNullProperties?.Remove("SignaturePoint"); }
+            else if (parseNode.GetChildNode("SignaturePoint") is { } nullNodeSignaturePoint && nullNodeSignaturePoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignaturePoint = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Size of an area. Contain the size of the pad area where the signature is written, given with the maximum abscissa and ordinate values (X and Y). The maximum value is FFFF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize? AreaSize { get => _explicitNullValueAreaSize; set { _explicitNullValueAreaSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AreaSize"); else _explicitNullProperties?.Remove("AreaSize"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize? AreaSize { get => _explicitNullValueAreaSize; set { _explicitNullValueAreaSize = value; AdditionalData?.Remove("AreaSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AreaSize"); else _explicitNullProperties?.Remove("AreaSize"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize? _explicitNullValueAreaSize = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize AreaSize { get => _explicitNullValueAreaSize; set { _explicitNullValueAreaSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AreaSize"); else _explicitNullProperties?.Remove("AreaSize"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize AreaSize { get => _explicitNullValueAreaSize; set { _explicitNullValueAreaSize = value; AdditionalData?.Remove("AreaSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AreaSize"); else _explicitNullProperties?.Remove("AreaSize"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapturedSignatureAreaSize _explicitNullValueAreaSize = default!;
 #endif
         /// <summary>Coordinates of a point where the pen changes direction or lift. Contain the Coordinates of a point of the written signature where the pen changes direction or lift where (X and Y). When the signer lifts the pen, both X and Y have the value FFFF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point>? SignaturePoint { get => _explicitNullValueSignaturePoint; set { _explicitNullValueSignaturePoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SignaturePoint"); else _explicitNullProperties?.Remove("SignaturePoint"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point>? SignaturePoint { get => _explicitNullValueSignaturePoint; set { _explicitNullValueSignaturePoint = value; AdditionalData?.Remove("SignaturePoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SignaturePoint"); else _explicitNullProperties?.Remove("SignaturePoint"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Point>? _explicitNullValueSignaturePoint = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point> SignaturePoint { get => _explicitNullValueSignaturePoint; set { _explicitNullValueSignaturePoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SignaturePoint"); else _explicitNullProperties?.Remove("SignaturePoint"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Point> SignaturePoint { get => _explicitNullValueSignaturePoint; set { _explicitNullValueSignaturePoint = value; AdditionalData?.Remove("SignaturePoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SignaturePoint"); else _explicitNullProperties?.Remove("SignaturePoint"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Point> _explicitNullValueSignaturePoint = default!;
 #endif
         /// <summary>

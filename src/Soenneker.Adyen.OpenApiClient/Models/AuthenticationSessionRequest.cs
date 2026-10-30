@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowOrigin") is { } nullNodeAllowOrigin && nullNodeAllowOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowOrigin = null;
-            if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
-            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("allowOrigin") is null) { _explicitNullValueAllowOrigin = default!; _explicitNullProperties?.Remove("allowOrigin"); }
+            else if (parseNode.GetChildNode("allowOrigin") is { } nullNodeAllowOrigin && nullNodeAllowOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowOrigin = null;
+            if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
+            else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+            if (parseNode.GetChildNode("product") is null) { _explicitNullValueProduct = default!; _explicitNullProperties?.Remove("product"); }
+            else if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The URL where the component will appear. In your live environment, you must protect the URL with an SSL certificate and ensure that it starts with `https://`.Required for creating a session for Platform Experience and Onboarding components. Omitting this parameter results in an unusable session token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowOrigin { get => _explicitNullValueAllowOrigin; set { _explicitNullValueAllowOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowOrigin"); else _explicitNullProperties?.Remove("allowOrigin"); } }
+        public string? AllowOrigin { get => _explicitNullValueAllowOrigin; set { _explicitNullValueAllowOrigin = value; AdditionalData?.Remove("allowOrigin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowOrigin"); else _explicitNullProperties?.Remove("allowOrigin"); } }
         private string? _explicitNullValueAllowOrigin = default!;
 #nullable restore
 #else
-        public string AllowOrigin { get => _explicitNullValueAllowOrigin; set { _explicitNullValueAllowOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowOrigin"); else _explicitNullProperties?.Remove("allowOrigin"); } }
+        public string AllowOrigin { get => _explicitNullValueAllowOrigin; set { _explicitNullValueAllowOrigin = value; AdditionalData?.Remove("allowOrigin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowOrigin"); else _explicitNullProperties?.Remove("allowOrigin"); } }
         private string _explicitNullValueAllowOrigin = default!;
 #endif
         /// <summary>An object that contains a description of the allowed resources and roles for the requested session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy? _explicitNullValuePolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy _explicitNullValuePolicy = default!;
 #endif
         /// <summary>The type of component.For [Onboarding components](https://docs.adyen.com/platforms/onboard-users/components), set this to **onboarding**.For [Platform Experience components](https://docs.adyen.com/platforms/build-user-dashboards), set this to **platform**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct? _explicitNullValueProduct = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequest"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "allowOrigin", n => { AllowOrigin = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy>(global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestPolicy.CreateFromDiscriminatorValue); } },
-                { "product", n => { Product = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>(); } },
+                { "product", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationSessionRequestProduct>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProduct = default; _explicitNullProperties?.Remove("product"); AdditionalData["product"] = unknown; } else { Product = parsed; AdditionalData.Remove("product"); } } },
             };
         }
         /// <summary>

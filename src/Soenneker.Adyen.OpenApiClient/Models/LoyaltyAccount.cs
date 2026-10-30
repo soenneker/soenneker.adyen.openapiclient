@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("LoyaltyAccountID") is { } nullNodeLoyaltyAccountID && nullNodeLoyaltyAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccountID = null;
-            if (parseNode.GetChildNode("LoyaltyBrand") is { } nullNodeLoyaltyBrand && nullNodeLoyaltyBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyBrand = null;
+            if (parseNode.GetChildNode("LoyaltyAccountID") is null) { _explicitNullValueLoyaltyAccountID = default!; _explicitNullProperties?.Remove("LoyaltyAccountID"); }
+            else if (parseNode.GetChildNode("LoyaltyAccountID") is { } nullNodeLoyaltyAccountID && nullNodeLoyaltyAccountID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccountID = null;
+            if (parseNode.GetChildNode("LoyaltyBrand") is null) { _explicitNullValueLoyaltyBrand = default!; _explicitNullProperties?.Remove("LoyaltyBrand"); }
+            else if (parseNode.GetChildNode("LoyaltyBrand") is { } nullNodeLoyaltyBrand && nullNodeLoyaltyBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyBrand = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a Loyalty account.In the Payment Request message, it allows to identify the loyalty account by the Sale Terminal instead of the POI Terminal (e.g. because the account identification is a bar-code read by the Cashier on a scanner device).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; AdditionalData?.Remove("LoyaltyAccountID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId? _explicitNullValueLoyaltyAccountID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId LoyaltyAccountID { get => _explicitNullValueLoyaltyAccountID; set { _explicitNullValueLoyaltyAccountID = value; AdditionalData?.Remove("LoyaltyAccountID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccountID"); else _explicitNullProperties?.Remove("LoyaltyAccountID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyAccountId _explicitNullValueLoyaltyAccountID = default!;
 #endif
         /// <summary>Identification of a Loyalty brand.If a card is analysed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoyaltyBrand { get => _explicitNullValueLoyaltyBrand; set { _explicitNullValueLoyaltyBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyBrand"); else _explicitNullProperties?.Remove("LoyaltyBrand"); } }
+        public string? LoyaltyBrand { get => _explicitNullValueLoyaltyBrand; set { _explicitNullValueLoyaltyBrand = value; AdditionalData?.Remove("LoyaltyBrand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyBrand"); else _explicitNullProperties?.Remove("LoyaltyBrand"); } }
         private string? _explicitNullValueLoyaltyBrand = default!;
 #nullable restore
 #else
-        public string LoyaltyBrand { get => _explicitNullValueLoyaltyBrand; set { _explicitNullValueLoyaltyBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyBrand"); else _explicitNullProperties?.Remove("LoyaltyBrand"); } }
+        public string LoyaltyBrand { get => _explicitNullValueLoyaltyBrand; set { _explicitNullValueLoyaltyBrand = value; AdditionalData?.Remove("LoyaltyBrand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyBrand"); else _explicitNullProperties?.Remove("LoyaltyBrand"); } }
         private string _explicitNullValueLoyaltyBrand = default!;
 #endif
         /// <summary>

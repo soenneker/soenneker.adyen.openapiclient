@@ -56,6 +56,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(TerminalSettingsOfflineProcessingMember1 != null || TerminalSettingsOfflineProcessingMember2 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TerminalSettingsOfflineProcessingMember1, TerminalSettingsOfflineProcessingMember2);
@@ -70,8 +72,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (TerminalSettingsOfflineProcessingMember1 == null && TerminalSettingsOfflineProcessingMember2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (TerminalSettingsOfflineProcessingMember1 != null && TerminalSettingsOfflineProcessingMember2 == null) { if (TerminalSettingsOfflineProcessingMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsOfflineProcessingMember1); return; }
-            if (TerminalSettingsOfflineProcessingMember2 != null && TerminalSettingsOfflineProcessingMember1 == null) { if (TerminalSettingsOfflineProcessingMember2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsOfflineProcessingMember2); return; }
+            int selectedUnionBranches = 0;
+            if (TerminalSettingsOfflineProcessingMember1 != null) selectedUnionBranches++;
+            if (TerminalSettingsOfflineProcessingMember2 != null) selectedUnionBranches++;
+            if (TerminalSettingsOfflineProcessingMember1 != null && selectedUnionBranches == 1) { if (TerminalSettingsOfflineProcessingMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsOfflineProcessingMember1); return; }
+            if (TerminalSettingsOfflineProcessingMember2 != null && selectedUnionBranches == 1) { if (TerminalSettingsOfflineProcessingMember2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TerminalSettingsOfflineProcessingMember2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingMember1>(null, TerminalSettingsOfflineProcessingMember1, TerminalSettingsOfflineProcessingMember2);

@@ -18,21 +18,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hideNavigationBar") is { } nullNodeHideNavigationBar && nullNodeHideNavigationBar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideNavigationBar = null;
-            if (parseNode.GetChildNode("showPaymentsMenu") is { } nullNodeShowPaymentsMenu && nullNodeShowPaymentsMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowPaymentsMenu = null;
-            if (parseNode.GetChildNode("showSettingsMenu") is { } nullNodeShowSettingsMenu && nullNodeShowSettingsMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowSettingsMenu = null;
+            if (parseNode.GetChildNode("hideNavigationBar") is null) { _explicitNullValueHideNavigationBar = default!; _explicitNullProperties?.Remove("hideNavigationBar"); }
+            else if (parseNode.GetChildNode("hideNavigationBar") is { } nullNodeHideNavigationBar && nullNodeHideNavigationBar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideNavigationBar = null;
+            if (parseNode.GetChildNode("showPaymentsMenu") is null) { _explicitNullValueShowPaymentsMenu = default!; _explicitNullProperties?.Remove("showPaymentsMenu"); }
+            else if (parseNode.GetChildNode("showPaymentsMenu") is { } nullNodeShowPaymentsMenu && nullNodeShowPaymentsMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowPaymentsMenu = null;
+            if (parseNode.GetChildNode("showSettingsMenu") is null) { _explicitNullValueShowSettingsMenu = default!; _explicitNullProperties?.Remove("showSettingsMenu"); }
+            else if (parseNode.GetChildNode("showSettingsMenu") is { } nullNodeShowSettingsMenu && nullNodeShowSettingsMenu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowSettingsMenu = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Hide/show the navigation bar.</summary>
-        public bool? HideNavigationBar { get => _explicitNullValueHideNavigationBar; set { _explicitNullValueHideNavigationBar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideNavigationBar"); else _explicitNullProperties?.Remove("hideNavigationBar"); } }
+        public bool? HideNavigationBar { get => _explicitNullValueHideNavigationBar; set { _explicitNullValueHideNavigationBar = value; AdditionalData?.Remove("hideNavigationBar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideNavigationBar"); else _explicitNullProperties?.Remove("hideNavigationBar"); } }
         private bool? _explicitNullValueHideNavigationBar = default!;
         /// <summary>Show/hide the payments menu.</summary>
-        public bool? ShowPaymentsMenu { get => _explicitNullValueShowPaymentsMenu; set { _explicitNullValueShowPaymentsMenu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showPaymentsMenu"); else _explicitNullProperties?.Remove("showPaymentsMenu"); } }
+        public bool? ShowPaymentsMenu { get => _explicitNullValueShowPaymentsMenu; set { _explicitNullValueShowPaymentsMenu = value; AdditionalData?.Remove("showPaymentsMenu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showPaymentsMenu"); else _explicitNullProperties?.Remove("showPaymentsMenu"); } }
         private bool? _explicitNullValueShowPaymentsMenu = default!;
         /// <summary>Show/hide the settings menu.</summary>
-        public bool? ShowSettingsMenu { get => _explicitNullValueShowSettingsMenu; set { _explicitNullValueShowSettingsMenu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showSettingsMenu"); else _explicitNullProperties?.Remove("showSettingsMenu"); } }
+        public bool? ShowSettingsMenu { get => _explicitNullValueShowSettingsMenu; set { _explicitNullValueShowSettingsMenu = value; AdditionalData?.Remove("showSettingsMenu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("showSettingsMenu"); else _explicitNullProperties?.Remove("showSettingsMenu"); } }
         private bool? _explicitNullValueShowSettingsMenu = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsHomeScreenMember1"/> and sets the default values.

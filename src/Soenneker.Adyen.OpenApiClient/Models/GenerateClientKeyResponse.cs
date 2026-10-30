@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clientKey") is { } nullNodeClientKey && nullNodeClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientKey = null;
+            if (parseNode.GetChildNode("clientKey") is null) { _explicitNullValueClientKey = default!; _explicitNullProperties?.Remove("clientKey"); }
+            else if (parseNode.GetChildNode("clientKey") is { } nullNodeClientKey && nullNodeClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Generated client key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
+        public string? ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; AdditionalData?.Remove("clientKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
         private string? _explicitNullValueClientKey = default!;
 #nullable restore
 #else
-        public string ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
+        public string ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; AdditionalData?.Remove("clientKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientKey"); else _explicitNullProperties?.Remove("clientKey"); } }
         private string _explicitNullValueClientKey = default!;
 #endif
         /// <summary>

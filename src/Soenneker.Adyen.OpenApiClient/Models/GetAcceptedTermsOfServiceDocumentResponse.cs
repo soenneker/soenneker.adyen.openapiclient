@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("termsOfServiceAcceptanceReference") is { } nullNodeTermsOfServiceAcceptanceReference && nullNodeTermsOfServiceAcceptanceReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceAcceptanceReference = null;
-            if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is { } nullNodeTermsOfServiceDocumentFormat && nullNodeTermsOfServiceDocumentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceDocumentFormat = null;
+            if (parseNode.GetChildNode("document") is null) { _explicitNullValueDocument = default!; _explicitNullProperties?.Remove("document"); }
+            else if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("termsOfServiceAcceptanceReference") is null) { _explicitNullValueTermsOfServiceAcceptanceReference = default!; _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); }
+            else if (parseNode.GetChildNode("termsOfServiceAcceptanceReference") is { } nullNodeTermsOfServiceAcceptanceReference && nullNodeTermsOfServiceAcceptanceReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceAcceptanceReference = null;
+            if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is null) { _explicitNullValueTermsOfServiceDocumentFormat = default!; _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); }
+            else if (parseNode.GetChildNode("termsOfServiceDocumentFormat") is { } nullNodeTermsOfServiceDocumentFormat && nullNodeTermsOfServiceDocumentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsOfServiceDocumentFormat = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,35 +32,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The accepted Terms of Service document in the requested format represented as a Base64-encoded bytes array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        public byte[]? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; AdditionalData?.Remove("document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
         private byte[]? _explicitNullValueDocument = default!;
 #nullable restore
 #else
-        public byte[] Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        public byte[] Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; AdditionalData?.Remove("document"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
         private byte[] _explicitNullValueDocument = default!;
 #endif
         /// <summary>The unique identifier of the legal entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>An Adyen-generated reference for the accepted Terms of Service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsOfServiceAcceptanceReference { get => _explicitNullValueTermsOfServiceAcceptanceReference; set { _explicitNullValueTermsOfServiceAcceptanceReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceAcceptanceReference"); else _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); } }
+        public string? TermsOfServiceAcceptanceReference { get => _explicitNullValueTermsOfServiceAcceptanceReference; set { _explicitNullValueTermsOfServiceAcceptanceReference = value; AdditionalData?.Remove("termsOfServiceAcceptanceReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceAcceptanceReference"); else _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); } }
         private string? _explicitNullValueTermsOfServiceAcceptanceReference = default!;
 #nullable restore
 #else
-        public string TermsOfServiceAcceptanceReference { get => _explicitNullValueTermsOfServiceAcceptanceReference; set { _explicitNullValueTermsOfServiceAcceptanceReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceAcceptanceReference"); else _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); } }
+        public string TermsOfServiceAcceptanceReference { get => _explicitNullValueTermsOfServiceAcceptanceReference; set { _explicitNullValueTermsOfServiceAcceptanceReference = value; AdditionalData?.Remove("termsOfServiceAcceptanceReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceAcceptanceReference"); else _explicitNullProperties?.Remove("termsOfServiceAcceptanceReference"); } }
         private string _explicitNullValueTermsOfServiceAcceptanceReference = default!;
 #endif
         /// <summary>The format of the Terms of Service document.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? TermsOfServiceDocumentFormat { get => _explicitNullValueTermsOfServiceDocumentFormat; set { _explicitNullValueTermsOfServiceDocumentFormat = value; AdditionalData?.Remove("termsOfServiceDocumentFormat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsOfServiceDocumentFormat"); else _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat? _explicitNullValueTermsOfServiceDocumentFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponse"/> and sets the default values.
@@ -86,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "document", n => { Document = n.GetByteArrayValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "termsOfServiceAcceptanceReference", n => { TermsOfServiceAcceptanceReference = n.GetStringValue(); } },
-                { "termsOfServiceDocumentFormat", n => { TermsOfServiceDocumentFormat = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat>(); } },
+                { "termsOfServiceDocumentFormat", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.GetAcceptedTermsOfServiceDocumentResponseTermsOfServiceDocumentFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTermsOfServiceDocumentFormat = default; _explicitNullProperties?.Remove("termsOfServiceDocumentFormat"); AdditionalData["termsOfServiceDocumentFormat"] = unknown; } else { TermsOfServiceDocumentFormat = parsed; AdditionalData.Remove("termsOfServiceDocumentFormat"); } } },
             };
         }
         /// <summary>

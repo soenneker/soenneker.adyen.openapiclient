@@ -18,14 +18,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DeviceID") is { } nullNodeDeviceID && nullNodeDeviceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceID = null;
-            if (parseNode.GetChildNode("MessageCategory") is { } nullNodeMessageCategory && nullNodeMessageCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCategory = null;
-            if (parseNode.GetChildNode("MessageClass") is { } nullNodeMessageClass && nullNodeMessageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageClass = null;
-            if (parseNode.GetChildNode("MessageType") is { } nullNodeMessageType && nullNodeMessageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageType = null;
-            if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
-            if (parseNode.GetChildNode("ProtocolVersion") is { } nullNodeProtocolVersion && nullNodeProtocolVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolVersion = null;
-            if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
-            if (parseNode.GetChildNode("ServiceID") is { } nullNodeServiceID && nullNodeServiceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceID = null;
+            if (parseNode.GetChildNode("DeviceID") is null) { _explicitNullValueDeviceID = default!; _explicitNullProperties?.Remove("DeviceID"); }
+            else if (parseNode.GetChildNode("DeviceID") is { } nullNodeDeviceID && nullNodeDeviceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceID = null;
+            if (parseNode.GetChildNode("MessageCategory") is null) { _explicitNullValueMessageCategory = default!; _explicitNullProperties?.Remove("MessageCategory"); }
+            else if (parseNode.GetChildNode("MessageCategory") is { } nullNodeMessageCategory && nullNodeMessageCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCategory = null;
+            if (parseNode.GetChildNode("MessageClass") is null) { _explicitNullValueMessageClass = default!; _explicitNullProperties?.Remove("MessageClass"); }
+            else if (parseNode.GetChildNode("MessageClass") is { } nullNodeMessageClass && nullNodeMessageClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageClass = null;
+            if (parseNode.GetChildNode("MessageType") is null) { _explicitNullValueMessageType = default!; _explicitNullProperties?.Remove("MessageType"); }
+            else if (parseNode.GetChildNode("MessageType") is { } nullNodeMessageType && nullNodeMessageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageType = null;
+            if (parseNode.GetChildNode("POIID") is null) { _explicitNullValuePOIID = default!; _explicitNullProperties?.Remove("POIID"); }
+            else if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
+            if (parseNode.GetChildNode("ProtocolVersion") is null) { _explicitNullValueProtocolVersion = default!; _explicitNullProperties?.Remove("ProtocolVersion"); }
+            else if (parseNode.GetChildNode("ProtocolVersion") is { } nullNodeProtocolVersion && nullNodeProtocolVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolVersion = null;
+            if (parseNode.GetChildNode("SaleID") is null) { _explicitNullValueSaleID = default!; _explicitNullProperties?.Remove("SaleID"); }
+            else if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
+            if (parseNode.GetChildNode("ServiceID") is null) { _explicitNullValueServiceID = default!; _explicitNullProperties?.Remove("ServiceID"); }
+            else if (parseNode.GetChildNode("ServiceID") is { } nullNodeServiceID && nullNodeServiceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,60 +41,60 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a device message pair.If Device MessageClass.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
+        public string? DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; AdditionalData?.Remove("DeviceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
         private string? _explicitNullValueDeviceID = default!;
 #nullable restore
 #else
-        public string DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
+        public string DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; AdditionalData?.Remove("DeviceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
         private string _explicitNullValueDeviceID = default!;
 #endif
         /// <summary>Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **CardAcquisition*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **StoredValue*** **TransactionStatus*** **None**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory? MessageCategory { get => _explicitNullValueMessageCategory; set { _explicitNullValueMessageCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageCategory"); else _explicitNullProperties?.Remove("MessageCategory"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory? MessageCategory { get => _explicitNullValueMessageCategory; set { _explicitNullValueMessageCategory = value; AdditionalData?.Remove("MessageCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageCategory"); else _explicitNullProperties?.Remove("MessageCategory"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory? _explicitNullValueMessageCategory = default!;
         /// <summary>Possible values:* **Service*** **Device*** **Event**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass? MessageClass { get => _explicitNullValueMessageClass; set { _explicitNullValueMessageClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageClass"); else _explicitNullProperties?.Remove("MessageClass"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass? MessageClass { get => _explicitNullValueMessageClass; set { _explicitNullValueMessageClass = value; AdditionalData?.Remove("MessageClass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageClass"); else _explicitNullProperties?.Remove("MessageClass"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass? _explicitNullValueMessageClass = default!;
         /// <summary>Possible values:* **Request*** **Response*** **Notification**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType? MessageType { get => _explicitNullValueMessageType; set { _explicitNullValueMessageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageType"); else _explicitNullProperties?.Remove("MessageType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType? MessageType { get => _explicitNullValueMessageType; set { _explicitNullValueMessageType = value; AdditionalData?.Remove("MessageType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageType"); else _explicitNullProperties?.Remove("MessageType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType? _explicitNullValueMessageType = default!;
         /// <summary>Identification of a POI System or a POI Terminal for the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; AdditionalData?.Remove("POIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
         private string? _explicitNullValuePOIID = default!;
 #nullable restore
 #else
-        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; AdditionalData?.Remove("POIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
         private string _explicitNullValuePOIID = default!;
 #endif
         /// <summary>If MessageCategory is Login or Diagnosis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtocolVersion { get => _explicitNullValueProtocolVersion; set { _explicitNullValueProtocolVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtocolVersion"); else _explicitNullProperties?.Remove("ProtocolVersion"); } }
+        public string? ProtocolVersion { get => _explicitNullValueProtocolVersion; set { _explicitNullValueProtocolVersion = value; AdditionalData?.Remove("ProtocolVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtocolVersion"); else _explicitNullProperties?.Remove("ProtocolVersion"); } }
         private string? _explicitNullValueProtocolVersion = default!;
 #nullable restore
 #else
-        public string ProtocolVersion { get => _explicitNullValueProtocolVersion; set { _explicitNullValueProtocolVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtocolVersion"); else _explicitNullProperties?.Remove("ProtocolVersion"); } }
+        public string ProtocolVersion { get => _explicitNullValueProtocolVersion; set { _explicitNullValueProtocolVersion = value; AdditionalData?.Remove("ProtocolVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtocolVersion"); else _explicitNullProperties?.Remove("ProtocolVersion"); } }
         private string _explicitNullValueProtocolVersion = default!;
 #endif
         /// <summary>Identification of a Sale System or a Sale Terminal for the Sale to POI protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; AdditionalData?.Remove("SaleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
         private string? _explicitNullValueSaleID = default!;
 #nullable restore
 #else
-        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; AdditionalData?.Remove("SaleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
         private string _explicitNullValueSaleID = default!;
 #endif
         /// <summary>Identification of a message pair, which processes a transaction.Required if Service or Event MessageClass message or if Device MessageClass and request from POI or response from Sale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
+        public string? ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; AdditionalData?.Remove("ServiceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
         private string? _explicitNullValueServiceID = default!;
 #nullable restore
 #else
-        public string ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
+        public string ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; AdditionalData?.Remove("ServiceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
         private string _explicitNullValueServiceID = default!;
 #endif
         /// <summary>
@@ -115,9 +123,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "DeviceID", n => { DeviceID = n.GetStringValue(); } },
-                { "MessageCategory", n => { MessageCategory = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory>(); } },
-                { "MessageClass", n => { MessageClass = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass>(); } },
-                { "MessageType", n => { MessageType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType>(); } },
+                { "MessageCategory", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMessageCategory = default; _explicitNullProperties?.Remove("MessageCategory"); AdditionalData["MessageCategory"] = unknown; } else { MessageCategory = parsed; AdditionalData.Remove("MessageCategory"); } } },
+                { "MessageClass", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageClass>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMessageClass = default; _explicitNullProperties?.Remove("MessageClass"); AdditionalData["MessageClass"] = unknown; } else { MessageClass = parsed; AdditionalData.Remove("MessageClass"); } } },
+                { "MessageType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageHeaderMessageType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMessageType = default; _explicitNullProperties?.Remove("MessageType"); AdditionalData["MessageType"] = unknown; } else { MessageType = parsed; AdditionalData.Remove("MessageType"); } } },
                 { "POIID", n => { POIID = n.GetStringValue(); } },
                 { "ProtocolVersion", n => { ProtocolVersion = n.GetStringValue(); } },
                 { "SaleID", n => { SaleID = n.GetStringValue(); } },

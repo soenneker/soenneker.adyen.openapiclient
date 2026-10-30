@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alternateMerchantNumber") is { } nullNodeAlternateMerchantNumber && nullNodeAlternateMerchantNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlternateMerchantNumber = null;
-            if (parseNode.GetChildNode("authorisationMid") is { } nullNodeAuthorisationMid && nullNodeAuthorisationMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationMid = null;
-            if (parseNode.GetChildNode("pinSupport") is { } nullNodePinSupport && nullNodePinSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinSupport = null;
-            if (parseNode.GetChildNode("terminalId") is { } nullNodeTerminalId && nullNodeTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalId = null;
+            if (parseNode.GetChildNode("alternateMerchantNumber") is null) { _explicitNullValueAlternateMerchantNumber = default!; _explicitNullProperties?.Remove("alternateMerchantNumber"); }
+            else if (parseNode.GetChildNode("alternateMerchantNumber") is { } nullNodeAlternateMerchantNumber && nullNodeAlternateMerchantNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlternateMerchantNumber = null;
+            if (parseNode.GetChildNode("authorisationMid") is null) { _explicitNullValueAuthorisationMid = default!; _explicitNullProperties?.Remove("authorisationMid"); }
+            else if (parseNode.GetChildNode("authorisationMid") is { } nullNodeAuthorisationMid && nullNodeAuthorisationMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationMid = null;
+            if (parseNode.GetChildNode("pinSupport") is null) { _explicitNullValuePinSupport = default!; _explicitNullProperties?.Remove("pinSupport"); }
+            else if (parseNode.GetChildNode("pinSupport") is { } nullNodePinSupport && nullNodePinSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PinSupport = null;
+            if (parseNode.GetChildNode("terminalId") is null) { _explicitNullValueTerminalId = default!; _explicitNullProperties?.Remove("terminalId"); }
+            else if (parseNode.GetChildNode("terminalId") is { } nullNodeTerminalId && nullNodeTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TerminalId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Alternate Merchant Number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternateMerchantNumber { get => _explicitNullValueAlternateMerchantNumber; set { _explicitNullValueAlternateMerchantNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternateMerchantNumber"); else _explicitNullProperties?.Remove("alternateMerchantNumber"); } }
+        public string? AlternateMerchantNumber { get => _explicitNullValueAlternateMerchantNumber; set { _explicitNullValueAlternateMerchantNumber = value; AdditionalData?.Remove("alternateMerchantNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternateMerchantNumber"); else _explicitNullProperties?.Remove("alternateMerchantNumber"); } }
         private string? _explicitNullValueAlternateMerchantNumber = default!;
 #nullable restore
 #else
-        public string AlternateMerchantNumber { get => _explicitNullValueAlternateMerchantNumber; set { _explicitNullValueAlternateMerchantNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternateMerchantNumber"); else _explicitNullProperties?.Remove("alternateMerchantNumber"); } }
+        public string AlternateMerchantNumber { get => _explicitNullValueAlternateMerchantNumber; set { _explicitNullValueAlternateMerchantNumber = value; AdditionalData?.Remove("alternateMerchantNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternateMerchantNumber"); else _explicitNullProperties?.Remove("alternateMerchantNumber"); } }
         private string _explicitNullValueAlternateMerchantNumber = default!;
 #endif
         /// <summary>Authorisation Mid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
+        public string? AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; AdditionalData?.Remove("authorisationMid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
         private string? _explicitNullValueAuthorisationMid = default!;
 #nullable restore
 #else
-        public string AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
+        public string AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; AdditionalData?.Remove("authorisationMid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
         private string _explicitNullValueAuthorisationMid = default!;
 #endif
         /// <summary>PIN Support. For ecommerce, PIN is required.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport? PinSupport { get => _explicitNullValuePinSupport; set { _explicitNullValuePinSupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinSupport"); else _explicitNullProperties?.Remove("pinSupport"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport? PinSupport { get => _explicitNullValuePinSupport; set { _explicitNullValuePinSupport = value; AdditionalData?.Remove("pinSupport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pinSupport"); else _explicitNullProperties?.Remove("pinSupport"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport? _explicitNullValuePinSupport = default!;
         /// <summary>Terminal ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
+        public string? TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; AdditionalData?.Remove("terminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
         private string? _explicitNullValueTerminalId = default!;
 #nullable restore
 #else
-        public string TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
+        public string TerminalId { get => _explicitNullValueTerminalId; set { _explicitNullValueTerminalId = value; AdditionalData?.Remove("terminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminalId"); else _explicitNullProperties?.Remove("terminalId"); } }
         private string _explicitNullValueTerminalId = default!;
 #endif
         /// <summary>
@@ -86,7 +90,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "alternateMerchantNumber", n => { AlternateMerchantNumber = n.GetStringValue(); } },
                 { "authorisationMid", n => { AuthorisationMid = n.GetStringValue(); } },
-                { "pinSupport", n => { PinSupport = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport>(); } },
+                { "pinSupport", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ValuelinkInfoPinSupport>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePinSupport = default; _explicitNullProperties?.Remove("pinSupport"); AdditionalData["pinSupport"] = unknown; } else { PinSupport = parsed; AdditionalData.Remove("pinSupport"); } } },
                 { "terminalId", n => { TerminalId = n.GetStringValue(); } },
             };
         }

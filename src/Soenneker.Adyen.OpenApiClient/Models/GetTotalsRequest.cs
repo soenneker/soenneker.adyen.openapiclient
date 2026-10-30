@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TotalDetails") is { } nullNodeTotalDetails && nullNodeTotalDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalDetails = null;
-            if (parseNode.GetChildNode("TotalFilter") is { } nullNodeTotalFilter && nullNodeTotalFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalFilter = null;
+            if (parseNode.GetChildNode("TotalDetails") is null) { _explicitNullValueTotalDetails = default!; _explicitNullProperties?.Remove("TotalDetails"); }
+            else if (parseNode.GetChildNode("TotalDetails") is { } nullNodeTotalDetails && nullNodeTotalDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalDetails = null;
+            if (parseNode.GetChildNode("TotalFilter") is null) { _explicitNullValueTotalFilter = default!; _explicitNullProperties?.Remove("TotalFilter"); }
+            else if (parseNode.GetChildNode("TotalFilter") is { } nullNodeTotalFilter && nullNodeTotalFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalFilter = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates the hierarchical structure of the reconciliation result of the Sale to POI reconciliation.Required to present totals per value of element included in this cluster (POI Terminal, Sale Terminal, Cashier, Shift, TotalsGroupID).Possible values:* **OperatorID*** **POIID*** **SaleID*** **ShiftNumber*** **TotalsGroupID**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?>? TotalDetails { get => _explicitNullValueTotalDetails; set { _explicitNullValueTotalDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalDetails"); else _explicitNullProperties?.Remove("TotalDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?>? TotalDetails { get => _explicitNullValueTotalDetails; set { _explicitNullValueTotalDetails = value; AdditionalData?.Remove("TotalDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalDetails"); else _explicitNullProperties?.Remove("TotalDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?>? _explicitNullValueTotalDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?> TotalDetails { get => _explicitNullValueTotalDetails; set { _explicitNullValueTotalDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalDetails"); else _explicitNullProperties?.Remove("TotalDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?> TotalDetails { get => _explicitNullValueTotalDetails; set { _explicitNullValueTotalDetails = value; AdditionalData?.Remove("TotalDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalDetails"); else _explicitNullProperties?.Remove("TotalDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalDetailsItem?> _explicitNullValueTotalDetails = default!;
 #endif
         /// <summary>Filter to compute the totals.Used for the Get Totals, to request totals for a (or a combination of) particular value of the POI Terminal, Sale Terminal, Cashier, Shift, or TotalsGroupID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter? TotalFilter { get => _explicitNullValueTotalFilter; set { _explicitNullValueTotalFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalFilter"); else _explicitNullProperties?.Remove("TotalFilter"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter? TotalFilter { get => _explicitNullValueTotalFilter; set { _explicitNullValueTotalFilter = value; AdditionalData?.Remove("TotalFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalFilter"); else _explicitNullProperties?.Remove("TotalFilter"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter? _explicitNullValueTotalFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter TotalFilter { get => _explicitNullValueTotalFilter; set { _explicitNullValueTotalFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalFilter"); else _explicitNullProperties?.Remove("TotalFilter"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter TotalFilter { get => _explicitNullValueTotalFilter; set { _explicitNullValueTotalFilter = value; AdditionalData?.Remove("TotalFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalFilter"); else _explicitNullProperties?.Remove("TotalFilter"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.GetTotalsRequestTotalFilter _explicitNullValueTotalFilter = default!;
 #endif
         /// <summary>

@@ -17,19 +17,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
-            if (parseNode.GetChildNode("bankAccountUUID") is { } nullNodeBankAccountUUID && nullNodeBankAccountUUID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountUUID = null;
-            if (parseNode.GetChildNode("shareholderCode") is { } nullNodeShareholderCode && nullNodeShareholderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCode = null;
+            if (parseNode.GetChildNode("accountHolderCode") is null) { _explicitNullValueAccountHolderCode = default!; _explicitNullProperties?.Remove("accountHolderCode"); }
+            else if (parseNode.GetChildNode("accountHolderCode") is { } nullNodeAccountHolderCode && nullNodeAccountHolderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderCode = null;
+            if (parseNode.GetChildNode("bankAccountUUID") is null) { _explicitNullValueBankAccountUUID = default!; _explicitNullProperties?.Remove("bankAccountUUID"); }
+            else if (parseNode.GetChildNode("bankAccountUUID") is { } nullNodeBankAccountUUID && nullNodeBankAccountUUID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountUUID = null;
+            if (parseNode.GetChildNode("shareholderCode") is null) { _explicitNullValueShareholderCode = default!; _explicitNullProperties?.Remove("shareholderCode"); }
+            else if (parseNode.GetChildNode("shareholderCode") is { } nullNodeShareholderCode && nullNodeShareholderCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareholderCode = null;
         }
 
         /// <summary>The code of the Account Holder for which to retrieve the documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string? AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string? _explicitNullValueAccountHolderCode = default!;
 #nullable restore
 #else
-        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
+        public string AccountHolderCode { get => _explicitNullValueAccountHolderCode; set { _explicitNullValueAccountHolderCode = value; AdditionalData?.Remove("accountHolderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderCode"); else _explicitNullProperties?.Remove("accountHolderCode"); } }
         private string _explicitNullValueAccountHolderCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The code of the Bank Account for which to retrieve the documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountUUID { get => _explicitNullValueBankAccountUUID; set { _explicitNullValueBankAccountUUID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountUUID"); else _explicitNullProperties?.Remove("bankAccountUUID"); } }
+        public string? BankAccountUUID { get => _explicitNullValueBankAccountUUID; set { _explicitNullValueBankAccountUUID = value; AdditionalData?.Remove("bankAccountUUID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountUUID"); else _explicitNullProperties?.Remove("bankAccountUUID"); } }
         private string? _explicitNullValueBankAccountUUID = default!;
 #nullable restore
 #else
-        public string BankAccountUUID { get => _explicitNullValueBankAccountUUID; set { _explicitNullValueBankAccountUUID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountUUID"); else _explicitNullProperties?.Remove("bankAccountUUID"); } }
+        public string BankAccountUUID { get => _explicitNullValueBankAccountUUID; set { _explicitNullValueBankAccountUUID = value; AdditionalData?.Remove("bankAccountUUID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountUUID"); else _explicitNullProperties?.Remove("bankAccountUUID"); } }
         private string _explicitNullValueBankAccountUUID = default!;
 #endif
         /// <summary>The code of the Shareholder for which to retrieve the documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
+        public string? ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; AdditionalData?.Remove("shareholderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
         private string? _explicitNullValueShareholderCode = default!;
 #nullable restore
 #else
-        public string ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
+        public string ShareholderCode { get => _explicitNullValueShareholderCode; set { _explicitNullValueShareholderCode = value; AdditionalData?.Remove("shareholderCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareholderCode"); else _explicitNullProperties?.Remove("shareholderCode"); } }
         private string _explicitNullValueShareholderCode = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("contentType") is null) { _explicitNullValueContentType = default!; _explicitNullProperties?.Remove("contentType"); }
+            else if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The content of the tax form in Base64 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[]? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[] _explicitNullValueContent = default!;
 #endif
         /// <summary>The content type of the tax form.Possible values:*  **application/pdf**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationPdfContentType? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApplicationPdfContentType? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ApplicationPdfContentType? _explicitNullValueContentType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2GetTaxFormResponse"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetByteArrayValue(); } },
-                { "contentType", n => { ContentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationPdfContentType>(); } },
+                { "contentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApplicationPdfContentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContentType = default; _explicitNullProperties?.Remove("contentType"); AdditionalData["contentType"] = unknown; } else { ContentType = parsed; AdditionalData.Remove("contentType"); } } },
             };
         }
         /// <summary>

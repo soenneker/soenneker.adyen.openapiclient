@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("eventLocalUrls") is { } nullNodeEventLocalUrls && nullNodeEventLocalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventLocalUrls = null;
-            if (parseNode.GetChildNode("eventPublicUrls") is { } nullNodeEventPublicUrls && nullNodeEventPublicUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventPublicUrls = null;
+            if (parseNode.GetChildNode("eventLocalUrls") is null) { _explicitNullValueEventLocalUrls = default!; _explicitNullProperties?.Remove("eventLocalUrls"); }
+            else if (parseNode.GetChildNode("eventLocalUrls") is { } nullNodeEventLocalUrls && nullNodeEventLocalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventLocalUrls = null;
+            if (parseNode.GetChildNode("eventPublicUrls") is null) { _explicitNullValueEventPublicUrls = default!; _explicitNullProperties?.Remove("eventPublicUrls"); }
+            else if (parseNode.GetChildNode("eventPublicUrls") is { } nullNodeEventPublicUrls && nullNodeEventPublicUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventPublicUrls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>One or more local URLs to send event notifications to when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? EventLocalUrls { get => _explicitNullValueEventLocalUrls; set { _explicitNullValueEventLocalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventLocalUrls"); else _explicitNullProperties?.Remove("eventLocalUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? EventLocalUrls { get => _explicitNullValueEventLocalUrls; set { _explicitNullValueEventLocalUrls = value; AdditionalData?.Remove("eventLocalUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventLocalUrls"); else _explicitNullProperties?.Remove("eventLocalUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? _explicitNullValueEventLocalUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> EventLocalUrls { get => _explicitNullValueEventLocalUrls; set { _explicitNullValueEventLocalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventLocalUrls"); else _explicitNullProperties?.Remove("eventLocalUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> EventLocalUrls { get => _explicitNullValueEventLocalUrls; set { _explicitNullValueEventLocalUrls = value; AdditionalData?.Remove("eventLocalUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventLocalUrls"); else _explicitNullProperties?.Remove("eventLocalUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url> _explicitNullValueEventLocalUrls = default!;
 #endif
         /// <summary>One or more public URLs to send event notifications to when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? EventPublicUrls { get => _explicitNullValueEventPublicUrls; set { _explicitNullValueEventPublicUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventPublicUrls"); else _explicitNullProperties?.Remove("eventPublicUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? EventPublicUrls { get => _explicitNullValueEventPublicUrls; set { _explicitNullValueEventPublicUrls = value; AdditionalData?.Remove("eventPublicUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventPublicUrls"); else _explicitNullProperties?.Remove("eventPublicUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? _explicitNullValueEventPublicUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> EventPublicUrls { get => _explicitNullValueEventPublicUrls; set { _explicitNullValueEventPublicUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventPublicUrls"); else _explicitNullProperties?.Remove("eventPublicUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> EventPublicUrls { get => _explicitNullValueEventPublicUrls; set { _explicitNullValueEventPublicUrls = value; AdditionalData?.Remove("eventPublicUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventPublicUrls"); else _explicitNullProperties?.Remove("eventPublicUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url> _explicitNullValueEventPublicUrls = default!;
 #endif
         /// <summary>

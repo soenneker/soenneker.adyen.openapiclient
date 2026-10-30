@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("originKeys") is { } nullNodeOriginKeys && nullNodeOriginKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginKeys = null;
+            if (parseNode.GetChildNode("originKeys") is null) { _explicitNullValueOriginKeys = default!; _explicitNullProperties?.Remove("originKeys"); }
+            else if (parseNode.GetChildNode("originKeys") is { } nullNodeOriginKeys && nullNodeOriginKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of origin keys for all requested domains. For each list item, the key is the domain and the value is the origin key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.UtilityResponseOriginKeysProperty2? OriginKeys { get => _explicitNullValueOriginKeys; set { _explicitNullValueOriginKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originKeys"); else _explicitNullProperties?.Remove("originKeys"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtilityResponseOriginKeysProperty2? OriginKeys { get => _explicitNullValueOriginKeys; set { _explicitNullValueOriginKeys = value; AdditionalData?.Remove("originKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originKeys"); else _explicitNullProperties?.Remove("originKeys"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UtilityResponseOriginKeysProperty2? _explicitNullValueOriginKeys = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.UtilityResponseOriginKeysProperty2 OriginKeys { get => _explicitNullValueOriginKeys; set { _explicitNullValueOriginKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originKeys"); else _explicitNullProperties?.Remove("originKeys"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.UtilityResponseOriginKeysProperty2 OriginKeys { get => _explicitNullValueOriginKeys; set { _explicitNullValueOriginKeys = value; AdditionalData?.Remove("originKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originKeys"); else _explicitNullProperties?.Remove("originKeys"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.UtilityResponseOriginKeysProperty2 _explicitNullValueOriginKeys = default!;
 #endif
         /// <summary>

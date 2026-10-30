@@ -17,22 +17,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acsInfoInd") is { } nullNodeAcsInfoInd && nullNodeAcsInfoInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsInfoInd = null;
-            if (parseNode.GetChildNode("brandCode") is { } nullNodeBrandCode && nullNodeBrandCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandCode = null;
-            if (parseNode.GetChildNode("endRange") is { } nullNodeEndRange && nullNodeEndRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndRange = null;
-            if (parseNode.GetChildNode("startRange") is { } nullNodeStartRange && nullNodeStartRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartRange = null;
-            if (parseNode.GetChildNode("threeDS2Versions") is { } nullNodeThreeDS2Versions && nullNodeThreeDS2Versions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2Versions = null;
-            if (parseNode.GetChildNode("threeDSMethodURL") is { } nullNodeThreeDSMethodURL && nullNodeThreeDSMethodURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSMethodURL = null;
+            if (parseNode.GetChildNode("acsInfoInd") is null) { _explicitNullValueAcsInfoInd = default!; _explicitNullProperties?.Remove("acsInfoInd"); }
+            else if (parseNode.GetChildNode("acsInfoInd") is { } nullNodeAcsInfoInd && nullNodeAcsInfoInd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsInfoInd = null;
+            if (parseNode.GetChildNode("brandCode") is null) { _explicitNullValueBrandCode = default!; _explicitNullProperties?.Remove("brandCode"); }
+            else if (parseNode.GetChildNode("brandCode") is { } nullNodeBrandCode && nullNodeBrandCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrandCode = null;
+            if (parseNode.GetChildNode("endRange") is null) { _explicitNullValueEndRange = default!; _explicitNullProperties?.Remove("endRange"); }
+            else if (parseNode.GetChildNode("endRange") is { } nullNodeEndRange && nullNodeEndRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndRange = null;
+            if (parseNode.GetChildNode("startRange") is null) { _explicitNullValueStartRange = default!; _explicitNullProperties?.Remove("startRange"); }
+            else if (parseNode.GetChildNode("startRange") is { } nullNodeStartRange && nullNodeStartRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartRange = null;
+            if (parseNode.GetChildNode("threeDS2Versions") is null) { _explicitNullValueThreeDS2Versions = default!; _explicitNullProperties?.Remove("threeDS2Versions"); }
+            else if (parseNode.GetChildNode("threeDS2Versions") is { } nullNodeThreeDS2Versions && nullNodeThreeDS2Versions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDS2Versions = null;
+            if (parseNode.GetChildNode("threeDSMethodURL") is null) { _explicitNullValueThreeDSMethodURL = default!; _explicitNullProperties?.Remove("threeDSMethodURL"); }
+            else if (parseNode.GetChildNode("threeDSMethodURL") is { } nullNodeThreeDSMethodURL && nullNodeThreeDSMethodURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSMethodURL = null;
         }
 
         /// <summary>Provides additional information to the 3DS Server.Possible values:- 01 (Authentication is available at ACS)- 02 (Attempts supported by ACS or DS)- 03 (Decoupled authentication supported)- 04 (Whitelisting supported)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AcsInfoInd { get => _explicitNullValueAcsInfoInd; set { _explicitNullValueAcsInfoInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsInfoInd"); else _explicitNullProperties?.Remove("acsInfoInd"); } }
+        public List<string>? AcsInfoInd { get => _explicitNullValueAcsInfoInd; set { _explicitNullValueAcsInfoInd = value; AdditionalData?.Remove("acsInfoInd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsInfoInd"); else _explicitNullProperties?.Remove("acsInfoInd"); } }
         private List<string>? _explicitNullValueAcsInfoInd = default!;
 #nullable restore
 #else
-        public List<string> AcsInfoInd { get => _explicitNullValueAcsInfoInd; set { _explicitNullValueAcsInfoInd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsInfoInd"); else _explicitNullProperties?.Remove("acsInfoInd"); } }
+        public List<string> AcsInfoInd { get => _explicitNullValueAcsInfoInd; set { _explicitNullValueAcsInfoInd = value; AdditionalData?.Remove("acsInfoInd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsInfoInd"); else _explicitNullProperties?.Remove("acsInfoInd"); } }
         private List<string> _explicitNullValueAcsInfoInd = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -40,51 +46,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Card brand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrandCode { get => _explicitNullValueBrandCode; set { _explicitNullValueBrandCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandCode"); else _explicitNullProperties?.Remove("brandCode"); } }
+        public string? BrandCode { get => _explicitNullValueBrandCode; set { _explicitNullValueBrandCode = value; AdditionalData?.Remove("brandCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandCode"); else _explicitNullProperties?.Remove("brandCode"); } }
         private string? _explicitNullValueBrandCode = default!;
 #nullable restore
 #else
-        public string BrandCode { get => _explicitNullValueBrandCode; set { _explicitNullValueBrandCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandCode"); else _explicitNullProperties?.Remove("brandCode"); } }
+        public string BrandCode { get => _explicitNullValueBrandCode; set { _explicitNullValueBrandCode = value; AdditionalData?.Remove("brandCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brandCode"); else _explicitNullProperties?.Remove("brandCode"); } }
         private string _explicitNullValueBrandCode = default!;
 #endif
         /// <summary>BIN end range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndRange { get => _explicitNullValueEndRange; set { _explicitNullValueEndRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endRange"); else _explicitNullProperties?.Remove("endRange"); } }
+        public string? EndRange { get => _explicitNullValueEndRange; set { _explicitNullValueEndRange = value; AdditionalData?.Remove("endRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endRange"); else _explicitNullProperties?.Remove("endRange"); } }
         private string? _explicitNullValueEndRange = default!;
 #nullable restore
 #else
-        public string EndRange { get => _explicitNullValueEndRange; set { _explicitNullValueEndRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endRange"); else _explicitNullProperties?.Remove("endRange"); } }
+        public string EndRange { get => _explicitNullValueEndRange; set { _explicitNullValueEndRange = value; AdditionalData?.Remove("endRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endRange"); else _explicitNullProperties?.Remove("endRange"); } }
         private string _explicitNullValueEndRange = default!;
 #endif
         /// <summary>BIN start range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartRange { get => _explicitNullValueStartRange; set { _explicitNullValueStartRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startRange"); else _explicitNullProperties?.Remove("startRange"); } }
+        public string? StartRange { get => _explicitNullValueStartRange; set { _explicitNullValueStartRange = value; AdditionalData?.Remove("startRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startRange"); else _explicitNullProperties?.Remove("startRange"); } }
         private string? _explicitNullValueStartRange = default!;
 #nullable restore
 #else
-        public string StartRange { get => _explicitNullValueStartRange; set { _explicitNullValueStartRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startRange"); else _explicitNullProperties?.Remove("startRange"); } }
+        public string StartRange { get => _explicitNullValueStartRange; set { _explicitNullValueStartRange = value; AdditionalData?.Remove("startRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startRange"); else _explicitNullProperties?.Remove("startRange"); } }
         private string _explicitNullValueStartRange = default!;
 #endif
         /// <summary>Supported 3D Secure protocol versions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ThreeDS2Versions { get => _explicitNullValueThreeDS2Versions; set { _explicitNullValueThreeDS2Versions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2Versions"); else _explicitNullProperties?.Remove("threeDS2Versions"); } }
+        public List<string>? ThreeDS2Versions { get => _explicitNullValueThreeDS2Versions; set { _explicitNullValueThreeDS2Versions = value; AdditionalData?.Remove("threeDS2Versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2Versions"); else _explicitNullProperties?.Remove("threeDS2Versions"); } }
         private List<string>? _explicitNullValueThreeDS2Versions = default!;
 #nullable restore
 #else
-        public List<string> ThreeDS2Versions { get => _explicitNullValueThreeDS2Versions; set { _explicitNullValueThreeDS2Versions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2Versions"); else _explicitNullProperties?.Remove("threeDS2Versions"); } }
+        public List<string> ThreeDS2Versions { get => _explicitNullValueThreeDS2Versions; set { _explicitNullValueThreeDS2Versions = value; AdditionalData?.Remove("threeDS2Versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDS2Versions"); else _explicitNullProperties?.Remove("threeDS2Versions"); } }
         private List<string> _explicitNullValueThreeDS2Versions = default!;
 #endif
         /// <summary>In a 3D Secure 2 browser-based flow, this is the URL where you should send the device fingerprint to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSMethodURL { get => _explicitNullValueThreeDSMethodURL; set { _explicitNullValueThreeDSMethodURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSMethodURL"); else _explicitNullProperties?.Remove("threeDSMethodURL"); } }
+        public string? ThreeDSMethodURL { get => _explicitNullValueThreeDSMethodURL; set { _explicitNullValueThreeDSMethodURL = value; AdditionalData?.Remove("threeDSMethodURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSMethodURL"); else _explicitNullProperties?.Remove("threeDSMethodURL"); } }
         private string? _explicitNullValueThreeDSMethodURL = default!;
 #nullable restore
 #else
-        public string ThreeDSMethodURL { get => _explicitNullValueThreeDSMethodURL; set { _explicitNullValueThreeDSMethodURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSMethodURL"); else _explicitNullProperties?.Remove("threeDSMethodURL"); } }
+        public string ThreeDSMethodURL { get => _explicitNullValueThreeDSMethodURL; set { _explicitNullValueThreeDSMethodURL = value; AdditionalData?.Remove("threeDSMethodURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSMethodURL"); else _explicitNullProperties?.Remove("threeDSMethodURL"); } }
         private string _explicitNullValueThreeDSMethodURL = default!;
 #endif
         /// <summary>

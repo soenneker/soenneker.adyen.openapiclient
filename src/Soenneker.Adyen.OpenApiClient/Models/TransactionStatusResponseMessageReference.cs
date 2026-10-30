@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DeviceID") is { } nullNodeDeviceID && nullNodeDeviceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceID = null;
-            if (parseNode.GetChildNode("MessageCategory") is { } nullNodeMessageCategory && nullNodeMessageCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCategory = null;
-            if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
-            if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
-            if (parseNode.GetChildNode("ServiceID") is { } nullNodeServiceID && nullNodeServiceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceID = null;
+            if (parseNode.GetChildNode("DeviceID") is null) { _explicitNullValueDeviceID = default!; _explicitNullProperties?.Remove("DeviceID"); }
+            else if (parseNode.GetChildNode("DeviceID") is { } nullNodeDeviceID && nullNodeDeviceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceID = null;
+            if (parseNode.GetChildNode("MessageCategory") is null) { _explicitNullValueMessageCategory = default!; _explicitNullProperties?.Remove("MessageCategory"); }
+            else if (parseNode.GetChildNode("MessageCategory") is { } nullNodeMessageCategory && nullNodeMessageCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCategory = null;
+            if (parseNode.GetChildNode("POIID") is null) { _explicitNullValuePOIID = default!; _explicitNullProperties?.Remove("POIID"); }
+            else if (parseNode.GetChildNode("POIID") is { } nullNodePOIID && nullNodePOIID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIID = null;
+            if (parseNode.GetChildNode("SaleID") is null) { _explicitNullValueSaleID = default!; _explicitNullProperties?.Remove("SaleID"); }
+            else if (parseNode.GetChildNode("SaleID") is { } nullNodeSaleID && nullNodeSaleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleID = null;
+            if (parseNode.GetChildNode("ServiceID") is null) { _explicitNullValueServiceID = default!; _explicitNullProperties?.Remove("ServiceID"); }
+            else if (parseNode.GetChildNode("ServiceID") is { } nullNodeServiceID && nullNodeServiceID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a device message pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
+        public string? DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; AdditionalData?.Remove("DeviceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
         private string? _explicitNullValueDeviceID = default!;
 #nullable restore
 #else
-        public string DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
+        public string DeviceID { get => _explicitNullValueDeviceID; set { _explicitNullValueDeviceID = value; AdditionalData?.Remove("DeviceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DeviceID"); else _explicitNullProperties?.Remove("DeviceID"); } }
         private string _explicitNullValueDeviceID = default!;
 #endif
         /// <summary>Possible values:* **Abort*** **Admin*** **BalanceInquiry*** **CardAcquisition*** **Diagnosis*** **Display*** **EnableService*** **Event*** **GetTotals*** **Input*** **InputUpdate*** **Login*** **Logout*** **Loyalty*** **Payment*** **Print*** **Reconciliation*** **Reversal*** **StoredValue*** **TransactionStatus*** **None**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory? MessageCategory { get => _explicitNullValueMessageCategory; set { _explicitNullValueMessageCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageCategory"); else _explicitNullProperties?.Remove("MessageCategory"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory? MessageCategory { get => _explicitNullValueMessageCategory; set { _explicitNullValueMessageCategory = value; AdditionalData?.Remove("MessageCategory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageCategory"); else _explicitNullProperties?.Remove("MessageCategory"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory? _explicitNullValueMessageCategory = default!;
         /// <summary>Identification of a POI System or a POI Terminal for the Sale to POI protocol.Default `MessageHeader.POIID`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        public string? POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; AdditionalData?.Remove("POIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
         private string? _explicitNullValuePOIID = default!;
 #nullable restore
 #else
-        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
+        public string POIID { get => _explicitNullValuePOIID; set { _explicitNullValuePOIID = value; AdditionalData?.Remove("POIID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIID"); else _explicitNullProperties?.Remove("POIID"); } }
         private string _explicitNullValuePOIID = default!;
 #endif
         /// <summary>Identification of a Sale System or a Sale Terminal for the Sale to POI protocol.default MessageHeader.SaleID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        public string? SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; AdditionalData?.Remove("SaleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
         private string? _explicitNullValueSaleID = default!;
 #nullable restore
 #else
-        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
+        public string SaleID { get => _explicitNullValueSaleID; set { _explicitNullValueSaleID = value; AdditionalData?.Remove("SaleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleID"); else _explicitNullProperties?.Remove("SaleID"); } }
         private string _explicitNullValueSaleID = default!;
 #endif
         /// <summary>Identification of a message pair, which processes a transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
+        public string? ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; AdditionalData?.Remove("ServiceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
         private string? _explicitNullValueServiceID = default!;
 #nullable restore
 #else
-        public string ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
+        public string ServiceID { get => _explicitNullValueServiceID; set { _explicitNullValueServiceID = value; AdditionalData?.Remove("ServiceID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServiceID"); else _explicitNullProperties?.Remove("ServiceID"); } }
         private string _explicitNullValueServiceID = default!;
 #endif
         /// <summary>
@@ -96,7 +101,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "DeviceID", n => { DeviceID = n.GetStringValue(); } },
-                { "MessageCategory", n => { MessageCategory = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory>(); } },
+                { "MessageCategory", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MessageReferenceMessageCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMessageCategory = default; _explicitNullProperties?.Remove("MessageCategory"); AdditionalData["MessageCategory"] = unknown; } else { MessageCategory = parsed; AdditionalData.Remove("MessageCategory"); } } },
                 { "POIID", n => { POIID = n.GetStringValue(); } },
                 { "SaleID", n => { SaleID = n.GetStringValue(); } },
                 { "ServiceID", n => { ServiceID = n.GetStringValue(); } },

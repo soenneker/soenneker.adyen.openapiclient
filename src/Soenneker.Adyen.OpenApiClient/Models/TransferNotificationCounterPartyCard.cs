@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cardHolder") is { } nullNodeCardHolder && nullNodeCardHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolder = null;
-            if (parseNode.GetChildNode("cardIdentification") is { } nullNodeCardIdentification && nullNodeCardIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIdentification = null;
+            if (parseNode.GetChildNode("cardHolder") is null) { _explicitNullValueCardHolder = default!; _explicitNullProperties?.Remove("cardHolder"); }
+            else if (parseNode.GetChildNode("cardHolder") is { } nullNodeCardHolder && nullNodeCardHolder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolder = null;
+            if (parseNode.GetChildNode("cardIdentification") is null) { _explicitNullValueCardIdentification = default!; _explicitNullProperties?.Remove("cardIdentification"); }
+            else if (parseNode.GetChildNode("cardIdentification") is { } nullNodeCardIdentification && nullNodeCardIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIdentification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains information about the cardholder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardHolder? CardHolder { get => _explicitNullValueCardHolder; set { _explicitNullValueCardHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolder"); else _explicitNullProperties?.Remove("cardHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardHolder? CardHolder { get => _explicitNullValueCardHolder; set { _explicitNullValueCardHolder = value; AdditionalData?.Remove("cardHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolder"); else _explicitNullProperties?.Remove("cardHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardHolder? _explicitNullValueCardHolder = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardHolder CardHolder { get => _explicitNullValueCardHolder; set { _explicitNullValueCardHolder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolder"); else _explicitNullProperties?.Remove("cardHolder"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardHolder CardHolder { get => _explicitNullValueCardHolder; set { _explicitNullValueCardHolder = value; AdditionalData?.Remove("cardHolder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolder"); else _explicitNullProperties?.Remove("cardHolder"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardHolder _explicitNullValueCardHolder = default!;
 #endif
         /// <summary>Contains the identification details of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardIdentification? CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardIdentification? CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; AdditionalData?.Remove("cardIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardIdentification? _explicitNullValueCardIdentification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardIdentification CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardIdentification CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; AdditionalData?.Remove("cardIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformTransferNotificationV4CardCardIdentification _explicitNullValueCardIdentification = default!;
 #endif
         /// <summary>

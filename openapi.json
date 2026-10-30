@@ -140950,7 +140950,7 @@
         "type": "object",
         "properties": {
           "actionDetails": {
-            "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
+            "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
           },
           "items": {
             "type": "array",
@@ -145100,10 +145100,10 @@
         "type": "object",
         "properties": {
           "defaultAmount": {
-            "$ref": "#/components/schemas/OnlineDonationSettingsUpdateDefaultAmount"
+            "$ref": "#/components/schemas/InPersonDonationSettingsUpdateDefaultAmount"
           },
           "donationType": {
-            "$ref": "#/components/schemas/OnlineDonationSettingsUpdateDonationType"
+            "$ref": "#/components/schemas/InPersonDonationSettingsUpdateDonationType"
           },
           "merchantAccounts": {
             "type": [
@@ -149315,7 +149315,17 @@
           ""
         ],
         "type": "string",
-        "description": "The type of event notification sent when you select the notification button."
+        "description": "The type of event notification sent when you select the notification button.",
+        "x-ms-enum": {
+          "name": "NotificationCategory",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "NyceInfoProcessingType": {
         "enum": [
@@ -184220,7 +184230,7 @@
             "$ref": "#/components/schemas/TransferService_v4_TransferDataCategory"
           },
           "categoryData": {
-            "$ref": "#/components/schemas/TransferService_v4_TransferDataCategoryData"
+            "$ref": "#/components/schemas/TransferCategoryData"
           },
           "counterparty": {
             "allOf": [
@@ -184809,7 +184819,7 @@
         "type": "object",
         "properties": {
           "categoryData": {
-            "$ref": "#/components/schemas/TransferService_v4_TransferViewCategoryData"
+            "$ref": "#/components/schemas/TransferCategoryData"
           },
           "id": {
             "type": "string",

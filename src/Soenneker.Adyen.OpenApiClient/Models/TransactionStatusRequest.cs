@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DocumentQualifier") is { } nullNodeDocumentQualifier && nullNodeDocumentQualifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentQualifier = null;
-            if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
-            if (parseNode.GetChildNode("ReceiptReprintFlag") is { } nullNodeReceiptReprintFlag && nullNodeReceiptReprintFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceiptReprintFlag = null;
+            if (parseNode.GetChildNode("DocumentQualifier") is null) { _explicitNullValueDocumentQualifier = default!; _explicitNullProperties?.Remove("DocumentQualifier"); }
+            else if (parseNode.GetChildNode("DocumentQualifier") is { } nullNodeDocumentQualifier && nullNodeDocumentQualifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentQualifier = null;
+            if (parseNode.GetChildNode("MessageReference") is null) { _explicitNullValueMessageReference = default!; _explicitNullProperties?.Remove("MessageReference"); }
+            else if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
+            if (parseNode.GetChildNode("ReceiptReprintFlag") is null) { _explicitNullValueReceiptReprintFlag = default!; _explicitNullProperties?.Remove("ReceiptReprintFlag"); }
+            else if (parseNode.GetChildNode("ReceiptReprintFlag") is { } nullNodeReceiptReprintFlag && nullNodeReceiptReprintFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceiptReprintFlag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Qualification of the document to print to the Cashier or the Customer. Allows the manager of the printer, Sale or POI Terminal, to send the information to a particular physical printer or to use the paper type accordingly.Possible values:* **CashierReceipt*** **CustomerReceipt*** **Document*** **Journal*** **SaleReceipt*** **Voucher**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?>? DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?>? DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; AdditionalData?.Remove("DocumentQualifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?>? _explicitNullValueDocumentQualifier = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?> DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?> DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; AdditionalData?.Remove("DocumentQualifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentQualifier?> _explicitNullValueDocumentQualifier = default!;
 #endif
         /// <summary>Identification of a previous POI transaction.Present if it contains any data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; AdditionalData?.Remove("MessageReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference? _explicitNullValueMessageReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; AdditionalData?.Remove("MessageReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequestMessageReference _explicitNullValueMessageReference = default!;
 #endif
         /// <summary>Request to reprint the POI receipt(s). Allows reprinting a receipt with a `TransactionStatus` message</summary>
-        public bool? ReceiptReprintFlag { get => _explicitNullValueReceiptReprintFlag; set { _explicitNullValueReceiptReprintFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReceiptReprintFlag"); else _explicitNullProperties?.Remove("ReceiptReprintFlag"); } }
+        public bool? ReceiptReprintFlag { get => _explicitNullValueReceiptReprintFlag; set { _explicitNullValueReceiptReprintFlag = value; AdditionalData?.Remove("ReceiptReprintFlag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReceiptReprintFlag"); else _explicitNullProperties?.Remove("ReceiptReprintFlag"); } }
         private bool? _explicitNullValueReceiptReprintFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusRequest"/> and sets the default values.

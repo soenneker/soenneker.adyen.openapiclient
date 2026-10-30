@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taxCalculation") is { } nullNodeTaxCalculation && nullNodeTaxCalculation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculation = null;
-            if (parseNode.GetChildNode("taxCalculationReference") is { } nullNodeTaxCalculationReference && nullNodeTaxCalculationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculationReference = null;
-            if (parseNode.GetChildNode("taxCalculationToken") is { } nullNodeTaxCalculationToken && nullNodeTaxCalculationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculationToken = null;
+            if (parseNode.GetChildNode("taxCalculation") is null) { _explicitNullValueTaxCalculation = default!; _explicitNullProperties?.Remove("taxCalculation"); }
+            else if (parseNode.GetChildNode("taxCalculation") is { } nullNodeTaxCalculation && nullNodeTaxCalculation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculation = null;
+            if (parseNode.GetChildNode("taxCalculationReference") is null) { _explicitNullValueTaxCalculationReference = default!; _explicitNullProperties?.Remove("taxCalculationReference"); }
+            else if (parseNode.GetChildNode("taxCalculationReference") is { } nullNodeTaxCalculationReference && nullNodeTaxCalculationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculationReference = null;
+            if (parseNode.GetChildNode("taxCalculationToken") is null) { _explicitNullValueTaxCalculationToken = default!; _explicitNullProperties?.Remove("taxCalculationToken"); }
+            else if (parseNode.GetChildNode("taxCalculationToken") is { } nullNodeTaxCalculationToken && nullNodeTaxCalculationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCalculationToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The canonical calculation accepted and produced by Adyen. Informational in the initial release.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxResponseTaxCalculation? TaxCalculation { get => _explicitNullValueTaxCalculation; set { _explicitNullValueTaxCalculation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculation"); else _explicitNullProperties?.Remove("taxCalculation"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxResponseTaxCalculation? TaxCalculation { get => _explicitNullValueTaxCalculation; set { _explicitNullValueTaxCalculation = value; AdditionalData?.Remove("taxCalculation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculation"); else _explicitNullProperties?.Remove("taxCalculation"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxResponseTaxCalculation? _explicitNullValueTaxCalculation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxResponseTaxCalculation TaxCalculation { get => _explicitNullValueTaxCalculation; set { _explicitNullValueTaxCalculation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculation"); else _explicitNullProperties?.Remove("taxCalculation"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxResponseTaxCalculation TaxCalculation { get => _explicitNullValueTaxCalculation; set { _explicitNullValueTaxCalculation = value; AdditionalData?.Remove("taxCalculation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculation"); else _explicitNullProperties?.Remove("taxCalculation"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CalculateTaxResponseTaxCalculation _explicitNullValueTaxCalculation = default!;
 #endif
         /// <summary>The unique reference for this calculation attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxCalculationReference { get => _explicitNullValueTaxCalculationReference; set { _explicitNullValueTaxCalculationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationReference"); else _explicitNullProperties?.Remove("taxCalculationReference"); } }
+        public string? TaxCalculationReference { get => _explicitNullValueTaxCalculationReference; set { _explicitNullValueTaxCalculationReference = value; AdditionalData?.Remove("taxCalculationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationReference"); else _explicitNullProperties?.Remove("taxCalculationReference"); } }
         private string? _explicitNullValueTaxCalculationReference = default!;
 #nullable restore
 #else
-        public string TaxCalculationReference { get => _explicitNullValueTaxCalculationReference; set { _explicitNullValueTaxCalculationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationReference"); else _explicitNullProperties?.Remove("taxCalculationReference"); } }
+        public string TaxCalculationReference { get => _explicitNullValueTaxCalculationReference; set { _explicitNullValueTaxCalculationReference = value; AdditionalData?.Remove("taxCalculationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationReference"); else _explicitNullProperties?.Remove("taxCalculationReference"); } }
         private string _explicitNullValueTaxCalculationReference = default!;
 #endif
         /// <summary>The opaque, encrypted, and signed token that represents the complete canonical calculation. Required in /payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxCalculationToken { get => _explicitNullValueTaxCalculationToken; set { _explicitNullValueTaxCalculationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationToken"); else _explicitNullProperties?.Remove("taxCalculationToken"); } }
+        public string? TaxCalculationToken { get => _explicitNullValueTaxCalculationToken; set { _explicitNullValueTaxCalculationToken = value; AdditionalData?.Remove("taxCalculationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationToken"); else _explicitNullProperties?.Remove("taxCalculationToken"); } }
         private string? _explicitNullValueTaxCalculationToken = default!;
 #nullable restore
 #else
-        public string TaxCalculationToken { get => _explicitNullValueTaxCalculationToken; set { _explicitNullValueTaxCalculationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationToken"); else _explicitNullProperties?.Remove("taxCalculationToken"); } }
+        public string TaxCalculationToken { get => _explicitNullValueTaxCalculationToken; set { _explicitNullValueTaxCalculationToken = value; AdditionalData?.Remove("taxCalculationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxCalculationToken"); else _explicitNullProperties?.Remove("taxCalculationToken"); } }
         private string _explicitNullValueTaxCalculationToken = default!;
 #endif
         /// <summary>

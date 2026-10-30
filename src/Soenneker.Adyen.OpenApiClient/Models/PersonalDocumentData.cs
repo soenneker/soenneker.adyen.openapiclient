@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expirationDate") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
-            if (parseNode.GetChildNode("issuerCountry") is { } nullNodeIssuerCountry && nullNodeIssuerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerCountry = null;
-            if (parseNode.GetChildNode("issuerState") is { } nullNodeIssuerState && nullNodeIssuerState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerState = null;
-            if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("expirationDate") is null) { _explicitNullValueExpirationDate = default!; _explicitNullProperties?.Remove("expirationDate"); }
+            else if (parseNode.GetChildNode("expirationDate") is { } nullNodeExpirationDate && nullNodeExpirationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationDate = null;
+            if (parseNode.GetChildNode("issuerCountry") is null) { _explicitNullValueIssuerCountry = default!; _explicitNullProperties?.Remove("issuerCountry"); }
+            else if (parseNode.GetChildNode("issuerCountry") is { } nullNodeIssuerCountry && nullNodeIssuerCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerCountry = null;
+            if (parseNode.GetChildNode("issuerState") is null) { _explicitNullValueIssuerState = default!; _explicitNullProperties?.Remove("issuerState"); }
+            else if (parseNode.GetChildNode("issuerState") is { } nullNodeIssuerState && nullNodeIssuerState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssuerState = null;
+            if (parseNode.GetChildNode("number") is null) { _explicitNullValueNumber = default!; _explicitNullProperties?.Remove("number"); }
+            else if (parseNode.GetChildNode("number") is { } nullNodeNumber && nullNodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Number = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The expiry date of the document,  in ISO-8601 YYYY-MM-DD format. For example, **2000-01-31**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDate"); else _explicitNullProperties?.Remove("expirationDate"); } }
+        public string? ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; AdditionalData?.Remove("expirationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDate"); else _explicitNullProperties?.Remove("expirationDate"); } }
         private string? _explicitNullValueExpirationDate = default!;
 #nullable restore
 #else
-        public string ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDate"); else _explicitNullProperties?.Remove("expirationDate"); } }
+        public string ExpirationDate { get => _explicitNullValueExpirationDate; set { _explicitNullValueExpirationDate = value; AdditionalData?.Remove("expirationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expirationDate"); else _explicitNullProperties?.Remove("expirationDate"); } }
         private string _explicitNullValueExpirationDate = default!;
 #endif
         /// <summary>The country where the document was issued, in the two-character [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. For example, **NL**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
+        public string? IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; AdditionalData?.Remove("issuerCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
         private string? _explicitNullValueIssuerCountry = default!;
 #nullable restore
 #else
-        public string IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
+        public string IssuerCountry { get => _explicitNullValueIssuerCountry; set { _explicitNullValueIssuerCountry = value; AdditionalData?.Remove("issuerCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerCountry"); else _explicitNullProperties?.Remove("issuerCountry"); } }
         private string _explicitNullValueIssuerCountry = default!;
 #endif
         /// <summary>The state where the document was issued (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerState { get => _explicitNullValueIssuerState; set { _explicitNullValueIssuerState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerState"); else _explicitNullProperties?.Remove("issuerState"); } }
+        public string? IssuerState { get => _explicitNullValueIssuerState; set { _explicitNullValueIssuerState = value; AdditionalData?.Remove("issuerState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerState"); else _explicitNullProperties?.Remove("issuerState"); } }
         private string? _explicitNullValueIssuerState = default!;
 #nullable restore
 #else
-        public string IssuerState { get => _explicitNullValueIssuerState; set { _explicitNullValueIssuerState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerState"); else _explicitNullProperties?.Remove("issuerState"); } }
+        public string IssuerState { get => _explicitNullValueIssuerState; set { _explicitNullValueIssuerState = value; AdditionalData?.Remove("issuerState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuerState"); else _explicitNullProperties?.Remove("issuerState"); } }
         private string _explicitNullValueIssuerState = default!;
 #endif
         /// <summary>The number in the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        public string? Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string? _explicitNullValueNumber = default!;
 #nullable restore
 #else
-        public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
+        public string Number { get => _explicitNullValueNumber; set { _explicitNullValueNumber = value; AdditionalData?.Remove("number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number"); else _explicitNullProperties?.Remove("number"); } }
         private string _explicitNullValueNumber = default!;
 #endif
         /// <summary>The type of the document. Possible values: **ID**, **DRIVINGLICENSE**, **PASSPORT**, **SOCIALSECURITY**, **VISA**.To delete an existing entry for a document `type`, send only the `type` field in your request. </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentData"/> and sets the default values.
@@ -98,7 +103,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "issuerCountry", n => { IssuerCountry = n.GetStringValue(); } },
                 { "issuerState", n => { IssuerState = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PersonalDocumentDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

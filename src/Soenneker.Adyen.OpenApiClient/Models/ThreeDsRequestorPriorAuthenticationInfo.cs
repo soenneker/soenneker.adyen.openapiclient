@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("threeDSReqPriorAuthData") is { } nullNodeThreeDSReqPriorAuthData && nullNodeThreeDSReqPriorAuthData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorAuthData = null;
-            if (parseNode.GetChildNode("threeDSReqPriorAuthMethod") is { } nullNodeThreeDSReqPriorAuthMethod && nullNodeThreeDSReqPriorAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorAuthMethod = null;
-            if (parseNode.GetChildNode("threeDSReqPriorAuthTimestamp") is { } nullNodeThreeDSReqPriorAuthTimestamp && nullNodeThreeDSReqPriorAuthTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorAuthTimestamp = null;
-            if (parseNode.GetChildNode("threeDSReqPriorRef") is { } nullNodeThreeDSReqPriorRef && nullNodeThreeDSReqPriorRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorRef = null;
+            if (parseNode.GetChildNode("threeDSReqPriorAuthData") is null) { _explicitNullValueThreeDSReqPriorAuthData = default!; _explicitNullProperties?.Remove("threeDSReqPriorAuthData"); }
+            else if (parseNode.GetChildNode("threeDSReqPriorAuthData") is { } nullNodeThreeDSReqPriorAuthData && nullNodeThreeDSReqPriorAuthData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorAuthData = null;
+            if (parseNode.GetChildNode("threeDSReqPriorAuthMethod") is null) { _explicitNullValueThreeDSReqPriorAuthMethod = default!; _explicitNullProperties?.Remove("threeDSReqPriorAuthMethod"); }
+            else if (parseNode.GetChildNode("threeDSReqPriorAuthMethod") is { } nullNodeThreeDSReqPriorAuthMethod && nullNodeThreeDSReqPriorAuthMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorAuthMethod = null;
+            if (parseNode.GetChildNode("threeDSReqPriorAuthTimestamp") is null) { _explicitNullValueThreeDSReqPriorAuthTimestamp = default!; _explicitNullProperties?.Remove("threeDSReqPriorAuthTimestamp"); }
+            else if (parseNode.GetChildNode("threeDSReqPriorAuthTimestamp") is { } nullNodeThreeDSReqPriorAuthTimestamp && nullNodeThreeDSReqPriorAuthTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorAuthTimestamp = null;
+            if (parseNode.GetChildNode("threeDSReqPriorRef") is null) { _explicitNullValueThreeDSReqPriorRef = default!; _explicitNullProperties?.Remove("threeDSReqPriorRef"); }
+            else if (parseNode.GetChildNode("threeDSReqPriorRef") is { } nullNodeThreeDSReqPriorRef && nullNodeThreeDSReqPriorRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSReqPriorRef = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Data that documents and supports a specific authentication process. Maximum length: 2048 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSReqPriorAuthData { get => _explicitNullValueThreeDSReqPriorAuthData; set { _explicitNullValueThreeDSReqPriorAuthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthData"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthData"); } }
+        public string? ThreeDSReqPriorAuthData { get => _explicitNullValueThreeDSReqPriorAuthData; set { _explicitNullValueThreeDSReqPriorAuthData = value; AdditionalData?.Remove("threeDSReqPriorAuthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthData"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthData"); } }
         private string? _explicitNullValueThreeDSReqPriorAuthData = default!;
 #nullable restore
 #else
-        public string ThreeDSReqPriorAuthData { get => _explicitNullValueThreeDSReqPriorAuthData; set { _explicitNullValueThreeDSReqPriorAuthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthData"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthData"); } }
+        public string ThreeDSReqPriorAuthData { get => _explicitNullValueThreeDSReqPriorAuthData; set { _explicitNullValueThreeDSReqPriorAuthData = value; AdditionalData?.Remove("threeDSReqPriorAuthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthData"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthData"); } }
         private string _explicitNullValueThreeDSReqPriorAuthData = default!;
 #endif
         /// <summary>Mechanism used by the Cardholder to previously authenticate to the 3DS Requestor. Allowed values:* **01** — Frictionless authentication occurred by ACS.* **02** — Cardholder challenge occurred by ACS.* **03** — AVS verified.* **04** — Other issuer methods.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod? ThreeDSReqPriorAuthMethod { get => _explicitNullValueThreeDSReqPriorAuthMethod; set { _explicitNullValueThreeDSReqPriorAuthMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthMethod"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthMethod"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod? ThreeDSReqPriorAuthMethod { get => _explicitNullValueThreeDSReqPriorAuthMethod; set { _explicitNullValueThreeDSReqPriorAuthMethod = value; AdditionalData?.Remove("threeDSReqPriorAuthMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthMethod"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthMethod"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod? _explicitNullValueThreeDSReqPriorAuthMethod = default!;
         /// <summary>Date and time in UTC of the prior cardholder authentication. Format: YYYYMMDDHHMM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSReqPriorAuthTimestamp { get => _explicitNullValueThreeDSReqPriorAuthTimestamp; set { _explicitNullValueThreeDSReqPriorAuthTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthTimestamp"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthTimestamp"); } }
+        public string? ThreeDSReqPriorAuthTimestamp { get => _explicitNullValueThreeDSReqPriorAuthTimestamp; set { _explicitNullValueThreeDSReqPriorAuthTimestamp = value; AdditionalData?.Remove("threeDSReqPriorAuthTimestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthTimestamp"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthTimestamp"); } }
         private string? _explicitNullValueThreeDSReqPriorAuthTimestamp = default!;
 #nullable restore
 #else
-        public string ThreeDSReqPriorAuthTimestamp { get => _explicitNullValueThreeDSReqPriorAuthTimestamp; set { _explicitNullValueThreeDSReqPriorAuthTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthTimestamp"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthTimestamp"); } }
+        public string ThreeDSReqPriorAuthTimestamp { get => _explicitNullValueThreeDSReqPriorAuthTimestamp; set { _explicitNullValueThreeDSReqPriorAuthTimestamp = value; AdditionalData?.Remove("threeDSReqPriorAuthTimestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorAuthTimestamp"); else _explicitNullProperties?.Remove("threeDSReqPriorAuthTimestamp"); } }
         private string _explicitNullValueThreeDSReqPriorAuthTimestamp = default!;
 #endif
         /// <summary>This data element provides additional information to the ACS to determine the best approach for handing a request. This data element contains an ACS Transaction ID for a prior authenticated transaction. For example, the first recurring transaction that was authenticated with the cardholder. Length: 30 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSReqPriorRef { get => _explicitNullValueThreeDSReqPriorRef; set { _explicitNullValueThreeDSReqPriorRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorRef"); else _explicitNullProperties?.Remove("threeDSReqPriorRef"); } }
+        public string? ThreeDSReqPriorRef { get => _explicitNullValueThreeDSReqPriorRef; set { _explicitNullValueThreeDSReqPriorRef = value; AdditionalData?.Remove("threeDSReqPriorRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorRef"); else _explicitNullProperties?.Remove("threeDSReqPriorRef"); } }
         private string? _explicitNullValueThreeDSReqPriorRef = default!;
 #nullable restore
 #else
-        public string ThreeDSReqPriorRef { get => _explicitNullValueThreeDSReqPriorRef; set { _explicitNullValueThreeDSReqPriorRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorRef"); else _explicitNullProperties?.Remove("threeDSReqPriorRef"); } }
+        public string ThreeDSReqPriorRef { get => _explicitNullValueThreeDSReqPriorRef; set { _explicitNullValueThreeDSReqPriorRef = value; AdditionalData?.Remove("threeDSReqPriorRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSReqPriorRef"); else _explicitNullProperties?.Remove("threeDSReqPriorRef"); } }
         private string _explicitNullValueThreeDSReqPriorRef = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "threeDSReqPriorAuthData", n => { ThreeDSReqPriorAuthData = n.GetStringValue(); } },
-                { "threeDSReqPriorAuthMethod", n => { ThreeDSReqPriorAuthMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod>(); } },
+                { "threeDSReqPriorAuthMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDsRequestorPriorAuthenticationInfoThreeDsReqPriorAuthMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueThreeDSReqPriorAuthMethod = default; _explicitNullProperties?.Remove("threeDSReqPriorAuthMethod"); AdditionalData["threeDSReqPriorAuthMethod"] = unknown; } else { ThreeDSReqPriorAuthMethod = parsed; AdditionalData.Remove("threeDSReqPriorAuthMethod"); } } },
                 { "threeDSReqPriorAuthTimestamp", n => { ThreeDSReqPriorAuthTimestamp = n.GetStringValue(); } },
                 { "threeDSReqPriorRef", n => { ThreeDSReqPriorRef = n.GetStringValue(); } },
             };

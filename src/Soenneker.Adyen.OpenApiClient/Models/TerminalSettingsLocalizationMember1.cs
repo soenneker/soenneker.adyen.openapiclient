@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("secondaryLanguage") is { } nullNodeSecondaryLanguage && nullNodeSecondaryLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryLanguage = null;
-            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("secondaryLanguage") is null) { _explicitNullValueSecondaryLanguage = default!; _explicitNullProperties?.Remove("secondaryLanguage"); }
+            else if (parseNode.GetChildNode("secondaryLanguage") is { } nullNodeSecondaryLanguage && nullNodeSecondaryLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryLanguage = null;
+            if (parseNode.GetChildNode("timezone") is null) { _explicitNullValueTimezone = default!; _explicitNullProperties?.Remove("timezone"); }
+            else if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Language of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>Secondary language of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryLanguage { get => _explicitNullValueSecondaryLanguage; set { _explicitNullValueSecondaryLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryLanguage"); else _explicitNullProperties?.Remove("secondaryLanguage"); } }
+        public string? SecondaryLanguage { get => _explicitNullValueSecondaryLanguage; set { _explicitNullValueSecondaryLanguage = value; AdditionalData?.Remove("secondaryLanguage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryLanguage"); else _explicitNullProperties?.Remove("secondaryLanguage"); } }
         private string? _explicitNullValueSecondaryLanguage = default!;
 #nullable restore
 #else
-        public string SecondaryLanguage { get => _explicitNullValueSecondaryLanguage; set { _explicitNullValueSecondaryLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryLanguage"); else _explicitNullProperties?.Remove("secondaryLanguage"); } }
+        public string SecondaryLanguage { get => _explicitNullValueSecondaryLanguage; set { _explicitNullValueSecondaryLanguage = value; AdditionalData?.Remove("secondaryLanguage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryLanguage"); else _explicitNullProperties?.Remove("secondaryLanguage"); } }
         private string _explicitNullValueSecondaryLanguage = default!;
 #endif
         /// <summary>The time zone of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
         private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
         private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>

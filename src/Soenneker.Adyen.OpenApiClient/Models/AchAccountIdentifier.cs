@@ -17,45 +17,49 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountLastDigits") is { } nullNodeAccountLastDigits && nullNodeAccountLastDigits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountLastDigits = null;
-            if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
-            if (parseNode.GetChildNode("isTokenized") is { } nullNodeIsTokenized && nullNodeIsTokenized.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTokenized = null;
-            if (parseNode.GetChildNode("routingNumber") is { } nullNodeRoutingNumber && nullNodeRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumber = null;
+            if (parseNode.GetChildNode("accountLastDigits") is null) { _explicitNullValueAccountLastDigits = default!; _explicitNullProperties?.Remove("accountLastDigits"); }
+            else if (parseNode.GetChildNode("accountLastDigits") is { } nullNodeAccountLastDigits && nullNodeAccountLastDigits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountLastDigits = null;
+            if (parseNode.GetChildNode("accountNumber") is null) { _explicitNullValueAccountNumber = default!; _explicitNullProperties?.Remove("accountNumber"); }
+            else if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("isTokenized") is null) { _explicitNullValueIsTokenized = default!; _explicitNullProperties?.Remove("isTokenized"); }
+            else if (parseNode.GetChildNode("isTokenized") is { } nullNodeIsTokenized && nullNodeIsTokenized.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTokenized = null;
+            if (parseNode.GetChildNode("routingNumber") is null) { _explicitNullValueRoutingNumber = default!; _explicitNullProperties?.Remove("routingNumber"); }
+            else if (parseNode.GetChildNode("routingNumber") is { } nullNodeRoutingNumber && nullNodeRoutingNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingNumber = null;
         }
 
         /// <summary>The last digits of the account number. If the accountNumber is tokenized, this field contains the last digits of the non-tokenized account number. This helps users verify the account without seeing the full number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountLastDigits { get => _explicitNullValueAccountLastDigits; set { _explicitNullValueAccountLastDigits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLastDigits"); else _explicitNullProperties?.Remove("accountLastDigits"); } }
+        public string? AccountLastDigits { get => _explicitNullValueAccountLastDigits; set { _explicitNullValueAccountLastDigits = value; AdditionalData?.Remove("accountLastDigits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLastDigits"); else _explicitNullProperties?.Remove("accountLastDigits"); } }
         private string? _explicitNullValueAccountLastDigits = default!;
 #nullable restore
 #else
-        public string AccountLastDigits { get => _explicitNullValueAccountLastDigits; set { _explicitNullValueAccountLastDigits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLastDigits"); else _explicitNullProperties?.Remove("accountLastDigits"); } }
+        public string AccountLastDigits { get => _explicitNullValueAccountLastDigits; set { _explicitNullValueAccountLastDigits = value; AdditionalData?.Remove("accountLastDigits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountLastDigits"); else _explicitNullProperties?.Remove("accountLastDigits"); } }
         private string _explicitNullValueAccountLastDigits = default!;
 #endif
         /// <summary>The account number of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; AdditionalData?.Remove("accountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; AdditionalData?.Remove("accountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the account number is tokenized. A tokenized account number is a unique ID generated by a bank to protect the user&apos;s actual account number.</summary>
-        public bool? IsTokenized { get => _explicitNullValueIsTokenized; set { _explicitNullValueIsTokenized = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isTokenized"); else _explicitNullProperties?.Remove("isTokenized"); } }
+        public bool? IsTokenized { get => _explicitNullValueIsTokenized; set { _explicitNullValueIsTokenized = value; AdditionalData?.Remove("isTokenized"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isTokenized"); else _explicitNullProperties?.Remove("isTokenized"); } }
         private bool? _explicitNullValueIsTokenized = default!;
         /// <summary>The [routing number](https://en.wikipedia.org/wiki/ABA_routing_transit_number), without separators or whitespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingNumber"); else _explicitNullProperties?.Remove("routingNumber"); } }
+        public string? RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; AdditionalData?.Remove("routingNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingNumber"); else _explicitNullProperties?.Remove("routingNumber"); } }
         private string? _explicitNullValueRoutingNumber = default!;
 #nullable restore
 #else
-        public string RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingNumber"); else _explicitNullProperties?.Remove("routingNumber"); } }
+        public string RoutingNumber { get => _explicitNullValueRoutingNumber; set { _explicitNullValueRoutingNumber = value; AdditionalData?.Remove("routingNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingNumber"); else _explicitNullProperties?.Remove("routingNumber"); } }
         private string _explicitNullValueRoutingNumber = default!;
 #endif
         /// <summary>

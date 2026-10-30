@@ -17,12 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("assignedToAccount") is { } nullNodeAssignedToAccount && nullNodeAssignedToAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedToAccount = null;
-            if (parseNode.GetChildNode("assignedToStore") is { } nullNodeAssignedToStore && nullNodeAssignedToStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedToStore = null;
-            if (parseNode.GetChildNode("assignedToStoreId") is { } nullNodeAssignedToStoreId && nullNodeAssignedToStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedToStoreId = null;
-            if (parseNode.GetChildNode("eventDate") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
-            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
-            if (parseNode.GetChildNode("uniqueTerminalId") is { } nullNodeUniqueTerminalId && nullNodeUniqueTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueTerminalId = null;
+            if (parseNode.GetChildNode("assignedToAccount") is null) { _explicitNullValueAssignedToAccount = default!; _explicitNullProperties?.Remove("assignedToAccount"); }
+            else if (parseNode.GetChildNode("assignedToAccount") is { } nullNodeAssignedToAccount && nullNodeAssignedToAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedToAccount = null;
+            if (parseNode.GetChildNode("assignedToStore") is null) { _explicitNullValueAssignedToStore = default!; _explicitNullProperties?.Remove("assignedToStore"); }
+            else if (parseNode.GetChildNode("assignedToStore") is { } nullNodeAssignedToStore && nullNodeAssignedToStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedToStore = null;
+            if (parseNode.GetChildNode("assignedToStoreId") is null) { _explicitNullValueAssignedToStoreId = default!; _explicitNullProperties?.Remove("assignedToStoreId"); }
+            else if (parseNode.GetChildNode("assignedToStoreId") is { } nullNodeAssignedToStoreId && nullNodeAssignedToStoreId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedToStoreId = null;
+            if (parseNode.GetChildNode("eventDate") is null) { _explicitNullValueEventDate = default!; _explicitNullProperties?.Remove("eventDate"); }
+            else if (parseNode.GetChildNode("eventDate") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
+            if (parseNode.GetChildNode("pspReference") is null) { _explicitNullValuePspReference = default!; _explicitNullProperties?.Remove("pspReference"); }
+            else if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("uniqueTerminalId") is null) { _explicitNullValueUniqueTerminalId = default!; _explicitNullProperties?.Remove("uniqueTerminalId"); }
+            else if (parseNode.GetChildNode("uniqueTerminalId") is { } nullNodeUniqueTerminalId && nullNodeUniqueTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueTerminalId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the merchant/company account to which the terminal is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedToAccount { get => _explicitNullValueAssignedToAccount; set { _explicitNullValueAssignedToAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToAccount"); else _explicitNullProperties?.Remove("assignedToAccount"); } }
+        public string? AssignedToAccount { get => _explicitNullValueAssignedToAccount; set { _explicitNullValueAssignedToAccount = value; AdditionalData?.Remove("assignedToAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToAccount"); else _explicitNullProperties?.Remove("assignedToAccount"); } }
         private string? _explicitNullValueAssignedToAccount = default!;
 #nullable restore
 #else
-        public string AssignedToAccount { get => _explicitNullValueAssignedToAccount; set { _explicitNullValueAssignedToAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToAccount"); else _explicitNullProperties?.Remove("assignedToAccount"); } }
+        public string AssignedToAccount { get => _explicitNullValueAssignedToAccount; set { _explicitNullValueAssignedToAccount = value; AdditionalData?.Remove("assignedToAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToAccount"); else _explicitNullProperties?.Remove("assignedToAccount"); } }
         private string _explicitNullValueAssignedToAccount = default!;
 #endif
         /// <summary>The store that the terminal is assigned to, identified by the store reference (also known as store code).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedToStore { get => _explicitNullValueAssignedToStore; set { _explicitNullValueAssignedToStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStore"); else _explicitNullProperties?.Remove("assignedToStore"); } }
+        public string? AssignedToStore { get => _explicitNullValueAssignedToStore; set { _explicitNullValueAssignedToStore = value; AdditionalData?.Remove("assignedToStore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStore"); else _explicitNullProperties?.Remove("assignedToStore"); } }
         private string? _explicitNullValueAssignedToStore = default!;
 #nullable restore
 #else
-        public string AssignedToStore { get => _explicitNullValueAssignedToStore; set { _explicitNullValueAssignedToStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStore"); else _explicitNullProperties?.Remove("assignedToStore"); } }
+        public string AssignedToStore { get => _explicitNullValueAssignedToStore; set { _explicitNullValueAssignedToStore = value; AdditionalData?.Remove("assignedToStore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStore"); else _explicitNullProperties?.Remove("assignedToStore"); } }
         private string _explicitNullValueAssignedToStore = default!;
 #endif
         /// <summary>The unique identifier of the store to which the terminal is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedToStoreId { get => _explicitNullValueAssignedToStoreId; set { _explicitNullValueAssignedToStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStoreId"); else _explicitNullProperties?.Remove("assignedToStoreId"); } }
+        public string? AssignedToStoreId { get => _explicitNullValueAssignedToStoreId; set { _explicitNullValueAssignedToStoreId = value; AdditionalData?.Remove("assignedToStoreId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStoreId"); else _explicitNullProperties?.Remove("assignedToStoreId"); } }
         private string? _explicitNullValueAssignedToStoreId = default!;
 #nullable restore
 #else
-        public string AssignedToStoreId { get => _explicitNullValueAssignedToStoreId; set { _explicitNullValueAssignedToStoreId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStoreId"); else _explicitNullProperties?.Remove("assignedToStoreId"); } }
+        public string AssignedToStoreId { get => _explicitNullValueAssignedToStoreId; set { _explicitNullValueAssignedToStoreId = value; AdditionalData?.Remove("assignedToStoreId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedToStoreId"); else _explicitNullProperties?.Remove("assignedToStoreId"); } }
         private string _explicitNullValueAssignedToStoreId = default!;
 #endif
         /// <summary>The date and time when an event has been completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
+        public string? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; AdditionalData?.Remove("eventDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
         private string? _explicitNullValueEventDate = default!;
 #nullable restore
 #else
-        public string EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
+        public string EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; AdditionalData?.Remove("eventDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
         private string _explicitNullValueEventDate = default!;
 #endif
         /// <summary>The PSP reference of the request from which the notification originates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>The unique identifier of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
+        public string? UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; AdditionalData?.Remove("uniqueTerminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
         private string? _explicitNullValueUniqueTerminalId = default!;
 #nullable restore
 #else
-        public string UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
+        public string UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; AdditionalData?.Remove("uniqueTerminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
         private string _explicitNullValueUniqueTerminalId = default!;
 #endif
         /// <summary>

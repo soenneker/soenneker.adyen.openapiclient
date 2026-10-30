@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cc") is { } nullNodeCc && nullNodeCc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cc = null;
-            if (parseNode.GetChildNode("subscriber") is { } nullNodeSubscriber && nullNodeSubscriber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriber = null;
+            if (parseNode.GetChildNode("cc") is null) { _explicitNullValueCc = default!; _explicitNullProperties?.Remove("cc"); }
+            else if (parseNode.GetChildNode("cc") is { } nullNodeCc && nullNodeCc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cc = null;
+            if (parseNode.GetChildNode("subscriber") is null) { _explicitNullValueSubscriber = default!; _explicitNullProperties?.Remove("subscriber"); }
+            else if (parseNode.GetChildNode("subscriber") is { } nullNodeSubscriber && nullNodeSubscriber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Country code. Length: 1–3 digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
+        public string? Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; AdditionalData?.Remove("cc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
         private string? _explicitNullValueCc = default!;
 #nullable restore
 #else
-        public string Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
+        public string Cc { get => _explicitNullValueCc; set { _explicitNullValueCc = value; AdditionalData?.Remove("cc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cc"); else _explicitNullProperties?.Remove("cc"); } }
         private string _explicitNullValueCc = default!;
 #endif
         /// <summary>Subscriber number. Length: 4-15  digits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
+        public string? Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; AdditionalData?.Remove("subscriber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
         private string? _explicitNullValueSubscriber = default!;
 #nullable restore
 #else
-        public string Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
+        public string Subscriber { get => _explicitNullValueSubscriber; set { _explicitNullValueSubscriber = value; AdditionalData?.Remove("subscriber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriber"); else _explicitNullProperties?.Remove("subscriber"); } }
         private string _explicitNullValueSubscriber = default!;
 #endif
         /// <summary>

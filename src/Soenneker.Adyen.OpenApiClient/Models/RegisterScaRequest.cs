@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
-            if (parseNode.GetChildNode("strongCustomerAuthentication") is { } nullNodeStrongCustomerAuthentication && nullNodeStrongCustomerAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrongCustomerAuthentication = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("paymentInstrumentId") is null) { _explicitNullValuePaymentInstrumentId = default!; _explicitNullProperties?.Remove("paymentInstrumentId"); }
+            else if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
+            if (parseNode.GetChildNode("strongCustomerAuthentication") is null) { _explicitNullValueStrongCustomerAuthentication = default!; _explicitNullProperties?.Remove("strongCustomerAuthentication"); }
+            else if (parseNode.GetChildNode("strongCustomerAuthentication") is { } nullNodeStrongCustomerAuthentication && nullNodeStrongCustomerAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StrongCustomerAuthentication = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The name of the SCA device that you are registering. You can use it to help your users identify the device.If you do not specify a `name`, Adyen automatically generates one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The unique identifier of the payment instrument for which you are registering the SCA device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; AdditionalData?.Remove("paymentInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
         private string? _explicitNullValuePaymentInstrumentId = default!;
 #nullable restore
 #else
-        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; AdditionalData?.Remove("paymentInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
         private string _explicitNullValuePaymentInstrumentId = default!;
 #endif
         /// <summary>Contains information required to register the SCA device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication? StrongCustomerAuthentication { get => _explicitNullValueStrongCustomerAuthentication; set { _explicitNullValueStrongCustomerAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strongCustomerAuthentication"); else _explicitNullProperties?.Remove("strongCustomerAuthentication"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication? StrongCustomerAuthentication { get => _explicitNullValueStrongCustomerAuthentication; set { _explicitNullValueStrongCustomerAuthentication = value; AdditionalData?.Remove("strongCustomerAuthentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strongCustomerAuthentication"); else _explicitNullProperties?.Remove("strongCustomerAuthentication"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication? _explicitNullValueStrongCustomerAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication StrongCustomerAuthentication { get => _explicitNullValueStrongCustomerAuthentication; set { _explicitNullValueStrongCustomerAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strongCustomerAuthentication"); else _explicitNullProperties?.Remove("strongCustomerAuthentication"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication StrongCustomerAuthentication { get => _explicitNullValueStrongCustomerAuthentication; set { _explicitNullValueStrongCustomerAuthentication = value; AdditionalData?.Remove("strongCustomerAuthentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strongCustomerAuthentication"); else _explicitNullProperties?.Remove("strongCustomerAuthentication"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RegisterScaRequestStrongCustomerAuthentication _explicitNullValueStrongCustomerAuthentication = default!;
 #endif
         /// <summary>

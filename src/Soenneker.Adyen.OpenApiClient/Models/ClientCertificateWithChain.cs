@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("caChain") is { } nullNodeCaChain && nullNodeCaChain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaChain = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("leaf") is { } nullNodeLeaf && nullNodeLeaf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Leaf = null;
-            if (parseNode.GetChildNode("serialNumber") is { } nullNodeSerialNumber && nullNodeSerialNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerialNumber = null;
-            if (parseNode.GetChildNode("subjectDN") is { } nullNodeSubjectDN && nullNodeSubjectDN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectDN = null;
+            if (parseNode.GetChildNode("caChain") is null) { _explicitNullValueCaChain = default!; _explicitNullProperties?.Remove("caChain"); }
+            else if (parseNode.GetChildNode("caChain") is { } nullNodeCaChain && nullNodeCaChain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CaChain = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("leaf") is null) { _explicitNullValueLeaf = default!; _explicitNullProperties?.Remove("leaf"); }
+            else if (parseNode.GetChildNode("leaf") is { } nullNodeLeaf && nullNodeLeaf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Leaf = null;
+            if (parseNode.GetChildNode("serialNumber") is null) { _explicitNullValueSerialNumber = default!; _explicitNullProperties?.Remove("serialNumber"); }
+            else if (parseNode.GetChildNode("serialNumber") is { } nullNodeSerialNumber && nullNodeSerialNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerialNumber = null;
+            if (parseNode.GetChildNode("subjectDN") is null) { _explicitNullValueSubjectDN = default!; _explicitNullProperties?.Remove("subjectDN"); }
+            else if (parseNode.GetChildNode("subjectDN") is { } nullNodeSubjectDN && nullNodeSubjectDN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectDN = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Certificate chain with intermediates and Management Certificate Authority Root which excludes the signed client certificate leaf</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<byte[]>? CaChain { get => _explicitNullValueCaChain; set { _explicitNullValueCaChain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caChain"); else _explicitNullProperties?.Remove("caChain"); } }
+        public List<byte[]>? CaChain { get => _explicitNullValueCaChain; set { _explicitNullValueCaChain = value; AdditionalData?.Remove("caChain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caChain"); else _explicitNullProperties?.Remove("caChain"); } }
         private List<byte[]>? _explicitNullValueCaChain = default!;
 #nullable restore
 #else
-        public List<byte[]> CaChain { get => _explicitNullValueCaChain; set { _explicitNullValueCaChain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caChain"); else _explicitNullProperties?.Remove("caChain"); } }
+        public List<byte[]> CaChain { get => _explicitNullValueCaChain; set { _explicitNullValueCaChain = value; AdditionalData?.Remove("caChain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caChain"); else _explicitNullProperties?.Remove("caChain"); } }
         private List<byte[]> _explicitNullValueCaChain = default!;
 #endif
         /// <summary>The unique identifier of the client certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Signed client certificate as a Base64-encoded DER string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Leaf { get => _explicitNullValueLeaf; set { _explicitNullValueLeaf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leaf"); else _explicitNullProperties?.Remove("leaf"); } }
+        public byte[]? Leaf { get => _explicitNullValueLeaf; set { _explicitNullValueLeaf = value; AdditionalData?.Remove("leaf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leaf"); else _explicitNullProperties?.Remove("leaf"); } }
         private byte[]? _explicitNullValueLeaf = default!;
 #nullable restore
 #else
-        public byte[] Leaf { get => _explicitNullValueLeaf; set { _explicitNullValueLeaf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leaf"); else _explicitNullProperties?.Remove("leaf"); } }
+        public byte[] Leaf { get => _explicitNullValueLeaf; set { _explicitNullValueLeaf = value; AdditionalData?.Remove("leaf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leaf"); else _explicitNullProperties?.Remove("leaf"); } }
         private byte[] _explicitNullValueLeaf = default!;
 #endif
         /// <summary>Serial number of client certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
+        public string? SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; AdditionalData?.Remove("serialNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
         private string? _explicitNullValueSerialNumber = default!;
 #nullable restore
 #else
-        public string SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
+        public string SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; AdditionalData?.Remove("serialNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
         private string _explicitNullValueSerialNumber = default!;
 #endif
         /// <summary>Subject DN (Distinguished Name) of client certificate. Server-generated from `companyId` and `apiCredential`; see the enroll operation for details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
+        public string? SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; AdditionalData?.Remove("subjectDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
         private string? _explicitNullValueSubjectDN = default!;
 #nullable restore
 #else
-        public string SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
+        public string SubjectDN { get => _explicitNullValueSubjectDN; set { _explicitNullValueSubjectDN = value; AdditionalData?.Remove("subjectDN"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectDN"); else _explicitNullProperties?.Remove("subjectDN"); } }
         private string _explicitNullValueSubjectDN = default!;
 #endif
         /// <summary>
@@ -101,7 +106,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "caChain", n => { CaChain = n.GetCollectionOfPrimitiveValues<byte[]>()?.AsList(); } },
+                { "caChain", n => { CaChain = global::System.Linq.Enumerable.Select(n.GetCollectionOfPrimitiveValues<string>(), value => value == null ? null! : global::System.Convert.FromBase64String(value))?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leaf", n => { Leaf = n.GetByteArrayValue(); } },
                 { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
@@ -115,7 +120,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<byte[]>("caChain", CaChain);
+            writer.WriteCollectionOfPrimitiveValues<string>("caChain", CaChain == null ? null : global::System.Linq.Enumerable.Select(CaChain, value => value == null ? null! : global::System.Convert.ToBase64String(value)));
             writer.WriteStringValue("id", Id);
             writer.WriteByteArrayValue("leaf", Leaf);
             writer.WriteStringValue("serialNumber", SerialNumber);

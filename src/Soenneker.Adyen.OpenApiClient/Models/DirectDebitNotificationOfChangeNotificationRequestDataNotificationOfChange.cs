@@ -18,11 +18,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("newBankAccountNumber") is { } nullNodeNewBankAccountNumber && nullNodeNewBankAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankAccountNumber = null;
-            if (parseNode.GetChildNode("newBankAccountType") is { } nullNodeNewBankAccountType && nullNodeNewBankAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankAccountType = null;
-            if (parseNode.GetChildNode("newBankLocationId") is { } nullNodeNewBankLocationId && nullNodeNewBankLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankLocationId = null;
-            if (parseNode.GetChildNode("newBranchCode") is { } nullNodeNewBranchCode && nullNodeNewBranchCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBranchCode = null;
-            if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
+            if (parseNode.GetChildNode("newBankAccountNumber") is null) { _explicitNullValueNewBankAccountNumber = default!; _explicitNullProperties?.Remove("newBankAccountNumber"); }
+            else if (parseNode.GetChildNode("newBankAccountNumber") is { } nullNodeNewBankAccountNumber && nullNodeNewBankAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankAccountNumber = null;
+            if (parseNode.GetChildNode("newBankAccountType") is null) { _explicitNullValueNewBankAccountType = default!; _explicitNullProperties?.Remove("newBankAccountType"); }
+            else if (parseNode.GetChildNode("newBankAccountType") is { } nullNodeNewBankAccountType && nullNodeNewBankAccountType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankAccountType = null;
+            if (parseNode.GetChildNode("newBankLocationId") is null) { _explicitNullValueNewBankLocationId = default!; _explicitNullProperties?.Remove("newBankLocationId"); }
+            else if (parseNode.GetChildNode("newBankLocationId") is { } nullNodeNewBankLocationId && nullNodeNewBankLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBankLocationId = null;
+            if (parseNode.GetChildNode("newBranchCode") is null) { _explicitNullValueNewBranchCode = default!; _explicitNullProperties?.Remove("newBranchCode"); }
+            else if (parseNode.GetChildNode("newBranchCode") is { } nullNodeNewBranchCode && nullNodeNewBranchCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewBranchCode = null;
+            if (parseNode.GetChildNode("reasonCode") is null) { _explicitNullValueReasonCode = default!; _explicitNullProperties?.Remove("reasonCode"); }
+            else if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,38 +35,38 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The corrected bank account number provided by the receiving bank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewBankAccountNumber { get => _explicitNullValueNewBankAccountNumber; set { _explicitNullValueNewBankAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountNumber"); else _explicitNullProperties?.Remove("newBankAccountNumber"); } }
+        public string? NewBankAccountNumber { get => _explicitNullValueNewBankAccountNumber; set { _explicitNullValueNewBankAccountNumber = value; AdditionalData?.Remove("newBankAccountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountNumber"); else _explicitNullProperties?.Remove("newBankAccountNumber"); } }
         private string? _explicitNullValueNewBankAccountNumber = default!;
 #nullable restore
 #else
-        public string NewBankAccountNumber { get => _explicitNullValueNewBankAccountNumber; set { _explicitNullValueNewBankAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountNumber"); else _explicitNullProperties?.Remove("newBankAccountNumber"); } }
+        public string NewBankAccountNumber { get => _explicitNullValueNewBankAccountNumber; set { _explicitNullValueNewBankAccountNumber = value; AdditionalData?.Remove("newBankAccountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountNumber"); else _explicitNullProperties?.Remove("newBankAccountNumber"); } }
         private string _explicitNullValueNewBankAccountNumber = default!;
 #endif
         /// <summary>The corrected bank account type provided by the receiving bank. This field is specific to ACH Direct Debit transactions.Possible values:*  **Savings***  **Checking**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocNewBankAccountType? NewBankAccountType { get => _explicitNullValueNewBankAccountType; set { _explicitNullValueNewBankAccountType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountType"); else _explicitNullProperties?.Remove("newBankAccountType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocNewBankAccountType? NewBankAccountType { get => _explicitNullValueNewBankAccountType; set { _explicitNullValueNewBankAccountType = value; AdditionalData?.Remove("newBankAccountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankAccountType"); else _explicitNullProperties?.Remove("newBankAccountType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocNewBankAccountType? _explicitNullValueNewBankAccountType = default!;
         /// <summary>The corrected bank location ID provided by the receiving bank. This field is specific to EFT PAD transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewBankLocationId { get => _explicitNullValueNewBankLocationId; set { _explicitNullValueNewBankLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankLocationId"); else _explicitNullProperties?.Remove("newBankLocationId"); } }
+        public string? NewBankLocationId { get => _explicitNullValueNewBankLocationId; set { _explicitNullValueNewBankLocationId = value; AdditionalData?.Remove("newBankLocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankLocationId"); else _explicitNullProperties?.Remove("newBankLocationId"); } }
         private string? _explicitNullValueNewBankLocationId = default!;
 #nullable restore
 #else
-        public string NewBankLocationId { get => _explicitNullValueNewBankLocationId; set { _explicitNullValueNewBankLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankLocationId"); else _explicitNullProperties?.Remove("newBankLocationId"); } }
+        public string NewBankLocationId { get => _explicitNullValueNewBankLocationId; set { _explicitNullValueNewBankLocationId = value; AdditionalData?.Remove("newBankLocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBankLocationId"); else _explicitNullProperties?.Remove("newBankLocationId"); } }
         private string _explicitNullValueNewBankLocationId = default!;
 #endif
         /// <summary>The corrected bank routing number provided by the receiving bank. This field is specific to ACH Direct Debit transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewBranchCode { get => _explicitNullValueNewBranchCode; set { _explicitNullValueNewBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBranchCode"); else _explicitNullProperties?.Remove("newBranchCode"); } }
+        public string? NewBranchCode { get => _explicitNullValueNewBranchCode; set { _explicitNullValueNewBranchCode = value; AdditionalData?.Remove("newBranchCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBranchCode"); else _explicitNullProperties?.Remove("newBranchCode"); } }
         private string? _explicitNullValueNewBranchCode = default!;
 #nullable restore
 #else
-        public string NewBranchCode { get => _explicitNullValueNewBranchCode; set { _explicitNullValueNewBranchCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBranchCode"); else _explicitNullProperties?.Remove("newBranchCode"); } }
+        public string NewBranchCode { get => _explicitNullValueNewBranchCode; set { _explicitNullValueNewBranchCode = value; AdditionalData?.Remove("newBranchCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newBranchCode"); else _explicitNullProperties?.Remove("newBranchCode"); } }
         private string _explicitNullValueNewBranchCode = default!;
 #endif
         /// <summary>A standard code from the ACH network that specifies the reason for a Notice of Change (e.g., an incorrect account number). This field is specific to ACH Direct Debit transactions.Possible values:*  **C01** : Incorrect bank account number.*  **C02** : Incorrect transit/routing number.*  **C03** : Incorrect transit/routing number and bank account number.*  **C04** : Bank account name change.*  **C05** : Incorrect payment code.*  **C06** : Incorrect bank account number and transit code.*  **C07** : Incorrect transit/routing number, bank account number and payment code.*  **C09** : Incorrect individual ID number.*  **C10** : Incorrect company name.*  **C11** : Incorrect company identification.*  **C12** : Incorrect company name and company ID.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocReasonCode? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocReasonCode? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; AdditionalData?.Remove("reasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocReasonCode? _explicitNullValueReasonCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNotificationOfChangeNotificationRequestDataNotificationOfChange"/> and sets the default values.
@@ -89,10 +94,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "newBankAccountNumber", n => { NewBankAccountNumber = n.GetStringValue(); } },
-                { "newBankAccountType", n => { NewBankAccountType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocNewBankAccountType>(); } },
+                { "newBankAccountType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocNewBankAccountType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueNewBankAccountType = default; _explicitNullProperties?.Remove("newBankAccountType"); AdditionalData["newBankAccountType"] = unknown; } else { NewBankAccountType = parsed; AdditionalData.Remove("newBankAccountType"); } } },
                 { "newBankLocationId", n => { NewBankLocationId = n.GetStringValue(); } },
                 { "newBranchCode", n => { NewBranchCode = n.GetStringValue(); } },
-                { "reasonCode", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocReasonCode>(); } },
+                { "reasonCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DirectDebitNoticeOfChangeNotificationRequestDataNocReasonCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReasonCode = default; _explicitNullProperties?.Remove("reasonCode"); AdditionalData["reasonCode"] = unknown; } else { ReasonCode = parsed; AdditionalData.Remove("reasonCode"); } } },
             };
         }
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
-            if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
+            if (parseNode.GetChildNode("logo") is null) { _explicitNullValueLogo = default!; _explicitNullProperties?.Remove("logo"); }
+            else if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("transactionDescription") is null) { _explicitNullValueTransactionDescription = default!; _explicitNullProperties?.Remove("transactionDescription"); }
+            else if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +30,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>Information regarding the transaction description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfoTransactionDescription? _explicitNullValueTransactionDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayByBankPlaidResponseInfoTransactionDescription _explicitNullValueTransactionDescription = default!;
 #endif
         /// <summary>

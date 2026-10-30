@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
-            if (parseNode.GetChildNode("enrolledIn3DSecure") is { } nullNodeEnrolledIn3DSecure && nullNodeEnrolledIn3DSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrolledIn3DSecure = null;
-            if (parseNode.GetChildNode("mcc") is { } nullNodeMcc && nullNodeMcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcc = null;
+            if (parseNode.GetChildNode("countryCode") is null) { _explicitNullValueCountryCode = default!; _explicitNullProperties?.Remove("countryCode"); }
+            else if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("enrolledIn3DSecure") is null) { _explicitNullValueEnrolledIn3DSecure = default!; _explicitNullProperties?.Remove("enrolledIn3DSecure"); }
+            else if (parseNode.GetChildNode("enrolledIn3DSecure") is { } nullNodeEnrolledIn3DSecure && nullNodeEnrolledIn3DSecure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrolledIn3DSecure = null;
+            if (parseNode.GetChildNode("mcc") is null) { _explicitNullValueMcc = default!; _explicitNullProperties?.Remove("mcc"); }
+            else if (parseNode.GetChildNode("mcc") is { } nullNodeMcc && nullNodeMcc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mcc = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>2-letter ISO 3166 country code of the card acceptor location.&gt; This parameter is required for the merchants who don&apos;t use Adyen as the payment authorisation gateway.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
         private string? _explicitNullValueCountryCode = default!;
 #nullable restore
 #else
-        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
         private string _explicitNullValueCountryCode = default!;
 #endif
         /// <summary>If true, indicates that the merchant is enrolled in 3D Secure for the card network.</summary>
-        public bool? EnrolledIn3DSecure { get => _explicitNullValueEnrolledIn3DSecure; set { _explicitNullValueEnrolledIn3DSecure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrolledIn3DSecure"); else _explicitNullProperties?.Remove("enrolledIn3DSecure"); } }
+        public bool? EnrolledIn3DSecure { get => _explicitNullValueEnrolledIn3DSecure; set { _explicitNullValueEnrolledIn3DSecure = value; AdditionalData?.Remove("enrolledIn3DSecure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrolledIn3DSecure"); else _explicitNullProperties?.Remove("enrolledIn3DSecure"); } }
         private bool? _explicitNullValueEnrolledIn3DSecure = default!;
         /// <summary>The merchant category code (MCC) is a four-digit number which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.The list of MCCs can be found [here](https://en.wikipedia.org/wiki/Merchant_category_code).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mcc { get => _explicitNullValueMcc; set { _explicitNullValueMcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcc"); else _explicitNullProperties?.Remove("mcc"); } }
+        public string? Mcc { get => _explicitNullValueMcc; set { _explicitNullValueMcc = value; AdditionalData?.Remove("mcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcc"); else _explicitNullProperties?.Remove("mcc"); } }
         private string? _explicitNullValueMcc = default!;
 #nullable restore
 #else
-        public string Mcc { get => _explicitNullValueMcc; set { _explicitNullValueMcc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcc"); else _explicitNullProperties?.Remove("mcc"); } }
+        public string Mcc { get => _explicitNullValueMcc; set { _explicitNullValueMcc = value; AdditionalData?.Remove("mcc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcc"); else _explicitNullProperties?.Remove("mcc"); } }
         private string _explicitNullValueMcc = default!;
 #endif
         /// <summary>

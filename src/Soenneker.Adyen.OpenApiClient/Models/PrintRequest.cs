@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("PrintOutput") is { } nullNodePrintOutput && nullNodePrintOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintOutput = null;
+            if (parseNode.GetChildNode("PrintOutput") is null) { _explicitNullValuePrintOutput = default!; _explicitNullProperties?.Remove("PrintOutput"); }
+            else if (parseNode.GetChildNode("PrintOutput") is { } nullNodePrintOutput && nullNodePrintOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrintOutput = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information to print and how to process it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput? PrintOutput { get => _explicitNullValuePrintOutput; set { _explicitNullValuePrintOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PrintOutput"); else _explicitNullProperties?.Remove("PrintOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput? PrintOutput { get => _explicitNullValuePrintOutput; set { _explicitNullValuePrintOutput = value; AdditionalData?.Remove("PrintOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PrintOutput"); else _explicitNullProperties?.Remove("PrintOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput? _explicitNullValuePrintOutput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput PrintOutput { get => _explicitNullValuePrintOutput; set { _explicitNullValuePrintOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PrintOutput"); else _explicitNullProperties?.Remove("PrintOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput PrintOutput { get => _explicitNullValuePrintOutput; set { _explicitNullValuePrintOutput = value; AdditionalData?.Remove("PrintOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PrintOutput"); else _explicitNullProperties?.Remove("PrintOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PrintRequestPrintOutput _explicitNullValuePrintOutput = default!;
 #endif
         /// <summary>

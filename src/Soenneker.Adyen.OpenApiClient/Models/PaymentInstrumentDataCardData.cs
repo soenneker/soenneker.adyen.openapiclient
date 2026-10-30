@@ -18,89 +18,97 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("CardCountryCode") is { } nullNodeCardCountryCode && nullNodeCardCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardCountryCode = null;
-            if (parseNode.GetChildNode("EntryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
-            if (parseNode.GetChildNode("MaskedPan") is { } nullNodeMaskedPan && nullNodeMaskedPan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskedPan = null;
-            if (parseNode.GetChildNode("PaymentAccountRef") is { } nullNodePaymentAccountRef && nullNodePaymentAccountRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountRef = null;
-            if (parseNode.GetChildNode("PaymentBrand") is { } nullNodePaymentBrand && nullNodePaymentBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentBrand = null;
-            if (parseNode.GetChildNode("PaymentToken") is { } nullNodePaymentToken && nullNodePaymentToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentToken = null;
-            if (parseNode.GetChildNode("ProtectedCardData") is { } nullNodeProtectedCardData && nullNodeProtectedCardData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectedCardData = null;
-            if (parseNode.GetChildNode("SensitiveCardData") is { } nullNodeSensitiveCardData && nullNodeSensitiveCardData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensitiveCardData = null;
+            if (parseNode.GetChildNode("CardCountryCode") is null) { _explicitNullValueCardCountryCode = default!; _explicitNullProperties?.Remove("CardCountryCode"); }
+            else if (parseNode.GetChildNode("CardCountryCode") is { } nullNodeCardCountryCode && nullNodeCardCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardCountryCode = null;
+            if (parseNode.GetChildNode("EntryMode") is null) { _explicitNullValueEntryMode = default!; _explicitNullProperties?.Remove("EntryMode"); }
+            else if (parseNode.GetChildNode("EntryMode") is { } nullNodeEntryMode && nullNodeEntryMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntryMode = null;
+            if (parseNode.GetChildNode("MaskedPan") is null) { _explicitNullValueMaskedPan = default!; _explicitNullProperties?.Remove("MaskedPan"); }
+            else if (parseNode.GetChildNode("MaskedPan") is { } nullNodeMaskedPan && nullNodeMaskedPan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaskedPan = null;
+            if (parseNode.GetChildNode("PaymentAccountRef") is null) { _explicitNullValuePaymentAccountRef = default!; _explicitNullProperties?.Remove("PaymentAccountRef"); }
+            else if (parseNode.GetChildNode("PaymentAccountRef") is { } nullNodePaymentAccountRef && nullNodePaymentAccountRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountRef = null;
+            if (parseNode.GetChildNode("PaymentBrand") is null) { _explicitNullValuePaymentBrand = default!; _explicitNullProperties?.Remove("PaymentBrand"); }
+            else if (parseNode.GetChildNode("PaymentBrand") is { } nullNodePaymentBrand && nullNodePaymentBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentBrand = null;
+            if (parseNode.GetChildNode("PaymentToken") is null) { _explicitNullValuePaymentToken = default!; _explicitNullProperties?.Remove("PaymentToken"); }
+            else if (parseNode.GetChildNode("PaymentToken") is { } nullNodePaymentToken && nullNodePaymentToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentToken = null;
+            if (parseNode.GetChildNode("ProtectedCardData") is null) { _explicitNullValueProtectedCardData = default!; _explicitNullProperties?.Remove("ProtectedCardData"); }
+            else if (parseNode.GetChildNode("ProtectedCardData") is { } nullNodeProtectedCardData && nullNodeProtectedCardData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectedCardData = null;
+            if (parseNode.GetChildNode("SensitiveCardData") is null) { _explicitNullValueSensitiveCardData = default!; _explicitNullProperties?.Remove("SensitiveCardData"); }
+            else if (parseNode.GetChildNode("SensitiveCardData") is { } nullNodeSensitiveCardData && nullNodeSensitiveCardData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensitiveCardData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Country Code attached to the card (3 numerics).If available in the card.</summary>
-        public int? CardCountryCode { get => _explicitNullValueCardCountryCode; set { _explicitNullValueCardCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardCountryCode"); else _explicitNullProperties?.Remove("CardCountryCode"); } }
+        public int? CardCountryCode { get => _explicitNullValueCardCountryCode; set { _explicitNullValueCardCountryCode = value; AdditionalData?.Remove("CardCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CardCountryCode"); else _explicitNullProperties?.Remove("CardCountryCode"); } }
         private int? _explicitNullValueCardCountryCode = default!;
         /// <summary>The EntryMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem?>? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem?>? EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; AdditionalData?.Remove("EntryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem?>? _explicitNullValueEntryMode = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem?> EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem?> EntryMode { get => _explicitNullValueEntryMode; set { _explicitNullValueEntryMode = value; AdditionalData?.Remove("EntryMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("EntryMode"); else _explicitNullProperties?.Remove("EntryMode"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CardDataEntryModeItem?> _explicitNullValueEntryMode = default!;
 #endif
         /// <summary>Masked Primary Account NumberPart of the PAN is replaced by a string of * characters, to identify a customer account or relationship. Presence of this data element, which replace the PAN when SensitiveCardData is protected and replaced by ProtectedCardData. Alternatively the MaskedPAN can be used as a token to identify a customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaskedPan { get => _explicitNullValueMaskedPan; set { _explicitNullValueMaskedPan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedPan"); else _explicitNullProperties?.Remove("MaskedPan"); } }
+        public string? MaskedPan { get => _explicitNullValueMaskedPan; set { _explicitNullValueMaskedPan = value; AdditionalData?.Remove("MaskedPan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedPan"); else _explicitNullProperties?.Remove("MaskedPan"); } }
         private string? _explicitNullValueMaskedPan = default!;
 #nullable restore
 #else
-        public string MaskedPan { get => _explicitNullValueMaskedPan; set { _explicitNullValueMaskedPan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedPan"); else _explicitNullProperties?.Remove("MaskedPan"); } }
+        public string MaskedPan { get => _explicitNullValueMaskedPan; set { _explicitNullValueMaskedPan = value; AdditionalData?.Remove("MaskedPan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaskedPan"); else _explicitNullProperties?.Remove("MaskedPan"); } }
         private string _explicitNullValueMaskedPan = default!;
 #endif
         /// <summary>Reference of the PAN, which identifies the PAN or the card uniquely, named also PAR (Payment Account Reference). This reference may be defined by the card issuer or by a token service provider under the control of the card issuer, and cannot be used for a payment transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentAccountRef { get => _explicitNullValuePaymentAccountRef; set { _explicitNullValuePaymentAccountRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountRef"); else _explicitNullProperties?.Remove("PaymentAccountRef"); } }
+        public string? PaymentAccountRef { get => _explicitNullValuePaymentAccountRef; set { _explicitNullValuePaymentAccountRef = value; AdditionalData?.Remove("PaymentAccountRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountRef"); else _explicitNullProperties?.Remove("PaymentAccountRef"); } }
         private string? _explicitNullValuePaymentAccountRef = default!;
 #nullable restore
 #else
-        public string PaymentAccountRef { get => _explicitNullValuePaymentAccountRef; set { _explicitNullValuePaymentAccountRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountRef"); else _explicitNullProperties?.Remove("PaymentAccountRef"); } }
+        public string PaymentAccountRef { get => _explicitNullValuePaymentAccountRef; set { _explicitNullValuePaymentAccountRef = value; AdditionalData?.Remove("PaymentAccountRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountRef"); else _explicitNullProperties?.Remove("PaymentAccountRef"); } }
         private string _explicitNullValuePaymentAccountRef = default!;
 #endif
         /// <summary>Type of payment card.If card PAN is readable.Indicates the card used to pay in the PaymentResponse. Sent in the CardAcquisitionResponse, to leave the Cashier to choose between several applications in a smartcard, or several brand in a co-branded card. In this case, the CardAcquisitionRequest.ForceCustomerSelectionFlag must contain the value False. Brands are part of the POI and Sale Systems configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentBrand { get => _explicitNullValuePaymentBrand; set { _explicitNullValuePaymentBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentBrand"); else _explicitNullProperties?.Remove("PaymentBrand"); } }
+        public string? PaymentBrand { get => _explicitNullValuePaymentBrand; set { _explicitNullValuePaymentBrand = value; AdditionalData?.Remove("PaymentBrand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentBrand"); else _explicitNullProperties?.Remove("PaymentBrand"); } }
         private string? _explicitNullValuePaymentBrand = default!;
 #nullable restore
 #else
-        public string PaymentBrand { get => _explicitNullValuePaymentBrand; set { _explicitNullValuePaymentBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentBrand"); else _explicitNullProperties?.Remove("PaymentBrand"); } }
+        public string PaymentBrand { get => _explicitNullValuePaymentBrand; set { _explicitNullValuePaymentBrand = value; AdditionalData?.Remove("PaymentBrand"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentBrand"); else _explicitNullProperties?.Remove("PaymentBrand"); } }
         private string _explicitNullValuePaymentBrand = default!;
 #endif
         /// <summary>Surrogate of the PAN (Primary Account Number) of the payment card to identify the payment mean of the customer. It allows, for a merchant, to identify the customer.Restriction of product payable by a card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken? PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentToken"); else _explicitNullProperties?.Remove("PaymentToken"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken? PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; AdditionalData?.Remove("PaymentToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentToken"); else _explicitNullProperties?.Remove("PaymentToken"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken? _explicitNullValuePaymentToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentToken"); else _explicitNullProperties?.Remove("PaymentToken"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken PaymentToken { get => _explicitNullValuePaymentToken; set { _explicitNullValuePaymentToken = value; AdditionalData?.Remove("PaymentToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentToken"); else _explicitNullProperties?.Remove("PaymentToken"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CardDataPaymentToken _explicitNullValuePaymentToken = default!;
 #endif
         /// <summary>Sensitive information related to the payment card, protected by CMS.SensitiveCardData protected by CMS EnvelopedData.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
+        public string? ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
         private string? _explicitNullValueProtectedCardData = default!;
 #nullable restore
 #else
-        public string ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
+        public string ProtectedCardData { get => _explicitNullValueProtectedCardData; set { _explicitNullValueProtectedCardData = value; AdditionalData?.Remove("ProtectedCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ProtectedCardData"); else _explicitNullProperties?.Remove("ProtectedCardData"); } }
         private string _explicitNullValueProtectedCardData = default!;
 #endif
         /// <summary>Sensitive information related to the payment card, entered or read by the Sale System.If structure non empty and unprotected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData? SensitiveCardData { get => _explicitNullValueSensitiveCardData; set { _explicitNullValueSensitiveCardData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SensitiveCardData"); else _explicitNullProperties?.Remove("SensitiveCardData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData? SensitiveCardData { get => _explicitNullValueSensitiveCardData; set { _explicitNullValueSensitiveCardData = value; AdditionalData?.Remove("SensitiveCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SensitiveCardData"); else _explicitNullProperties?.Remove("SensitiveCardData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData? _explicitNullValueSensitiveCardData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData SensitiveCardData { get => _explicitNullValueSensitiveCardData; set { _explicitNullValueSensitiveCardData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SensitiveCardData"); else _explicitNullProperties?.Remove("SensitiveCardData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData SensitiveCardData { get => _explicitNullValueSensitiveCardData; set { _explicitNullValueSensitiveCardData = value; AdditionalData?.Remove("SensitiveCardData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SensitiveCardData"); else _explicitNullProperties?.Remove("SensitiveCardData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CardDataSensitiveCardData _explicitNullValueSensitiveCardData = default!;
 #endif
         /// <summary>

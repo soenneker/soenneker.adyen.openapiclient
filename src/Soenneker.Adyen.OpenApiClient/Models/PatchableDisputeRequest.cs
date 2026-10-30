@@ -17,13 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cancelledInfo") is { } nullNodeCancelledInfo && nullNodeCancelledInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledInfo = null;
-            if (parseNode.GetChildNode("duplicateInfo") is { } nullNodeDuplicateInfo && nullNodeDuplicateInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateInfo = null;
-            if (parseNode.GetChildNode("fraudInfo") is { } nullNodeFraudInfo && nullNodeFraudInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudInfo = null;
-            if (parseNode.GetChildNode("notAsDescribedInfo") is { } nullNodeNotAsDescribedInfo && nullNodeNotAsDescribedInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAsDescribedInfo = null;
-            if (parseNode.GetChildNode("notDeliveredInfo") is { } nullNodeNotDeliveredInfo && nullNodeNotDeliveredInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotDeliveredInfo = null;
-            if (parseNode.GetChildNode("otherInfo") is { } nullNodeOtherInfo && nullNodeOtherInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherInfo = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("cancelledInfo") is null) { _explicitNullValueCancelledInfo = default!; _explicitNullProperties?.Remove("cancelledInfo"); }
+            else if (parseNode.GetChildNode("cancelledInfo") is { } nullNodeCancelledInfo && nullNodeCancelledInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelledInfo = null;
+            if (parseNode.GetChildNode("duplicateInfo") is null) { _explicitNullValueDuplicateInfo = default!; _explicitNullProperties?.Remove("duplicateInfo"); }
+            else if (parseNode.GetChildNode("duplicateInfo") is { } nullNodeDuplicateInfo && nullNodeDuplicateInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DuplicateInfo = null;
+            if (parseNode.GetChildNode("fraudInfo") is null) { _explicitNullValueFraudInfo = default!; _explicitNullProperties?.Remove("fraudInfo"); }
+            else if (parseNode.GetChildNode("fraudInfo") is { } nullNodeFraudInfo && nullNodeFraudInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudInfo = null;
+            if (parseNode.GetChildNode("notAsDescribedInfo") is null) { _explicitNullValueNotAsDescribedInfo = default!; _explicitNullProperties?.Remove("notAsDescribedInfo"); }
+            else if (parseNode.GetChildNode("notAsDescribedInfo") is { } nullNodeNotAsDescribedInfo && nullNodeNotAsDescribedInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotAsDescribedInfo = null;
+            if (parseNode.GetChildNode("notDeliveredInfo") is null) { _explicitNullValueNotDeliveredInfo = default!; _explicitNullProperties?.Remove("notDeliveredInfo"); }
+            else if (parseNode.GetChildNode("notDeliveredInfo") is { } nullNodeNotDeliveredInfo && nullNodeNotDeliveredInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotDeliveredInfo = null;
+            if (parseNode.GetChildNode("otherInfo") is null) { _explicitNullValueOtherInfo = default!; _explicitNullProperties?.Remove("otherInfo"); }
+            else if (parseNode.GetChildNode("otherInfo") is { } nullNodeOtherInfo && nullNodeOtherInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtherInfo = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,65 +38,65 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Additional information for raising a dispute of `type` **cancelled**. Required for disputes of `type` **cancelled**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate? CancelledInfo { get => _explicitNullValueCancelledInfo; set { _explicitNullValueCancelledInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelledInfo"); else _explicitNullProperties?.Remove("cancelledInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate? CancelledInfo { get => _explicitNullValueCancelledInfo; set { _explicitNullValueCancelledInfo = value; AdditionalData?.Remove("cancelledInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelledInfo"); else _explicitNullProperties?.Remove("cancelledInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate? _explicitNullValueCancelledInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate CancelledInfo { get => _explicitNullValueCancelledInfo; set { _explicitNullValueCancelledInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelledInfo"); else _explicitNullProperties?.Remove("cancelledInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate CancelledInfo { get => _explicitNullValueCancelledInfo; set { _explicitNullValueCancelledInfo = value; AdditionalData?.Remove("cancelledInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelledInfo"); else _explicitNullProperties?.Remove("cancelledInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CancelledInfoUpdate _explicitNullValueCancelledInfo = default!;
 #endif
         /// <summary>Additional information for raising a dispute of `type` **duplicate**. Required for disputes of `type` **duplicate**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo? DuplicateInfo { get => _explicitNullValueDuplicateInfo; set { _explicitNullValueDuplicateInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateInfo"); else _explicitNullProperties?.Remove("duplicateInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo? DuplicateInfo { get => _explicitNullValueDuplicateInfo; set { _explicitNullValueDuplicateInfo = value; AdditionalData?.Remove("duplicateInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateInfo"); else _explicitNullProperties?.Remove("duplicateInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo? _explicitNullValueDuplicateInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo DuplicateInfo { get => _explicitNullValueDuplicateInfo; set { _explicitNullValueDuplicateInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateInfo"); else _explicitNullProperties?.Remove("duplicateInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo DuplicateInfo { get => _explicitNullValueDuplicateInfo; set { _explicitNullValueDuplicateInfo = value; AdditionalData?.Remove("duplicateInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duplicateInfo"); else _explicitNullProperties?.Remove("duplicateInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableDuplicateInfo _explicitNullValueDuplicateInfo = default!;
 #endif
         /// <summary>Additional information for raising a dispute of `type` **fraud**. Required for disputes of `type` **fraud**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo? FraudInfo { get => _explicitNullValueFraudInfo; set { _explicitNullValueFraudInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudInfo"); else _explicitNullProperties?.Remove("fraudInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo? FraudInfo { get => _explicitNullValueFraudInfo; set { _explicitNullValueFraudInfo = value; AdditionalData?.Remove("fraudInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudInfo"); else _explicitNullProperties?.Remove("fraudInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo? _explicitNullValueFraudInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo FraudInfo { get => _explicitNullValueFraudInfo; set { _explicitNullValueFraudInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudInfo"); else _explicitNullProperties?.Remove("fraudInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo FraudInfo { get => _explicitNullValueFraudInfo; set { _explicitNullValueFraudInfo = value; AdditionalData?.Remove("fraudInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudInfo"); else _explicitNullProperties?.Remove("fraudInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableFraudInfo _explicitNullValueFraudInfo = default!;
 #endif
         /// <summary>Additional information for raising a dispute of `type` **notAsDescribed**. Required for disputes of `type` **notAsDescribed**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate? NotAsDescribedInfo { get => _explicitNullValueNotAsDescribedInfo; set { _explicitNullValueNotAsDescribedInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAsDescribedInfo"); else _explicitNullProperties?.Remove("notAsDescribedInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate? NotAsDescribedInfo { get => _explicitNullValueNotAsDescribedInfo; set { _explicitNullValueNotAsDescribedInfo = value; AdditionalData?.Remove("notAsDescribedInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAsDescribedInfo"); else _explicitNullProperties?.Remove("notAsDescribedInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate? _explicitNullValueNotAsDescribedInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate NotAsDescribedInfo { get => _explicitNullValueNotAsDescribedInfo; set { _explicitNullValueNotAsDescribedInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAsDescribedInfo"); else _explicitNullProperties?.Remove("notAsDescribedInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate NotAsDescribedInfo { get => _explicitNullValueNotAsDescribedInfo; set { _explicitNullValueNotAsDescribedInfo = value; AdditionalData?.Remove("notAsDescribedInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notAsDescribedInfo"); else _explicitNullProperties?.Remove("notAsDescribedInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate _explicitNullValueNotAsDescribedInfo = default!;
 #endif
         /// <summary>Additional information for raising a dispute of `type` **notDelivered**. Required for disputes of `type` **notDelivered**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo? NotDeliveredInfo { get => _explicitNullValueNotDeliveredInfo; set { _explicitNullValueNotDeliveredInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notDeliveredInfo"); else _explicitNullProperties?.Remove("notDeliveredInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo? NotDeliveredInfo { get => _explicitNullValueNotDeliveredInfo; set { _explicitNullValueNotDeliveredInfo = value; AdditionalData?.Remove("notDeliveredInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notDeliveredInfo"); else _explicitNullProperties?.Remove("notDeliveredInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo? _explicitNullValueNotDeliveredInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo NotDeliveredInfo { get => _explicitNullValueNotDeliveredInfo; set { _explicitNullValueNotDeliveredInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notDeliveredInfo"); else _explicitNullProperties?.Remove("notDeliveredInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo NotDeliveredInfo { get => _explicitNullValueNotDeliveredInfo; set { _explicitNullValueNotDeliveredInfo = value; AdditionalData?.Remove("notDeliveredInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notDeliveredInfo"); else _explicitNullProperties?.Remove("notDeliveredInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo _explicitNullValueNotDeliveredInfo = default!;
 #endif
         /// <summary>Additional information for raising a dispute of `type` **other**. Required for disputes of `type` **other**.**Note:** The **other** dispute `type` is deprecated. Do not create or submit any disputes for this dispute `type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo? OtherInfo { get => _explicitNullValueOtherInfo; set { _explicitNullValueOtherInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherInfo"); else _explicitNullProperties?.Remove("otherInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo? OtherInfo { get => _explicitNullValueOtherInfo; set { _explicitNullValueOtherInfo = value; AdditionalData?.Remove("otherInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherInfo"); else _explicitNullProperties?.Remove("otherInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo? _explicitNullValueOtherInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo OtherInfo { get => _explicitNullValueOtherInfo; set { _explicitNullValueOtherInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherInfo"); else _explicitNullProperties?.Remove("otherInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo OtherInfo { get => _explicitNullValueOtherInfo; set { _explicitNullValueOtherInfo = value; AdditionalData?.Remove("otherInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otherInfo"); else _explicitNullProperties?.Remove("otherInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo _explicitNullValueOtherInfo = default!;
 #endif
         /// <summary>The current status of the dispute.When you create a dispute, you can only set the `status` to **draft**. When you update a dispute, you can set the `status` to **submitted** or **closed**.Possible values: **draft**, **submitted**, **closed**, **won**, **chargeback**, **secondPresentment**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PatchableDisputeRequest"/> and sets the default values.
@@ -122,7 +129,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "notAsDescribedInfo", n => { NotAsDescribedInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate>(global::Soenneker.Adyen.OpenApiClient.Models.NotAsDescribedInfoUpdate.CreateFromDiscriminatorValue); } },
                 { "notDeliveredInfo", n => { NotDeliveredInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableNotDeliveredInfo.CreateFromDiscriminatorValue); } },
                 { "otherInfo", n => { OtherInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PatchableOtherInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

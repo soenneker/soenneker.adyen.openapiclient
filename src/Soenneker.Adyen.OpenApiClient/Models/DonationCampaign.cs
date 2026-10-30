@@ -17,17 +17,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amounts") is { } nullNodeAmounts && nullNodeAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amounts = null;
-            if (parseNode.GetChildNode("bannerUrl") is { } nullNodeBannerUrl && nullNodeBannerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BannerUrl = null;
-            if (parseNode.GetChildNode("campaignName") is { } nullNodeCampaignName && nullNodeCampaignName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignName = null;
-            if (parseNode.GetChildNode("causeName") is { } nullNodeCauseName && nullNodeCauseName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CauseName = null;
-            if (parseNode.GetChildNode("donation") is { } nullNodeDonation && nullNodeDonation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Donation = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("logoUrl") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
-            if (parseNode.GetChildNode("nonprofitDescription") is { } nullNodeNonprofitDescription && nullNodeNonprofitDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonprofitDescription = null;
-            if (parseNode.GetChildNode("nonprofitName") is { } nullNodeNonprofitName && nullNodeNonprofitName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonprofitName = null;
-            if (parseNode.GetChildNode("nonprofitUrl") is { } nullNodeNonprofitUrl && nullNodeNonprofitUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonprofitUrl = null;
-            if (parseNode.GetChildNode("termsAndConditionsUrl") is { } nullNodeTermsAndConditionsUrl && nullNodeTermsAndConditionsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsAndConditionsUrl = null;
+            if (parseNode.GetChildNode("amounts") is null) { _explicitNullValueAmounts = default!; _explicitNullProperties?.Remove("amounts"); }
+            else if (parseNode.GetChildNode("amounts") is { } nullNodeAmounts && nullNodeAmounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amounts = null;
+            if (parseNode.GetChildNode("bannerUrl") is null) { _explicitNullValueBannerUrl = default!; _explicitNullProperties?.Remove("bannerUrl"); }
+            else if (parseNode.GetChildNode("bannerUrl") is { } nullNodeBannerUrl && nullNodeBannerUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BannerUrl = null;
+            if (parseNode.GetChildNode("campaignName") is null) { _explicitNullValueCampaignName = default!; _explicitNullProperties?.Remove("campaignName"); }
+            else if (parseNode.GetChildNode("campaignName") is { } nullNodeCampaignName && nullNodeCampaignName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignName = null;
+            if (parseNode.GetChildNode("causeName") is null) { _explicitNullValueCauseName = default!; _explicitNullProperties?.Remove("causeName"); }
+            else if (parseNode.GetChildNode("causeName") is { } nullNodeCauseName && nullNodeCauseName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CauseName = null;
+            if (parseNode.GetChildNode("donation") is null) { _explicitNullValueDonation = default!; _explicitNullProperties?.Remove("donation"); }
+            else if (parseNode.GetChildNode("donation") is { } nullNodeDonation && nullNodeDonation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Donation = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("logoUrl") is null) { _explicitNullValueLogoUrl = default!; _explicitNullProperties?.Remove("logoUrl"); }
+            else if (parseNode.GetChildNode("logoUrl") is { } nullNodeLogoUrl && nullNodeLogoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogoUrl = null;
+            if (parseNode.GetChildNode("nonprofitDescription") is null) { _explicitNullValueNonprofitDescription = default!; _explicitNullProperties?.Remove("nonprofitDescription"); }
+            else if (parseNode.GetChildNode("nonprofitDescription") is { } nullNodeNonprofitDescription && nullNodeNonprofitDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonprofitDescription = null;
+            if (parseNode.GetChildNode("nonprofitName") is null) { _explicitNullValueNonprofitName = default!; _explicitNullProperties?.Remove("nonprofitName"); }
+            else if (parseNode.GetChildNode("nonprofitName") is { } nullNodeNonprofitName && nullNodeNonprofitName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonprofitName = null;
+            if (parseNode.GetChildNode("nonprofitUrl") is null) { _explicitNullValueNonprofitUrl = default!; _explicitNullProperties?.Remove("nonprofitUrl"); }
+            else if (parseNode.GetChildNode("nonprofitUrl") is { } nullNodeNonprofitUrl && nullNodeNonprofitUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonprofitUrl = null;
+            if (parseNode.GetChildNode("termsAndConditionsUrl") is null) { _explicitNullValueTermsAndConditionsUrl = default!; _explicitNullProperties?.Remove("termsAndConditionsUrl"); }
+            else if (parseNode.GetChildNode("termsAndConditionsUrl") is { } nullNodeTermsAndConditionsUrl && nullNodeTermsAndConditionsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TermsAndConditionsUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,111 +46,111 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The object that contains the fixed donation amounts that the shopper can select from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts? Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts? Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; AdditionalData?.Remove("amounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts? _explicitNullValueAmounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts Amounts { get => _explicitNullValueAmounts; set { _explicitNullValueAmounts = value; AdditionalData?.Remove("amounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amounts"); else _explicitNullProperties?.Remove("amounts"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignAmounts _explicitNullValueAmounts = default!;
 #endif
         /// <summary>The URL for the banner of the nonprofit or campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BannerUrl { get => _explicitNullValueBannerUrl; set { _explicitNullValueBannerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bannerUrl"); else _explicitNullProperties?.Remove("bannerUrl"); } }
+        public string? BannerUrl { get => _explicitNullValueBannerUrl; set { _explicitNullValueBannerUrl = value; AdditionalData?.Remove("bannerUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bannerUrl"); else _explicitNullProperties?.Remove("bannerUrl"); } }
         private string? _explicitNullValueBannerUrl = default!;
 #nullable restore
 #else
-        public string BannerUrl { get => _explicitNullValueBannerUrl; set { _explicitNullValueBannerUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bannerUrl"); else _explicitNullProperties?.Remove("bannerUrl"); } }
+        public string BannerUrl { get => _explicitNullValueBannerUrl; set { _explicitNullValueBannerUrl = value; AdditionalData?.Remove("bannerUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bannerUrl"); else _explicitNullProperties?.Remove("bannerUrl"); } }
         private string _explicitNullValueBannerUrl = default!;
 #endif
         /// <summary>The name of the donation campaign..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignName { get => _explicitNullValueCampaignName; set { _explicitNullValueCampaignName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignName"); else _explicitNullProperties?.Remove("campaignName"); } }
+        public string? CampaignName { get => _explicitNullValueCampaignName; set { _explicitNullValueCampaignName = value; AdditionalData?.Remove("campaignName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignName"); else _explicitNullProperties?.Remove("campaignName"); } }
         private string? _explicitNullValueCampaignName = default!;
 #nullable restore
 #else
-        public string CampaignName { get => _explicitNullValueCampaignName; set { _explicitNullValueCampaignName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignName"); else _explicitNullProperties?.Remove("campaignName"); } }
+        public string CampaignName { get => _explicitNullValueCampaignName; set { _explicitNullValueCampaignName = value; AdditionalData?.Remove("campaignName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaignName"); else _explicitNullProperties?.Remove("campaignName"); } }
         private string _explicitNullValueCampaignName = default!;
 #endif
         /// <summary>The cause of the nonprofit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CauseName { get => _explicitNullValueCauseName; set { _explicitNullValueCauseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causeName"); else _explicitNullProperties?.Remove("causeName"); } }
+        public string? CauseName { get => _explicitNullValueCauseName; set { _explicitNullValueCauseName = value; AdditionalData?.Remove("causeName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causeName"); else _explicitNullProperties?.Remove("causeName"); } }
         private string? _explicitNullValueCauseName = default!;
 #nullable restore
 #else
-        public string CauseName { get => _explicitNullValueCauseName; set { _explicitNullValueCauseName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causeName"); else _explicitNullProperties?.Remove("causeName"); } }
+        public string CauseName { get => _explicitNullValueCauseName; set { _explicitNullValueCauseName = value; AdditionalData?.Remove("causeName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causeName"); else _explicitNullProperties?.Remove("causeName"); } }
         private string _explicitNullValueCauseName = default!;
 #endif
         /// <summary>The object that contains the details of the donation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation? Donation { get => _explicitNullValueDonation; set { _explicitNullValueDonation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donation"); else _explicitNullProperties?.Remove("donation"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation? Donation { get => _explicitNullValueDonation; set { _explicitNullValueDonation = value; AdditionalData?.Remove("donation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donation"); else _explicitNullProperties?.Remove("donation"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation? _explicitNullValueDonation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation Donation { get => _explicitNullValueDonation; set { _explicitNullValueDonation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donation"); else _explicitNullProperties?.Remove("donation"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation Donation { get => _explicitNullValueDonation; set { _explicitNullValueDonation = value; AdditionalData?.Remove("donation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donation"); else _explicitNullProperties?.Remove("donation"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaignDonation _explicitNullValueDonation = default!;
 #endif
         /// <summary>The unique campaign ID of the donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The URL for the logo of the nonprofit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
+        public string? LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; AdditionalData?.Remove("logoUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
         private string? _explicitNullValueLogoUrl = default!;
 #nullable restore
 #else
-        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
+        public string LogoUrl { get => _explicitNullValueLogoUrl; set { _explicitNullValueLogoUrl = value; AdditionalData?.Remove("logoUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logoUrl"); else _explicitNullProperties?.Remove("logoUrl"); } }
         private string _explicitNullValueLogoUrl = default!;
 #endif
         /// <summary>The description of the nonprofit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NonprofitDescription { get => _explicitNullValueNonprofitDescription; set { _explicitNullValueNonprofitDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitDescription"); else _explicitNullProperties?.Remove("nonprofitDescription"); } }
+        public string? NonprofitDescription { get => _explicitNullValueNonprofitDescription; set { _explicitNullValueNonprofitDescription = value; AdditionalData?.Remove("nonprofitDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitDescription"); else _explicitNullProperties?.Remove("nonprofitDescription"); } }
         private string? _explicitNullValueNonprofitDescription = default!;
 #nullable restore
 #else
-        public string NonprofitDescription { get => _explicitNullValueNonprofitDescription; set { _explicitNullValueNonprofitDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitDescription"); else _explicitNullProperties?.Remove("nonprofitDescription"); } }
+        public string NonprofitDescription { get => _explicitNullValueNonprofitDescription; set { _explicitNullValueNonprofitDescription = value; AdditionalData?.Remove("nonprofitDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitDescription"); else _explicitNullProperties?.Remove("nonprofitDescription"); } }
         private string _explicitNullValueNonprofitDescription = default!;
 #endif
         /// <summary>The name of the nonprofit organization that receives the donation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NonprofitName { get => _explicitNullValueNonprofitName; set { _explicitNullValueNonprofitName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitName"); else _explicitNullProperties?.Remove("nonprofitName"); } }
+        public string? NonprofitName { get => _explicitNullValueNonprofitName; set { _explicitNullValueNonprofitName = value; AdditionalData?.Remove("nonprofitName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitName"); else _explicitNullProperties?.Remove("nonprofitName"); } }
         private string? _explicitNullValueNonprofitName = default!;
 #nullable restore
 #else
-        public string NonprofitName { get => _explicitNullValueNonprofitName; set { _explicitNullValueNonprofitName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitName"); else _explicitNullProperties?.Remove("nonprofitName"); } }
+        public string NonprofitName { get => _explicitNullValueNonprofitName; set { _explicitNullValueNonprofitName = value; AdditionalData?.Remove("nonprofitName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitName"); else _explicitNullProperties?.Remove("nonprofitName"); } }
         private string _explicitNullValueNonprofitName = default!;
 #endif
         /// <summary>The website URL of the nonprofit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NonprofitUrl { get => _explicitNullValueNonprofitUrl; set { _explicitNullValueNonprofitUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitUrl"); else _explicitNullProperties?.Remove("nonprofitUrl"); } }
+        public string? NonprofitUrl { get => _explicitNullValueNonprofitUrl; set { _explicitNullValueNonprofitUrl = value; AdditionalData?.Remove("nonprofitUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitUrl"); else _explicitNullProperties?.Remove("nonprofitUrl"); } }
         private string? _explicitNullValueNonprofitUrl = default!;
 #nullable restore
 #else
-        public string NonprofitUrl { get => _explicitNullValueNonprofitUrl; set { _explicitNullValueNonprofitUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitUrl"); else _explicitNullProperties?.Remove("nonprofitUrl"); } }
+        public string NonprofitUrl { get => _explicitNullValueNonprofitUrl; set { _explicitNullValueNonprofitUrl = value; AdditionalData?.Remove("nonprofitUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nonprofitUrl"); else _explicitNullProperties?.Remove("nonprofitUrl"); } }
         private string _explicitNullValueNonprofitUrl = default!;
 #endif
         /// <summary>The URL of the terms and conditions page of the nonprofit and the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsAndConditionsUrl { get => _explicitNullValueTermsAndConditionsUrl; set { _explicitNullValueTermsAndConditionsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsAndConditionsUrl"); else _explicitNullProperties?.Remove("termsAndConditionsUrl"); } }
+        public string? TermsAndConditionsUrl { get => _explicitNullValueTermsAndConditionsUrl; set { _explicitNullValueTermsAndConditionsUrl = value; AdditionalData?.Remove("termsAndConditionsUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsAndConditionsUrl"); else _explicitNullProperties?.Remove("termsAndConditionsUrl"); } }
         private string? _explicitNullValueTermsAndConditionsUrl = default!;
 #nullable restore
 #else
-        public string TermsAndConditionsUrl { get => _explicitNullValueTermsAndConditionsUrl; set { _explicitNullValueTermsAndConditionsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsAndConditionsUrl"); else _explicitNullProperties?.Remove("termsAndConditionsUrl"); } }
+        public string TermsAndConditionsUrl { get => _explicitNullValueTermsAndConditionsUrl; set { _explicitNullValueTermsAndConditionsUrl = value; AdditionalData?.Remove("termsAndConditionsUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("termsAndConditionsUrl"); else _explicitNullProperties?.Remove("termsAndConditionsUrl"); } }
         private string _explicitNullValueTermsAndConditionsUrl = default!;
 #endif
         /// <summary>

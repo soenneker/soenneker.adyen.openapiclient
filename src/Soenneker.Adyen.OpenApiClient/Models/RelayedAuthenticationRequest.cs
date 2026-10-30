@@ -17,13 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
-            if (parseNode.GetChildNode("purchase") is { } nullNodePurchase && nullNodePurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purchase = null;
-            if (parseNode.GetChildNode("threeDSRequestorAppURL") is { } nullNodeThreeDSRequestorAppURL && nullNodeThreeDSRequestorAppURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorAppURL = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
+            else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("paymentInstrumentId") is null) { _explicitNullValuePaymentInstrumentId = default!; _explicitNullProperties?.Remove("paymentInstrumentId"); }
+            else if (parseNode.GetChildNode("paymentInstrumentId") is { } nullNodePaymentInstrumentId && nullNodePaymentInstrumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrumentId = null;
+            if (parseNode.GetChildNode("purchase") is null) { _explicitNullValuePurchase = default!; _explicitNullProperties?.Remove("purchase"); }
+            else if (parseNode.GetChildNode("purchase") is { } nullNodePurchase && nullNodePurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purchase = null;
+            if (parseNode.GetChildNode("threeDSRequestorAppURL") is null) { _explicitNullValueThreeDSRequestorAppURL = default!; _explicitNullProperties?.Remove("threeDSRequestorAppURL"); }
+            else if (parseNode.GetChildNode("threeDSRequestorAppURL") is { } nullNodeThreeDSRequestorAppURL && nullNodeThreeDSRequestorAppURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSRequestorAppURL = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,58 +38,58 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The environment from which the webhook originated.Possible values: **test**, **live**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The unique identifier of the challenge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The unique identifier of the [payment instrument](https://docs.adyen.com/api-explorer/balanceplatform/latest/get/paymentInstruments/_id_) used for the purchase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        public string? PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; AdditionalData?.Remove("paymentInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
         private string? _explicitNullValuePaymentInstrumentId = default!;
 #nullable restore
 #else
-        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
+        public string PaymentInstrumentId { get => _explicitNullValuePaymentInstrumentId; set { _explicitNullValuePaymentInstrumentId = value; AdditionalData?.Remove("paymentInstrumentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrumentId"); else _explicitNullProperties?.Remove("paymentInstrumentId"); } }
         private string _explicitNullValuePaymentInstrumentId = default!;
 #endif
         /// <summary>The details of the purchase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase? Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase? Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; AdditionalData?.Remove("purchase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase? _explicitNullValuePurchase = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; AdditionalData?.Remove("purchase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase _explicitNullValuePurchase = default!;
 #endif
         /// <summary>URL for auto-switching to the threeDS Requestor App. If not present, the threeDS Requestor App doesn&apos;t support auto-switching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSRequestorAppURL { get => _explicitNullValueThreeDSRequestorAppURL; set { _explicitNullValueThreeDSRequestorAppURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAppURL"); else _explicitNullProperties?.Remove("threeDSRequestorAppURL"); } }
+        public string? ThreeDSRequestorAppURL { get => _explicitNullValueThreeDSRequestorAppURL; set { _explicitNullValueThreeDSRequestorAppURL = value; AdditionalData?.Remove("threeDSRequestorAppURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAppURL"); else _explicitNullProperties?.Remove("threeDSRequestorAppURL"); } }
         private string? _explicitNullValueThreeDSRequestorAppURL = default!;
 #nullable restore
 #else
-        public string ThreeDSRequestorAppURL { get => _explicitNullValueThreeDSRequestorAppURL; set { _explicitNullValueThreeDSRequestorAppURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAppURL"); else _explicitNullProperties?.Remove("threeDSRequestorAppURL"); } }
+        public string ThreeDSRequestorAppURL { get => _explicitNullValueThreeDSRequestorAppURL; set { _explicitNullValueThreeDSRequestorAppURL = value; AdditionalData?.Remove("threeDSRequestorAppURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSRequestorAppURL"); else _explicitNullProperties?.Remove("threeDSRequestorAppURL"); } }
         private string _explicitNullValueThreeDSRequestorAppURL = default!;
 #endif
         /// <summary>When the event was queued.</summary>
-        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>Type of notification.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthenticationRelayedType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthenticationRelayedType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthenticationRelayedType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequest"/> and sets the default values.
@@ -115,7 +122,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "purchase", n => { Purchase = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase>(global::Soenneker.Adyen.OpenApiClient.Models.RelayedAuthenticationRequestPurchase.CreateFromDiscriminatorValue); } },
                 { "threeDSRequestorAppURL", n => { ThreeDSRequestorAppURL = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthenticationRelayedType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformAuthenticationRelayedType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

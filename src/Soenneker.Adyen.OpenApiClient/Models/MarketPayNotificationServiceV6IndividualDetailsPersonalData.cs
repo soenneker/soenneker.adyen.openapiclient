@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dateOfBirth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
-            if (parseNode.GetChildNode("documentData") is { } nullNodeDocumentData && nullNodeDocumentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentData = null;
-            if (parseNode.GetChildNode("nationality") is { } nullNodeNationality && nullNodeNationality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nationality = null;
+            if (parseNode.GetChildNode("dateOfBirth") is null) { _explicitNullValueDateOfBirth = default!; _explicitNullProperties?.Remove("dateOfBirth"); }
+            else if (parseNode.GetChildNode("dateOfBirth") is { } nullNodeDateOfBirth && nullNodeDateOfBirth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateOfBirth = null;
+            if (parseNode.GetChildNode("documentData") is null) { _explicitNullValueDocumentData = default!; _explicitNullProperties?.Remove("documentData"); }
+            else if (parseNode.GetChildNode("documentData") is { } nullNodeDocumentData && nullNodeDocumentData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentData = null;
+            if (parseNode.GetChildNode("nationality") is null) { _explicitNullValueNationality = default!; _explicitNullProperties?.Remove("nationality"); }
+            else if (parseNode.GetChildNode("nationality") is { } nullNodeNationality && nullNodeNationality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nationality = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The person&apos;s date of birth, in ISO-8601 YYYY-MM-DD format. For example, **2000-01-31**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
+        public string? DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; AdditionalData?.Remove("dateOfBirth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
         private string? _explicitNullValueDateOfBirth = default!;
 #nullable restore
 #else
-        public string DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
+        public string DateOfBirth { get => _explicitNullValueDateOfBirth; set { _explicitNullValueDateOfBirth = value; AdditionalData?.Remove("dateOfBirth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateOfBirth"); else _explicitNullProperties?.Remove("dateOfBirth"); } }
         private string _explicitNullValueDateOfBirth = default!;
 #endif
         /// <summary>Array that contains information about the person&apos;s identification document. You can submit only one entry per document type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PersonalDocumentData>? DocumentData { get => _explicitNullValueDocumentData; set { _explicitNullValueDocumentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentData"); else _explicitNullProperties?.Remove("documentData"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PersonalDocumentData>? DocumentData { get => _explicitNullValueDocumentData; set { _explicitNullValueDocumentData = value; AdditionalData?.Remove("documentData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentData"); else _explicitNullProperties?.Remove("documentData"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PersonalDocumentData>? _explicitNullValueDocumentData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PersonalDocumentData> DocumentData { get => _explicitNullValueDocumentData; set { _explicitNullValueDocumentData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentData"); else _explicitNullProperties?.Remove("documentData"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PersonalDocumentData> DocumentData { get => _explicitNullValueDocumentData; set { _explicitNullValueDocumentData = value; AdditionalData?.Remove("documentData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentData"); else _explicitNullProperties?.Remove("documentData"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PersonalDocumentData> _explicitNullValueDocumentData = default!;
 #endif
         /// <summary>The nationality of the person represented by a two-character country code,  in [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. For example, **NL**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Nationality { get => _explicitNullValueNationality; set { _explicitNullValueNationality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nationality"); else _explicitNullProperties?.Remove("nationality"); } }
+        public string? Nationality { get => _explicitNullValueNationality; set { _explicitNullValueNationality = value; AdditionalData?.Remove("nationality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nationality"); else _explicitNullProperties?.Remove("nationality"); } }
         private string? _explicitNullValueNationality = default!;
 #nullable restore
 #else
-        public string Nationality { get => _explicitNullValueNationality; set { _explicitNullValueNationality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nationality"); else _explicitNullProperties?.Remove("nationality"); } }
+        public string Nationality { get => _explicitNullValueNationality; set { _explicitNullValueNationality = value; AdditionalData?.Remove("nationality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nationality"); else _explicitNullProperties?.Remove("nationality"); } }
         private string _explicitNullValueNationality = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("shopId") is { } nullNodeShopId && nullNodeShopId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopId = null;
+            if (parseNode.GetChildNode("shopId") is null) { _explicitNullValueShopId = default!; _explicitNullProperties?.Remove("shopId"); }
+            else if (parseNode.GetChildNode("shopId") is { } nullNodeShopId && nullNodeShopId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>ANCV [Shop ID](https://static.ancv.com/ddmc/connect/PTL/PAP_PTL_avec_interm%C3%A9diaire_Raccordement_et_Shop_ID.pdf). Format: exactly 8 numeric characters with the first digit set as **1** in the live environment and **9** in the test environment.Example: 10000008.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopId { get => _explicitNullValueShopId; set { _explicitNullValueShopId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopId"); else _explicitNullProperties?.Remove("shopId"); } }
+        public string? ShopId { get => _explicitNullValueShopId; set { _explicitNullValueShopId = value; AdditionalData?.Remove("shopId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopId"); else _explicitNullProperties?.Remove("shopId"); } }
         private string? _explicitNullValueShopId = default!;
 #nullable restore
 #else
-        public string ShopId { get => _explicitNullValueShopId; set { _explicitNullValueShopId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopId"); else _explicitNullProperties?.Remove("shopId"); } }
+        public string ShopId { get => _explicitNullValueShopId; set { _explicitNullValueShopId = value; AdditionalData?.Remove("shopId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopId"); else _explicitNullProperties?.Remove("shopId"); } }
         private string _explicitNullValueShopId = default!;
 #endif
         /// <summary>

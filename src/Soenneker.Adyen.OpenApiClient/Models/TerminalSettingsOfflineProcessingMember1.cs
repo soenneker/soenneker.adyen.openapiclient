@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("chipFloorLimit") is { } nullNodeChipFloorLimit && nullNodeChipFloorLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChipFloorLimit = null;
+            if (parseNode.GetChildNode("chipFloorLimit") is null) { _explicitNullValueChipFloorLimit = default!; _explicitNullProperties?.Remove("chipFloorLimit"); }
+            else if (parseNode.GetChildNode("chipFloorLimit") is { } nullNodeChipFloorLimit && nullNodeChipFloorLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChipFloorLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum offline transaction amount for chip cards, in the processing currency and specified in [minor units](https://docs.adyen.com/development-resources/currency-codes).</summary>
-        public int? ChipFloorLimit { get => _explicitNullValueChipFloorLimit; set { _explicitNullValueChipFloorLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chipFloorLimit"); else _explicitNullProperties?.Remove("chipFloorLimit"); } }
+        public int? ChipFloorLimit { get => _explicitNullValueChipFloorLimit; set { _explicitNullValueChipFloorLimit = value; AdditionalData?.Remove("chipFloorLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chipFloorLimit"); else _explicitNullProperties?.Remove("chipFloorLimit"); } }
         private int? _explicitNullValueChipFloorLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsOfflineProcessingMember1"/> and sets the default values.

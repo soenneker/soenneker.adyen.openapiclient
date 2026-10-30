@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
-            if (parseNode.GetChildNode("ServicesEnabled") is { } nullNodeServicesEnabled && nullNodeServicesEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServicesEnabled = null;
-            if (parseNode.GetChildNode("TransactionAction") is { } nullNodeTransactionAction && nullNodeTransactionAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionAction = null;
+            if (parseNode.GetChildNode("DisplayOutput") is null) { _explicitNullValueDisplayOutput = default!; _explicitNullProperties?.Remove("DisplayOutput"); }
+            else if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
+            if (parseNode.GetChildNode("ServicesEnabled") is null) { _explicitNullValueServicesEnabled = default!; _explicitNullProperties?.Remove("ServicesEnabled"); }
+            else if (parseNode.GetChildNode("ServicesEnabled") is { } nullNodeServicesEnabled && nullNodeServicesEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServicesEnabled = null;
+            if (parseNode.GetChildNode("TransactionAction") is null) { _explicitNullValueTransactionAction = default!; _explicitNullProperties?.Remove("TransactionAction"); }
+            else if (parseNode.GetChildNode("TransactionAction") is { } nullNodeTransactionAction && nullNodeTransactionAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionAction = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information to display and the way to process the display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; AdditionalData?.Remove("DisplayOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput? _explicitNullValueDisplayOutput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; AdditionalData?.Remove("DisplayOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput _explicitNullValueDisplayOutput = default!;
 #endif
         /// <summary>Services which are enabled before the start-up of a transaction.Mandatory if `TransactionAction` is `StartTransaction`, absent if not.Possible values:* **CardAcquisition*** **Loyalty*** **Payment**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem?>? ServicesEnabled { get => _explicitNullValueServicesEnabled; set { _explicitNullValueServicesEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServicesEnabled"); else _explicitNullProperties?.Remove("ServicesEnabled"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem?>? ServicesEnabled { get => _explicitNullValueServicesEnabled; set { _explicitNullValueServicesEnabled = value; AdditionalData?.Remove("ServicesEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServicesEnabled"); else _explicitNullProperties?.Remove("ServicesEnabled"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem?>? _explicitNullValueServicesEnabled = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem?> ServicesEnabled { get => _explicitNullValueServicesEnabled; set { _explicitNullValueServicesEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServicesEnabled"); else _explicitNullProperties?.Remove("ServicesEnabled"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem?> ServicesEnabled { get => _explicitNullValueServicesEnabled; set { _explicitNullValueServicesEnabled = value; AdditionalData?.Remove("ServicesEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ServicesEnabled"); else _explicitNullProperties?.Remove("ServicesEnabled"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem?> _explicitNullValueServicesEnabled = default!;
 #endif
         /// <summary>Action to realise on a transaction. In an `EnableService` request message:  - Starts a transaction by a swipe-ahead mechanism, with the services which are enabled.  - Aborts a swipe-ahead transaction or started by a `CardAcquisition`, and not followed by a service request from the Sale System to complete the transaction.Possible values:* **StartTransaction*** **AbortTransaction**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction? TransactionAction { get => _explicitNullValueTransactionAction; set { _explicitNullValueTransactionAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionAction"); else _explicitNullProperties?.Remove("TransactionAction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction? TransactionAction { get => _explicitNullValueTransactionAction; set { _explicitNullValueTransactionAction = value; AdditionalData?.Remove("TransactionAction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionAction"); else _explicitNullProperties?.Remove("TransactionAction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction? _explicitNullValueTransactionAction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequest"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "DisplayOutput", n => { DisplayOutput = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput>(global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestDisplayOutput.CreateFromDiscriminatorValue); } },
                 { "ServicesEnabled", n => { ServicesEnabled = n.GetCollectionOfEnumValues<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestServicesEnabledItem>()?.AsList(); } },
-                { "TransactionAction", n => { TransactionAction = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction>(); } },
+                { "TransactionAction", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.EnableServiceRequestTransactionAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransactionAction = default; _explicitNullProperties?.Remove("TransactionAction"); AdditionalData["TransactionAction"] = unknown; } else { TransactionAction = parsed; AdditionalData.Remove("TransactionAction"); } } },
             };
         }
         /// <summary>

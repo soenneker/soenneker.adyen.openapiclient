@@ -18,12 +18,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("LoyaltyResult") is { } nullNodeLoyaltyResult && nullNodeLoyaltyResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyResult = null;
-            if (parseNode.GetChildNode("PaymentReceipt") is { } nullNodePaymentReceipt && nullNodePaymentReceipt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentReceipt = null;
-            if (parseNode.GetChildNode("PaymentResult") is { } nullNodePaymentResult && nullNodePaymentResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentResult = null;
-            if (parseNode.GetChildNode("POIData") is { } nullNodePOIData && nullNodePOIData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIData = null;
-            if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
-            if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
+            if (parseNode.GetChildNode("LoyaltyResult") is null) { _explicitNullValueLoyaltyResult = default!; _explicitNullProperties?.Remove("LoyaltyResult"); }
+            else if (parseNode.GetChildNode("LoyaltyResult") is { } nullNodeLoyaltyResult && nullNodeLoyaltyResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyResult = null;
+            if (parseNode.GetChildNode("PaymentReceipt") is null) { _explicitNullValuePaymentReceipt = default!; _explicitNullProperties?.Remove("PaymentReceipt"); }
+            else if (parseNode.GetChildNode("PaymentReceipt") is { } nullNodePaymentReceipt && nullNodePaymentReceipt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentReceipt = null;
+            if (parseNode.GetChildNode("PaymentResult") is null) { _explicitNullValuePaymentResult = default!; _explicitNullProperties?.Remove("PaymentResult"); }
+            else if (parseNode.GetChildNode("PaymentResult") is { } nullNodePaymentResult && nullNodePaymentResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentResult = null;
+            if (parseNode.GetChildNode("POIData") is null) { _explicitNullValuePOIData = default!; _explicitNullProperties?.Remove("POIData"); }
+            else if (parseNode.GetChildNode("POIData") is { } nullNodePOIData && nullNodePOIData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIData = null;
+            if (parseNode.GetChildNode("Response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("Response"); }
+            else if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("SaleData") is null) { _explicitNullValueSaleData = default!; _explicitNullProperties?.Remove("SaleData"); }
+            else if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Data related to the result of a processed loyalty transaction.Loyalty cards used with the payment transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult>? LoyaltyResult { get => _explicitNullValueLoyaltyResult; set { _explicitNullValueLoyaltyResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyResult"); else _explicitNullProperties?.Remove("LoyaltyResult"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult>? LoyaltyResult { get => _explicitNullValueLoyaltyResult; set { _explicitNullValueLoyaltyResult = value; AdditionalData?.Remove("LoyaltyResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyResult"); else _explicitNullProperties?.Remove("LoyaltyResult"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult>? _explicitNullValueLoyaltyResult = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult> LoyaltyResult { get => _explicitNullValueLoyaltyResult; set { _explicitNullValueLoyaltyResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyResult"); else _explicitNullProperties?.Remove("LoyaltyResult"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult> LoyaltyResult { get => _explicitNullValueLoyaltyResult; set { _explicitNullValueLoyaltyResult = value; AdditionalData?.Remove("LoyaltyResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyResult"); else _explicitNullProperties?.Remove("LoyaltyResult"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResult> _explicitNullValueLoyaltyResult = default!;
 #endif
         /// <summary>Customer or Merchant payment receipt. If the payment receipts are printed by the Sale system and the POI or the Sale does not implement the Print exchange (Basic profile).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>? PaymentReceipt { get => _explicitNullValuePaymentReceipt; set { _explicitNullValuePaymentReceipt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentReceipt"); else _explicitNullProperties?.Remove("PaymentReceipt"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>? PaymentReceipt { get => _explicitNullValuePaymentReceipt; set { _explicitNullValuePaymentReceipt = value; AdditionalData?.Remove("PaymentReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentReceipt"); else _explicitNullProperties?.Remove("PaymentReceipt"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt>? _explicitNullValuePaymentReceipt = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt> PaymentReceipt { get => _explicitNullValuePaymentReceipt; set { _explicitNullValuePaymentReceipt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentReceipt"); else _explicitNullProperties?.Remove("PaymentReceipt"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt> PaymentReceipt { get => _explicitNullValuePaymentReceipt; set { _explicitNullValuePaymentReceipt = value; AdditionalData?.Remove("PaymentReceipt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentReceipt"); else _explicitNullProperties?.Remove("PaymentReceipt"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt> _explicitNullValuePaymentReceipt = default!;
 #endif
         /// <summary>Data related to the result of a processed payment transaction.If one data element is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult? PaymentResult { get => _explicitNullValuePaymentResult; set { _explicitNullValuePaymentResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentResult"); else _explicitNullProperties?.Remove("PaymentResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult? PaymentResult { get => _explicitNullValuePaymentResult; set { _explicitNullValuePaymentResult = value; AdditionalData?.Remove("PaymentResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentResult"); else _explicitNullProperties?.Remove("PaymentResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult? _explicitNullValuePaymentResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult PaymentResult { get => _explicitNullValuePaymentResult; set { _explicitNullValuePaymentResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentResult"); else _explicitNullProperties?.Remove("PaymentResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult PaymentResult { get => _explicitNullValuePaymentResult; set { _explicitNullValuePaymentResult = value; AdditionalData?.Remove("PaymentResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentResult"); else _explicitNullProperties?.Remove("PaymentResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponsePaymentResult _explicitNullValuePaymentResult = default!;
 #endif
         /// <summary>Data related to the POI System.In the Message Response, identification of the POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData? POIData { get => _explicitNullValuePOIData; set { _explicitNullValuePOIData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIData"); else _explicitNullProperties?.Remove("POIData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData? POIData { get => _explicitNullValuePOIData; set { _explicitNullValuePOIData = value; AdditionalData?.Remove("POIData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIData"); else _explicitNullProperties?.Remove("POIData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PoiData? _explicitNullValuePOIData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData POIData { get => _explicitNullValuePOIData; set { _explicitNullValuePOIData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIData"); else _explicitNullProperties?.Remove("POIData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PoiData POIData { get => _explicitNullValuePOIData; set { _explicitNullValuePOIData = value; AdditionalData?.Remove("POIData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIData"); else _explicitNullProperties?.Remove("POIData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PoiData _explicitNullValuePOIData = default!;
 #endif
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue _explicitNullValueResponse = default!;
 #endif
         /// <summary>Data related to the Sale System.Copy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponseSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponseSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; AdditionalData?.Remove("SaleData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponseSaleData? _explicitNullValueSaleData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponseSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponseSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; AdditionalData?.Remove("SaleData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalApiV1PaymentResponseSaleData _explicitNullValueSaleData = default!;
 #endif
         /// <summary>

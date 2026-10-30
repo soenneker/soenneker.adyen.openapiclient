@@ -18,12 +18,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("APDUClass") is { } nullNodeAPDUClass && nullNodeAPDUClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUClass = null;
-            if (parseNode.GetChildNode("APDUData") is { } nullNodeAPDUData && nullNodeAPDUData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUData = null;
-            if (parseNode.GetChildNode("APDUExpectedLength") is { } nullNodeAPDUExpectedLength && nullNodeAPDUExpectedLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUExpectedLength = null;
-            if (parseNode.GetChildNode("APDUInstruction") is { } nullNodeAPDUInstruction && nullNodeAPDUInstruction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUInstruction = null;
-            if (parseNode.GetChildNode("APDUPar1") is { } nullNodeAPDUPar1 && nullNodeAPDUPar1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUPar1 = null;
-            if (parseNode.GetChildNode("APDUPar2") is { } nullNodeAPDUPar2 && nullNodeAPDUPar2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUPar2 = null;
+            if (parseNode.GetChildNode("APDUClass") is null) { _explicitNullValueAPDUClass = default!; _explicitNullProperties?.Remove("APDUClass"); }
+            else if (parseNode.GetChildNode("APDUClass") is { } nullNodeAPDUClass && nullNodeAPDUClass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUClass = null;
+            if (parseNode.GetChildNode("APDUData") is null) { _explicitNullValueAPDUData = default!; _explicitNullProperties?.Remove("APDUData"); }
+            else if (parseNode.GetChildNode("APDUData") is { } nullNodeAPDUData && nullNodeAPDUData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUData = null;
+            if (parseNode.GetChildNode("APDUExpectedLength") is null) { _explicitNullValueAPDUExpectedLength = default!; _explicitNullProperties?.Remove("APDUExpectedLength"); }
+            else if (parseNode.GetChildNode("APDUExpectedLength") is { } nullNodeAPDUExpectedLength && nullNodeAPDUExpectedLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUExpectedLength = null;
+            if (parseNode.GetChildNode("APDUInstruction") is null) { _explicitNullValueAPDUInstruction = default!; _explicitNullProperties?.Remove("APDUInstruction"); }
+            else if (parseNode.GetChildNode("APDUInstruction") is { } nullNodeAPDUInstruction && nullNodeAPDUInstruction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUInstruction = null;
+            if (parseNode.GetChildNode("APDUPar1") is null) { _explicitNullValueAPDUPar1 = default!; _explicitNullProperties?.Remove("APDUPar1"); }
+            else if (parseNode.GetChildNode("APDUPar1") is { } nullNodeAPDUPar1 && nullNodeAPDUPar1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUPar1 = null;
+            if (parseNode.GetChildNode("APDUPar2") is null) { _explicitNullValueAPDUPar2 = default!; _explicitNullProperties?.Remove("APDUPar2"); }
+            else if (parseNode.GetChildNode("APDUPar2") is { } nullNodeAPDUPar2 && nullNodeAPDUPar2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) APDUPar2 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,61 +37,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Class field of the APDU command (CLA). APDU request for Card Reader device request. For specific card like synchronous card, a private value should be used in accordance to ISO 7816- 4 (private range D0-FE).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? APDUClass { get => _explicitNullValueAPDUClass; set { _explicitNullValueAPDUClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUClass"); else _explicitNullProperties?.Remove("APDUClass"); } }
+        public byte[]? APDUClass { get => _explicitNullValueAPDUClass; set { _explicitNullValueAPDUClass = value; AdditionalData?.Remove("APDUClass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUClass"); else _explicitNullProperties?.Remove("APDUClass"); } }
         private byte[]? _explicitNullValueAPDUClass = default!;
 #nullable restore
 #else
-        public byte[] APDUClass { get => _explicitNullValueAPDUClass; set { _explicitNullValueAPDUClass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUClass"); else _explicitNullProperties?.Remove("APDUClass"); } }
+        public byte[] APDUClass { get => _explicitNullValueAPDUClass; set { _explicitNullValueAPDUClass = value; AdditionalData?.Remove("APDUClass"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUClass"); else _explicitNullProperties?.Remove("APDUClass"); } }
         private byte[] _explicitNullValueAPDUClass = default!;
 #endif
         /// <summary>Data field of the APDU command (Lc + Data).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? APDUData { get => _explicitNullValueAPDUData; set { _explicitNullValueAPDUData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUData"); else _explicitNullProperties?.Remove("APDUData"); } }
+        public byte[]? APDUData { get => _explicitNullValueAPDUData; set { _explicitNullValueAPDUData = value; AdditionalData?.Remove("APDUData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUData"); else _explicitNullProperties?.Remove("APDUData"); } }
         private byte[]? _explicitNullValueAPDUData = default!;
 #nullable restore
 #else
-        public byte[] APDUData { get => _explicitNullValueAPDUData; set { _explicitNullValueAPDUData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUData"); else _explicitNullProperties?.Remove("APDUData"); } }
+        public byte[] APDUData { get => _explicitNullValueAPDUData; set { _explicitNullValueAPDUData = value; AdditionalData?.Remove("APDUData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUData"); else _explicitNullProperties?.Remove("APDUData"); } }
         private byte[] _explicitNullValueAPDUData = default!;
 #endif
         /// <summary>Expected length of the data field of the APDU response to the command (Le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? APDUExpectedLength { get => _explicitNullValueAPDUExpectedLength; set { _explicitNullValueAPDUExpectedLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUExpectedLength"); else _explicitNullProperties?.Remove("APDUExpectedLength"); } }
+        public byte[]? APDUExpectedLength { get => _explicitNullValueAPDUExpectedLength; set { _explicitNullValueAPDUExpectedLength = value; AdditionalData?.Remove("APDUExpectedLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUExpectedLength"); else _explicitNullProperties?.Remove("APDUExpectedLength"); } }
         private byte[]? _explicitNullValueAPDUExpectedLength = default!;
 #nullable restore
 #else
-        public byte[] APDUExpectedLength { get => _explicitNullValueAPDUExpectedLength; set { _explicitNullValueAPDUExpectedLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUExpectedLength"); else _explicitNullProperties?.Remove("APDUExpectedLength"); } }
+        public byte[] APDUExpectedLength { get => _explicitNullValueAPDUExpectedLength; set { _explicitNullValueAPDUExpectedLength = value; AdditionalData?.Remove("APDUExpectedLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUExpectedLength"); else _explicitNullProperties?.Remove("APDUExpectedLength"); } }
         private byte[] _explicitNullValueAPDUExpectedLength = default!;
 #endif
         /// <summary>Instruction field of the APDU command (INS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? APDUInstruction { get => _explicitNullValueAPDUInstruction; set { _explicitNullValueAPDUInstruction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUInstruction"); else _explicitNullProperties?.Remove("APDUInstruction"); } }
+        public byte[]? APDUInstruction { get => _explicitNullValueAPDUInstruction; set { _explicitNullValueAPDUInstruction = value; AdditionalData?.Remove("APDUInstruction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUInstruction"); else _explicitNullProperties?.Remove("APDUInstruction"); } }
         private byte[]? _explicitNullValueAPDUInstruction = default!;
 #nullable restore
 #else
-        public byte[] APDUInstruction { get => _explicitNullValueAPDUInstruction; set { _explicitNullValueAPDUInstruction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUInstruction"); else _explicitNullProperties?.Remove("APDUInstruction"); } }
+        public byte[] APDUInstruction { get => _explicitNullValueAPDUInstruction; set { _explicitNullValueAPDUInstruction = value; AdditionalData?.Remove("APDUInstruction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUInstruction"); else _explicitNullProperties?.Remove("APDUInstruction"); } }
         private byte[] _explicitNullValueAPDUInstruction = default!;
 #endif
         /// <summary>Parameter 1 field of the APDU command (P1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? APDUPar1 { get => _explicitNullValueAPDUPar1; set { _explicitNullValueAPDUPar1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar1"); else _explicitNullProperties?.Remove("APDUPar1"); } }
+        public byte[]? APDUPar1 { get => _explicitNullValueAPDUPar1; set { _explicitNullValueAPDUPar1 = value; AdditionalData?.Remove("APDUPar1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar1"); else _explicitNullProperties?.Remove("APDUPar1"); } }
         private byte[]? _explicitNullValueAPDUPar1 = default!;
 #nullable restore
 #else
-        public byte[] APDUPar1 { get => _explicitNullValueAPDUPar1; set { _explicitNullValueAPDUPar1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar1"); else _explicitNullProperties?.Remove("APDUPar1"); } }
+        public byte[] APDUPar1 { get => _explicitNullValueAPDUPar1; set { _explicitNullValueAPDUPar1 = value; AdditionalData?.Remove("APDUPar1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar1"); else _explicitNullProperties?.Remove("APDUPar1"); } }
         private byte[] _explicitNullValueAPDUPar1 = default!;
 #endif
         /// <summary>Parameter 2 field of the APDU command(P2).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? APDUPar2 { get => _explicitNullValueAPDUPar2; set { _explicitNullValueAPDUPar2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar2"); else _explicitNullProperties?.Remove("APDUPar2"); } }
+        public byte[]? APDUPar2 { get => _explicitNullValueAPDUPar2; set { _explicitNullValueAPDUPar2 = value; AdditionalData?.Remove("APDUPar2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar2"); else _explicitNullProperties?.Remove("APDUPar2"); } }
         private byte[]? _explicitNullValueAPDUPar2 = default!;
 #nullable restore
 #else
-        public byte[] APDUPar2 { get => _explicitNullValueAPDUPar2; set { _explicitNullValueAPDUPar2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar2"); else _explicitNullProperties?.Remove("APDUPar2"); } }
+        public byte[] APDUPar2 { get => _explicitNullValueAPDUPar2; set { _explicitNullValueAPDUPar2 = value; AdditionalData?.Remove("APDUPar2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("APDUPar2"); else _explicitNullProperties?.Remove("APDUPar2"); } }
         private byte[] _explicitNullValueAPDUPar2 = default!;
 #endif
         /// <summary>

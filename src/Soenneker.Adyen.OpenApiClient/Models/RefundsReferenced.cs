@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableStandaloneRefunds") is { } nullNodeEnableStandaloneRefunds && nullNodeEnableStandaloneRefunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStandaloneRefunds = null;
+            if (parseNode.GetChildNode("enableStandaloneRefunds") is null) { _explicitNullValueEnableStandaloneRefunds = default!; _explicitNullProperties?.Remove("enableStandaloneRefunds"); }
+            else if (parseNode.GetChildNode("enableStandaloneRefunds") is { } nullNodeEnableStandaloneRefunds && nullNodeEnableStandaloneRefunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStandaloneRefunds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether referenced refunds are enabled on the standalone terminal.</summary>
-        public bool? EnableStandaloneRefunds { get => _explicitNullValueEnableStandaloneRefunds; set { _explicitNullValueEnableStandaloneRefunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableStandaloneRefunds"); else _explicitNullProperties?.Remove("enableStandaloneRefunds"); } }
+        public bool? EnableStandaloneRefunds { get => _explicitNullValueEnableStandaloneRefunds; set { _explicitNullValueEnableStandaloneRefunds = value; AdditionalData?.Remove("enableStandaloneRefunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableStandaloneRefunds"); else _explicitNullProperties?.Remove("enableStandaloneRefunds"); } }
         private bool? _explicitNullValueEnableStandaloneRefunds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.RefundsReferenced"/> and sets the default values.

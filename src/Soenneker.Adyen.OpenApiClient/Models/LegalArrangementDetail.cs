@@ -17,15 +17,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("legalArrangementCode") is { } nullNodeLegalArrangementCode && nullNodeLegalArrangementCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementCode = null;
-            if (parseNode.GetChildNode("legalArrangementEntities") is { } nullNodeLegalArrangementEntities && nullNodeLegalArrangementEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementEntities = null;
-            if (parseNode.GetChildNode("legalArrangementReference") is { } nullNodeLegalArrangementReference && nullNodeLegalArrangementReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementReference = null;
-            if (parseNode.GetChildNode("legalForm") is { } nullNodeLegalForm && nullNodeLegalForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalForm = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("registrationNumber") is { } nullNodeRegistrationNumber && nullNodeRegistrationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationNumber = null;
-            if (parseNode.GetChildNode("taxNumber") is { } nullNodeTaxNumber && nullNodeTaxNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxNumber = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("legalArrangementCode") is null) { _explicitNullValueLegalArrangementCode = default!; _explicitNullProperties?.Remove("legalArrangementCode"); }
+            else if (parseNode.GetChildNode("legalArrangementCode") is { } nullNodeLegalArrangementCode && nullNodeLegalArrangementCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementCode = null;
+            if (parseNode.GetChildNode("legalArrangementEntities") is null) { _explicitNullValueLegalArrangementEntities = default!; _explicitNullProperties?.Remove("legalArrangementEntities"); }
+            else if (parseNode.GetChildNode("legalArrangementEntities") is { } nullNodeLegalArrangementEntities && nullNodeLegalArrangementEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementEntities = null;
+            if (parseNode.GetChildNode("legalArrangementReference") is null) { _explicitNullValueLegalArrangementReference = default!; _explicitNullProperties?.Remove("legalArrangementReference"); }
+            else if (parseNode.GetChildNode("legalArrangementReference") is { } nullNodeLegalArrangementReference && nullNodeLegalArrangementReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalArrangementReference = null;
+            if (parseNode.GetChildNode("legalForm") is null) { _explicitNullValueLegalForm = default!; _explicitNullProperties?.Remove("legalForm"); }
+            else if (parseNode.GetChildNode("legalForm") is { } nullNodeLegalForm && nullNodeLegalForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalForm = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("registrationNumber") is null) { _explicitNullValueRegistrationNumber = default!; _explicitNullProperties?.Remove("registrationNumber"); }
+            else if (parseNode.GetChildNode("registrationNumber") is { } nullNodeRegistrationNumber && nullNodeRegistrationNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationNumber = null;
+            if (parseNode.GetChildNode("taxNumber") is null) { _explicitNullValueTaxNumber = default!; _explicitNullProperties?.Remove("taxNumber"); }
+            else if (parseNode.GetChildNode("taxNumber") is { } nullNodeTaxNumber && nullNodeTaxNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxNumber = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,78 +42,78 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The address of the legal arrangement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>Adyen-generated unique alphanumeric identifier (UUID) for the entry, returned in the response when you create a legal arrangement.Use only when updating an account holder. If you include this field when creating an account holder, the request will fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
+        public string? LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; AdditionalData?.Remove("legalArrangementCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
         private string? _explicitNullValueLegalArrangementCode = default!;
 #nullable restore
 #else
-        public string LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
+        public string LegalArrangementCode { get => _explicitNullValueLegalArrangementCode; set { _explicitNullValueLegalArrangementCode = value; AdditionalData?.Remove("legalArrangementCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementCode"); else _explicitNullProperties?.Remove("legalArrangementCode"); } }
         private string _explicitNullValueLegalArrangementCode = default!;
 #endif
         /// <summary>An array containing information about other entities that are part of the legal arrangement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>? LegalArrangementEntities { get => _explicitNullValueLegalArrangementEntities; set { _explicitNullValueLegalArrangementEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntities"); else _explicitNullProperties?.Remove("legalArrangementEntities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>? LegalArrangementEntities { get => _explicitNullValueLegalArrangementEntities; set { _explicitNullValueLegalArrangementEntities = value; AdditionalData?.Remove("legalArrangementEntities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntities"); else _explicitNullProperties?.Remove("legalArrangementEntities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>? _explicitNullValueLegalArrangementEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail> LegalArrangementEntities { get => _explicitNullValueLegalArrangementEntities; set { _explicitNullValueLegalArrangementEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntities"); else _explicitNullProperties?.Remove("legalArrangementEntities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail> LegalArrangementEntities { get => _explicitNullValueLegalArrangementEntities; set { _explicitNullValueLegalArrangementEntities = value; AdditionalData?.Remove("legalArrangementEntities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementEntities"); else _explicitNullProperties?.Remove("legalArrangementEntities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail> _explicitNullValueLegalArrangementEntities = default!;
 #endif
         /// <summary>Your reference for the legal arrangement. Must be between 3 to 128 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalArrangementReference { get => _explicitNullValueLegalArrangementReference; set { _explicitNullValueLegalArrangementReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementReference"); else _explicitNullProperties?.Remove("legalArrangementReference"); } }
+        public string? LegalArrangementReference { get => _explicitNullValueLegalArrangementReference; set { _explicitNullValueLegalArrangementReference = value; AdditionalData?.Remove("legalArrangementReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementReference"); else _explicitNullProperties?.Remove("legalArrangementReference"); } }
         private string? _explicitNullValueLegalArrangementReference = default!;
 #nullable restore
 #else
-        public string LegalArrangementReference { get => _explicitNullValueLegalArrangementReference; set { _explicitNullValueLegalArrangementReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementReference"); else _explicitNullProperties?.Remove("legalArrangementReference"); } }
+        public string LegalArrangementReference { get => _explicitNullValueLegalArrangementReference; set { _explicitNullValueLegalArrangementReference = value; AdditionalData?.Remove("legalArrangementReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalArrangementReference"); else _explicitNullProperties?.Remove("legalArrangementReference"); } }
         private string _explicitNullValueLegalArrangementReference = default!;
 #endif
         /// <summary>The form of legal arrangement. Required if `type` is **Trust** or **Partnership**.The possible values depend on the `type`.- For `type` **Trust**:  **CashManagementTrust**, **CorporateUnitTrust**, **DeceasedEstate**, **DiscretionaryInvestmentTrust**, **DiscretionaryServicesManagementTrust**, **DiscretionaryTradingTrust**, **FirstHomeSaverAccountsTrust**, **FixedTrust**, **FixedUnitTrust**, **HybridTrust**, **ListedPublicUnitTrust**, **OtherTrust**, **PooledSuperannuationTrust**, **PublicTradingTrust**, or **UnlistedPublicUnitTrust**.- For `type` **Partnership**: **LimitedPartnership**, **FamilyPartnership**, or **OtherPartnership**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm? LegalForm { get => _explicitNullValueLegalForm; set { _explicitNullValueLegalForm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalForm"); else _explicitNullProperties?.Remove("legalForm"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm? LegalForm { get => _explicitNullValueLegalForm; set { _explicitNullValueLegalForm = value; AdditionalData?.Remove("legalForm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalForm"); else _explicitNullProperties?.Remove("legalForm"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm? _explicitNullValueLegalForm = default!;
         /// <summary>The legal name of the legal arrangement. Minimum length: 3 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The registration number of the legal arrangement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrationNumber"); else _explicitNullProperties?.Remove("registrationNumber"); } }
+        public string? RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; AdditionalData?.Remove("registrationNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrationNumber"); else _explicitNullProperties?.Remove("registrationNumber"); } }
         private string? _explicitNullValueRegistrationNumber = default!;
 #nullable restore
 #else
-        public string RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrationNumber"); else _explicitNullProperties?.Remove("registrationNumber"); } }
+        public string RegistrationNumber { get => _explicitNullValueRegistrationNumber; set { _explicitNullValueRegistrationNumber = value; AdditionalData?.Remove("registrationNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrationNumber"); else _explicitNullProperties?.Remove("registrationNumber"); } }
         private string _explicitNullValueRegistrationNumber = default!;
 #endif
         /// <summary>The tax identification number of the legal arrangement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxNumber { get => _explicitNullValueTaxNumber; set { _explicitNullValueTaxNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxNumber"); else _explicitNullProperties?.Remove("taxNumber"); } }
+        public string? TaxNumber { get => _explicitNullValueTaxNumber; set { _explicitNullValueTaxNumber = value; AdditionalData?.Remove("taxNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxNumber"); else _explicitNullProperties?.Remove("taxNumber"); } }
         private string? _explicitNullValueTaxNumber = default!;
 #nullable restore
 #else
-        public string TaxNumber { get => _explicitNullValueTaxNumber; set { _explicitNullValueTaxNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxNumber"); else _explicitNullProperties?.Remove("taxNumber"); } }
+        public string TaxNumber { get => _explicitNullValueTaxNumber; set { _explicitNullValueTaxNumber = value; AdditionalData?.Remove("taxNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxNumber"); else _explicitNullProperties?.Remove("taxNumber"); } }
         private string _explicitNullValueTaxNumber = default!;
 #endif
         /// <summary>The [type of legal arrangement](https://docs.adyen.com/classic-platforms/verification-process/legal-arrangements#types-of-legal-arrangements).Possible values:- **Association** - **Partnership** - **SoleProprietorship** - **Trust** </summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetail"/> and sets the default values.
@@ -135,11 +144,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "legalArrangementCode", n => { LegalArrangementCode = n.GetStringValue(); } },
                 { "legalArrangementEntities", n => { LegalArrangementEntities = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail>(global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementEntityDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legalArrangementReference", n => { LegalArrangementReference = n.GetStringValue(); } },
-                { "legalForm", n => { LegalForm = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm>(); } },
+                { "legalForm", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailLegalForm>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLegalForm = default; _explicitNullProperties?.Remove("legalForm"); AdditionalData["legalForm"] = unknown; } else { LegalForm = parsed; AdditionalData.Remove("legalForm"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "registrationNumber", n => { RegistrationNumber = n.GetStringValue(); } },
                 { "taxNumber", n => { TaxNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.LegalArrangementDetailType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

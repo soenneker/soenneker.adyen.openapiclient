@@ -17,19 +17,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountIdentifier") is { } nullNodeAccountIdentifier && nullNodeAccountIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIdentifier = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("realLastFour") is { } nullNodeRealLastFour && nullNodeRealLastFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RealLastFour = null;
+            if (parseNode.GetChildNode("accountIdentifier") is null) { _explicitNullValueAccountIdentifier = default!; _explicitNullProperties?.Remove("accountIdentifier"); }
+            else if (parseNode.GetChildNode("accountIdentifier") is { } nullNodeAccountIdentifier && nullNodeAccountIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountIdentifier = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("realLastFour") is null) { _explicitNullValueRealLastFour = default!; _explicitNullProperties?.Remove("realLastFour"); }
+            else if (parseNode.GetChildNode("realLastFour") is { } nullNodeRealLastFour && nullNodeRealLastFour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RealLastFour = null;
         }
 
         /// <summary>The masked IBAN or bank account number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountIdentifier { get => _explicitNullValueAccountIdentifier; set { _explicitNullValueAccountIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentifier"); else _explicitNullProperties?.Remove("accountIdentifier"); } }
+        public string? AccountIdentifier { get => _explicitNullValueAccountIdentifier; set { _explicitNullValueAccountIdentifier = value; AdditionalData?.Remove("accountIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentifier"); else _explicitNullProperties?.Remove("accountIdentifier"); } }
         private string? _explicitNullValueAccountIdentifier = default!;
 #nullable restore
 #else
-        public string AccountIdentifier { get => _explicitNullValueAccountIdentifier; set { _explicitNullValueAccountIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentifier"); else _explicitNullProperties?.Remove("accountIdentifier"); } }
+        public string AccountIdentifier { get => _explicitNullValueAccountIdentifier; set { _explicitNullValueAccountIdentifier = value; AdditionalData?.Remove("accountIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountIdentifier"); else _explicitNullProperties?.Remove("accountIdentifier"); } }
         private string _explicitNullValueAccountIdentifier = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Four last digits of the bank account number. If the transfer instrument is created using [instant bank account verification](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-08-hosted-onboarding), and it is a virtual bank account, these digits may be different from the last four digits of the masked account number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RealLastFour { get => _explicitNullValueRealLastFour; set { _explicitNullValueRealLastFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realLastFour"); else _explicitNullProperties?.Remove("realLastFour"); } }
+        public string? RealLastFour { get => _explicitNullValueRealLastFour; set { _explicitNullValueRealLastFour = value; AdditionalData?.Remove("realLastFour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realLastFour"); else _explicitNullProperties?.Remove("realLastFour"); } }
         private string? _explicitNullValueRealLastFour = default!;
 #nullable restore
 #else
-        public string RealLastFour { get => _explicitNullValueRealLastFour; set { _explicitNullValueRealLastFour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realLastFour"); else _explicitNullProperties?.Remove("realLastFour"); } }
+        public string RealLastFour { get => _explicitNullValueRealLastFour; set { _explicitNullValueRealLastFour = value; AdditionalData?.Remove("realLastFour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realLastFour"); else _explicitNullProperties?.Remove("realLastFour"); } }
         private string _explicitNullValueRealLastFour = default!;
 #endif
         /// <summary>Identifies if the bank account was created through [instant bank verification](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-08-hosted-onboarding).</summary>

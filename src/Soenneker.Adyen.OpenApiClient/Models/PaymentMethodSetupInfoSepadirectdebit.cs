@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("creditorId") is { } nullNodeCreditorId && nullNodeCreditorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditorId = null;
-            if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
+            if (parseNode.GetChildNode("creditorId") is null) { _explicitNullValueCreditorId = default!; _explicitNullProperties?.Remove("creditorId"); }
+            else if (parseNode.GetChildNode("creditorId") is { } nullNodeCreditorId && nullNodeCreditorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditorId = null;
+            if (parseNode.GetChildNode("transactionDescription") is null) { _explicitNullValueTransactionDescription = default!; _explicitNullProperties?.Remove("transactionDescription"); }
+            else if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Creditor id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreditorId { get => _explicitNullValueCreditorId; set { _explicitNullValueCreditorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditorId"); else _explicitNullProperties?.Remove("creditorId"); } }
+        public string? CreditorId { get => _explicitNullValueCreditorId; set { _explicitNullValueCreditorId = value; AdditionalData?.Remove("creditorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditorId"); else _explicitNullProperties?.Remove("creditorId"); } }
         private string? _explicitNullValueCreditorId = default!;
 #nullable restore
 #else
-        public string CreditorId { get => _explicitNullValueCreditorId; set { _explicitNullValueCreditorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditorId"); else _explicitNullProperties?.Remove("creditorId"); } }
+        public string CreditorId { get => _explicitNullValueCreditorId; set { _explicitNullValueCreditorId = value; AdditionalData?.Remove("creditorId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creditorId"); else _explicitNullProperties?.Remove("creditorId"); } }
         private string _explicitNullValueCreditorId = default!;
 #endif
         /// <summary>Information regarding the transaction description.&gt; You cannot configure the transaction description in the test environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfoTransactionDescription? _explicitNullValueTransactionDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SepaDirectDebitInfoTransactionDescription _explicitNullValueTransactionDescription = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defenseReasonCode") is { } nullNodeDefenseReasonCode && nullNodeDefenseReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasonCode = null;
-            if (parseNode.GetChildNode("disputePspReference") is { } nullNodeDisputePspReference && nullNodeDisputePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputePspReference = null;
-            if (parseNode.GetChildNode("merchantAccountCode") is { } nullNodeMerchantAccountCode && nullNodeMerchantAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccountCode = null;
+            if (parseNode.GetChildNode("defenseReasonCode") is null) { _explicitNullValueDefenseReasonCode = default!; _explicitNullProperties?.Remove("defenseReasonCode"); }
+            else if (parseNode.GetChildNode("defenseReasonCode") is { } nullNodeDefenseReasonCode && nullNodeDefenseReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasonCode = null;
+            if (parseNode.GetChildNode("disputePspReference") is null) { _explicitNullValueDisputePspReference = default!; _explicitNullProperties?.Remove("disputePspReference"); }
+            else if (parseNode.GetChildNode("disputePspReference") is { } nullNodeDisputePspReference && nullNodeDisputePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputePspReference = null;
+            if (parseNode.GetChildNode("merchantAccountCode") is null) { _explicitNullValueMerchantAccountCode = default!; _explicitNullProperties?.Remove("merchantAccountCode"); }
+            else if (parseNode.GetChildNode("merchantAccountCode") is { } nullNodeMerchantAccountCode && nullNodeMerchantAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccountCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The defense reason code that was selected to defend this dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
+        public string? DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; AdditionalData?.Remove("defenseReasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
         private string? _explicitNullValueDefenseReasonCode = default!;
 #nullable restore
 #else
-        public string DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
+        public string DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; AdditionalData?.Remove("defenseReasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
         private string _explicitNullValueDefenseReasonCode = default!;
 #endif
         /// <summary>The PSP reference assigned to the dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisputePspReference { get => _explicitNullValueDisputePspReference; set { _explicitNullValueDisputePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputePspReference"); else _explicitNullProperties?.Remove("disputePspReference"); } }
+        public string? DisputePspReference { get => _explicitNullValueDisputePspReference; set { _explicitNullValueDisputePspReference = value; AdditionalData?.Remove("disputePspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputePspReference"); else _explicitNullProperties?.Remove("disputePspReference"); } }
         private string? _explicitNullValueDisputePspReference = default!;
 #nullable restore
 #else
-        public string DisputePspReference { get => _explicitNullValueDisputePspReference; set { _explicitNullValueDisputePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputePspReference"); else _explicitNullProperties?.Remove("disputePspReference"); } }
+        public string DisputePspReference { get => _explicitNullValueDisputePspReference; set { _explicitNullValueDisputePspReference = value; AdditionalData?.Remove("disputePspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputePspReference"); else _explicitNullProperties?.Remove("disputePspReference"); } }
         private string _explicitNullValueDisputePspReference = default!;
 #endif
         /// <summary>The merchant account identifier, for which you want to process the dispute transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccountCode { get => _explicitNullValueMerchantAccountCode; set { _explicitNullValueMerchantAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccountCode"); else _explicitNullProperties?.Remove("merchantAccountCode"); } }
+        public string? MerchantAccountCode { get => _explicitNullValueMerchantAccountCode; set { _explicitNullValueMerchantAccountCode = value; AdditionalData?.Remove("merchantAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccountCode"); else _explicitNullProperties?.Remove("merchantAccountCode"); } }
         private string? _explicitNullValueMerchantAccountCode = default!;
 #nullable restore
 #else
-        public string MerchantAccountCode { get => _explicitNullValueMerchantAccountCode; set { _explicitNullValueMerchantAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccountCode"); else _explicitNullProperties?.Remove("merchantAccountCode"); } }
+        public string MerchantAccountCode { get => _explicitNullValueMerchantAccountCode; set { _explicitNullValueMerchantAccountCode = value; AdditionalData?.Remove("merchantAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccountCode"); else _explicitNullProperties?.Remove("merchantAccountCode"); } }
         private string _explicitNullValueMerchantAccountCode = default!;
 #endif
         /// <summary>

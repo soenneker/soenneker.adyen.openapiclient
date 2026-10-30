@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("estimatedDays") is { } nullNodeEstimatedDays && nullNodeEstimatedDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedDays = null;
-            if (parseNode.GetChildNode("maximumDays") is { } nullNodeMaximumDays && nullNodeMaximumDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumDays = null;
+            if (parseNode.GetChildNode("estimatedDays") is null) { _explicitNullValueEstimatedDays = default!; _explicitNullProperties?.Remove("estimatedDays"); }
+            else if (parseNode.GetChildNode("estimatedDays") is { } nullNodeEstimatedDays && nullNodeEstimatedDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedDays = null;
+            if (parseNode.GetChildNode("maximumDays") is null) { _explicitNullValueMaximumDays = default!; _explicitNullProperties?.Remove("maximumDays"); }
+            else if (parseNode.GetChildNode("maximumDays") is { } nullNodeMaximumDays && nullNodeMaximumDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumDays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated duration of the repayment term, in days.</summary>
-        public int? EstimatedDays { get => _explicitNullValueEstimatedDays; set { _explicitNullValueEstimatedDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedDays"); else _explicitNullProperties?.Remove("estimatedDays"); } }
+        public int? EstimatedDays { get => _explicitNullValueEstimatedDays; set { _explicitNullValueEstimatedDays = value; AdditionalData?.Remove("estimatedDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedDays"); else _explicitNullProperties?.Remove("estimatedDays"); } }
         private int? _explicitNullValueEstimatedDays = default!;
         /// <summary>The maximum duration of the repayment term, in days. Only applies when `contractType` is **loan**.</summary>
-        public int? MaximumDays { get => _explicitNullValueMaximumDays; set { _explicitNullValueMaximumDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumDays"); else _explicitNullProperties?.Remove("maximumDays"); } }
+        public int? MaximumDays { get => _explicitNullValueMaximumDays; set { _explicitNullValueMaximumDays = value; AdditionalData?.Remove("maximumDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumDays"); else _explicitNullProperties?.Remove("maximumDays"); } }
         private int? _explicitNullValueMaximumDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1RepaymentTermComposed"/> and sets the default values.

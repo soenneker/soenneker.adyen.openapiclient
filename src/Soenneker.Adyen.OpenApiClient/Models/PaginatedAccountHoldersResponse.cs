@@ -17,28 +17,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolders") is { } nullNodeAccountHolders && nullNodeAccountHolders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolders = null;
-            if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
-            if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
+            if (parseNode.GetChildNode("accountHolders") is null) { _explicitNullValueAccountHolders = default!; _explicitNullProperties?.Remove("accountHolders"); }
+            else if (parseNode.GetChildNode("accountHolders") is { } nullNodeAccountHolders && nullNodeAccountHolders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolders = null;
+            if (parseNode.GetChildNode("hasNext") is null) { _explicitNullValueHasNext = default!; _explicitNullProperties?.Remove("hasNext"); }
+            else if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
+            if (parseNode.GetChildNode("hasPrevious") is null) { _explicitNullValueHasPrevious = default!; _explicitNullProperties?.Remove("hasPrevious"); }
+            else if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
         }
 
         /// <summary>List of account holders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder>? AccountHolders { get => _explicitNullValueAccountHolders; set { _explicitNullValueAccountHolders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolders"); else _explicitNullProperties?.Remove("accountHolders"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder>? AccountHolders { get => _explicitNullValueAccountHolders; set { _explicitNullValueAccountHolders = value; AdditionalData?.Remove("accountHolders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolders"); else _explicitNullProperties?.Remove("accountHolders"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder>? _explicitNullValueAccountHolders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder> AccountHolders { get => _explicitNullValueAccountHolders; set { _explicitNullValueAccountHolders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolders"); else _explicitNullProperties?.Remove("accountHolders"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder> AccountHolders { get => _explicitNullValueAccountHolders; set { _explicitNullValueAccountHolders = value; AdditionalData?.Remove("accountHolders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolders"); else _explicitNullProperties?.Remove("accountHolders"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2AccountHolder> _explicitNullValueAccountHolders = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether there are more items on the next page.</summary>
-        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
+        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; AdditionalData?.Remove("hasNext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
         private bool? _explicitNullValueHasNext = default!;
         /// <summary>Indicates whether there are more items on the previous page.</summary>
-        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
+        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; AdditionalData?.Remove("hasPrevious"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
         private bool? _explicitNullValueHasPrevious = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaginatedAccountHoldersResponse"/> and sets the default values.

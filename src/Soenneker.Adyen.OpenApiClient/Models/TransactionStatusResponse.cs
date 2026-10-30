@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
-            if (parseNode.GetChildNode("RepeatedMessageResponse") is { } nullNodeRepeatedMessageResponse && nullNodeRepeatedMessageResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatedMessageResponse = null;
-            if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("MessageReference") is null) { _explicitNullValueMessageReference = default!; _explicitNullProperties?.Remove("MessageReference"); }
+            else if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
+            if (parseNode.GetChildNode("RepeatedMessageResponse") is null) { _explicitNullValueRepeatedMessageResponse = default!; _explicitNullProperties?.Remove("RepeatedMessageResponse"); }
+            else if (parseNode.GetChildNode("RepeatedMessageResponse") is { } nullNodeRepeatedMessageResponse && nullNodeRepeatedMessageResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatedMessageResponse = null;
+            if (parseNode.GetChildNode("Response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("Response"); }
+            else if (parseNode.GetChildNode("Response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a previous POI transaction.If `Response.Result` is Success.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; AdditionalData?.Remove("MessageReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference? _explicitNullValueMessageReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; AdditionalData?.Remove("MessageReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseMessageReference _explicitNullValueMessageReference = default!;
 #endif
         /// <summary>Content of the requested Message Response.If Result is Success (process completed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse? RepeatedMessageResponse { get => _explicitNullValueRepeatedMessageResponse; set { _explicitNullValueRepeatedMessageResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedMessageResponse"); else _explicitNullProperties?.Remove("RepeatedMessageResponse"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse? RepeatedMessageResponse { get => _explicitNullValueRepeatedMessageResponse; set { _explicitNullValueRepeatedMessageResponse = value; AdditionalData?.Remove("RepeatedMessageResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedMessageResponse"); else _explicitNullProperties?.Remove("RepeatedMessageResponse"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse? _explicitNullValueRepeatedMessageResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse RepeatedMessageResponse { get => _explicitNullValueRepeatedMessageResponse; set { _explicitNullValueRepeatedMessageResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedMessageResponse"); else _explicitNullProperties?.Remove("RepeatedMessageResponse"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse RepeatedMessageResponse { get => _explicitNullValueRepeatedMessageResponse; set { _explicitNullValueRepeatedMessageResponse = value; AdditionalData?.Remove("RepeatedMessageResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RepeatedMessageResponse"); else _explicitNullProperties?.Remove("RepeatedMessageResponse"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionStatusResponseRepeatedMessageResponse _explicitNullValueRepeatedMessageResponse = default!;
 #endif
         /// <summary>Result of a message request processing.If Result is Success, `ErrorCondition` is absent or not used in the processing of the message. In the other cases, the `ErrorCondition` has to be present and can refine the processing of the message response. `AdditionalResponse` gives more information about the success or the failure of the message request processing, for logging without real time involvements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("Response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Response"); else _explicitNullProperties?.Remove("Response"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResponseValue _explicitNullValueResponse = default!;
 #endif
         /// <summary>

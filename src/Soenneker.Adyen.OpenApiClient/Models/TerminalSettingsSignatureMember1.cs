@@ -18,39 +18,43 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("askSignatureOnScreen") is { } nullNodeAskSignatureOnScreen && nullNodeAskSignatureOnScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AskSignatureOnScreen = null;
-            if (parseNode.GetChildNode("deviceName") is { } nullNodeDeviceName && nullNodeDeviceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceName = null;
-            if (parseNode.GetChildNode("deviceSlogan") is { } nullNodeDeviceSlogan && nullNodeDeviceSlogan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceSlogan = null;
-            if (parseNode.GetChildNode("skipSignature") is { } nullNodeSkipSignature && nullNodeSkipSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipSignature = null;
+            if (parseNode.GetChildNode("askSignatureOnScreen") is null) { _explicitNullValueAskSignatureOnScreen = default!; _explicitNullProperties?.Remove("askSignatureOnScreen"); }
+            else if (parseNode.GetChildNode("askSignatureOnScreen") is { } nullNodeAskSignatureOnScreen && nullNodeAskSignatureOnScreen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AskSignatureOnScreen = null;
+            if (parseNode.GetChildNode("deviceName") is null) { _explicitNullValueDeviceName = default!; _explicitNullProperties?.Remove("deviceName"); }
+            else if (parseNode.GetChildNode("deviceName") is { } nullNodeDeviceName && nullNodeDeviceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceName = null;
+            if (parseNode.GetChildNode("deviceSlogan") is null) { _explicitNullValueDeviceSlogan = default!; _explicitNullProperties?.Remove("deviceSlogan"); }
+            else if (parseNode.GetChildNode("deviceSlogan") is { } nullNodeDeviceSlogan && nullNodeDeviceSlogan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceSlogan = null;
+            if (parseNode.GetChildNode("skipSignature") is null) { _explicitNullValueSkipSignature = default!; _explicitNullProperties?.Remove("skipSignature"); }
+            else if (parseNode.GetChildNode("skipSignature") is { } nullNodeSkipSignature && nullNodeSkipSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipSignature = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If `skipSignature` is false, indicates whether the shopper should provide a signature on the display (**true**) or on the merchant receipt (**false**).</summary>
-        public bool? AskSignatureOnScreen { get => _explicitNullValueAskSignatureOnScreen; set { _explicitNullValueAskSignatureOnScreen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("askSignatureOnScreen"); else _explicitNullProperties?.Remove("askSignatureOnScreen"); } }
+        public bool? AskSignatureOnScreen { get => _explicitNullValueAskSignatureOnScreen; set { _explicitNullValueAskSignatureOnScreen = value; AdditionalData?.Remove("askSignatureOnScreen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("askSignatureOnScreen"); else _explicitNullProperties?.Remove("askSignatureOnScreen"); } }
         private bool? _explicitNullValueAskSignatureOnScreen = default!;
         /// <summary>Name that identifies the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName { get => _explicitNullValueDeviceName; set { _explicitNullValueDeviceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceName"); else _explicitNullProperties?.Remove("deviceName"); } }
+        public string? DeviceName { get => _explicitNullValueDeviceName; set { _explicitNullValueDeviceName = value; AdditionalData?.Remove("deviceName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceName"); else _explicitNullProperties?.Remove("deviceName"); } }
         private string? _explicitNullValueDeviceName = default!;
 #nullable restore
 #else
-        public string DeviceName { get => _explicitNullValueDeviceName; set { _explicitNullValueDeviceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceName"); else _explicitNullProperties?.Remove("deviceName"); } }
+        public string DeviceName { get => _explicitNullValueDeviceName; set { _explicitNullValueDeviceName = value; AdditionalData?.Remove("deviceName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceName"); else _explicitNullProperties?.Remove("deviceName"); } }
         private string _explicitNullValueDeviceName = default!;
 #endif
         /// <summary>Slogan shown on the start screen of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceSlogan { get => _explicitNullValueDeviceSlogan; set { _explicitNullValueDeviceSlogan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceSlogan"); else _explicitNullProperties?.Remove("deviceSlogan"); } }
+        public string? DeviceSlogan { get => _explicitNullValueDeviceSlogan; set { _explicitNullValueDeviceSlogan = value; AdditionalData?.Remove("deviceSlogan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceSlogan"); else _explicitNullProperties?.Remove("deviceSlogan"); } }
         private string? _explicitNullValueDeviceSlogan = default!;
 #nullable restore
 #else
-        public string DeviceSlogan { get => _explicitNullValueDeviceSlogan; set { _explicitNullValueDeviceSlogan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceSlogan"); else _explicitNullProperties?.Remove("deviceSlogan"); } }
+        public string DeviceSlogan { get => _explicitNullValueDeviceSlogan; set { _explicitNullValueDeviceSlogan = value; AdditionalData?.Remove("deviceSlogan"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceSlogan"); else _explicitNullProperties?.Remove("deviceSlogan"); } }
         private string _explicitNullValueDeviceSlogan = default!;
 #endif
         /// <summary>Skip asking for a signature. This is possible because all global card schemes (American Express, Diners, Discover, JCB, MasterCard, VISA, and UnionPay) regard a signature as optional.</summary>
-        public bool? SkipSignature { get => _explicitNullValueSkipSignature; set { _explicitNullValueSkipSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipSignature"); else _explicitNullProperties?.Remove("skipSignature"); } }
+        public bool? SkipSignature { get => _explicitNullValueSkipSignature; set { _explicitNullValueSkipSignature = value; AdditionalData?.Remove("skipSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipSignature"); else _explicitNullProperties?.Remove("skipSignature"); } }
         private bool? _explicitNullValueSkipSignature = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsSignatureMember1"/> and sets the default values.

@@ -63,7 +63,7 @@ namespace Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods.
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.CheckoutServiceV72.StoredPaymentMethods.Item.WithStoredPaymentMethodItemRequestBuilder.WithStoredPaymentMethodItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://checkout-test.adyen.com/v72", "/CheckoutService-v72/storedPaymentMethods/{storedPaymentMethodId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

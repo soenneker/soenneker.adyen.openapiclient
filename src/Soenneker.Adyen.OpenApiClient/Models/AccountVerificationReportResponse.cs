@@ -17,34 +17,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
-            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("accounts") is null) { _explicitNullValueAccounts = default!; _explicitNullProperties?.Remove("accounts"); }
+            else if (parseNode.GetChildNode("accounts") is { } nullNodeAccounts && nullNodeAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accounts = null;
+            if (parseNode.GetChildNode("country") is null) { _explicitNullValueCountry = default!; _explicitNullProperties?.Remove("country"); }
+            else if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>A list of bank accounts with their respective information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount>? Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount>? _explicitNullValueAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount> Accounts { get => _explicitNullValueAccounts; set { _explicitNullValueAccounts = value; AdditionalData?.Remove("accounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accounts"); else _explicitNullProperties?.Remove("accounts"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount> _explicitNullValueAccounts = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The location where the third-party individual&apos;s bank account is registered.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; AdditionalData?.Remove("country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry? _explicitNullValueCountry = default!;
         /// <summary>The unique identifier for the specific report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount>(global::Soenneker.Adyen.OpenApiClient.Models.VerifiedAccount.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry>(); } },
+                { "country", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountVerificationReportResponseCountry>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCountry = default; _explicitNullProperties?.Remove("country"); AdditionalData["country"] = unknown; } else { Country = parsed; AdditionalData.Remove("country"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }

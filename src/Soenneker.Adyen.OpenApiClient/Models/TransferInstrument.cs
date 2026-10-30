@@ -17,12 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bankAccount") is { } nullNodeBankAccount && nullNodeBankAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccount = null;
-            if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
-            if (parseNode.GetChildNode("documentDetails") is { } nullNodeDocumentDetails && nullNodeDocumentDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentDetails = null;
-            if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
-            if (parseNode.GetChildNode("problems") is { } nullNodeProblems && nullNodeProblems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Problems = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("bankAccount") is null) { _explicitNullValueBankAccount = default!; _explicitNullProperties?.Remove("bankAccount"); }
+            else if (parseNode.GetChildNode("bankAccount") is { } nullNodeBankAccount && nullNodeBankAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccount = null;
+            if (parseNode.GetChildNode("capabilities") is null) { _explicitNullValueCapabilities = default!; _explicitNullProperties?.Remove("capabilities"); }
+            else if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
+            if (parseNode.GetChildNode("documentDetails") is null) { _explicitNullValueDocumentDetails = default!; _explicitNullProperties?.Remove("documentDetails"); }
+            else if (parseNode.GetChildNode("documentDetails") is { } nullNodeDocumentDetails && nullNodeDocumentDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentDetails = null;
+            if (parseNode.GetChildNode("legalEntityId") is null) { _explicitNullValueLegalEntityId = default!; _explicitNullProperties?.Remove("legalEntityId"); }
+            else if (parseNode.GetChildNode("legalEntityId") is { } nullNodeLegalEntityId && nullNodeLegalEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityId = null;
+            if (parseNode.GetChildNode("problems") is null) { _explicitNullValueProblems = default!; _explicitNullProperties?.Remove("problems"); }
+            else if (parseNode.GetChildNode("problems") is { } nullNodeProblems && nullNodeProblems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Problems = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,31 +36,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains information about the legal entity&apos;s bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount? BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount? BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; AdditionalData?.Remove("bankAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount? _explicitNullValueBankAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount BankAccount { get => _explicitNullValueBankAccount; set { _explicitNullValueBankAccount = value; AdditionalData?.Remove("bankAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccount"); else _explicitNullProperties?.Remove("bankAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentBankAccount _explicitNullValueBankAccount = default!;
 #endif
         /// <summary>List of capabilities for this transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2 Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2 Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentCapabilitiesProperty2 _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>List of documents uploaded for the transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>? DocumentDetails { get => _explicitNullValueDocumentDetails; set { _explicitNullValueDocumentDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetails"); else _explicitNullProperties?.Remove("documentDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>? DocumentDetails { get => _explicitNullValueDocumentDetails; set { _explicitNullValueDocumentDetails = value; AdditionalData?.Remove("documentDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetails"); else _explicitNullProperties?.Remove("documentDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference>? _explicitNullValueDocumentDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference> DocumentDetails { get => _explicitNullValueDocumentDetails; set { _explicitNullValueDocumentDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetails"); else _explicitNullProperties?.Remove("documentDetails"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference> DocumentDetails { get => _explicitNullValueDocumentDetails; set { _explicitNullValueDocumentDetails = value; AdditionalData?.Remove("documentDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentDetails"); else _explicitNullProperties?.Remove("documentDetails"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DocumentReference> _explicitNullValueDocumentDetails = default!;
 #endif
         /// <summary>The unique identifier of the transfer instrument.</summary>
@@ -68,25 +74,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the [legal entity](https://docs.adyen.com/api-explorer/legalentity/latest/post/legalEntities#responses-200-id) that owns the transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        public string? LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; AdditionalData?.Remove("legalEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
         private string? _explicitNullValueLegalEntityId = default!;
 #nullable restore
 #else
-        public string LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
+        public string LegalEntityId { get => _explicitNullValueLegalEntityId; set { _explicitNullValueLegalEntityId = value; AdditionalData?.Remove("legalEntityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityId"); else _explicitNullProperties?.Remove("legalEntityId"); } }
         private string _explicitNullValueLegalEntityId = default!;
 #endif
         /// <summary>The verification errors related to capabilities for this transfer instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>? Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>? Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; AdditionalData?.Remove("problems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>? _explicitNullValueProblems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> Problems { get => _explicitNullValueProblems; set { _explicitNullValueProblems = value; AdditionalData?.Remove("problems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("problems"); else _explicitNullProperties?.Remove("problems"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem> _explicitNullValueProblems = default!;
 #endif
         /// <summary>The type of transfer instrument.Possible value: **bankAccount**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrument"/> and sets the default values.
@@ -119,7 +125,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legalEntityId", n => { LegalEntityId = n.GetStringValue(); } },
                 { "problems", n => { Problems = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem>(global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferInstrumentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

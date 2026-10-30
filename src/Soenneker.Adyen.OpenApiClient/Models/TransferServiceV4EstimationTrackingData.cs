@@ -17,17 +17,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("estimatedArrivalTime") is { } nullNodeEstimatedArrivalTime && nullNodeEstimatedArrivalTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedArrivalTime = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("estimatedArrivalTime") is null) { _explicitNullValueEstimatedArrivalTime = default!; _explicitNullProperties?.Remove("estimatedArrivalTime"); }
+            else if (parseNode.GetChildNode("estimatedArrivalTime") is { } nullNodeEstimatedArrivalTime && nullNodeEstimatedArrivalTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedArrivalTime = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated time the beneficiary should have access to the funds.</summary>
-        public DateTimeOffset? EstimatedArrivalTime { get => _explicitNullValueEstimatedArrivalTime; set { _explicitNullValueEstimatedArrivalTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedArrivalTime"); else _explicitNullProperties?.Remove("estimatedArrivalTime"); } }
+        public DateTimeOffset? EstimatedArrivalTime { get => _explicitNullValueEstimatedArrivalTime; set { _explicitNullValueEstimatedArrivalTime = value; AdditionalData?.Remove("estimatedArrivalTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedArrivalTime"); else _explicitNullProperties?.Remove("estimatedArrivalTime"); } }
         private DateTimeOffset? _explicitNullValueEstimatedArrivalTime = default!;
         /// <summary>The type of tracking event. Possible values: - **estimation**: the estimated date and time of when the funds will be credited has been determined.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationTrackingData"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "estimatedArrivalTime", n => { EstimatedArrivalTime = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4EstimationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

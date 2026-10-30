@@ -18,91 +18,101 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("apiVersion") is { } nullNodeApiVersion && nullNodeApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiVersion = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("eventConfigs") is { } nullNodeEventConfigs && nullNodeEventConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventConfigs = null;
-            if (parseNode.GetChildNode("hmacSignatureKey") is { } nullNodeHmacSignatureKey && nullNodeHmacSignatureKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignatureKey = null;
-            if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
-            if (parseNode.GetChildNode("notifyPassword") is { } nullNodeNotifyPassword && nullNodeNotifyPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyPassword = null;
-            if (parseNode.GetChildNode("notifyURL") is { } nullNodeNotifyURL && nullNodeNotifyURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyURL = null;
-            if (parseNode.GetChildNode("notifyUsername") is { } nullNodeNotifyUsername && nullNodeNotifyUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyUsername = null;
-            if (parseNode.GetChildNode("sslProtocol") is { } nullNodeSslProtocol && nullNodeSslProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SslProtocol = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("apiVersion") is null) { _explicitNullValueApiVersion = default!; _explicitNullProperties?.Remove("apiVersion"); }
+            else if (parseNode.GetChildNode("apiVersion") is { } nullNodeApiVersion && nullNodeApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiVersion = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("eventConfigs") is null) { _explicitNullValueEventConfigs = default!; _explicitNullProperties?.Remove("eventConfigs"); }
+            else if (parseNode.GetChildNode("eventConfigs") is { } nullNodeEventConfigs && nullNodeEventConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventConfigs = null;
+            if (parseNode.GetChildNode("hmacSignatureKey") is null) { _explicitNullValueHmacSignatureKey = default!; _explicitNullProperties?.Remove("hmacSignatureKey"); }
+            else if (parseNode.GetChildNode("hmacSignatureKey") is { } nullNodeHmacSignatureKey && nullNodeHmacSignatureKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignatureKey = null;
+            if (parseNode.GetChildNode("notificationId") is null) { _explicitNullValueNotificationId = default!; _explicitNullProperties?.Remove("notificationId"); }
+            else if (parseNode.GetChildNode("notificationId") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
+            if (parseNode.GetChildNode("notifyPassword") is null) { _explicitNullValueNotifyPassword = default!; _explicitNullProperties?.Remove("notifyPassword"); }
+            else if (parseNode.GetChildNode("notifyPassword") is { } nullNodeNotifyPassword && nullNodeNotifyPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyPassword = null;
+            if (parseNode.GetChildNode("notifyURL") is null) { _explicitNullValueNotifyURL = default!; _explicitNullProperties?.Remove("notifyURL"); }
+            else if (parseNode.GetChildNode("notifyURL") is { } nullNodeNotifyURL && nullNodeNotifyURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyURL = null;
+            if (parseNode.GetChildNode("notifyUsername") is null) { _explicitNullValueNotifyUsername = default!; _explicitNullProperties?.Remove("notifyUsername"); }
+            else if (parseNode.GetChildNode("notifyUsername") is { } nullNodeNotifyUsername && nullNodeNotifyUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyUsername = null;
+            if (parseNode.GetChildNode("sslProtocol") is null) { _explicitNullValueSslProtocol = default!; _explicitNullProperties?.Remove("sslProtocol"); }
+            else if (parseNode.GetChildNode("sslProtocol") is { } nullNodeSslProtocol && nullNodeSslProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SslProtocol = null;
         }
 
         /// <summary>Indicates whether the notification subscription is active.</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version of the notification to which you are subscribing. To make sure that your integration can properly process the notification, subscribe to the same version as the API that you&apos;re using.</summary>
-        public int? ApiVersion { get => _explicitNullValueApiVersion; set { _explicitNullValueApiVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiVersion"); else _explicitNullProperties?.Remove("apiVersion"); } }
+        public int? ApiVersion { get => _explicitNullValueApiVersion; set { _explicitNullValueApiVersion = value; AdditionalData?.Remove("apiVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiVersion"); else _explicitNullProperties?.Remove("apiVersion"); } }
         private int? _explicitNullValueApiVersion = default!;
         /// <summary>A description of the notification subscription configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Contains objects that define event types and their subscription settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration>? EventConfigs { get => _explicitNullValueEventConfigs; set { _explicitNullValueEventConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventConfigs"); else _explicitNullProperties?.Remove("eventConfigs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration>? EventConfigs { get => _explicitNullValueEventConfigs; set { _explicitNullValueEventConfigs = value; AdditionalData?.Remove("eventConfigs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventConfigs"); else _explicitNullProperties?.Remove("eventConfigs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration>? _explicitNullValueEventConfigs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration> EventConfigs { get => _explicitNullValueEventConfigs; set { _explicitNullValueEventConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventConfigs"); else _explicitNullProperties?.Remove("eventConfigs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration> EventConfigs { get => _explicitNullValueEventConfigs; set { _explicitNullValueEventConfigs = value; AdditionalData?.Remove("eventConfigs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventConfigs"); else _explicitNullProperties?.Remove("eventConfigs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.NotificationEventConfiguration> _explicitNullValueEventConfigs = default!;
 #endif
         /// <summary>A string with which to salt the notification(s) before hashing. If this field is provided, a hash value will be included under the notification header `HmacSignature` and the hash protocol will be included under the notification header `Protocol`. A notification body along with its `hmacSignatureKey` and `Protocol` can be used to calculate a hash value; matching this hash value with the `HmacSignature` will ensure that the notification body has not been tampered with or corrupted.&gt;Must be a 32-byte hex-encoded string (i.e. a string containing 64 hexadecimal characters; e.g. &quot;b0ea55c2fe60d4d1d605e9c385e0e7f7e6cafbb939ce07010f31a327a0871f27&quot;).The omission of this field will preclude the provision of the `HmacSignature` and `Protocol` headers in notification(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacSignatureKey { get => _explicitNullValueHmacSignatureKey; set { _explicitNullValueHmacSignatureKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignatureKey"); else _explicitNullProperties?.Remove("hmacSignatureKey"); } }
+        public string? HmacSignatureKey { get => _explicitNullValueHmacSignatureKey; set { _explicitNullValueHmacSignatureKey = value; AdditionalData?.Remove("hmacSignatureKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignatureKey"); else _explicitNullProperties?.Remove("hmacSignatureKey"); } }
         private string? _explicitNullValueHmacSignatureKey = default!;
 #nullable restore
 #else
-        public string HmacSignatureKey { get => _explicitNullValueHmacSignatureKey; set { _explicitNullValueHmacSignatureKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignatureKey"); else _explicitNullProperties?.Remove("hmacSignatureKey"); } }
+        public string HmacSignatureKey { get => _explicitNullValueHmacSignatureKey; set { _explicitNullValueHmacSignatureKey = value; AdditionalData?.Remove("hmacSignatureKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignatureKey"); else _explicitNullProperties?.Remove("hmacSignatureKey"); } }
         private string _explicitNullValueHmacSignatureKey = default!;
 #endif
         /// <summary>Adyen-generated ID for the entry, returned in the response when you create a notification configuration. Required when updating an existing configuration using [`/updateNotificationConfiguration`](https://docs.adyen.com/api-explorer/#/NotificationConfigurationService/latest/post/updateNotificationConfiguration).</summary>
-        public long? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
+        public long? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; AdditionalData?.Remove("notificationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationId"); else _explicitNullProperties?.Remove("notificationId"); } }
         private long? _explicitNullValueNotificationId = default!;
         /// <summary>The password to use when accessing the notifyURL with the specified username.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotifyPassword { get => _explicitNullValueNotifyPassword; set { _explicitNullValueNotifyPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyPassword"); else _explicitNullProperties?.Remove("notifyPassword"); } }
+        public string? NotifyPassword { get => _explicitNullValueNotifyPassword; set { _explicitNullValueNotifyPassword = value; AdditionalData?.Remove("notifyPassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyPassword"); else _explicitNullProperties?.Remove("notifyPassword"); } }
         private string? _explicitNullValueNotifyPassword = default!;
 #nullable restore
 #else
-        public string NotifyPassword { get => _explicitNullValueNotifyPassword; set { _explicitNullValueNotifyPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyPassword"); else _explicitNullProperties?.Remove("notifyPassword"); } }
+        public string NotifyPassword { get => _explicitNullValueNotifyPassword; set { _explicitNullValueNotifyPassword = value; AdditionalData?.Remove("notifyPassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyPassword"); else _explicitNullProperties?.Remove("notifyPassword"); } }
         private string _explicitNullValueNotifyPassword = default!;
 #endif
         /// <summary>The URL to which the notifications are to be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotifyURL { get => _explicitNullValueNotifyURL; set { _explicitNullValueNotifyURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyURL"); else _explicitNullProperties?.Remove("notifyURL"); } }
+        public string? NotifyURL { get => _explicitNullValueNotifyURL; set { _explicitNullValueNotifyURL = value; AdditionalData?.Remove("notifyURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyURL"); else _explicitNullProperties?.Remove("notifyURL"); } }
         private string? _explicitNullValueNotifyURL = default!;
 #nullable restore
 #else
-        public string NotifyURL { get => _explicitNullValueNotifyURL; set { _explicitNullValueNotifyURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyURL"); else _explicitNullProperties?.Remove("notifyURL"); } }
+        public string NotifyURL { get => _explicitNullValueNotifyURL; set { _explicitNullValueNotifyURL = value; AdditionalData?.Remove("notifyURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyURL"); else _explicitNullProperties?.Remove("notifyURL"); } }
         private string _explicitNullValueNotifyURL = default!;
 #endif
         /// <summary>The username to use when accessing the notifyURL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotifyUsername { get => _explicitNullValueNotifyUsername; set { _explicitNullValueNotifyUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyUsername"); else _explicitNullProperties?.Remove("notifyUsername"); } }
+        public string? NotifyUsername { get => _explicitNullValueNotifyUsername; set { _explicitNullValueNotifyUsername = value; AdditionalData?.Remove("notifyUsername"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyUsername"); else _explicitNullProperties?.Remove("notifyUsername"); } }
         private string? _explicitNullValueNotifyUsername = default!;
 #nullable restore
 #else
-        public string NotifyUsername { get => _explicitNullValueNotifyUsername; set { _explicitNullValueNotifyUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyUsername"); else _explicitNullProperties?.Remove("notifyUsername"); } }
+        public string NotifyUsername { get => _explicitNullValueNotifyUsername; set { _explicitNullValueNotifyUsername = value; AdditionalData?.Remove("notifyUsername"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyUsername"); else _explicitNullProperties?.Remove("notifyUsername"); } }
         private string _explicitNullValueNotifyUsername = default!;
 #endif
         /// <summary>The SSL protocol employed by the endpoint.&gt;Permitted values: `TLSv12`, `TLSv13`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol? SslProtocol { get => _explicitNullValueSslProtocol; set { _explicitNullValueSslProtocol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sslProtocol"); else _explicitNullProperties?.Remove("sslProtocol"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol? SslProtocol { get => _explicitNullValueSslProtocol; set { _explicitNullValueSslProtocol = value; AdditionalData?.Remove("sslProtocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sslProtocol"); else _explicitNullProperties?.Remove("sslProtocol"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol? _explicitNullValueSslProtocol = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CreateNotificationConfigurationRequestConfigurationDetails"/> and sets the default values.
@@ -138,7 +148,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "notifyPassword", n => { NotifyPassword = n.GetStringValue(); } },
                 { "notifyURL", n => { NotifyURL = n.GetStringValue(); } },
                 { "notifyUsername", n => { NotifyUsername = n.GetStringValue(); } },
-                { "sslProtocol", n => { SslProtocol = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol>(); } },
+                { "sslProtocol", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.NotificationConfigurationDetailsSslProtocol>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSslProtocol = default; _explicitNullProperties?.Remove("sslProtocol"); AdditionalData["sslProtocol"] = unknown; } else { SslProtocol = parsed; AdditionalData.Remove("sslProtocol"); } } },
             };
         }
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
-            if (parseNode.GetChildNode("defenseDocumentTypeCode") is { } nullNodeDefenseDocumentTypeCode && nullNodeDefenseDocumentTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypeCode = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("contentType") is null) { _explicitNullValueContentType = default!; _explicitNullProperties?.Remove("contentType"); }
+            else if (parseNode.GetChildNode("contentType") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("defenseDocumentTypeCode") is null) { _explicitNullValueDefenseDocumentTypeCode = default!; _explicitNullProperties?.Remove("defenseDocumentTypeCode"); }
+            else if (parseNode.GetChildNode("defenseDocumentTypeCode") is { } nullNodeDefenseDocumentTypeCode && nullNodeDefenseDocumentTypeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypeCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The content of the defense document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[]? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[]? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public byte[] Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private byte[] _explicitNullValueContent = default!;
 #endif
         /// <summary>The content type of the defense document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
         private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; AdditionalData?.Remove("contentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contentType"); else _explicitNullProperties?.Remove("contentType"); } }
         private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The document type code of the defense document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
+        public string? DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; AdditionalData?.Remove("defenseDocumentTypeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
         private string? _explicitNullValueDefenseDocumentTypeCode = default!;
 #nullable restore
 #else
-        public string DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
+        public string DefenseDocumentTypeCode { get => _explicitNullValueDefenseDocumentTypeCode; set { _explicitNullValueDefenseDocumentTypeCode = value; AdditionalData?.Remove("defenseDocumentTypeCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypeCode"); else _explicitNullProperties?.Remove("defenseDocumentTypeCode"); } }
         private string _explicitNullValueDefenseDocumentTypeCode = default!;
 #endif
         /// <summary>

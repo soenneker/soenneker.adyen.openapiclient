@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("airline") is { } nullNodeAirline && nullNodeAirline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Airline = null;
-            if (parseNode.GetChildNode("lodging") is { } nullNodeLodging && nullNodeLodging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lodging = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("airline") is null) { _explicitNullValueAirline = default!; _explicitNullProperties?.Remove("airline"); }
+            else if (parseNode.GetChildNode("airline") is { } nullNodeAirline && nullNodeAirline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Airline = null;
+            if (parseNode.GetChildNode("lodging") is null) { _explicitNullValueLodging = default!; _explicitNullProperties?.Remove("lodging"); }
+            else if (parseNode.GetChildNode("lodging") is { } nullNodeLodging && nullNodeLodging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Lodging = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Airline information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline? Airline { get => _explicitNullValueAirline; set { _explicitNullValueAirline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("airline"); else _explicitNullProperties?.Remove("airline"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline? Airline { get => _explicitNullValueAirline; set { _explicitNullValueAirline = value; AdditionalData?.Remove("airline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("airline"); else _explicitNullProperties?.Remove("airline"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline? _explicitNullValueAirline = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline Airline { get => _explicitNullValueAirline; set { _explicitNullValueAirline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("airline"); else _explicitNullProperties?.Remove("airline"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline Airline { get => _explicitNullValueAirline; set { _explicitNullValueAirline = value; AdditionalData?.Remove("airline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("airline"); else _explicitNullProperties?.Remove("airline"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline _explicitNullValueAirline = default!;
 #endif
         /// <summary>Lodging information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Lodging>? Lodging { get => _explicitNullValueLodging; set { _explicitNullValueLodging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lodging"); else _explicitNullProperties?.Remove("lodging"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Lodging>? Lodging { get => _explicitNullValueLodging; set { _explicitNullValueLodging = value; AdditionalData?.Remove("lodging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lodging"); else _explicitNullProperties?.Remove("lodging"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Lodging>? _explicitNullValueLodging = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Lodging> Lodging { get => _explicitNullValueLodging; set { _explicitNullValueLodging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lodging"); else _explicitNullProperties?.Remove("lodging"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Lodging> Lodging { get => _explicitNullValueLodging; set { _explicitNullValueLodging = value; AdditionalData?.Remove("lodging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lodging"); else _explicitNullProperties?.Remove("lodging"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Lodging> _explicitNullValueLodging = default!;
 #endif
         /// <summary>The type of events data. Possible values:  - **merchantPurchaseData**: merchant purchase data</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseData"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "airline", n => { Airline = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline>(global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataAirline.CreateFromDiscriminatorValue); } },
                 { "lodging", n => { Lodging = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.Lodging>(global::Soenneker.Adyen.OpenApiClient.Models.Lodging.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MerchantPurchaseDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

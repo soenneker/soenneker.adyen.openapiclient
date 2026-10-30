@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("itemsTotal") is { } nullNodeItemsTotal && nullNodeItemsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsTotal = null;
-            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
-            if (parseNode.GetChildNode("pagesTotal") is { } nullNodePagesTotal && nullNodePagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PagesTotal = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("itemsTotal") is null) { _explicitNullValueItemsTotal = default!; _explicitNullProperties?.Remove("itemsTotal"); }
+            else if (parseNode.GetChildNode("itemsTotal") is { } nullNodeItemsTotal && nullNodeItemsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsTotal = null;
+            if (parseNode.GetChildNode("link") is null) { _explicitNullValueLink = default!; _explicitNullProperties?.Remove("link"); }
+            else if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("pagesTotal") is null) { _explicitNullValuePagesTotal = default!; _explicitNullProperties?.Remove("pagesTotal"); }
+            else if (parseNode.GetChildNode("pagesTotal") is { } nullNodePagesTotal && nullNodePagesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PagesTotal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains a list of registered SCA devices and their corresponding details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2Device> _explicitNullValueData = default!;
 #endif
         /// <summary>The total amount of registered SCA devices that match the query parameters.</summary>
-        public int? ItemsTotal { get => _explicitNullValueItemsTotal; set { _explicitNullValueItemsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsTotal"); else _explicitNullProperties?.Remove("itemsTotal"); } }
+        public int? ItemsTotal { get => _explicitNullValueItemsTotal; set { _explicitNullValueItemsTotal = value; AdditionalData?.Remove("itemsTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsTotal"); else _explicitNullProperties?.Remove("itemsTotal"); } }
         private int? _explicitNullValueItemsTotal = default!;
         /// <summary>Contains links to the list pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponseLink _explicitNullValueLink = default!;
 #endif
         /// <summary>The total amount of list pages.</summary>
-        public int? PagesTotal { get => _explicitNullValuePagesTotal; set { _explicitNullValuePagesTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagesTotal"); else _explicitNullProperties?.Remove("pagesTotal"); } }
+        public int? PagesTotal { get => _explicitNullValuePagesTotal; set { _explicitNullValuePagesTotal = value; AdditionalData?.Remove("pagesTotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagesTotal"); else _explicitNullProperties?.Remove("pagesTotal"); } }
         private int? _explicitNullValuePagesTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SearchRegisteredDevicesResponse"/> and sets the default values.

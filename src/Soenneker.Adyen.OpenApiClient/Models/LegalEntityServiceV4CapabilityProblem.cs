@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
-            if (parseNode.GetChildNode("verificationErrors") is { } nullNodeVerificationErrors && nullNodeVerificationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationErrors = null;
+            if (parseNode.GetChildNode("entity") is null) { _explicitNullValueEntity = default!; _explicitNullProperties?.Remove("entity"); }
+            else if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
+            if (parseNode.GetChildNode("verificationErrors") is null) { _explicitNullValueVerificationErrors = default!; _explicitNullProperties?.Remove("verificationErrors"); }
+            else if (parseNode.GetChildNode("verificationErrors") is { } nullNodeVerificationErrors && nullNodeVerificationErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationErrors = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The entity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity? _explicitNullValueEntity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4CapabilityProblemEntity _explicitNullValueEntity = default!;
 #endif
         /// <summary>The verificationErrors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError>? VerificationErrors { get => _explicitNullValueVerificationErrors; set { _explicitNullValueVerificationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationErrors"); else _explicitNullProperties?.Remove("verificationErrors"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError>? VerificationErrors { get => _explicitNullValueVerificationErrors; set { _explicitNullValueVerificationErrors = value; AdditionalData?.Remove("verificationErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationErrors"); else _explicitNullProperties?.Remove("verificationErrors"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError>? _explicitNullValueVerificationErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError> VerificationErrors { get => _explicitNullValueVerificationErrors; set { _explicitNullValueVerificationErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationErrors"); else _explicitNullProperties?.Remove("verificationErrors"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError> VerificationErrors { get => _explicitNullValueVerificationErrors; set { _explicitNullValueVerificationErrors = value; AdditionalData?.Remove("verificationErrors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verificationErrors"); else _explicitNullProperties?.Remove("verificationErrors"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.LegalEntityServiceV4VerificationError> _explicitNullValueVerificationErrors = default!;
 #endif
         /// <summary>

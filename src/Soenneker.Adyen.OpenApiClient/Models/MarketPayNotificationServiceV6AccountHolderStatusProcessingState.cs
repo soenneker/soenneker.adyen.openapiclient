@@ -18,50 +18,55 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("disabled") is { } nullNodeDisabled && nullNodeDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disabled = null;
-            if (parseNode.GetChildNode("disableReason") is { } nullNodeDisableReason && nullNodeDisableReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableReason = null;
-            if (parseNode.GetChildNode("processedFrom") is { } nullNodeProcessedFrom && nullNodeProcessedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedFrom = null;
-            if (parseNode.GetChildNode("processedTo") is { } nullNodeProcessedTo && nullNodeProcessedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedTo = null;
-            if (parseNode.GetChildNode("tierNumber") is { } nullNodeTierNumber && nullNodeTierNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierNumber = null;
+            if (parseNode.GetChildNode("disabled") is null) { _explicitNullValueDisabled = default!; _explicitNullProperties?.Remove("disabled"); }
+            else if (parseNode.GetChildNode("disabled") is { } nullNodeDisabled && nullNodeDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Disabled = null;
+            if (parseNode.GetChildNode("disableReason") is null) { _explicitNullValueDisableReason = default!; _explicitNullProperties?.Remove("disableReason"); }
+            else if (parseNode.GetChildNode("disableReason") is { } nullNodeDisableReason && nullNodeDisableReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableReason = null;
+            if (parseNode.GetChildNode("processedFrom") is null) { _explicitNullValueProcessedFrom = default!; _explicitNullProperties?.Remove("processedFrom"); }
+            else if (parseNode.GetChildNode("processedFrom") is { } nullNodeProcessedFrom && nullNodeProcessedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedFrom = null;
+            if (parseNode.GetChildNode("processedTo") is null) { _explicitNullValueProcessedTo = default!; _explicitNullProperties?.Remove("processedTo"); }
+            else if (parseNode.GetChildNode("processedTo") is { } nullNodeProcessedTo && nullNodeProcessedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessedTo = null;
+            if (parseNode.GetChildNode("tierNumber") is null) { _explicitNullValueTierNumber = default!; _explicitNullProperties?.Remove("tierNumber"); }
+            else if (parseNode.GetChildNode("tierNumber") is { } nullNodeTierNumber && nullNodeTierNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the processing of payments is allowed.</summary>
-        public bool? Disabled { get => _explicitNullValueDisabled; set { _explicitNullValueDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabled"); else _explicitNullProperties?.Remove("disabled"); } }
+        public bool? Disabled { get => _explicitNullValueDisabled; set { _explicitNullValueDisabled = value; AdditionalData?.Remove("disabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disabled"); else _explicitNullProperties?.Remove("disabled"); } }
         private bool? _explicitNullValueDisabled = default!;
         /// <summary>The reason why processing has been disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
+        public string? DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; AdditionalData?.Remove("disableReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
         private string? _explicitNullValueDisableReason = default!;
 #nullable restore
 #else
-        public string DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
+        public string DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; AdditionalData?.Remove("disableReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableReason"); else _explicitNullProperties?.Remove("disableReason"); } }
         private string _explicitNullValueDisableReason = default!;
 #endif
         /// <summary>The lower bound of the processing tier (i.e., an account holder must have processed at least this amount of money in order to be placed into this tier).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedFrom? ProcessedFrom { get => _explicitNullValueProcessedFrom; set { _explicitNullValueProcessedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedFrom"); else _explicitNullProperties?.Remove("processedFrom"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedFrom? ProcessedFrom { get => _explicitNullValueProcessedFrom; set { _explicitNullValueProcessedFrom = value; AdditionalData?.Remove("processedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedFrom"); else _explicitNullProperties?.Remove("processedFrom"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedFrom? _explicitNullValueProcessedFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedFrom ProcessedFrom { get => _explicitNullValueProcessedFrom; set { _explicitNullValueProcessedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedFrom"); else _explicitNullProperties?.Remove("processedFrom"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedFrom ProcessedFrom { get => _explicitNullValueProcessedFrom; set { _explicitNullValueProcessedFrom = value; AdditionalData?.Remove("processedFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedFrom"); else _explicitNullProperties?.Remove("processedFrom"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedFrom _explicitNullValueProcessedFrom = default!;
 #endif
         /// <summary>The upper bound of the processing tier (i.e., an account holder must have processed less than this amount of money in order to be placed into this tier).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedTo? ProcessedTo { get => _explicitNullValueProcessedTo; set { _explicitNullValueProcessedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedTo"); else _explicitNullProperties?.Remove("processedTo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedTo? ProcessedTo { get => _explicitNullValueProcessedTo; set { _explicitNullValueProcessedTo = value; AdditionalData?.Remove("processedTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedTo"); else _explicitNullProperties?.Remove("processedTo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedTo? _explicitNullValueProcessedTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedTo ProcessedTo { get => _explicitNullValueProcessedTo; set { _explicitNullValueProcessedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedTo"); else _explicitNullProperties?.Remove("processedTo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedTo ProcessedTo { get => _explicitNullValueProcessedTo; set { _explicitNullValueProcessedTo = value; AdditionalData?.Remove("processedTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processedTo"); else _explicitNullProperties?.Remove("processedTo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountProcessingStateProcessedTo _explicitNullValueProcessedTo = default!;
 #endif
         /// <summary>The processing tier that the account holder occupies.</summary>
-        public int? TierNumber { get => _explicitNullValueTierNumber; set { _explicitNullValueTierNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tierNumber"); else _explicitNullProperties?.Remove("tierNumber"); } }
+        public int? TierNumber { get => _explicitNullValueTierNumber; set { _explicitNullValueTierNumber = value; AdditionalData?.Remove("tierNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tierNumber"); else _explicitNullProperties?.Remove("tierNumber"); } }
         private int? _explicitNullValueTierNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6AccountHolderStatusProcessingState"/> and sets the default values.

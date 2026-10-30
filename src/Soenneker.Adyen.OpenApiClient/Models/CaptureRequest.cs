@@ -17,17 +17,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additionalData") is { } nullNodeAdditionalDataProperty && nullNodeAdditionalDataProperty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalDataProperty = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
-            if (parseNode.GetChildNode("modificationAmount") is { } nullNodeModificationAmount && nullNodeModificationAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationAmount = null;
-            if (parseNode.GetChildNode("mpiData") is { } nullNodeMpiData && nullNodeMpiData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MpiData = null;
-            if (parseNode.GetChildNode("originalMerchantReference") is { } nullNodeOriginalMerchantReference && nullNodeOriginalMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalMerchantReference = null;
-            if (parseNode.GetChildNode("originalReference") is { } nullNodeOriginalReference && nullNodeOriginalReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalReference = null;
-            if (parseNode.GetChildNode("platformChargebackLogic") is { } nullNodePlatformChargebackLogic && nullNodePlatformChargebackLogic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformChargebackLogic = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
-            if (parseNode.GetChildNode("splits") is { } nullNodeSplits && nullNodeSplits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Splits = null;
-            if (parseNode.GetChildNode("tenderReference") is { } nullNodeTenderReference && nullNodeTenderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenderReference = null;
-            if (parseNode.GetChildNode("uniqueTerminalId") is { } nullNodeUniqueTerminalId && nullNodeUniqueTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueTerminalId = null;
+            if (parseNode.GetChildNode("additionalData") is null) { _explicitNullValueAdditionalDataProperty = default!; _explicitNullProperties?.Remove("additionalData"); }
+            else if (parseNode.GetChildNode("additionalData") is { } nullNodeAdditionalDataProperty && nullNodeAdditionalDataProperty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalDataProperty = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccount = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccount && nullNodeMerchantAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccount = null;
+            if (parseNode.GetChildNode("modificationAmount") is null) { _explicitNullValueModificationAmount = default!; _explicitNullProperties?.Remove("modificationAmount"); }
+            else if (parseNode.GetChildNode("modificationAmount") is { } nullNodeModificationAmount && nullNodeModificationAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationAmount = null;
+            if (parseNode.GetChildNode("mpiData") is null) { _explicitNullValueMpiData = default!; _explicitNullProperties?.Remove("mpiData"); }
+            else if (parseNode.GetChildNode("mpiData") is { } nullNodeMpiData && nullNodeMpiData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MpiData = null;
+            if (parseNode.GetChildNode("originalMerchantReference") is null) { _explicitNullValueOriginalMerchantReference = default!; _explicitNullProperties?.Remove("originalMerchantReference"); }
+            else if (parseNode.GetChildNode("originalMerchantReference") is { } nullNodeOriginalMerchantReference && nullNodeOriginalMerchantReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalMerchantReference = null;
+            if (parseNode.GetChildNode("originalReference") is null) { _explicitNullValueOriginalReference = default!; _explicitNullProperties?.Remove("originalReference"); }
+            else if (parseNode.GetChildNode("originalReference") is { } nullNodeOriginalReference && nullNodeOriginalReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalReference = null;
+            if (parseNode.GetChildNode("platformChargebackLogic") is null) { _explicitNullValuePlatformChargebackLogic = default!; _explicitNullProperties?.Remove("platformChargebackLogic"); }
+            else if (parseNode.GetChildNode("platformChargebackLogic") is { } nullNodePlatformChargebackLogic && nullNodePlatformChargebackLogic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformChargebackLogic = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("splits") is null) { _explicitNullValueSplits = default!; _explicitNullProperties?.Remove("splits"); }
+            else if (parseNode.GetChildNode("splits") is { } nullNodeSplits && nullNodeSplits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Splits = null;
+            if (parseNode.GetChildNode("tenderReference") is null) { _explicitNullValueTenderReference = default!; _explicitNullProperties?.Remove("tenderReference"); }
+            else if (parseNode.GetChildNode("tenderReference") is { } nullNodeTenderReference && nullNodeTenderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenderReference = null;
+            if (parseNode.GetChildNode("uniqueTerminalId") is null) { _explicitNullValueUniqueTerminalId = default!; _explicitNullProperties?.Remove("uniqueTerminalId"); }
+            else if (parseNode.GetChildNode("uniqueTerminalId") is { } nullNodeUniqueTerminalId && nullNodeUniqueTerminalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueTerminalId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,111 +46,111 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This field contains additional data, which may be required for a particular modification request.The additionalData object consists of entries, each of which includes the key and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestAdditionalDataProperty2? AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestAdditionalDataProperty2? _explicitNullValueAdditionalDataProperty = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestAdditionalDataProperty2 AdditionalDataProperty { get => _explicitNullValueAdditionalDataProperty; set { _explicitNullValueAdditionalDataProperty = value; AdditionalData?.Remove("additionalData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalData"); else _explicitNullProperties?.Remove("additionalData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestAdditionalDataProperty2 _explicitNullValueAdditionalDataProperty = default!;
 #endif
         /// <summary>The merchant account that is used to process the payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccount = default!;
 #nullable restore
 #else
-        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccount { get => _explicitNullValueMerchantAccount; set { _explicitNullValueMerchantAccount = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccount = default!;
 #endif
         /// <summary>The amount that needs to be captured. The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestModificationAmount? ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestModificationAmount? ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; AdditionalData?.Remove("modificationAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestModificationAmount? _explicitNullValueModificationAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestModificationAmount ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestModificationAmount ModificationAmount { get => _explicitNullValueModificationAmount; set { _explicitNullValueModificationAmount = value; AdditionalData?.Remove("modificationAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAmount"); else _explicitNullProperties?.Remove("modificationAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestModificationAmount _explicitNullValueModificationAmount = default!;
 #endif
         /// <summary>Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestMpiData? MpiData { get => _explicitNullValueMpiData; set { _explicitNullValueMpiData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpiData"); else _explicitNullProperties?.Remove("mpiData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestMpiData? MpiData { get => _explicitNullValueMpiData; set { _explicitNullValueMpiData = value; AdditionalData?.Remove("mpiData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpiData"); else _explicitNullProperties?.Remove("mpiData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestMpiData? _explicitNullValueMpiData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestMpiData MpiData { get => _explicitNullValueMpiData; set { _explicitNullValueMpiData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpiData"); else _explicitNullProperties?.Remove("mpiData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestMpiData MpiData { get => _explicitNullValueMpiData; set { _explicitNullValueMpiData = value; AdditionalData?.Remove("mpiData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mpiData"); else _explicitNullProperties?.Remove("mpiData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestMpiData _explicitNullValueMpiData = default!;
 #endif
         /// <summary>The original merchant reference to cancel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalMerchantReference { get => _explicitNullValueOriginalMerchantReference; set { _explicitNullValueOriginalMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalMerchantReference"); else _explicitNullProperties?.Remove("originalMerchantReference"); } }
+        public string? OriginalMerchantReference { get => _explicitNullValueOriginalMerchantReference; set { _explicitNullValueOriginalMerchantReference = value; AdditionalData?.Remove("originalMerchantReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalMerchantReference"); else _explicitNullProperties?.Remove("originalMerchantReference"); } }
         private string? _explicitNullValueOriginalMerchantReference = default!;
 #nullable restore
 #else
-        public string OriginalMerchantReference { get => _explicitNullValueOriginalMerchantReference; set { _explicitNullValueOriginalMerchantReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalMerchantReference"); else _explicitNullProperties?.Remove("originalMerchantReference"); } }
+        public string OriginalMerchantReference { get => _explicitNullValueOriginalMerchantReference; set { _explicitNullValueOriginalMerchantReference = value; AdditionalData?.Remove("originalMerchantReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalMerchantReference"); else _explicitNullProperties?.Remove("originalMerchantReference"); } }
         private string _explicitNullValueOriginalMerchantReference = default!;
 #endif
         /// <summary>The original pspReference of the payment to modify.This reference is returned in:* authorisation response* authorisation notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
+        public string? OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; AdditionalData?.Remove("originalReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
         private string? _explicitNullValueOriginalReference = default!;
 #nullable restore
 #else
-        public string OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
+        public string OriginalReference { get => _explicitNullValueOriginalReference; set { _explicitNullValueOriginalReference = value; AdditionalData?.Remove("originalReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalReference"); else _explicitNullProperties?.Remove("originalReference"); } }
         private string _explicitNullValueOriginalReference = default!;
 #endif
         /// <summary>Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/adyen-for-platforms-model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestPlatformChargebackLogic? PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestPlatformChargebackLogic? PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; AdditionalData?.Remove("platformChargebackLogic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestPlatformChargebackLogic? _explicitNullValuePlatformChargebackLogic = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestPlatformChargebackLogic PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestPlatformChargebackLogic PlatformChargebackLogic { get => _explicitNullValuePlatformChargebackLogic; set { _explicitNullValuePlatformChargebackLogic = value; AdditionalData?.Remove("platformChargebackLogic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platformChargebackLogic"); else _explicitNullProperties?.Remove("platformChargebackLogic"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CaptureRequestPlatformChargebackLogic _explicitNullValuePlatformChargebackLogic = default!;
 #endif
         /// <summary>Your reference for the payment modification. This reference is visible in Customer Area and in reports.Maximum length: 80 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>An array of objects specifying how the amount should be split between accounts when using Adyen for Platforms. For more information, see how to split payments for [platforms](https://docs.adyen.com/platforms/automatic-split-configuration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>? Splits { get => _explicitNullValueSplits; set { _explicitNullValueSplits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splits"); else _explicitNullProperties?.Remove("splits"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>? Splits { get => _explicitNullValueSplits; set { _explicitNullValueSplits = value; AdditionalData?.Remove("splits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splits"); else _explicitNullProperties?.Remove("splits"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split>? _explicitNullValueSplits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split> Splits { get => _explicitNullValueSplits; set { _explicitNullValueSplits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splits"); else _explicitNullProperties?.Remove("splits"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split> Splits { get => _explicitNullValueSplits; set { _explicitNullValueSplits = value; AdditionalData?.Remove("splits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("splits"); else _explicitNullProperties?.Remove("splits"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68Split> _explicitNullValueSplits = default!;
 #endif
         /// <summary>The transaction reference provided by the PED. For point-of-sale integrations only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenderReference { get => _explicitNullValueTenderReference; set { _explicitNullValueTenderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenderReference"); else _explicitNullProperties?.Remove("tenderReference"); } }
+        public string? TenderReference { get => _explicitNullValueTenderReference; set { _explicitNullValueTenderReference = value; AdditionalData?.Remove("tenderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenderReference"); else _explicitNullProperties?.Remove("tenderReference"); } }
         private string? _explicitNullValueTenderReference = default!;
 #nullable restore
 #else
-        public string TenderReference { get => _explicitNullValueTenderReference; set { _explicitNullValueTenderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenderReference"); else _explicitNullProperties?.Remove("tenderReference"); } }
+        public string TenderReference { get => _explicitNullValueTenderReference; set { _explicitNullValueTenderReference = value; AdditionalData?.Remove("tenderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tenderReference"); else _explicitNullProperties?.Remove("tenderReference"); } }
         private string _explicitNullValueTenderReference = default!;
 #endif
         /// <summary>Unique terminal ID for the PED that originally processed the request. For point-of-sale integrations only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
+        public string? UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; AdditionalData?.Remove("uniqueTerminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
         private string? _explicitNullValueUniqueTerminalId = default!;
 #nullable restore
 #else
-        public string UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
+        public string UniqueTerminalId { get => _explicitNullValueUniqueTerminalId; set { _explicitNullValueUniqueTerminalId = value; AdditionalData?.Remove("uniqueTerminalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueTerminalId"); else _explicitNullProperties?.Remove("uniqueTerminalId"); } }
         private string _explicitNullValueUniqueTerminalId = default!;
 #endif
         /// <summary>

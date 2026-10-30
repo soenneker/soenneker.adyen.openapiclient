@@ -80,7 +80,7 @@ namespace Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Stor
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.PaymentsAppServiceV1.Merchants.Item.Stores.Item.PaymentsApps.PaymentsAppsRequestBuilder.PaymentsAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://management-live.adyen.com/v1", "/PaymentsAppService-v1/merchants/{merchantId}/stores/{storeId}/paymentsApps", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

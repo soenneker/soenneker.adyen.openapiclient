@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cancel") is { } nullNodeCancel && nullNodeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cancel = null;
-            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("cancel") is null) { _explicitNullValueCancel = default!; _explicitNullProperties?.Remove("cancel"); }
+            else if (parseNode.GetChildNode("cancel") is { } nullNodeCancel && nullNodeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cancel = null;
+            if (parseNode.GetChildNode("success") is null) { _explicitNullValueSuccess = default!; _explicitNullProperties?.Remove("success"); }
+            else if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The URL to where the user must be redirected after a payment has been canceled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinksCancel? Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinksCancel? Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; AdditionalData?.Remove("cancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinksCancel? _explicitNullValueCancel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinksCancel Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinksCancel Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; AdditionalData?.Remove("cancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinksCancel _explicitNullValueCancel = default!;
 #endif
         /// <summary>The URL to where the user must be redirected after a successful payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinksSuccess? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinksSuccess? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinksSuccess? _explicitNullValueSuccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LinksSuccess Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LinksSuccess Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LinksSuccess _explicitNullValueSuccess = default!;
 #endif
         /// <summary>

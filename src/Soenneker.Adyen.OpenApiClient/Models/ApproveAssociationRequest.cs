@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entityId") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
-            if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
-            if (parseNode.GetChildNode("scaDeviceIds") is { } nullNodeScaDeviceIds && nullNodeScaDeviceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDeviceIds = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("entityId") is null) { _explicitNullValueEntityId = default!; _explicitNullProperties?.Remove("entityId"); }
+            else if (parseNode.GetChildNode("entityId") is { } nullNodeEntityId && nullNodeEntityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityId = null;
+            if (parseNode.GetChildNode("entityType") is null) { _explicitNullValueEntityType = default!; _explicitNullProperties?.Remove("entityType"); }
+            else if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("scaDeviceIds") is null) { _explicitNullValueScaDeviceIds = default!; _explicitNullProperties?.Remove("scaDeviceIds"); }
+            else if (parseNode.GetChildNode("scaDeviceIds") is { } nullNodeScaDeviceIds && nullNodeScaDeviceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDeviceIds = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityId"); else _explicitNullProperties?.Remove("entityId"); } }
+        public string? EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityId"); else _explicitNullProperties?.Remove("entityId"); } }
         private string? _explicitNullValueEntityId = default!;
 #nullable restore
 #else
-        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityId"); else _explicitNullProperties?.Remove("entityId"); } }
+        public string EntityId { get => _explicitNullValueEntityId; set { _explicitNullValueEntityId = value; AdditionalData?.Remove("entityId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityId"); else _explicitNullProperties?.Remove("entityId"); } }
         private string _explicitNullValueEntityId = default!;
 #endif
         /// <summary>The type of the entity. Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; AdditionalData?.Remove("entityType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType? _explicitNullValueEntityType = default!;
         /// <summary>List of device ids associated to the entity that will be approved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScaDeviceIds { get => _explicitNullValueScaDeviceIds; set { _explicitNullValueScaDeviceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceIds"); else _explicitNullProperties?.Remove("scaDeviceIds"); } }
+        public List<string>? ScaDeviceIds { get => _explicitNullValueScaDeviceIds; set { _explicitNullValueScaDeviceIds = value; AdditionalData?.Remove("scaDeviceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceIds"); else _explicitNullProperties?.Remove("scaDeviceIds"); } }
         private List<string>? _explicitNullValueScaDeviceIds = default!;
 #nullable restore
 #else
-        public List<string> ScaDeviceIds { get => _explicitNullValueScaDeviceIds; set { _explicitNullValueScaDeviceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceIds"); else _explicitNullProperties?.Remove("scaDeviceIds"); } }
+        public List<string> ScaDeviceIds { get => _explicitNullValueScaDeviceIds; set { _explicitNullValueScaDeviceIds = value; AdditionalData?.Remove("scaDeviceIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDeviceIds"); else _explicitNullProperties?.Remove("scaDeviceIds"); } }
         private List<string> _explicitNullValueScaDeviceIds = default!;
 #endif
         /// <summary>The status of the association. Possible values: **active** or **pendingApproval**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequest"/> and sets the default values.
@@ -77,9 +81,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entityId", n => { EntityId = n.GetStringValue(); } },
-                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType>(); } },
+                { "entityType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestEntityType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEntityType = default; _explicitNullProperties?.Remove("entityType"); AdditionalData["entityType"] = unknown; } else { EntityType = parsed; AdditionalData.Remove("entityType"); } } },
                 { "scaDeviceIds", n => { ScaDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ApproveAssociationRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

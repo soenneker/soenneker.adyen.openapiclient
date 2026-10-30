@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fullName") is { } nullNodeFullName && nullNodeFullName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullName = null;
+            if (parseNode.GetChildNode("fullName") is null) { _explicitNullValueFullName = default!; _explicitNullProperties?.Remove("fullName"); }
+            else if (parseNode.GetChildNode("fullName") is { } nullNodeFullName && nullNodeFullName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Full name of the account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
+        public string? FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; AdditionalData?.Remove("fullName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
         private string? _explicitNullValueFullName = default!;
 #nullable restore
 #else
-        public string FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
+        public string FullName { get => _explicitNullValueFullName; set { _explicitNullValueFullName = value; AdditionalData?.Remove("fullName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullName"); else _explicitNullProperties?.Remove("fullName"); } }
         private string _explicitNullValueFullName = default!;
 #endif
         /// <summary>

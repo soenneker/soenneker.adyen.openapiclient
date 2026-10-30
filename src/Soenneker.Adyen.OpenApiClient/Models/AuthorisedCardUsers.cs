@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("legalEntityIds") is { } nullNodeLegalEntityIds && nullNodeLegalEntityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityIds = null;
+            if (parseNode.GetChildNode("legalEntityIds") is null) { _explicitNullValueLegalEntityIds = default!; _explicitNullProperties?.Remove("legalEntityIds"); }
+            else if (parseNode.GetChildNode("legalEntityIds") is { } nullNodeLegalEntityIds && nullNodeLegalEntityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalEntityIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The legal entity IDs of the authorized card users linked to the specified payment instrument.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LegalEntityIds { get => _explicitNullValueLegalEntityIds; set { _explicitNullValueLegalEntityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityIds"); else _explicitNullProperties?.Remove("legalEntityIds"); } }
+        public List<string>? LegalEntityIds { get => _explicitNullValueLegalEntityIds; set { _explicitNullValueLegalEntityIds = value; AdditionalData?.Remove("legalEntityIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityIds"); else _explicitNullProperties?.Remove("legalEntityIds"); } }
         private List<string>? _explicitNullValueLegalEntityIds = default!;
 #nullable restore
 #else
-        public List<string> LegalEntityIds { get => _explicitNullValueLegalEntityIds; set { _explicitNullValueLegalEntityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityIds"); else _explicitNullProperties?.Remove("legalEntityIds"); } }
+        public List<string> LegalEntityIds { get => _explicitNullValueLegalEntityIds; set { _explicitNullValueLegalEntityIds = value; AdditionalData?.Remove("legalEntityIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legalEntityIds"); else _explicitNullProperties?.Remove("legalEntityIds"); } }
         private List<string> _explicitNullValueLegalEntityIds = default!;
 #endif
         /// <summary>

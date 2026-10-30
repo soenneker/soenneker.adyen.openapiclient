@@ -17,19 +17,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
-            if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
-            if (parseNode.GetChildNode("institution") is { } nullNodeInstitution && nullNodeInstitution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institution = null;
+            if (parseNode.GetChildNode("accountNumber") is null) { _explicitNullValueAccountNumber = default!; _explicitNullProperties?.Remove("accountNumber"); }
+            else if (parseNode.GetChildNode("accountNumber") is { } nullNodeAccountNumber && nullNodeAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountNumber = null;
+            if (parseNode.GetChildNode("branch") is null) { _explicitNullValueBranch = default!; _explicitNullProperties?.Remove("branch"); }
+            else if (parseNode.GetChildNode("branch") is { } nullNodeBranch && nullNodeBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Branch = null;
+            if (parseNode.GetChildNode("institution") is null) { _explicitNullValueInstitution = default!; _explicitNullProperties?.Remove("institution"); }
+            else if (parseNode.GetChildNode("institution") is { } nullNodeInstitution && nullNodeInstitution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Institution = null;
         }
 
         /// <summary>The account number of the bank account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        public string? AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; AdditionalData?.Remove("accountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string? _explicitNullValueAccountNumber = default!;
 #nullable restore
 #else
-        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
+        public string AccountNumber { get => _explicitNullValueAccountNumber; set { _explicitNullValueAccountNumber = value; AdditionalData?.Remove("accountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountNumber"); else _explicitNullProperties?.Remove("accountNumber"); } }
         private string _explicitNullValueAccountNumber = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identifies the specific branch where the account is held within the Canadian banking system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string? Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string? _explicitNullValueBranch = default!;
 #nullable restore
 #else
-        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
+        public string Branch { get => _explicitNullValueBranch; set { _explicitNullValueBranch = value; AdditionalData?.Remove("branch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch"); else _explicitNullProperties?.Remove("branch"); } }
         private string _explicitNullValueBranch = default!;
 #endif
         /// <summary>The financial institution that identifies the bank in Canada.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
+        public string? Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; AdditionalData?.Remove("institution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
         private string? _explicitNullValueInstitution = default!;
 #nullable restore
 #else
-        public string Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
+        public string Institution { get => _explicitNullValueInstitution; set { _explicitNullValueInstitution = value; AdditionalData?.Remove("institution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("institution"); else _explicitNullProperties?.Remove("institution"); } }
         private string _explicitNullValueInstitution = default!;
 #endif
         /// <summary>

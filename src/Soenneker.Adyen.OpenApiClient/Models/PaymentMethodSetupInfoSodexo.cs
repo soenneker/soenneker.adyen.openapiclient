@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merchantContactPhone") is { } nullNodeMerchantContactPhone && nullNodeMerchantContactPhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantContactPhone = null;
+            if (parseNode.GetChildNode("merchantContactPhone") is null) { _explicitNullValueMerchantContactPhone = default!; _explicitNullProperties?.Remove("merchantContactPhone"); }
+            else if (parseNode.GetChildNode("merchantContactPhone") is { } nullNodeMerchantContactPhone && nullNodeMerchantContactPhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantContactPhone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Sodexo merchantContactPhone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantContactPhone { get => _explicitNullValueMerchantContactPhone; set { _explicitNullValueMerchantContactPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantContactPhone"); else _explicitNullProperties?.Remove("merchantContactPhone"); } }
+        public string? MerchantContactPhone { get => _explicitNullValueMerchantContactPhone; set { _explicitNullValueMerchantContactPhone = value; AdditionalData?.Remove("merchantContactPhone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantContactPhone"); else _explicitNullProperties?.Remove("merchantContactPhone"); } }
         private string? _explicitNullValueMerchantContactPhone = default!;
 #nullable restore
 #else
-        public string MerchantContactPhone { get => _explicitNullValueMerchantContactPhone; set { _explicitNullValueMerchantContactPhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantContactPhone"); else _explicitNullProperties?.Remove("merchantContactPhone"); } }
+        public string MerchantContactPhone { get => _explicitNullValueMerchantContactPhone; set { _explicitNullValueMerchantContactPhone = value; AdditionalData?.Remove("merchantContactPhone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantContactPhone"); else _explicitNullProperties?.Remove("merchantContactPhone"); } }
         private string _explicitNullValueMerchantContactPhone = default!;
 #endif
         /// <summary>

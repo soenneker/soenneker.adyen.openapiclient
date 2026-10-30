@@ -18,24 +18,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
         }
 
         /// <summary>A list of actions that need to be completed to proceed with the grant. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code for the status of the grant. Possible values:- **Pending**- **Active**- **Repaid**- **WrittenOff**- **Failed**- **Revoked**- **Requested**- **Reviewing**- **Approved**- **Rejected**- **Cancelled**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.StatusCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.StatusCode? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.StatusCode? _explicitNullValueCode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GrantStatus"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Adyen.OpenApiClient.Models.ActionObject>(global::Soenneker.Adyen.OpenApiClient.Models.ActionObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StatusCode>(); } },
+                { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.StatusCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
             };
         }
         /// <summary>

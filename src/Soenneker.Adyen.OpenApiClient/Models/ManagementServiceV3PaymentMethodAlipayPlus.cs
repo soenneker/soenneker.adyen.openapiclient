@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("settlementCurrencyCode") is { } nullNodeSettlementCurrencyCode && nullNodeSettlementCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementCurrencyCode = null;
+            if (parseNode.GetChildNode("settlementCurrencyCode") is null) { _explicitNullValueSettlementCurrencyCode = default!; _explicitNullProperties?.Remove("settlementCurrencyCode"); }
+            else if (parseNode.GetChildNode("settlementCurrencyCode") is { } nullNodeSettlementCurrencyCode && nullNodeSettlementCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementCurrencyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The currency used for settlement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
+        public string? SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; AdditionalData?.Remove("settlementCurrencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
         private string? _explicitNullValueSettlementCurrencyCode = default!;
 #nullable restore
 #else
-        public string SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
+        public string SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; AdditionalData?.Remove("settlementCurrencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
         private string _explicitNullValueSettlementCurrencyCode = default!;
 #endif
         /// <summary>

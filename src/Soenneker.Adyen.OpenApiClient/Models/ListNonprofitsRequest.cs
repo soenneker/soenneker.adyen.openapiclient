@@ -17,17 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderIds") is { } nullNodeAccountHolderIds && nullNodeAccountHolderIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderIds = null;
+            if (parseNode.GetChildNode("accountHolderIds") is null) { _explicitNullValueAccountHolderIds = default!; _explicitNullProperties?.Remove("accountHolderIds"); }
+            else if (parseNode.GetChildNode("accountHolderIds") is { } nullNodeAccountHolderIds && nullNodeAccountHolderIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderIds = null;
         }
 
         /// <summary>The unique identifiers of the account holders to be included in a donation campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
+        public List<string>? AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; AdditionalData?.Remove("accountHolderIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
         private List<string>? _explicitNullValueAccountHolderIds = default!;
 #nullable restore
 #else
-        public List<string> AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
+        public List<string> AccountHolderIds { get => _explicitNullValueAccountHolderIds; set { _explicitNullValueAccountHolderIds = value; AdditionalData?.Remove("accountHolderIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderIds"); else _explicitNullProperties?.Remove("accountHolderIds"); } }
         private List<string> _explicitNullValueAccountHolderIds = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -17,27 +17,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
-            if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
-            if (parseNode.GetChildNode("paymentInstruments") is { } nullNodePaymentInstruments && nullNodePaymentInstruments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstruments = null;
+            if (parseNode.GetChildNode("hasNext") is null) { _explicitNullValueHasNext = default!; _explicitNullProperties?.Remove("hasNext"); }
+            else if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
+            if (parseNode.GetChildNode("hasPrevious") is null) { _explicitNullValueHasPrevious = default!; _explicitNullProperties?.Remove("hasPrevious"); }
+            else if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
+            if (parseNode.GetChildNode("paymentInstruments") is null) { _explicitNullValuePaymentInstruments = default!; _explicitNullProperties?.Remove("paymentInstruments"); }
+            else if (parseNode.GetChildNode("paymentInstruments") is { } nullNodePaymentInstruments && nullNodePaymentInstruments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstruments = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether there are more items on the next page.</summary>
-        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
+        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; AdditionalData?.Remove("hasNext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
         private bool? _explicitNullValueHasNext = default!;
         /// <summary>Indicates whether there are more items on the previous page.</summary>
-        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
+        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; AdditionalData?.Remove("hasPrevious"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
         private bool? _explicitNullValueHasPrevious = default!;
         /// <summary>List of payment instruments associated with the balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PaymentInstrument>? PaymentInstruments { get => _explicitNullValuePaymentInstruments; set { _explicitNullValuePaymentInstruments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstruments"); else _explicitNullProperties?.Remove("paymentInstruments"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PaymentInstrument>? PaymentInstruments { get => _explicitNullValuePaymentInstruments; set { _explicitNullValuePaymentInstruments = value; AdditionalData?.Remove("paymentInstruments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstruments"); else _explicitNullProperties?.Remove("paymentInstruments"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PaymentInstrument>? _explicitNullValuePaymentInstruments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PaymentInstrument> PaymentInstruments { get => _explicitNullValuePaymentInstruments; set { _explicitNullValuePaymentInstruments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstruments"); else _explicitNullProperties?.Remove("paymentInstruments"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PaymentInstrument> PaymentInstruments { get => _explicitNullValuePaymentInstruments; set { _explicitNullValuePaymentInstruments = value; AdditionalData?.Remove("paymentInstruments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstruments"); else _explicitNullProperties?.Remove("paymentInstruments"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2PaymentInstrument> _explicitNullValuePaymentInstruments = default!;
 #endif
         /// <summary>

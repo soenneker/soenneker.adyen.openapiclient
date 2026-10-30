@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
-            if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
-            if (parseNode.GetChildNode("infix") is { } nullNodeInfix && nullNodeInfix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Infix = null;
-            if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("firstName") is null) { _explicitNullValueFirstName = default!; _explicitNullProperties?.Remove("firstName"); }
+            else if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("gender") is null) { _explicitNullValueGender = default!; _explicitNullProperties?.Remove("gender"); }
+            else if (parseNode.GetChildNode("gender") is { } nullNodeGender && nullNodeGender.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Gender = null;
+            if (parseNode.GetChildNode("infix") is null) { _explicitNullValueInfix = default!; _explicitNullProperties?.Remove("infix"); }
+            else if (parseNode.GetChildNode("infix") is { } nullNodeInfix && nullNodeInfix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Infix = null;
+            if (parseNode.GetChildNode("lastName") is null) { _explicitNullValueLastName = default!; _explicitNullProperties?.Remove("lastName"); }
+            else if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
         private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; AdditionalData?.Remove("firstName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
         private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>The gender.&gt;The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ViasNameGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ViasNameGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ViasNameGender? _explicitNullValueGender = default!;
         /// <summary>The name&apos;s infix, if applicable.&gt;A maximum length of twenty (20) characters is imposed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Infix { get => _explicitNullValueInfix; set { _explicitNullValueInfix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infix"); else _explicitNullProperties?.Remove("infix"); } }
+        public string? Infix { get => _explicitNullValueInfix; set { _explicitNullValueInfix = value; AdditionalData?.Remove("infix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infix"); else _explicitNullProperties?.Remove("infix"); } }
         private string? _explicitNullValueInfix = default!;
 #nullable restore
 #else
-        public string Infix { get => _explicitNullValueInfix; set { _explicitNullValueInfix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infix"); else _explicitNullProperties?.Remove("infix"); } }
+        public string Infix { get => _explicitNullValueInfix; set { _explicitNullValueInfix = value; AdditionalData?.Remove("infix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("infix"); else _explicitNullProperties?.Remove("infix"); } }
         private string _explicitNullValueInfix = default!;
 #endif
         /// <summary>The last name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
         private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; AdditionalData?.Remove("lastName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
         private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
-                { "gender", n => { Gender = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ViasNameGender>(); } },
+                { "gender", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6ViasNameGender>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGender = default; _explicitNullProperties?.Remove("gender"); AdditionalData["gender"] = unknown; } else { Gender = parsed; AdditionalData.Remove("gender"); } } },
                 { "infix", n => { Infix = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
             };

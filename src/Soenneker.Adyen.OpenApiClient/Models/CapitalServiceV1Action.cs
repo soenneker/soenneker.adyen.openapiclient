@@ -17,24 +17,26 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actionCode") is { } nullNodeActionCode && nullNodeActionCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionCode = null;
-            if (parseNode.GetChildNode("resolved") is { } nullNodeResolved && nullNodeResolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolved = null;
+            if (parseNode.GetChildNode("actionCode") is null) { _explicitNullValueActionCode = default!; _explicitNullProperties?.Remove("actionCode"); }
+            else if (parseNode.GetChildNode("actionCode") is { } nullNodeActionCode && nullNodeActionCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionCode = null;
+            if (parseNode.GetChildNode("resolved") is null) { _explicitNullValueResolved = default!; _explicitNullProperties?.Remove("resolved"); }
+            else if (parseNode.GetChildNode("resolved") is { } nullNodeResolved && nullNodeResolved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolved = null;
         }
 
         /// <summary>The code identifying the action that needs to be completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionCode { get => _explicitNullValueActionCode; set { _explicitNullValueActionCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionCode"); else _explicitNullProperties?.Remove("actionCode"); } }
+        public string? ActionCode { get => _explicitNullValueActionCode; set { _explicitNullValueActionCode = value; AdditionalData?.Remove("actionCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionCode"); else _explicitNullProperties?.Remove("actionCode"); } }
         private string? _explicitNullValueActionCode = default!;
 #nullable restore
 #else
-        public string ActionCode { get => _explicitNullValueActionCode; set { _explicitNullValueActionCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionCode"); else _explicitNullProperties?.Remove("actionCode"); } }
+        public string ActionCode { get => _explicitNullValueActionCode; set { _explicitNullValueActionCode = value; AdditionalData?.Remove("actionCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionCode"); else _explicitNullProperties?.Remove("actionCode"); } }
         private string _explicitNullValueActionCode = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether this action has been successfully completed.</summary>
-        public bool? Resolved { get => _explicitNullValueResolved; set { _explicitNullValueResolved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved"); else _explicitNullProperties?.Remove("resolved"); } }
+        public bool? Resolved { get => _explicitNullValueResolved; set { _explicitNullValueResolved = value; AdditionalData?.Remove("resolved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolved"); else _explicitNullProperties?.Remove("resolved"); } }
         private bool? _explicitNullValueResolved = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1Action"/> and sets the default values.

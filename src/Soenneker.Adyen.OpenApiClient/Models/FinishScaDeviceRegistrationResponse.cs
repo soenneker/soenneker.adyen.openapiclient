@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scaDevice") is { } nullNodeScaDevice && nullNodeScaDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDevice = null;
+            if (parseNode.GetChildNode("scaDevice") is null) { _explicitNullValueScaDevice = default!; _explicitNullProperties?.Remove("scaDevice"); }
+            else if (parseNode.GetChildNode("scaDevice") is { } nullNodeScaDevice && nullNodeScaDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaDevice = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A resource that contains information about a device, including its unique ID, name, and type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice? ScaDevice { get => _explicitNullValueScaDevice; set { _explicitNullValueScaDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDevice"); else _explicitNullProperties?.Remove("scaDevice"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice? ScaDevice { get => _explicitNullValueScaDevice; set { _explicitNullValueScaDevice = value; AdditionalData?.Remove("scaDevice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDevice"); else _explicitNullProperties?.Remove("scaDevice"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice? _explicitNullValueScaDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice ScaDevice { get => _explicitNullValueScaDevice; set { _explicitNullValueScaDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDevice"); else _explicitNullProperties?.Remove("scaDevice"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice ScaDevice { get => _explicitNullValueScaDevice; set { _explicitNullValueScaDevice = value; AdditionalData?.Remove("scaDevice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaDevice"); else _explicitNullProperties?.Remove("scaDevice"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.FinishScaDeviceRegistrationResponseScaDevice _explicitNullValueScaDevice = default!;
 #endif
         /// <summary>

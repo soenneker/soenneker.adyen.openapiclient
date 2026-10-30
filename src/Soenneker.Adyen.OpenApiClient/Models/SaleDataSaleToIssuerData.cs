@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("StatementReference") is { } nullNodeStatementReference && nullNodeStatementReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatementReference = null;
+            if (parseNode.GetChildNode("StatementReference") is null) { _explicitNullValueStatementReference = default!; _explicitNullProperties?.Remove("StatementReference"); }
+            else if (parseNode.GetChildNode("StatementReference") is { } nullNodeStatementReference && nullNodeStatementReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatementReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Label to print on the bank statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatementReference { get => _explicitNullValueStatementReference; set { _explicitNullValueStatementReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StatementReference"); else _explicitNullProperties?.Remove("StatementReference"); } }
+        public string? StatementReference { get => _explicitNullValueStatementReference; set { _explicitNullValueStatementReference = value; AdditionalData?.Remove("StatementReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StatementReference"); else _explicitNullProperties?.Remove("StatementReference"); } }
         private string? _explicitNullValueStatementReference = default!;
 #nullable restore
 #else
-        public string StatementReference { get => _explicitNullValueStatementReference; set { _explicitNullValueStatementReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StatementReference"); else _explicitNullProperties?.Remove("StatementReference"); } }
+        public string StatementReference { get => _explicitNullValueStatementReference; set { _explicitNullValueStatementReference = value; AdditionalData?.Remove("StatementReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("StatementReference"); else _explicitNullProperties?.Remove("StatementReference"); } }
         private string _explicitNullValueStatementReference = default!;
 #endif
         /// <summary>

@@ -17,18 +17,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("assignment") is { } nullNodeAssignment && nullNodeAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assignment = null;
-            if (parseNode.GetChildNode("cloudDeviceApiEndpoint") is { } nullNodeCloudDeviceApiEndpoint && nullNodeCloudDeviceApiEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudDeviceApiEndpoint = null;
-            if (parseNode.GetChildNode("connectivity") is { } nullNodeConnectivity && nullNodeConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connectivity = null;
-            if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
-            if (parseNode.GetChildNode("firmwareVersion") is { } nullNodeFirmwareVersion && nullNodeFirmwareVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirmwareVersion = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("installedAPKs") is { } nullNodeInstalledAPKs && nullNodeInstalledAPKs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstalledAPKs = null;
-            if (parseNode.GetChildNode("lastActivityAt") is { } nullNodeLastActivityAt && nullNodeLastActivityAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActivityAt = null;
-            if (parseNode.GetChildNode("lastTransactionAt") is { } nullNodeLastTransactionAt && nullNodeLastTransactionAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastTransactionAt = null;
-            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
-            if (parseNode.GetChildNode("restartLocalTime") is { } nullNodeRestartLocalTime && nullNodeRestartLocalTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestartLocalTime = null;
-            if (parseNode.GetChildNode("serialNumber") is { } nullNodeSerialNumber && nullNodeSerialNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerialNumber = null;
+            if (parseNode.GetChildNode("assignment") is null) { _explicitNullValueAssignment = default!; _explicitNullProperties?.Remove("assignment"); }
+            else if (parseNode.GetChildNode("assignment") is { } nullNodeAssignment && nullNodeAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assignment = null;
+            if (parseNode.GetChildNode("cloudDeviceApiEndpoint") is null) { _explicitNullValueCloudDeviceApiEndpoint = default!; _explicitNullProperties?.Remove("cloudDeviceApiEndpoint"); }
+            else if (parseNode.GetChildNode("cloudDeviceApiEndpoint") is { } nullNodeCloudDeviceApiEndpoint && nullNodeCloudDeviceApiEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloudDeviceApiEndpoint = null;
+            if (parseNode.GetChildNode("connectivity") is null) { _explicitNullValueConnectivity = default!; _explicitNullProperties?.Remove("connectivity"); }
+            else if (parseNode.GetChildNode("connectivity") is { } nullNodeConnectivity && nullNodeConnectivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connectivity = null;
+            if (parseNode.GetChildNode("countryCode") is null) { _explicitNullValueCountryCode = default!; _explicitNullProperties?.Remove("countryCode"); }
+            else if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("firmwareVersion") is null) { _explicitNullValueFirmwareVersion = default!; _explicitNullProperties?.Remove("firmwareVersion"); }
+            else if (parseNode.GetChildNode("firmwareVersion") is { } nullNodeFirmwareVersion && nullNodeFirmwareVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirmwareVersion = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("installedAPKs") is null) { _explicitNullValueInstalledAPKs = default!; _explicitNullProperties?.Remove("installedAPKs"); }
+            else if (parseNode.GetChildNode("installedAPKs") is { } nullNodeInstalledAPKs && nullNodeInstalledAPKs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstalledAPKs = null;
+            if (parseNode.GetChildNode("lastActivityAt") is null) { _explicitNullValueLastActivityAt = default!; _explicitNullProperties?.Remove("lastActivityAt"); }
+            else if (parseNode.GetChildNode("lastActivityAt") is { } nullNodeLastActivityAt && nullNodeLastActivityAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastActivityAt = null;
+            if (parseNode.GetChildNode("lastTransactionAt") is null) { _explicitNullValueLastTransactionAt = default!; _explicitNullProperties?.Remove("lastTransactionAt"); }
+            else if (parseNode.GetChildNode("lastTransactionAt") is { } nullNodeLastTransactionAt && nullNodeLastTransactionAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastTransactionAt = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("restartLocalTime") is null) { _explicitNullValueRestartLocalTime = default!; _explicitNullProperties?.Remove("restartLocalTime"); }
+            else if (parseNode.GetChildNode("restartLocalTime") is { } nullNodeRestartLocalTime && nullNodeRestartLocalTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestartLocalTime = null;
+            if (parseNode.GetChildNode("serialNumber") is null) { _explicitNullValueSerialNumber = default!; _explicitNullProperties?.Remove("serialNumber"); }
+            else if (parseNode.GetChildNode("serialNumber") is { } nullNodeSerialNumber && nullNodeSerialNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SerialNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,107 +48,107 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Indicates the account level to which the terminal is assigned, the [assignment status](https://docs.adyen.com/point-of-sale/automating-terminal-management/assign-terminals-api), and where the terminals is in the process of being reassigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed? Assignment { get => _explicitNullValueAssignment; set { _explicitNullValueAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignment"); else _explicitNullProperties?.Remove("assignment"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed? Assignment { get => _explicitNullValueAssignment; set { _explicitNullValueAssignment = value; AdditionalData?.Remove("assignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignment"); else _explicitNullProperties?.Remove("assignment"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed? _explicitNullValueAssignment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed Assignment { get => _explicitNullValueAssignment; set { _explicitNullValueAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignment"); else _explicitNullProperties?.Remove("assignment"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed Assignment { get => _explicitNullValueAssignment; set { _explicitNullValueAssignment = value; AdditionalData?.Remove("assignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignment"); else _explicitNullProperties?.Remove("assignment"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalAssignmentComposed _explicitNullValueAssignment = default!;
 #endif
         /// <summary>The [regional base URL](https://docs.adyen.com/api-explorer/terminal-api/1/overview#endpoints-for-cloud-communications) to use for sending Terminal API requests when using cloud communications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudDeviceApiEndpoint { get => _explicitNullValueCloudDeviceApiEndpoint; set { _explicitNullValueCloudDeviceApiEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudDeviceApiEndpoint"); else _explicitNullProperties?.Remove("cloudDeviceApiEndpoint"); } }
+        public string? CloudDeviceApiEndpoint { get => _explicitNullValueCloudDeviceApiEndpoint; set { _explicitNullValueCloudDeviceApiEndpoint = value; AdditionalData?.Remove("cloudDeviceApiEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudDeviceApiEndpoint"); else _explicitNullProperties?.Remove("cloudDeviceApiEndpoint"); } }
         private string? _explicitNullValueCloudDeviceApiEndpoint = default!;
 #nullable restore
 #else
-        public string CloudDeviceApiEndpoint { get => _explicitNullValueCloudDeviceApiEndpoint; set { _explicitNullValueCloudDeviceApiEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudDeviceApiEndpoint"); else _explicitNullProperties?.Remove("cloudDeviceApiEndpoint"); } }
+        public string CloudDeviceApiEndpoint { get => _explicitNullValueCloudDeviceApiEndpoint; set { _explicitNullValueCloudDeviceApiEndpoint = value; AdditionalData?.Remove("cloudDeviceApiEndpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloudDeviceApiEndpoint"); else _explicitNullProperties?.Remove("cloudDeviceApiEndpoint"); } }
         private string _explicitNullValueCloudDeviceApiEndpoint = default!;
 #endif
         /// <summary>Information about bluetooth, cellular, ethernet and wifi connectivity for the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed? Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed? Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; AdditionalData?.Remove("connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed? _explicitNullValueConnectivity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed Connectivity { get => _explicitNullValueConnectivity; set { _explicitNullValueConnectivity = value; AdditionalData?.Remove("connectivity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectivity"); else _explicitNullProperties?.Remove("connectivity"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TerminalConnectivityComposed _explicitNullValueConnectivity = default!;
 #endif
         /// <summary>The country code of the country where the terminal is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
         private string? _explicitNullValueCountryCode = default!;
 #nullable restore
 #else
-        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
         private string _explicitNullValueCountryCode = default!;
 #endif
         /// <summary>The software release currently in use on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirmwareVersion { get => _explicitNullValueFirmwareVersion; set { _explicitNullValueFirmwareVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firmwareVersion"); else _explicitNullProperties?.Remove("firmwareVersion"); } }
+        public string? FirmwareVersion { get => _explicitNullValueFirmwareVersion; set { _explicitNullValueFirmwareVersion = value; AdditionalData?.Remove("firmwareVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firmwareVersion"); else _explicitNullProperties?.Remove("firmwareVersion"); } }
         private string? _explicitNullValueFirmwareVersion = default!;
 #nullable restore
 #else
-        public string FirmwareVersion { get => _explicitNullValueFirmwareVersion; set { _explicitNullValueFirmwareVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firmwareVersion"); else _explicitNullProperties?.Remove("firmwareVersion"); } }
+        public string FirmwareVersion { get => _explicitNullValueFirmwareVersion; set { _explicitNullValueFirmwareVersion = value; AdditionalData?.Remove("firmwareVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firmwareVersion"); else _explicitNullProperties?.Remove("firmwareVersion"); } }
         private string _explicitNullValueFirmwareVersion = default!;
 #endif
         /// <summary>The unique identifier of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>A list of Android apps installed on the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs>? InstalledAPKs { get => _explicitNullValueInstalledAPKs; set { _explicitNullValueInstalledAPKs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedAPKs"); else _explicitNullProperties?.Remove("installedAPKs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs>? InstalledAPKs { get => _explicitNullValueInstalledAPKs; set { _explicitNullValueInstalledAPKs = value; AdditionalData?.Remove("installedAPKs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedAPKs"); else _explicitNullProperties?.Remove("installedAPKs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs>? _explicitNullValueInstalledAPKs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs> InstalledAPKs { get => _explicitNullValueInstalledAPKs; set { _explicitNullValueInstalledAPKs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedAPKs"); else _explicitNullProperties?.Remove("installedAPKs"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs> InstalledAPKs { get => _explicitNullValueInstalledAPKs; set { _explicitNullValueInstalledAPKs = value; AdditionalData?.Remove("installedAPKs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installedAPKs"); else _explicitNullProperties?.Remove("installedAPKs"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.InstalledApKs> _explicitNullValueInstalledAPKs = default!;
 #endif
         /// <summary>Date and time of the last activity on the terminal. Not included when the last activity was more than 14 days ago.</summary>
-        public DateTimeOffset? LastActivityAt { get => _explicitNullValueLastActivityAt; set { _explicitNullValueLastActivityAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastActivityAt"); else _explicitNullProperties?.Remove("lastActivityAt"); } }
+        public DateTimeOffset? LastActivityAt { get => _explicitNullValueLastActivityAt; set { _explicitNullValueLastActivityAt = value; AdditionalData?.Remove("lastActivityAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastActivityAt"); else _explicitNullProperties?.Remove("lastActivityAt"); } }
         private DateTimeOffset? _explicitNullValueLastActivityAt = default!;
         /// <summary>Date and time of the last transaction on the terminal. Not included when the last transaction was more than 14 days ago.</summary>
-        public DateTimeOffset? LastTransactionAt { get => _explicitNullValueLastTransactionAt; set { _explicitNullValueLastTransactionAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastTransactionAt"); else _explicitNullProperties?.Remove("lastTransactionAt"); } }
+        public DateTimeOffset? LastTransactionAt { get => _explicitNullValueLastTransactionAt; set { _explicitNullValueLastTransactionAt = value; AdditionalData?.Remove("lastTransactionAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastTransactionAt"); else _explicitNullProperties?.Remove("lastTransactionAt"); } }
         private DateTimeOffset? _explicitNullValueLastTransactionAt = default!;
         /// <summary>The model name of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
         private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
         private string _explicitNullValueModel = default!;
 #endif
         /// <summary>The exact time of the terminal reboot, in the timezone of the terminal in **HH:mm** format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestartLocalTime { get => _explicitNullValueRestartLocalTime; set { _explicitNullValueRestartLocalTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restartLocalTime"); else _explicitNullProperties?.Remove("restartLocalTime"); } }
+        public string? RestartLocalTime { get => _explicitNullValueRestartLocalTime; set { _explicitNullValueRestartLocalTime = value; AdditionalData?.Remove("restartLocalTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restartLocalTime"); else _explicitNullProperties?.Remove("restartLocalTime"); } }
         private string? _explicitNullValueRestartLocalTime = default!;
 #nullable restore
 #else
-        public string RestartLocalTime { get => _explicitNullValueRestartLocalTime; set { _explicitNullValueRestartLocalTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restartLocalTime"); else _explicitNullProperties?.Remove("restartLocalTime"); } }
+        public string RestartLocalTime { get => _explicitNullValueRestartLocalTime; set { _explicitNullValueRestartLocalTime = value; AdditionalData?.Remove("restartLocalTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restartLocalTime"); else _explicitNullProperties?.Remove("restartLocalTime"); } }
         private string _explicitNullValueRestartLocalTime = default!;
 #endif
         /// <summary>The serial number of the terminal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
+        public string? SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; AdditionalData?.Remove("serialNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
         private string? _explicitNullValueSerialNumber = default!;
 #nullable restore
 #else
-        public string SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
+        public string SerialNumber { get => _explicitNullValueSerialNumber; set { _explicitNullValueSerialNumber = value; AdditionalData?.Remove("serialNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serialNumber"); else _explicitNullProperties?.Remove("serialNumber"); } }
         private string _explicitNullValueSerialNumber = default!;
 #endif
         /// <summary>

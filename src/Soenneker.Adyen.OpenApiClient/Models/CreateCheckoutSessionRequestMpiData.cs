@@ -18,119 +18,131 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticationResponse") is { } nullNodeAuthenticationResponse && nullNodeAuthenticationResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationResponse = null;
-            if (parseNode.GetChildNode("cavv") is { } nullNodeCavv && nullNodeCavv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cavv = null;
-            if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
-            if (parseNode.GetChildNode("challengeCancel") is { } nullNodeChallengeCancel && nullNodeChallengeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeCancel = null;
-            if (parseNode.GetChildNode("directoryResponse") is { } nullNodeDirectoryResponse && nullNodeDirectoryResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryResponse = null;
-            if (parseNode.GetChildNode("dsTransID") is { } nullNodeDsTransID && nullNodeDsTransID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsTransID = null;
-            if (parseNode.GetChildNode("eci") is { } nullNodeEci && nullNodeEci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eci = null;
-            if (parseNode.GetChildNode("riskScore") is { } nullNodeRiskScore && nullNodeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScore = null;
-            if (parseNode.GetChildNode("threeDSVersion") is { } nullNodeThreeDSVersion && nullNodeThreeDSVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSVersion = null;
-            if (parseNode.GetChildNode("tokenAuthenticationVerificationValue") is { } nullNodeTokenAuthenticationVerificationValue && nullNodeTokenAuthenticationVerificationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenAuthenticationVerificationValue = null;
-            if (parseNode.GetChildNode("transStatusReason") is { } nullNodeTransStatusReason && nullNodeTransStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransStatusReason = null;
-            if (parseNode.GetChildNode("xid") is { } nullNodeXid && nullNodeXid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xid = null;
+            if (parseNode.GetChildNode("authenticationResponse") is null) { _explicitNullValueAuthenticationResponse = default!; _explicitNullProperties?.Remove("authenticationResponse"); }
+            else if (parseNode.GetChildNode("authenticationResponse") is { } nullNodeAuthenticationResponse && nullNodeAuthenticationResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationResponse = null;
+            if (parseNode.GetChildNode("cavv") is null) { _explicitNullValueCavv = default!; _explicitNullProperties?.Remove("cavv"); }
+            else if (parseNode.GetChildNode("cavv") is { } nullNodeCavv && nullNodeCavv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cavv = null;
+            if (parseNode.GetChildNode("cavvAlgorithm") is null) { _explicitNullValueCavvAlgorithm = default!; _explicitNullProperties?.Remove("cavvAlgorithm"); }
+            else if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
+            if (parseNode.GetChildNode("challengeCancel") is null) { _explicitNullValueChallengeCancel = default!; _explicitNullProperties?.Remove("challengeCancel"); }
+            else if (parseNode.GetChildNode("challengeCancel") is { } nullNodeChallengeCancel && nullNodeChallengeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeCancel = null;
+            if (parseNode.GetChildNode("directoryResponse") is null) { _explicitNullValueDirectoryResponse = default!; _explicitNullProperties?.Remove("directoryResponse"); }
+            else if (parseNode.GetChildNode("directoryResponse") is { } nullNodeDirectoryResponse && nullNodeDirectoryResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectoryResponse = null;
+            if (parseNode.GetChildNode("dsTransID") is null) { _explicitNullValueDsTransID = default!; _explicitNullProperties?.Remove("dsTransID"); }
+            else if (parseNode.GetChildNode("dsTransID") is { } nullNodeDsTransID && nullNodeDsTransID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DsTransID = null;
+            if (parseNode.GetChildNode("eci") is null) { _explicitNullValueEci = default!; _explicitNullProperties?.Remove("eci"); }
+            else if (parseNode.GetChildNode("eci") is { } nullNodeEci && nullNodeEci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eci = null;
+            if (parseNode.GetChildNode("riskScore") is null) { _explicitNullValueRiskScore = default!; _explicitNullProperties?.Remove("riskScore"); }
+            else if (parseNode.GetChildNode("riskScore") is { } nullNodeRiskScore && nullNodeRiskScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskScore = null;
+            if (parseNode.GetChildNode("threeDSVersion") is null) { _explicitNullValueThreeDSVersion = default!; _explicitNullProperties?.Remove("threeDSVersion"); }
+            else if (parseNode.GetChildNode("threeDSVersion") is { } nullNodeThreeDSVersion && nullNodeThreeDSVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDSVersion = null;
+            if (parseNode.GetChildNode("tokenAuthenticationVerificationValue") is null) { _explicitNullValueTokenAuthenticationVerificationValue = default!; _explicitNullProperties?.Remove("tokenAuthenticationVerificationValue"); }
+            else if (parseNode.GetChildNode("tokenAuthenticationVerificationValue") is { } nullNodeTokenAuthenticationVerificationValue && nullNodeTokenAuthenticationVerificationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenAuthenticationVerificationValue = null;
+            if (parseNode.GetChildNode("transStatusReason") is null) { _explicitNullValueTransStatusReason = default!; _explicitNullProperties?.Remove("transStatusReason"); }
+            else if (parseNode.GetChildNode("transStatusReason") is { } nullNodeTransStatusReason && nullNodeTransStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransStatusReason = null;
+            if (parseNode.GetChildNode("xid") is null) { _explicitNullValueXid = default!; _explicitNullProperties?.Remove("xid"); }
+            else if (parseNode.GetChildNode("xid") is { } nullNodeXid && nullNodeXid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>In 3D Secure 2, this is the `transStatus` from the challenge result. If the transaction was frictionless, omit this parameter.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataAuthenticationResponse? AuthenticationResponse { get => _explicitNullValueAuthenticationResponse; set { _explicitNullValueAuthenticationResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationResponse"); else _explicitNullProperties?.Remove("authenticationResponse"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataAuthenticationResponse? AuthenticationResponse { get => _explicitNullValueAuthenticationResponse; set { _explicitNullValueAuthenticationResponse = value; AdditionalData?.Remove("authenticationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationResponse"); else _explicitNullProperties?.Remove("authenticationResponse"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataAuthenticationResponse? _explicitNullValueAuthenticationResponse = default!;
         /// <summary>The cardholder authentication value (base64 encoded, 20 bytes in a decoded form).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
+        public byte[]? Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; AdditionalData?.Remove("cavv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
         private byte[]? _explicitNullValueCavv = default!;
 #nullable restore
 #else
-        public byte[] Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
+        public byte[] Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; AdditionalData?.Remove("cavv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
         private byte[] _explicitNullValueCavv = default!;
 #endif
         /// <summary>The CAVV algorithm used. Include this only for 3D Secure 1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; AdditionalData?.Remove("cavvAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
         private string? _explicitNullValueCavvAlgorithm = default!;
 #nullable restore
 #else
-        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; AdditionalData?.Remove("cavvAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
         private string _explicitNullValueCavvAlgorithm = default!;
 #endif
         /// <summary>Indicator informing the Access Control Server (ACS) and the Directory Server (DS) that the authentication has been cancelled. For possible values, refer to [3D Secure API reference](https://docs.adyen.com/online-payments/3d-secure/api-reference#mpidata).</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataChallengeCancel? ChallengeCancel { get => _explicitNullValueChallengeCancel; set { _explicitNullValueChallengeCancel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeCancel"); else _explicitNullProperties?.Remove("challengeCancel"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataChallengeCancel? ChallengeCancel { get => _explicitNullValueChallengeCancel; set { _explicitNullValueChallengeCancel = value; AdditionalData?.Remove("challengeCancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeCancel"); else _explicitNullProperties?.Remove("challengeCancel"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataChallengeCancel? _explicitNullValueChallengeCancel = default!;
         /// <summary>In 3D Secure 2, this is the `transStatus` from the `ARes`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataDirectoryResponse? DirectoryResponse { get => _explicitNullValueDirectoryResponse; set { _explicitNullValueDirectoryResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryResponse"); else _explicitNullProperties?.Remove("directoryResponse"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataDirectoryResponse? DirectoryResponse { get => _explicitNullValueDirectoryResponse; set { _explicitNullValueDirectoryResponse = value; AdditionalData?.Remove("directoryResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directoryResponse"); else _explicitNullProperties?.Remove("directoryResponse"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataDirectoryResponse? _explicitNullValueDirectoryResponse = default!;
         /// <summary>Supported for 3D Secure 2. The unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DsTransID { get => _explicitNullValueDsTransID; set { _explicitNullValueDsTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransID"); else _explicitNullProperties?.Remove("dsTransID"); } }
+        public string? DsTransID { get => _explicitNullValueDsTransID; set { _explicitNullValueDsTransID = value; AdditionalData?.Remove("dsTransID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransID"); else _explicitNullProperties?.Remove("dsTransID"); } }
         private string? _explicitNullValueDsTransID = default!;
 #nullable restore
 #else
-        public string DsTransID { get => _explicitNullValueDsTransID; set { _explicitNullValueDsTransID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransID"); else _explicitNullProperties?.Remove("dsTransID"); } }
+        public string DsTransID { get => _explicitNullValueDsTransID; set { _explicitNullValueDsTransID = value; AdditionalData?.Remove("dsTransID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsTransID"); else _explicitNullProperties?.Remove("dsTransID"); } }
         private string _explicitNullValueDsTransID = default!;
 #endif
         /// <summary>The electronic commerce indicator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
+        public string? Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; AdditionalData?.Remove("eci"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
         private string? _explicitNullValueEci = default!;
 #nullable restore
 #else
-        public string Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
+        public string Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; AdditionalData?.Remove("eci"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
         private string _explicitNullValueEci = default!;
 #endif
         /// <summary>Risk score calculated by Directory Server (DS). Required for Cartes Bancaires integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
+        public string? RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; AdditionalData?.Remove("riskScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
         private string? _explicitNullValueRiskScore = default!;
 #nullable restore
 #else
-        public string RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
+        public string RiskScore { get => _explicitNullValueRiskScore; set { _explicitNullValueRiskScore = value; AdditionalData?.Remove("riskScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskScore"); else _explicitNullProperties?.Remove("riskScore"); } }
         private string _explicitNullValueRiskScore = default!;
 #endif
         /// <summary>The version of the 3D Secure protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDSVersion { get => _explicitNullValueThreeDSVersion; set { _explicitNullValueThreeDSVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSVersion"); else _explicitNullProperties?.Remove("threeDSVersion"); } }
+        public string? ThreeDSVersion { get => _explicitNullValueThreeDSVersion; set { _explicitNullValueThreeDSVersion = value; AdditionalData?.Remove("threeDSVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSVersion"); else _explicitNullProperties?.Remove("threeDSVersion"); } }
         private string? _explicitNullValueThreeDSVersion = default!;
 #nullable restore
 #else
-        public string ThreeDSVersion { get => _explicitNullValueThreeDSVersion; set { _explicitNullValueThreeDSVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSVersion"); else _explicitNullProperties?.Remove("threeDSVersion"); } }
+        public string ThreeDSVersion { get => _explicitNullValueThreeDSVersion; set { _explicitNullValueThreeDSVersion = value; AdditionalData?.Remove("threeDSVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDSVersion"); else _explicitNullProperties?.Remove("threeDSVersion"); } }
         private string _explicitNullValueThreeDSVersion = default!;
 #endif
         /// <summary>Network token authentication verification value (TAVV). The network token cryptogram.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? TokenAuthenticationVerificationValue { get => _explicitNullValueTokenAuthenticationVerificationValue; set { _explicitNullValueTokenAuthenticationVerificationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenAuthenticationVerificationValue"); else _explicitNullProperties?.Remove("tokenAuthenticationVerificationValue"); } }
+        public byte[]? TokenAuthenticationVerificationValue { get => _explicitNullValueTokenAuthenticationVerificationValue; set { _explicitNullValueTokenAuthenticationVerificationValue = value; AdditionalData?.Remove("tokenAuthenticationVerificationValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenAuthenticationVerificationValue"); else _explicitNullProperties?.Remove("tokenAuthenticationVerificationValue"); } }
         private byte[]? _explicitNullValueTokenAuthenticationVerificationValue = default!;
 #nullable restore
 #else
-        public byte[] TokenAuthenticationVerificationValue { get => _explicitNullValueTokenAuthenticationVerificationValue; set { _explicitNullValueTokenAuthenticationVerificationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenAuthenticationVerificationValue"); else _explicitNullProperties?.Remove("tokenAuthenticationVerificationValue"); } }
+        public byte[] TokenAuthenticationVerificationValue { get => _explicitNullValueTokenAuthenticationVerificationValue; set { _explicitNullValueTokenAuthenticationVerificationValue = value; AdditionalData?.Remove("tokenAuthenticationVerificationValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenAuthenticationVerificationValue"); else _explicitNullProperties?.Remove("tokenAuthenticationVerificationValue"); } }
         private byte[] _explicitNullValueTokenAuthenticationVerificationValue = default!;
 #endif
         /// <summary>Provides information on why the `transStatus` field has the specified value. For possible values, refer to [our docs](https://docs.adyen.com/online-payments/3d-secure/api-reference#possible-transstatusreason-values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransStatusReason { get => _explicitNullValueTransStatusReason; set { _explicitNullValueTransStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatusReason"); else _explicitNullProperties?.Remove("transStatusReason"); } }
+        public string? TransStatusReason { get => _explicitNullValueTransStatusReason; set { _explicitNullValueTransStatusReason = value; AdditionalData?.Remove("transStatusReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatusReason"); else _explicitNullProperties?.Remove("transStatusReason"); } }
         private string? _explicitNullValueTransStatusReason = default!;
 #nullable restore
 #else
-        public string TransStatusReason { get => _explicitNullValueTransStatusReason; set { _explicitNullValueTransStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatusReason"); else _explicitNullProperties?.Remove("transStatusReason"); } }
+        public string TransStatusReason { get => _explicitNullValueTransStatusReason; set { _explicitNullValueTransStatusReason = value; AdditionalData?.Remove("transStatusReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transStatusReason"); else _explicitNullProperties?.Remove("transStatusReason"); } }
         private string _explicitNullValueTransStatusReason = default!;
 #endif
         /// <summary>Supported for 3D Secure 1. The transaction identifier (Base64-encoded, 20 bytes in a decoded form).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
+        public byte[]? Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; AdditionalData?.Remove("xid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
         private byte[]? _explicitNullValueXid = default!;
 #nullable restore
 #else
-        public byte[] Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
+        public byte[] Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; AdditionalData?.Remove("xid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
         private byte[] _explicitNullValueXid = default!;
 #endif
         /// <summary>
@@ -158,11 +170,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationResponse", n => { AuthenticationResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataAuthenticationResponse>(); } },
+                { "authenticationResponse", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataAuthenticationResponse>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthenticationResponse = default; _explicitNullProperties?.Remove("authenticationResponse"); AdditionalData["authenticationResponse"] = unknown; } else { AuthenticationResponse = parsed; AdditionalData.Remove("authenticationResponse"); } } },
                 { "cavv", n => { Cavv = n.GetByteArrayValue(); } },
                 { "cavvAlgorithm", n => { CavvAlgorithm = n.GetStringValue(); } },
-                { "challengeCancel", n => { ChallengeCancel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataChallengeCancel>(); } },
-                { "directoryResponse", n => { DirectoryResponse = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataDirectoryResponse>(); } },
+                { "challengeCancel", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataChallengeCancel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChallengeCancel = default; _explicitNullProperties?.Remove("challengeCancel"); AdditionalData["challengeCancel"] = unknown; } else { ChallengeCancel = parsed; AdditionalData.Remove("challengeCancel"); } } },
+                { "directoryResponse", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ThreeDSecureDataDirectoryResponse>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirectoryResponse = default; _explicitNullProperties?.Remove("directoryResponse"); AdditionalData["directoryResponse"] = unknown; } else { DirectoryResponse = parsed; AdditionalData.Remove("directoryResponse"); } } },
                 { "dsTransID", n => { DsTransID = n.GetStringValue(); } },
                 { "eci", n => { Eci = n.GetStringValue(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },

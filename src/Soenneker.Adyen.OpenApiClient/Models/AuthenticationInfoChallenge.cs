@@ -18,40 +18,46 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("challengeCancel") is { } nullNodeChallengeCancel && nullNodeChallengeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeCancel = null;
-            if (parseNode.GetChildNode("flow") is { } nullNodeFlow && nullNodeFlow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flow = null;
-            if (parseNode.GetChildNode("lastInteraction") is { } nullNodeLastInteraction && nullNodeLastInteraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastInteraction = null;
-            if (parseNode.GetChildNode("phoneNumber") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
-            if (parseNode.GetChildNode("resends") is { } nullNodeResends && nullNodeResends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resends = null;
-            if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
+            if (parseNode.GetChildNode("challengeCancel") is null) { _explicitNullValueChallengeCancel = default!; _explicitNullProperties?.Remove("challengeCancel"); }
+            else if (parseNode.GetChildNode("challengeCancel") is { } nullNodeChallengeCancel && nullNodeChallengeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChallengeCancel = null;
+            if (parseNode.GetChildNode("flow") is null) { _explicitNullValueFlow = default!; _explicitNullProperties?.Remove("flow"); }
+            else if (parseNode.GetChildNode("flow") is { } nullNodeFlow && nullNodeFlow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flow = null;
+            if (parseNode.GetChildNode("lastInteraction") is null) { _explicitNullValueLastInteraction = default!; _explicitNullProperties?.Remove("lastInteraction"); }
+            else if (parseNode.GetChildNode("lastInteraction") is { } nullNodeLastInteraction && nullNodeLastInteraction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastInteraction = null;
+            if (parseNode.GetChildNode("phoneNumber") is null) { _explicitNullValuePhoneNumber = default!; _explicitNullProperties?.Remove("phoneNumber"); }
+            else if (parseNode.GetChildNode("phoneNumber") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("resends") is null) { _explicitNullValueResends = default!; _explicitNullProperties?.Remove("resends"); }
+            else if (parseNode.GetChildNode("resends") is { } nullNodeResends && nullNodeResends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resends = null;
+            if (parseNode.GetChildNode("retries") is null) { _explicitNullValueRetries = default!; _explicitNullProperties?.Remove("retries"); }
+            else if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicator informing the Access Control Server (ACS) and the Directory Server (DS) that the authentication has been cancelled. Possible values:* **00**: Data element is absent or value has been sent back with the key `challengeCancel`.* **01**: Cardholder selected **Cancel**.* **02**: 3DS Requestor cancelled Authentication.* **03**: Transaction abandoned.* **04**: Transaction timed out at ACS — other timeouts.* **05**: Transaction timed out at ACS — first CReq not received by ACS.* **06**: Transaction error.* **07**: Unknown.* **08**: Transaction time out at SDK.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel? ChallengeCancel { get => _explicitNullValueChallengeCancel; set { _explicitNullValueChallengeCancel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeCancel"); else _explicitNullProperties?.Remove("challengeCancel"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel? ChallengeCancel { get => _explicitNullValueChallengeCancel; set { _explicitNullValueChallengeCancel = value; AdditionalData?.Remove("challengeCancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challengeCancel"); else _explicitNullProperties?.Remove("challengeCancel"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel? _explicitNullValueChallengeCancel = default!;
         /// <summary>The flow used in the challenge. Possible values:* **PWD_OTP_PHONE_FL**: one-time password (OTP) flow via SMS* **PWD_OTP_EMAIL_FL**: one-time password (OTP) flow via email* **OOB_TRIGGER_FL**: out-of-band (OOB) flow* **OTP_PHONE_FL**: one-time password (OTP) flow via SMS with no passcode* **PASSKEY_TRIGGER_FL**: passkey flow</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow? Flow { get => _explicitNullValueFlow; set { _explicitNullValueFlow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow"); else _explicitNullProperties?.Remove("flow"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow? Flow { get => _explicitNullValueFlow; set { _explicitNullValueFlow = value; AdditionalData?.Remove("flow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flow"); else _explicitNullProperties?.Remove("flow"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow? _explicitNullValueFlow = default!;
         /// <summary>The last time of interaction with the challenge.</summary>
-        public DateTimeOffset? LastInteraction { get => _explicitNullValueLastInteraction; set { _explicitNullValueLastInteraction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastInteraction"); else _explicitNullProperties?.Remove("lastInteraction"); } }
+        public DateTimeOffset? LastInteraction { get => _explicitNullValueLastInteraction; set { _explicitNullValueLastInteraction = value; AdditionalData?.Remove("lastInteraction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastInteraction"); else _explicitNullProperties?.Remove("lastInteraction"); } }
         private DateTimeOffset? _explicitNullValueLastInteraction = default!;
         /// <summary>The last four digits of the phone number used in the challenge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
         private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
         private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>The number of times the one-time password (OTP) was resent during the challenge.</summary>
-        public int? Resends { get => _explicitNullValueResends; set { _explicitNullValueResends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resends"); else _explicitNullProperties?.Remove("resends"); } }
+        public int? Resends { get => _explicitNullValueResends; set { _explicitNullValueResends = value; AdditionalData?.Remove("resends"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resends"); else _explicitNullProperties?.Remove("resends"); } }
         private int? _explicitNullValueResends = default!;
         /// <summary>The number of retries used in the challenge.</summary>
-        public int? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
+        public int? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; AdditionalData?.Remove("retries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
         private int? _explicitNullValueRetries = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AuthenticationInfoChallenge"/> and sets the default values.
@@ -78,8 +84,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "challengeCancel", n => { ChallengeCancel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel>(); } },
-                { "flow", n => { Flow = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow>(); } },
+                { "challengeCancel", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoChallengeCancel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueChallengeCancel = default; _explicitNullProperties?.Remove("challengeCancel"); AdditionalData["challengeCancel"] = unknown; } else { ChallengeCancel = parsed; AdditionalData.Remove("challengeCancel"); } } },
+                { "flow", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ChallengeInfoFlow>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFlow = default; _explicitNullProperties?.Remove("flow"); AdditionalData["flow"] = unknown; } else { Flow = parsed; AdditionalData.Remove("flow"); } } },
                 { "lastInteraction", n => { LastInteraction = n.GetDateTimeOffsetValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "resends", n => { Resends = n.GetIntValue(); } },

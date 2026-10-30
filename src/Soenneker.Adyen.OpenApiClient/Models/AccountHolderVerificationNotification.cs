@@ -17,13 +17,20 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
-            if (parseNode.GetChildNode("eventDate") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
-            if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("executingUserKey") is { } nullNodeExecutingUserKey && nullNodeExecutingUserKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutingUserKey = null;
-            if (parseNode.GetChildNode("live") is { } nullNodeLive && nullNodeLive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Live = null;
-            if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("error") is null) { _explicitNullValueError = default!; _explicitNullProperties?.Remove("error"); }
+            else if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("eventDate") is null) { _explicitNullValueEventDate = default!; _explicitNullProperties?.Remove("eventDate"); }
+            else if (parseNode.GetChildNode("eventDate") is { } nullNodeEventDate && nullNodeEventDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDate = null;
+            if (parseNode.GetChildNode("eventType") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("eventType"); }
+            else if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("executingUserKey") is null) { _explicitNullValueExecutingUserKey = default!; _explicitNullProperties?.Remove("executingUserKey"); }
+            else if (parseNode.GetChildNode("executingUserKey") is { } nullNodeExecutingUserKey && nullNodeExecutingUserKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutingUserKey = null;
+            if (parseNode.GetChildNode("live") is null) { _explicitNullValueLive = default!; _explicitNullProperties?.Remove("live"); }
+            else if (parseNode.GetChildNode("live") is { } nullNodeLive && nullNodeLive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Live = null;
+            if (parseNode.GetChildNode("pspReference") is null) { _explicitNullValuePspReference = default!; _explicitNullProperties?.Remove("pspReference"); }
+            else if (parseNode.GetChildNode("pspReference") is { } nullNodePspReference && nullNodePspReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PspReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,57 +38,57 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The details of the Account Holder verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationContentComposed? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationContentComposed? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationContentComposed? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationContentComposed Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationContentComposed Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationContentComposed _explicitNullValueContent = default!;
 #endif
         /// <summary>Error information of failed request. No value provided here if no error occurred on processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountHolderVerificationNotificationError _explicitNullValueError = default!;
 #endif
         /// <summary>The date and time when an event has been completed.</summary>
-        public DateTimeOffset? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
+        public DateTimeOffset? EventDate { get => _explicitNullValueEventDate; set { _explicitNullValueEventDate = value; AdditionalData?.Remove("eventDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventDate"); else _explicitNullProperties?.Remove("eventDate"); } }
         private DateTimeOffset? _explicitNullValueEventDate = default!;
         /// <summary>The event type of the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        public string? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
         private string? _explicitNullValueEventType = default!;
 #nullable restore
 #else
-        public string EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        public string EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
         private string _explicitNullValueEventType = default!;
 #endif
         /// <summary>The user or process that has triggered the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExecutingUserKey { get => _explicitNullValueExecutingUserKey; set { _explicitNullValueExecutingUserKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executingUserKey"); else _explicitNullProperties?.Remove("executingUserKey"); } }
+        public string? ExecutingUserKey { get => _explicitNullValueExecutingUserKey; set { _explicitNullValueExecutingUserKey = value; AdditionalData?.Remove("executingUserKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executingUserKey"); else _explicitNullProperties?.Remove("executingUserKey"); } }
         private string? _explicitNullValueExecutingUserKey = default!;
 #nullable restore
 #else
-        public string ExecutingUserKey { get => _explicitNullValueExecutingUserKey; set { _explicitNullValueExecutingUserKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executingUserKey"); else _explicitNullProperties?.Remove("executingUserKey"); } }
+        public string ExecutingUserKey { get => _explicitNullValueExecutingUserKey; set { _explicitNullValueExecutingUserKey = value; AdditionalData?.Remove("executingUserKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executingUserKey"); else _explicitNullProperties?.Remove("executingUserKey"); } }
         private string _explicitNullValueExecutingUserKey = default!;
 #endif
         /// <summary>Indicates whether the notification originated from the live environment or the test environment. If true, the notification originated from the live environment. If false, the notification originated from the test environment.</summary>
-        public bool? Live { get => _explicitNullValueLive; set { _explicitNullValueLive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live"); else _explicitNullProperties?.Remove("live"); } }
+        public bool? Live { get => _explicitNullValueLive; set { _explicitNullValueLive = value; AdditionalData?.Remove("live"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live"); else _explicitNullProperties?.Remove("live"); } }
         private bool? _explicitNullValueLive = default!;
         /// <summary>The PSP reference of the request from which the notification originates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string? PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string? _explicitNullValuePspReference = default!;
 #nullable restore
 #else
-        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
+        public string PspReference { get => _explicitNullValuePspReference; set { _explicitNullValuePspReference = value; AdditionalData?.Remove("pspReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pspReference"); else _explicitNullProperties?.Remove("pspReference"); } }
         private string _explicitNullValuePspReference = default!;
 #endif
         /// <summary>

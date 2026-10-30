@@ -19,19 +19,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("salesDayClosingTime") is { } nullNodeSalesDayClosingTime && nullNodeSalesDayClosingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesDayClosingTime = null;
-            if (parseNode.GetChildNode("settlementDelayDays") is { } nullNodeSettlementDelayDays && nullNodeSettlementDelayDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementDelayDays = null;
+            if (parseNode.GetChildNode("salesDayClosingTime") is null) { _explicitNullValueSalesDayClosingTime = default!; _explicitNullProperties?.Remove("salesDayClosingTime"); }
+            else if (parseNode.GetChildNode("salesDayClosingTime") is { } nullNodeSalesDayClosingTime && nullNodeSalesDayClosingTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SalesDayClosingTime = null;
+            if (parseNode.GetChildNode("settlementDelayDays") is null) { _explicitNullValueSettlementDelayDays = default!; _explicitNullProperties?.Remove("settlementDelayDays"); }
+            else if (parseNode.GetChildNode("settlementDelayDays") is { } nullNodeSettlementDelayDays && nullNodeSettlementDelayDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementDelayDays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies at what time a sales day ends for this account.Possible values: Time in **&quot;HH:MM&quot;** format. **HH** ranges from **00** to **07**. **MM** must be **00**.Default value: **&quot;00:00&quot;**.</summary>
 #nullable enable
-        public string? SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
+        public string? SalesDayClosingTime { get => _explicitNullValueSalesDayClosingTime; set { _explicitNullValueSalesDayClosingTime = value; AdditionalData?.Remove("salesDayClosingTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("salesDayClosingTime"); else _explicitNullProperties?.Remove("salesDayClosingTime"); } }
         private string? _explicitNullValueSalesDayClosingTime = default!;
 #nullable restore
         /// <summary>Specifies after how many business days the funds in a settlement batch are made available in this balance account. Requires Custom Sales Day Payout to be enabled for your balance account. Contact your account manager or implementation manager to enable this.Possible values: **1** to **20**, or **null**.Default value: **null**.</summary>
-        public int? SettlementDelayDays { get => _explicitNullValueSettlementDelayDays; set { _explicitNullValueSettlementDelayDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementDelayDays"); else _explicitNullProperties?.Remove("settlementDelayDays"); } }
+        public int? SettlementDelayDays { get => _explicitNullValueSettlementDelayDays; set { _explicitNullValueSettlementDelayDays = value; AdditionalData?.Remove("settlementDelayDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementDelayDays"); else _explicitNullProperties?.Remove("settlementDelayDays"); } }
         private int? _explicitNullValueSettlementDelayDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalancePlatformServiceV2BalanceAccountPlatformPaymentConfiguration"/> and sets the default values.

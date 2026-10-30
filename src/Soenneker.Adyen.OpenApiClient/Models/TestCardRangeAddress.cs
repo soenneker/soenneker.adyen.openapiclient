@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("streetAddress") is { } nullNodeStreetAddress && nullNodeStreetAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreetAddress = null;
-            if (parseNode.GetChildNode("zip") is { } nullNodeZip && nullNodeZip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zip = null;
+            if (parseNode.GetChildNode("streetAddress") is null) { _explicitNullValueStreetAddress = default!; _explicitNullProperties?.Remove("streetAddress"); }
+            else if (parseNode.GetChildNode("streetAddress") is { } nullNodeStreetAddress && nullNodeStreetAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreetAddress = null;
+            if (parseNode.GetChildNode("zip") is null) { _explicitNullValueZip = default!; _explicitNullProperties?.Remove("zip"); }
+            else if (parseNode.GetChildNode("zip") is { } nullNodeZip && nullNodeZip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Zip = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The street and house number of the address.Example: 1 Infinite Loop, Cupertino.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreetAddress { get => _explicitNullValueStreetAddress; set { _explicitNullValueStreetAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streetAddress"); else _explicitNullProperties?.Remove("streetAddress"); } }
+        public string? StreetAddress { get => _explicitNullValueStreetAddress; set { _explicitNullValueStreetAddress = value; AdditionalData?.Remove("streetAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streetAddress"); else _explicitNullProperties?.Remove("streetAddress"); } }
         private string? _explicitNullValueStreetAddress = default!;
 #nullable restore
 #else
-        public string StreetAddress { get => _explicitNullValueStreetAddress; set { _explicitNullValueStreetAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streetAddress"); else _explicitNullProperties?.Remove("streetAddress"); } }
+        public string StreetAddress { get => _explicitNullValueStreetAddress; set { _explicitNullValueStreetAddress = value; AdditionalData?.Remove("streetAddress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streetAddress"); else _explicitNullProperties?.Remove("streetAddress"); } }
         private string _explicitNullValueStreetAddress = default!;
 #endif
         /// <summary>The zip or post code of the address.Example: CA 95014</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
+        public string? Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; AdditionalData?.Remove("zip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
         private string? _explicitNullValueZip = default!;
 #nullable restore
 #else
-        public string Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
+        public string Zip { get => _explicitNullValueZip; set { _explicitNullValueZip = value; AdditionalData?.Remove("zip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip"); else _explicitNullProperties?.Remove("zip"); } }
         private string _explicitNullValueZip = default!;
 #endif
         /// <summary>

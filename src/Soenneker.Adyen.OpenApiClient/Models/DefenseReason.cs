@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defenseDocumentTypes") is { } nullNodeDefenseDocumentTypes && nullNodeDefenseDocumentTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypes = null;
-            if (parseNode.GetChildNode("defenseReasonCode") is { } nullNodeDefenseReasonCode && nullNodeDefenseReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasonCode = null;
-            if (parseNode.GetChildNode("satisfied") is { } nullNodeSatisfied && nullNodeSatisfied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Satisfied = null;
+            if (parseNode.GetChildNode("defenseDocumentTypes") is null) { _explicitNullValueDefenseDocumentTypes = default!; _explicitNullProperties?.Remove("defenseDocumentTypes"); }
+            else if (parseNode.GetChildNode("defenseDocumentTypes") is { } nullNodeDefenseDocumentTypes && nullNodeDefenseDocumentTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseDocumentTypes = null;
+            if (parseNode.GetChildNode("defenseReasonCode") is null) { _explicitNullValueDefenseReasonCode = default!; _explicitNullProperties?.Remove("defenseReasonCode"); }
+            else if (parseNode.GetChildNode("defenseReasonCode") is { } nullNodeDefenseReasonCode && nullNodeDefenseReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasonCode = null;
+            if (parseNode.GetChildNode("satisfied") is null) { _explicitNullValueSatisfied = default!; _explicitNullProperties?.Remove("satisfied"); }
+            else if (parseNode.GetChildNode("satisfied") is { } nullNodeSatisfied && nullNodeSatisfied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Satisfied = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Array of defense document types for a specific defense reason. Indicates the document types that you can submit to the schemes to defend this dispute, and whether they are required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>? DefenseDocumentTypes { get => _explicitNullValueDefenseDocumentTypes; set { _explicitNullValueDefenseDocumentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypes"); else _explicitNullProperties?.Remove("defenseDocumentTypes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>? DefenseDocumentTypes { get => _explicitNullValueDefenseDocumentTypes; set { _explicitNullValueDefenseDocumentTypes = value; AdditionalData?.Remove("defenseDocumentTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypes"); else _explicitNullProperties?.Remove("defenseDocumentTypes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType>? _explicitNullValueDefenseDocumentTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType> DefenseDocumentTypes { get => _explicitNullValueDefenseDocumentTypes; set { _explicitNullValueDefenseDocumentTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypes"); else _explicitNullProperties?.Remove("defenseDocumentTypes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType> DefenseDocumentTypes { get => _explicitNullValueDefenseDocumentTypes; set { _explicitNullValueDefenseDocumentTypes = value; AdditionalData?.Remove("defenseDocumentTypes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseDocumentTypes"); else _explicitNullProperties?.Remove("defenseDocumentTypes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseDocumentType> _explicitNullValueDefenseDocumentTypes = default!;
 #endif
         /// <summary>The defense reason code that was selected to defend this dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
+        public string? DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; AdditionalData?.Remove("defenseReasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
         private string? _explicitNullValueDefenseReasonCode = default!;
 #nullable restore
 #else
-        public string DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
+        public string DefenseReasonCode { get => _explicitNullValueDefenseReasonCode; set { _explicitNullValueDefenseReasonCode = value; AdditionalData?.Remove("defenseReasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasonCode"); else _explicitNullProperties?.Remove("defenseReasonCode"); } }
         private string _explicitNullValueDefenseReasonCode = default!;
 #endif
         /// <summary>Indicates if sufficient defense material has been supplied.</summary>
-        public bool? Satisfied { get => _explicitNullValueSatisfied; set { _explicitNullValueSatisfied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("satisfied"); else _explicitNullProperties?.Remove("satisfied"); } }
+        public bool? Satisfied { get => _explicitNullValueSatisfied; set { _explicitNullValueSatisfied = value; AdditionalData?.Remove("satisfied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("satisfied"); else _explicitNullProperties?.Remove("satisfied"); } }
         private bool? _explicitNullValueSatisfied = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason"/> and sets the default values.

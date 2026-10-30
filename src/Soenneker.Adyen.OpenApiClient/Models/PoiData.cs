@@ -18,23 +18,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("POIReconciliationID") is { } nullNodePOIReconciliationID && nullNodePOIReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIReconciliationID = null;
-            if (parseNode.GetChildNode("POITransactionID") is { } nullNodePOITransactionID && nullNodePOITransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POITransactionID = null;
+            if (parseNode.GetChildNode("POIReconciliationID") is null) { _explicitNullValuePOIReconciliationID = default!; _explicitNullProperties?.Remove("POIReconciliationID"); }
+            else if (parseNode.GetChildNode("POIReconciliationID") is { } nullNodePOIReconciliationID && nullNodePOIReconciliationID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POIReconciliationID = null;
+            if (parseNode.GetChildNode("POITransactionID") is null) { _explicitNullValuePOITransactionID = default!; _explicitNullProperties?.Remove("POITransactionID"); }
+            else if (parseNode.GetChildNode("POITransactionID") is { } nullNodePOITransactionID && nullNodePOITransactionID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) POITransactionID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identification of the reconciliation period between Sale and POI.If Result is Success.</summary>
-        public int? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
+        public int? POIReconciliationID { get => _explicitNullValuePOIReconciliationID; set { _explicitNullValuePOIReconciliationID = value; AdditionalData?.Remove("POIReconciliationID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POIReconciliationID"); else _explicitNullProperties?.Remove("POIReconciliationID"); } }
         private int? _explicitNullValuePOIReconciliationID = default!;
         /// <summary>Identification of a transaction for the Sale System or the POI System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; AdditionalData?.Remove("POITransactionID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType? _explicitNullValuePOITransactionID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType POITransactionID { get => _explicitNullValuePOITransactionID; set { _explicitNullValuePOITransactionID = value; AdditionalData?.Remove("POITransactionID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("POITransactionID"); else _explicitNullProperties?.Remove("POITransactionID"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransactionIdType _explicitNullValuePOITransactionID = default!;
 #endif
         /// <summary>

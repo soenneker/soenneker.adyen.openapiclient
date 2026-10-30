@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("BarcodeValue") is { } nullNodeBarcodeValue && nullNodeBarcodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BarcodeValue = null;
+            if (parseNode.GetChildNode("BarcodeValue") is null) { _explicitNullValueBarcodeValue = default!; _explicitNullProperties?.Remove("BarcodeValue"); }
+            else if (parseNode.GetChildNode("BarcodeValue") is { } nullNodeBarcodeValue && nullNodeBarcodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BarcodeValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Value with a Barcode coding. The barcode value to display or print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BarcodeValue { get => _explicitNullValueBarcodeValue; set { _explicitNullValueBarcodeValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BarcodeValue"); else _explicitNullProperties?.Remove("BarcodeValue"); } }
+        public string? BarcodeValue { get => _explicitNullValueBarcodeValue; set { _explicitNullValueBarcodeValue = value; AdditionalData?.Remove("BarcodeValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BarcodeValue"); else _explicitNullProperties?.Remove("BarcodeValue"); } }
         private string? _explicitNullValueBarcodeValue = default!;
 #nullable restore
 #else
-        public string BarcodeValue { get => _explicitNullValueBarcodeValue; set { _explicitNullValueBarcodeValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BarcodeValue"); else _explicitNullProperties?.Remove("BarcodeValue"); } }
+        public string BarcodeValue { get => _explicitNullValueBarcodeValue; set { _explicitNullValueBarcodeValue = value; AdditionalData?.Remove("BarcodeValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("BarcodeValue"); else _explicitNullProperties?.Remove("BarcodeValue"); } }
         private string _explicitNullValueBarcodeValue = default!;
 #endif
         /// <summary>

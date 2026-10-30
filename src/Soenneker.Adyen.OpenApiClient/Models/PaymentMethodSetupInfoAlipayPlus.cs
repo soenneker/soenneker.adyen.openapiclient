@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("branchName") is { } nullNodeBranchName && nullNodeBranchName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchName = null;
-            if (parseNode.GetChildNode("merchantMobileAppName") is { } nullNodeMerchantMobileAppName && nullNodeMerchantMobileAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantMobileAppName = null;
-            if (parseNode.GetChildNode("productServiceDescription") is { } nullNodeProductServiceDescription && nullNodeProductServiceDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductServiceDescription = null;
-            if (parseNode.GetChildNode("settlementCurrencyCode") is { } nullNodeSettlementCurrencyCode && nullNodeSettlementCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementCurrencyCode = null;
+            if (parseNode.GetChildNode("branchName") is null) { _explicitNullValueBranchName = default!; _explicitNullProperties?.Remove("branchName"); }
+            else if (parseNode.GetChildNode("branchName") is { } nullNodeBranchName && nullNodeBranchName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchName = null;
+            if (parseNode.GetChildNode("merchantMobileAppName") is null) { _explicitNullValueMerchantMobileAppName = default!; _explicitNullProperties?.Remove("merchantMobileAppName"); }
+            else if (parseNode.GetChildNode("merchantMobileAppName") is { } nullNodeMerchantMobileAppName && nullNodeMerchantMobileAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantMobileAppName = null;
+            if (parseNode.GetChildNode("productServiceDescription") is null) { _explicitNullValueProductServiceDescription = default!; _explicitNullProperties?.Remove("productServiceDescription"); }
+            else if (parseNode.GetChildNode("productServiceDescription") is { } nullNodeProductServiceDescription && nullNodeProductServiceDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductServiceDescription = null;
+            if (parseNode.GetChildNode("settlementCurrencyCode") is null) { _explicitNullValueSettlementCurrencyCode = default!; _explicitNullProperties?.Remove("settlementCurrencyCode"); }
+            else if (parseNode.GetChildNode("settlementCurrencyCode") is { } nullNodeSettlementCurrencyCode && nullNodeSettlementCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SettlementCurrencyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The name of the company branch. Required for TrueMoney.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchName { get => _explicitNullValueBranchName; set { _explicitNullValueBranchName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchName"); else _explicitNullProperties?.Remove("branchName"); } }
+        public string? BranchName { get => _explicitNullValueBranchName; set { _explicitNullValueBranchName = value; AdditionalData?.Remove("branchName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchName"); else _explicitNullProperties?.Remove("branchName"); } }
         private string? _explicitNullValueBranchName = default!;
 #nullable restore
 #else
-        public string BranchName { get => _explicitNullValueBranchName; set { _explicitNullValueBranchName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchName"); else _explicitNullProperties?.Remove("branchName"); } }
+        public string BranchName { get => _explicitNullValueBranchName; set { _explicitNullValueBranchName = value; AdditionalData?.Remove("branchName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branchName"); else _explicitNullProperties?.Remove("branchName"); } }
         private string _explicitNullValueBranchName = default!;
 #endif
         /// <summary>The name of your mobile app. Required for TrueMoney.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantMobileAppName { get => _explicitNullValueMerchantMobileAppName; set { _explicitNullValueMerchantMobileAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantMobileAppName"); else _explicitNullProperties?.Remove("merchantMobileAppName"); } }
+        public string? MerchantMobileAppName { get => _explicitNullValueMerchantMobileAppName; set { _explicitNullValueMerchantMobileAppName = value; AdditionalData?.Remove("merchantMobileAppName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantMobileAppName"); else _explicitNullProperties?.Remove("merchantMobileAppName"); } }
         private string? _explicitNullValueMerchantMobileAppName = default!;
 #nullable restore
 #else
-        public string MerchantMobileAppName { get => _explicitNullValueMerchantMobileAppName; set { _explicitNullValueMerchantMobileAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantMobileAppName"); else _explicitNullProperties?.Remove("merchantMobileAppName"); } }
+        public string MerchantMobileAppName { get => _explicitNullValueMerchantMobileAppName; set { _explicitNullValueMerchantMobileAppName = value; AdditionalData?.Remove("merchantMobileAppName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantMobileAppName"); else _explicitNullProperties?.Remove("merchantMobileAppName"); } }
         private string _explicitNullValueMerchantMobileAppName = default!;
 #endif
         /// <summary>The description of the product or service. Required for TrueMoney.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductServiceDescription { get => _explicitNullValueProductServiceDescription; set { _explicitNullValueProductServiceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productServiceDescription"); else _explicitNullProperties?.Remove("productServiceDescription"); } }
+        public string? ProductServiceDescription { get => _explicitNullValueProductServiceDescription; set { _explicitNullValueProductServiceDescription = value; AdditionalData?.Remove("productServiceDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productServiceDescription"); else _explicitNullProperties?.Remove("productServiceDescription"); } }
         private string? _explicitNullValueProductServiceDescription = default!;
 #nullable restore
 #else
-        public string ProductServiceDescription { get => _explicitNullValueProductServiceDescription; set { _explicitNullValueProductServiceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productServiceDescription"); else _explicitNullProperties?.Remove("productServiceDescription"); } }
+        public string ProductServiceDescription { get => _explicitNullValueProductServiceDescription; set { _explicitNullValueProductServiceDescription = value; AdditionalData?.Remove("productServiceDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productServiceDescription"); else _explicitNullProperties?.Remove("productServiceDescription"); } }
         private string _explicitNullValueProductServiceDescription = default!;
 #endif
         /// <summary>The currency used for settlement. Defaults to USD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
+        public string? SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; AdditionalData?.Remove("settlementCurrencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
         private string? _explicitNullValueSettlementCurrencyCode = default!;
 #nullable restore
 #else
-        public string SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
+        public string SettlementCurrencyCode { get => _explicitNullValueSettlementCurrencyCode; set { _explicitNullValueSettlementCurrencyCode = value; AdditionalData?.Remove("settlementCurrencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settlementCurrencyCode"); else _explicitNullProperties?.Remove("settlementCurrencyCode"); } }
         private string _explicitNullValueSettlementCurrencyCode = default!;
 #endif
         /// <summary>

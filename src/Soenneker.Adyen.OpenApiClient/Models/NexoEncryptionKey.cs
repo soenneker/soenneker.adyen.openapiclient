@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
-            if (parseNode.GetChildNode("passphrase") is { } nullNodePassphrase && nullNodePassphrase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passphrase = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("identifier") is null) { _explicitNullValueIdentifier = default!; _explicitNullProperties?.Remove("identifier"); }
+            else if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
+            if (parseNode.GetChildNode("passphrase") is null) { _explicitNullValuePassphrase = default!; _explicitNullProperties?.Remove("passphrase"); }
+            else if (parseNode.GetChildNode("passphrase") is { } nullNodePassphrase && nullNodePassphrase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passphrase = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the shared key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private string? _explicitNullValueIdentifier = default!;
 #nullable restore
 #else
-        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private string _explicitNullValueIdentifier = default!;
 #endif
         /// <summary>The secure passphrase to protect the shared key. Must consist of: * At least 12 characters.* At least 1 uppercase letter: `[A-Z]`. * At least 1 lowercase letter: `[a-z]`. * At least 1 digit: `[0-9]`.  * At least 1 special character. Limited to the following: `~`, `!`, `@`, `#`, `$`, `%`, `^`, `&amp;`, `*`, `(`, `)`, `_`, `+`, `=`, `}`, `{`, `]`, `[`, `;`, `:`, `?`, `.`, `,`, `&gt;`, `&lt;`.  </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
+        public string? Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; AdditionalData?.Remove("passphrase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
         private string? _explicitNullValuePassphrase = default!;
 #nullable restore
 #else
-        public string Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
+        public string Passphrase { get => _explicitNullValuePassphrase; set { _explicitNullValuePassphrase = value; AdditionalData?.Remove("passphrase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passphrase"); else _explicitNullProperties?.Remove("passphrase"); } }
         private string _explicitNullValuePassphrase = default!;
 #endif
         /// <summary>The version number of the shared key.</summary>
-        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.NexoEncryptionKey"/> and sets the default values.

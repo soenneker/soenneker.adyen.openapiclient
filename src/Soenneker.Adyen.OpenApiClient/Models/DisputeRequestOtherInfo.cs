@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("descriptionOfIssue") is { } nullNodeDescriptionOfIssue && nullNodeDescriptionOfIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionOfIssue = null;
-            if (parseNode.GetChildNode("subType") is { } nullNodeSubType && nullNodeSubType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubType = null;
-            if (parseNode.GetChildNode("whatWasPurchased") is { } nullNodeWhatWasPurchased && nullNodeWhatWasPurchased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatWasPurchased = null;
+            if (parseNode.GetChildNode("descriptionOfIssue") is null) { _explicitNullValueDescriptionOfIssue = default!; _explicitNullProperties?.Remove("descriptionOfIssue"); }
+            else if (parseNode.GetChildNode("descriptionOfIssue") is { } nullNodeDescriptionOfIssue && nullNodeDescriptionOfIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DescriptionOfIssue = null;
+            if (parseNode.GetChildNode("subType") is null) { _explicitNullValueSubType = default!; _explicitNullProperties?.Remove("subType"); }
+            else if (parseNode.GetChildNode("subType") is { } nullNodeSubType && nullNodeSubType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubType = null;
+            if (parseNode.GetChildNode("whatWasPurchased") is null) { _explicitNullValueWhatWasPurchased = default!; _explicitNullProperties?.Remove("whatWasPurchased"); }
+            else if (parseNode.GetChildNode("whatWasPurchased") is { } nullNodeWhatWasPurchased && nullNodeWhatWasPurchased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatWasPurchased = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Your description of the issue for raising a dispute of `type` **other**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        public string? DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; AdditionalData?.Remove("descriptionOfIssue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
         private string? _explicitNullValueDescriptionOfIssue = default!;
 #nullable restore
 #else
-        public string DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
+        public string DescriptionOfIssue { get => _explicitNullValueDescriptionOfIssue; set { _explicitNullValueDescriptionOfIssue = value; AdditionalData?.Remove("descriptionOfIssue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("descriptionOfIssue"); else _explicitNullProperties?.Remove("descriptionOfIssue"); } }
         private string _explicitNullValueDescriptionOfIssue = default!;
 #endif
         /// <summary>The specific category of **other** dispute that you are raising.Possible values: **atmDispute**, **cancelledGoodsServices**, **cancelledRecurring**, **counterfeit**, **creditNotProcessed**, **notAsDescribed**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subType"); else _explicitNullProperties?.Remove("subType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; AdditionalData?.Remove("subType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subType"); else _explicitNullProperties?.Remove("subType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType? _explicitNullValueSubType = default!;
         /// <summary>The type of product that you purchased.Possible values: **goods**, **services**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased? WhatWasPurchased { get => _explicitNullValueWhatWasPurchased; set { _explicitNullValueWhatWasPurchased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatWasPurchased"); else _explicitNullProperties?.Remove("whatWasPurchased"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased? WhatWasPurchased { get => _explicitNullValueWhatWasPurchased; set { _explicitNullValueWhatWasPurchased = value; AdditionalData?.Remove("whatWasPurchased"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatWasPurchased"); else _explicitNullProperties?.Remove("whatWasPurchased"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased? _explicitNullValueWhatWasPurchased = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.DisputeRequestOtherInfo"/> and sets the default values.
@@ -67,8 +70,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "descriptionOfIssue", n => { DescriptionOfIssue = n.GetStringValue(); } },
-                { "subType", n => { SubType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType>(); } },
-                { "whatWasPurchased", n => { WhatWasPurchased = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased>(); } },
+                { "subType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoSubType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubType = default; _explicitNullProperties?.Remove("subType"); AdditionalData["subType"] = unknown; } else { SubType = parsed; AdditionalData.Remove("subType"); } } },
+                { "whatWasPurchased", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.OtherInfoWhatWasPurchased>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWhatWasPurchased = default; _explicitNullProperties?.Remove("whatWasPurchased"); AdditionalData["whatWasPurchased"] = unknown; } else { WhatWasPurchased = parsed; AdditionalData.Remove("whatWasPurchased"); } } },
             };
         }
         /// <summary>

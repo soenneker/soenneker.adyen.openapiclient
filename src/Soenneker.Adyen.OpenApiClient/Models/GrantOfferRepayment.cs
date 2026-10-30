@@ -18,34 +18,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("basisPoints") is { } nullNodeBasisPoints && nullNodeBasisPoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasisPoints = null;
-            if (parseNode.GetChildNode("term") is { } nullNodeTerm && nullNodeTerm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Term = null;
-            if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
+            if (parseNode.GetChildNode("basisPoints") is null) { _explicitNullValueBasisPoints = default!; _explicitNullProperties?.Remove("basisPoints"); }
+            else if (parseNode.GetChildNode("basisPoints") is { } nullNodeBasisPoints && nullNodeBasisPoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasisPoints = null;
+            if (parseNode.GetChildNode("term") is null) { _explicitNullValueTerm = default!; _explicitNullProperties?.Remove("term"); }
+            else if (parseNode.GetChildNode("term") is { } nullNodeTerm && nullNodeTerm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Term = null;
+            if (parseNode.GetChildNode("threshold") is null) { _explicitNullValueThreshold = default!; _explicitNullProperties?.Remove("threshold"); }
+            else if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The percentage of your user&apos;s incoming net volume that is deducted for repaying the grant. The percentage expressed in [basis points](https://www.investopedia.com/terms/b/basispoint.asp).</summary>
-        public int? BasisPoints { get => _explicitNullValueBasisPoints; set { _explicitNullValueBasisPoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basisPoints"); else _explicitNullProperties?.Remove("basisPoints"); } }
+        public int? BasisPoints { get => _explicitNullValueBasisPoints; set { _explicitNullValueBasisPoints = value; AdditionalData?.Remove("basisPoints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basisPoints"); else _explicitNullProperties?.Remove("basisPoints"); } }
         private int? _explicitNullValueBasisPoints = default!;
         /// <summary>Contains information about the time period in which your user must repay the total amount of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentTermComposed? Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentTermComposed? Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; AdditionalData?.Remove("term"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepaymentTermComposed? _explicitNullValueTerm = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentTermComposed Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentTermComposed Term { get => _explicitNullValueTerm; set { _explicitNullValueTerm = value; AdditionalData?.Remove("term"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("term"); else _explicitNullProperties?.Remove("term"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepaymentTermComposed _explicitNullValueTerm = default!;
 #endif
         /// <summary>Contains the minimum threshold amount that your user must repay every 30-day period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentThreshold? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentThreshold? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepaymentThreshold? _explicitNullValueThreshold = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentThreshold Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RepaymentThreshold Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RepaymentThreshold _explicitNullValueThreshold = default!;
 #endif
         /// <summary>

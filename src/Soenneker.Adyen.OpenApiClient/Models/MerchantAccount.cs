@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inStoreTerminals") is { } nullNodeInStoreTerminals && nullNodeInStoreTerminals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InStoreTerminals = null;
-            if (parseNode.GetChildNode("inventoryTerminals") is { } nullNodeInventoryTerminals && nullNodeInventoryTerminals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTerminals = null;
-            if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccountProp && nullNodeMerchantAccountProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccountProp = null;
-            if (parseNode.GetChildNode("stores") is { } nullNodeStores && nullNodeStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stores = null;
+            if (parseNode.GetChildNode("inStoreTerminals") is null) { _explicitNullValueInStoreTerminals = default!; _explicitNullProperties?.Remove("inStoreTerminals"); }
+            else if (parseNode.GetChildNode("inStoreTerminals") is { } nullNodeInStoreTerminals && nullNodeInStoreTerminals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InStoreTerminals = null;
+            if (parseNode.GetChildNode("inventoryTerminals") is null) { _explicitNullValueInventoryTerminals = default!; _explicitNullProperties?.Remove("inventoryTerminals"); }
+            else if (parseNode.GetChildNode("inventoryTerminals") is { } nullNodeInventoryTerminals && nullNodeInventoryTerminals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InventoryTerminals = null;
+            if (parseNode.GetChildNode("merchantAccount") is null) { _explicitNullValueMerchantAccountProp = default!; _explicitNullProperties?.Remove("merchantAccount"); }
+            else if (parseNode.GetChildNode("merchantAccount") is { } nullNodeMerchantAccountProp && nullNodeMerchantAccountProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantAccountProp = null;
+            if (parseNode.GetChildNode("stores") is null) { _explicitNullValueStores = default!; _explicitNullProperties?.Remove("stores"); }
+            else if (parseNode.GetChildNode("stores") is { } nullNodeStores && nullNodeStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stores = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of terminals assigned to this merchant account as in-store terminals. This means that the terminal is ready to be boarded, or is already boarded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InStoreTerminals { get => _explicitNullValueInStoreTerminals; set { _explicitNullValueInStoreTerminals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inStoreTerminals"); else _explicitNullProperties?.Remove("inStoreTerminals"); } }
+        public List<string>? InStoreTerminals { get => _explicitNullValueInStoreTerminals; set { _explicitNullValueInStoreTerminals = value; AdditionalData?.Remove("inStoreTerminals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inStoreTerminals"); else _explicitNullProperties?.Remove("inStoreTerminals"); } }
         private List<string>? _explicitNullValueInStoreTerminals = default!;
 #nullable restore
 #else
-        public List<string> InStoreTerminals { get => _explicitNullValueInStoreTerminals; set { _explicitNullValueInStoreTerminals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inStoreTerminals"); else _explicitNullProperties?.Remove("inStoreTerminals"); } }
+        public List<string> InStoreTerminals { get => _explicitNullValueInStoreTerminals; set { _explicitNullValueInStoreTerminals = value; AdditionalData?.Remove("inStoreTerminals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inStoreTerminals"); else _explicitNullProperties?.Remove("inStoreTerminals"); } }
         private List<string> _explicitNullValueInStoreTerminals = default!;
 #endif
         /// <summary>List of terminals assigned to the inventory of this merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InventoryTerminals { get => _explicitNullValueInventoryTerminals; set { _explicitNullValueInventoryTerminals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventoryTerminals"); else _explicitNullProperties?.Remove("inventoryTerminals"); } }
+        public List<string>? InventoryTerminals { get => _explicitNullValueInventoryTerminals; set { _explicitNullValueInventoryTerminals = value; AdditionalData?.Remove("inventoryTerminals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventoryTerminals"); else _explicitNullProperties?.Remove("inventoryTerminals"); } }
         private List<string>? _explicitNullValueInventoryTerminals = default!;
 #nullable restore
 #else
-        public List<string> InventoryTerminals { get => _explicitNullValueInventoryTerminals; set { _explicitNullValueInventoryTerminals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventoryTerminals"); else _explicitNullProperties?.Remove("inventoryTerminals"); } }
+        public List<string> InventoryTerminals { get => _explicitNullValueInventoryTerminals; set { _explicitNullValueInventoryTerminals = value; AdditionalData?.Remove("inventoryTerminals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventoryTerminals"); else _explicitNullProperties?.Remove("inventoryTerminals"); } }
         private List<string> _explicitNullValueInventoryTerminals = default!;
 #endif
         /// <summary>The merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantAccountProp { get => _explicitNullValueMerchantAccountProp; set { _explicitNullValueMerchantAccountProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string? MerchantAccountProp { get => _explicitNullValueMerchantAccountProp; set { _explicitNullValueMerchantAccountProp = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string? _explicitNullValueMerchantAccountProp = default!;
 #nullable restore
 #else
-        public string MerchantAccountProp { get => _explicitNullValueMerchantAccountProp; set { _explicitNullValueMerchantAccountProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
+        public string MerchantAccountProp { get => _explicitNullValueMerchantAccountProp; set { _explicitNullValueMerchantAccountProp = value; AdditionalData?.Remove("merchantAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantAccount"); else _explicitNullProperties?.Remove("merchantAccount"); } }
         private string _explicitNullValueMerchantAccountProp = default!;
 #endif
         /// <summary>Array of stores under this merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>? Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>? Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; AdditionalData?.Remove("stores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store>? _explicitNullValueStores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store> Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store> Stores { get => _explicitNullValueStores; set { _explicitNullValueStores = value; AdditionalData?.Remove("stores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stores"); else _explicitNullProperties?.Remove("stores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TfmApiServiceV1Store> _explicitNullValueStores = default!;
 #endif
         /// <summary>

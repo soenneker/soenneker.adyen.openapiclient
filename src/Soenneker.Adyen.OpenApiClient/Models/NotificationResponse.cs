@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notificationResponse") is { } nullNodeNotificationResponseProp && nullNodeNotificationResponseProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationResponseProp = null;
+            if (parseNode.GetChildNode("notificationResponse") is null) { _explicitNullValueNotificationResponseProp = default!; _explicitNullProperties?.Remove("notificationResponse"); }
+            else if (parseNode.GetChildNode("notificationResponse") is { } nullNodeNotificationResponseProp && nullNodeNotificationResponseProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationResponseProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Set this parameter to **[accepted]** to acknowledge that you received a notification from Adyen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationResponseProp { get => _explicitNullValueNotificationResponseProp; set { _explicitNullValueNotificationResponseProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationResponse"); else _explicitNullProperties?.Remove("notificationResponse"); } }
+        public string? NotificationResponseProp { get => _explicitNullValueNotificationResponseProp; set { _explicitNullValueNotificationResponseProp = value; AdditionalData?.Remove("notificationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationResponse"); else _explicitNullProperties?.Remove("notificationResponse"); } }
         private string? _explicitNullValueNotificationResponseProp = default!;
 #nullable restore
 #else
-        public string NotificationResponseProp { get => _explicitNullValueNotificationResponseProp; set { _explicitNullValueNotificationResponseProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationResponse"); else _explicitNullProperties?.Remove("notificationResponse"); } }
+        public string NotificationResponseProp { get => _explicitNullValueNotificationResponseProp; set { _explicitNullValueNotificationResponseProp = value; AdditionalData?.Remove("notificationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationResponse"); else _explicitNullProperties?.Remove("notificationResponse"); } }
         private string _explicitNullValueNotificationResponseProp = default!;
 #endif
         /// <summary>

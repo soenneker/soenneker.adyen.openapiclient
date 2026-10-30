@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notificationIds") is { } nullNodeNotificationIds && nullNodeNotificationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationIds = null;
+            if (parseNode.GetChildNode("notificationIds") is null) { _explicitNullValueNotificationIds = default!; _explicitNullProperties?.Remove("notificationIds"); }
+            else if (parseNode.GetChildNode("notificationIds") is { } nullNodeNotificationIds && nullNodeNotificationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list of IDs of the notification subscription configurations to be deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? NotificationIds { get => _explicitNullValueNotificationIds; set { _explicitNullValueNotificationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationIds"); else _explicitNullProperties?.Remove("notificationIds"); } }
+        public List<long?>? NotificationIds { get => _explicitNullValueNotificationIds; set { _explicitNullValueNotificationIds = value; AdditionalData?.Remove("notificationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationIds"); else _explicitNullProperties?.Remove("notificationIds"); } }
         private List<long?>? _explicitNullValueNotificationIds = default!;
 #nullable restore
 #else
-        public List<long?> NotificationIds { get => _explicitNullValueNotificationIds; set { _explicitNullValueNotificationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationIds"); else _explicitNullProperties?.Remove("notificationIds"); } }
+        public List<long?> NotificationIds { get => _explicitNullValueNotificationIds; set { _explicitNullValueNotificationIds = value; AdditionalData?.Remove("notificationIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notificationIds"); else _explicitNullProperties?.Remove("notificationIds"); } }
         private List<long?> _explicitNullValueNotificationIds = default!;
 #endif
         /// <summary>

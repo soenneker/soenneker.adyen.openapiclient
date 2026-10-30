@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("exchangeCalculations") is { } nullNodeExchangeCalculations && nullNodeExchangeCalculations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeCalculations = null;
+            if (parseNode.GetChildNode("exchangeCalculations") is null) { _explicitNullValueExchangeCalculations = default!; _explicitNullProperties?.Remove("exchangeCalculations"); }
+            else if (parseNode.GetChildNode("exchangeCalculations") is { } nullNodeExchangeCalculations && nullNodeExchangeCalculations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExchangeCalculations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>An array of objects, where each object returns a currency and value for which you performed an exchange calculation. You can use the calculated amounts in your payment requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponseItem>? ExchangeCalculations { get => _explicitNullValueExchangeCalculations; set { _explicitNullValueExchangeCalculations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeCalculations"); else _explicitNullProperties?.Remove("exchangeCalculations"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponseItem>? ExchangeCalculations { get => _explicitNullValueExchangeCalculations; set { _explicitNullValueExchangeCalculations = value; AdditionalData?.Remove("exchangeCalculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeCalculations"); else _explicitNullProperties?.Remove("exchangeCalculations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponseItem>? _explicitNullValueExchangeCalculations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponseItem> ExchangeCalculations { get => _explicitNullValueExchangeCalculations; set { _explicitNullValueExchangeCalculations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeCalculations"); else _explicitNullProperties?.Remove("exchangeCalculations"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponseItem> ExchangeCalculations { get => _explicitNullValueExchangeCalculations; set { _explicitNullValueExchangeCalculations = value; AdditionalData?.Remove("exchangeCalculations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exchangeCalculations"); else _explicitNullProperties?.Remove("exchangeCalculations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CalculateRateResponseItem> _explicitNullValueExchangeCalculations = default!;
 #endif
         /// <summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("requestParameters") is { } nullNodeRequestParameters && nullNodeRequestParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestParameters = null;
-            if (parseNode.GetChildNode("requestTemplateCode") is { } nullNodeRequestTemplateCode && nullNodeRequestTemplateCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTemplateCode = null;
+            if (parseNode.GetChildNode("requestParameters") is null) { _explicitNullValueRequestParameters = default!; _explicitNullProperties?.Remove("requestParameters"); }
+            else if (parseNode.GetChildNode("requestParameters") is { } nullNodeRequestParameters && nullNodeRequestParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestParameters = null;
+            if (parseNode.GetChildNode("requestTemplateCode") is null) { _explicitNullValueRequestTemplateCode = default!; _explicitNullProperties?.Remove("requestTemplateCode"); }
+            else if (parseNode.GetChildNode("requestTemplateCode") is { } nullNodeRequestTemplateCode && nullNodeRequestTemplateCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestTemplateCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Request-specific parameter values to populate the template placeholders. Each key must match a placeholder defined in the template referenced by `requestTemplateCode`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2? RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2? RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; AdditionalData?.Remove("requestParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2? _explicitNullValueRequestParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2 RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2 RequestParameters { get => _explicitNullValueRequestParameters; set { _explicitNullValueRequestParameters = value; AdditionalData?.Remove("requestParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestParameters"); else _explicitNullProperties?.Remove("requestParameters"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ThirdPartyTokenRedundancyInfoRequestParametersProperty2 _explicitNullValueRequestParameters = default!;
 #endif
         /// <summary>Identifier for the third-party token request template configured in your Adyen account. This template defines the structure and endpoint for token requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestTemplateCode { get => _explicitNullValueRequestTemplateCode; set { _explicitNullValueRequestTemplateCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestTemplateCode"); else _explicitNullProperties?.Remove("requestTemplateCode"); } }
+        public string? RequestTemplateCode { get => _explicitNullValueRequestTemplateCode; set { _explicitNullValueRequestTemplateCode = value; AdditionalData?.Remove("requestTemplateCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestTemplateCode"); else _explicitNullProperties?.Remove("requestTemplateCode"); } }
         private string? _explicitNullValueRequestTemplateCode = default!;
 #nullable restore
 #else
-        public string RequestTemplateCode { get => _explicitNullValueRequestTemplateCode; set { _explicitNullValueRequestTemplateCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestTemplateCode"); else _explicitNullProperties?.Remove("requestTemplateCode"); } }
+        public string RequestTemplateCode { get => _explicitNullValueRequestTemplateCode; set { _explicitNullValueRequestTemplateCode = value; AdditionalData?.Remove("requestTemplateCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestTemplateCode"); else _explicitNullProperties?.Remove("requestTemplateCode"); } }
         private string _explicitNullValueRequestTemplateCode = default!;
 #endif
         /// <summary>

@@ -18,19 +18,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AbortReason") is { } nullNodeAbortReason && nullNodeAbortReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbortReason = null;
-            if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
-            if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
+            if (parseNode.GetChildNode("AbortReason") is null) { _explicitNullValueAbortReason = default!; _explicitNullProperties?.Remove("AbortReason"); }
+            else if (parseNode.GetChildNode("AbortReason") is { } nullNodeAbortReason && nullNodeAbortReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbortReason = null;
+            if (parseNode.GetChildNode("DisplayOutput") is null) { _explicitNullValueDisplayOutput = default!; _explicitNullProperties?.Remove("DisplayOutput"); }
+            else if (parseNode.GetChildNode("DisplayOutput") is { } nullNodeDisplayOutput && nullNodeDisplayOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOutput = null;
+            if (parseNode.GetChildNode("MessageReference") is null) { _explicitNullValueMessageReference = default!; _explicitNullProperties?.Remove("MessageReference"); }
+            else if (parseNode.GetChildNode("MessageReference") is { } nullNodeMessageReference && nullNodeMessageReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageReference = null;
         }
 
         /// <summary>Reason of aborting a transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AbortReason { get => _explicitNullValueAbortReason; set { _explicitNullValueAbortReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AbortReason"); else _explicitNullProperties?.Remove("AbortReason"); } }
+        public string? AbortReason { get => _explicitNullValueAbortReason; set { _explicitNullValueAbortReason = value; AdditionalData?.Remove("AbortReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AbortReason"); else _explicitNullProperties?.Remove("AbortReason"); } }
         private string? _explicitNullValueAbortReason = default!;
 #nullable restore
 #else
-        public string AbortReason { get => _explicitNullValueAbortReason; set { _explicitNullValueAbortReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AbortReason"); else _explicitNullProperties?.Remove("AbortReason"); } }
+        public string AbortReason { get => _explicitNullValueAbortReason; set { _explicitNullValueAbortReason = value; AdditionalData?.Remove("AbortReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AbortReason"); else _explicitNullProperties?.Remove("AbortReason"); } }
         private string _explicitNullValueAbortReason = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information to display and the way to process the display.To display an abort message to the Customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; AdditionalData?.Remove("DisplayOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput? _explicitNullValueDisplayOutput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput DisplayOutput { get => _explicitNullValueDisplayOutput; set { _explicitNullValueDisplayOutput = value; AdditionalData?.Remove("DisplayOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DisplayOutput"); else _explicitNullProperties?.Remove("DisplayOutput"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestDisplayOutput _explicitNullValueDisplayOutput = default!;
 #endif
         /// <summary>Identification of a previous POI transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; AdditionalData?.Remove("MessageReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference? _explicitNullValueMessageReference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference MessageReference { get => _explicitNullValueMessageReference; set { _explicitNullValueMessageReference = value; AdditionalData?.Remove("MessageReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MessageReference"); else _explicitNullProperties?.Remove("MessageReference"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AbortRequestMessageReference _explicitNullValueMessageReference = default!;
 #endif
         /// <summary>

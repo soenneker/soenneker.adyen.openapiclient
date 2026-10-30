@@ -18,129 +18,192 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountValidation") is { } nullNodeAccountValidation && nullNodeAccountValidation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountValidation = null;
-            if (parseNode.GetChildNode("acquirerAccountCode") is { } nullNodeAcquirerAccountCode && nullNodeAcquirerAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerAccountCode = null;
-            if (parseNode.GetChildNode("acquirerCode") is { } nullNodeAcquirerCode && nullNodeAcquirerCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerCode = null;
-            if (parseNode.GetChildNode("acquirerReference") is { } nullNodeAcquirerReference && nullNodeAcquirerReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerReference = null;
-            if (parseNode.GetChildNode("acsRenderingType.acsInterface") is { } nullNodeAcsRenderingTypeAcsInterface && nullNodeAcsRenderingTypeAcsInterface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsRenderingTypeAcsInterface = null;
-            if (parseNode.GetChildNode("acsRenderingType.acsUiTemplate") is { } nullNodeAcsRenderingTypeAcsUiTemplate && nullNodeAcsRenderingTypeAcsUiTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsRenderingTypeAcsUiTemplate = null;
-            if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
-            if (parseNode.GetChildNode("aliasType") is { } nullNodeAliasType && nullNodeAliasType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasType = null;
-            if (parseNode.GetChildNode("arn") is { } nullNodeArn && nullNodeArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Arn = null;
-            if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
-            if (parseNode.GetChildNode("authenticationType") is { } nullNodeAuthenticationType && nullNodeAuthenticationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationType = null;
-            if (parseNode.GetChildNode("authorisationMid") is { } nullNodeAuthorisationMid && nullNodeAuthorisationMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationMid = null;
-            if (parseNode.GetChildNode("avsResult") is { } nullNodeAvsResult && nullNodeAvsResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvsResult = null;
-            if (parseNode.GetChildNode("avsResultRaw") is { } nullNodeAvsResultRaw && nullNodeAvsResultRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvsResultRaw = null;
-            if (parseNode.GetChildNode("bankAccountNumber") is { } nullNodeBankAccountNumber && nullNodeBankAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountNumber = null;
-            if (parseNode.GetChildNode("bankLocationId") is { } nullNodeBankLocationId && nullNodeBankLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankLocationId = null;
-            if (parseNode.GetChildNode("bankName") is { } nullNodeBankName && nullNodeBankName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankName = null;
-            if (parseNode.GetChildNode("bic") is { } nullNodeBic && nullNodeBic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bic = null;
-            if (parseNode.GetChildNode("billingAddress.city") is { } nullNodeBillingAddressCity && nullNodeBillingAddressCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressCity = null;
-            if (parseNode.GetChildNode("billingAddress.country") is { } nullNodeBillingAddressCountry && nullNodeBillingAddressCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressCountry = null;
-            if (parseNode.GetChildNode("billingAddress.houseNumberOrName") is { } nullNodeBillingAddressHouseNumberOrName && nullNodeBillingAddressHouseNumberOrName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressHouseNumberOrName = null;
-            if (parseNode.GetChildNode("billingAddress.postalCode") is { } nullNodeBillingAddressPostalCode && nullNodeBillingAddressPostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressPostalCode = null;
-            if (parseNode.GetChildNode("billingAddress.stateOrProvince") is { } nullNodeBillingAddressStateOrProvince && nullNodeBillingAddressStateOrProvince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressStateOrProvince = null;
-            if (parseNode.GetChildNode("billingAddress.street") is { } nullNodeBillingAddressStreet && nullNodeBillingAddressStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressStreet = null;
-            if (parseNode.GetChildNode("bookingDate") is { } nullNodeBookingDate && nullNodeBookingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookingDate = null;
-            if (parseNode.GetChildNode("cardBin") is { } nullNodeCardBin && nullNodeCardBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardBin = null;
-            if (parseNode.GetChildNode("cardHolderName") is { } nullNodeCardHolderName && nullNodeCardHolderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolderName = null;
-            if (parseNode.GetChildNode("cardIssuingBank") is { } nullNodeCardIssuingBank && nullNodeCardIssuingBank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIssuingBank = null;
-            if (parseNode.GetChildNode("cardIssuingCountry") is { } nullNodeCardIssuingCountry && nullNodeCardIssuingCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIssuingCountry = null;
-            if (parseNode.GetChildNode("cardIssuingCurrency") is { } nullNodeCardIssuingCurrency && nullNodeCardIssuingCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIssuingCurrency = null;
-            if (parseNode.GetChildNode("cardPaymentMethod") is { } nullNodeCardPaymentMethod && nullNodeCardPaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardPaymentMethod = null;
-            if (parseNode.GetChildNode("cardSchemeEnhancedDataLevel") is { } nullNodeCardSchemeEnhancedDataLevel && nullNodeCardSchemeEnhancedDataLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardSchemeEnhancedDataLevel = null;
-            if (parseNode.GetChildNode("cardSummary") is { } nullNodeCardSummary && nullNodeCardSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardSummary = null;
-            if (parseNode.GetChildNode("cavv") is { } nullNodeCavv && nullNodeCavv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cavv = null;
-            if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
-            if (parseNode.GetChildNode("checkoutSessionId") is { } nullNodeCheckoutSessionId && nullNodeCheckoutSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutSessionId = null;
-            if (parseNode.GetChildNode("coBrandedWith") is { } nullNodeCoBrandedWith && nullNodeCoBrandedWith.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoBrandedWith = null;
-            if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
-            if (parseNode.GetChildNode("cvcResult") is { } nullNodeCvcResult && nullNodeCvcResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CvcResult = null;
-            if (parseNode.GetChildNode("cvcResultRaw") is { } nullNodeCvcResultRaw && nullNodeCvcResultRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CvcResultRaw = null;
-            if (parseNode.GetChildNode("deliveryAddress.city") is { } nullNodeDeliveryAddressCity && nullNodeDeliveryAddressCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressCity = null;
-            if (parseNode.GetChildNode("deliveryAddress.country") is { } nullNodeDeliveryAddressCountry && nullNodeDeliveryAddressCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressCountry = null;
-            if (parseNode.GetChildNode("deliveryAddress.houseNumberOrName") is { } nullNodeDeliveryAddressHouseNumberOrName && nullNodeDeliveryAddressHouseNumberOrName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressHouseNumberOrName = null;
-            if (parseNode.GetChildNode("deliveryAddress.stateOrProvince") is { } nullNodeDeliveryAddressStateOrProvince && nullNodeDeliveryAddressStateOrProvince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressStateOrProvince = null;
-            if (parseNode.GetChildNode("deliveryAddress.street") is { } nullNodeDeliveryAddressStreet && nullNodeDeliveryAddressStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressStreet = null;
-            if (parseNode.GetChildNode("eci") is { } nullNodeEci && nullNodeEci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eci = null;
-            if (parseNode.GetChildNode("expiryDate") is { } nullNodeExpiryDate && nullNodeExpiryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryDate = null;
-            if (parseNode.GetChildNode("fraudCheck-<check ID>-<name>") is { } nullNodeFraudCheckCheckIDName && nullNodeFraudCheckCheckIDName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudCheckCheckIDName = null;
-            if (parseNode.GetChildNode("fraudManualReview") is { } nullNodeFraudManualReview && nullNodeFraudManualReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudManualReview = null;
-            if (parseNode.GetChildNode("fraudOffset") is { } nullNodeFraudOffset && nullNodeFraudOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudOffset = null;
-            if (parseNode.GetChildNode("fraudResultType") is { } nullNodeFraudResultType && nullNodeFraudResultType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudResultType = null;
-            if (parseNode.GetChildNode("fraudRiskLevel") is { } nullNodeFraudRiskLevel && nullNodeFraudRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudRiskLevel = null;
-            if (parseNode.GetChildNode("hmacSignature") is { } nullNodeHmacSignature && nullNodeHmacSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignature = null;
-            if (parseNode.GetChildNode("interactionCounter") is { } nullNodeInteractionCounter && nullNodeInteractionCounter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionCounter = null;
-            if (parseNode.GetChildNode("merchantOrderReference") is { } nullNodeMerchantOrderReference && nullNodeMerchantOrderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantOrderReference = null;
-            if (parseNode.GetChildNode("PaymentAccountReference") is { } nullNodePaymentAccountReference && nullNodePaymentAccountReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountReference = null;
-            if (parseNode.GetChildNode("paymentLinkId") is { } nullNodePaymentLinkId && nullNodePaymentLinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentLinkId = null;
-            if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
-            if (parseNode.GetChildNode("riskdata.<name>") is { } nullNodeRiskdataName && nullNodeRiskdataName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskdataName = null;
-            if (parseNode.GetChildNode("shopperCountry") is { } nullNodeShopperCountry && nullNodeShopperCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperCountry = null;
-            if (parseNode.GetChildNode("shopperSocialSecurityNumber") is { } nullNodeShopperSocialSecurityNumber && nullNodeShopperSocialSecurityNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperSocialSecurityNumber = null;
-            if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
-            if (parseNode.GetChildNode("totalFraudScore") is { } nullNodeTotalFraudScore && nullNodeTotalFraudScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalFraudScore = null;
+            if (parseNode.GetChildNode("accountValidation") is null) { _explicitNullValueAccountValidation = default!; _explicitNullProperties?.Remove("accountValidation"); }
+            else if (parseNode.GetChildNode("accountValidation") is { } nullNodeAccountValidation && nullNodeAccountValidation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountValidation = null;
+            if (parseNode.GetChildNode("acquirerAccountCode") is null) { _explicitNullValueAcquirerAccountCode = default!; _explicitNullProperties?.Remove("acquirerAccountCode"); }
+            else if (parseNode.GetChildNode("acquirerAccountCode") is { } nullNodeAcquirerAccountCode && nullNodeAcquirerAccountCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerAccountCode = null;
+            if (parseNode.GetChildNode("acquirerCode") is null) { _explicitNullValueAcquirerCode = default!; _explicitNullProperties?.Remove("acquirerCode"); }
+            else if (parseNode.GetChildNode("acquirerCode") is { } nullNodeAcquirerCode && nullNodeAcquirerCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerCode = null;
+            if (parseNode.GetChildNode("acquirerReference") is null) { _explicitNullValueAcquirerReference = default!; _explicitNullProperties?.Remove("acquirerReference"); }
+            else if (parseNode.GetChildNode("acquirerReference") is { } nullNodeAcquirerReference && nullNodeAcquirerReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcquirerReference = null;
+            if (parseNode.GetChildNode("acsRenderingType.acsInterface") is null) { _explicitNullValueAcsRenderingTypeAcsInterface = default!; _explicitNullProperties?.Remove("acsRenderingType.acsInterface"); }
+            else if (parseNode.GetChildNode("acsRenderingType.acsInterface") is { } nullNodeAcsRenderingTypeAcsInterface && nullNodeAcsRenderingTypeAcsInterface.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsRenderingTypeAcsInterface = null;
+            if (parseNode.GetChildNode("acsRenderingType.acsUiTemplate") is null) { _explicitNullValueAcsRenderingTypeAcsUiTemplate = default!; _explicitNullProperties?.Remove("acsRenderingType.acsUiTemplate"); }
+            else if (parseNode.GetChildNode("acsRenderingType.acsUiTemplate") is { } nullNodeAcsRenderingTypeAcsUiTemplate && nullNodeAcsRenderingTypeAcsUiTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcsRenderingTypeAcsUiTemplate = null;
+            if (parseNode.GetChildNode("alias") is null) { _explicitNullValueAlias = default!; _explicitNullProperties?.Remove("alias"); }
+            else if (parseNode.GetChildNode("alias") is { } nullNodeAlias && nullNodeAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alias = null;
+            if (parseNode.GetChildNode("aliasType") is null) { _explicitNullValueAliasType = default!; _explicitNullProperties?.Remove("aliasType"); }
+            else if (parseNode.GetChildNode("aliasType") is { } nullNodeAliasType && nullNodeAliasType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AliasType = null;
+            if (parseNode.GetChildNode("arn") is null) { _explicitNullValueArn = default!; _explicitNullProperties?.Remove("arn"); }
+            else if (parseNode.GetChildNode("arn") is { } nullNodeArn && nullNodeArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Arn = null;
+            if (parseNode.GetChildNode("authCode") is null) { _explicitNullValueAuthCode = default!; _explicitNullProperties?.Remove("authCode"); }
+            else if (parseNode.GetChildNode("authCode") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("authenticationType") is null) { _explicitNullValueAuthenticationType = default!; _explicitNullProperties?.Remove("authenticationType"); }
+            else if (parseNode.GetChildNode("authenticationType") is { } nullNodeAuthenticationType && nullNodeAuthenticationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationType = null;
+            if (parseNode.GetChildNode("authorisationMid") is null) { _explicitNullValueAuthorisationMid = default!; _explicitNullProperties?.Remove("authorisationMid"); }
+            else if (parseNode.GetChildNode("authorisationMid") is { } nullNodeAuthorisationMid && nullNodeAuthorisationMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationMid = null;
+            if (parseNode.GetChildNode("avsResult") is null) { _explicitNullValueAvsResult = default!; _explicitNullProperties?.Remove("avsResult"); }
+            else if (parseNode.GetChildNode("avsResult") is { } nullNodeAvsResult && nullNodeAvsResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvsResult = null;
+            if (parseNode.GetChildNode("avsResultRaw") is null) { _explicitNullValueAvsResultRaw = default!; _explicitNullProperties?.Remove("avsResultRaw"); }
+            else if (parseNode.GetChildNode("avsResultRaw") is { } nullNodeAvsResultRaw && nullNodeAvsResultRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvsResultRaw = null;
+            if (parseNode.GetChildNode("bankAccountNumber") is null) { _explicitNullValueBankAccountNumber = default!; _explicitNullProperties?.Remove("bankAccountNumber"); }
+            else if (parseNode.GetChildNode("bankAccountNumber") is { } nullNodeBankAccountNumber && nullNodeBankAccountNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankAccountNumber = null;
+            if (parseNode.GetChildNode("bankLocationId") is null) { _explicitNullValueBankLocationId = default!; _explicitNullProperties?.Remove("bankLocationId"); }
+            else if (parseNode.GetChildNode("bankLocationId") is { } nullNodeBankLocationId && nullNodeBankLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankLocationId = null;
+            if (parseNode.GetChildNode("bankName") is null) { _explicitNullValueBankName = default!; _explicitNullProperties?.Remove("bankName"); }
+            else if (parseNode.GetChildNode("bankName") is { } nullNodeBankName && nullNodeBankName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BankName = null;
+            if (parseNode.GetChildNode("bic") is null) { _explicitNullValueBic = default!; _explicitNullProperties?.Remove("bic"); }
+            else if (parseNode.GetChildNode("bic") is { } nullNodeBic && nullNodeBic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bic = null;
+            if (parseNode.GetChildNode("billingAddress.city") is null) { _explicitNullValueBillingAddressCity = default!; _explicitNullProperties?.Remove("billingAddress.city"); }
+            else if (parseNode.GetChildNode("billingAddress.city") is { } nullNodeBillingAddressCity && nullNodeBillingAddressCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressCity = null;
+            if (parseNode.GetChildNode("billingAddress.country") is null) { _explicitNullValueBillingAddressCountry = default!; _explicitNullProperties?.Remove("billingAddress.country"); }
+            else if (parseNode.GetChildNode("billingAddress.country") is { } nullNodeBillingAddressCountry && nullNodeBillingAddressCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressCountry = null;
+            if (parseNode.GetChildNode("billingAddress.houseNumberOrName") is null) { _explicitNullValueBillingAddressHouseNumberOrName = default!; _explicitNullProperties?.Remove("billingAddress.houseNumberOrName"); }
+            else if (parseNode.GetChildNode("billingAddress.houseNumberOrName") is { } nullNodeBillingAddressHouseNumberOrName && nullNodeBillingAddressHouseNumberOrName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressHouseNumberOrName = null;
+            if (parseNode.GetChildNode("billingAddress.postalCode") is null) { _explicitNullValueBillingAddressPostalCode = default!; _explicitNullProperties?.Remove("billingAddress.postalCode"); }
+            else if (parseNode.GetChildNode("billingAddress.postalCode") is { } nullNodeBillingAddressPostalCode && nullNodeBillingAddressPostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressPostalCode = null;
+            if (parseNode.GetChildNode("billingAddress.stateOrProvince") is null) { _explicitNullValueBillingAddressStateOrProvince = default!; _explicitNullProperties?.Remove("billingAddress.stateOrProvince"); }
+            else if (parseNode.GetChildNode("billingAddress.stateOrProvince") is { } nullNodeBillingAddressStateOrProvince && nullNodeBillingAddressStateOrProvince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressStateOrProvince = null;
+            if (parseNode.GetChildNode("billingAddress.street") is null) { _explicitNullValueBillingAddressStreet = default!; _explicitNullProperties?.Remove("billingAddress.street"); }
+            else if (parseNode.GetChildNode("billingAddress.street") is { } nullNodeBillingAddressStreet && nullNodeBillingAddressStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAddressStreet = null;
+            if (parseNode.GetChildNode("bookingDate") is null) { _explicitNullValueBookingDate = default!; _explicitNullProperties?.Remove("bookingDate"); }
+            else if (parseNode.GetChildNode("bookingDate") is { } nullNodeBookingDate && nullNodeBookingDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BookingDate = null;
+            if (parseNode.GetChildNode("cardBin") is null) { _explicitNullValueCardBin = default!; _explicitNullProperties?.Remove("cardBin"); }
+            else if (parseNode.GetChildNode("cardBin") is { } nullNodeCardBin && nullNodeCardBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardBin = null;
+            if (parseNode.GetChildNode("cardHolderName") is null) { _explicitNullValueCardHolderName = default!; _explicitNullProperties?.Remove("cardHolderName"); }
+            else if (parseNode.GetChildNode("cardHolderName") is { } nullNodeCardHolderName && nullNodeCardHolderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardHolderName = null;
+            if (parseNode.GetChildNode("cardIssuingBank") is null) { _explicitNullValueCardIssuingBank = default!; _explicitNullProperties?.Remove("cardIssuingBank"); }
+            else if (parseNode.GetChildNode("cardIssuingBank") is { } nullNodeCardIssuingBank && nullNodeCardIssuingBank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIssuingBank = null;
+            if (parseNode.GetChildNode("cardIssuingCountry") is null) { _explicitNullValueCardIssuingCountry = default!; _explicitNullProperties?.Remove("cardIssuingCountry"); }
+            else if (parseNode.GetChildNode("cardIssuingCountry") is { } nullNodeCardIssuingCountry && nullNodeCardIssuingCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIssuingCountry = null;
+            if (parseNode.GetChildNode("cardIssuingCurrency") is null) { _explicitNullValueCardIssuingCurrency = default!; _explicitNullProperties?.Remove("cardIssuingCurrency"); }
+            else if (parseNode.GetChildNode("cardIssuingCurrency") is { } nullNodeCardIssuingCurrency && nullNodeCardIssuingCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIssuingCurrency = null;
+            if (parseNode.GetChildNode("cardPaymentMethod") is null) { _explicitNullValueCardPaymentMethod = default!; _explicitNullProperties?.Remove("cardPaymentMethod"); }
+            else if (parseNode.GetChildNode("cardPaymentMethod") is { } nullNodeCardPaymentMethod && nullNodeCardPaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardPaymentMethod = null;
+            if (parseNode.GetChildNode("cardSchemeEnhancedDataLevel") is null) { _explicitNullValueCardSchemeEnhancedDataLevel = default!; _explicitNullProperties?.Remove("cardSchemeEnhancedDataLevel"); }
+            else if (parseNode.GetChildNode("cardSchemeEnhancedDataLevel") is { } nullNodeCardSchemeEnhancedDataLevel && nullNodeCardSchemeEnhancedDataLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardSchemeEnhancedDataLevel = null;
+            if (parseNode.GetChildNode("cardSummary") is null) { _explicitNullValueCardSummary = default!; _explicitNullProperties?.Remove("cardSummary"); }
+            else if (parseNode.GetChildNode("cardSummary") is { } nullNodeCardSummary && nullNodeCardSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardSummary = null;
+            if (parseNode.GetChildNode("cavv") is null) { _explicitNullValueCavv = default!; _explicitNullProperties?.Remove("cavv"); }
+            else if (parseNode.GetChildNode("cavv") is { } nullNodeCavv && nullNodeCavv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cavv = null;
+            if (parseNode.GetChildNode("cavvAlgorithm") is null) { _explicitNullValueCavvAlgorithm = default!; _explicitNullProperties?.Remove("cavvAlgorithm"); }
+            else if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
+            if (parseNode.GetChildNode("checkoutSessionId") is null) { _explicitNullValueCheckoutSessionId = default!; _explicitNullProperties?.Remove("checkoutSessionId"); }
+            else if (parseNode.GetChildNode("checkoutSessionId") is { } nullNodeCheckoutSessionId && nullNodeCheckoutSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutSessionId = null;
+            if (parseNode.GetChildNode("coBrandedWith") is null) { _explicitNullValueCoBrandedWith = default!; _explicitNullProperties?.Remove("coBrandedWith"); }
+            else if (parseNode.GetChildNode("coBrandedWith") is { } nullNodeCoBrandedWith && nullNodeCoBrandedWith.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoBrandedWith = null;
+            if (parseNode.GetChildNode("countryCode") is null) { _explicitNullValueCountryCode = default!; _explicitNullProperties?.Remove("countryCode"); }
+            else if (parseNode.GetChildNode("countryCode") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("cvcResult") is null) { _explicitNullValueCvcResult = default!; _explicitNullProperties?.Remove("cvcResult"); }
+            else if (parseNode.GetChildNode("cvcResult") is { } nullNodeCvcResult && nullNodeCvcResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CvcResult = null;
+            if (parseNode.GetChildNode("cvcResultRaw") is null) { _explicitNullValueCvcResultRaw = default!; _explicitNullProperties?.Remove("cvcResultRaw"); }
+            else if (parseNode.GetChildNode("cvcResultRaw") is { } nullNodeCvcResultRaw && nullNodeCvcResultRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CvcResultRaw = null;
+            if (parseNode.GetChildNode("deliveryAddress.city") is null) { _explicitNullValueDeliveryAddressCity = default!; _explicitNullProperties?.Remove("deliveryAddress.city"); }
+            else if (parseNode.GetChildNode("deliveryAddress.city") is { } nullNodeDeliveryAddressCity && nullNodeDeliveryAddressCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressCity = null;
+            if (parseNode.GetChildNode("deliveryAddress.country") is null) { _explicitNullValueDeliveryAddressCountry = default!; _explicitNullProperties?.Remove("deliveryAddress.country"); }
+            else if (parseNode.GetChildNode("deliveryAddress.country") is { } nullNodeDeliveryAddressCountry && nullNodeDeliveryAddressCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressCountry = null;
+            if (parseNode.GetChildNode("deliveryAddress.houseNumberOrName") is null) { _explicitNullValueDeliveryAddressHouseNumberOrName = default!; _explicitNullProperties?.Remove("deliveryAddress.houseNumberOrName"); }
+            else if (parseNode.GetChildNode("deliveryAddress.houseNumberOrName") is { } nullNodeDeliveryAddressHouseNumberOrName && nullNodeDeliveryAddressHouseNumberOrName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressHouseNumberOrName = null;
+            if (parseNode.GetChildNode("deliveryAddress.stateOrProvince") is null) { _explicitNullValueDeliveryAddressStateOrProvince = default!; _explicitNullProperties?.Remove("deliveryAddress.stateOrProvince"); }
+            else if (parseNode.GetChildNode("deliveryAddress.stateOrProvince") is { } nullNodeDeliveryAddressStateOrProvince && nullNodeDeliveryAddressStateOrProvince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressStateOrProvince = null;
+            if (parseNode.GetChildNode("deliveryAddress.street") is null) { _explicitNullValueDeliveryAddressStreet = default!; _explicitNullProperties?.Remove("deliveryAddress.street"); }
+            else if (parseNode.GetChildNode("deliveryAddress.street") is { } nullNodeDeliveryAddressStreet && nullNodeDeliveryAddressStreet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryAddressStreet = null;
+            if (parseNode.GetChildNode("eci") is null) { _explicitNullValueEci = default!; _explicitNullProperties?.Remove("eci"); }
+            else if (parseNode.GetChildNode("eci") is { } nullNodeEci && nullNodeEci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eci = null;
+            if (parseNode.GetChildNode("expiryDate") is null) { _explicitNullValueExpiryDate = default!; _explicitNullProperties?.Remove("expiryDate"); }
+            else if (parseNode.GetChildNode("expiryDate") is { } nullNodeExpiryDate && nullNodeExpiryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryDate = null;
+            if (parseNode.GetChildNode("fraudCheck-<check ID>-<name>") is null) { _explicitNullValueFraudCheckCheckIDName = default!; _explicitNullProperties?.Remove("fraudCheck-<check ID>-<name>"); }
+            else if (parseNode.GetChildNode("fraudCheck-<check ID>-<name>") is { } nullNodeFraudCheckCheckIDName && nullNodeFraudCheckCheckIDName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudCheckCheckIDName = null;
+            if (parseNode.GetChildNode("fraudManualReview") is null) { _explicitNullValueFraudManualReview = default!; _explicitNullProperties?.Remove("fraudManualReview"); }
+            else if (parseNode.GetChildNode("fraudManualReview") is { } nullNodeFraudManualReview && nullNodeFraudManualReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudManualReview = null;
+            if (parseNode.GetChildNode("fraudOffset") is null) { _explicitNullValueFraudOffset = default!; _explicitNullProperties?.Remove("fraudOffset"); }
+            else if (parseNode.GetChildNode("fraudOffset") is { } nullNodeFraudOffset && nullNodeFraudOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudOffset = null;
+            if (parseNode.GetChildNode("fraudResultType") is null) { _explicitNullValueFraudResultType = default!; _explicitNullProperties?.Remove("fraudResultType"); }
+            else if (parseNode.GetChildNode("fraudResultType") is { } nullNodeFraudResultType && nullNodeFraudResultType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudResultType = null;
+            if (parseNode.GetChildNode("fraudRiskLevel") is null) { _explicitNullValueFraudRiskLevel = default!; _explicitNullProperties?.Remove("fraudRiskLevel"); }
+            else if (parseNode.GetChildNode("fraudRiskLevel") is { } nullNodeFraudRiskLevel && nullNodeFraudRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudRiskLevel = null;
+            if (parseNode.GetChildNode("hmacSignature") is null) { _explicitNullValueHmacSignature = default!; _explicitNullProperties?.Remove("hmacSignature"); }
+            else if (parseNode.GetChildNode("hmacSignature") is { } nullNodeHmacSignature && nullNodeHmacSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSignature = null;
+            if (parseNode.GetChildNode("interactionCounter") is null) { _explicitNullValueInteractionCounter = default!; _explicitNullProperties?.Remove("interactionCounter"); }
+            else if (parseNode.GetChildNode("interactionCounter") is { } nullNodeInteractionCounter && nullNodeInteractionCounter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InteractionCounter = null;
+            if (parseNode.GetChildNode("merchantOrderReference") is null) { _explicitNullValueMerchantOrderReference = default!; _explicitNullProperties?.Remove("merchantOrderReference"); }
+            else if (parseNode.GetChildNode("merchantOrderReference") is { } nullNodeMerchantOrderReference && nullNodeMerchantOrderReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantOrderReference = null;
+            if (parseNode.GetChildNode("PaymentAccountReference") is null) { _explicitNullValuePaymentAccountReference = default!; _explicitNullProperties?.Remove("PaymentAccountReference"); }
+            else if (parseNode.GetChildNode("PaymentAccountReference") is { } nullNodePaymentAccountReference && nullNodePaymentAccountReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentAccountReference = null;
+            if (parseNode.GetChildNode("paymentLinkId") is null) { _explicitNullValuePaymentLinkId = default!; _explicitNullProperties?.Remove("paymentLinkId"); }
+            else if (parseNode.GetChildNode("paymentLinkId") is { } nullNodePaymentLinkId && nullNodePaymentLinkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentLinkId = null;
+            if (parseNode.GetChildNode("paymentMethodVariant") is null) { _explicitNullValuePaymentMethodVariant = default!; _explicitNullProperties?.Remove("paymentMethodVariant"); }
+            else if (parseNode.GetChildNode("paymentMethodVariant") is { } nullNodePaymentMethodVariant && nullNodePaymentMethodVariant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethodVariant = null;
+            if (parseNode.GetChildNode("riskdata.<name>") is null) { _explicitNullValueRiskdataName = default!; _explicitNullProperties?.Remove("riskdata.<name>"); }
+            else if (parseNode.GetChildNode("riskdata.<name>") is { } nullNodeRiskdataName && nullNodeRiskdataName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskdataName = null;
+            if (parseNode.GetChildNode("shopperCountry") is null) { _explicitNullValueShopperCountry = default!; _explicitNullProperties?.Remove("shopperCountry"); }
+            else if (parseNode.GetChildNode("shopperCountry") is { } nullNodeShopperCountry && nullNodeShopperCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperCountry = null;
+            if (parseNode.GetChildNode("shopperSocialSecurityNumber") is null) { _explicitNullValueShopperSocialSecurityNumber = default!; _explicitNullProperties?.Remove("shopperSocialSecurityNumber"); }
+            else if (parseNode.GetChildNode("shopperSocialSecurityNumber") is { } nullNodeShopperSocialSecurityNumber && nullNodeShopperSocialSecurityNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopperSocialSecurityNumber = null;
+            if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
+            else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("totalFraudScore") is null) { _explicitNullValueTotalFraudScore = default!; _explicitNullProperties?.Remove("totalFraudScore"); }
+            else if (parseNode.GetChildNode("totalFraudScore") is { } nullNodeTotalFraudScore && nullNodeTotalFraudScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalFraudScore = null;
         }
 
         /// <summary>The accountValidation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountValidation { get => _explicitNullValueAccountValidation; set { _explicitNullValueAccountValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountValidation"); else _explicitNullProperties?.Remove("accountValidation"); } }
+        public string? AccountValidation { get => _explicitNullValueAccountValidation; set { _explicitNullValueAccountValidation = value; AdditionalData?.Remove("accountValidation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountValidation"); else _explicitNullProperties?.Remove("accountValidation"); } }
         private string? _explicitNullValueAccountValidation = default!;
 #nullable restore
 #else
-        public string AccountValidation { get => _explicitNullValueAccountValidation; set { _explicitNullValueAccountValidation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountValidation"); else _explicitNullProperties?.Remove("accountValidation"); } }
+        public string AccountValidation { get => _explicitNullValueAccountValidation; set { _explicitNullValueAccountValidation = value; AdditionalData?.Remove("accountValidation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountValidation"); else _explicitNullProperties?.Remove("accountValidation"); } }
         private string _explicitNullValueAccountValidation = default!;
 #endif
         /// <summary>The acquirerAccountCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcquirerAccountCode { get => _explicitNullValueAcquirerAccountCode; set { _explicitNullValueAcquirerAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerAccountCode"); else _explicitNullProperties?.Remove("acquirerAccountCode"); } }
+        public string? AcquirerAccountCode { get => _explicitNullValueAcquirerAccountCode; set { _explicitNullValueAcquirerAccountCode = value; AdditionalData?.Remove("acquirerAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerAccountCode"); else _explicitNullProperties?.Remove("acquirerAccountCode"); } }
         private string? _explicitNullValueAcquirerAccountCode = default!;
 #nullable restore
 #else
-        public string AcquirerAccountCode { get => _explicitNullValueAcquirerAccountCode; set { _explicitNullValueAcquirerAccountCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerAccountCode"); else _explicitNullProperties?.Remove("acquirerAccountCode"); } }
+        public string AcquirerAccountCode { get => _explicitNullValueAcquirerAccountCode; set { _explicitNullValueAcquirerAccountCode = value; AdditionalData?.Remove("acquirerAccountCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerAccountCode"); else _explicitNullProperties?.Remove("acquirerAccountCode"); } }
         private string _explicitNullValueAcquirerAccountCode = default!;
 #endif
         /// <summary>The acquirerCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcquirerCode { get => _explicitNullValueAcquirerCode; set { _explicitNullValueAcquirerCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerCode"); else _explicitNullProperties?.Remove("acquirerCode"); } }
+        public string? AcquirerCode { get => _explicitNullValueAcquirerCode; set { _explicitNullValueAcquirerCode = value; AdditionalData?.Remove("acquirerCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerCode"); else _explicitNullProperties?.Remove("acquirerCode"); } }
         private string? _explicitNullValueAcquirerCode = default!;
 #nullable restore
 #else
-        public string AcquirerCode { get => _explicitNullValueAcquirerCode; set { _explicitNullValueAcquirerCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerCode"); else _explicitNullProperties?.Remove("acquirerCode"); } }
+        public string AcquirerCode { get => _explicitNullValueAcquirerCode; set { _explicitNullValueAcquirerCode = value; AdditionalData?.Remove("acquirerCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerCode"); else _explicitNullProperties?.Remove("acquirerCode"); } }
         private string _explicitNullValueAcquirerCode = default!;
 #endif
         /// <summary>The acquirerReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcquirerReference { get => _explicitNullValueAcquirerReference; set { _explicitNullValueAcquirerReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerReference"); else _explicitNullProperties?.Remove("acquirerReference"); } }
+        public string? AcquirerReference { get => _explicitNullValueAcquirerReference; set { _explicitNullValueAcquirerReference = value; AdditionalData?.Remove("acquirerReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerReference"); else _explicitNullProperties?.Remove("acquirerReference"); } }
         private string? _explicitNullValueAcquirerReference = default!;
 #nullable restore
 #else
-        public string AcquirerReference { get => _explicitNullValueAcquirerReference; set { _explicitNullValueAcquirerReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerReference"); else _explicitNullProperties?.Remove("acquirerReference"); } }
+        public string AcquirerReference { get => _explicitNullValueAcquirerReference; set { _explicitNullValueAcquirerReference = value; AdditionalData?.Remove("acquirerReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acquirerReference"); else _explicitNullProperties?.Remove("acquirerReference"); } }
         private string _explicitNullValueAcquirerReference = default!;
 #endif
         /// <summary>The acsRenderingTypeAcsInterface property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsRenderingTypeAcsInterface { get => _explicitNullValueAcsRenderingTypeAcsInterface; set { _explicitNullValueAcsRenderingTypeAcsInterface = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsInterface"); else _explicitNullProperties?.Remove("acsRenderingType.acsInterface"); } }
+        public string? AcsRenderingTypeAcsInterface { get => _explicitNullValueAcsRenderingTypeAcsInterface; set { _explicitNullValueAcsRenderingTypeAcsInterface = value; AdditionalData?.Remove("acsRenderingType.acsInterface"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsInterface"); else _explicitNullProperties?.Remove("acsRenderingType.acsInterface"); } }
         private string? _explicitNullValueAcsRenderingTypeAcsInterface = default!;
 #nullable restore
 #else
-        public string AcsRenderingTypeAcsInterface { get => _explicitNullValueAcsRenderingTypeAcsInterface; set { _explicitNullValueAcsRenderingTypeAcsInterface = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsInterface"); else _explicitNullProperties?.Remove("acsRenderingType.acsInterface"); } }
+        public string AcsRenderingTypeAcsInterface { get => _explicitNullValueAcsRenderingTypeAcsInterface; set { _explicitNullValueAcsRenderingTypeAcsInterface = value; AdditionalData?.Remove("acsRenderingType.acsInterface"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsInterface"); else _explicitNullProperties?.Remove("acsRenderingType.acsInterface"); } }
         private string _explicitNullValueAcsRenderingTypeAcsInterface = default!;
 #endif
         /// <summary>The acsRenderingTypeAcsUiTemplate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcsRenderingTypeAcsUiTemplate { get => _explicitNullValueAcsRenderingTypeAcsUiTemplate; set { _explicitNullValueAcsRenderingTypeAcsUiTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsUiTemplate"); else _explicitNullProperties?.Remove("acsRenderingType.acsUiTemplate"); } }
+        public string? AcsRenderingTypeAcsUiTemplate { get => _explicitNullValueAcsRenderingTypeAcsUiTemplate; set { _explicitNullValueAcsRenderingTypeAcsUiTemplate = value; AdditionalData?.Remove("acsRenderingType.acsUiTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsUiTemplate"); else _explicitNullProperties?.Remove("acsRenderingType.acsUiTemplate"); } }
         private string? _explicitNullValueAcsRenderingTypeAcsUiTemplate = default!;
 #nullable restore
 #else
-        public string AcsRenderingTypeAcsUiTemplate { get => _explicitNullValueAcsRenderingTypeAcsUiTemplate; set { _explicitNullValueAcsRenderingTypeAcsUiTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsUiTemplate"); else _explicitNullProperties?.Remove("acsRenderingType.acsUiTemplate"); } }
+        public string AcsRenderingTypeAcsUiTemplate { get => _explicitNullValueAcsRenderingTypeAcsUiTemplate; set { _explicitNullValueAcsRenderingTypeAcsUiTemplate = value; AdditionalData?.Remove("acsRenderingType.acsUiTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acsRenderingType.acsUiTemplate"); else _explicitNullProperties?.Remove("acsRenderingType.acsUiTemplate"); } }
         private string _explicitNullValueAcsRenderingTypeAcsUiTemplate = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -148,564 +211,564 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The alias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        public string? Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
         private string? _explicitNullValueAlias = default!;
 #nullable restore
 #else
-        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
+        public string Alias { get => _explicitNullValueAlias; set { _explicitNullValueAlias = value; AdditionalData?.Remove("alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alias"); else _explicitNullProperties?.Remove("alias"); } }
         private string _explicitNullValueAlias = default!;
 #endif
         /// <summary>The aliasType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AliasType { get => _explicitNullValueAliasType; set { _explicitNullValueAliasType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasType"); else _explicitNullProperties?.Remove("aliasType"); } }
+        public string? AliasType { get => _explicitNullValueAliasType; set { _explicitNullValueAliasType = value; AdditionalData?.Remove("aliasType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasType"); else _explicitNullProperties?.Remove("aliasType"); } }
         private string? _explicitNullValueAliasType = default!;
 #nullable restore
 #else
-        public string AliasType { get => _explicitNullValueAliasType; set { _explicitNullValueAliasType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasType"); else _explicitNullProperties?.Remove("aliasType"); } }
+        public string AliasType { get => _explicitNullValueAliasType; set { _explicitNullValueAliasType = value; AdditionalData?.Remove("aliasType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliasType"); else _explicitNullProperties?.Remove("aliasType"); } }
         private string _explicitNullValueAliasType = default!;
 #endif
         /// <summary>The arn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Arn { get => _explicitNullValueArn; set { _explicitNullValueArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arn"); else _explicitNullProperties?.Remove("arn"); } }
+        public string? Arn { get => _explicitNullValueArn; set { _explicitNullValueArn = value; AdditionalData?.Remove("arn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arn"); else _explicitNullProperties?.Remove("arn"); } }
         private string? _explicitNullValueArn = default!;
 #nullable restore
 #else
-        public string Arn { get => _explicitNullValueArn; set { _explicitNullValueArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arn"); else _explicitNullProperties?.Remove("arn"); } }
+        public string Arn { get => _explicitNullValueArn; set { _explicitNullValueArn = value; AdditionalData?.Remove("arn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arn"); else _explicitNullProperties?.Remove("arn"); } }
         private string _explicitNullValueArn = default!;
 #endif
         /// <summary>The authCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("authCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
         private string? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
+        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("authCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authCode"); else _explicitNullProperties?.Remove("authCode"); } }
         private string _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>The authenticationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
+        public string? AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; AdditionalData?.Remove("authenticationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
         private string? _explicitNullValueAuthenticationType = default!;
 #nullable restore
 #else
-        public string AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
+        public string AuthenticationType { get => _explicitNullValueAuthenticationType; set { _explicitNullValueAuthenticationType = value; AdditionalData?.Remove("authenticationType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationType"); else _explicitNullProperties?.Remove("authenticationType"); } }
         private string _explicitNullValueAuthenticationType = default!;
 #endif
         /// <summary>The authorisationMid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
+        public string? AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; AdditionalData?.Remove("authorisationMid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
         private string? _explicitNullValueAuthorisationMid = default!;
 #nullable restore
 #else
-        public string AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
+        public string AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; AdditionalData?.Remove("authorisationMid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
         private string _explicitNullValueAuthorisationMid = default!;
 #endif
         /// <summary>The avsResult property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvsResult { get => _explicitNullValueAvsResult; set { _explicitNullValueAvsResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResult"); else _explicitNullProperties?.Remove("avsResult"); } }
+        public string? AvsResult { get => _explicitNullValueAvsResult; set { _explicitNullValueAvsResult = value; AdditionalData?.Remove("avsResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResult"); else _explicitNullProperties?.Remove("avsResult"); } }
         private string? _explicitNullValueAvsResult = default!;
 #nullable restore
 #else
-        public string AvsResult { get => _explicitNullValueAvsResult; set { _explicitNullValueAvsResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResult"); else _explicitNullProperties?.Remove("avsResult"); } }
+        public string AvsResult { get => _explicitNullValueAvsResult; set { _explicitNullValueAvsResult = value; AdditionalData?.Remove("avsResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResult"); else _explicitNullProperties?.Remove("avsResult"); } }
         private string _explicitNullValueAvsResult = default!;
 #endif
         /// <summary>The avsResultRaw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvsResultRaw { get => _explicitNullValueAvsResultRaw; set { _explicitNullValueAvsResultRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResultRaw"); else _explicitNullProperties?.Remove("avsResultRaw"); } }
+        public string? AvsResultRaw { get => _explicitNullValueAvsResultRaw; set { _explicitNullValueAvsResultRaw = value; AdditionalData?.Remove("avsResultRaw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResultRaw"); else _explicitNullProperties?.Remove("avsResultRaw"); } }
         private string? _explicitNullValueAvsResultRaw = default!;
 #nullable restore
 #else
-        public string AvsResultRaw { get => _explicitNullValueAvsResultRaw; set { _explicitNullValueAvsResultRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResultRaw"); else _explicitNullProperties?.Remove("avsResultRaw"); } }
+        public string AvsResultRaw { get => _explicitNullValueAvsResultRaw; set { _explicitNullValueAvsResultRaw = value; AdditionalData?.Remove("avsResultRaw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avsResultRaw"); else _explicitNullProperties?.Remove("avsResultRaw"); } }
         private string _explicitNullValueAvsResultRaw = default!;
 #endif
         /// <summary>The bankAccountNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankAccountNumber { get => _explicitNullValueBankAccountNumber; set { _explicitNullValueBankAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountNumber"); else _explicitNullProperties?.Remove("bankAccountNumber"); } }
+        public string? BankAccountNumber { get => _explicitNullValueBankAccountNumber; set { _explicitNullValueBankAccountNumber = value; AdditionalData?.Remove("bankAccountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountNumber"); else _explicitNullProperties?.Remove("bankAccountNumber"); } }
         private string? _explicitNullValueBankAccountNumber = default!;
 #nullable restore
 #else
-        public string BankAccountNumber { get => _explicitNullValueBankAccountNumber; set { _explicitNullValueBankAccountNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountNumber"); else _explicitNullProperties?.Remove("bankAccountNumber"); } }
+        public string BankAccountNumber { get => _explicitNullValueBankAccountNumber; set { _explicitNullValueBankAccountNumber = value; AdditionalData?.Remove("bankAccountNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankAccountNumber"); else _explicitNullProperties?.Remove("bankAccountNumber"); } }
         private string _explicitNullValueBankAccountNumber = default!;
 #endif
         /// <summary>The bankLocationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankLocationId { get => _explicitNullValueBankLocationId; set { _explicitNullValueBankLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankLocationId"); else _explicitNullProperties?.Remove("bankLocationId"); } }
+        public string? BankLocationId { get => _explicitNullValueBankLocationId; set { _explicitNullValueBankLocationId = value; AdditionalData?.Remove("bankLocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankLocationId"); else _explicitNullProperties?.Remove("bankLocationId"); } }
         private string? _explicitNullValueBankLocationId = default!;
 #nullable restore
 #else
-        public string BankLocationId { get => _explicitNullValueBankLocationId; set { _explicitNullValueBankLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankLocationId"); else _explicitNullProperties?.Remove("bankLocationId"); } }
+        public string BankLocationId { get => _explicitNullValueBankLocationId; set { _explicitNullValueBankLocationId = value; AdditionalData?.Remove("bankLocationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankLocationId"); else _explicitNullProperties?.Remove("bankLocationId"); } }
         private string _explicitNullValueBankLocationId = default!;
 #endif
         /// <summary>The bankName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
+        public string? BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; AdditionalData?.Remove("bankName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
         private string? _explicitNullValueBankName = default!;
 #nullable restore
 #else
-        public string BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
+        public string BankName { get => _explicitNullValueBankName; set { _explicitNullValueBankName = value; AdditionalData?.Remove("bankName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bankName"); else _explicitNullProperties?.Remove("bankName"); } }
         private string _explicitNullValueBankName = default!;
 #endif
         /// <summary>The bic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
+        public string? Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; AdditionalData?.Remove("bic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
         private string? _explicitNullValueBic = default!;
 #nullable restore
 #else
-        public string Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
+        public string Bic { get => _explicitNullValueBic; set { _explicitNullValueBic = value; AdditionalData?.Remove("bic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bic"); else _explicitNullProperties?.Remove("bic"); } }
         private string _explicitNullValueBic = default!;
 #endif
         /// <summary>The billingAddressCity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAddressCity { get => _explicitNullValueBillingAddressCity; set { _explicitNullValueBillingAddressCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.city"); else _explicitNullProperties?.Remove("billingAddress.city"); } }
+        public string? BillingAddressCity { get => _explicitNullValueBillingAddressCity; set { _explicitNullValueBillingAddressCity = value; AdditionalData?.Remove("billingAddress.city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.city"); else _explicitNullProperties?.Remove("billingAddress.city"); } }
         private string? _explicitNullValueBillingAddressCity = default!;
 #nullable restore
 #else
-        public string BillingAddressCity { get => _explicitNullValueBillingAddressCity; set { _explicitNullValueBillingAddressCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.city"); else _explicitNullProperties?.Remove("billingAddress.city"); } }
+        public string BillingAddressCity { get => _explicitNullValueBillingAddressCity; set { _explicitNullValueBillingAddressCity = value; AdditionalData?.Remove("billingAddress.city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.city"); else _explicitNullProperties?.Remove("billingAddress.city"); } }
         private string _explicitNullValueBillingAddressCity = default!;
 #endif
         /// <summary>The billingAddressCountry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAddressCountry { get => _explicitNullValueBillingAddressCountry; set { _explicitNullValueBillingAddressCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.country"); else _explicitNullProperties?.Remove("billingAddress.country"); } }
+        public string? BillingAddressCountry { get => _explicitNullValueBillingAddressCountry; set { _explicitNullValueBillingAddressCountry = value; AdditionalData?.Remove("billingAddress.country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.country"); else _explicitNullProperties?.Remove("billingAddress.country"); } }
         private string? _explicitNullValueBillingAddressCountry = default!;
 #nullable restore
 #else
-        public string BillingAddressCountry { get => _explicitNullValueBillingAddressCountry; set { _explicitNullValueBillingAddressCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.country"); else _explicitNullProperties?.Remove("billingAddress.country"); } }
+        public string BillingAddressCountry { get => _explicitNullValueBillingAddressCountry; set { _explicitNullValueBillingAddressCountry = value; AdditionalData?.Remove("billingAddress.country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.country"); else _explicitNullProperties?.Remove("billingAddress.country"); } }
         private string _explicitNullValueBillingAddressCountry = default!;
 #endif
         /// <summary>The billingAddressHouseNumberOrName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAddressHouseNumberOrName { get => _explicitNullValueBillingAddressHouseNumberOrName; set { _explicitNullValueBillingAddressHouseNumberOrName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("billingAddress.houseNumberOrName"); } }
+        public string? BillingAddressHouseNumberOrName { get => _explicitNullValueBillingAddressHouseNumberOrName; set { _explicitNullValueBillingAddressHouseNumberOrName = value; AdditionalData?.Remove("billingAddress.houseNumberOrName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("billingAddress.houseNumberOrName"); } }
         private string? _explicitNullValueBillingAddressHouseNumberOrName = default!;
 #nullable restore
 #else
-        public string BillingAddressHouseNumberOrName { get => _explicitNullValueBillingAddressHouseNumberOrName; set { _explicitNullValueBillingAddressHouseNumberOrName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("billingAddress.houseNumberOrName"); } }
+        public string BillingAddressHouseNumberOrName { get => _explicitNullValueBillingAddressHouseNumberOrName; set { _explicitNullValueBillingAddressHouseNumberOrName = value; AdditionalData?.Remove("billingAddress.houseNumberOrName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("billingAddress.houseNumberOrName"); } }
         private string _explicitNullValueBillingAddressHouseNumberOrName = default!;
 #endif
         /// <summary>The billingAddressPostalCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAddressPostalCode { get => _explicitNullValueBillingAddressPostalCode; set { _explicitNullValueBillingAddressPostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.postalCode"); else _explicitNullProperties?.Remove("billingAddress.postalCode"); } }
+        public string? BillingAddressPostalCode { get => _explicitNullValueBillingAddressPostalCode; set { _explicitNullValueBillingAddressPostalCode = value; AdditionalData?.Remove("billingAddress.postalCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.postalCode"); else _explicitNullProperties?.Remove("billingAddress.postalCode"); } }
         private string? _explicitNullValueBillingAddressPostalCode = default!;
 #nullable restore
 #else
-        public string BillingAddressPostalCode { get => _explicitNullValueBillingAddressPostalCode; set { _explicitNullValueBillingAddressPostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.postalCode"); else _explicitNullProperties?.Remove("billingAddress.postalCode"); } }
+        public string BillingAddressPostalCode { get => _explicitNullValueBillingAddressPostalCode; set { _explicitNullValueBillingAddressPostalCode = value; AdditionalData?.Remove("billingAddress.postalCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.postalCode"); else _explicitNullProperties?.Remove("billingAddress.postalCode"); } }
         private string _explicitNullValueBillingAddressPostalCode = default!;
 #endif
         /// <summary>The billingAddressStateOrProvince property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAddressStateOrProvince { get => _explicitNullValueBillingAddressStateOrProvince; set { _explicitNullValueBillingAddressStateOrProvince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.stateOrProvince"); else _explicitNullProperties?.Remove("billingAddress.stateOrProvince"); } }
+        public string? BillingAddressStateOrProvince { get => _explicitNullValueBillingAddressStateOrProvince; set { _explicitNullValueBillingAddressStateOrProvince = value; AdditionalData?.Remove("billingAddress.stateOrProvince"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.stateOrProvince"); else _explicitNullProperties?.Remove("billingAddress.stateOrProvince"); } }
         private string? _explicitNullValueBillingAddressStateOrProvince = default!;
 #nullable restore
 #else
-        public string BillingAddressStateOrProvince { get => _explicitNullValueBillingAddressStateOrProvince; set { _explicitNullValueBillingAddressStateOrProvince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.stateOrProvince"); else _explicitNullProperties?.Remove("billingAddress.stateOrProvince"); } }
+        public string BillingAddressStateOrProvince { get => _explicitNullValueBillingAddressStateOrProvince; set { _explicitNullValueBillingAddressStateOrProvince = value; AdditionalData?.Remove("billingAddress.stateOrProvince"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.stateOrProvince"); else _explicitNullProperties?.Remove("billingAddress.stateOrProvince"); } }
         private string _explicitNullValueBillingAddressStateOrProvince = default!;
 #endif
         /// <summary>The billingAddressStreet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingAddressStreet { get => _explicitNullValueBillingAddressStreet; set { _explicitNullValueBillingAddressStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.street"); else _explicitNullProperties?.Remove("billingAddress.street"); } }
+        public string? BillingAddressStreet { get => _explicitNullValueBillingAddressStreet; set { _explicitNullValueBillingAddressStreet = value; AdditionalData?.Remove("billingAddress.street"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.street"); else _explicitNullProperties?.Remove("billingAddress.street"); } }
         private string? _explicitNullValueBillingAddressStreet = default!;
 #nullable restore
 #else
-        public string BillingAddressStreet { get => _explicitNullValueBillingAddressStreet; set { _explicitNullValueBillingAddressStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.street"); else _explicitNullProperties?.Remove("billingAddress.street"); } }
+        public string BillingAddressStreet { get => _explicitNullValueBillingAddressStreet; set { _explicitNullValueBillingAddressStreet = value; AdditionalData?.Remove("billingAddress.street"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAddress.street"); else _explicitNullProperties?.Remove("billingAddress.street"); } }
         private string _explicitNullValueBillingAddressStreet = default!;
 #endif
         /// <summary>The bookingDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
+        public string? BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; AdditionalData?.Remove("bookingDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
         private string? _explicitNullValueBookingDate = default!;
 #nullable restore
 #else
-        public string BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
+        public string BookingDate { get => _explicitNullValueBookingDate; set { _explicitNullValueBookingDate = value; AdditionalData?.Remove("bookingDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookingDate"); else _explicitNullProperties?.Remove("bookingDate"); } }
         private string _explicitNullValueBookingDate = default!;
 #endif
         /// <summary>The cardBin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardBin { get => _explicitNullValueCardBin; set { _explicitNullValueCardBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardBin"); else _explicitNullProperties?.Remove("cardBin"); } }
+        public string? CardBin { get => _explicitNullValueCardBin; set { _explicitNullValueCardBin = value; AdditionalData?.Remove("cardBin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardBin"); else _explicitNullProperties?.Remove("cardBin"); } }
         private string? _explicitNullValueCardBin = default!;
 #nullable restore
 #else
-        public string CardBin { get => _explicitNullValueCardBin; set { _explicitNullValueCardBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardBin"); else _explicitNullProperties?.Remove("cardBin"); } }
+        public string CardBin { get => _explicitNullValueCardBin; set { _explicitNullValueCardBin = value; AdditionalData?.Remove("cardBin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardBin"); else _explicitNullProperties?.Remove("cardBin"); } }
         private string _explicitNullValueCardBin = default!;
 #endif
         /// <summary>The cardHolderName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
+        public string? CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; AdditionalData?.Remove("cardHolderName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
         private string? _explicitNullValueCardHolderName = default!;
 #nullable restore
 #else
-        public string CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
+        public string CardHolderName { get => _explicitNullValueCardHolderName; set { _explicitNullValueCardHolderName = value; AdditionalData?.Remove("cardHolderName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardHolderName"); else _explicitNullProperties?.Remove("cardHolderName"); } }
         private string _explicitNullValueCardHolderName = default!;
 #endif
         /// <summary>The cardIssuingBank property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardIssuingBank { get => _explicitNullValueCardIssuingBank; set { _explicitNullValueCardIssuingBank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingBank"); else _explicitNullProperties?.Remove("cardIssuingBank"); } }
+        public string? CardIssuingBank { get => _explicitNullValueCardIssuingBank; set { _explicitNullValueCardIssuingBank = value; AdditionalData?.Remove("cardIssuingBank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingBank"); else _explicitNullProperties?.Remove("cardIssuingBank"); } }
         private string? _explicitNullValueCardIssuingBank = default!;
 #nullable restore
 #else
-        public string CardIssuingBank { get => _explicitNullValueCardIssuingBank; set { _explicitNullValueCardIssuingBank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingBank"); else _explicitNullProperties?.Remove("cardIssuingBank"); } }
+        public string CardIssuingBank { get => _explicitNullValueCardIssuingBank; set { _explicitNullValueCardIssuingBank = value; AdditionalData?.Remove("cardIssuingBank"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingBank"); else _explicitNullProperties?.Remove("cardIssuingBank"); } }
         private string _explicitNullValueCardIssuingBank = default!;
 #endif
         /// <summary>The cardIssuingCountry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardIssuingCountry { get => _explicitNullValueCardIssuingCountry; set { _explicitNullValueCardIssuingCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCountry"); else _explicitNullProperties?.Remove("cardIssuingCountry"); } }
+        public string? CardIssuingCountry { get => _explicitNullValueCardIssuingCountry; set { _explicitNullValueCardIssuingCountry = value; AdditionalData?.Remove("cardIssuingCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCountry"); else _explicitNullProperties?.Remove("cardIssuingCountry"); } }
         private string? _explicitNullValueCardIssuingCountry = default!;
 #nullable restore
 #else
-        public string CardIssuingCountry { get => _explicitNullValueCardIssuingCountry; set { _explicitNullValueCardIssuingCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCountry"); else _explicitNullProperties?.Remove("cardIssuingCountry"); } }
+        public string CardIssuingCountry { get => _explicitNullValueCardIssuingCountry; set { _explicitNullValueCardIssuingCountry = value; AdditionalData?.Remove("cardIssuingCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCountry"); else _explicitNullProperties?.Remove("cardIssuingCountry"); } }
         private string _explicitNullValueCardIssuingCountry = default!;
 #endif
         /// <summary>The cardIssuingCurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardIssuingCurrency { get => _explicitNullValueCardIssuingCurrency; set { _explicitNullValueCardIssuingCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCurrency"); else _explicitNullProperties?.Remove("cardIssuingCurrency"); } }
+        public string? CardIssuingCurrency { get => _explicitNullValueCardIssuingCurrency; set { _explicitNullValueCardIssuingCurrency = value; AdditionalData?.Remove("cardIssuingCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCurrency"); else _explicitNullProperties?.Remove("cardIssuingCurrency"); } }
         private string? _explicitNullValueCardIssuingCurrency = default!;
 #nullable restore
 #else
-        public string CardIssuingCurrency { get => _explicitNullValueCardIssuingCurrency; set { _explicitNullValueCardIssuingCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCurrency"); else _explicitNullProperties?.Remove("cardIssuingCurrency"); } }
+        public string CardIssuingCurrency { get => _explicitNullValueCardIssuingCurrency; set { _explicitNullValueCardIssuingCurrency = value; AdditionalData?.Remove("cardIssuingCurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIssuingCurrency"); else _explicitNullProperties?.Remove("cardIssuingCurrency"); } }
         private string _explicitNullValueCardIssuingCurrency = default!;
 #endif
         /// <summary>The cardPaymentMethod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardPaymentMethod { get => _explicitNullValueCardPaymentMethod; set { _explicitNullValueCardPaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardPaymentMethod"); else _explicitNullProperties?.Remove("cardPaymentMethod"); } }
+        public string? CardPaymentMethod { get => _explicitNullValueCardPaymentMethod; set { _explicitNullValueCardPaymentMethod = value; AdditionalData?.Remove("cardPaymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardPaymentMethod"); else _explicitNullProperties?.Remove("cardPaymentMethod"); } }
         private string? _explicitNullValueCardPaymentMethod = default!;
 #nullable restore
 #else
-        public string CardPaymentMethod { get => _explicitNullValueCardPaymentMethod; set { _explicitNullValueCardPaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardPaymentMethod"); else _explicitNullProperties?.Remove("cardPaymentMethod"); } }
+        public string CardPaymentMethod { get => _explicitNullValueCardPaymentMethod; set { _explicitNullValueCardPaymentMethod = value; AdditionalData?.Remove("cardPaymentMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardPaymentMethod"); else _explicitNullProperties?.Remove("cardPaymentMethod"); } }
         private string _explicitNullValueCardPaymentMethod = default!;
 #endif
         /// <summary>The cardSchemeEnhancedDataLevel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardSchemeEnhancedDataLevel { get => _explicitNullValueCardSchemeEnhancedDataLevel; set { _explicitNullValueCardSchemeEnhancedDataLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSchemeEnhancedDataLevel"); else _explicitNullProperties?.Remove("cardSchemeEnhancedDataLevel"); } }
+        public string? CardSchemeEnhancedDataLevel { get => _explicitNullValueCardSchemeEnhancedDataLevel; set { _explicitNullValueCardSchemeEnhancedDataLevel = value; AdditionalData?.Remove("cardSchemeEnhancedDataLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSchemeEnhancedDataLevel"); else _explicitNullProperties?.Remove("cardSchemeEnhancedDataLevel"); } }
         private string? _explicitNullValueCardSchemeEnhancedDataLevel = default!;
 #nullable restore
 #else
-        public string CardSchemeEnhancedDataLevel { get => _explicitNullValueCardSchemeEnhancedDataLevel; set { _explicitNullValueCardSchemeEnhancedDataLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSchemeEnhancedDataLevel"); else _explicitNullProperties?.Remove("cardSchemeEnhancedDataLevel"); } }
+        public string CardSchemeEnhancedDataLevel { get => _explicitNullValueCardSchemeEnhancedDataLevel; set { _explicitNullValueCardSchemeEnhancedDataLevel = value; AdditionalData?.Remove("cardSchemeEnhancedDataLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSchemeEnhancedDataLevel"); else _explicitNullProperties?.Remove("cardSchemeEnhancedDataLevel"); } }
         private string _explicitNullValueCardSchemeEnhancedDataLevel = default!;
 #endif
         /// <summary>The cardSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardSummary { get => _explicitNullValueCardSummary; set { _explicitNullValueCardSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSummary"); else _explicitNullProperties?.Remove("cardSummary"); } }
+        public string? CardSummary { get => _explicitNullValueCardSummary; set { _explicitNullValueCardSummary = value; AdditionalData?.Remove("cardSummary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSummary"); else _explicitNullProperties?.Remove("cardSummary"); } }
         private string? _explicitNullValueCardSummary = default!;
 #nullable restore
 #else
-        public string CardSummary { get => _explicitNullValueCardSummary; set { _explicitNullValueCardSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSummary"); else _explicitNullProperties?.Remove("cardSummary"); } }
+        public string CardSummary { get => _explicitNullValueCardSummary; set { _explicitNullValueCardSummary = value; AdditionalData?.Remove("cardSummary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardSummary"); else _explicitNullProperties?.Remove("cardSummary"); } }
         private string _explicitNullValueCardSummary = default!;
 #endif
         /// <summary>The cavv property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
+        public string? Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; AdditionalData?.Remove("cavv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
         private string? _explicitNullValueCavv = default!;
 #nullable restore
 #else
-        public string Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
+        public string Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; AdditionalData?.Remove("cavv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
         private string _explicitNullValueCavv = default!;
 #endif
         /// <summary>The cavvAlgorithm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; AdditionalData?.Remove("cavvAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
         private string? _explicitNullValueCavvAlgorithm = default!;
 #nullable restore
 #else
-        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; AdditionalData?.Remove("cavvAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
         private string _explicitNullValueCavvAlgorithm = default!;
 #endif
         /// <summary>The checkoutSessionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
+        public string? CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; AdditionalData?.Remove("checkoutSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
         private string? _explicitNullValueCheckoutSessionId = default!;
 #nullable restore
 #else
-        public string CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
+        public string CheckoutSessionId { get => _explicitNullValueCheckoutSessionId; set { _explicitNullValueCheckoutSessionId = value; AdditionalData?.Remove("checkoutSessionId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutSessionId"); else _explicitNullProperties?.Remove("checkoutSessionId"); } }
         private string _explicitNullValueCheckoutSessionId = default!;
 #endif
         /// <summary>The coBrandedWith property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CoBrandedWith { get => _explicitNullValueCoBrandedWith; set { _explicitNullValueCoBrandedWith = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coBrandedWith"); else _explicitNullProperties?.Remove("coBrandedWith"); } }
+        public string? CoBrandedWith { get => _explicitNullValueCoBrandedWith; set { _explicitNullValueCoBrandedWith = value; AdditionalData?.Remove("coBrandedWith"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coBrandedWith"); else _explicitNullProperties?.Remove("coBrandedWith"); } }
         private string? _explicitNullValueCoBrandedWith = default!;
 #nullable restore
 #else
-        public string CoBrandedWith { get => _explicitNullValueCoBrandedWith; set { _explicitNullValueCoBrandedWith = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coBrandedWith"); else _explicitNullProperties?.Remove("coBrandedWith"); } }
+        public string CoBrandedWith { get => _explicitNullValueCoBrandedWith; set { _explicitNullValueCoBrandedWith = value; AdditionalData?.Remove("coBrandedWith"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coBrandedWith"); else _explicitNullProperties?.Remove("coBrandedWith"); } }
         private string _explicitNullValueCoBrandedWith = default!;
 #endif
         /// <summary>The countryCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        public string? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
         private string? _explicitNullValueCountryCode = default!;
 #nullable restore
 #else
-        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
+        public string CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("countryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countryCode"); else _explicitNullProperties?.Remove("countryCode"); } }
         private string _explicitNullValueCountryCode = default!;
 #endif
         /// <summary>The cvcResult property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CvcResult { get => _explicitNullValueCvcResult; set { _explicitNullValueCvcResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResult"); else _explicitNullProperties?.Remove("cvcResult"); } }
+        public string? CvcResult { get => _explicitNullValueCvcResult; set { _explicitNullValueCvcResult = value; AdditionalData?.Remove("cvcResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResult"); else _explicitNullProperties?.Remove("cvcResult"); } }
         private string? _explicitNullValueCvcResult = default!;
 #nullable restore
 #else
-        public string CvcResult { get => _explicitNullValueCvcResult; set { _explicitNullValueCvcResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResult"); else _explicitNullProperties?.Remove("cvcResult"); } }
+        public string CvcResult { get => _explicitNullValueCvcResult; set { _explicitNullValueCvcResult = value; AdditionalData?.Remove("cvcResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResult"); else _explicitNullProperties?.Remove("cvcResult"); } }
         private string _explicitNullValueCvcResult = default!;
 #endif
         /// <summary>The cvcResultRaw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CvcResultRaw { get => _explicitNullValueCvcResultRaw; set { _explicitNullValueCvcResultRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResultRaw"); else _explicitNullProperties?.Remove("cvcResultRaw"); } }
+        public string? CvcResultRaw { get => _explicitNullValueCvcResultRaw; set { _explicitNullValueCvcResultRaw = value; AdditionalData?.Remove("cvcResultRaw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResultRaw"); else _explicitNullProperties?.Remove("cvcResultRaw"); } }
         private string? _explicitNullValueCvcResultRaw = default!;
 #nullable restore
 #else
-        public string CvcResultRaw { get => _explicitNullValueCvcResultRaw; set { _explicitNullValueCvcResultRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResultRaw"); else _explicitNullProperties?.Remove("cvcResultRaw"); } }
+        public string CvcResultRaw { get => _explicitNullValueCvcResultRaw; set { _explicitNullValueCvcResultRaw = value; AdditionalData?.Remove("cvcResultRaw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvcResultRaw"); else _explicitNullProperties?.Remove("cvcResultRaw"); } }
         private string _explicitNullValueCvcResultRaw = default!;
 #endif
         /// <summary>The deliveryAddressCity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAddressCity { get => _explicitNullValueDeliveryAddressCity; set { _explicitNullValueDeliveryAddressCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.city"); else _explicitNullProperties?.Remove("deliveryAddress.city"); } }
+        public string? DeliveryAddressCity { get => _explicitNullValueDeliveryAddressCity; set { _explicitNullValueDeliveryAddressCity = value; AdditionalData?.Remove("deliveryAddress.city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.city"); else _explicitNullProperties?.Remove("deliveryAddress.city"); } }
         private string? _explicitNullValueDeliveryAddressCity = default!;
 #nullable restore
 #else
-        public string DeliveryAddressCity { get => _explicitNullValueDeliveryAddressCity; set { _explicitNullValueDeliveryAddressCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.city"); else _explicitNullProperties?.Remove("deliveryAddress.city"); } }
+        public string DeliveryAddressCity { get => _explicitNullValueDeliveryAddressCity; set { _explicitNullValueDeliveryAddressCity = value; AdditionalData?.Remove("deliveryAddress.city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.city"); else _explicitNullProperties?.Remove("deliveryAddress.city"); } }
         private string _explicitNullValueDeliveryAddressCity = default!;
 #endif
         /// <summary>The deliveryAddressCountry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAddressCountry { get => _explicitNullValueDeliveryAddressCountry; set { _explicitNullValueDeliveryAddressCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.country"); else _explicitNullProperties?.Remove("deliveryAddress.country"); } }
+        public string? DeliveryAddressCountry { get => _explicitNullValueDeliveryAddressCountry; set { _explicitNullValueDeliveryAddressCountry = value; AdditionalData?.Remove("deliveryAddress.country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.country"); else _explicitNullProperties?.Remove("deliveryAddress.country"); } }
         private string? _explicitNullValueDeliveryAddressCountry = default!;
 #nullable restore
 #else
-        public string DeliveryAddressCountry { get => _explicitNullValueDeliveryAddressCountry; set { _explicitNullValueDeliveryAddressCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.country"); else _explicitNullProperties?.Remove("deliveryAddress.country"); } }
+        public string DeliveryAddressCountry { get => _explicitNullValueDeliveryAddressCountry; set { _explicitNullValueDeliveryAddressCountry = value; AdditionalData?.Remove("deliveryAddress.country"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.country"); else _explicitNullProperties?.Remove("deliveryAddress.country"); } }
         private string _explicitNullValueDeliveryAddressCountry = default!;
 #endif
         /// <summary>The deliveryAddressHouseNumberOrName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAddressHouseNumberOrName { get => _explicitNullValueDeliveryAddressHouseNumberOrName; set { _explicitNullValueDeliveryAddressHouseNumberOrName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("deliveryAddress.houseNumberOrName"); } }
+        public string? DeliveryAddressHouseNumberOrName { get => _explicitNullValueDeliveryAddressHouseNumberOrName; set { _explicitNullValueDeliveryAddressHouseNumberOrName = value; AdditionalData?.Remove("deliveryAddress.houseNumberOrName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("deliveryAddress.houseNumberOrName"); } }
         private string? _explicitNullValueDeliveryAddressHouseNumberOrName = default!;
 #nullable restore
 #else
-        public string DeliveryAddressHouseNumberOrName { get => _explicitNullValueDeliveryAddressHouseNumberOrName; set { _explicitNullValueDeliveryAddressHouseNumberOrName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("deliveryAddress.houseNumberOrName"); } }
+        public string DeliveryAddressHouseNumberOrName { get => _explicitNullValueDeliveryAddressHouseNumberOrName; set { _explicitNullValueDeliveryAddressHouseNumberOrName = value; AdditionalData?.Remove("deliveryAddress.houseNumberOrName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.houseNumberOrName"); else _explicitNullProperties?.Remove("deliveryAddress.houseNumberOrName"); } }
         private string _explicitNullValueDeliveryAddressHouseNumberOrName = default!;
 #endif
         /// <summary>The deliveryAddressStateOrProvince property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAddressStateOrProvince { get => _explicitNullValueDeliveryAddressStateOrProvince; set { _explicitNullValueDeliveryAddressStateOrProvince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.stateOrProvince"); else _explicitNullProperties?.Remove("deliveryAddress.stateOrProvince"); } }
+        public string? DeliveryAddressStateOrProvince { get => _explicitNullValueDeliveryAddressStateOrProvince; set { _explicitNullValueDeliveryAddressStateOrProvince = value; AdditionalData?.Remove("deliveryAddress.stateOrProvince"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.stateOrProvince"); else _explicitNullProperties?.Remove("deliveryAddress.stateOrProvince"); } }
         private string? _explicitNullValueDeliveryAddressStateOrProvince = default!;
 #nullable restore
 #else
-        public string DeliveryAddressStateOrProvince { get => _explicitNullValueDeliveryAddressStateOrProvince; set { _explicitNullValueDeliveryAddressStateOrProvince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.stateOrProvince"); else _explicitNullProperties?.Remove("deliveryAddress.stateOrProvince"); } }
+        public string DeliveryAddressStateOrProvince { get => _explicitNullValueDeliveryAddressStateOrProvince; set { _explicitNullValueDeliveryAddressStateOrProvince = value; AdditionalData?.Remove("deliveryAddress.stateOrProvince"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.stateOrProvince"); else _explicitNullProperties?.Remove("deliveryAddress.stateOrProvince"); } }
         private string _explicitNullValueDeliveryAddressStateOrProvince = default!;
 #endif
         /// <summary>The deliveryAddressStreet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryAddressStreet { get => _explicitNullValueDeliveryAddressStreet; set { _explicitNullValueDeliveryAddressStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.street"); else _explicitNullProperties?.Remove("deliveryAddress.street"); } }
+        public string? DeliveryAddressStreet { get => _explicitNullValueDeliveryAddressStreet; set { _explicitNullValueDeliveryAddressStreet = value; AdditionalData?.Remove("deliveryAddress.street"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.street"); else _explicitNullProperties?.Remove("deliveryAddress.street"); } }
         private string? _explicitNullValueDeliveryAddressStreet = default!;
 #nullable restore
 #else
-        public string DeliveryAddressStreet { get => _explicitNullValueDeliveryAddressStreet; set { _explicitNullValueDeliveryAddressStreet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.street"); else _explicitNullProperties?.Remove("deliveryAddress.street"); } }
+        public string DeliveryAddressStreet { get => _explicitNullValueDeliveryAddressStreet; set { _explicitNullValueDeliveryAddressStreet = value; AdditionalData?.Remove("deliveryAddress.street"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deliveryAddress.street"); else _explicitNullProperties?.Remove("deliveryAddress.street"); } }
         private string _explicitNullValueDeliveryAddressStreet = default!;
 #endif
         /// <summary>The eci property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
+        public string? Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; AdditionalData?.Remove("eci"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
         private string? _explicitNullValueEci = default!;
 #nullable restore
 #else
-        public string Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
+        public string Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; AdditionalData?.Remove("eci"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
         private string _explicitNullValueEci = default!;
 #endif
         /// <summary>The expiryDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryDate"); else _explicitNullProperties?.Remove("expiryDate"); } }
+        public string? ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("expiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryDate"); else _explicitNullProperties?.Remove("expiryDate"); } }
         private string? _explicitNullValueExpiryDate = default!;
 #nullable restore
 #else
-        public string ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryDate"); else _explicitNullProperties?.Remove("expiryDate"); } }
+        public string ExpiryDate { get => _explicitNullValueExpiryDate; set { _explicitNullValueExpiryDate = value; AdditionalData?.Remove("expiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiryDate"); else _explicitNullProperties?.Remove("expiryDate"); } }
         private string _explicitNullValueExpiryDate = default!;
 #endif
         /// <summary>Information on the fraud check in a dynamic format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FraudCheckCheckIDName { get => _explicitNullValueFraudCheckCheckIDName; set { _explicitNullValueFraudCheckCheckIDName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudCheck-<check ID>-<name>"); else _explicitNullProperties?.Remove("fraudCheck-<check ID>-<name>"); } }
+        public string? FraudCheckCheckIDName { get => _explicitNullValueFraudCheckCheckIDName; set { _explicitNullValueFraudCheckCheckIDName = value; AdditionalData?.Remove("fraudCheck-<check ID>-<name>"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudCheck-<check ID>-<name>"); else _explicitNullProperties?.Remove("fraudCheck-<check ID>-<name>"); } }
         private string? _explicitNullValueFraudCheckCheckIDName = default!;
 #nullable restore
 #else
-        public string FraudCheckCheckIDName { get => _explicitNullValueFraudCheckCheckIDName; set { _explicitNullValueFraudCheckCheckIDName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudCheck-<check ID>-<name>"); else _explicitNullProperties?.Remove("fraudCheck-<check ID>-<name>"); } }
+        public string FraudCheckCheckIDName { get => _explicitNullValueFraudCheckCheckIDName; set { _explicitNullValueFraudCheckCheckIDName = value; AdditionalData?.Remove("fraudCheck-<check ID>-<name>"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudCheck-<check ID>-<name>"); else _explicitNullProperties?.Remove("fraudCheck-<check ID>-<name>"); } }
         private string _explicitNullValueFraudCheckCheckIDName = default!;
 #endif
         /// <summary>Indicates if the risk check was done manually.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FraudManualReview { get => _explicitNullValueFraudManualReview; set { _explicitNullValueFraudManualReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudManualReview"); else _explicitNullProperties?.Remove("fraudManualReview"); } }
+        public string? FraudManualReview { get => _explicitNullValueFraudManualReview; set { _explicitNullValueFraudManualReview = value; AdditionalData?.Remove("fraudManualReview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudManualReview"); else _explicitNullProperties?.Remove("fraudManualReview"); } }
         private string? _explicitNullValueFraudManualReview = default!;
 #nullable restore
 #else
-        public string FraudManualReview { get => _explicitNullValueFraudManualReview; set { _explicitNullValueFraudManualReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudManualReview"); else _explicitNullProperties?.Remove("fraudManualReview"); } }
+        public string FraudManualReview { get => _explicitNullValueFraudManualReview; set { _explicitNullValueFraudManualReview = value; AdditionalData?.Remove("fraudManualReview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudManualReview"); else _explicitNullProperties?.Remove("fraudManualReview"); } }
         private string _explicitNullValueFraudManualReview = default!;
 #endif
         /// <summary>The fraud offset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
+        public string? FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; AdditionalData?.Remove("fraudOffset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
         private string? _explicitNullValueFraudOffset = default!;
 #nullable restore
 #else
-        public string FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
+        public string FraudOffset { get => _explicitNullValueFraudOffset; set { _explicitNullValueFraudOffset = value; AdditionalData?.Remove("fraudOffset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudOffset"); else _explicitNullProperties?.Remove("fraudOffset"); } }
         private string _explicitNullValueFraudOffset = default!;
 #endif
         /// <summary>Result type of the fraud check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FraudResultType { get => _explicitNullValueFraudResultType; set { _explicitNullValueFraudResultType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudResultType"); else _explicitNullProperties?.Remove("fraudResultType"); } }
+        public string? FraudResultType { get => _explicitNullValueFraudResultType; set { _explicitNullValueFraudResultType = value; AdditionalData?.Remove("fraudResultType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudResultType"); else _explicitNullProperties?.Remove("fraudResultType"); } }
         private string? _explicitNullValueFraudResultType = default!;
 #nullable restore
 #else
-        public string FraudResultType { get => _explicitNullValueFraudResultType; set { _explicitNullValueFraudResultType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudResultType"); else _explicitNullProperties?.Remove("fraudResultType"); } }
+        public string FraudResultType { get => _explicitNullValueFraudResultType; set { _explicitNullValueFraudResultType = value; AdditionalData?.Remove("fraudResultType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudResultType"); else _explicitNullProperties?.Remove("fraudResultType"); } }
         private string _explicitNullValueFraudResultType = default!;
 #endif
         /// <summary>The risk level of the transaction as classified by the [machine learning](https://docs.adyen.com/risk-management/configure-your-risk-profile/machine-learning-rules/) fraud risk rule. The risk level indicates the likelihood that a transaction will result in a fraudulent dispute. Possible values:* veryLow* low* medium* high* veryHigh</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CancellationAdditionalDataFraudRiskLevel? FraudRiskLevel { get => _explicitNullValueFraudRiskLevel; set { _explicitNullValueFraudRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudRiskLevel"); else _explicitNullProperties?.Remove("fraudRiskLevel"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CancellationAdditionalDataFraudRiskLevel? FraudRiskLevel { get => _explicitNullValueFraudRiskLevel; set { _explicitNullValueFraudRiskLevel = value; AdditionalData?.Remove("fraudRiskLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fraudRiskLevel"); else _explicitNullProperties?.Remove("fraudRiskLevel"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CancellationAdditionalDataFraudRiskLevel? _explicitNullValueFraudRiskLevel = default!;
         /// <summary>The hmacSignature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
+        public string? HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; AdditionalData?.Remove("hmacSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
         private string? _explicitNullValueHmacSignature = default!;
 #nullable restore
 #else
-        public string HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
+        public string HmacSignature { get => _explicitNullValueHmacSignature; set { _explicitNullValueHmacSignature = value; AdditionalData?.Remove("hmacSignature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSignature"); else _explicitNullProperties?.Remove("hmacSignature"); } }
         private string _explicitNullValueHmacSignature = default!;
 #endif
         /// <summary>The interactionCounter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InteractionCounter { get => _explicitNullValueInteractionCounter; set { _explicitNullValueInteractionCounter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactionCounter"); else _explicitNullProperties?.Remove("interactionCounter"); } }
+        public string? InteractionCounter { get => _explicitNullValueInteractionCounter; set { _explicitNullValueInteractionCounter = value; AdditionalData?.Remove("interactionCounter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactionCounter"); else _explicitNullProperties?.Remove("interactionCounter"); } }
         private string? _explicitNullValueInteractionCounter = default!;
 #nullable restore
 #else
-        public string InteractionCounter { get => _explicitNullValueInteractionCounter; set { _explicitNullValueInteractionCounter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactionCounter"); else _explicitNullProperties?.Remove("interactionCounter"); } }
+        public string InteractionCounter { get => _explicitNullValueInteractionCounter; set { _explicitNullValueInteractionCounter = value; AdditionalData?.Remove("interactionCounter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interactionCounter"); else _explicitNullProperties?.Remove("interactionCounter"); } }
         private string _explicitNullValueInteractionCounter = default!;
 #endif
         /// <summary>The merchantOrderReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
+        public string? MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; AdditionalData?.Remove("merchantOrderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
         private string? _explicitNullValueMerchantOrderReference = default!;
 #nullable restore
 #else
-        public string MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
+        public string MerchantOrderReference { get => _explicitNullValueMerchantOrderReference; set { _explicitNullValueMerchantOrderReference = value; AdditionalData?.Remove("merchantOrderReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantOrderReference"); else _explicitNullProperties?.Remove("merchantOrderReference"); } }
         private string _explicitNullValueMerchantOrderReference = default!;
 #endif
         /// <summary>The PaymentAccountReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentAccountReference { get => _explicitNullValuePaymentAccountReference; set { _explicitNullValuePaymentAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountReference"); else _explicitNullProperties?.Remove("PaymentAccountReference"); } }
+        public string? PaymentAccountReference { get => _explicitNullValuePaymentAccountReference; set { _explicitNullValuePaymentAccountReference = value; AdditionalData?.Remove("PaymentAccountReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountReference"); else _explicitNullProperties?.Remove("PaymentAccountReference"); } }
         private string? _explicitNullValuePaymentAccountReference = default!;
 #nullable restore
 #else
-        public string PaymentAccountReference { get => _explicitNullValuePaymentAccountReference; set { _explicitNullValuePaymentAccountReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountReference"); else _explicitNullProperties?.Remove("PaymentAccountReference"); } }
+        public string PaymentAccountReference { get => _explicitNullValuePaymentAccountReference; set { _explicitNullValuePaymentAccountReference = value; AdditionalData?.Remove("PaymentAccountReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("PaymentAccountReference"); else _explicitNullProperties?.Remove("PaymentAccountReference"); } }
         private string _explicitNullValuePaymentAccountReference = default!;
 #endif
         /// <summary>The paymentLinkId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentLinkId { get => _explicitNullValuePaymentLinkId; set { _explicitNullValuePaymentLinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentLinkId"); else _explicitNullProperties?.Remove("paymentLinkId"); } }
+        public string? PaymentLinkId { get => _explicitNullValuePaymentLinkId; set { _explicitNullValuePaymentLinkId = value; AdditionalData?.Remove("paymentLinkId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentLinkId"); else _explicitNullProperties?.Remove("paymentLinkId"); } }
         private string? _explicitNullValuePaymentLinkId = default!;
 #nullable restore
 #else
-        public string PaymentLinkId { get => _explicitNullValuePaymentLinkId; set { _explicitNullValuePaymentLinkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentLinkId"); else _explicitNullProperties?.Remove("paymentLinkId"); } }
+        public string PaymentLinkId { get => _explicitNullValuePaymentLinkId; set { _explicitNullValuePaymentLinkId = value; AdditionalData?.Remove("paymentLinkId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentLinkId"); else _explicitNullProperties?.Remove("paymentLinkId"); } }
         private string _explicitNullValuePaymentLinkId = default!;
 #endif
         /// <summary>The paymentMethodVariant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
+        public string? PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string? _explicitNullValuePaymentMethodVariant = default!;
 #nullable restore
 #else
-        public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
+        public string PaymentMethodVariant { get => _explicitNullValuePaymentMethodVariant; set { _explicitNullValuePaymentMethodVariant = value; AdditionalData?.Remove("paymentMethodVariant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentMethodVariant"); else _explicitNullProperties?.Remove("paymentMethodVariant"); } }
         private string _explicitNullValuePaymentMethodVariant = default!;
 #endif
         /// <summary>Risk data in a dynamic format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskdataName { get => _explicitNullValueRiskdataName; set { _explicitNullValueRiskdataName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskdata.<name>"); else _explicitNullProperties?.Remove("riskdata.<name>"); } }
+        public string? RiskdataName { get => _explicitNullValueRiskdataName; set { _explicitNullValueRiskdataName = value; AdditionalData?.Remove("riskdata.<name>"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskdata.<name>"); else _explicitNullProperties?.Remove("riskdata.<name>"); } }
         private string? _explicitNullValueRiskdataName = default!;
 #nullable restore
 #else
-        public string RiskdataName { get => _explicitNullValueRiskdataName; set { _explicitNullValueRiskdataName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskdata.<name>"); else _explicitNullProperties?.Remove("riskdata.<name>"); } }
+        public string RiskdataName { get => _explicitNullValueRiskdataName; set { _explicitNullValueRiskdataName = value; AdditionalData?.Remove("riskdata.<name>"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("riskdata.<name>"); else _explicitNullProperties?.Remove("riskdata.<name>"); } }
         private string _explicitNullValueRiskdataName = default!;
 #endif
         /// <summary>The shopperCountry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopperCountry { get => _explicitNullValueShopperCountry; set { _explicitNullValueShopperCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCountry"); else _explicitNullProperties?.Remove("shopperCountry"); } }
+        public string? ShopperCountry { get => _explicitNullValueShopperCountry; set { _explicitNullValueShopperCountry = value; AdditionalData?.Remove("shopperCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCountry"); else _explicitNullProperties?.Remove("shopperCountry"); } }
         private string? _explicitNullValueShopperCountry = default!;
 #nullable restore
 #else
-        public string ShopperCountry { get => _explicitNullValueShopperCountry; set { _explicitNullValueShopperCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCountry"); else _explicitNullProperties?.Remove("shopperCountry"); } }
+        public string ShopperCountry { get => _explicitNullValueShopperCountry; set { _explicitNullValueShopperCountry = value; AdditionalData?.Remove("shopperCountry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperCountry"); else _explicitNullProperties?.Remove("shopperCountry"); } }
         private string _explicitNullValueShopperCountry = default!;
 #endif
         /// <summary>The shopperSocialSecurityNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopperSocialSecurityNumber { get => _explicitNullValueShopperSocialSecurityNumber; set { _explicitNullValueShopperSocialSecurityNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperSocialSecurityNumber"); else _explicitNullProperties?.Remove("shopperSocialSecurityNumber"); } }
+        public string? ShopperSocialSecurityNumber { get => _explicitNullValueShopperSocialSecurityNumber; set { _explicitNullValueShopperSocialSecurityNumber = value; AdditionalData?.Remove("shopperSocialSecurityNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperSocialSecurityNumber"); else _explicitNullProperties?.Remove("shopperSocialSecurityNumber"); } }
         private string? _explicitNullValueShopperSocialSecurityNumber = default!;
 #nullable restore
 #else
-        public string ShopperSocialSecurityNumber { get => _explicitNullValueShopperSocialSecurityNumber; set { _explicitNullValueShopperSocialSecurityNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperSocialSecurityNumber"); else _explicitNullProperties?.Remove("shopperSocialSecurityNumber"); } }
+        public string ShopperSocialSecurityNumber { get => _explicitNullValueShopperSocialSecurityNumber; set { _explicitNullValueShopperSocialSecurityNumber = value; AdditionalData?.Remove("shopperSocialSecurityNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopperSocialSecurityNumber"); else _explicitNullProperties?.Remove("shopperSocialSecurityNumber"); } }
         private string _explicitNullValueShopperSocialSecurityNumber = default!;
 #endif
         /// <summary>The store property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public string? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string? _explicitNullValueStore = default!;
 #nullable restore
 #else
-        public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        public string Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; AdditionalData?.Remove("store"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
         private string _explicitNullValueStore = default!;
 #endif
         /// <summary>Total fraud score from risk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TotalFraudScore { get => _explicitNullValueTotalFraudScore; set { _explicitNullValueTotalFraudScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalFraudScore"); else _explicitNullProperties?.Remove("totalFraudScore"); } }
+        public string? TotalFraudScore { get => _explicitNullValueTotalFraudScore; set { _explicitNullValueTotalFraudScore = value; AdditionalData?.Remove("totalFraudScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalFraudScore"); else _explicitNullProperties?.Remove("totalFraudScore"); } }
         private string? _explicitNullValueTotalFraudScore = default!;
 #nullable restore
 #else
-        public string TotalFraudScore { get => _explicitNullValueTotalFraudScore; set { _explicitNullValueTotalFraudScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalFraudScore"); else _explicitNullProperties?.Remove("totalFraudScore"); } }
+        public string TotalFraudScore { get => _explicitNullValueTotalFraudScore; set { _explicitNullValueTotalFraudScore = value; AdditionalData?.Remove("totalFraudScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalFraudScore"); else _explicitNullProperties?.Remove("totalFraudScore"); } }
         private string _explicitNullValueTotalFraudScore = default!;
 #endif
         /// <summary>
@@ -784,7 +847,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "fraudManualReview", n => { FraudManualReview = n.GetStringValue(); } },
                 { "fraudOffset", n => { FraudOffset = n.GetStringValue(); } },
                 { "fraudResultType", n => { FraudResultType = n.GetStringValue(); } },
-                { "fraudRiskLevel", n => { FraudRiskLevel = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellationAdditionalDataFraudRiskLevel>(); } },
+                { "fraudRiskLevel", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CancellationAdditionalDataFraudRiskLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFraudRiskLevel = default; _explicitNullProperties?.Remove("fraudRiskLevel"); AdditionalData["fraudRiskLevel"] = unknown; } else { FraudRiskLevel = parsed; AdditionalData.Remove("fraudRiskLevel"); } } },
                 { "hmacSignature", n => { HmacSignature = n.GetStringValue(); } },
                 { "interactionCounter", n => { InteractionCounter = n.GetStringValue(); } },
                 { "merchantOrderReference", n => { MerchantOrderReference = n.GetStringValue(); } },

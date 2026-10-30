@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
-            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("identity") is null) { _explicitNullValueIdentity = default!; _explicitNullProperties?.Remove("identity"); }
+            else if (parseNode.GetChildNode("identity") is { } nullNodeIdentity && nullNodeIdentity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identity = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains the identity details of the party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity? Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; AdditionalData?.Remove("identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity? _explicitNullValueIdentity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity Identity { get => _explicitNullValueIdentity; set { _explicitNullValueIdentity = value; AdditionalData?.Remove("identity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity"); else _explicitNullProperties?.Remove("identity"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity _explicitNullValueIdentity = default!;
 #endif
         /// <summary>Specifies a role or capacity of the party in relation to the bank account.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole? _explicitNullValueRole = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.AccountParty"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "identity", n => { Identity = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity>(global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyIdentity.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole>(); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.AccountPartyRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
             };
         }
         /// <summary>

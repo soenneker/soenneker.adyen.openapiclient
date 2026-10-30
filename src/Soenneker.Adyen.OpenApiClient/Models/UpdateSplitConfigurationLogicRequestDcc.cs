@@ -18,11 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderPercentage") is { } nullNodeAccountHolderPercentage && nullNodeAccountHolderPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderPercentage = null;
+            if (parseNode.GetChildNode("accountHolderPercentage") is null) { _explicitNullValueAccountHolderPercentage = default!; _explicitNullProperties?.Remove("accountHolderPercentage"); }
+            else if (parseNode.GetChildNode("accountHolderPercentage") is { } nullNodeAccountHolderPercentage && nullNodeAccountHolderPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderPercentage = null;
         }
 
         /// <summary>The accountHolderPercentage property</summary>
-        public long? AccountHolderPercentage { get => _explicitNullValueAccountHolderPercentage; set { _explicitNullValueAccountHolderPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderPercentage"); else _explicitNullProperties?.Remove("accountHolderPercentage"); } }
+        public long? AccountHolderPercentage { get => _explicitNullValueAccountHolderPercentage; set { _explicitNullValueAccountHolderPercentage = value; AdditionalData?.Remove("accountHolderPercentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderPercentage"); else _explicitNullProperties?.Remove("accountHolderPercentage"); } }
         private long? _explicitNullValueAccountHolderPercentage = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

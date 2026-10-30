@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
-            if (parseNode.GetChildNode("osVersion") is { } nullNodeOsVersion && nullNodeOsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsVersion = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("os") is null) { _explicitNullValueOs = default!; _explicitNullProperties?.Remove("os"); }
+            else if (parseNode.GetChildNode("os") is { } nullNodeOs && nullNodeOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Os = null;
+            if (parseNode.GetChildNode("osVersion") is null) { _explicitNullValueOsVersion = default!; _explicitNullProperties?.Remove("osVersion"); }
+            else if (parseNode.GetChildNode("osVersion") is { } nullNodeOsVersion && nullNodeOsVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsVersion = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Operating system running on the merchant device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        public string? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; AdditionalData?.Remove("os"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
         private string? _explicitNullValueOs = default!;
 #nullable restore
 #else
-        public string Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
+        public string Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; AdditionalData?.Remove("os"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
         private string _explicitNullValueOs = default!;
 #endif
         /// <summary>Version of the operating system on the merchant device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osVersion"); else _explicitNullProperties?.Remove("osVersion"); } }
+        public string? OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; AdditionalData?.Remove("osVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osVersion"); else _explicitNullProperties?.Remove("osVersion"); } }
         private string? _explicitNullValueOsVersion = default!;
 #nullable restore
 #else
-        public string OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osVersion"); else _explicitNullProperties?.Remove("osVersion"); } }
+        public string OsVersion { get => _explicitNullValueOsVersion; set { _explicitNullValueOsVersion = value; AdditionalData?.Remove("osVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osVersion"); else _explicitNullProperties?.Remove("osVersion"); } }
         private string _explicitNullValueOsVersion = default!;
 #endif
         /// <summary>Merchant device reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>

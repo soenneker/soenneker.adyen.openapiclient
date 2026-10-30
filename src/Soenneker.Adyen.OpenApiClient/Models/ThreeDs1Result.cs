@@ -17,12 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cavv") is { } nullNodeCavv && nullNodeCavv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cavv = null;
-            if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
-            if (parseNode.GetChildNode("eci") is { } nullNodeEci && nullNodeEci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eci = null;
-            if (parseNode.GetChildNode("threeDAuthenticatedResponse") is { } nullNodeThreeDAuthenticatedResponse && nullNodeThreeDAuthenticatedResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDAuthenticatedResponse = null;
-            if (parseNode.GetChildNode("threeDOfferedResponse") is { } nullNodeThreeDOfferedResponse && nullNodeThreeDOfferedResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDOfferedResponse = null;
-            if (parseNode.GetChildNode("xid") is { } nullNodeXid && nullNodeXid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xid = null;
+            if (parseNode.GetChildNode("cavv") is null) { _explicitNullValueCavv = default!; _explicitNullProperties?.Remove("cavv"); }
+            else if (parseNode.GetChildNode("cavv") is { } nullNodeCavv && nullNodeCavv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cavv = null;
+            if (parseNode.GetChildNode("cavvAlgorithm") is null) { _explicitNullValueCavvAlgorithm = default!; _explicitNullProperties?.Remove("cavvAlgorithm"); }
+            else if (parseNode.GetChildNode("cavvAlgorithm") is { } nullNodeCavvAlgorithm && nullNodeCavvAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CavvAlgorithm = null;
+            if (parseNode.GetChildNode("eci") is null) { _explicitNullValueEci = default!; _explicitNullProperties?.Remove("eci"); }
+            else if (parseNode.GetChildNode("eci") is { } nullNodeEci && nullNodeEci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Eci = null;
+            if (parseNode.GetChildNode("threeDAuthenticatedResponse") is null) { _explicitNullValueThreeDAuthenticatedResponse = default!; _explicitNullProperties?.Remove("threeDAuthenticatedResponse"); }
+            else if (parseNode.GetChildNode("threeDAuthenticatedResponse") is { } nullNodeThreeDAuthenticatedResponse && nullNodeThreeDAuthenticatedResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDAuthenticatedResponse = null;
+            if (parseNode.GetChildNode("threeDOfferedResponse") is null) { _explicitNullValueThreeDOfferedResponse = default!; _explicitNullProperties?.Remove("threeDOfferedResponse"); }
+            else if (parseNode.GetChildNode("threeDOfferedResponse") is { } nullNodeThreeDOfferedResponse && nullNodeThreeDOfferedResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThreeDOfferedResponse = null;
+            if (parseNode.GetChildNode("xid") is null) { _explicitNullValueXid = default!; _explicitNullProperties?.Remove("xid"); }
+            else if (parseNode.GetChildNode("xid") is { } nullNodeXid && nullNodeXid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Xid = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The cardholder authentication value (base64 encoded).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
+        public string? Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; AdditionalData?.Remove("cavv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
         private string? _explicitNullValueCavv = default!;
 #nullable restore
 #else
-        public string Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
+        public string Cavv { get => _explicitNullValueCavv; set { _explicitNullValueCavv = value; AdditionalData?.Remove("cavv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavv"); else _explicitNullProperties?.Remove("cavv"); } }
         private string _explicitNullValueCavv = default!;
 #endif
         /// <summary>The CAVV algorithm used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        public string? CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; AdditionalData?.Remove("cavvAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
         private string? _explicitNullValueCavvAlgorithm = default!;
 #nullable restore
 #else
-        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
+        public string CavvAlgorithm { get => _explicitNullValueCavvAlgorithm; set { _explicitNullValueCavvAlgorithm = value; AdditionalData?.Remove("cavvAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cavvAlgorithm"); else _explicitNullProperties?.Remove("cavvAlgorithm"); } }
         private string _explicitNullValueCavvAlgorithm = default!;
 #endif
         /// <summary>3D Secure Electronic Commerce Indicator (ECI).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
+        public string? Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; AdditionalData?.Remove("eci"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
         private string? _explicitNullValueEci = default!;
 #nullable restore
 #else
-        public string Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
+        public string Eci { get => _explicitNullValueEci; set { _explicitNullValueEci = value; AdditionalData?.Remove("eci"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eci"); else _explicitNullProperties?.Remove("eci"); } }
         private string _explicitNullValueEci = default!;
 #endif
         /// <summary>The authentication response from the ACS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDAuthenticatedResponse { get => _explicitNullValueThreeDAuthenticatedResponse; set { _explicitNullValueThreeDAuthenticatedResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDAuthenticatedResponse"); else _explicitNullProperties?.Remove("threeDAuthenticatedResponse"); } }
+        public string? ThreeDAuthenticatedResponse { get => _explicitNullValueThreeDAuthenticatedResponse; set { _explicitNullValueThreeDAuthenticatedResponse = value; AdditionalData?.Remove("threeDAuthenticatedResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDAuthenticatedResponse"); else _explicitNullProperties?.Remove("threeDAuthenticatedResponse"); } }
         private string? _explicitNullValueThreeDAuthenticatedResponse = default!;
 #nullable restore
 #else
-        public string ThreeDAuthenticatedResponse { get => _explicitNullValueThreeDAuthenticatedResponse; set { _explicitNullValueThreeDAuthenticatedResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDAuthenticatedResponse"); else _explicitNullProperties?.Remove("threeDAuthenticatedResponse"); } }
+        public string ThreeDAuthenticatedResponse { get => _explicitNullValueThreeDAuthenticatedResponse; set { _explicitNullValueThreeDAuthenticatedResponse = value; AdditionalData?.Remove("threeDAuthenticatedResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDAuthenticatedResponse"); else _explicitNullProperties?.Remove("threeDAuthenticatedResponse"); } }
         private string _explicitNullValueThreeDAuthenticatedResponse = default!;
 #endif
         /// <summary>Whether 3D Secure was offered or not.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreeDOfferedResponse { get => _explicitNullValueThreeDOfferedResponse; set { _explicitNullValueThreeDOfferedResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDOfferedResponse"); else _explicitNullProperties?.Remove("threeDOfferedResponse"); } }
+        public string? ThreeDOfferedResponse { get => _explicitNullValueThreeDOfferedResponse; set { _explicitNullValueThreeDOfferedResponse = value; AdditionalData?.Remove("threeDOfferedResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDOfferedResponse"); else _explicitNullProperties?.Remove("threeDOfferedResponse"); } }
         private string? _explicitNullValueThreeDOfferedResponse = default!;
 #nullable restore
 #else
-        public string ThreeDOfferedResponse { get => _explicitNullValueThreeDOfferedResponse; set { _explicitNullValueThreeDOfferedResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDOfferedResponse"); else _explicitNullProperties?.Remove("threeDOfferedResponse"); } }
+        public string ThreeDOfferedResponse { get => _explicitNullValueThreeDOfferedResponse; set { _explicitNullValueThreeDOfferedResponse = value; AdditionalData?.Remove("threeDOfferedResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threeDOfferedResponse"); else _explicitNullProperties?.Remove("threeDOfferedResponse"); } }
         private string _explicitNullValueThreeDOfferedResponse = default!;
 #endif
         /// <summary>A unique transaction identifier generated by the MPI on behalf of the merchant to identify the 3D Secure transaction, in `Base64` encoding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
+        public string? Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; AdditionalData?.Remove("xid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
         private string? _explicitNullValueXid = default!;
 #nullable restore
 #else
-        public string Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
+        public string Xid { get => _explicitNullValueXid; set { _explicitNullValueXid = value; AdditionalData?.Remove("xid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xid"); else _explicitNullProperties?.Remove("xid"); } }
         private string _explicitNullValueXid = default!;
 #endif
         /// <summary>

@@ -17,17 +17,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("numberOfNights") is { } nullNodeNumberOfNights && nullNodeNumberOfNights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfNights = null;
-            if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("numberOfNights") is null) { _explicitNullValueNumberOfNights = default!; _explicitNullProperties?.Remove("numberOfNights"); }
+            else if (parseNode.GetChildNode("numberOfNights") is { } nullNodeNumberOfNights && nullNodeNumberOfNights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfNights = null;
+            if (parseNode.GetChildNode("rate") is null) { _explicitNullValueRate = default!; _explicitNullProperties?.Remove("rate"); }
+            else if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of nights the room is booked for.* Format: Numeric* Must be a number between 1 and 99* **additionalData key:** `lodging.room[N].numberOfNights`</summary>
-        public int? NumberOfNights { get => _explicitNullValueNumberOfNights; set { _explicitNullValueNumberOfNights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfNights"); else _explicitNullProperties?.Remove("numberOfNights"); } }
+        public int? NumberOfNights { get => _explicitNullValueNumberOfNights; set { _explicitNullValueNumberOfNights = value; AdditionalData?.Remove("numberOfNights"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numberOfNights"); else _explicitNullProperties?.Remove("numberOfNights"); } }
         private int? _explicitNullValueNumberOfNights = default!;
         /// <summary>Room rate per night, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* **additionalData key:** `lodging.room[N].rate`</summary>
-        public long? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        public long? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
         private long? _explicitNullValueRate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Room"/> and sets the default values.

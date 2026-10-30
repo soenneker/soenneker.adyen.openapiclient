@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("advice") is { } nullNodeAdvice && nullNodeAdvice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advice = null;
-            if (parseNode.GetChildNode("allRulesPassed") is { } nullNodeAllRulesPassed && nullNodeAllRulesPassed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllRulesPassed = null;
-            if (parseNode.GetChildNode("failedTransactionRules") is { } nullNodeFailedTransactionRules && nullNodeFailedTransactionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedTransactionRules = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("advice") is null) { _explicitNullValueAdvice = default!; _explicitNullProperties?.Remove("advice"); }
+            else if (parseNode.GetChildNode("advice") is { } nullNodeAdvice && nullNodeAdvice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advice = null;
+            if (parseNode.GetChildNode("allRulesPassed") is null) { _explicitNullValueAllRulesPassed = default!; _explicitNullProperties?.Remove("allRulesPassed"); }
+            else if (parseNode.GetChildNode("allRulesPassed") is { } nullNodeAllRulesPassed && nullNodeAllRulesPassed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllRulesPassed = null;
+            if (parseNode.GetChildNode("failedTransactionRules") is null) { _explicitNullValueFailedTransactionRules = default!; _explicitNullProperties?.Remove("failedTransactionRules"); }
+            else if (parseNode.GetChildNode("failedTransactionRules") is { } nullNodeFailedTransactionRules && nullNodeFailedTransactionRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedTransactionRules = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The advice given by the Risk analysis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
+        public string? Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; AdditionalData?.Remove("advice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
         private string? _explicitNullValueAdvice = default!;
 #nullable restore
 #else
-        public string Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
+        public string Advice { get => _explicitNullValueAdvice; set { _explicitNullValueAdvice = value; AdditionalData?.Remove("advice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advice"); else _explicitNullProperties?.Remove("advice"); } }
         private string _explicitNullValueAdvice = default!;
 #endif
         /// <summary>Indicates whether the transaction passed the evaluation for all transaction rules.</summary>
-        public bool? AllRulesPassed { get => _explicitNullValueAllRulesPassed; set { _explicitNullValueAllRulesPassed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allRulesPassed"); else _explicitNullProperties?.Remove("allRulesPassed"); } }
+        public bool? AllRulesPassed { get => _explicitNullValueAllRulesPassed; set { _explicitNullValueAllRulesPassed = value; AdditionalData?.Remove("allRulesPassed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allRulesPassed"); else _explicitNullProperties?.Remove("allRulesPassed"); } }
         private bool? _explicitNullValueAllRulesPassed = default!;
         /// <summary>Array containing all the transaction rules that the transaction violated. This list is only sent when `allRulesPassed` is **false**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionEventViolation>? FailedTransactionRules { get => _explicitNullValueFailedTransactionRules; set { _explicitNullValueFailedTransactionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedTransactionRules"); else _explicitNullProperties?.Remove("failedTransactionRules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionEventViolation>? FailedTransactionRules { get => _explicitNullValueFailedTransactionRules; set { _explicitNullValueFailedTransactionRules = value; AdditionalData?.Remove("failedTransactionRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedTransactionRules"); else _explicitNullProperties?.Remove("failedTransactionRules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionEventViolation>? _explicitNullValueFailedTransactionRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionEventViolation> FailedTransactionRules { get => _explicitNullValueFailedTransactionRules; set { _explicitNullValueFailedTransactionRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedTransactionRules"); else _explicitNullProperties?.Remove("failedTransactionRules"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionEventViolation> FailedTransactionRules { get => _explicitNullValueFailedTransactionRules; set { _explicitNullValueFailedTransactionRules = value; AdditionalData?.Remove("failedTransactionRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedTransactionRules"); else _explicitNullProperties?.Remove("failedTransactionRules"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransactionEventViolation> _explicitNullValueFailedTransactionRules = default!;
 #endif
         /// <summary>The score of the Risk analysis.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferNotificationDataTransactionRulesResult"/> and sets the default values.

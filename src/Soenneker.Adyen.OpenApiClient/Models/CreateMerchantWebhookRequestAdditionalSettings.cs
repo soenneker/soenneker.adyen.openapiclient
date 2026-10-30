@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("includeEventCodes") is { } nullNodeIncludeEventCodes && nullNodeIncludeEventCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeEventCodes = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("includeEventCodes") is null) { _explicitNullValueIncludeEventCodes = default!; _explicitNullProperties?.Remove("includeEventCodes"); }
+            else if (parseNode.GetChildNode("includeEventCodes") is { } nullNodeIncludeEventCodes && nullNodeIncludeEventCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeEventCodes = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Object containing list of event codes for which the notification will be sent. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeEventCodes { get => _explicitNullValueIncludeEventCodes; set { _explicitNullValueIncludeEventCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeEventCodes"); else _explicitNullProperties?.Remove("includeEventCodes"); } }
+        public List<string>? IncludeEventCodes { get => _explicitNullValueIncludeEventCodes; set { _explicitNullValueIncludeEventCodes = value; AdditionalData?.Remove("includeEventCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeEventCodes"); else _explicitNullProperties?.Remove("includeEventCodes"); } }
         private List<string>? _explicitNullValueIncludeEventCodes = default!;
 #nullable restore
 #else
-        public List<string> IncludeEventCodes { get => _explicitNullValueIncludeEventCodes; set { _explicitNullValueIncludeEventCodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeEventCodes"); else _explicitNullProperties?.Remove("includeEventCodes"); } }
+        public List<string> IncludeEventCodes { get => _explicitNullValueIncludeEventCodes; set { _explicitNullValueIncludeEventCodes = value; AdditionalData?.Remove("includeEventCodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeEventCodes"); else _explicitNullProperties?.Remove("includeEventCodes"); } }
         private List<string> _explicitNullValueIncludeEventCodes = default!;
 #endif
         /// <summary>Object containing boolean key-value pairs. The key can be any [standard webhook additional setting](https://docs.adyen.com/development-resources/webhooks/additional-settings), and the value indicates if the setting is enabled.For example, `includeCaptureDelayHours`: **true** means the standard notifications you get will contain the number of hours remaining until the payment will be captured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsPropertiesProperty2? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsPropertiesProperty2? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsPropertiesProperty2? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsPropertiesProperty2 Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsPropertiesProperty2 Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.AdditionalSettingsPropertiesProperty2 _explicitNullValueProperties = default!;
 #endif
         /// <summary>

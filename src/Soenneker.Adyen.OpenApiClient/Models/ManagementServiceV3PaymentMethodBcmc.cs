@@ -18,23 +18,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableBcmcMobile") is { } nullNodeEnableBcmcMobile && nullNodeEnableBcmcMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBcmcMobile = null;
-            if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
+            if (parseNode.GetChildNode("enableBcmcMobile") is null) { _explicitNullValueEnableBcmcMobile = default!; _explicitNullProperties?.Remove("enableBcmcMobile"); }
+            else if (parseNode.GetChildNode("enableBcmcMobile") is { } nullNodeEnableBcmcMobile && nullNodeEnableBcmcMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBcmcMobile = null;
+            if (parseNode.GetChildNode("transactionDescription") is null) { _explicitNullValueTransactionDescription = default!; _explicitNullProperties?.Remove("transactionDescription"); }
+            else if (parseNode.GetChildNode("transactionDescription") is { } nullNodeTransactionDescription && nullNodeTransactionDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionDescription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if [Bancontact mobile](https://docs.adyen.com/payment-methods/bancontact/bancontact-mobile) is enabled.</summary>
-        public bool? EnableBcmcMobile { get => _explicitNullValueEnableBcmcMobile; set { _explicitNullValueEnableBcmcMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableBcmcMobile"); else _explicitNullProperties?.Remove("enableBcmcMobile"); } }
+        public bool? EnableBcmcMobile { get => _explicitNullValueEnableBcmcMobile; set { _explicitNullValueEnableBcmcMobile = value; AdditionalData?.Remove("enableBcmcMobile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableBcmcMobile"); else _explicitNullProperties?.Remove("enableBcmcMobile"); } }
         private bool? _explicitNullValueEnableBcmcMobile = default!;
         /// <summary>Information regarding the transaction description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfoTransactionDescription? TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfoTransactionDescription? _explicitNullValueTransactionDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfoTransactionDescription TransactionDescription { get => _explicitNullValueTransactionDescription; set { _explicitNullValueTransactionDescription = value; AdditionalData?.Remove("transactionDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionDescription"); else _explicitNullProperties?.Remove("transactionDescription"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BcmcResponseInfoTransactionDescription _explicitNullValueTransactionDescription = default!;
 #endif
         /// <summary>

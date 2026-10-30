@@ -18,23 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("migrated") is { } nullNodeMigrated && nullNodeMigrated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrated = null;
-            if (parseNode.GetChildNode("migratedAccounts") is { } nullNodeMigratedAccounts && nullNodeMigratedAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedAccounts = null;
-            if (parseNode.GetChildNode("migratedShareholders") is { } nullNodeMigratedShareholders && nullNodeMigratedShareholders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedShareholders = null;
-            if (parseNode.GetChildNode("migratedStores") is { } nullNodeMigratedStores && nullNodeMigratedStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedStores = null;
-            if (parseNode.GetChildNode("migrationDate") is { } nullNodeMigrationDate && nullNodeMigrationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigrationDate = null;
+            if (parseNode.GetChildNode("accountHolderId") is null) { _explicitNullValueAccountHolderId = default!; _explicitNullProperties?.Remove("accountHolderId"); }
+            else if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("migrated") is null) { _explicitNullValueMigrated = default!; _explicitNullProperties?.Remove("migrated"); }
+            else if (parseNode.GetChildNode("migrated") is { } nullNodeMigrated && nullNodeMigrated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Migrated = null;
+            if (parseNode.GetChildNode("migratedAccounts") is null) { _explicitNullValueMigratedAccounts = default!; _explicitNullProperties?.Remove("migratedAccounts"); }
+            else if (parseNode.GetChildNode("migratedAccounts") is { } nullNodeMigratedAccounts && nullNodeMigratedAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedAccounts = null;
+            if (parseNode.GetChildNode("migratedShareholders") is null) { _explicitNullValueMigratedShareholders = default!; _explicitNullProperties?.Remove("migratedShareholders"); }
+            else if (parseNode.GetChildNode("migratedShareholders") is { } nullNodeMigratedShareholders && nullNodeMigratedShareholders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedShareholders = null;
+            if (parseNode.GetChildNode("migratedStores") is null) { _explicitNullValueMigratedStores = default!; _explicitNullProperties?.Remove("migratedStores"); }
+            else if (parseNode.GetChildNode("migratedStores") is { } nullNodeMigratedStores && nullNodeMigratedStores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigratedStores = null;
+            if (parseNode.GetChildNode("migrationDate") is null) { _explicitNullValueMigrationDate = default!; _explicitNullProperties?.Remove("migrationDate"); }
+            else if (parseNode.GetChildNode("migrationDate") is { } nullNodeMigrationDate && nullNodeMigrationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MigrationDate = null;
         }
 
         /// <summary>The unique identifier of the account holder in the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string? _explicitNullValueAccountHolderId = default!;
 #nullable restore
 #else
-        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string _explicitNullValueAccountHolderId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,48 +49,48 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance platfrom to which the account holder was migrated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>Set to **true** if the account holder has been migrated.</summary>
-        public bool? Migrated { get => _explicitNullValueMigrated; set { _explicitNullValueMigrated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrated"); else _explicitNullProperties?.Remove("migrated"); } }
+        public bool? Migrated { get => _explicitNullValueMigrated; set { _explicitNullValueMigrated = value; AdditionalData?.Remove("migrated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrated"); else _explicitNullProperties?.Remove("migrated"); } }
         private bool? _explicitNullValueMigrated = default!;
         /// <summary>Contains the mapping of virtual account codes (classic integration) to the balance account codes (balance platform) associated with the migrated account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedAccounts>? MigratedAccounts { get => _explicitNullValueMigratedAccounts; set { _explicitNullValueMigratedAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedAccounts"); else _explicitNullProperties?.Remove("migratedAccounts"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedAccounts>? MigratedAccounts { get => _explicitNullValueMigratedAccounts; set { _explicitNullValueMigratedAccounts = value; AdditionalData?.Remove("migratedAccounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedAccounts"); else _explicitNullProperties?.Remove("migratedAccounts"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedAccounts>? _explicitNullValueMigratedAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedAccounts> MigratedAccounts { get => _explicitNullValueMigratedAccounts; set { _explicitNullValueMigratedAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedAccounts"); else _explicitNullProperties?.Remove("migratedAccounts"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedAccounts> MigratedAccounts { get => _explicitNullValueMigratedAccounts; set { _explicitNullValueMigratedAccounts = value; AdditionalData?.Remove("migratedAccounts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedAccounts"); else _explicitNullProperties?.Remove("migratedAccounts"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedAccounts> _explicitNullValueMigratedAccounts = default!;
 #endif
         /// <summary>Contains the mapping of shareholders associated with the migrated legal entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedShareholders>? MigratedShareholders { get => _explicitNullValueMigratedShareholders; set { _explicitNullValueMigratedShareholders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedShareholders"); else _explicitNullProperties?.Remove("migratedShareholders"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedShareholders>? MigratedShareholders { get => _explicitNullValueMigratedShareholders; set { _explicitNullValueMigratedShareholders = value; AdditionalData?.Remove("migratedShareholders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedShareholders"); else _explicitNullProperties?.Remove("migratedShareholders"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedShareholders>? _explicitNullValueMigratedShareholders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedShareholders> MigratedShareholders { get => _explicitNullValueMigratedShareholders; set { _explicitNullValueMigratedShareholders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedShareholders"); else _explicitNullProperties?.Remove("migratedShareholders"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedShareholders> MigratedShareholders { get => _explicitNullValueMigratedShareholders; set { _explicitNullValueMigratedShareholders = value; AdditionalData?.Remove("migratedShareholders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedShareholders"); else _explicitNullProperties?.Remove("migratedShareholders"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedShareholders> _explicitNullValueMigratedShareholders = default!;
 #endif
         /// <summary>Contains the mapping of business lines and stores associated with the migrated account holder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedStores>? MigratedStores { get => _explicitNullValueMigratedStores; set { _explicitNullValueMigratedStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedStores"); else _explicitNullProperties?.Remove("migratedStores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedStores>? MigratedStores { get => _explicitNullValueMigratedStores; set { _explicitNullValueMigratedStores = value; AdditionalData?.Remove("migratedStores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedStores"); else _explicitNullProperties?.Remove("migratedStores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedStores>? _explicitNullValueMigratedStores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedStores> MigratedStores { get => _explicitNullValueMigratedStores; set { _explicitNullValueMigratedStores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedStores"); else _explicitNullProperties?.Remove("migratedStores"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedStores> MigratedStores { get => _explicitNullValueMigratedStores; set { _explicitNullValueMigratedStores = value; AdditionalData?.Remove("migratedStores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migratedStores"); else _explicitNullProperties?.Remove("migratedStores"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.MigratedStores> _explicitNullValueMigratedStores = default!;
 #endif
         /// <summary>The date when account holder was migrated.</summary>
-        public DateTimeOffset? MigrationDate { get => _explicitNullValueMigrationDate; set { _explicitNullValueMigrationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrationDate"); else _explicitNullProperties?.Remove("migrationDate"); } }
+        public DateTimeOffset? MigrationDate { get => _explicitNullValueMigrationDate; set { _explicitNullValueMigrationDate = value; AdditionalData?.Remove("migrationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("migrationDate"); else _explicitNullProperties?.Remove("migrationDate"); } }
         private DateTimeOffset? _explicitNullValueMigrationDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.GetAccountHolderResponseMigrationData"/> and sets the default values.

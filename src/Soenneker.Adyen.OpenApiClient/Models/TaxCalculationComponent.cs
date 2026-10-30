@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taxAmount") is { } nullNodeTaxAmount && nullNodeTaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxAmount = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("taxAmount") is null) { _explicitNullValueTaxAmount = default!; _explicitNullProperties?.Remove("taxAmount"); }
+            else if (parseNode.GetChildNode("taxAmount") is { } nullNodeTaxAmount && nullNodeTaxAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxAmount = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The calculated tax amount of this component.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount? TaxAmount { get => _explicitNullValueTaxAmount; set { _explicitNullValueTaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxAmount"); else _explicitNullProperties?.Remove("taxAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount? TaxAmount { get => _explicitNullValueTaxAmount; set { _explicitNullValueTaxAmount = value; AdditionalData?.Remove("taxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxAmount"); else _explicitNullProperties?.Remove("taxAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount? _explicitNullValueTaxAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount TaxAmount { get => _explicitNullValueTaxAmount; set { _explicitNullValueTaxAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxAmount"); else _explicitNullProperties?.Remove("taxAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount TaxAmount { get => _explicitNullValueTaxAmount; set { _explicitNullValueTaxAmount = value; AdditionalData?.Remove("taxAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxAmount"); else _explicitNullProperties?.Remove("taxAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount _explicitNullValueTaxAmount = default!;
 #endif
         /// <summary>The type of the calculated tax component, for example LRS_TCS.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponent"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "taxAmount", n => { TaxAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount>(global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentTaxAmount.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TaxCalculationComponentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

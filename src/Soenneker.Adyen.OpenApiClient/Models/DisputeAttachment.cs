@@ -17,34 +17,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attachmentType") is { } nullNodeAttachmentType && nullNodeAttachmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentType = null;
-            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
-            if (parseNode.GetChildNode("fileName") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("attachmentType") is null) { _explicitNullValueAttachmentType = default!; _explicitNullProperties?.Remove("attachmentType"); }
+            else if (parseNode.GetChildNode("attachmentType") is { } nullNodeAttachmentType && nullNodeAttachmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentType = null;
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("fileName") is null) { _explicitNullValueFileName = default!; _explicitNullProperties?.Remove("fileName"); }
+            else if (parseNode.GetChildNode("fileName") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of information contained in the attachment: **receipt**, **correspondence**, **other**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachmentAttachmentType? AttachmentType { get => _explicitNullValueAttachmentType; set { _explicitNullValueAttachmentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachmentType"); else _explicitNullProperties?.Remove("attachmentType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachmentAttachmentType? AttachmentType { get => _explicitNullValueAttachmentType; set { _explicitNullValueAttachmentType = value; AdditionalData?.Remove("attachmentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachmentType"); else _explicitNullProperties?.Remove("attachmentType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachmentAttachmentType? _explicitNullValueAttachmentType = default!;
         /// <summary>The content of the image. An attachment must be base64-encoded data. Make sure that all base64-encoded data strings are generated without line breaks or &quot;wrapping&quot;. For example, do not use `Base64.NO_WRAP` in Java, or its equivalent in other languages. Newline characters at the end of the base64-encoded data string will also result in a malformed input error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The name of the attachment, including its filename extension. Supported filename extensions: **jpeg**, **pdf**, **tiff**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("fileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
         private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; AdditionalData?.Remove("fileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileName"); else _explicitNullProperties?.Remove("fileName"); } }
         private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>The unique identifier of the attachment.</summary>
@@ -80,7 +83,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachmentType", n => { AttachmentType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachmentAttachmentType>(); } },
+                { "attachmentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.DisputeAttachmentAttachmentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttachmentType = default; _explicitNullProperties?.Remove("attachmentType"); AdditionalData["attachmentType"] = unknown; } else { AttachmentType = parsed; AdditionalData.Remove("attachmentType"); } } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },

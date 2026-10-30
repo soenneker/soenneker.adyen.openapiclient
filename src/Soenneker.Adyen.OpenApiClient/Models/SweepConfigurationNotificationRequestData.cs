@@ -18,19 +18,22 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountId") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
-            if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
-            if (parseNode.GetChildNode("sweep") is { } nullNodeSweep && nullNodeSweep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sweep = null;
+            if (parseNode.GetChildNode("accountId") is null) { _explicitNullValueAccountId = default!; _explicitNullProperties?.Remove("accountId"); }
+            else if (parseNode.GetChildNode("accountId") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("balancePlatform") is null) { _explicitNullValueBalancePlatform = default!; _explicitNullProperties?.Remove("balancePlatform"); }
+            else if (parseNode.GetChildNode("balancePlatform") is { } nullNodeBalancePlatform && nullNodeBalancePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BalancePlatform = null;
+            if (parseNode.GetChildNode("sweep") is null) { _explicitNullValueSweep = default!; _explicitNullProperties?.Remove("sweep"); }
+            else if (parseNode.GetChildNode("sweep") is { } nullNodeSweep && nullNodeSweep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sweep = null;
         }
 
         /// <summary>The unique identifier of the balance account for which the sweep was configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("accountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
         private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; AdditionalData?.Remove("accountId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
         private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the balance platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string? BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string? _explicitNullValueBalancePlatform = default!;
 #nullable restore
 #else
-        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
+        public string BalancePlatform { get => _explicitNullValueBalancePlatform; set { _explicitNullValueBalancePlatform = value; AdditionalData?.Remove("balancePlatform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balancePlatform"); else _explicitNullProperties?.Remove("balancePlatform"); } }
         private string _explicitNullValueBalancePlatform = default!;
 #endif
         /// <summary>Contains information about the sweep resource that triggered the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.SweepConfigurationNotificationDataSweep? Sweep { get => _explicitNullValueSweep; set { _explicitNullValueSweep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep"); else _explicitNullProperties?.Remove("sweep"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SweepConfigurationNotificationDataSweep? Sweep { get => _explicitNullValueSweep; set { _explicitNullValueSweep = value; AdditionalData?.Remove("sweep"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep"); else _explicitNullProperties?.Remove("sweep"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SweepConfigurationNotificationDataSweep? _explicitNullValueSweep = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.SweepConfigurationNotificationDataSweep Sweep { get => _explicitNullValueSweep; set { _explicitNullValueSweep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep"); else _explicitNullProperties?.Remove("sweep"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SweepConfigurationNotificationDataSweep Sweep { get => _explicitNullValueSweep; set { _explicitNullValueSweep = value; AdditionalData?.Remove("sweep"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweep"); else _explicitNullProperties?.Remove("sweep"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SweepConfigurationNotificationDataSweep _explicitNullValueSweep = default!;
 #endif
         /// <summary>

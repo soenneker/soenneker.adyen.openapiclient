@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scaAssociations") is { } nullNodeScaAssociations && nullNodeScaAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaAssociations = null;
+            if (parseNode.GetChildNode("scaAssociations") is null) { _explicitNullValueScaAssociations = default!; _explicitNullProperties?.Remove("scaAssociations"); }
+            else if (parseNode.GetChildNode("scaAssociations") is { } nullNodeScaAssociations && nullNodeScaAssociations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaAssociations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The list of associations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Association>? ScaAssociations { get => _explicitNullValueScaAssociations; set { _explicitNullValueScaAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaAssociations"); else _explicitNullProperties?.Remove("scaAssociations"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Association>? ScaAssociations { get => _explicitNullValueScaAssociations; set { _explicitNullValueScaAssociations = value; AdditionalData?.Remove("scaAssociations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaAssociations"); else _explicitNullProperties?.Remove("scaAssociations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Association>? _explicitNullValueScaAssociations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Association> ScaAssociations { get => _explicitNullValueScaAssociations; set { _explicitNullValueScaAssociations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaAssociations"); else _explicitNullProperties?.Remove("scaAssociations"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Association> ScaAssociations { get => _explicitNullValueScaAssociations; set { _explicitNullValueScaAssociations = value; AdditionalData?.Remove("scaAssociations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scaAssociations"); else _explicitNullProperties?.Remove("scaAssociations"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Association> _explicitNullValueScaAssociations = default!;
 #endif
         /// <summary>

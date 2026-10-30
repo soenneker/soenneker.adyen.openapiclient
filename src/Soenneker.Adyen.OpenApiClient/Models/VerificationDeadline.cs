@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
-            if (parseNode.GetChildNode("entityIds") is { } nullNodeEntityIds && nullNodeEntityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIds = null;
-            if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("capabilities") is null) { _explicitNullValueCapabilities = default!; _explicitNullProperties?.Remove("capabilities"); }
+            else if (parseNode.GetChildNode("capabilities") is { } nullNodeCapabilities && nullNodeCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capabilities = null;
+            if (parseNode.GetChildNode("entityIds") is null) { _explicitNullValueEntityIds = default!; _explicitNullProperties?.Remove("entityIds"); }
+            else if (parseNode.GetChildNode("entityIds") is { } nullNodeEntityIds && nullNodeEntityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIds = null;
+            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
+            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The names of the capabilities to be disallowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadlineCapabilitiesItem?>? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadlineCapabilitiesItem?>? Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadlineCapabilitiesItem?>? _explicitNullValueCapabilities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadlineCapabilitiesItem?> Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadlineCapabilitiesItem?> Capabilities { get => _explicitNullValueCapabilities; set { _explicitNullValueCapabilities = value; AdditionalData?.Remove("capabilities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilities"); else _explicitNullProperties?.Remove("capabilities"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadlineCapabilitiesItem?> _explicitNullValueCapabilities = default!;
 #endif
         /// <summary>The unique identifiers of the bank account(s) that the deadline applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntityIds { get => _explicitNullValueEntityIds; set { _explicitNullValueEntityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIds"); else _explicitNullProperties?.Remove("entityIds"); } }
+        public List<string>? EntityIds { get => _explicitNullValueEntityIds; set { _explicitNullValueEntityIds = value; AdditionalData?.Remove("entityIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIds"); else _explicitNullProperties?.Remove("entityIds"); } }
         private List<string>? _explicitNullValueEntityIds = default!;
 #nullable restore
 #else
-        public List<string> EntityIds { get => _explicitNullValueEntityIds; set { _explicitNullValueEntityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIds"); else _explicitNullProperties?.Remove("entityIds"); } }
+        public List<string> EntityIds { get => _explicitNullValueEntityIds; set { _explicitNullValueEntityIds = value; AdditionalData?.Remove("entityIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIds"); else _explicitNullProperties?.Remove("entityIds"); } }
         private List<string> _explicitNullValueEntityIds = default!;
 #endif
         /// <summary>The date that verification is due by before capabilities are disallowed.</summary>
-        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.VerificationDeadline"/> and sets the default values.

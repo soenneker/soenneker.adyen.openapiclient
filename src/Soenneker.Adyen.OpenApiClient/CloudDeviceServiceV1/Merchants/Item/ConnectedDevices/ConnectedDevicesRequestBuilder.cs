@@ -74,7 +74,7 @@ namespace Soenneker.Adyen.OpenApiClient.CloudDeviceServiceV1.Merchants.Item.Conn
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Adyen.OpenApiClient.CloudDeviceServiceV1.Merchants.Item.ConnectedDevices.ConnectedDevicesRequestBuilder.ConnectedDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://device-api-test.adyen.com/v1", "/CloudDeviceService-v1/merchants/{merchantAccount}/connectedDevices", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

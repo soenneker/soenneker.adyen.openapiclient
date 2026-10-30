@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("publicApiKey") is { } nullNodePublicApiKey && nullNodePublicApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicApiKey = null;
+            if (parseNode.GetChildNode("publicApiKey") is null) { _explicitNullValuePublicApiKey = default!; _explicitNullProperties?.Remove("publicApiKey"); }
+            else if (parseNode.GetChildNode("publicApiKey") is { } nullNodePublicApiKey && nullNodePublicApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicApiKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Affirm public API key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicApiKey { get => _explicitNullValuePublicApiKey; set { _explicitNullValuePublicApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicApiKey"); else _explicitNullProperties?.Remove("publicApiKey"); } }
+        public string? PublicApiKey { get => _explicitNullValuePublicApiKey; set { _explicitNullValuePublicApiKey = value; AdditionalData?.Remove("publicApiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicApiKey"); else _explicitNullProperties?.Remove("publicApiKey"); } }
         private string? _explicitNullValuePublicApiKey = default!;
 #nullable restore
 #else
-        public string PublicApiKey { get => _explicitNullValuePublicApiKey; set { _explicitNullValuePublicApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicApiKey"); else _explicitNullProperties?.Remove("publicApiKey"); } }
+        public string PublicApiKey { get => _explicitNullValuePublicApiKey; set { _explicitNullValuePublicApiKey = value; AdditionalData?.Remove("publicApiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicApiKey"); else _explicitNullProperties?.Remove("publicApiKey"); } }
         private string _explicitNullValuePublicApiKey = default!;
 #endif
         /// <summary>

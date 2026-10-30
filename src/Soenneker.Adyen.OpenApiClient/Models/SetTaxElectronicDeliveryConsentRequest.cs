@@ -17,13 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("US1099k") is { } nullNodeUS1099k && nullNodeUS1099k.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) US1099k = null;
+            if (parseNode.GetChildNode("US1099k") is null) { _explicitNullValueUS1099k = default!; _explicitNullProperties?.Remove("US1099k"); }
+            else if (parseNode.GetChildNode("US1099k") is { } nullNodeUS1099k && nullNodeUS1099k.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) US1099k = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Consent to electronically deliver tax form US1099-K.</summary>
-        public bool? US1099k { get => _explicitNullValueUS1099k; set { _explicitNullValueUS1099k = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("US1099k"); else _explicitNullProperties?.Remove("US1099k"); } }
+        public bool? US1099k { get => _explicitNullValueUS1099k; set { _explicitNullValueUS1099k = value; AdditionalData?.Remove("US1099k"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("US1099k"); else _explicitNullProperties?.Remove("US1099k"); } }
         private bool? _explicitNullValueUS1099k = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.SetTaxElectronicDeliveryConsentRequest"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("RecurringDetail") is { } nullNodeRecurringDetail && nullNodeRecurringDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetail = null;
+            if (parseNode.GetChildNode("RecurringDetail") is null) { _explicitNullValueRecurringDetail = default!; _explicitNullProperties?.Remove("RecurringDetail"); }
+            else if (parseNode.GetChildNode("RecurringDetail") is { } nullNodeRecurringDetail && nullNodeRecurringDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecurringDetail = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The RecurringDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail? RecurringDetail { get => _explicitNullValueRecurringDetail; set { _explicitNullValueRecurringDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RecurringDetail"); else _explicitNullProperties?.Remove("RecurringDetail"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail? RecurringDetail { get => _explicitNullValueRecurringDetail; set { _explicitNullValueRecurringDetail = value; AdditionalData?.Remove("RecurringDetail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RecurringDetail"); else _explicitNullProperties?.Remove("RecurringDetail"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail? _explicitNullValueRecurringDetail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail RecurringDetail { get => _explicitNullValueRecurringDetail; set { _explicitNullValueRecurringDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RecurringDetail"); else _explicitNullProperties?.Remove("RecurringDetail"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail RecurringDetail { get => _explicitNullValueRecurringDetail; set { _explicitNullValueRecurringDetail = value; AdditionalData?.Remove("RecurringDetail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RecurringDetail"); else _explicitNullProperties?.Remove("RecurringDetail"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RecurringDetail _explicitNullValueRecurringDetail = default!;
 #endif
         /// <summary>

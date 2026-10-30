@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fixedAmount") is { } nullNodeFixedAmount && nullNodeFixedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedAmount = null;
-            if (parseNode.GetChildNode("variablePercentage") is { } nullNodeVariablePercentage && nullNodeVariablePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariablePercentage = null;
+            if (parseNode.GetChildNode("fixedAmount") is null) { _explicitNullValueFixedAmount = default!; _explicitNullProperties?.Remove("fixedAmount"); }
+            else if (parseNode.GetChildNode("fixedAmount") is { } nullNodeFixedAmount && nullNodeFixedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FixedAmount = null;
+            if (parseNode.GetChildNode("variablePercentage") is null) { _explicitNullValueVariablePercentage = default!; _explicitNullProperties?.Remove("variablePercentage"); }
+            else if (parseNode.GetChildNode("variablePercentage") is { } nullNodeVariablePercentage && nullNodeVariablePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariablePercentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A fixed commission fee, in minor units.</summary>
-        public long? FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
+        public long? FixedAmount { get => _explicitNullValueFixedAmount; set { _explicitNullValueFixedAmount = value; AdditionalData?.Remove("fixedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fixedAmount"); else _explicitNullProperties?.Remove("fixedAmount"); } }
         private long? _explicitNullValueFixedAmount = default!;
         /// <summary>A variable commission fee, in basis points.</summary>
-        public long? VariablePercentage { get => _explicitNullValueVariablePercentage; set { _explicitNullValueVariablePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variablePercentage"); else _explicitNullProperties?.Remove("variablePercentage"); } }
+        public long? VariablePercentage { get => _explicitNullValueVariablePercentage; set { _explicitNullValueVariablePercentage = value; AdditionalData?.Remove("variablePercentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variablePercentage"); else _explicitNullProperties?.Remove("variablePercentage"); } }
         private long? _explicitNullValueVariablePercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.UpdateSplitConfigurationLogicRequestCommission"/> and sets the default values.

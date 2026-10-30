@@ -17,80 +17,89 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
-            if (parseNode.GetChildNode("contractType") is { } nullNodeContractType && nullNodeContractType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractType = null;
-            if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
-            if (parseNode.GetChildNode("financingType") is { } nullNodeFinancingType && nullNodeFinancingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancingType = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("maximumAmount") is { } nullNodeMaximumAmount && nullNodeMaximumAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumAmount = null;
-            if (parseNode.GetChildNode("minimumAmount") is { } nullNodeMinimumAmount && nullNodeMinimumAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumAmount = null;
-            if (parseNode.GetChildNode("repayment") is { } nullNodeRepayment && nullNodeRepayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repayment = null;
-            if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("accountHolderId") is null) { _explicitNullValueAccountHolderId = default!; _explicitNullProperties?.Remove("accountHolderId"); }
+            else if (parseNode.GetChildNode("accountHolderId") is { } nullNodeAccountHolderId && nullNodeAccountHolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountHolderId = null;
+            if (parseNode.GetChildNode("contractType") is null) { _explicitNullValueContractType = default!; _explicitNullProperties?.Remove("contractType"); }
+            else if (parseNode.GetChildNode("contractType") is { } nullNodeContractType && nullNodeContractType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContractType = null;
+            if (parseNode.GetChildNode("expiresAt") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expiresAt"); }
+            else if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("financingType") is null) { _explicitNullValueFinancingType = default!; _explicitNullProperties?.Remove("financingType"); }
+            else if (parseNode.GetChildNode("financingType") is { } nullNodeFinancingType && nullNodeFinancingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancingType = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("maximumAmount") is null) { _explicitNullValueMaximumAmount = default!; _explicitNullProperties?.Remove("maximumAmount"); }
+            else if (parseNode.GetChildNode("maximumAmount") is { } nullNodeMaximumAmount && nullNodeMaximumAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumAmount = null;
+            if (parseNode.GetChildNode("minimumAmount") is null) { _explicitNullValueMinimumAmount = default!; _explicitNullProperties?.Remove("minimumAmount"); }
+            else if (parseNode.GetChildNode("minimumAmount") is { } nullNodeMinimumAmount && nullNodeMinimumAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumAmount = null;
+            if (parseNode.GetChildNode("repayment") is null) { _explicitNullValueRepayment = default!; _explicitNullProperties?.Remove("repayment"); }
+            else if (parseNode.GetChildNode("repayment") is { } nullNodeRepayment && nullNodeRepayment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repayment = null;
+            if (parseNode.GetChildNode("startsAt") is null) { _explicitNullValueStartsAt = default!; _explicitNullProperties?.Remove("startsAt"); }
+            else if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
         }
 
         /// <summary>The unique identifier of the account holder that the dynamic offer is for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string? AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string? _explicitNullValueAccountHolderId = default!;
 #nullable restore
 #else
-        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
+        public string AccountHolderId { get => _explicitNullValueAccountHolderId; set { _explicitNullValueAccountHolderId = value; AdditionalData?.Remove("accountHolderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountHolderId"); else _explicitNullProperties?.Remove("accountHolderId"); } }
         private string _explicitNullValueAccountHolderId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contract type of the offer.Possible values:* **loan*** **cashAdvance**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType? ContractType { get => _explicitNullValueContractType; set { _explicitNullValueContractType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contractType"); else _explicitNullProperties?.Remove("contractType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType? ContractType { get => _explicitNullValueContractType; set { _explicitNullValueContractType = value; AdditionalData?.Remove("contractType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contractType"); else _explicitNullProperties?.Remove("contractType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType? _explicitNullValueContractType = default!;
         /// <summary>The expiration date and time of the offer validity period.</summary>
-        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The type of financing that the offer is for.Possible values: **businessFinancing**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType? FinancingType { get => _explicitNullValueFinancingType; set { _explicitNullValueFinancingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financingType"); else _explicitNullProperties?.Remove("financingType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType? FinancingType { get => _explicitNullValueFinancingType; set { _explicitNullValueFinancingType = value; AdditionalData?.Remove("financingType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financingType"); else _explicitNullProperties?.Remove("financingType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType? _explicitNullValueFinancingType = default!;
         /// <summary>The unique identifier of the dynamic offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The maximum financing amount available to the account holder under this offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount? MaximumAmount { get => _explicitNullValueMaximumAmount; set { _explicitNullValueMaximumAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumAmount"); else _explicitNullProperties?.Remove("maximumAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount? MaximumAmount { get => _explicitNullValueMaximumAmount; set { _explicitNullValueMaximumAmount = value; AdditionalData?.Remove("maximumAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumAmount"); else _explicitNullProperties?.Remove("maximumAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount? _explicitNullValueMaximumAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount MaximumAmount { get => _explicitNullValueMaximumAmount; set { _explicitNullValueMaximumAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumAmount"); else _explicitNullProperties?.Remove("maximumAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount MaximumAmount { get => _explicitNullValueMaximumAmount; set { _explicitNullValueMaximumAmount = value; AdditionalData?.Remove("maximumAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximumAmount"); else _explicitNullProperties?.Remove("maximumAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount _explicitNullValueMaximumAmount = default!;
 #endif
         /// <summary>The minimum financing amount available to the account holder under this offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount? MinimumAmount { get => _explicitNullValueMinimumAmount; set { _explicitNullValueMinimumAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumAmount"); else _explicitNullProperties?.Remove("minimumAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount? MinimumAmount { get => _explicitNullValueMinimumAmount; set { _explicitNullValueMinimumAmount = value; AdditionalData?.Remove("minimumAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumAmount"); else _explicitNullProperties?.Remove("minimumAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount? _explicitNullValueMinimumAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount MinimumAmount { get => _explicitNullValueMinimumAmount; set { _explicitNullValueMinimumAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumAmount"); else _explicitNullProperties?.Remove("minimumAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount MinimumAmount { get => _explicitNullValueMinimumAmount; set { _explicitNullValueMinimumAmount = value; AdditionalData?.Remove("minimumAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumAmount"); else _explicitNullProperties?.Remove("minimumAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount _explicitNullValueMinimumAmount = default!;
 #endif
         /// <summary>Contains information about the repayment configuration of the grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferRepaymentComposed? Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferRepaymentComposed? Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; AdditionalData?.Remove("repayment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferRepaymentComposed? _explicitNullValueRepayment = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferRepaymentComposed Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferRepaymentComposed Repayment { get => _explicitNullValueRepayment; set { _explicitNullValueRepayment = value; AdditionalData?.Remove("repayment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repayment"); else _explicitNullProperties?.Remove("repayment"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferRepaymentComposed _explicitNullValueRepayment = default!;
 #endif
         /// <summary>The starting date and time of the offer validity period.</summary>
-        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
+        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("startsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
         private DateTimeOffset? _explicitNullValueStartsAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOffer"/> and sets the default values.
@@ -118,9 +127,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountHolderId", n => { AccountHolderId = n.GetStringValue(); } },
-                { "contractType", n => { ContractType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>(); } },
+                { "contractType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferContractType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueContractType = default; _explicitNullProperties?.Remove("contractType"); AdditionalData["contractType"] = unknown; } else { ContractType = parsed; AdditionalData.Remove("contractType"); } } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "financingType", n => { FinancingType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType>(); } },
+                { "financingType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferFinancingType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFinancingType = default; _explicitNullProperties?.Remove("financingType"); AdditionalData["financingType"] = unknown; } else { FinancingType = parsed; AdditionalData.Remove("financingType"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "maximumAmount", n => { MaximumAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMaximumAmount.CreateFromDiscriminatorValue); } },
                 { "minimumAmount", n => { MinimumAmount = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount>(global::Soenneker.Adyen.OpenApiClient.Models.CapitalServiceV1DynamicOfferMinimumAmount.CreateFromDiscriminatorValue); } },

@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("marketIdentifier") is { } nullNodeMarketIdentifier && nullNodeMarketIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketIdentifier = null;
-            if (parseNode.GetChildNode("stockNumber") is { } nullNodeStockNumber && nullNodeStockNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StockNumber = null;
-            if (parseNode.GetChildNode("tickerSymbol") is { } nullNodeTickerSymbol && nullNodeTickerSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TickerSymbol = null;
+            if (parseNode.GetChildNode("marketIdentifier") is null) { _explicitNullValueMarketIdentifier = default!; _explicitNullProperties?.Remove("marketIdentifier"); }
+            else if (parseNode.GetChildNode("marketIdentifier") is { } nullNodeMarketIdentifier && nullNodeMarketIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarketIdentifier = null;
+            if (parseNode.GetChildNode("stockNumber") is null) { _explicitNullValueStockNumber = default!; _explicitNullProperties?.Remove("stockNumber"); }
+            else if (parseNode.GetChildNode("stockNumber") is { } nullNodeStockNumber && nullNodeStockNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StockNumber = null;
+            if (parseNode.GetChildNode("tickerSymbol") is null) { _explicitNullValueTickerSymbol = default!; _explicitNullProperties?.Remove("tickerSymbol"); }
+            else if (parseNode.GetChildNode("tickerSymbol") is { } nullNodeTickerSymbol && nullNodeTickerSymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TickerSymbol = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The four-digit [Market Identifier Code](https://en.wikipedia.org/wiki/Market_Identifier_Code) of the stock market where the organization&apos;s stocks are traded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MarketIdentifier { get => _explicitNullValueMarketIdentifier; set { _explicitNullValueMarketIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketIdentifier"); else _explicitNullProperties?.Remove("marketIdentifier"); } }
+        public string? MarketIdentifier { get => _explicitNullValueMarketIdentifier; set { _explicitNullValueMarketIdentifier = value; AdditionalData?.Remove("marketIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketIdentifier"); else _explicitNullProperties?.Remove("marketIdentifier"); } }
         private string? _explicitNullValueMarketIdentifier = default!;
 #nullable restore
 #else
-        public string MarketIdentifier { get => _explicitNullValueMarketIdentifier; set { _explicitNullValueMarketIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketIdentifier"); else _explicitNullProperties?.Remove("marketIdentifier"); } }
+        public string MarketIdentifier { get => _explicitNullValueMarketIdentifier; set { _explicitNullValueMarketIdentifier = value; AdditionalData?.Remove("marketIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("marketIdentifier"); else _explicitNullProperties?.Remove("marketIdentifier"); } }
         private string _explicitNullValueMarketIdentifier = default!;
 #endif
         /// <summary>The 12-digit International Securities Identification Number (ISIN) of the company, without dashes (-).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StockNumber { get => _explicitNullValueStockNumber; set { _explicitNullValueStockNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stockNumber"); else _explicitNullProperties?.Remove("stockNumber"); } }
+        public string? StockNumber { get => _explicitNullValueStockNumber; set { _explicitNullValueStockNumber = value; AdditionalData?.Remove("stockNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stockNumber"); else _explicitNullProperties?.Remove("stockNumber"); } }
         private string? _explicitNullValueStockNumber = default!;
 #nullable restore
 #else
-        public string StockNumber { get => _explicitNullValueStockNumber; set { _explicitNullValueStockNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stockNumber"); else _explicitNullProperties?.Remove("stockNumber"); } }
+        public string StockNumber { get => _explicitNullValueStockNumber; set { _explicitNullValueStockNumber = value; AdditionalData?.Remove("stockNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stockNumber"); else _explicitNullProperties?.Remove("stockNumber"); } }
         private string _explicitNullValueStockNumber = default!;
 #endif
         /// <summary>The stock ticker symbol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TickerSymbol { get => _explicitNullValueTickerSymbol; set { _explicitNullValueTickerSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tickerSymbol"); else _explicitNullProperties?.Remove("tickerSymbol"); } }
+        public string? TickerSymbol { get => _explicitNullValueTickerSymbol; set { _explicitNullValueTickerSymbol = value; AdditionalData?.Remove("tickerSymbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tickerSymbol"); else _explicitNullProperties?.Remove("tickerSymbol"); } }
         private string? _explicitNullValueTickerSymbol = default!;
 #nullable restore
 #else
-        public string TickerSymbol { get => _explicitNullValueTickerSymbol; set { _explicitNullValueTickerSymbol = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tickerSymbol"); else _explicitNullProperties?.Remove("tickerSymbol"); } }
+        public string TickerSymbol { get => _explicitNullValueTickerSymbol; set { _explicitNullValueTickerSymbol = value; AdditionalData?.Remove("tickerSymbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tickerSymbol"); else _explicitNullProperties?.Remove("tickerSymbol"); } }
         private string _explicitNullValueTickerSymbol = default!;
 #endif
         /// <summary>

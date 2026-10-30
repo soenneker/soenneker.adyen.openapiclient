@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
-            if (parseNode.GetChildNode("publicKeyExpiryDate") is { } nullNodePublicKeyExpiryDate && nullNodePublicKeyExpiryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyExpiryDate = null;
+            if (parseNode.GetChildNode("publicKey") is null) { _explicitNullValuePublicKey = default!; _explicitNullProperties?.Remove("publicKey"); }
+            else if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("publicKeyExpiryDate") is null) { _explicitNullValuePublicKeyExpiryDate = default!; _explicitNullProperties?.Remove("publicKeyExpiryDate"); }
+            else if (parseNode.GetChildNode("publicKeyExpiryDate") is { } nullNodePublicKeyExpiryDate && nullNodePublicKeyExpiryDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyExpiryDate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The public key you need for encrypting a symmetric session key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("publicKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
         private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("publicKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
         private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>The expiry date of the public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyExpiryDate { get => _explicitNullValuePublicKeyExpiryDate; set { _explicitNullValuePublicKeyExpiryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyExpiryDate"); else _explicitNullProperties?.Remove("publicKeyExpiryDate"); } }
+        public string? PublicKeyExpiryDate { get => _explicitNullValuePublicKeyExpiryDate; set { _explicitNullValuePublicKeyExpiryDate = value; AdditionalData?.Remove("publicKeyExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyExpiryDate"); else _explicitNullProperties?.Remove("publicKeyExpiryDate"); } }
         private string? _explicitNullValuePublicKeyExpiryDate = default!;
 #nullable restore
 #else
-        public string PublicKeyExpiryDate { get => _explicitNullValuePublicKeyExpiryDate; set { _explicitNullValuePublicKeyExpiryDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyExpiryDate"); else _explicitNullProperties?.Remove("publicKeyExpiryDate"); } }
+        public string PublicKeyExpiryDate { get => _explicitNullValuePublicKeyExpiryDate; set { _explicitNullValuePublicKeyExpiryDate = value; AdditionalData?.Remove("publicKeyExpiryDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyExpiryDate"); else _explicitNullProperties?.Remove("publicKeyExpiryDate"); } }
         private string _explicitNullValuePublicKeyExpiryDate = default!;
 #endif
         /// <summary>

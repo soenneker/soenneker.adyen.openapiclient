@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merchantDisplayName") is { } nullNodeMerchantDisplayName && nullNodeMerchantDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantDisplayName = null;
+            if (parseNode.GetChildNode("merchantDisplayName") is null) { _explicitNullValueMerchantDisplayName = default!; _explicitNullProperties?.Remove("merchantDisplayName"); }
+            else if (parseNode.GetChildNode("merchantDisplayName") is { } nullNodeMerchantDisplayName && nullNodeMerchantDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantDisplayName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The text shown on the screen during the Tap to Pay transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantDisplayName { get => _explicitNullValueMerchantDisplayName; set { _explicitNullValueMerchantDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantDisplayName"); else _explicitNullProperties?.Remove("merchantDisplayName"); } }
+        public string? MerchantDisplayName { get => _explicitNullValueMerchantDisplayName; set { _explicitNullValueMerchantDisplayName = value; AdditionalData?.Remove("merchantDisplayName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantDisplayName"); else _explicitNullProperties?.Remove("merchantDisplayName"); } }
         private string? _explicitNullValueMerchantDisplayName = default!;
 #nullable restore
 #else
-        public string MerchantDisplayName { get => _explicitNullValueMerchantDisplayName; set { _explicitNullValueMerchantDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantDisplayName"); else _explicitNullProperties?.Remove("merchantDisplayName"); } }
+        public string MerchantDisplayName { get => _explicitNullValueMerchantDisplayName; set { _explicitNullValueMerchantDisplayName = value; AdditionalData?.Remove("merchantDisplayName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantDisplayName"); else _explicitNullProperties?.Remove("merchantDisplayName"); } }
         private string _explicitNullValueMerchantDisplayName = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transferRoutes") is { } nullNodeTransferRoutes && nullNodeTransferRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferRoutes = null;
+            if (parseNode.GetChildNode("transferRoutes") is null) { _explicitNullValueTransferRoutes = default!; _explicitNullProperties?.Remove("transferRoutes"); }
+            else if (parseNode.GetChildNode("transferRoutes") is { } nullNodeTransferRoutes && nullNodeTransferRoutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferRoutes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of available priorities for a transfer, along with requirements. Use this information to initiate a transfer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRoute>? TransferRoutes { get => _explicitNullValueTransferRoutes; set { _explicitNullValueTransferRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferRoutes"); else _explicitNullProperties?.Remove("transferRoutes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRoute>? TransferRoutes { get => _explicitNullValueTransferRoutes; set { _explicitNullValueTransferRoutes = value; AdditionalData?.Remove("transferRoutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferRoutes"); else _explicitNullProperties?.Remove("transferRoutes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRoute>? _explicitNullValueTransferRoutes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRoute> TransferRoutes { get => _explicitNullValueTransferRoutes; set { _explicitNullValueTransferRoutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferRoutes"); else _explicitNullProperties?.Remove("transferRoutes"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRoute> TransferRoutes { get => _explicitNullValueTransferRoutes; set { _explicitNullValueTransferRoutes = value; AdditionalData?.Remove("transferRoutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferRoutes"); else _explicitNullProperties?.Remove("transferRoutes"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.TransferRoute> _explicitNullValueTransferRoutes = default!;
 #endif
         /// <summary>

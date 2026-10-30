@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deviceId") is { } nullNodeDeviceId && nullNodeDeviceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceId = null;
-            if (parseNode.GetChildNode("formFactor") is { } nullNodeFormFactor && nullNodeFormFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormFactor = null;
-            if (parseNode.GetChildNode("osName") is { } nullNodeOsName && nullNodeOsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsName = null;
+            if (parseNode.GetChildNode("deviceId") is null) { _explicitNullValueDeviceId = default!; _explicitNullProperties?.Remove("deviceId"); }
+            else if (parseNode.GetChildNode("deviceId") is { } nullNodeDeviceId && nullNodeDeviceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceId = null;
+            if (parseNode.GetChildNode("formFactor") is null) { _explicitNullValueFormFactor = default!; _explicitNullProperties?.Remove("formFactor"); }
+            else if (parseNode.GetChildNode("formFactor") is { } nullNodeFormFactor && nullNodeFormFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormFactor = null;
+            if (parseNode.GetChildNode("osName") is null) { _explicitNullValueOsName = default!; _explicitNullProperties?.Remove("osName"); }
+            else if (parseNode.GetChildNode("osName") is { } nullNodeOsName && nullNodeOsName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OsName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifier of the device used for provisioning the network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId { get => _explicitNullValueDeviceId; set { _explicitNullValueDeviceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceId"); else _explicitNullProperties?.Remove("deviceId"); } }
+        public string? DeviceId { get => _explicitNullValueDeviceId; set { _explicitNullValueDeviceId = value; AdditionalData?.Remove("deviceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceId"); else _explicitNullProperties?.Remove("deviceId"); } }
         private string? _explicitNullValueDeviceId = default!;
 #nullable restore
 #else
-        public string DeviceId { get => _explicitNullValueDeviceId; set { _explicitNullValueDeviceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceId"); else _explicitNullProperties?.Remove("deviceId"); } }
+        public string DeviceId { get => _explicitNullValueDeviceId; set { _explicitNullValueDeviceId = value; AdditionalData?.Remove("deviceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deviceId"); else _explicitNullProperties?.Remove("deviceId"); } }
         private string _explicitNullValueDeviceId = default!;
 #endif
         /// <summary>The type of the device used for provisioning the network token.For example, **phone**, **mobile_phone**, **watch**, **mobilephone_or_tablet**, etc</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
+        public string? FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; AdditionalData?.Remove("formFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
         private string? _explicitNullValueFormFactor = default!;
 #nullable restore
 #else
-        public string FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
+        public string FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; AdditionalData?.Remove("formFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
         private string _explicitNullValueFormFactor = default!;
 #endif
         /// <summary>The operating system of the device used for provisioning the network token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osName"); else _explicitNullProperties?.Remove("osName"); } }
+        public string? OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; AdditionalData?.Remove("osName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osName"); else _explicitNullProperties?.Remove("osName"); } }
         private string? _explicitNullValueOsName = default!;
 #nullable restore
 #else
-        public string OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osName"); else _explicitNullProperties?.Remove("osName"); } }
+        public string OsName { get => _explicitNullValueOsName; set { _explicitNullValueOsName = value; AdditionalData?.Remove("osName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("osName"); else _explicitNullProperties?.Remove("osName"); } }
         private string _explicitNullValueOsName = default!;
 #endif
         /// <summary>

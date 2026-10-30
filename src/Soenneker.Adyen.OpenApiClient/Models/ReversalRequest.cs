@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
-            if (parseNode.GetChildNode("ReversalReason") is { } nullNodeReversalReason && nullNodeReversalReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversalReason = null;
-            if (parseNode.GetChildNode("ReversedAmount") is { } nullNodeReversedAmount && nullNodeReversedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversedAmount = null;
-            if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
+            if (parseNode.GetChildNode("OriginalPOITransaction") is null) { _explicitNullValueOriginalPOITransaction = default!; _explicitNullProperties?.Remove("OriginalPOITransaction"); }
+            else if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
+            if (parseNode.GetChildNode("ReversalReason") is null) { _explicitNullValueReversalReason = default!; _explicitNullProperties?.Remove("ReversalReason"); }
+            else if (parseNode.GetChildNode("ReversalReason") is { } nullNodeReversalReason && nullNodeReversalReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversalReason = null;
+            if (parseNode.GetChildNode("ReversedAmount") is null) { _explicitNullValueReversedAmount = default!; _explicitNullProperties?.Remove("ReversedAmount"); }
+            else if (parseNode.GetChildNode("ReversedAmount") is { } nullNodeReversedAmount && nullNodeReversedAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReversedAmount = null;
+            if (parseNode.GetChildNode("SaleData") is null) { _explicitNullValueSaleData = default!; _explicitNullProperties?.Remove("SaleData"); }
+            else if (parseNode.GetChildNode("SaleData") is { } nullNodeSaleData && nullNodeSaleData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaleData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,27 +33,27 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a previous POI transaction.In the Payment Request message, it allows using the card of a previous CardAcquisition or Payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; AdditionalData?.Remove("OriginalPOITransaction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? _explicitNullValueOriginalPOITransaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; AdditionalData?.Remove("OriginalPOITransaction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction _explicitNullValueOriginalPOITransaction = default!;
 #endif
         /// <summary>Reason of the payment or loyalty reversal.Possible values:* **CustCancel*** **MerchantCancel*** **Malfunction*** **Unable2Compl**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? ReversalReason { get => _explicitNullValueReversalReason; set { _explicitNullValueReversalReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversalReason"); else _explicitNullProperties?.Remove("ReversalReason"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? ReversalReason { get => _explicitNullValueReversalReason; set { _explicitNullValueReversalReason = value; AdditionalData?.Remove("ReversalReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversalReason"); else _explicitNullProperties?.Remove("ReversalReason"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason? _explicitNullValueReversalReason = default!;
         /// <summary>Amount of the payment or loyalty to reverse.ReversedAmount is implicitly equal to the AuthorizedAmount if absent.</summary>
-        public double? ReversedAmount { get => _explicitNullValueReversedAmount; set { _explicitNullValueReversedAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversedAmount"); else _explicitNullProperties?.Remove("ReversedAmount"); } }
+        public double? ReversedAmount { get => _explicitNullValueReversedAmount; set { _explicitNullValueReversedAmount = value; AdditionalData?.Remove("ReversedAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ReversedAmount"); else _explicitNullProperties?.Remove("ReversedAmount"); } }
         private double? _explicitNullValueReversedAmount = default!;
         /// <summary>Data associated with the Sale System, with a particular value during the processing of the payment by the POI, including the cards acquisition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; AdditionalData?.Remove("SaleData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData? _explicitNullValueSaleData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData SaleData { get => _explicitNullValueSaleData; set { _explicitNullValueSaleData = value; AdditionalData?.Remove("SaleData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SaleData"); else _explicitNullProperties?.Remove("SaleData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData _explicitNullValueSaleData = default!;
 #endif
         /// <summary>
@@ -78,7 +82,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "OriginalPOITransaction", n => { OriginalPOITransaction = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction>(global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction.CreateFromDiscriminatorValue); } },
-                { "ReversalReason", n => { ReversalReason = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason>(); } },
+                { "ReversalReason", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestReversalReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReversalReason = default; _explicitNullProperties?.Remove("ReversalReason"); AdditionalData["ReversalReason"] = unknown; } else { ReversalReason = parsed; AdditionalData.Remove("ReversalReason"); } } },
                 { "ReversedAmount", n => { ReversedAmount = n.GetDoubleValue(); } },
                 { "SaleData", n => { SaleData = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData>(global::Soenneker.Adyen.OpenApiClient.Models.ReversalRequestSaleData.CreateFromDiscriminatorValue); } },
             };

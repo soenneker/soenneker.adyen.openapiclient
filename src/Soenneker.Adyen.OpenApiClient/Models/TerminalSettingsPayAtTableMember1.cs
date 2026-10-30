@@ -18,21 +18,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticationMethod") is { } nullNodeAuthenticationMethod && nullNodeAuthenticationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationMethod = null;
-            if (parseNode.GetChildNode("enablePayAtTable") is { } nullNodeEnablePayAtTable && nullNodeEnablePayAtTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePayAtTable = null;
-            if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
+            if (parseNode.GetChildNode("authenticationMethod") is null) { _explicitNullValueAuthenticationMethod = default!; _explicitNullProperties?.Remove("authenticationMethod"); }
+            else if (parseNode.GetChildNode("authenticationMethod") is { } nullNodeAuthenticationMethod && nullNodeAuthenticationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationMethod = null;
+            if (parseNode.GetChildNode("enablePayAtTable") is null) { _explicitNullValueEnablePayAtTable = default!; _explicitNullProperties?.Remove("enablePayAtTable"); }
+            else if (parseNode.GetChildNode("enablePayAtTable") is { } nullNodeEnablePayAtTable && nullNodeEnablePayAtTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePayAtTable = null;
+            if (parseNode.GetChildNode("paymentInstrument") is null) { _explicitNullValuePaymentInstrument = default!; _explicitNullProperties?.Remove("paymentInstrument"); }
+            else if (parseNode.GetChildNode("paymentInstrument") is { } nullNodePaymentInstrument && nullNodePaymentInstrument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentInstrument = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allowed authentication methods: Magswipe, Manual Entry.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? AuthenticationMethod { get => _explicitNullValueAuthenticationMethod; set { _explicitNullValueAuthenticationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationMethod"); else _explicitNullProperties?.Remove("authenticationMethod"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? AuthenticationMethod { get => _explicitNullValueAuthenticationMethod; set { _explicitNullValueAuthenticationMethod = value; AdditionalData?.Remove("authenticationMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationMethod"); else _explicitNullProperties?.Remove("authenticationMethod"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod? _explicitNullValueAuthenticationMethod = default!;
         /// <summary>Enable Pay at table.</summary>
-        public bool? EnablePayAtTable { get => _explicitNullValueEnablePayAtTable; set { _explicitNullValueEnablePayAtTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePayAtTable"); else _explicitNullProperties?.Remove("enablePayAtTable"); } }
+        public bool? EnablePayAtTable { get => _explicitNullValueEnablePayAtTable; set { _explicitNullValueEnablePayAtTable = value; AdditionalData?.Remove("enablePayAtTable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePayAtTable"); else _explicitNullProperties?.Remove("enablePayAtTable"); } }
         private bool? _explicitNullValueEnablePayAtTable = default!;
         /// <summary>Sets the allowed payment instrument for Pay at table transactions.  Can be: **cash** or **card**. If not set, the terminal presents both options.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? PaymentInstrument { get => _explicitNullValuePaymentInstrument; set { _explicitNullValuePaymentInstrument = value; AdditionalData?.Remove("paymentInstrument"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paymentInstrument"); else _explicitNullProperties?.Remove("paymentInstrument"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument? _explicitNullValuePaymentInstrument = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsPayAtTableMember1"/> and sets the default values.
@@ -59,9 +62,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTableAuthenticationMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthenticationMethod = default; _explicitNullProperties?.Remove("authenticationMethod"); AdditionalData["authenticationMethod"] = unknown; } else { AuthenticationMethod = parsed; AdditionalData.Remove("authenticationMethod"); } } },
                 { "enablePayAtTable", n => { EnablePayAtTable = n.GetBoolValue(); } },
-                { "paymentInstrument", n => { PaymentInstrument = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument>(); } },
+                { "paymentInstrument", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PayAtTablePaymentInstrument>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaymentInstrument = default; _explicitNullProperties?.Remove("paymentInstrument"); AdditionalData["paymentInstrument"] = unknown; } else { PaymentInstrument = parsed; AdditionalData.Remove("paymentInstrument"); } } },
             };
         }
         /// <summary>

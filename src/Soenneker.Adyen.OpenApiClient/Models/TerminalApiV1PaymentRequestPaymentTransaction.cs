@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AmountsReq") is { } nullNodeAmountsReq && nullNodeAmountsReq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountsReq = null;
-            if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
-            if (parseNode.GetChildNode("TransactionConditions") is { } nullNodeTransactionConditions && nullNodeTransactionConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionConditions = null;
+            if (parseNode.GetChildNode("AmountsReq") is null) { _explicitNullValueAmountsReq = default!; _explicitNullProperties?.Remove("AmountsReq"); }
+            else if (parseNode.GetChildNode("AmountsReq") is { } nullNodeAmountsReq && nullNodeAmountsReq.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountsReq = null;
+            if (parseNode.GetChildNode("OriginalPOITransaction") is null) { _explicitNullValueOriginalPOITransaction = default!; _explicitNullProperties?.Remove("OriginalPOITransaction"); }
+            else if (parseNode.GetChildNode("OriginalPOITransaction") is { } nullNodeOriginalPOITransaction && nullNodeOriginalPOITransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalPOITransaction = null;
+            if (parseNode.GetChildNode("TransactionConditions") is null) { _explicitNullValueTransactionConditions = default!; _explicitNullProperties?.Remove("TransactionConditions"); }
+            else if (parseNode.GetChildNode("TransactionConditions") is { } nullNodeTransactionConditions && nullNodeTransactionConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionConditions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Various amounts related to the payment request from the Sale System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq? AmountsReq { get => _explicitNullValueAmountsReq; set { _explicitNullValueAmountsReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountsReq"); else _explicitNullProperties?.Remove("AmountsReq"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq? AmountsReq { get => _explicitNullValueAmountsReq; set { _explicitNullValueAmountsReq = value; AdditionalData?.Remove("AmountsReq"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountsReq"); else _explicitNullProperties?.Remove("AmountsReq"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq? _explicitNullValueAmountsReq = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq AmountsReq { get => _explicitNullValueAmountsReq; set { _explicitNullValueAmountsReq = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountsReq"); else _explicitNullProperties?.Remove("AmountsReq"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq AmountsReq { get => _explicitNullValueAmountsReq; set { _explicitNullValueAmountsReq = value; AdditionalData?.Remove("AmountsReq"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AmountsReq"); else _explicitNullProperties?.Remove("AmountsReq"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionAmountsReq _explicitNullValueAmountsReq = default!;
 #endif
         /// <summary>Identification of a previous POI transaction.In the Payment Request message, it allows using the card of a previous CardAcquisition or Payment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; AdditionalData?.Remove("OriginalPOITransaction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction? _explicitNullValueOriginalPOITransaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction OriginalPOITransaction { get => _explicitNullValueOriginalPOITransaction; set { _explicitNullValueOriginalPOITransaction = value; AdditionalData?.Remove("OriginalPOITransaction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OriginalPOITransaction"); else _explicitNullProperties?.Remove("OriginalPOITransaction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OriginalPoiTransaction _explicitNullValueOriginalPOITransaction = default!;
 #endif
         /// <summary>Conditions on which the transaction must be processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions? TransactionConditions { get => _explicitNullValueTransactionConditions; set { _explicitNullValueTransactionConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionConditions"); else _explicitNullProperties?.Remove("TransactionConditions"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions? TransactionConditions { get => _explicitNullValueTransactionConditions; set { _explicitNullValueTransactionConditions = value; AdditionalData?.Remove("TransactionConditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionConditions"); else _explicitNullProperties?.Remove("TransactionConditions"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions? _explicitNullValueTransactionConditions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions TransactionConditions { get => _explicitNullValueTransactionConditions; set { _explicitNullValueTransactionConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionConditions"); else _explicitNullProperties?.Remove("TransactionConditions"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions TransactionConditions { get => _explicitNullValueTransactionConditions; set { _explicitNullValueTransactionConditions = value; AdditionalData?.Remove("TransactionConditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionConditions"); else _explicitNullProperties?.Remove("TransactionConditions"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentTransactionTransactionConditions _explicitNullValueTransactionConditions = default!;
 #endif
         /// <summary>

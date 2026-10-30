@@ -17,32 +17,36 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("balance") is { } nullNodeBalance && nullNodeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balance = null;
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("received") is { } nullNodeReceived && nullNodeReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Received = null;
-            if (parseNode.GetChildNode("reserved") is { } nullNodeReserved && nullNodeReserved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserved = null;
+            if (parseNode.GetChildNode("balance") is null) { _explicitNullValueBalance = default!; _explicitNullProperties?.Remove("balance"); }
+            else if (parseNode.GetChildNode("balance") is { } nullNodeBalance && nullNodeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Balance = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("received") is null) { _explicitNullValueReceived = default!; _explicitNullProperties?.Remove("received"); }
+            else if (parseNode.GetChildNode("received") is { } nullNodeReceived && nullNodeReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Received = null;
+            if (parseNode.GetChildNode("reserved") is null) { _explicitNullValueReserved = default!; _explicitNullProperties?.Remove("reserved"); }
+            else if (parseNode.GetChildNode("reserved") is { } nullNodeReserved && nullNodeReserved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserved = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount in the payment&apos;s currency that is debited or credited on the balance accounting register.</summary>
-        public long? Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
+        public long? Balance { get => _explicitNullValueBalance; set { _explicitNullValueBalance = value; AdditionalData?.Remove("balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("balance"); else _explicitNullProperties?.Remove("balance"); } }
         private long? _explicitNullValueBalance = default!;
         /// <summary>The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>The amount in the payment&apos;s currency that is debited or credited on the received accounting register.</summary>
-        public long? Received { get => _explicitNullValueReceived; set { _explicitNullValueReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("received"); else _explicitNullProperties?.Remove("received"); } }
+        public long? Received { get => _explicitNullValueReceived; set { _explicitNullValueReceived = value; AdditionalData?.Remove("received"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("received"); else _explicitNullProperties?.Remove("received"); } }
         private long? _explicitNullValueReceived = default!;
         /// <summary>The amount in the payment&apos;s currency that is debited or credited on the reserved accounting register.</summary>
-        public long? Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
+        public long? Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; AdditionalData?.Remove("reserved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
         private long? _explicitNullValueReserved = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.BalanceMutation"/> and sets the default values.

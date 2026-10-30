@@ -17,12 +17,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
-            if (parseNode.GetChildNode("taxVerificationReference") is { } nullNodeTaxVerificationReference && nullNodeTaxVerificationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxVerificationReference = null;
-            if (parseNode.GetChildNode("verifiedShopperTaxIdentification") is { } nullNodeVerifiedShopperTaxIdentification && nullNodeVerifiedShopperTaxIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedShopperTaxIdentification = null;
-            if (parseNode.GetChildNode("verifiedShopperTaxIdentificationToken") is { } nullNodeVerifiedShopperTaxIdentificationToken && nullNodeVerifiedShopperTaxIdentificationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedShopperTaxIdentificationToken = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("reasonCode") is null) { _explicitNullValueReasonCode = default!; _explicitNullProperties?.Remove("reasonCode"); }
+            else if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("taxVerificationReference") is null) { _explicitNullValueTaxVerificationReference = default!; _explicitNullProperties?.Remove("taxVerificationReference"); }
+            else if (parseNode.GetChildNode("taxVerificationReference") is { } nullNodeTaxVerificationReference && nullNodeTaxVerificationReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxVerificationReference = null;
+            if (parseNode.GetChildNode("verifiedShopperTaxIdentification") is null) { _explicitNullValueVerifiedShopperTaxIdentification = default!; _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); }
+            else if (parseNode.GetChildNode("verifiedShopperTaxIdentification") is { } nullNodeVerifiedShopperTaxIdentification && nullNodeVerifiedShopperTaxIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedShopperTaxIdentification = null;
+            if (parseNode.GetChildNode("verifiedShopperTaxIdentificationToken") is null) { _explicitNullValueVerifiedShopperTaxIdentificationToken = default!; _explicitNullProperties?.Remove("verifiedShopperTaxIdentificationToken"); }
+            else if (parseNode.GetChildNode("verifiedShopperTaxIdentificationToken") is { } nullNodeVerifiedShopperTaxIdentificationToken && nullNodeVerifiedShopperTaxIdentificationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedShopperTaxIdentificationToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,54 +36,54 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The human-readable reason for the unsuccessful result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>The reason code for the unsuccessful result, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
+        public string? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; AdditionalData?.Remove("reasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
         private string? _explicitNullValueReasonCode = default!;
 #nullable restore
 #else
-        public string ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
+        public string ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; AdditionalData?.Remove("reasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
         private string _explicitNullValueReasonCode = default!;
 #endif
         /// <summary>The result property</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ResultValue? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ResultValue? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ResultValue? _explicitNullValueResult = default!;
         /// <summary>The unique reference for the verification attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxVerificationReference { get => _explicitNullValueTaxVerificationReference; set { _explicitNullValueTaxVerificationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxVerificationReference"); else _explicitNullProperties?.Remove("taxVerificationReference"); } }
+        public string? TaxVerificationReference { get => _explicitNullValueTaxVerificationReference; set { _explicitNullValueTaxVerificationReference = value; AdditionalData?.Remove("taxVerificationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxVerificationReference"); else _explicitNullProperties?.Remove("taxVerificationReference"); } }
         private string? _explicitNullValueTaxVerificationReference = default!;
 #nullable restore
 #else
-        public string TaxVerificationReference { get => _explicitNullValueTaxVerificationReference; set { _explicitNullValueTaxVerificationReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxVerificationReference"); else _explicitNullProperties?.Remove("taxVerificationReference"); } }
+        public string TaxVerificationReference { get => _explicitNullValueTaxVerificationReference; set { _explicitNullValueTaxVerificationReference = value; AdditionalData?.Remove("taxVerificationReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxVerificationReference"); else _explicitNullProperties?.Remove("taxVerificationReference"); } }
         private string _explicitNullValueTaxVerificationReference = default!;
 #endif
         /// <summary>The masked representation of the verified tax identification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification? VerifiedShopperTaxIdentification { get => _explicitNullValueVerifiedShopperTaxIdentification; set { _explicitNullValueVerifiedShopperTaxIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentification"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification? VerifiedShopperTaxIdentification { get => _explicitNullValueVerifiedShopperTaxIdentification; set { _explicitNullValueVerifiedShopperTaxIdentification = value; AdditionalData?.Remove("verifiedShopperTaxIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentification"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification? _explicitNullValueVerifiedShopperTaxIdentification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification VerifiedShopperTaxIdentification { get => _explicitNullValueVerifiedShopperTaxIdentification; set { _explicitNullValueVerifiedShopperTaxIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentification"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification VerifiedShopperTaxIdentification { get => _explicitNullValueVerifiedShopperTaxIdentification; set { _explicitNullValueVerifiedShopperTaxIdentification = value; AdditionalData?.Remove("verifiedShopperTaxIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentification"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification _explicitNullValueVerifiedShopperTaxIdentification = default!;
 #endif
         /// <summary>The opaque, encrypted, and signed token representing the successful verification. Required in /payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerifiedShopperTaxIdentificationToken { get => _explicitNullValueVerifiedShopperTaxIdentificationToken; set { _explicitNullValueVerifiedShopperTaxIdentificationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentificationToken"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentificationToken"); } }
+        public string? VerifiedShopperTaxIdentificationToken { get => _explicitNullValueVerifiedShopperTaxIdentificationToken; set { _explicitNullValueVerifiedShopperTaxIdentificationToken = value; AdditionalData?.Remove("verifiedShopperTaxIdentificationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentificationToken"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentificationToken"); } }
         private string? _explicitNullValueVerifiedShopperTaxIdentificationToken = default!;
 #nullable restore
 #else
-        public string VerifiedShopperTaxIdentificationToken { get => _explicitNullValueVerifiedShopperTaxIdentificationToken; set { _explicitNullValueVerifiedShopperTaxIdentificationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentificationToken"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentificationToken"); } }
+        public string VerifiedShopperTaxIdentificationToken { get => _explicitNullValueVerifiedShopperTaxIdentificationToken; set { _explicitNullValueVerifiedShopperTaxIdentificationToken = value; AdditionalData?.Remove("verifiedShopperTaxIdentificationToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifiedShopperTaxIdentificationToken"); else _explicitNullProperties?.Remove("verifiedShopperTaxIdentificationToken"); } }
         private string _explicitNullValueVerifiedShopperTaxIdentificationToken = default!;
 #endif
         /// <summary>
@@ -107,7 +113,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "reasonCode", n => { ReasonCode = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResultValue>(); } },
+                { "result", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ResultValue>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueResult = default; _explicitNullProperties?.Remove("result"); AdditionalData["result"] = unknown; } else { Result = parsed; AdditionalData.Remove("result"); } } },
                 { "taxVerificationReference", n => { TaxVerificationReference = n.GetStringValue(); } },
                 { "verifiedShopperTaxIdentification", n => { VerifiedShopperTaxIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.VerifyShopperTaxIdentificationResponseVerifiedShopperTaxIdentification.CreateFromDiscriminatorValue); } },
                 { "verifiedShopperTaxIdentificationToken", n => { VerifiedShopperTaxIdentificationToken = n.GetStringValue(); } },

@@ -18,12 +18,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("checkoutPayload") is { } nullNodeCheckoutPayload && nullNodeCheckoutPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutPayload = null;
-            if (parseNode.GetChildNode("correlationId") is { } nullNodeCorrelationId && nullNodeCorrelationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CorrelationId = null;
-            if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
-            if (parseNode.GetChildNode("digitalCardId") is { } nullNodeDigitalCardId && nullNodeDigitalCardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigitalCardId = null;
-            if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
-            if (parseNode.GetChildNode("tokenReference") is { } nullNodeTokenReference && nullNodeTokenReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenReference = null;
+            if (parseNode.GetChildNode("checkoutPayload") is null) { _explicitNullValueCheckoutPayload = default!; _explicitNullProperties?.Remove("checkoutPayload"); }
+            else if (parseNode.GetChildNode("checkoutPayload") is { } nullNodeCheckoutPayload && nullNodeCheckoutPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckoutPayload = null;
+            if (parseNode.GetChildNode("correlationId") is null) { _explicitNullValueCorrelationId = default!; _explicitNullProperties?.Remove("correlationId"); }
+            else if (parseNode.GetChildNode("correlationId") is { } nullNodeCorrelationId && nullNodeCorrelationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CorrelationId = null;
+            if (parseNode.GetChildNode("cvc") is null) { _explicitNullValueCvc = default!; _explicitNullProperties?.Remove("cvc"); }
+            else if (parseNode.GetChildNode("cvc") is { } nullNodeCvc && nullNodeCvc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cvc = null;
+            if (parseNode.GetChildNode("digitalCardId") is null) { _explicitNullValueDigitalCardId = default!; _explicitNullProperties?.Remove("digitalCardId"); }
+            else if (parseNode.GetChildNode("digitalCardId") is { } nullNodeDigitalCardId && nullNodeDigitalCardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigitalCardId = null;
+            if (parseNode.GetChildNode("scheme") is null) { _explicitNullValueScheme = default!; _explicitNullProperties?.Remove("scheme"); }
+            else if (parseNode.GetChildNode("scheme") is { } nullNodeScheme && nullNodeScheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scheme = null;
+            if (parseNode.GetChildNode("tokenReference") is null) { _explicitNullValueTokenReference = default!; _explicitNullProperties?.Remove("tokenReference"); }
+            else if (parseNode.GetChildNode("tokenReference") is { } nullNodeTokenReference && nullNodeTokenReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenReference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The Secure Remote Commerce checkout payload to process the payment with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckoutPayload { get => _explicitNullValueCheckoutPayload; set { _explicitNullValueCheckoutPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutPayload"); else _explicitNullProperties?.Remove("checkoutPayload"); } }
+        public string? CheckoutPayload { get => _explicitNullValueCheckoutPayload; set { _explicitNullValueCheckoutPayload = value; AdditionalData?.Remove("checkoutPayload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutPayload"); else _explicitNullProperties?.Remove("checkoutPayload"); } }
         private string? _explicitNullValueCheckoutPayload = default!;
 #nullable restore
 #else
-        public string CheckoutPayload { get => _explicitNullValueCheckoutPayload; set { _explicitNullValueCheckoutPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutPayload"); else _explicitNullProperties?.Remove("checkoutPayload"); } }
+        public string CheckoutPayload { get => _explicitNullValueCheckoutPayload; set { _explicitNullValueCheckoutPayload = value; AdditionalData?.Remove("checkoutPayload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkoutPayload"); else _explicitNullProperties?.Remove("checkoutPayload"); } }
         private string _explicitNullValueCheckoutPayload = default!;
 #endif
         /// <summary>This is the unique identifier generated by SRC system to track and link SRC messages. Available within the present checkout session (e.g. received in an earlier API response during the present session).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId { get => _explicitNullValueCorrelationId; set { _explicitNullValueCorrelationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("correlationId"); else _explicitNullProperties?.Remove("correlationId"); } }
+        public string? CorrelationId { get => _explicitNullValueCorrelationId; set { _explicitNullValueCorrelationId = value; AdditionalData?.Remove("correlationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("correlationId"); else _explicitNullProperties?.Remove("correlationId"); } }
         private string? _explicitNullValueCorrelationId = default!;
 #nullable restore
 #else
-        public string CorrelationId { get => _explicitNullValueCorrelationId; set { _explicitNullValueCorrelationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("correlationId"); else _explicitNullProperties?.Remove("correlationId"); } }
+        public string CorrelationId { get => _explicitNullValueCorrelationId; set { _explicitNullValueCorrelationId = value; AdditionalData?.Remove("correlationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("correlationId"); else _explicitNullProperties?.Remove("correlationId"); } }
         private string _explicitNullValueCorrelationId = default!;
 #endif
         /// <summary>The [card verification code](https://docs.adyen.com/get-started-with-adyen/payment-glossary/#card-security-code-cvc-cvv-cid).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        public string? Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; AdditionalData?.Remove("cvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
         private string? _explicitNullValueCvc = default!;
 #nullable restore
 #else
-        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
+        public string Cvc { get => _explicitNullValueCvc; set { _explicitNullValueCvc = value; AdditionalData?.Remove("cvc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cvc"); else _explicitNullProperties?.Remove("cvc"); } }
         private string _explicitNullValueCvc = default!;
 #endif
         /// <summary>A unique identifier that represents the token associated with a card enrolled. Required for scheme &apos;mc&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DigitalCardId { get => _explicitNullValueDigitalCardId; set { _explicitNullValueDigitalCardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digitalCardId"); else _explicitNullProperties?.Remove("digitalCardId"); } }
+        public string? DigitalCardId { get => _explicitNullValueDigitalCardId; set { _explicitNullValueDigitalCardId = value; AdditionalData?.Remove("digitalCardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digitalCardId"); else _explicitNullProperties?.Remove("digitalCardId"); } }
         private string? _explicitNullValueDigitalCardId = default!;
 #nullable restore
 #else
-        public string DigitalCardId { get => _explicitNullValueDigitalCardId; set { _explicitNullValueDigitalCardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digitalCardId"); else _explicitNullProperties?.Remove("digitalCardId"); } }
+        public string DigitalCardId { get => _explicitNullValueDigitalCardId; set { _explicitNullValueDigitalCardId = value; AdditionalData?.Remove("digitalCardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digitalCardId"); else _explicitNullProperties?.Remove("digitalCardId"); } }
         private string _explicitNullValueDigitalCardId = default!;
 #endif
         /// <summary>The Secure Remote Commerce scheme.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme? Scheme { get => _explicitNullValueScheme; set { _explicitNullValueScheme = value; AdditionalData?.Remove("scheme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheme"); else _explicitNullProperties?.Remove("scheme"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme? _explicitNullValueScheme = default!;
         /// <summary>A unique identifier that represents the token associated with a card enrolled. Required for scheme &apos;visa&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenReference { get => _explicitNullValueTokenReference; set { _explicitNullValueTokenReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenReference"); else _explicitNullProperties?.Remove("tokenReference"); } }
+        public string? TokenReference { get => _explicitNullValueTokenReference; set { _explicitNullValueTokenReference = value; AdditionalData?.Remove("tokenReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenReference"); else _explicitNullProperties?.Remove("tokenReference"); } }
         private string? _explicitNullValueTokenReference = default!;
 #nullable restore
 #else
-        public string TokenReference { get => _explicitNullValueTokenReference; set { _explicitNullValueTokenReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenReference"); else _explicitNullProperties?.Remove("tokenReference"); } }
+        public string TokenReference { get => _explicitNullValueTokenReference; set { _explicitNullValueTokenReference = value; AdditionalData?.Remove("tokenReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokenReference"); else _explicitNullProperties?.Remove("tokenReference"); } }
         private string _explicitNullValueTokenReference = default!;
 #endif
         /// <summary>
@@ -110,7 +116,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "cvc", n => { Cvc = n.GetStringValue(); } },
                 { "digitalCardId", n => { DigitalCardId = n.GetStringValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme>(); } },
+                { "scheme", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.SecureRemoteCommerceCheckoutDataScheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheme = default; _explicitNullProperties?.Remove("scheme"); AdditionalData["scheme"] = unknown; } else { Scheme = parsed; AdditionalData.Remove("scheme"); } } },
                 { "tokenReference", n => { TokenReference = n.GetStringValue(); } },
             };
         }

@@ -17,11 +17,16 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("partnerId") is { } nullNodePartnerId && nullNodePartnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerId = null;
-            if (parseNode.GetChildNode("profileReference") is { } nullNodeProfileReference && nullNodeProfileReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileReference = null;
-            if (parseNode.GetChildNode("restriction") is { } nullNodeRestriction && nullNodeRestriction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restriction = null;
-            if (parseNode.GetChildNode("resultKey") is { } nullNodeResultKey && nullNodeResultKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultKey = null;
-            if (parseNode.GetChildNode("validTillDate") is { } nullNodeValidTillDate && nullNodeValidTillDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTillDate = null;
+            if (parseNode.GetChildNode("partnerId") is null) { _explicitNullValuePartnerId = default!; _explicitNullProperties?.Remove("partnerId"); }
+            else if (parseNode.GetChildNode("partnerId") is { } nullNodePartnerId && nullNodePartnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnerId = null;
+            if (parseNode.GetChildNode("profileReference") is null) { _explicitNullValueProfileReference = default!; _explicitNullProperties?.Remove("profileReference"); }
+            else if (parseNode.GetChildNode("profileReference") is { } nullNodeProfileReference && nullNodeProfileReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileReference = null;
+            if (parseNode.GetChildNode("restriction") is null) { _explicitNullValueRestriction = default!; _explicitNullProperties?.Remove("restriction"); }
+            else if (parseNode.GetChildNode("restriction") is { } nullNodeRestriction && nullNodeRestriction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restriction = null;
+            if (parseNode.GetChildNode("resultKey") is null) { _explicitNullValueResultKey = default!; _explicitNullProperties?.Remove("resultKey"); }
+            else if (parseNode.GetChildNode("resultKey") is { } nullNodeResultKey && nullNodeResultKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultKey = null;
+            if (parseNode.GetChildNode("validTillDate") is null) { _explicitNullValueValidTillDate = default!; _explicitNullProperties?.Remove("validTillDate"); }
+            else if (parseNode.GetChildNode("validTillDate") is { } nullNodeValidTillDate && nullNodeValidTillDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidTillDate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Partner ID (when using the permit-per-partner token sharing model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerId { get => _explicitNullValuePartnerId; set { _explicitNullValuePartnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerId"); else _explicitNullProperties?.Remove("partnerId"); } }
+        public string? PartnerId { get => _explicitNullValuePartnerId; set { _explicitNullValuePartnerId = value; AdditionalData?.Remove("partnerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerId"); else _explicitNullProperties?.Remove("partnerId"); } }
         private string? _explicitNullValuePartnerId = default!;
 #nullable restore
 #else
-        public string PartnerId { get => _explicitNullValuePartnerId; set { _explicitNullValuePartnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerId"); else _explicitNullProperties?.Remove("partnerId"); } }
+        public string PartnerId { get => _explicitNullValuePartnerId; set { _explicitNullValuePartnerId = value; AdditionalData?.Remove("partnerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnerId"); else _explicitNullProperties?.Remove("partnerId"); } }
         private string _explicitNullValuePartnerId = default!;
 #endif
         /// <summary>The profile to apply to this permit (when using the shared permits model).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
+        public string? ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; AdditionalData?.Remove("profileReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
         private string? _explicitNullValueProfileReference = default!;
 #nullable restore
 #else
-        public string ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
+        public string ProfileReference { get => _explicitNullValueProfileReference; set { _explicitNullValueProfileReference = value; AdditionalData?.Remove("profileReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileReference"); else _explicitNullProperties?.Remove("profileReference"); } }
         private string _explicitNullValueProfileReference = default!;
 #endif
         /// <summary>Permit level restriction overrides.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed? Restriction { get => _explicitNullValueRestriction; set { _explicitNullValueRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restriction"); else _explicitNullProperties?.Remove("restriction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed? Restriction { get => _explicitNullValueRestriction; set { _explicitNullValueRestriction = value; AdditionalData?.Remove("restriction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restriction"); else _explicitNullProperties?.Remove("restriction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed? _explicitNullValueRestriction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed Restriction { get => _explicitNullValueRestriction; set { _explicitNullValueRestriction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restriction"); else _explicitNullProperties?.Remove("restriction"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed Restriction { get => _explicitNullValueRestriction; set { _explicitNullValueRestriction = value; AdditionalData?.Remove("restriction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restriction"); else _explicitNullProperties?.Remove("restriction"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PermitRestrictionComposed _explicitNullValueRestriction = default!;
 #endif
         /// <summary>The key to link permit requests to permit results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultKey { get => _explicitNullValueResultKey; set { _explicitNullValueResultKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultKey"); else _explicitNullProperties?.Remove("resultKey"); } }
+        public string? ResultKey { get => _explicitNullValueResultKey; set { _explicitNullValueResultKey = value; AdditionalData?.Remove("resultKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultKey"); else _explicitNullProperties?.Remove("resultKey"); } }
         private string? _explicitNullValueResultKey = default!;
 #nullable restore
 #else
-        public string ResultKey { get => _explicitNullValueResultKey; set { _explicitNullValueResultKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultKey"); else _explicitNullProperties?.Remove("resultKey"); } }
+        public string ResultKey { get => _explicitNullValueResultKey; set { _explicitNullValueResultKey = value; AdditionalData?.Remove("resultKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultKey"); else _explicitNullProperties?.Remove("resultKey"); } }
         private string _explicitNullValueResultKey = default!;
 #endif
         /// <summary>The expiry date for this permit.</summary>
-        public DateTimeOffset? ValidTillDate { get => _explicitNullValueValidTillDate; set { _explicitNullValueValidTillDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validTillDate"); else _explicitNullProperties?.Remove("validTillDate"); } }
+        public DateTimeOffset? ValidTillDate { get => _explicitNullValueValidTillDate; set { _explicitNullValueValidTillDate = value; AdditionalData?.Remove("validTillDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validTillDate"); else _explicitNullProperties?.Remove("validTillDate"); } }
         private DateTimeOffset? _explicitNullValueValidTillDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.Permit"/> and sets the default values.

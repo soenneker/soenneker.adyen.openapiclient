@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("includeIssuerId") is { } nullNodeIncludeIssuerId && nullNodeIncludeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeIssuerId = null;
-            if (parseNode.GetChildNode("includeTransToken") is { } nullNodeIncludeTransToken && nullNodeIncludeTransToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeTransToken = null;
+            if (parseNode.GetChildNode("includeIssuerId") is null) { _explicitNullValueIncludeIssuerId = default!; _explicitNullProperties?.Remove("includeIssuerId"); }
+            else if (parseNode.GetChildNode("includeIssuerId") is { } nullNodeIncludeIssuerId && nullNodeIncludeIssuerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeIssuerId = null;
+            if (parseNode.GetChildNode("includeTransToken") is null) { _explicitNullValueIncludeTransToken = default!; _explicitNullProperties?.Remove("includeTransToken"); }
+            else if (parseNode.GetChildNode("includeTransToken") is { } nullNodeIncludeTransToken && nullNodeIncludeTransToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeTransToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set to true, includes the OPI issuer ID in the response.</summary>
-        public bool? IncludeIssuerId { get => _explicitNullValueIncludeIssuerId; set { _explicitNullValueIncludeIssuerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeIssuerId"); else _explicitNullProperties?.Remove("includeIssuerId"); } }
+        public bool? IncludeIssuerId { get => _explicitNullValueIncludeIssuerId; set { _explicitNullValueIncludeIssuerId = value; AdditionalData?.Remove("includeIssuerId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeIssuerId"); else _explicitNullProperties?.Remove("includeIssuerId"); } }
         private bool? _explicitNullValueIncludeIssuerId = default!;
         /// <summary>When set to true, includes an OPI transaction token in the response when the payment creates a stored payment method.</summary>
-        public bool? IncludeTransToken { get => _explicitNullValueIncludeTransToken; set { _explicitNullValueIncludeTransToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTransToken"); else _explicitNullProperties?.Remove("includeTransToken"); } }
+        public bool? IncludeTransToken { get => _explicitNullValueIncludeTransToken; set { _explicitNullValueIncludeTransToken = value; AdditionalData?.Remove("includeTransToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includeTransToken"); else _explicitNullProperties?.Remove("includeTransToken"); } }
         private bool? _explicitNullValueIncludeTransToken = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.StoredPaymentMethodRequestOpi"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TotalsGroupID") is { } nullNodeTotalsGroupID && nullNodeTotalsGroupID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalsGroupID = null;
+            if (parseNode.GetChildNode("TotalsGroupID") is null) { _explicitNullValueTotalsGroupID = default!; _explicitNullProperties?.Remove("TotalsGroupID"); }
+            else if (parseNode.GetChildNode("TotalsGroupID") is { } nullNodeTotalsGroupID && nullNodeTotalsGroupID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalsGroupID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Identification of a group of transactions on a POI Terminal, having the same Sale features.Could be used to group POI for reconciliation or other purpose defined by the Sale System. The default value is assigned by the Login Request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
+        public string? TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; AdditionalData?.Remove("TotalsGroupID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
         private string? _explicitNullValueTotalsGroupID = default!;
 #nullable restore
 #else
-        public string TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
+        public string TotalsGroupID { get => _explicitNullValueTotalsGroupID; set { _explicitNullValueTotalsGroupID = value; AdditionalData?.Remove("TotalsGroupID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TotalsGroupID"); else _explicitNullProperties?.Remove("TotalsGroupID"); } }
         private string _explicitNullValueTotalsGroupID = default!;
 #endif
         /// <summary>

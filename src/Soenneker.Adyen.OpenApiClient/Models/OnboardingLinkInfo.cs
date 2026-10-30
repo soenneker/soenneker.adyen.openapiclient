@@ -17,10 +17,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
-            if (parseNode.GetChildNode("redirectUrl") is { } nullNodeRedirectUrl && nullNodeRedirectUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUrl = null;
-            if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
-            if (parseNode.GetChildNode("themeId") is { } nullNodeThemeId && nullNodeThemeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThemeId = null;
+            if (parseNode.GetChildNode("locale") is null) { _explicitNullValueLocale = default!; _explicitNullProperties?.Remove("locale"); }
+            else if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
+            if (parseNode.GetChildNode("redirectUrl") is null) { _explicitNullValueRedirectUrl = default!; _explicitNullProperties?.Remove("redirectUrl"); }
+            else if (parseNode.GetChildNode("redirectUrl") is { } nullNodeRedirectUrl && nullNodeRedirectUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedirectUrl = null;
+            if (parseNode.GetChildNode("settings") is null) { _explicitNullValueSettings = default!; _explicitNullProperties?.Remove("settings"); }
+            else if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
+            if (parseNode.GetChildNode("themeId") is null) { _explicitNullValueThemeId = default!; _explicitNullProperties?.Remove("themeId"); }
+            else if (parseNode.GetChildNode("themeId") is { } nullNodeThemeId && nullNodeThemeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThemeId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The language that will be used for the page, specified by a combination of two letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language and [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. See possible valuesfor [marketplaces](https://docs.adyen.com/marketplaces/onboard-users/hosted#supported-languages) or [platforms](https://docs.adyen.com/platforms/onboard-users/hosted#supported-languages). If not specified in the request or if the language is not supported, the page uses the browser language. If the browser language is not supported, the page uses **en-US** by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        public string? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
         private string? _explicitNullValueLocale = default!;
 #nullable restore
 #else
-        public string Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        public string Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
         private string _explicitNullValueLocale = default!;
 #endif
         /// <summary>The URL where the user is redirected after they complete hosted onboarding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
+        public string? RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; AdditionalData?.Remove("redirectUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
         private string? _explicitNullValueRedirectUrl = default!;
 #nullable restore
 #else
-        public string RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
+        public string RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; AdditionalData?.Remove("redirectUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
         private string _explicitNullValueRedirectUrl = default!;
 #endif
         /// <summary>Key-value pairs indicating the settings for the hosted onboarding page. The key represents a specific setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingLinkInfoSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingLinkInfoSettings? Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OnboardingLinkInfoSettings? _explicitNullValueSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingLinkInfoSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.OnboardingLinkInfoSettings Settings { get => _explicitNullValueSettings; set { _explicitNullValueSettings = value; AdditionalData?.Remove("settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("settings"); else _explicitNullProperties?.Remove("settings"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.OnboardingLinkInfoSettings _explicitNullValueSettings = default!;
 #endif
         /// <summary>The unique identifier of the hosted onboarding theme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThemeId { get => _explicitNullValueThemeId; set { _explicitNullValueThemeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themeId"); else _explicitNullProperties?.Remove("themeId"); } }
+        public string? ThemeId { get => _explicitNullValueThemeId; set { _explicitNullValueThemeId = value; AdditionalData?.Remove("themeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themeId"); else _explicitNullProperties?.Remove("themeId"); } }
         private string? _explicitNullValueThemeId = default!;
 #nullable restore
 #else
-        public string ThemeId { get => _explicitNullValueThemeId; set { _explicitNullValueThemeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themeId"); else _explicitNullProperties?.Remove("themeId"); } }
+        public string ThemeId { get => _explicitNullValueThemeId; set { _explicitNullValueThemeId = value; AdditionalData?.Remove("themeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("themeId"); else _explicitNullProperties?.Remove("themeId"); } }
         private string _explicitNullValueThemeId = default!;
 #endif
         /// <summary>

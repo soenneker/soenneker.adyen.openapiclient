@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
-            if (parseNode.GetChildNode("subscriptionCancelUrl") is { } nullNodeSubscriptionCancelUrl && nullNodeSubscriptionCancelUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionCancelUrl = null;
+            if (parseNode.GetChildNode("logo") is null) { _explicitNullValueLogo = default!; _explicitNullProperties?.Remove("logo"); }
+            else if (parseNode.GetChildNode("logo") is { } nullNodeLogo && nullNodeLogo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logo = null;
+            if (parseNode.GetChildNode("subscriptionCancelUrl") is null) { _explicitNullValueSubscriptionCancelUrl = default!; _explicitNullProperties?.Remove("subscriptionCancelUrl"); }
+            else if (parseNode.GetChildNode("subscriptionCancelUrl") is { } nullNodeSubscriptionCancelUrl && nullNodeSubscriptionCancelUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionCancelUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Vipps logo. Format: Base64-encoded string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string? Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string? _explicitNullValueLogo = default!;
 #nullable restore
 #else
-        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
+        public string Logo { get => _explicitNullValueLogo; set { _explicitNullValueLogo = value; AdditionalData?.Remove("logo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logo"); else _explicitNullProperties?.Remove("logo"); } }
         private string _explicitNullValueLogo = default!;
 #endif
         /// <summary>Vipps subscription cancel url (required in case of [recurring payments](https://docs.adyen.com/online-payments/tokenization))</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionCancelUrl { get => _explicitNullValueSubscriptionCancelUrl; set { _explicitNullValueSubscriptionCancelUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionCancelUrl"); else _explicitNullProperties?.Remove("subscriptionCancelUrl"); } }
+        public string? SubscriptionCancelUrl { get => _explicitNullValueSubscriptionCancelUrl; set { _explicitNullValueSubscriptionCancelUrl = value; AdditionalData?.Remove("subscriptionCancelUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionCancelUrl"); else _explicitNullProperties?.Remove("subscriptionCancelUrl"); } }
         private string? _explicitNullValueSubscriptionCancelUrl = default!;
 #nullable restore
 #else
-        public string SubscriptionCancelUrl { get => _explicitNullValueSubscriptionCancelUrl; set { _explicitNullValueSubscriptionCancelUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionCancelUrl"); else _explicitNullProperties?.Remove("subscriptionCancelUrl"); } }
+        public string SubscriptionCancelUrl { get => _explicitNullValueSubscriptionCancelUrl; set { _explicitNullValueSubscriptionCancelUrl = value; AdditionalData?.Remove("subscriptionCancelUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionCancelUrl"); else _explicitNullProperties?.Remove("subscriptionCancelUrl"); } }
         private string _explicitNullValueSubscriptionCancelUrl = default!;
 #endif
         /// <summary>

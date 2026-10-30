@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("displayName") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
-            if (parseNode.GetChildNode("domainName") is { } nullNodeDomainName && nullNodeDomainName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainName = null;
-            if (parseNode.GetChildNode("merchantIdentifier") is { } nullNodeMerchantIdentifier && nullNodeMerchantIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantIdentifier = null;
+            if (parseNode.GetChildNode("displayName") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("displayName"); }
+            else if (parseNode.GetChildNode("displayName") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("domainName") is null) { _explicitNullValueDomainName = default!; _explicitNullProperties?.Remove("domainName"); }
+            else if (parseNode.GetChildNode("domainName") is { } nullNodeDomainName && nullNodeDomainName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainName = null;
+            if (parseNode.GetChildNode("merchantIdentifier") is null) { _explicitNullValueMerchantIdentifier = default!; _explicitNullProperties?.Remove("merchantIdentifier"); }
+            else if (parseNode.GetChildNode("merchantIdentifier") is { } nullNodeMerchantIdentifier && nullNodeMerchantIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantIdentifier = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>This is the name that your shoppers will see in the Apple Pay interface.The value returned as `configuration.merchantName` field from the [`/paymentMethods`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/paymentMethods) response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayName"); else _explicitNullProperties?.Remove("displayName"); } }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("displayName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayName"); else _explicitNullProperties?.Remove("displayName"); } }
         private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayName"); else _explicitNullProperties?.Remove("displayName"); } }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("displayName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayName"); else _explicitNullProperties?.Remove("displayName"); } }
         private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>The domain name you provided when you added Apple Pay in your Customer Area.This must match the `window.location.hostname` of the web shop.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainName"); else _explicitNullProperties?.Remove("domainName"); } }
+        public string? DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; AdditionalData?.Remove("domainName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainName"); else _explicitNullProperties?.Remove("domainName"); } }
         private string? _explicitNullValueDomainName = default!;
 #nullable restore
 #else
-        public string DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainName"); else _explicitNullProperties?.Remove("domainName"); } }
+        public string DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; AdditionalData?.Remove("domainName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainName"); else _explicitNullProperties?.Remove("domainName"); } }
         private string _explicitNullValueDomainName = default!;
 #endif
         /// <summary>Your merchant identifier registered with Apple Pay.Use the value of the `configuration.merchantId` field from the [`/paymentMethods`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/paymentMethods) response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantIdentifier { get => _explicitNullValueMerchantIdentifier; set { _explicitNullValueMerchantIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIdentifier"); else _explicitNullProperties?.Remove("merchantIdentifier"); } }
+        public string? MerchantIdentifier { get => _explicitNullValueMerchantIdentifier; set { _explicitNullValueMerchantIdentifier = value; AdditionalData?.Remove("merchantIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIdentifier"); else _explicitNullProperties?.Remove("merchantIdentifier"); } }
         private string? _explicitNullValueMerchantIdentifier = default!;
 #nullable restore
 #else
-        public string MerchantIdentifier { get => _explicitNullValueMerchantIdentifier; set { _explicitNullValueMerchantIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIdentifier"); else _explicitNullProperties?.Remove("merchantIdentifier"); } }
+        public string MerchantIdentifier { get => _explicitNullValueMerchantIdentifier; set { _explicitNullValueMerchantIdentifier = value; AdditionalData?.Remove("merchantIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantIdentifier"); else _explicitNullProperties?.Remove("merchantIdentifier"); } }
         private string _explicitNullValueMerchantIdentifier = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
-            if (parseNode.GetChildNode("enableGratuities") is { } nullNodeEnableGratuities && nullNodeEnableGratuities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableGratuities = null;
-            if (parseNode.GetChildNode("enableStandalone") is { } nullNodeEnableStandalone && nullNodeEnableStandalone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStandalone = null;
+            if (parseNode.GetChildNode("currencyCode") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currencyCode"); }
+            else if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("enableGratuities") is null) { _explicitNullValueEnableGratuities = default!; _explicitNullProperties?.Remove("enableGratuities"); }
+            else if (parseNode.GetChildNode("enableGratuities") is { } nullNodeEnableGratuities && nullNodeEnableGratuities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableGratuities = null;
+            if (parseNode.GetChildNode("enableStandalone") is null) { _explicitNullValueEnableStandalone = default!; _explicitNullProperties?.Remove("enableStandalone"); }
+            else if (parseNode.GetChildNode("enableStandalone") is { } nullNodeEnableStandalone && nullNodeEnableStandalone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStandalone = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The default currency of the standalone payment terminal as an [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
         private string? _explicitNullValueCurrencyCode = default!;
 #nullable restore
 #else
-        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
         private string _explicitNullValueCurrencyCode = default!;
 #endif
         /// <summary>Indicates whether the tipping options specified in `gratuities` are enabled on the standalone terminal.</summary>
-        public bool? EnableGratuities { get => _explicitNullValueEnableGratuities; set { _explicitNullValueEnableGratuities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableGratuities"); else _explicitNullProperties?.Remove("enableGratuities"); } }
+        public bool? EnableGratuities { get => _explicitNullValueEnableGratuities; set { _explicitNullValueEnableGratuities = value; AdditionalData?.Remove("enableGratuities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableGratuities"); else _explicitNullProperties?.Remove("enableGratuities"); } }
         private bool? _explicitNullValueEnableGratuities = default!;
         /// <summary>Enable standalone mode.</summary>
-        public bool? EnableStandalone { get => _explicitNullValueEnableStandalone; set { _explicitNullValueEnableStandalone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableStandalone"); else _explicitNullProperties?.Remove("enableStandalone"); } }
+        public bool? EnableStandalone { get => _explicitNullValueEnableStandalone; set { _explicitNullValueEnableStandalone = value; AdditionalData?.Remove("enableStandalone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableStandalone"); else _explicitNullProperties?.Remove("enableStandalone"); } }
         private bool? _explicitNullValueEnableStandalone = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TerminalSettingsStandaloneMember1"/> and sets the default values.

@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
-            if (parseNode.GetChildNode("payToPurpose") is { } nullNodePayToPurpose && nullNodePayToPurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayToPurpose = null;
+            if (parseNode.GetChildNode("merchantName") is null) { _explicitNullValueMerchantName = default!; _explicitNullProperties?.Remove("merchantName"); }
+            else if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("payToPurpose") is null) { _explicitNullValuePayToPurpose = default!; _explicitNullProperties?.Remove("payToPurpose"); }
+            else if (parseNode.GetChildNode("payToPurpose") is { } nullNodePayToPurpose && nullNodePayToPurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayToPurpose = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Merchant name displayed to the shopper in the Agreements</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchantName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
         private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchantName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
         private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>Represents the purpose of the Agreements created, it relates to the business type**Allowed values**: mortgage, utility, loan, gambling, retail, salary, personal, government, pension, tax, other</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayToPurpose { get => _explicitNullValuePayToPurpose; set { _explicitNullValuePayToPurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payToPurpose"); else _explicitNullProperties?.Remove("payToPurpose"); } }
+        public string? PayToPurpose { get => _explicitNullValuePayToPurpose; set { _explicitNullValuePayToPurpose = value; AdditionalData?.Remove("payToPurpose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payToPurpose"); else _explicitNullProperties?.Remove("payToPurpose"); } }
         private string? _explicitNullValuePayToPurpose = default!;
 #nullable restore
 #else
-        public string PayToPurpose { get => _explicitNullValuePayToPurpose; set { _explicitNullValuePayToPurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payToPurpose"); else _explicitNullProperties?.Remove("payToPurpose"); } }
+        public string PayToPurpose { get => _explicitNullValuePayToPurpose; set { _explicitNullValuePayToPurpose = value; AdditionalData?.Remove("payToPurpose"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payToPurpose"); else _explicitNullProperties?.Remove("payToPurpose"); } }
         private string _explicitNullValuePayToPurpose = default!;
 #endif
         /// <summary>

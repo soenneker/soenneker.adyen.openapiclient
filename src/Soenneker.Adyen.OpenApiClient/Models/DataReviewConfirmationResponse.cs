@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dataReviewedAt") is { } nullNodeDataReviewedAt && nullNodeDataReviewedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataReviewedAt = null;
+            if (parseNode.GetChildNode("dataReviewedAt") is null) { _explicitNullValueDataReviewedAt = default!; _explicitNullProperties?.Remove("dataReviewedAt"); }
+            else if (parseNode.GetChildNode("dataReviewedAt") is { } nullNodeDataReviewedAt && nullNodeDataReviewedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataReviewedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Date when data review was confirmed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataReviewedAt { get => _explicitNullValueDataReviewedAt; set { _explicitNullValueDataReviewedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataReviewedAt"); else _explicitNullProperties?.Remove("dataReviewedAt"); } }
+        public string? DataReviewedAt { get => _explicitNullValueDataReviewedAt; set { _explicitNullValueDataReviewedAt = value; AdditionalData?.Remove("dataReviewedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataReviewedAt"); else _explicitNullProperties?.Remove("dataReviewedAt"); } }
         private string? _explicitNullValueDataReviewedAt = default!;
 #nullable restore
 #else
-        public string DataReviewedAt { get => _explicitNullValueDataReviewedAt; set { _explicitNullValueDataReviewedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataReviewedAt"); else _explicitNullProperties?.Remove("dataReviewedAt"); } }
+        public string DataReviewedAt { get => _explicitNullValueDataReviewedAt; set { _explicitNullValueDataReviewedAt = value; AdditionalData?.Remove("dataReviewedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataReviewedAt"); else _explicitNullProperties?.Remove("dataReviewedAt"); } }
         private string _explicitNullValueDataReviewedAt = default!;
 #endif
         /// <summary>

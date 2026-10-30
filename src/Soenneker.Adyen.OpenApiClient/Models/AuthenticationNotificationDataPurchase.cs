@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
-            if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
-            if (parseNode.GetChildNode("originalAmount") is { } nullNodeOriginalAmount && nullNodeOriginalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalAmount = null;
+            if (parseNode.GetChildNode("date") is null) { _explicitNullValueDate = default!; _explicitNullProperties?.Remove("date"); }
+            else if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("merchantName") is null) { _explicitNullValueMerchantName = default!; _explicitNullProperties?.Remove("merchantName"); }
+            else if (parseNode.GetChildNode("merchantName") is { } nullNodeMerchantName && nullNodeMerchantName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MerchantName = null;
+            if (parseNode.GetChildNode("originalAmount") is null) { _explicitNullValueOriginalAmount = default!; _explicitNullProperties?.Remove("originalAmount"); }
+            else if (parseNode.GetChildNode("originalAmount") is { } nullNodeOriginalAmount && nullNodeOriginalAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalAmount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The date of the purchase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        public string? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
         private string? _explicitNullValueDate = default!;
 #nullable restore
 #else
-        public string Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        public string Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
         private string _explicitNullValueDate = default!;
 #endif
         /// <summary>The name of the business that the cardholder purchased from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        public string? MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchantName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
         private string? _explicitNullValueMerchantName = default!;
 #nullable restore
 #else
-        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
+        public string MerchantName { get => _explicitNullValueMerchantName; set { _explicitNullValueMerchantName = value; AdditionalData?.Remove("merchantName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merchantName"); else _explicitNullProperties?.Remove("merchantName"); } }
         private string _explicitNullValueMerchantName = default!;
 #endif
         /// <summary>The amount of the purchase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PurchaseInfoOriginalAmount? OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PurchaseInfoOriginalAmount? OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; AdditionalData?.Remove("originalAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PurchaseInfoOriginalAmount? _explicitNullValueOriginalAmount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PurchaseInfoOriginalAmount OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PurchaseInfoOriginalAmount OriginalAmount { get => _explicitNullValueOriginalAmount; set { _explicitNullValueOriginalAmount = value; AdditionalData?.Remove("originalAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalAmount"); else _explicitNullProperties?.Remove("originalAmount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PurchaseInfoOriginalAmount _explicitNullValueOriginalAmount = default!;
 #endif
         /// <summary>

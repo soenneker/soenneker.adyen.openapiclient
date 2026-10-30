@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authorisationMid") is { } nullNodeAuthorisationMid && nullNodeAuthorisationMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationMid = null;
-            if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("authorisationMid") is null) { _explicitNullValueAuthorisationMid = default!; _explicitNullProperties?.Remove("authorisationMid"); }
+            else if (parseNode.GetChildNode("authorisationMid") is { } nullNodeAuthorisationMid && nullNodeAuthorisationMid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorisationMid = null;
+            if (parseNode.GetChildNode("currencyCode") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currencyCode"); }
+            else if (parseNode.GetChildNode("currencyCode") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The merchant ID (MID) that the acquirer recognizes you by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
+        public string? AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; AdditionalData?.Remove("authorisationMid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
         private string? _explicitNullValueAuthorisationMid = default!;
 #nullable restore
 #else
-        public string AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
+        public string AuthorisationMid { get => _explicitNullValueAuthorisationMid; set { _explicitNullValueAuthorisationMid = value; AdditionalData?.Remove("authorisationMid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorisationMid"); else _explicitNullProperties?.Remove("authorisationMid"); } }
         private string _explicitNullValueAuthorisationMid = default!;
 #endif
         /// <summary>The three-character ISO currency code, example **USD**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        public string? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
         private string? _explicitNullValueCurrencyCode = default!;
 #nullable restore
 #else
-        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
+        public string CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currencyCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencyCode"); else _explicitNullProperties?.Remove("currencyCode"); } }
         private string _explicitNullValueCurrencyCode = default!;
 #endif
         /// <summary>

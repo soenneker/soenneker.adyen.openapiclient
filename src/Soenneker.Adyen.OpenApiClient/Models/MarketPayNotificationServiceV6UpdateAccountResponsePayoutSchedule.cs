@@ -18,17 +18,19 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nextScheduledPayout") is { } nullNodeNextScheduledPayout && nullNodeNextScheduledPayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextScheduledPayout = null;
-            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("nextScheduledPayout") is null) { _explicitNullValueNextScheduledPayout = default!; _explicitNullProperties?.Remove("nextScheduledPayout"); }
+            else if (parseNode.GetChildNode("nextScheduledPayout") is { } nullNodeNextScheduledPayout && nullNodeNextScheduledPayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextScheduledPayout = null;
+            if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
+            else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date of the next scheduled payout.</summary>
-        public DateTimeOffset? NextScheduledPayout { get => _explicitNullValueNextScheduledPayout; set { _explicitNullValueNextScheduledPayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextScheduledPayout"); else _explicitNullProperties?.Remove("nextScheduledPayout"); } }
+        public DateTimeOffset? NextScheduledPayout { get => _explicitNullValueNextScheduledPayout; set { _explicitNullValueNextScheduledPayout = value; AdditionalData?.Remove("nextScheduledPayout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextScheduledPayout"); else _explicitNullProperties?.Remove("nextScheduledPayout"); } }
         private DateTimeOffset? _explicitNullValueNextScheduledPayout = default!;
         /// <summary>The payout schedule for the account.Possible values: `DEFAULT`, `DAILY`, `DAILY_US`, `DAILY_EU`, `DAILY_AU`, `DAILY_SG`, `WEEKLY`, `WEEKLY_ON_TUE_FRI_MIDNIGHT`, `BIWEEKLY_ON_1ST_AND_15TH_AT_MIDNIGHT`, `MONTHLY`, `HOLD`.&gt; `HOLD` prevents scheduled payouts, but you can still initiate payouts manually.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PayoutScheduleResponseSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PayoutScheduleResponseSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PayoutScheduleResponseSchedule? _explicitNullValueSchedule = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6UpdateAccountResponsePayoutSchedule"/> and sets the default values.
@@ -56,7 +58,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "nextScheduledPayout", n => { NextScheduledPayout = n.GetDateTimeOffsetValue(); } },
-                { "schedule", n => { Schedule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PayoutScheduleResponseSchedule>(); } },
+                { "schedule", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.MarketPayNotificationServiceV6PayoutScheduleResponseSchedule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSchedule = default; _explicitNullProperties?.Remove("schedule"); AdditionalData["schedule"] = unknown; } else { Schedule = parsed; AdditionalData.Remove("schedule"); } } },
             };
         }
         /// <summary>

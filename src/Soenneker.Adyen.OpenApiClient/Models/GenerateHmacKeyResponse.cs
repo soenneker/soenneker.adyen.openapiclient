@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hmacKey") is { } nullNodeHmacKey && nullNodeHmacKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacKey = null;
+            if (parseNode.GetChildNode("hmacKey") is null) { _explicitNullValueHmacKey = default!; _explicitNullProperties?.Remove("hmacKey"); }
+            else if (parseNode.GetChildNode("hmacKey") is { } nullNodeHmacKey && nullNodeHmacKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The HMAC key generated for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacKey { get => _explicitNullValueHmacKey; set { _explicitNullValueHmacKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacKey"); else _explicitNullProperties?.Remove("hmacKey"); } }
+        public string? HmacKey { get => _explicitNullValueHmacKey; set { _explicitNullValueHmacKey = value; AdditionalData?.Remove("hmacKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacKey"); else _explicitNullProperties?.Remove("hmacKey"); } }
         private string? _explicitNullValueHmacKey = default!;
 #nullable restore
 #else
-        public string HmacKey { get => _explicitNullValueHmacKey; set { _explicitNullValueHmacKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacKey"); else _explicitNullProperties?.Remove("hmacKey"); } }
+        public string HmacKey { get => _explicitNullValueHmacKey; set { _explicitNullValueHmacKey = value; AdditionalData?.Remove("hmacKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacKey"); else _explicitNullProperties?.Remove("hmacKey"); } }
         private string _explicitNullValueHmacKey = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fnaNumber") is { } nullNodeFnaNumber && nullNodeFnaNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FnaNumber = null;
+            if (parseNode.GetChildNode("fnaNumber") is null) { _explicitNullValueFnaNumber = default!; _explicitNullProperties?.Remove("fnaNumber"); }
+            else if (parseNode.GetChildNode("fnaNumber") is { } nullNodeFnaNumber && nullNodeFnaNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FnaNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Food and Nutrition Administration (FNA) number for EBT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FnaNumber { get => _explicitNullValueFnaNumber; set { _explicitNullValueFnaNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnaNumber"); else _explicitNullProperties?.Remove("fnaNumber"); } }
+        public string? FnaNumber { get => _explicitNullValueFnaNumber; set { _explicitNullValueFnaNumber = value; AdditionalData?.Remove("fnaNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnaNumber"); else _explicitNullProperties?.Remove("fnaNumber"); } }
         private string? _explicitNullValueFnaNumber = default!;
 #nullable restore
 #else
-        public string FnaNumber { get => _explicitNullValueFnaNumber; set { _explicitNullValueFnaNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnaNumber"); else _explicitNullProperties?.Remove("fnaNumber"); } }
+        public string FnaNumber { get => _explicitNullValueFnaNumber; set { _explicitNullValueFnaNumber = value; AdditionalData?.Remove("fnaNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fnaNumber"); else _explicitNullProperties?.Remove("fnaNumber"); } }
         private string _explicitNullValueFnaNumber = default!;
 #endif
         /// <summary>

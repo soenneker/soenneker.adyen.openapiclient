@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pciQuestionnaireIds") is { } nullNodePciQuestionnaireIds && nullNodePciQuestionnaireIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PciQuestionnaireIds = null;
-            if (parseNode.GetChildNode("signedBy") is { } nullNodeSignedBy && nullNodeSignedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignedBy = null;
+            if (parseNode.GetChildNode("pciQuestionnaireIds") is null) { _explicitNullValuePciQuestionnaireIds = default!; _explicitNullProperties?.Remove("pciQuestionnaireIds"); }
+            else if (parseNode.GetChildNode("pciQuestionnaireIds") is { } nullNodePciQuestionnaireIds && nullNodePciQuestionnaireIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PciQuestionnaireIds = null;
+            if (parseNode.GetChildNode("signedBy") is null) { _explicitNullValueSignedBy = default!; _explicitNullProperties?.Remove("signedBy"); }
+            else if (parseNode.GetChildNode("signedBy") is { } nullNodeSignedBy && nullNodeSignedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignedBy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique identifiers of the signed PCI documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PciQuestionnaireIds { get => _explicitNullValuePciQuestionnaireIds; set { _explicitNullValuePciQuestionnaireIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciQuestionnaireIds"); else _explicitNullProperties?.Remove("pciQuestionnaireIds"); } }
+        public List<string>? PciQuestionnaireIds { get => _explicitNullValuePciQuestionnaireIds; set { _explicitNullValuePciQuestionnaireIds = value; AdditionalData?.Remove("pciQuestionnaireIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciQuestionnaireIds"); else _explicitNullProperties?.Remove("pciQuestionnaireIds"); } }
         private List<string>? _explicitNullValuePciQuestionnaireIds = default!;
 #nullable restore
 #else
-        public List<string> PciQuestionnaireIds { get => _explicitNullValuePciQuestionnaireIds; set { _explicitNullValuePciQuestionnaireIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciQuestionnaireIds"); else _explicitNullProperties?.Remove("pciQuestionnaireIds"); } }
+        public List<string> PciQuestionnaireIds { get => _explicitNullValuePciQuestionnaireIds; set { _explicitNullValuePciQuestionnaireIds = value; AdditionalData?.Remove("pciQuestionnaireIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pciQuestionnaireIds"); else _explicitNullProperties?.Remove("pciQuestionnaireIds"); } }
         private List<string> _explicitNullValuePciQuestionnaireIds = default!;
 #endif
         /// <summary>The [legal entity ID](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities__resParam_id) of the individual who signed the PCI questionnaire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignedBy { get => _explicitNullValueSignedBy; set { _explicitNullValueSignedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signedBy"); else _explicitNullProperties?.Remove("signedBy"); } }
+        public string? SignedBy { get => _explicitNullValueSignedBy; set { _explicitNullValueSignedBy = value; AdditionalData?.Remove("signedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signedBy"); else _explicitNullProperties?.Remove("signedBy"); } }
         private string? _explicitNullValueSignedBy = default!;
 #nullable restore
 #else
-        public string SignedBy { get => _explicitNullValueSignedBy; set { _explicitNullValueSignedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signedBy"); else _explicitNullProperties?.Remove("signedBy"); } }
+        public string SignedBy { get => _explicitNullValueSignedBy; set { _explicitNullValueSignedBy = value; AdditionalData?.Remove("signedBy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signedBy"); else _explicitNullProperties?.Remove("signedBy"); } }
         private string _explicitNullValueSignedBy = default!;
 #endif
         /// <summary>

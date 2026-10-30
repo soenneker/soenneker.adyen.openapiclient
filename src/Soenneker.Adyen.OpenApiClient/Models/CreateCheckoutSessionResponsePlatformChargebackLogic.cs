@@ -18,34 +18,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
-            if (parseNode.GetChildNode("costAllocationAccount") is { } nullNodeCostAllocationAccount && nullNodeCostAllocationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostAllocationAccount = null;
-            if (parseNode.GetChildNode("targetAccount") is { } nullNodeTargetAccount && nullNodeTargetAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetAccount = null;
+            if (parseNode.GetChildNode("behavior") is null) { _explicitNullValueBehavior = default!; _explicitNullProperties?.Remove("behavior"); }
+            else if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
+            if (parseNode.GetChildNode("costAllocationAccount") is null) { _explicitNullValueCostAllocationAccount = default!; _explicitNullProperties?.Remove("costAllocationAccount"); }
+            else if (parseNode.GetChildNode("costAllocationAccount") is { } nullNodeCostAllocationAccount && nullNodeCostAllocationAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostAllocationAccount = null;
+            if (parseNode.GetChildNode("targetAccount") is null) { _explicitNullValueTargetAccount = default!; _explicitNullProperties?.Remove("targetAccount"); }
+            else if (parseNode.GetChildNode("targetAccount") is { } nullNodeTargetAccount && nullNodeTargetAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetAccount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The method of handling the chargeback.Possible values: **deductFromLiableAccount**, **deductFromOneBalanceAccount**, **deductAccordingToSplitRatio**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; AdditionalData?.Remove("behavior"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior? _explicitNullValueBehavior = default!;
         /// <summary>The unique identifier of the balance account to which the chargeback fees are booked. By default, the chargeback fees are booked to your liable balance account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CostAllocationAccount { get => _explicitNullValueCostAllocationAccount; set { _explicitNullValueCostAllocationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costAllocationAccount"); else _explicitNullProperties?.Remove("costAllocationAccount"); } }
+        public string? CostAllocationAccount { get => _explicitNullValueCostAllocationAccount; set { _explicitNullValueCostAllocationAccount = value; AdditionalData?.Remove("costAllocationAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costAllocationAccount"); else _explicitNullProperties?.Remove("costAllocationAccount"); } }
         private string? _explicitNullValueCostAllocationAccount = default!;
 #nullable restore
 #else
-        public string CostAllocationAccount { get => _explicitNullValueCostAllocationAccount; set { _explicitNullValueCostAllocationAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costAllocationAccount"); else _explicitNullProperties?.Remove("costAllocationAccount"); } }
+        public string CostAllocationAccount { get => _explicitNullValueCostAllocationAccount; set { _explicitNullValueCostAllocationAccount = value; AdditionalData?.Remove("costAllocationAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("costAllocationAccount"); else _explicitNullProperties?.Remove("costAllocationAccount"); } }
         private string _explicitNullValueCostAllocationAccount = default!;
 #endif
         /// <summary>The unique identifier of the balance account against which the disputed amount is booked.Required if `behavior` is **deductFromOneBalanceAccount**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetAccount { get => _explicitNullValueTargetAccount; set { _explicitNullValueTargetAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAccount"); else _explicitNullProperties?.Remove("targetAccount"); } }
+        public string? TargetAccount { get => _explicitNullValueTargetAccount; set { _explicitNullValueTargetAccount = value; AdditionalData?.Remove("targetAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAccount"); else _explicitNullProperties?.Remove("targetAccount"); } }
         private string? _explicitNullValueTargetAccount = default!;
 #nullable restore
 #else
-        public string TargetAccount { get => _explicitNullValueTargetAccount; set { _explicitNullValueTargetAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAccount"); else _explicitNullProperties?.Remove("targetAccount"); } }
+        public string TargetAccount { get => _explicitNullValueTargetAccount; set { _explicitNullValueTargetAccount = value; AdditionalData?.Remove("targetAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetAccount"); else _explicitNullProperties?.Remove("targetAccount"); } }
         private string _explicitNullValueTargetAccount = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behavior", n => { Behavior = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior>(); } },
+                { "behavior", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PlatformChargebackLogicBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBehavior = default; _explicitNullProperties?.Remove("behavior"); AdditionalData["behavior"] = unknown; } else { Behavior = parsed; AdditionalData.Remove("behavior"); } } },
                 { "costAllocationAccount", n => { CostAllocationAccount = n.GetStringValue(); } },
                 { "targetAccount", n => { TargetAccount = n.GetStringValue(); } },
             };

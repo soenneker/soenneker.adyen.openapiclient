@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("FraudCheckResult") is { } nullNodeFraudCheckResult && nullNodeFraudCheckResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudCheckResult = null;
+            if (parseNode.GetChildNode("FraudCheckResult") is null) { _explicitNullValueFraudCheckResult = default!; _explicitNullProperties?.Remove("FraudCheckResult"); }
+            else if (parseNode.GetChildNode("FraudCheckResult") is { } nullNodeFraudCheckResult && nullNodeFraudCheckResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FraudCheckResult = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The FraudCheckResult property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FraudCheckResult? FraudCheckResult { get => _explicitNullValueFraudCheckResult; set { _explicitNullValueFraudCheckResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FraudCheckResult"); else _explicitNullProperties?.Remove("FraudCheckResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FraudCheckResult? FraudCheckResult { get => _explicitNullValueFraudCheckResult; set { _explicitNullValueFraudCheckResult = value; AdditionalData?.Remove("FraudCheckResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FraudCheckResult"); else _explicitNullProperties?.Remove("FraudCheckResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FraudCheckResult? _explicitNullValueFraudCheckResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FraudCheckResult FraudCheckResult { get => _explicitNullValueFraudCheckResult; set { _explicitNullValueFraudCheckResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FraudCheckResult"); else _explicitNullProperties?.Remove("FraudCheckResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FraudCheckResult FraudCheckResult { get => _explicitNullValueFraudCheckResult; set { _explicitNullValueFraudCheckResult = value; AdditionalData?.Remove("FraudCheckResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("FraudCheckResult"); else _explicitNullProperties?.Remove("FraudCheckResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutServiceV68FraudCheckResult _explicitNullValueFraudCheckResult = default!;
 #endif
         /// <summary>

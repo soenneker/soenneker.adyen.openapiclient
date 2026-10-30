@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("defenseReasons") is { } nullNodeDefenseReasons && nullNodeDefenseReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasons = null;
-            if (parseNode.GetChildNode("disputeServiceResult") is { } nullNodeDisputeServiceResult && nullNodeDisputeServiceResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeServiceResult = null;
+            if (parseNode.GetChildNode("defenseReasons") is null) { _explicitNullValueDefenseReasons = default!; _explicitNullProperties?.Remove("defenseReasons"); }
+            else if (parseNode.GetChildNode("defenseReasons") is { } nullNodeDefenseReasons && nullNodeDefenseReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefenseReasons = null;
+            if (parseNode.GetChildNode("disputeServiceResult") is null) { _explicitNullValueDisputeServiceResult = default!; _explicitNullProperties?.Remove("disputeServiceResult"); }
+            else if (parseNode.GetChildNode("disputeServiceResult") is { } nullNodeDisputeServiceResult && nullNodeDisputeServiceResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisputeServiceResult = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The defense reasons that can be used to defend the dispute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason>? DefenseReasons { get => _explicitNullValueDefenseReasons; set { _explicitNullValueDefenseReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasons"); else _explicitNullProperties?.Remove("defenseReasons"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason>? DefenseReasons { get => _explicitNullValueDefenseReasons; set { _explicitNullValueDefenseReasons = value; AdditionalData?.Remove("defenseReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasons"); else _explicitNullProperties?.Remove("defenseReasons"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason>? _explicitNullValueDefenseReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason> DefenseReasons { get => _explicitNullValueDefenseReasons; set { _explicitNullValueDefenseReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasons"); else _explicitNullProperties?.Remove("defenseReasons"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason> DefenseReasons { get => _explicitNullValueDefenseReasons; set { _explicitNullValueDefenseReasons = value; AdditionalData?.Remove("defenseReasons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defenseReasons"); else _explicitNullProperties?.Remove("defenseReasons"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DefenseReason> _explicitNullValueDefenseReasons = default!;
 #endif
         /// <summary>The result of the dispute service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult? DisputeServiceResult { get => _explicitNullValueDisputeServiceResult; set { _explicitNullValueDisputeServiceResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeServiceResult"); else _explicitNullProperties?.Remove("disputeServiceResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult? DisputeServiceResult { get => _explicitNullValueDisputeServiceResult; set { _explicitNullValueDisputeServiceResult = value; AdditionalData?.Remove("disputeServiceResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeServiceResult"); else _explicitNullProperties?.Remove("disputeServiceResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult? _explicitNullValueDisputeServiceResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult DisputeServiceResult { get => _explicitNullValueDisputeServiceResult; set { _explicitNullValueDisputeServiceResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeServiceResult"); else _explicitNullProperties?.Remove("disputeServiceResult"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult DisputeServiceResult { get => _explicitNullValueDisputeServiceResult; set { _explicitNullValueDisputeServiceResult = value; AdditionalData?.Remove("disputeServiceResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disputeServiceResult"); else _explicitNullProperties?.Remove("disputeServiceResult"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.DefenseReasonsResponseDisputeServiceResult _explicitNullValueDisputeServiceResult = default!;
 #endif
         /// <summary>

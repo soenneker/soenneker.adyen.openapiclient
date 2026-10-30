@@ -17,9 +17,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cardOrders") is { } nullNodeCardOrders && nullNodeCardOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardOrders = null;
-            if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
-            if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
+            if (parseNode.GetChildNode("cardOrders") is null) { _explicitNullValueCardOrders = default!; _explicitNullProperties?.Remove("cardOrders"); }
+            else if (parseNode.GetChildNode("cardOrders") is { } nullNodeCardOrders && nullNodeCardOrders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardOrders = null;
+            if (parseNode.GetChildNode("hasNext") is null) { _explicitNullValueHasNext = default!; _explicitNullProperties?.Remove("hasNext"); }
+            else if (parseNode.GetChildNode("hasNext") is { } nullNodeHasNext && nullNodeHasNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasNext = null;
+            if (parseNode.GetChildNode("hasPrevious") is null) { _explicitNullValueHasPrevious = default!; _explicitNullProperties?.Remove("hasPrevious"); }
+            else if (parseNode.GetChildNode("hasPrevious") is { } nullNodeHasPrevious && nullNodeHasPrevious.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPrevious = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains objects with information about card orders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder>? CardOrders { get => _explicitNullValueCardOrders; set { _explicitNullValueCardOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardOrders"); else _explicitNullProperties?.Remove("cardOrders"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder>? CardOrders { get => _explicitNullValueCardOrders; set { _explicitNullValueCardOrders = value; AdditionalData?.Remove("cardOrders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardOrders"); else _explicitNullProperties?.Remove("cardOrders"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder>? _explicitNullValueCardOrders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder> CardOrders { get => _explicitNullValueCardOrders; set { _explicitNullValueCardOrders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardOrders"); else _explicitNullProperties?.Remove("cardOrders"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder> CardOrders { get => _explicitNullValueCardOrders; set { _explicitNullValueCardOrders = value; AdditionalData?.Remove("cardOrders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardOrders"); else _explicitNullProperties?.Remove("cardOrders"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.CardOrder> _explicitNullValueCardOrders = default!;
 #endif
         /// <summary>Indicates whether there are more items on the next page.</summary>
-        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
+        public bool? HasNext { get => _explicitNullValueHasNext; set { _explicitNullValueHasNext = value; AdditionalData?.Remove("hasNext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNext"); else _explicitNullProperties?.Remove("hasNext"); } }
         private bool? _explicitNullValueHasNext = default!;
         /// <summary>Indicates whether there are more items on the previous page.</summary>
-        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
+        public bool? HasPrevious { get => _explicitNullValueHasPrevious; set { _explicitNullValueHasPrevious = value; AdditionalData?.Remove("hasPrevious"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPrevious"); else _explicitNullProperties?.Remove("hasPrevious"); } }
         private bool? _explicitNullValueHasPrevious = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaginatedGetCardOrderResponse"/> and sets the default values.

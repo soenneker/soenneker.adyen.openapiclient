@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("donationCampaigns") is { } nullNodeDonationCampaigns && nullNodeDonationCampaigns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationCampaigns = null;
+            if (parseNode.GetChildNode("donationCampaigns") is null) { _explicitNullValueDonationCampaigns = default!; _explicitNullProperties?.Remove("donationCampaigns"); }
+            else if (parseNode.GetChildNode("donationCampaigns") is { } nullNodeDonationCampaigns && nullNodeDonationCampaigns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonationCampaigns = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>List of active donation campaigns for your merchant account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign>? DonationCampaigns { get => _explicitNullValueDonationCampaigns; set { _explicitNullValueDonationCampaigns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationCampaigns"); else _explicitNullProperties?.Remove("donationCampaigns"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign>? DonationCampaigns { get => _explicitNullValueDonationCampaigns; set { _explicitNullValueDonationCampaigns = value; AdditionalData?.Remove("donationCampaigns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationCampaigns"); else _explicitNullProperties?.Remove("donationCampaigns"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign>? _explicitNullValueDonationCampaigns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign> DonationCampaigns { get => _explicitNullValueDonationCampaigns; set { _explicitNullValueDonationCampaigns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationCampaigns"); else _explicitNullProperties?.Remove("donationCampaigns"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign> DonationCampaigns { get => _explicitNullValueDonationCampaigns; set { _explicitNullValueDonationCampaigns = value; AdditionalData?.Remove("donationCampaigns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donationCampaigns"); else _explicitNullProperties?.Remove("donationCampaigns"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.DonationCampaign> _explicitNullValueDonationCampaigns = default!;
 #endif
         /// <summary>

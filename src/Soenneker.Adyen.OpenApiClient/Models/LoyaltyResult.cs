@@ -18,34 +18,37 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("CurrentBalance") is { } nullNodeCurrentBalance && nullNodeCurrentBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentBalance = null;
-            if (parseNode.GetChildNode("LoyaltyAccount") is { } nullNodeLoyaltyAccount && nullNodeLoyaltyAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccount = null;
-            if (parseNode.GetChildNode("LoyaltyAcquirerData") is { } nullNodeLoyaltyAcquirerData && nullNodeLoyaltyAcquirerData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAcquirerData = null;
+            if (parseNode.GetChildNode("CurrentBalance") is null) { _explicitNullValueCurrentBalance = default!; _explicitNullProperties?.Remove("CurrentBalance"); }
+            else if (parseNode.GetChildNode("CurrentBalance") is { } nullNodeCurrentBalance && nullNodeCurrentBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentBalance = null;
+            if (parseNode.GetChildNode("LoyaltyAccount") is null) { _explicitNullValueLoyaltyAccount = default!; _explicitNullProperties?.Remove("LoyaltyAccount"); }
+            else if (parseNode.GetChildNode("LoyaltyAccount") is { } nullNodeLoyaltyAccount && nullNodeLoyaltyAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAccount = null;
+            if (parseNode.GetChildNode("LoyaltyAcquirerData") is null) { _explicitNullValueLoyaltyAcquirerData = default!; _explicitNullProperties?.Remove("LoyaltyAcquirerData"); }
+            else if (parseNode.GetChildNode("LoyaltyAcquirerData") is { } nullNodeLoyaltyAcquirerData && nullNodeLoyaltyAcquirerData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoyaltyAcquirerData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Balance of an account.If known (provided by the card or an external host).</summary>
-        public double? CurrentBalance { get => _explicitNullValueCurrentBalance; set { _explicitNullValueCurrentBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CurrentBalance"); else _explicitNullProperties?.Remove("CurrentBalance"); } }
+        public double? CurrentBalance { get => _explicitNullValueCurrentBalance; set { _explicitNullValueCurrentBalance = value; AdditionalData?.Remove("CurrentBalance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("CurrentBalance"); else _explicitNullProperties?.Remove("CurrentBalance"); } }
         private double? _explicitNullValueCurrentBalance = default!;
         /// <summary>Data related to a loyalty account processed in the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount? LoyaltyAccount { get => _explicitNullValueLoyaltyAccount; set { _explicitNullValueLoyaltyAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccount"); else _explicitNullProperties?.Remove("LoyaltyAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount? LoyaltyAccount { get => _explicitNullValueLoyaltyAccount; set { _explicitNullValueLoyaltyAccount = value; AdditionalData?.Remove("LoyaltyAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccount"); else _explicitNullProperties?.Remove("LoyaltyAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount? _explicitNullValueLoyaltyAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount LoyaltyAccount { get => _explicitNullValueLoyaltyAccount; set { _explicitNullValueLoyaltyAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccount"); else _explicitNullProperties?.Remove("LoyaltyAccount"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount LoyaltyAccount { get => _explicitNullValueLoyaltyAccount; set { _explicitNullValueLoyaltyAccount = value; AdditionalData?.Remove("LoyaltyAccount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAccount"); else _explicitNullProperties?.Remove("LoyaltyAccount"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAccount _explicitNullValueLoyaltyAccount = default!;
 #endif
         /// <summary>Data related to the loyalty Acquirer during a loyalty transaction.If content not empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData? LoyaltyAcquirerData { get => _explicitNullValueLoyaltyAcquirerData; set { _explicitNullValueLoyaltyAcquirerData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAcquirerData"); else _explicitNullProperties?.Remove("LoyaltyAcquirerData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData? LoyaltyAcquirerData { get => _explicitNullValueLoyaltyAcquirerData; set { _explicitNullValueLoyaltyAcquirerData = value; AdditionalData?.Remove("LoyaltyAcquirerData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAcquirerData"); else _explicitNullProperties?.Remove("LoyaltyAcquirerData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData? _explicitNullValueLoyaltyAcquirerData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData LoyaltyAcquirerData { get => _explicitNullValueLoyaltyAcquirerData; set { _explicitNullValueLoyaltyAcquirerData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAcquirerData"); else _explicitNullProperties?.Remove("LoyaltyAcquirerData"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData LoyaltyAcquirerData { get => _explicitNullValueLoyaltyAcquirerData; set { _explicitNullValueLoyaltyAcquirerData = value; AdditionalData?.Remove("LoyaltyAcquirerData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LoyaltyAcquirerData"); else _explicitNullProperties?.Remove("LoyaltyAcquirerData"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.LoyaltyResultLoyaltyAcquirerData _explicitNullValueLoyaltyAcquirerData = default!;
 #endif
         /// <summary>

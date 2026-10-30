@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("OutputResult") is { } nullNodeOutputResult && nullNodeOutputResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputResult = null;
+            if (parseNode.GetChildNode("OutputResult") is null) { _explicitNullValueOutputResult = default!; _explicitNullProperties?.Remove("OutputResult"); }
+            else if (parseNode.GetChildNode("OutputResult") is { } nullNodeOutputResult && nullNodeOutputResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputResult = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Information related to the result the output (display, print, input).One per DisplayOutput item of the request, and in the same order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult>? OutputResult { get => _explicitNullValueOutputResult; set { _explicitNullValueOutputResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputResult"); else _explicitNullProperties?.Remove("OutputResult"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult>? OutputResult { get => _explicitNullValueOutputResult; set { _explicitNullValueOutputResult = value; AdditionalData?.Remove("OutputResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputResult"); else _explicitNullProperties?.Remove("OutputResult"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult>? _explicitNullValueOutputResult = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult> OutputResult { get => _explicitNullValueOutputResult; set { _explicitNullValueOutputResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputResult"); else _explicitNullProperties?.Remove("OutputResult"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult> OutputResult { get => _explicitNullValueOutputResult; set { _explicitNullValueOutputResult = value; AdditionalData?.Remove("OutputResult"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputResult"); else _explicitNullProperties?.Remove("OutputResult"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.OutputResult> _explicitNullValueOutputResult = default!;
 #endif
         /// <summary>

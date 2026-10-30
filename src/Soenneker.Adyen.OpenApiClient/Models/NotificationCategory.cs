@@ -7,6 +7,9 @@ namespace Soenneker.Adyen.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NotificationCategory
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "SaleWakeUp")]
         #pragma warning disable CS1591
         SaleWakeUp,

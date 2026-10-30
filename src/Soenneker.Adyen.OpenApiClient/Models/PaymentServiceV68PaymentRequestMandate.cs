@@ -18,15 +18,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("amountRule") is { } nullNodeAmountRule && nullNodeAmountRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountRule = null;
-            if (parseNode.GetChildNode("billingAttemptsRule") is { } nullNodeBillingAttemptsRule && nullNodeBillingAttemptsRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAttemptsRule = null;
-            if (parseNode.GetChildNode("billingDay") is { } nullNodeBillingDay && nullNodeBillingDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingDay = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("endsAt") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
-            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
-            if (parseNode.GetChildNode("remarks") is { } nullNodeRemarks && nullNodeRemarks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remarks = null;
-            if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("amountRule") is null) { _explicitNullValueAmountRule = default!; _explicitNullProperties?.Remove("amountRule"); }
+            else if (parseNode.GetChildNode("amountRule") is { } nullNodeAmountRule && nullNodeAmountRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountRule = null;
+            if (parseNode.GetChildNode("billingAttemptsRule") is null) { _explicitNullValueBillingAttemptsRule = default!; _explicitNullProperties?.Remove("billingAttemptsRule"); }
+            else if (parseNode.GetChildNode("billingAttemptsRule") is { } nullNodeBillingAttemptsRule && nullNodeBillingAttemptsRule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingAttemptsRule = null;
+            if (parseNode.GetChildNode("billingDay") is null) { _explicitNullValueBillingDay = default!; _explicitNullProperties?.Remove("billingDay"); }
+            else if (parseNode.GetChildNode("billingDay") is { } nullNodeBillingDay && nullNodeBillingDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingDay = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("endsAt") is null) { _explicitNullValueEndsAt = default!; _explicitNullProperties?.Remove("endsAt"); }
+            else if (parseNode.GetChildNode("endsAt") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
+            if (parseNode.GetChildNode("frequency") is null) { _explicitNullValueFrequency = default!; _explicitNullProperties?.Remove("frequency"); }
+            else if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("remarks") is null) { _explicitNullValueRemarks = default!; _explicitNullProperties?.Remove("remarks"); }
+            else if (parseNode.GetChildNode("remarks") is { } nullNodeRemarks && nullNodeRemarks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Remarks = null;
+            if (parseNode.GetChildNode("startsAt") is null) { _explicitNullValueStartsAt = default!; _explicitNullProperties?.Remove("startsAt"); }
+            else if (parseNode.GetChildNode("startsAt") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,70 +43,70 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The billing amount (in minor units) of the recurring transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>The limitation rule of the billing amount.Possible values: * **max**: The transaction amount can not exceed the `amount`. * **exact**: The transaction amount should be the same as the `amount`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateAmountRule? AmountRule { get => _explicitNullValueAmountRule; set { _explicitNullValueAmountRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountRule"); else _explicitNullProperties?.Remove("amountRule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateAmountRule? AmountRule { get => _explicitNullValueAmountRule; set { _explicitNullValueAmountRule = value; AdditionalData?.Remove("amountRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amountRule"); else _explicitNullProperties?.Remove("amountRule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateAmountRule? _explicitNullValueAmountRule = default!;
         /// <summary>The rule to specify the period, within which the recurring debit can happen, relative to the mandate recurring date.Possible values: * **on**: On a specific date. * **before**:  Before and on a specific date. * **after**: On and after a specific date.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateBillingAttemptsRule? BillingAttemptsRule { get => _explicitNullValueBillingAttemptsRule; set { _explicitNullValueBillingAttemptsRule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAttemptsRule"); else _explicitNullProperties?.Remove("billingAttemptsRule"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateBillingAttemptsRule? BillingAttemptsRule { get => _explicitNullValueBillingAttemptsRule; set { _explicitNullValueBillingAttemptsRule = value; AdditionalData?.Remove("billingAttemptsRule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingAttemptsRule"); else _explicitNullProperties?.Remove("billingAttemptsRule"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateBillingAttemptsRule? _explicitNullValueBillingAttemptsRule = default!;
         /// <summary>The number of the day, on which the recurring debit can happen. Should be within the same calendar month as the mandate recurring date.Possible values: 1-31 based on the `frequency`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingDay { get => _explicitNullValueBillingDay; set { _explicitNullValueBillingDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingDay"); else _explicitNullProperties?.Remove("billingDay"); } }
+        public string? BillingDay { get => _explicitNullValueBillingDay; set { _explicitNullValueBillingDay = value; AdditionalData?.Remove("billingDay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingDay"); else _explicitNullProperties?.Remove("billingDay"); } }
         private string? _explicitNullValueBillingDay = default!;
 #nullable restore
 #else
-        public string BillingDay { get => _explicitNullValueBillingDay; set { _explicitNullValueBillingDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingDay"); else _explicitNullProperties?.Remove("billingDay"); } }
+        public string BillingDay { get => _explicitNullValueBillingDay; set { _explicitNullValueBillingDay = value; AdditionalData?.Remove("billingDay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billingDay"); else _explicitNullProperties?.Remove("billingDay"); } }
         private string _explicitNullValueBillingDay = default!;
 #endif
         /// <summary>The number of transactions that can be performed within the given frequency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public string? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private string? _explicitNullValueCount = default!;
 #nullable restore
 #else
-        public string Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public string Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private string _explicitNullValueCount = default!;
 #endif
         /// <summary>End date of the billing plan, in YYYY-MM-DD format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endsAt"); else _explicitNullProperties?.Remove("endsAt"); } }
+        public string? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; AdditionalData?.Remove("endsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endsAt"); else _explicitNullProperties?.Remove("endsAt"); } }
         private string? _explicitNullValueEndsAt = default!;
 #nullable restore
 #else
-        public string EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endsAt"); else _explicitNullProperties?.Remove("endsAt"); } }
+        public string EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; AdditionalData?.Remove("endsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endsAt"); else _explicitNullProperties?.Remove("endsAt"); } }
         private string _explicitNullValueEndsAt = default!;
 #endif
         /// <summary>The frequency with which a shopper should be charged.Possible values: **daily**, **weekly**, **biWeekly**, **monthly**, **quarterly**, **halfYearly**, **yearly**.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; AdditionalData?.Remove("frequency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateFrequency? _explicitNullValueFrequency = default!;
         /// <summary>The message shown by UPI to the shopper on the approval screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remarks { get => _explicitNullValueRemarks; set { _explicitNullValueRemarks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remarks"); else _explicitNullProperties?.Remove("remarks"); } }
+        public string? Remarks { get => _explicitNullValueRemarks; set { _explicitNullValueRemarks = value; AdditionalData?.Remove("remarks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remarks"); else _explicitNullProperties?.Remove("remarks"); } }
         private string? _explicitNullValueRemarks = default!;
 #nullable restore
 #else
-        public string Remarks { get => _explicitNullValueRemarks; set { _explicitNullValueRemarks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remarks"); else _explicitNullProperties?.Remove("remarks"); } }
+        public string Remarks { get => _explicitNullValueRemarks; set { _explicitNullValueRemarks = value; AdditionalData?.Remove("remarks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remarks"); else _explicitNullProperties?.Remove("remarks"); } }
         private string _explicitNullValueRemarks = default!;
 #endif
         /// <summary>Start date of the billing plan, in YYYY-MM-DD format. By default, the transaction date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
+        public string? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("startsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
         private string? _explicitNullValueStartsAt = default!;
 #nullable restore
 #else
-        public string StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
+        public string StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("startsAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startsAt"); else _explicitNullProperties?.Remove("startsAt"); } }
         private string _explicitNullValueStartsAt = default!;
 #endif
         /// <summary>
@@ -126,12 +135,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "amountRule", n => { AmountRule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateAmountRule>(); } },
-                { "billingAttemptsRule", n => { BillingAttemptsRule = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateBillingAttemptsRule>(); } },
+                { "amountRule", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateAmountRule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAmountRule = default; _explicitNullProperties?.Remove("amountRule"); AdditionalData["amountRule"] = unknown; } else { AmountRule = parsed; AdditionalData.Remove("amountRule"); } } },
+                { "billingAttemptsRule", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateBillingAttemptsRule>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBillingAttemptsRule = default; _explicitNullProperties?.Remove("billingAttemptsRule"); AdditionalData["billingAttemptsRule"] = unknown; } else { BillingAttemptsRule = parsed; AdditionalData.Remove("billingAttemptsRule"); } } },
                 { "billingDay", n => { BillingDay = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "endsAt", n => { EndsAt = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateFrequency>(); } },
+                { "frequency", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentServiceV68MandateFrequency>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFrequency = default; _explicitNullProperties?.Remove("frequency"); AdditionalData["frequency"] = unknown; } else { Frequency = parsed; AdditionalData.Remove("frequency"); } } },
                 { "remarks", n => { Remarks = n.GetStringValue(); } },
                 { "startsAt", n => { StartsAt = n.GetStringValue(); } },
             };

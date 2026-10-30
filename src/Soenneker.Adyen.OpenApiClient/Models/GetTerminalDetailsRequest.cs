@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("terminal") is { } nullNodeTerminal && nullNodeTerminal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Terminal = null;
+            if (parseNode.GetChildNode("terminal") is null) { _explicitNullValueTerminal = default!; _explicitNullProperties?.Remove("terminal"); }
+            else if (parseNode.GetChildNode("terminal") is { } nullNodeTerminal && nullNodeTerminal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Terminal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The unique terminal ID in the format `[Device model]-[Serial number]`. For example, **V400m-324689776**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
+        public string? Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; AdditionalData?.Remove("terminal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
         private string? _explicitNullValueTerminal = default!;
 #nullable restore
 #else
-        public string Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
+        public string Terminal { get => _explicitNullValueTerminal; set { _explicitNullValueTerminal = value; AdditionalData?.Remove("terminal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("terminal"); else _explicitNullProperties?.Remove("terminal"); } }
         private string _explicitNullValueTerminal = default!;
 #endif
         /// <summary>

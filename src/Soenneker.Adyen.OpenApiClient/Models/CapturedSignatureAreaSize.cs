@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("X") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
-            if (parseNode.GetChildNode("Y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
+            if (parseNode.GetChildNode("X") is null) { _explicitNullValueX = default!; _explicitNullProperties?.Remove("X"); }
+            else if (parseNode.GetChildNode("X") is { } nullNodeX && nullNodeX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) X = null;
+            if (parseNode.GetChildNode("Y") is null) { _explicitNullValueY = default!; _explicitNullProperties?.Remove("Y"); }
+            else if (parseNode.GetChildNode("Y") is { } nullNodeY && nullNodeY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Y = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Abscissa of a point coordinates. The hexadecimal value in text of the abscissa of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X"); else _explicitNullProperties?.Remove("X"); } }
+        public string? X { get => _explicitNullValueX; set { _explicitNullValueX = value; AdditionalData?.Remove("X"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X"); else _explicitNullProperties?.Remove("X"); } }
         private string? _explicitNullValueX = default!;
 #nullable restore
 #else
-        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X"); else _explicitNullProperties?.Remove("X"); } }
+        public string X { get => _explicitNullValueX; set { _explicitNullValueX = value; AdditionalData?.Remove("X"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X"); else _explicitNullProperties?.Remove("X"); } }
         private string _explicitNullValueX = default!;
 #endif
         /// <summary>Ordinate of a point coordinates. The hexadecimal value in text of the ordinate of the coordinates of a point. Leading zero can be removed (e.g. 3BC, 0, and 1287).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Y"); else _explicitNullProperties?.Remove("Y"); } }
+        public string? Y { get => _explicitNullValueY; set { _explicitNullValueY = value; AdditionalData?.Remove("Y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Y"); else _explicitNullProperties?.Remove("Y"); } }
         private string? _explicitNullValueY = default!;
 #nullable restore
 #else
-        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Y"); else _explicitNullProperties?.Remove("Y"); } }
+        public string Y { get => _explicitNullValueY; set { _explicitNullValueY = value; AdditionalData?.Remove("Y"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Y"); else _explicitNullProperties?.Remove("Y"); } }
         private string _explicitNullValueY = default!;
 #endif
         /// <summary>

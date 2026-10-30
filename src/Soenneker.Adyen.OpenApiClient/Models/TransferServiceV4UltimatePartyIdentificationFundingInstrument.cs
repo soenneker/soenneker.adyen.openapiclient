@@ -18,10 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cardIdentification") is { } nullNodeCardIdentification && nullNodeCardIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIdentification = null;
-            if (parseNode.GetChildNode("networkPaymentReference") is { } nullNodeNetworkPaymentReference && nullNodeNetworkPaymentReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkPaymentReference = null;
-            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
-            if (parseNode.GetChildNode("sourceOfFunds") is { } nullNodeSourceOfFunds && nullNodeSourceOfFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceOfFunds = null;
+            if (parseNode.GetChildNode("cardIdentification") is null) { _explicitNullValueCardIdentification = default!; _explicitNullProperties?.Remove("cardIdentification"); }
+            else if (parseNode.GetChildNode("cardIdentification") is { } nullNodeCardIdentification && nullNodeCardIdentification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIdentification = null;
+            if (parseNode.GetChildNode("networkPaymentReference") is null) { _explicitNullValueNetworkPaymentReference = default!; _explicitNullProperties?.Remove("networkPaymentReference"); }
+            else if (parseNode.GetChildNode("networkPaymentReference") is { } nullNodeNetworkPaymentReference && nullNodeNetworkPaymentReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NetworkPaymentReference = null;
+            if (parseNode.GetChildNode("reference") is null) { _explicitNullValueReference = default!; _explicitNullProperties?.Remove("reference"); }
+            else if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("sourceOfFunds") is null) { _explicitNullValueSourceOfFunds = default!; _explicitNullProperties?.Remove("sourceOfFunds"); }
+            else if (parseNode.GetChildNode("sourceOfFunds") is { } nullNodeSourceOfFunds && nullNodeSourceOfFunds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceOfFunds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Card details used for the transfer, such as the Primary Account Number (PAN) or stored payment method ID. Required if `sourceOfFunds` is **DEBIT**. Provide either: - `storedPaymentMethodId` or  - `expiryMonth`, `expiryYear`, and `number`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification? CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification? CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; AdditionalData?.Remove("cardIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification? _explicitNullValueCardIdentification = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification CardIdentification { get => _explicitNullValueCardIdentification; set { _explicitNullValueCardIdentification = value; AdditionalData?.Remove("cardIdentification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardIdentification"); else _explicitNullProperties?.Remove("cardIdentification"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification _explicitNullValueCardIdentification = default!;
 #endif
         /// <summary>The unique reference assigned by the card network for the pay-in transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkPaymentReference { get => _explicitNullValueNetworkPaymentReference; set { _explicitNullValueNetworkPaymentReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPaymentReference"); else _explicitNullProperties?.Remove("networkPaymentReference"); } }
+        public string? NetworkPaymentReference { get => _explicitNullValueNetworkPaymentReference; set { _explicitNullValueNetworkPaymentReference = value; AdditionalData?.Remove("networkPaymentReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPaymentReference"); else _explicitNullProperties?.Remove("networkPaymentReference"); } }
         private string? _explicitNullValueNetworkPaymentReference = default!;
 #nullable restore
 #else
-        public string NetworkPaymentReference { get => _explicitNullValueNetworkPaymentReference; set { _explicitNullValueNetworkPaymentReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPaymentReference"); else _explicitNullProperties?.Remove("networkPaymentReference"); } }
+        public string NetworkPaymentReference { get => _explicitNullValueNetworkPaymentReference; set { _explicitNullValueNetworkPaymentReference = value; AdditionalData?.Remove("networkPaymentReference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("networkPaymentReference"); else _explicitNullProperties?.Remove("networkPaymentReference"); } }
         private string _explicitNullValueNetworkPaymentReference = default!;
 #endif
         /// <summary>Your internal reference that identifies this funding instrument. Required if `sourceOfFunds` is **DEPOSIT_ACCOUNT**.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
         private string _explicitNullValueReference = default!;
 #endif
         /// <summary>Indicates where the funds used for the transfer originated. Possible values are:- **DEBIT** for card-to-card transfers.- **DEPOSIT_ACCOUNT** for wallet-to-card transfers.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds? SourceOfFunds { get => _explicitNullValueSourceOfFunds; set { _explicitNullValueSourceOfFunds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceOfFunds"); else _explicitNullProperties?.Remove("sourceOfFunds"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds? SourceOfFunds { get => _explicitNullValueSourceOfFunds; set { _explicitNullValueSourceOfFunds = value; AdditionalData?.Remove("sourceOfFunds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceOfFunds"); else _explicitNullProperties?.Remove("sourceOfFunds"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds? _explicitNullValueSourceOfFunds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4UltimatePartyIdentificationFundingInstrument"/> and sets the default values.
@@ -87,7 +91,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "cardIdentification", n => { CardIdentification = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification>(global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentCardIdentification.CreateFromDiscriminatorValue); } },
                 { "networkPaymentReference", n => { NetworkPaymentReference = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "sourceOfFunds", n => { SourceOfFunds = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds>(); } },
+                { "sourceOfFunds", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.TransferServiceV4FundingInstrumentSourceOfFunds>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSourceOfFunds = default; _explicitNullProperties?.Remove("sourceOfFunds"); AdditionalData["sourceOfFunds"] = unknown; } else { SourceOfFunds = parsed; AdditionalData.Remove("sourceOfFunds"); } } },
             };
         }
         /// <summary>

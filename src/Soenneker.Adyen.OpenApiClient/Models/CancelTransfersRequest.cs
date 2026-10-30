@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transferIds") is { } nullNodeTransferIds && nullNodeTransferIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferIds = null;
+            if (parseNode.GetChildNode("transferIds") is null) { _explicitNullValueTransferIds = default!; _explicitNullProperties?.Remove("transferIds"); }
+            else if (parseNode.GetChildNode("transferIds") is { } nullNodeTransferIds && nullNodeTransferIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains the unique identifiers of the transfers that you want to cancel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TransferIds { get => _explicitNullValueTransferIds; set { _explicitNullValueTransferIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferIds"); else _explicitNullProperties?.Remove("transferIds"); } }
+        public List<string>? TransferIds { get => _explicitNullValueTransferIds; set { _explicitNullValueTransferIds = value; AdditionalData?.Remove("transferIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferIds"); else _explicitNullProperties?.Remove("transferIds"); } }
         private List<string>? _explicitNullValueTransferIds = default!;
 #nullable restore
 #else
-        public List<string> TransferIds { get => _explicitNullValueTransferIds; set { _explicitNullValueTransferIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferIds"); else _explicitNullProperties?.Remove("transferIds"); } }
+        public List<string> TransferIds { get => _explicitNullValueTransferIds; set { _explicitNullValueTransferIds = value; AdditionalData?.Remove("transferIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferIds"); else _explicitNullProperties?.Remove("transferIds"); } }
         private List<string> _explicitNullValueTransferIds = default!;
 #endif
         /// <summary>

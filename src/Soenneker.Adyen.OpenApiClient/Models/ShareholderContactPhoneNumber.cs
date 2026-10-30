@@ -18,9 +18,12 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("phoneCountryCode") is { } nullNodePhoneCountryCode && nullNodePhoneCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneCountryCode = null;
-            if (parseNode.GetChildNode("phoneNumber") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
-            if (parseNode.GetChildNode("phoneType") is { } nullNodePhoneType && nullNodePhoneType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneType = null;
+            if (parseNode.GetChildNode("phoneCountryCode") is null) { _explicitNullValuePhoneCountryCode = default!; _explicitNullProperties?.Remove("phoneCountryCode"); }
+            else if (parseNode.GetChildNode("phoneCountryCode") is { } nullNodePhoneCountryCode && nullNodePhoneCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneCountryCode = null;
+            if (parseNode.GetChildNode("phoneNumber") is null) { _explicitNullValuePhoneNumber = default!; _explicitNullProperties?.Remove("phoneNumber"); }
+            else if (parseNode.GetChildNode("phoneNumber") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("phoneType") is null) { _explicitNullValuePhoneType = default!; _explicitNullProperties?.Remove("phoneType"); }
+            else if (parseNode.GetChildNode("phoneType") is { } nullNodePhoneType && nullNodePhoneType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The two-character country code of the phone number.&gt;The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. &apos;NL&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneCountryCode { get => _explicitNullValuePhoneCountryCode; set { _explicitNullValuePhoneCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneCountryCode"); else _explicitNullProperties?.Remove("phoneCountryCode"); } }
+        public string? PhoneCountryCode { get => _explicitNullValuePhoneCountryCode; set { _explicitNullValuePhoneCountryCode = value; AdditionalData?.Remove("phoneCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneCountryCode"); else _explicitNullProperties?.Remove("phoneCountryCode"); } }
         private string? _explicitNullValuePhoneCountryCode = default!;
 #nullable restore
 #else
-        public string PhoneCountryCode { get => _explicitNullValuePhoneCountryCode; set { _explicitNullValuePhoneCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneCountryCode"); else _explicitNullProperties?.Remove("phoneCountryCode"); } }
+        public string PhoneCountryCode { get => _explicitNullValuePhoneCountryCode; set { _explicitNullValuePhoneCountryCode = value; AdditionalData?.Remove("phoneCountryCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneCountryCode"); else _explicitNullProperties?.Remove("phoneCountryCode"); } }
         private string _explicitNullValuePhoneCountryCode = default!;
 #endif
         /// <summary>The phone number.&gt;The inclusion of the phone number country code is not necessary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
         private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; AdditionalData?.Remove("phoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneNumber"); else _explicitNullProperties?.Remove("phoneNumber"); } }
         private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>The type of the phone number.&gt;The following values are permitted: `Landline`, `Mobile`, `SIP`, `Fax`.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumberPhoneType? PhoneType { get => _explicitNullValuePhoneType; set { _explicitNullValuePhoneType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneType"); else _explicitNullProperties?.Remove("phoneType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumberPhoneType? PhoneType { get => _explicitNullValuePhoneType; set { _explicitNullValuePhoneType = value; AdditionalData?.Remove("phoneType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phoneType"); else _explicitNullProperties?.Remove("phoneType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumberPhoneType? _explicitNullValuePhoneType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.ShareholderContactPhoneNumber"/> and sets the default values.
@@ -75,7 +78,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "phoneCountryCode", n => { PhoneCountryCode = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                { "phoneType", n => { PhoneType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumberPhoneType>(); } },
+                { "phoneType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.ViasPhoneNumberPhoneType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePhoneType = default; _explicitNullProperties?.Remove("phoneType"); AdditionalData["phoneType"] = unknown; } else { PhoneType = parsed; AdditionalData.Remove("phoneType"); } } },
             };
         }
         /// <summary>

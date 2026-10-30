@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("formFactor") is { } nullNodeFormFactor && nullNodeFormFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormFactor = null;
+            if (parseNode.GetChildNode("formFactor") is null) { _explicitNullValueFormFactor = default!; _explicitNullProperties?.Remove("formFactor"); }
+            else if (parseNode.GetChildNode("formFactor") is { } nullNodeFormFactor && nullNodeFormFactor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormFactor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Business accounts with a `formFactor` value of **physical** are business accounts issued under the central bank of that country. The default value is **physical** for NL, US, and UK business accounts. Adyen creates a local IBAN for business accounts when the `formFactor` value is set to **virtual**. The local IBANs that are supported are for DE and FR, which reference a physical NL account, with funds being routed through the central bank of NL.</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor? FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor? FormFactor { get => _explicitNullValueFormFactor; set { _explicitNullValueFormFactor = value; AdditionalData?.Remove("formFactor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formFactor"); else _explicitNullProperties?.Remove("formFactor"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor? _explicitNullValueFormFactor = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentInstrumentInfoBankAccount"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "formFactor", n => { FormFactor = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor>(); } },
+                { "formFactor", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.BankAccountModelFormFactor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFormFactor = default; _explicitNullProperties?.Remove("formFactor"); AdditionalData["formFactor"] = unknown; } else { FormFactor = parsed; AdditionalData.Remove("formFactor"); } } },
             };
         }
         /// <summary>

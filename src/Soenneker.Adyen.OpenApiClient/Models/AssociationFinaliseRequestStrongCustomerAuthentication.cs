@@ -18,7 +18,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sdkOutput") is { } nullNodeSdkOutput && nullNodeSdkOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkOutput = null;
+            if (parseNode.GetChildNode("sdkOutput") is null) { _explicitNullValueSdkOutput = default!; _explicitNullProperties?.Remove("sdkOutput"); }
+            else if (parseNode.GetChildNode("sdkOutput") is { } nullNodeSdkOutput && nullNodeSdkOutput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkOutput = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A base64-encoded block with the data required to authenticate the request. You obtain this information by using our authentication SDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkOutput { get => _explicitNullValueSdkOutput; set { _explicitNullValueSdkOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkOutput"); else _explicitNullProperties?.Remove("sdkOutput"); } }
+        public string? SdkOutput { get => _explicitNullValueSdkOutput; set { _explicitNullValueSdkOutput = value; AdditionalData?.Remove("sdkOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkOutput"); else _explicitNullProperties?.Remove("sdkOutput"); } }
         private string? _explicitNullValueSdkOutput = default!;
 #nullable restore
 #else
-        public string SdkOutput { get => _explicitNullValueSdkOutput; set { _explicitNullValueSdkOutput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkOutput"); else _explicitNullProperties?.Remove("sdkOutput"); } }
+        public string SdkOutput { get => _explicitNullValueSdkOutput; set { _explicitNullValueSdkOutput = value; AdditionalData?.Remove("sdkOutput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkOutput"); else _explicitNullProperties?.Remove("sdkOutput"); } }
         private string _explicitNullValueSdkOutput = default!;
 #endif
         /// <summary>

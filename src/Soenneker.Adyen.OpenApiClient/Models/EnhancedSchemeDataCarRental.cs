@@ -18,18 +18,30 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customerServicePhoneNumber") is { } nullNodeCustomerServicePhoneNumber && nullNodeCustomerServicePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerServicePhoneNumber = null;
-            if (parseNode.GetChildNode("noShow") is { } nullNodeNoShow && nullNodeNoShow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoShow = null;
-            if (parseNode.GetChildNode("pickupInfo") is { } nullNodePickupInfo && nullNodePickupInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickupInfo = null;
-            if (parseNode.GetChildNode("rateType") is { } nullNodeRateType && nullNodeRateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateType = null;
-            if (parseNode.GetChildNode("rentalAgreementNumber") is { } nullNodeRentalAgreementNumber && nullNodeRentalAgreementNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalAgreementNumber = null;
-            if (parseNode.GetChildNode("rentalClassId") is { } nullNodeRentalClassId && nullNodeRentalClassId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalClassId = null;
-            if (parseNode.GetChildNode("rentalDays") is { } nullNodeRentalDays && nullNodeRentalDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalDays = null;
-            if (parseNode.GetChildNode("rentalRate") is { } nullNodeRentalRate && nullNodeRentalRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalRate = null;
-            if (parseNode.GetChildNode("rentalSurcharges") is { } nullNodeRentalSurcharges && nullNodeRentalSurcharges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalSurcharges = null;
-            if (parseNode.GetChildNode("renterName") is { } nullNodeRenterName && nullNodeRenterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenterName = null;
-            if (parseNode.GetChildNode("returnInfo") is { } nullNodeReturnInfo && nullNodeReturnInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnInfo = null;
-            if (parseNode.GetChildNode("taxExempt") is { } nullNodeTaxExempt && nullNodeTaxExempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxExempt = null;
+            if (parseNode.GetChildNode("customerServicePhoneNumber") is null) { _explicitNullValueCustomerServicePhoneNumber = default!; _explicitNullProperties?.Remove("customerServicePhoneNumber"); }
+            else if (parseNode.GetChildNode("customerServicePhoneNumber") is { } nullNodeCustomerServicePhoneNumber && nullNodeCustomerServicePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerServicePhoneNumber = null;
+            if (parseNode.GetChildNode("noShow") is null) { _explicitNullValueNoShow = default!; _explicitNullProperties?.Remove("noShow"); }
+            else if (parseNode.GetChildNode("noShow") is { } nullNodeNoShow && nullNodeNoShow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoShow = null;
+            if (parseNode.GetChildNode("pickupInfo") is null) { _explicitNullValuePickupInfo = default!; _explicitNullProperties?.Remove("pickupInfo"); }
+            else if (parseNode.GetChildNode("pickupInfo") is { } nullNodePickupInfo && nullNodePickupInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PickupInfo = null;
+            if (parseNode.GetChildNode("rateType") is null) { _explicitNullValueRateType = default!; _explicitNullProperties?.Remove("rateType"); }
+            else if (parseNode.GetChildNode("rateType") is { } nullNodeRateType && nullNodeRateType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateType = null;
+            if (parseNode.GetChildNode("rentalAgreementNumber") is null) { _explicitNullValueRentalAgreementNumber = default!; _explicitNullProperties?.Remove("rentalAgreementNumber"); }
+            else if (parseNode.GetChildNode("rentalAgreementNumber") is { } nullNodeRentalAgreementNumber && nullNodeRentalAgreementNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalAgreementNumber = null;
+            if (parseNode.GetChildNode("rentalClassId") is null) { _explicitNullValueRentalClassId = default!; _explicitNullProperties?.Remove("rentalClassId"); }
+            else if (parseNode.GetChildNode("rentalClassId") is { } nullNodeRentalClassId && nullNodeRentalClassId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalClassId = null;
+            if (parseNode.GetChildNode("rentalDays") is null) { _explicitNullValueRentalDays = default!; _explicitNullProperties?.Remove("rentalDays"); }
+            else if (parseNode.GetChildNode("rentalDays") is { } nullNodeRentalDays && nullNodeRentalDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalDays = null;
+            if (parseNode.GetChildNode("rentalRate") is null) { _explicitNullValueRentalRate = default!; _explicitNullProperties?.Remove("rentalRate"); }
+            else if (parseNode.GetChildNode("rentalRate") is { } nullNodeRentalRate && nullNodeRentalRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalRate = null;
+            if (parseNode.GetChildNode("rentalSurcharges") is null) { _explicitNullValueRentalSurcharges = default!; _explicitNullProperties?.Remove("rentalSurcharges"); }
+            else if (parseNode.GetChildNode("rentalSurcharges") is { } nullNodeRentalSurcharges && nullNodeRentalSurcharges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RentalSurcharges = null;
+            if (parseNode.GetChildNode("renterName") is null) { _explicitNullValueRenterName = default!; _explicitNullProperties?.Remove("renterName"); }
+            else if (parseNode.GetChildNode("renterName") is { } nullNodeRenterName && nullNodeRenterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenterName = null;
+            if (parseNode.GetChildNode("returnInfo") is null) { _explicitNullValueReturnInfo = default!; _explicitNullProperties?.Remove("returnInfo"); }
+            else if (parseNode.GetChildNode("returnInfo") is { } nullNodeReturnInfo && nullNodeReturnInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReturnInfo = null;
+            if (parseNode.GetChildNode("taxExempt") is null) { _explicitNullValueTaxExempt = default!; _explicitNullProperties?.Remove("taxExempt"); }
+            else if (parseNode.GetChildNode("taxExempt") is { } nullNodeTaxExempt && nullNodeTaxExempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxExempt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,87 +49,87 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>The customer service phone number of the car rental company.* Format: Alphanumeric* maxLength: 17* For US and CA numbers must be 10 characters in length* Must not contain any special characters such as + or -* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.customerServiceTollFreeNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerServicePhoneNumber { get => _explicitNullValueCustomerServicePhoneNumber; set { _explicitNullValueCustomerServicePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerServicePhoneNumber"); else _explicitNullProperties?.Remove("customerServicePhoneNumber"); } }
+        public string? CustomerServicePhoneNumber { get => _explicitNullValueCustomerServicePhoneNumber; set { _explicitNullValueCustomerServicePhoneNumber = value; AdditionalData?.Remove("customerServicePhoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerServicePhoneNumber"); else _explicitNullProperties?.Remove("customerServicePhoneNumber"); } }
         private string? _explicitNullValueCustomerServicePhoneNumber = default!;
 #nullable restore
 #else
-        public string CustomerServicePhoneNumber { get => _explicitNullValueCustomerServicePhoneNumber; set { _explicitNullValueCustomerServicePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerServicePhoneNumber"); else _explicitNullProperties?.Remove("customerServicePhoneNumber"); } }
+        public string CustomerServicePhoneNumber { get => _explicitNullValueCustomerServicePhoneNumber; set { _explicitNullValueCustomerServicePhoneNumber = value; AdditionalData?.Remove("customerServicePhoneNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customerServicePhoneNumber"); else _explicitNullProperties?.Remove("customerServicePhoneNumber"); } }
         private string _explicitNullValueCustomerServicePhoneNumber = default!;
 #endif
         /// <summary>Indicates if the customer didn&apos;t pick up their rental car.* **additionalData key:** `carRental.noShowIndicator`</summary>
-        public bool? NoShow { get => _explicitNullValueNoShow; set { _explicitNullValueNoShow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noShow"); else _explicitNullProperties?.Remove("noShow"); } }
+        public bool? NoShow { get => _explicitNullValueNoShow; set { _explicitNullValueNoShow = value; AdditionalData?.Remove("noShow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noShow"); else _explicitNullProperties?.Remove("noShow"); } }
         private bool? _explicitNullValueNoShow = default!;
         /// <summary>The pickupInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo? PickupInfo { get => _explicitNullValuePickupInfo; set { _explicitNullValuePickupInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pickupInfo"); else _explicitNullProperties?.Remove("pickupInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo? PickupInfo { get => _explicitNullValuePickupInfo; set { _explicitNullValuePickupInfo = value; AdditionalData?.Remove("pickupInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pickupInfo"); else _explicitNullProperties?.Remove("pickupInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo? _explicitNullValuePickupInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo PickupInfo { get => _explicitNullValuePickupInfo; set { _explicitNullValuePickupInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pickupInfo"); else _explicitNullProperties?.Remove("pickupInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo PickupInfo { get => _explicitNullValuePickupInfo; set { _explicitNullValuePickupInfo = value; AdditionalData?.Remove("pickupInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pickupInfo"); else _explicitNullProperties?.Remove("pickupInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo _explicitNullValuePickupInfo = default!;
 #endif
         /// <summary>Indicates whether the rental rate is daily or weekly.* **additionalData key:** `carRental.rateIndicator`</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.CarRentalRateType? RateType { get => _explicitNullValueRateType; set { _explicitNullValueRateType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateType"); else _explicitNullProperties?.Remove("rateType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.CarRentalRateType? RateType { get => _explicitNullValueRateType; set { _explicitNullValueRateType = value; AdditionalData?.Remove("rateType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateType"); else _explicitNullProperties?.Remove("rateType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.CarRentalRateType? _explicitNullValueRateType = default!;
         /// <summary>The rental agreement number for the car rental.* Format: ASCII* maxLength: 9 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.rentalAgreementNumber`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RentalAgreementNumber { get => _explicitNullValueRentalAgreementNumber; set { _explicitNullValueRentalAgreementNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalAgreementNumber"); else _explicitNullProperties?.Remove("rentalAgreementNumber"); } }
+        public string? RentalAgreementNumber { get => _explicitNullValueRentalAgreementNumber; set { _explicitNullValueRentalAgreementNumber = value; AdditionalData?.Remove("rentalAgreementNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalAgreementNumber"); else _explicitNullProperties?.Remove("rentalAgreementNumber"); } }
         private string? _explicitNullValueRentalAgreementNumber = default!;
 #nullable restore
 #else
-        public string RentalAgreementNumber { get => _explicitNullValueRentalAgreementNumber; set { _explicitNullValueRentalAgreementNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalAgreementNumber"); else _explicitNullProperties?.Remove("rentalAgreementNumber"); } }
+        public string RentalAgreementNumber { get => _explicitNullValueRentalAgreementNumber; set { _explicitNullValueRentalAgreementNumber = value; AdditionalData?.Remove("rentalAgreementNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalAgreementNumber"); else _explicitNullProperties?.Remove("rentalAgreementNumber"); } }
         private string _explicitNullValueRentalAgreementNumber = default!;
 #endif
         /// <summary>The classification of the rental car.* Format: Alphanumeric* maxLength: 4 characters* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.rentalClassId`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RentalClassId { get => _explicitNullValueRentalClassId; set { _explicitNullValueRentalClassId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalClassId"); else _explicitNullProperties?.Remove("rentalClassId"); } }
+        public string? RentalClassId { get => _explicitNullValueRentalClassId; set { _explicitNullValueRentalClassId = value; AdditionalData?.Remove("rentalClassId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalClassId"); else _explicitNullProperties?.Remove("rentalClassId"); } }
         private string? _explicitNullValueRentalClassId = default!;
 #nullable restore
 #else
-        public string RentalClassId { get => _explicitNullValueRentalClassId; set { _explicitNullValueRentalClassId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalClassId"); else _explicitNullProperties?.Remove("rentalClassId"); } }
+        public string RentalClassId { get => _explicitNullValueRentalClassId; set { _explicitNullValueRentalClassId = value; AdditionalData?.Remove("rentalClassId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalClassId"); else _explicitNullProperties?.Remove("rentalClassId"); } }
         private string _explicitNullValueRentalClassId = default!;
 #endif
         /// <summary>The number of days the car is rented for.* Format: Numeric* Max value: 9999* **additionalData key:** `carRental.daysRented`</summary>
-        public int? RentalDays { get => _explicitNullValueRentalDays; set { _explicitNullValueRentalDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalDays"); else _explicitNullProperties?.Remove("rentalDays"); } }
+        public int? RentalDays { get => _explicitNullValueRentalDays; set { _explicitNullValueRentalDays = value; AdditionalData?.Remove("rentalDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalDays"); else _explicitNullProperties?.Remove("rentalDays"); } }
         private int? _explicitNullValueRentalDays = default!;
         /// <summary>Rental rate, in [minor units](https://docs.adyen.com/development-resources/currency-codes).* For example, 2000 means USD 20.00.* Encoding: Numeric* Max value: 10000000000* Frequency of the rental rate is specified in the rateType field.* **additionalData key:** `carRental.rate`</summary>
-        public long? RentalRate { get => _explicitNullValueRentalRate; set { _explicitNullValueRentalRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalRate"); else _explicitNullProperties?.Remove("rentalRate"); } }
+        public long? RentalRate { get => _explicitNullValueRentalRate; set { _explicitNullValueRentalRate = value; AdditionalData?.Remove("rentalRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalRate"); else _explicitNullProperties?.Remove("rentalRate"); } }
         private long? _explicitNullValueRentalRate = default!;
         /// <summary>The rentalSurcharges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges? RentalSurcharges { get => _explicitNullValueRentalSurcharges; set { _explicitNullValueRentalSurcharges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalSurcharges"); else _explicitNullProperties?.Remove("rentalSurcharges"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges? RentalSurcharges { get => _explicitNullValueRentalSurcharges; set { _explicitNullValueRentalSurcharges = value; AdditionalData?.Remove("rentalSurcharges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalSurcharges"); else _explicitNullProperties?.Remove("rentalSurcharges"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges? _explicitNullValueRentalSurcharges = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges RentalSurcharges { get => _explicitNullValueRentalSurcharges; set { _explicitNullValueRentalSurcharges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalSurcharges"); else _explicitNullProperties?.Remove("rentalSurcharges"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges RentalSurcharges { get => _explicitNullValueRentalSurcharges; set { _explicitNullValueRentalSurcharges = value; AdditionalData?.Remove("rentalSurcharges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rentalSurcharges"); else _explicitNullProperties?.Remove("rentalSurcharges"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.RentalSurcharges _explicitNullValueRentalSurcharges = default!;
 #endif
         /// <summary>The name of the person renting the car.* Format: ASCII* Must not start with a space or be all spaces.* Must not be all zeros.* **additionalData key:** `carRental.renterName`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RenterName { get => _explicitNullValueRenterName; set { _explicitNullValueRenterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renterName"); else _explicitNullProperties?.Remove("renterName"); } }
+        public string? RenterName { get => _explicitNullValueRenterName; set { _explicitNullValueRenterName = value; AdditionalData?.Remove("renterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renterName"); else _explicitNullProperties?.Remove("renterName"); } }
         private string? _explicitNullValueRenterName = default!;
 #nullable restore
 #else
-        public string RenterName { get => _explicitNullValueRenterName; set { _explicitNullValueRenterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renterName"); else _explicitNullProperties?.Remove("renterName"); } }
+        public string RenterName { get => _explicitNullValueRenterName; set { _explicitNullValueRenterName = value; AdditionalData?.Remove("renterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renterName"); else _explicitNullProperties?.Remove("renterName"); } }
         private string _explicitNullValueRenterName = default!;
 #endif
         /// <summary>The returnInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnInfo? ReturnInfo { get => _explicitNullValueReturnInfo; set { _explicitNullValueReturnInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnInfo"); else _explicitNullProperties?.Remove("returnInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnInfo? ReturnInfo { get => _explicitNullValueReturnInfo; set { _explicitNullValueReturnInfo = value; AdditionalData?.Remove("returnInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnInfo"); else _explicitNullProperties?.Remove("returnInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReturnInfo? _explicitNullValueReturnInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnInfo ReturnInfo { get => _explicitNullValueReturnInfo; set { _explicitNullValueReturnInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnInfo"); else _explicitNullProperties?.Remove("returnInfo"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.ReturnInfo ReturnInfo { get => _explicitNullValueReturnInfo; set { _explicitNullValueReturnInfo = value; AdditionalData?.Remove("returnInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("returnInfo"); else _explicitNullProperties?.Remove("returnInfo"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.ReturnInfo _explicitNullValueReturnInfo = default!;
 #endif
         /// <summary>Indicates if the goods or services were tax-exempt, or if tax was not collected.* **additionalData key:** `carRental.taxExemptIndicator`</summary>
-        public bool? TaxExempt { get => _explicitNullValueTaxExempt; set { _explicitNullValueTaxExempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxExempt"); else _explicitNullProperties?.Remove("taxExempt"); } }
+        public bool? TaxExempt { get => _explicitNullValueTaxExempt; set { _explicitNullValueTaxExempt = value; AdditionalData?.Remove("taxExempt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taxExempt"); else _explicitNullProperties?.Remove("taxExempt"); } }
         private bool? _explicitNullValueTaxExempt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.EnhancedSchemeDataCarRental"/> and sets the default values.
@@ -147,7 +159,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
                 { "customerServicePhoneNumber", n => { CustomerServicePhoneNumber = n.GetStringValue(); } },
                 { "noShow", n => { NoShow = n.GetBoolValue(); } },
                 { "pickupInfo", n => { PickupInfo = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo>(global::Soenneker.Adyen.OpenApiClient.Models.PickupInfo.CreateFromDiscriminatorValue); } },
-                { "rateType", n => { RateType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CarRentalRateType>(); } },
+                { "rateType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.CarRentalRateType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRateType = default; _explicitNullProperties?.Remove("rateType"); AdditionalData["rateType"] = unknown; } else { RateType = parsed; AdditionalData.Remove("rateType"); } } },
                 { "rentalAgreementNumber", n => { RentalAgreementNumber = n.GetStringValue(); } },
                 { "rentalClassId", n => { RentalClassId = n.GetStringValue(); } },
                 { "rentalDays", n => { RentalDays = n.GetIntValue(); } },

@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sdkInput") is { } nullNodeSdkInput && nullNodeSdkInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkInput = null;
+            if (parseNode.GetChildNode("sdkInput") is null) { _explicitNullValueSdkInput = default!; _explicitNullProperties?.Remove("sdkInput"); }
+            else if (parseNode.GetChildNode("sdkInput") is { } nullNodeSdkInput && nullNodeSdkInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkInput = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A block of data that contains the activation data for a network token. This `sdkInput` is required to initialize Adyen&apos;s SDK for network token provisioning.For more information, see the repositories for Adyen&apos;s SDKs for network token provisioning:* [Adyen Apple Pay Provisioning SDK](https://github.com/Adyen/adyen-apple-pay-provisioning-ios).* [Adyen Google Wallet Provisioning SDK](https://github.com/Adyen/adyen-issuing-android)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkInput { get => _explicitNullValueSdkInput; set { _explicitNullValueSdkInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkInput"); else _explicitNullProperties?.Remove("sdkInput"); } }
+        public string? SdkInput { get => _explicitNullValueSdkInput; set { _explicitNullValueSdkInput = value; AdditionalData?.Remove("sdkInput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkInput"); else _explicitNullProperties?.Remove("sdkInput"); } }
         private string? _explicitNullValueSdkInput = default!;
 #nullable restore
 #else
-        public string SdkInput { get => _explicitNullValueSdkInput; set { _explicitNullValueSdkInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkInput"); else _explicitNullProperties?.Remove("sdkInput"); } }
+        public string SdkInput { get => _explicitNullValueSdkInput; set { _explicitNullValueSdkInput = value; AdditionalData?.Remove("sdkInput"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkInput"); else _explicitNullProperties?.Remove("sdkInput"); } }
         private string _explicitNullValueSdkInput = default!;
 #endif
         /// <summary>

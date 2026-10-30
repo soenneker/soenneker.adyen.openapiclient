@@ -18,21 +18,24 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("TransactionAmount") is { } nullNodeTransactionAmount && nullNodeTransactionAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionAmount = null;
-            if (parseNode.GetChildNode("TransactionCount") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
-            if (parseNode.GetChildNode("TransactionType") is { } nullNodeTransactionType && nullNodeTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionType = null;
+            if (parseNode.GetChildNode("TransactionAmount") is null) { _explicitNullValueTransactionAmount = default!; _explicitNullProperties?.Remove("TransactionAmount"); }
+            else if (parseNode.GetChildNode("TransactionAmount") is { } nullNodeTransactionAmount && nullNodeTransactionAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionAmount = null;
+            if (parseNode.GetChildNode("TransactionCount") is null) { _explicitNullValueTransactionCount = default!; _explicitNullProperties?.Remove("TransactionCount"); }
+            else if (parseNode.GetChildNode("TransactionCount") is { } nullNodeTransactionCount && nullNodeTransactionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionCount = null;
+            if (parseNode.GetChildNode("TransactionType") is null) { _explicitNullValueTransactionType = default!; _explicitNullProperties?.Remove("TransactionType"); }
+            else if (parseNode.GetChildNode("TransactionType") is { } nullNodeTransactionType && nullNodeTransactionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sum of amount of processed transaction during the period.</summary>
-        public double? TransactionAmount { get => _explicitNullValueTransactionAmount; set { _explicitNullValueTransactionAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionAmount"); else _explicitNullProperties?.Remove("TransactionAmount"); } }
+        public double? TransactionAmount { get => _explicitNullValueTransactionAmount; set { _explicitNullValueTransactionAmount = value; AdditionalData?.Remove("TransactionAmount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionAmount"); else _explicitNullProperties?.Remove("TransactionAmount"); } }
         private double? _explicitNullValueTransactionAmount = default!;
         /// <summary>Number of processed transaction during the period.</summary>
-        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionCount"); else _explicitNullProperties?.Remove("TransactionCount"); } }
+        public int? TransactionCount { get => _explicitNullValueTransactionCount; set { _explicitNullValueTransactionCount = value; AdditionalData?.Remove("TransactionCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionCount"); else _explicitNullProperties?.Remove("TransactionCount"); } }
         private int? _explicitNullValueTransactionCount = default!;
         /// <summary>Possible values:* **Debit*** **Credit*** **ReverseDebit*** **ReverseCredit*** **OneTimeReservation*** **CompletedDeffered*** **FirstReservation*** **UpdateReservation*** **CompletedReservation*** **CashAdvance*** **IssuerInstalment*** **Declined*** **Failed*** **Award*** **ReverseAward*** **Redemption*** **ReverseRedemption*** **Rebate*** **ReverseRebate**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType? TransactionType { get => _explicitNullValueTransactionType; set { _explicitNullValueTransactionType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionType"); else _explicitNullProperties?.Remove("TransactionType"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType? TransactionType { get => _explicitNullValueTransactionType; set { _explicitNullValueTransactionType = value; AdditionalData?.Remove("TransactionType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("TransactionType"); else _explicitNullProperties?.Remove("TransactionType"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType? _explicitNullValueTransactionType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotals"/> and sets the default values.
@@ -61,7 +64,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
             {
                 { "TransactionAmount", n => { TransactionAmount = n.GetDoubleValue(); } },
                 { "TransactionCount", n => { TransactionCount = n.GetIntValue(); } },
-                { "TransactionType", n => { TransactionType = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType>(); } },
+                { "TransactionType", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentTotalsTransactionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTransactionType = default; _explicitNullProperties?.Remove("TransactionType"); AdditionalData["TransactionType"] = unknown; } else { TransactionType = parsed; AdditionalData.Remove("TransactionType"); } } },
             };
         }
         /// <summary>

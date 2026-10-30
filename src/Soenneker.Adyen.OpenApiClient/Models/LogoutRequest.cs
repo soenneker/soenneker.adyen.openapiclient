@@ -18,13 +18,14 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("MaintenanceAllowed") is { } nullNodeMaintenanceAllowed && nullNodeMaintenanceAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceAllowed = null;
+            if (parseNode.GetChildNode("MaintenanceAllowed") is null) { _explicitNullValueMaintenanceAllowed = default!; _explicitNullProperties?.Remove("MaintenanceAllowed"); }
+            else if (parseNode.GetChildNode("MaintenanceAllowed") is { } nullNodeMaintenanceAllowed && nullNodeMaintenanceAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintenanceAllowed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the POI terminal is able to or has to go to maintenance. Sent in the Logout Request to express that after closing the session, the POI may go to maintenance.</summary>
-        public bool? MaintenanceAllowed { get => _explicitNullValueMaintenanceAllowed; set { _explicitNullValueMaintenanceAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaintenanceAllowed"); else _explicitNullProperties?.Remove("MaintenanceAllowed"); } }
+        public bool? MaintenanceAllowed { get => _explicitNullValueMaintenanceAllowed; set { _explicitNullValueMaintenanceAllowed = value; AdditionalData?.Remove("MaintenanceAllowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("MaintenanceAllowed"); else _explicitNullProperties?.Remove("MaintenanceAllowed"); } }
         private bool? _explicitNullValueMaintenanceAllowed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.LogoutRequest"/> and sets the default values.

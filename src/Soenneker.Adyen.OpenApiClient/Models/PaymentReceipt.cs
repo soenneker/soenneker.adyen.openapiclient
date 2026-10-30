@@ -18,32 +18,36 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("DocumentQualifier") is { } nullNodeDocumentQualifier && nullNodeDocumentQualifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentQualifier = null;
-            if (parseNode.GetChildNode("IntegratedPrintFlag") is { } nullNodeIntegratedPrintFlag && nullNodeIntegratedPrintFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegratedPrintFlag = null;
-            if (parseNode.GetChildNode("OutputContent") is { } nullNodeOutputContent && nullNodeOutputContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputContent = null;
-            if (parseNode.GetChildNode("RequiredSignatureFlag") is { } nullNodeRequiredSignatureFlag && nullNodeRequiredSignatureFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredSignatureFlag = null;
+            if (parseNode.GetChildNode("DocumentQualifier") is null) { _explicitNullValueDocumentQualifier = default!; _explicitNullProperties?.Remove("DocumentQualifier"); }
+            else if (parseNode.GetChildNode("DocumentQualifier") is { } nullNodeDocumentQualifier && nullNodeDocumentQualifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentQualifier = null;
+            if (parseNode.GetChildNode("IntegratedPrintFlag") is null) { _explicitNullValueIntegratedPrintFlag = default!; _explicitNullProperties?.Remove("IntegratedPrintFlag"); }
+            else if (parseNode.GetChildNode("IntegratedPrintFlag") is { } nullNodeIntegratedPrintFlag && nullNodeIntegratedPrintFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegratedPrintFlag = null;
+            if (parseNode.GetChildNode("OutputContent") is null) { _explicitNullValueOutputContent = default!; _explicitNullProperties?.Remove("OutputContent"); }
+            else if (parseNode.GetChildNode("OutputContent") is { } nullNodeOutputContent && nullNodeOutputContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputContent = null;
+            if (parseNode.GetChildNode("RequiredSignatureFlag") is null) { _explicitNullValueRequiredSignatureFlag = default!; _explicitNullProperties?.Remove("RequiredSignatureFlag"); }
+            else if (parseNode.GetChildNode("RequiredSignatureFlag") is { } nullNodeRequiredSignatureFlag && nullNodeRequiredSignatureFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredSignatureFlag = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values:* **SaleReceipt*** **CashierReceipt*** **CustomerReceipt*** **Document*** **Voucher*** **Journal**</summary>
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier? DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier? DocumentQualifier { get => _explicitNullValueDocumentQualifier; set { _explicitNullValueDocumentQualifier = value; AdditionalData?.Remove("DocumentQualifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("DocumentQualifier"); else _explicitNullProperties?.Remove("DocumentQualifier"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier? _explicitNullValueDocumentQualifier = default!;
         /// <summary>Type of the print integrated to other prints.</summary>
-        public bool? IntegratedPrintFlag { get => _explicitNullValueIntegratedPrintFlag; set { _explicitNullValueIntegratedPrintFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IntegratedPrintFlag"); else _explicitNullProperties?.Remove("IntegratedPrintFlag"); } }
+        public bool? IntegratedPrintFlag { get => _explicitNullValueIntegratedPrintFlag; set { _explicitNullValueIntegratedPrintFlag = value; AdditionalData?.Remove("IntegratedPrintFlag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("IntegratedPrintFlag"); else _explicitNullProperties?.Remove("IntegratedPrintFlag"); } }
         private bool? _explicitNullValueIntegratedPrintFlag = default!;
         /// <summary>Content to display or print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent? OutputContent { get => _explicitNullValueOutputContent; set { _explicitNullValueOutputContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputContent"); else _explicitNullProperties?.Remove("OutputContent"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent? OutputContent { get => _explicitNullValueOutputContent; set { _explicitNullValueOutputContent = value; AdditionalData?.Remove("OutputContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputContent"); else _explicitNullProperties?.Remove("OutputContent"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent? _explicitNullValueOutputContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent OutputContent { get => _explicitNullValueOutputContent; set { _explicitNullValueOutputContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputContent"); else _explicitNullProperties?.Remove("OutputContent"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent OutputContent { get => _explicitNullValueOutputContent; set { _explicitNullValueOutputContent = value; AdditionalData?.Remove("OutputContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("OutputContent"); else _explicitNullProperties?.Remove("OutputContent"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent _explicitNullValueOutputContent = default!;
 #endif
         /// <summary>Indicate that the cardholder payment receipt requires a physical signature by the Customer.</summary>
-        public bool? RequiredSignatureFlag { get => _explicitNullValueRequiredSignatureFlag; set { _explicitNullValueRequiredSignatureFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RequiredSignatureFlag"); else _explicitNullProperties?.Remove("RequiredSignatureFlag"); } }
+        public bool? RequiredSignatureFlag { get => _explicitNullValueRequiredSignatureFlag; set { _explicitNullValueRequiredSignatureFlag = value; AdditionalData?.Remove("RequiredSignatureFlag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("RequiredSignatureFlag"); else _explicitNullProperties?.Remove("RequiredSignatureFlag"); } }
         private bool? _explicitNullValueRequiredSignatureFlag = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceipt"/> and sets the default values.
@@ -71,7 +75,7 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "DocumentQualifier", n => { DocumentQualifier = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>(); } },
+                { "DocumentQualifier", n => { var parsed = n.GetEnumValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptDocumentQualifier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDocumentQualifier = default; _explicitNullProperties?.Remove("DocumentQualifier"); AdditionalData["DocumentQualifier"] = unknown; } else { DocumentQualifier = parsed; AdditionalData.Remove("DocumentQualifier"); } } },
                 { "IntegratedPrintFlag", n => { IntegratedPrintFlag = n.GetBoolValue(); } },
                 { "OutputContent", n => { OutputContent = n.GetObjectValue<global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent>(global::Soenneker.Adyen.OpenApiClient.Models.PaymentReceiptOutputContent.CreateFromDiscriminatorValue); } },
                 { "RequiredSignatureFlag", n => { RequiredSignatureFlag = n.GetBoolValue(); } },

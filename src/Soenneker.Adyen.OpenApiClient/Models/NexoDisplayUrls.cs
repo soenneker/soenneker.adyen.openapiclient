@@ -18,8 +18,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("localUrls") is { } nullNodeLocalUrls && nullNodeLocalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalUrls = null;
-            if (parseNode.GetChildNode("publicUrls") is { } nullNodePublicUrls && nullNodePublicUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicUrls = null;
+            if (parseNode.GetChildNode("localUrls") is null) { _explicitNullValueLocalUrls = default!; _explicitNullProperties?.Remove("localUrls"); }
+            else if (parseNode.GetChildNode("localUrls") is { } nullNodeLocalUrls && nullNodeLocalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocalUrls = null;
+            if (parseNode.GetChildNode("publicUrls") is null) { _explicitNullValuePublicUrls = default!; _explicitNullProperties?.Remove("publicUrls"); }
+            else if (parseNode.GetChildNode("publicUrls") is { } nullNodePublicUrls && nullNodePublicUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicUrls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>One or more local URLs to send notifications to when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? LocalUrls { get => _explicitNullValueLocalUrls; set { _explicitNullValueLocalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localUrls"); else _explicitNullProperties?.Remove("localUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? LocalUrls { get => _explicitNullValueLocalUrls; set { _explicitNullValueLocalUrls = value; AdditionalData?.Remove("localUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localUrls"); else _explicitNullProperties?.Remove("localUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? _explicitNullValueLocalUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> LocalUrls { get => _explicitNullValueLocalUrls; set { _explicitNullValueLocalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localUrls"); else _explicitNullProperties?.Remove("localUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> LocalUrls { get => _explicitNullValueLocalUrls; set { _explicitNullValueLocalUrls = value; AdditionalData?.Remove("localUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("localUrls"); else _explicitNullProperties?.Remove("localUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url> _explicitNullValueLocalUrls = default!;
 #endif
         /// <summary>One or more public URLs to send notifications to when using Terminal API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? PublicUrls { get => _explicitNullValuePublicUrls; set { _explicitNullValuePublicUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicUrls"); else _explicitNullProperties?.Remove("publicUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? PublicUrls { get => _explicitNullValuePublicUrls; set { _explicitNullValuePublicUrls = value; AdditionalData?.Remove("publicUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicUrls"); else _explicitNullProperties?.Remove("publicUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url>? _explicitNullValuePublicUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> PublicUrls { get => _explicitNullValuePublicUrls; set { _explicitNullValuePublicUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicUrls"); else _explicitNullProperties?.Remove("publicUrls"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.Url> PublicUrls { get => _explicitNullValuePublicUrls; set { _explicitNullValuePublicUrls = value; AdditionalData?.Remove("publicUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicUrls"); else _explicitNullProperties?.Remove("publicUrls"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.Url> _explicitNullValuePublicUrls = default!;
 #endif
         /// <summary>

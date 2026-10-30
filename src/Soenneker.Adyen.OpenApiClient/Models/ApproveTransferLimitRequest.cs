@@ -17,7 +17,8 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transferLimitIds") is { } nullNodeTransferLimitIds && nullNodeTransferLimitIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferLimitIds = null;
+            if (parseNode.GetChildNode("transferLimitIds") is null) { _explicitNullValueTransferLimitIds = default!; _explicitNullProperties?.Remove("transferLimitIds"); }
+            else if (parseNode.GetChildNode("transferLimitIds") is { } nullNodeTransferLimitIds && nullNodeTransferLimitIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferLimitIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>A list that includes the `transferLimitId` of all the pending transfer limits you want to approve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TransferLimitIds { get => _explicitNullValueTransferLimitIds; set { _explicitNullValueTransferLimitIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimitIds"); else _explicitNullProperties?.Remove("transferLimitIds"); } }
+        public List<string>? TransferLimitIds { get => _explicitNullValueTransferLimitIds; set { _explicitNullValueTransferLimitIds = value; AdditionalData?.Remove("transferLimitIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimitIds"); else _explicitNullProperties?.Remove("transferLimitIds"); } }
         private List<string>? _explicitNullValueTransferLimitIds = default!;
 #nullable restore
 #else
-        public List<string> TransferLimitIds { get => _explicitNullValueTransferLimitIds; set { _explicitNullValueTransferLimitIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimitIds"); else _explicitNullProperties?.Remove("transferLimitIds"); } }
+        public List<string> TransferLimitIds { get => _explicitNullValueTransferLimitIds; set { _explicitNullValueTransferLimitIds = value; AdditionalData?.Remove("transferLimitIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferLimitIds"); else _explicitNullProperties?.Remove("transferLimitIds"); } }
         private List<string> _explicitNullValueTransferLimitIds = default!;
 #endif
         /// <summary>

@@ -136203,7 +136203,7 @@
         "properties": {
           "actionDetails": {
             "description": "Information about the action to take.",
-            "$ref": "#/components/schemas/ScheduleTerminalActionsResponseActionDetails"
+            "$ref": "#/components/schemas/ScheduleTerminalActionsRequestActionDetails"
           },
           "items": {
             "type": "array",
@@ -139894,11 +139894,11 @@
         "properties": {
           "defaultAmount": {
             "description": "The default amount for donations.",
-            "$ref": "#/components/schemas/OnlineDonationSettingsUpdateDefaultAmount"
+            "$ref": "#/components/schemas/InPersonDonationSettingsUpdateDefaultAmount"
           },
           "donationType": {
             "description": "The type of donation to collect from the shopper. Possible values: \n\n- **roundup**: Round up the transaction amount.\n\n- **fixedAmounts**: Choose a fixed amount.\n\n- **fixedAmountsRoundup**: Round up, or choose a fixed amount.",
-            "$ref": "#/components/schemas/OnlineDonationSettingsUpdateDonationType"
+            "$ref": "#/components/schemas/InPersonDonationSettingsUpdateDonationType"
           },
           "merchantAccounts": {
             "type": [
@@ -144465,7 +144465,17 @@
           ""
         ],
         "type": "string",
-        "description": "The type of event notification sent when you select the notification button."
+        "description": "The type of event notification sent when you select the notification button.",
+        "x-ms-enum": {
+          "name": "NotificationCategory",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "NyceInfoProcessingType": {
         "enum": [
@@ -176728,7 +176738,8 @@
             "$ref": "#/components/schemas/TransferServiceV4TransferDataCategory"
           },
           "categoryData": {
-            "$ref": "#/components/schemas/TransferServiceV4TransferDataCategoryData"
+            "description": "The relevant data according to the transfer category.",
+            "$ref": "#/components/schemas/TransferCategoryData"
           },
           "counterparty": {
             "$ref": "#/components/schemas/TransferServiceV4TransferDataCounterparty"
@@ -177197,7 +177208,8 @@
         "type": "object",
         "properties": {
           "categoryData": {
-            "$ref": "#/components/schemas/TransferServiceV4TransferViewCategoryData"
+            "description": "The relevant data according to the transfer category.",
+            "$ref": "#/components/schemas/TransferCategoryData"
           },
           "id": {
             "type": "string",
@@ -244959,7 +244971,8 @@
         "type": "object",
         "properties": {
           "categoryData": {
-            "$ref": "#/components/schemas/TransferServiceV4TransferViewCategoryData"
+            "description": "The relevant data according to the transfer category.",
+            "$ref": "#/components/schemas/TransferCategoryData"
           },
           "id": {
             "type": "string",

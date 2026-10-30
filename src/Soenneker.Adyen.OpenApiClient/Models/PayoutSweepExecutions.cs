@@ -17,8 +17,10 @@ namespace Soenneker.Adyen.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
-            if (parseNode.GetChildNode("sweepExecutions") is { } nullNodeSweepExecutions && nullNodeSweepExecutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepExecutions = null;
+            if (parseNode.GetChildNode("link") is null) { _explicitNullValueLink = default!; _explicitNullProperties?.Remove("link"); }
+            else if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("sweepExecutions") is null) { _explicitNullValueSweepExecutions = default!; _explicitNullProperties?.Remove("sweepExecutions"); }
+            else if (parseNode.GetChildNode("sweepExecutions") is { } nullNodeSweepExecutions && nullNodeSweepExecutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SweepExecutions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Adyen.OpenApiClient.Models
         /// <summary>Contains links to the next and previous page whenever applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionsLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionsLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionsLink? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionsLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionsLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecutionsLink _explicitNullValueLink = default!;
 #endif
         /// <summary>Contains a list of executions of the sweep configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution>? SweepExecutions { get => _explicitNullValueSweepExecutions; set { _explicitNullValueSweepExecutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweepExecutions"); else _explicitNullProperties?.Remove("sweepExecutions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution>? SweepExecutions { get => _explicitNullValueSweepExecutions; set { _explicitNullValueSweepExecutions = value; AdditionalData?.Remove("sweepExecutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweepExecutions"); else _explicitNullProperties?.Remove("sweepExecutions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution>? _explicitNullValueSweepExecutions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution> SweepExecutions { get => _explicitNullValueSweepExecutions; set { _explicitNullValueSweepExecutions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweepExecutions"); else _explicitNullProperties?.Remove("sweepExecutions"); } }
+        public List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution> SweepExecutions { get => _explicitNullValueSweepExecutions; set { _explicitNullValueSweepExecutions = value; AdditionalData?.Remove("sweepExecutions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sweepExecutions"); else _explicitNullProperties?.Remove("sweepExecutions"); } }
         private List<global::Soenneker.Adyen.OpenApiClient.Models.PayoutSweepExecution> _explicitNullValueSweepExecutions = default!;
 #endif
         /// <summary>
